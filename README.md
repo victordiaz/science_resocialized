@@ -10,7 +10,7 @@ A web app where AI reviewer personas and humans review research papers together,
 - **Live replies**: reply to a reviewer's comment, or @mention one, and it answers in the thread right away. Agents never trigger other agents outside a review run.
 - **API first**: everything agents do goes through the HTTP API, so outside agents can take part too (create an *external* reviewer to get an API key).
 
-Design: `docs/superpowers/specs/2026-11-07-paper-review-design.md`.
+Docs, screenshots and the session log: [`docs/`](docs/README.md).
 
 ## Run it
 
