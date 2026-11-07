@@ -1,0 +1,57 @@
+rows: session1 231 session2 171
+s1 IDs duplicated within session: 18 rows; [nan, 232015.0, 232138.0, 253243.0, 265445.0]
+s2 IDs duplicated within session: 8 rows; [259933, 261504, 263668]
+peaking values: {'Nee': 163, nan: 6, 'Ja': 2}
+matched rows (all, incl. duplicate IDs): 174
+matched participants (unique IDs): 160
+excluded flags (overlapping): defocus=20, missing=1, peaking=1
+  sequential: removed for defocus: 20
+  sequential: removed for missing answer: 1
+  sequential: removed for peaking: 1
+n after exclusions: 138
+
+=== PRIMARY: MSE(guess1) vs MSE(average), delayed condition, after exclusions ===
+MSE1 vs MSEavg: n=138, mean A=521.00 (SD 288.62), mean B=469.63 (SD 261.52)
+   mean diff A-B=51.37, 95% CI [26.53, 76.21]; t(137)=4.089, p two-sided=7.35e-05, one-sided=3.67e-05
+   d_z=0.348, 95% CI [0.176, 0.519]; share with A>B: 0.638
+   Wilcoxon signed-rank: W=3118.0, p=0.000364
+
+--- descriptive: MSE(guess2) vs MSE(average) ---
+MSE2 vs MSEavg: n=138, mean A=591.40 (SD 328.28), mean B=469.63 (SD 261.52)
+   mean diff A-B=121.77, 95% CI [93.06, 150.48]; t(137)=8.387, p two-sided=5.42e-14, one-sided=2.71e-14
+   d_z=0.714, 95% CI [0.526, 0.900]; share with A>B: 0.746
+   Wilcoxon signed-rank: W=1551.0, p=5.37e-12
+
+--- descriptive: MSE1 vs MSE2 ---
+MSE1 vs MSE2: n=138, mean A=521.00 (SD 288.62), mean B=591.40 (SD 328.28)
+   mean diff A-B=-70.40, 95% CI [-119.68, -21.11]; t(137)=-2.825, p two-sided=0.00544, one-sided=0.997
+   d_z=-0.240, 95% CI [-0.409, -0.071]; share with A>B: 0.435
+   Wilcoxon signed-rank: W=3553.0, p=0.00827
+
+--- robustness: no exclusions except missing answers ---
+MSE1 vs MSEavg (all complete): n=159, mean A=526.65 (SD 301.99), mean B=469.62 (SD 273.74)
+   mean diff A-B=57.02, 95% CI [33.96, 80.09]; t(158)=4.883, p two-sided=2.54e-06, one-sided=1.27e-06
+   d_z=0.387, 95% CI [0.225, 0.548]; share with A>B: 0.660
+   Wilcoxon signed-rank: W=3869.0, p=1.84e-05
+
+--- per question, squared error of g1 vs avg (after exclusions), means ---
+   q1: SE1=1263.1  SEavg=1231.2
+   q2: SE1=511.9  SEavg=482.7
+   q3: SE1=347.6  SEavg=295.4
+   q4: SE1=148.2  SEavg=160.8
+   q5: SE1=455.6  SEavg=295.9
+   q6: SE1=575.1  SEavg=511.2
+   q7: SE1=363.4  SEavg=279.5
+   q8: SE1=503.0  SEavg=500.3
+   correlation g1,g2 per question: [0.57 0.62 0.52 0.53 0.35 0.47 0.46 0.61]
+   identical answers g1==g2 share: 0.135
+
+sex: {'Vrouwelijk': 125, 'Mannelijk': 13}  age mean 21.99 SD 3.12
+figure written
+
+--- robustness: all 174 matched rows incl. duplicate IDs, same exclusions ---
+n after exclusions: 140  sex: {'Vrouwelijk': 125, 'Mannelijk': 15}
+MSE1 vs MSEavg (card sample): n=140, mean A=517.43 (SD 288.07), mean B=467.46 (SD 260.29)
+   mean diff A-B=49.97, 95% CI [25.40, 74.54]; t(139)=4.022, p two-sided=9.44e-05, one-sided=4.72e-05
+   d_z=0.340, 95% CI [0.169, 0.510]; share with A>B: 0.629
+   Wilcoxon signed-rank: W=3268.0, p=0.000525
