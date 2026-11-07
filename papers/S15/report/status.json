@@ -1,0 +1,23 @@
+{
+ "study": "S15",
+ "state": "researcher running",
+ "backend": "attached",
+ "model": "opus",
+ "pid": 34415,
+ "started_at": "2026-11-07T17:01:13+0100",
+ "t0": 1794067273.9353259,
+ "sandbox": "/Users/vladnicolescu/Developer/science-resocialized-target/env/runs/S15",
+ "turns": 0,
+ "tool_calls": 0,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "cache_read": 0,
+  "cache_create": 0
+ },
+ "cost_usd": null,
+ "last_tool": null,
+ "budget_usd": 20.0,
+ "elapsed_s": 132,
+ "note": "attached: an outside agent works in /Users/vladnicolescu/Developer/science-resocialized-target/env/runs/S15; waiting for report.md and conclusion.json"
+}

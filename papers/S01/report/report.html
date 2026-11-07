@@ -1,0 +1,43 @@
+<!doctype html><meta charset='utf-8'><style>
+body{font-family:Georgia,'Times New Roman',serif;font-size:11.5pt;line-height:1.45;max-width:17cm;margin:1.8cm auto;color:#111}
+h1{font-size:19pt;margin:0 0 .4em} h2{font-size:13.5pt;margin:1.2em 0 .3em} h3{font-size:12pt;margin:1em 0 .2em}
+table{border-collapse:collapse;font-size:10pt;margin:.6em 0} th,td{border:1px solid #999;padding:3px 7px;text-align:left}
+code,pre{font-family:Menlo,Consolas,monospace;font-size:9.5pt} pre{background:#f4f4f4;padding:8px;overflow-x:auto;white-space:pre-wrap}
+img{max-width:100%} p{margin:.5em 0}
+</style><body><h1>S01: Does hand-washing after a disgusting clip make moral judgments less severe?</h1>
+<p><strong>Question.</strong> After everyone watches the same disgust-inducing film clip, do participants asked to wash their hands rate six morally questionable acts as less wrong (lower mean wrongness, 1–7) than participants not asked to wash?</p>
+<p><strong>Data.</strong> Replication data, <code>d12.sav</code> (second study; 132 participants, individual lab sessions, random assignment). Group: <code>Condition</code> (0 = no hand-washing, 1 = hand-washing, per the card's codebook; the file carries no value labels). DV: <code>mean_vignettes</code>, the mean of the six wrongness items (Dog, Trolley, Wallet, Plane, Resume, Kitten); I verified it equals the recomputed item mean for every row.</p>
+<p><strong>Exclusions (pre-registered, fixed before analysis).</strong> "All of my answers are made up" = yes (<code>Madeup_dummy</code> = 1, n = 4) or experimenter error (<code>Exp_Error</code> = 1, n = 3); one participant had both, so 6 were excluded (1 control, 5 hand-washing). Suspicion ratings were not used in the key test. <strong>N after exclusions = 126</strong> (68 no-wash, 58 wash).</p>
+<p><strong>Primary test (named in the log before the data were opened).</strong> One-way between-subjects ANOVA of <code>mean_vignettes</code> by <code>Condition</code> (equivalent to a Student t-test, equal variances), two-sided; effect size Cohen's d with pooled SD, hand-washing minus no hand-washing, 95% CI from the noncentral t. The claim was to count as holding if d &lt; 0 and p &lt; .05.</p>
+<h2>Result</h2>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th>n</th>
+<th>Mean</th>
+<th>SD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No hand-washing</td>
+<td>68</td>
+<td>5.654</td>
+<td>0.593</td>
+</tr>
+<tr>
+<td>Hand-washing</td>
+<td>58</td>
+<td>5.658</td>
+<td>0.680</td>
+</tr>
+</tbody>
+</table>
+<p><strong>F(1, 124) = 0.001, p = .97</strong> (t(124) = 0.03). Difference (wash − no wash) = +0.004 scale points. <strong>Cohen's d = 0.01, 95% CI [−0.35, 0.36].</strong> The point estimate is zero and in the wrong direction by a hair; the interval rules out an effect larger than about d = −0.35 in the predicted direction.</p>
+<p><img alt="Mean wrongness by condition: individual participants (grey) and group means with 95% CIs" src="fig1.png" /></p>
+<p><strong>Robustness (not the basis of the conclusion).</strong> Welch t = 0.03, p = .97; Mann–Whitney p = .77; one-sided t (wash &lt; no wash) p = .51. With no exclusions (N = 132): d = −0.05 [−0.39, 0.30], p = .80. Also dropping anyone with any suspicion rating (<code>Final_Rating</code> = 0 only, N = 84): d = −0.08 [−0.51, 0.35], p = .72. No single vignette differed between groups (all |t(124)| ≤ 1.10, all p ≥ .27; three differences positive, three negative). Variances were similar (Levene p = .51). Self-rated disgust after the clip did not differ by condition (18.7 vs 18.5 on the file's summed scale), as expected since it was a common clip.</p>
+<p><strong>Limits.</strong> The test assumes the codebook's 0/1 coding of <code>Condition</code>; the result is a null either way, so a reversed coding would not change the conclusion. N = 126 exceeds the planned 104, but the CI still allows small effects (|d| &lt; 0.35) in either direction.</p>
+<h2>Conclusion</h2>
+<p><strong>The claim does not hold on this data:</strong> hand-washing after the disgust clip did not lower moral wrongness ratings (F(1, 124) = 0.001, p = .97, d = 0.01, 95% CI [−0.35, 0.36]).</p>
+<p><em>Files: <code>analysis.py</code> (produces every number here), <code>analysis.out</code>, <code>fig1.png</code>, <code>log.md</code>.</em></p></body>

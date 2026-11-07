@@ -1,0 +1,36 @@
+<!doctype html><meta charset='utf-8'><style>
+body{font-family:Georgia,'Times New Roman',serif;font-size:11.5pt;line-height:1.45;max-width:17cm;margin:1.8cm auto;color:#111}
+h1{font-size:19pt;margin:0 0 .4em} h2{font-size:13.5pt;margin:1.2em 0 .3em} h3{font-size:12pt;margin:1em 0 .2em}
+table{border-collapse:collapse;font-size:10pt;margin:.6em 0} th,td{border:1px solid #999;padding:3px 7px;text-align:left}
+code,pre{font-family:Menlo,Consolas,monospace;font-size:9.5pt} pre{background:#f4f4f4;padding:8px;overflow-x:auto;white-space:pre-wrap}
+img{max-width:100%} p{margin:.5em 0}
+</style><body><h1>S16 — Do location-typical cue words impair letter identification at that location? (error rates)</h1>
+<p><strong>Question.</strong> After reading a word for an object with a typical location (e.g., <em>hat</em>: up; <em>boot</em>: down), do people make more errors identifying a briefly shown letter (X/O) when it appears at the word's typical location than at the opposite location?</p>
+<p><strong>Data and sample.</strong> Replication data (<code>d02.sav</code>): 22 participants × 60 experimental trials = 1,320 trials, 30 typical and 30 atypical trials per participant. No participants or trials excluded (as the card prescribes for error rates; no missing values; <code>resp_corr</code> agrees with the <code>Correct</code> string on 100% of trials). Total errors: 45 (27 typical, 18 atypical).</p>
+<p><strong>Test (fixed in the log before analysis).</strong> Per-participant error rate = proportion of trials with <code>resp_corr</code> = 0, per condition (<code>typisch</code> 1 = typical, 2 = atypical). One-way repeated-measures ANOVA by subjects (F1), typical vs atypical; partial η² = SS_location / (SS_location + SS_error), 95% CI by noncentral-F inversion. The claim holds if typical &gt; atypical with p &lt; .05.</p>
+<p><strong>Result.</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Typical</th>
+<th>Atypical</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mean error rate (SD)</td>
+<td>4.09% (4.82)</td>
+<td>2.73% (2.21)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>F(1, 21) = 1.45, p = .242, partial η² = .065, 95% CI [.00, .31].</strong></li>
+<li>Mean difference (typical − atypical) = 1.36 percentage points, 95% CI [−0.99, 3.72]; d_z = 0.26.</li>
+<li>9 participants made more errors at the typical location, 7 fewer, 6 tied.</li>
+<li>Robustness (not primary): Wilcoxon signed-rank W = 44.5, p = .216; trial-level logistic GEE clustered by participant, OR = 1.52, p = .176. Same direction, also not significant.</li>
+</ul>
+<p><img alt="Per-participant error rates; black = mean ± SE" src="fig1.png" /></p>
+<p><strong>Interpretation.</strong> The difference is in the predicted direction but small and not distinguishable from zero. Errors are rare (3.4% overall, at most 5 of 30 trials per cell), so the test has little resolution: the interval for the difference runs from about a 1-point advantage for typical to a 3.7-point disadvantage, and the η² interval includes both zero and sizeable effects. The data therefore do not support the claim, without ruling out a modest effect.</p>
+<p><strong>Conclusion.</strong> The claim does not hold on this data: participants did not make significantly more identification errors at the cue word's typical location than at the atypical location (F(1, 21) = 1.45, p = .24).</p></body>

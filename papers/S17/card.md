@@ -14,6 +14,6 @@
 
 <!-- files:start -->
 **Data files given.** The raw data you receive, under neutral names:
-- `d04.xls` (Excel (old), 70 KB): raw data before screening; not opened
 - `d05.sav` (SPSS, 36 KB): 48 rows 48 columns one row per participant; cells children/snakes 12, children/caterpillars 13, parent/snakes 11, parent/caterpillars 12; average has no NA
+- `d08.csv` (CSV, 18 KB)
 <!-- files:end -->

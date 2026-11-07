@@ -1,0 +1,48 @@
+<!doctype html><meta charset='utf-8'><style>
+body{font-family:Georgia,'Times New Roman',serif;font-size:11.5pt;line-height:1.45;max-width:17cm;margin:1.8cm auto;color:#111}
+h1{font-size:19pt;margin:0 0 .4em} h2{font-size:13.5pt;margin:1.2em 0 .3em} h3{font-size:12pt;margin:1em 0 .2em}
+table{border-collapse:collapse;font-size:10pt;margin:.6em 0} th,td{border:1px solid #999;padding:3px 7px;text-align:left}
+code,pre{font-family:Menlo,Consolas,monospace;font-size:9.5pt} pre{background:#f4f4f4;padding:8px;overflow-x:auto;white-space:pre-wrap}
+img{max-width:100%} p{margin:.5em 0}
+</style><body><h1>S07: Is the game–drug-use correlation larger when the pond is visible?</h1>
+<p><strong>Question.</strong> In a sequential fishing risk game, is the correlation between risk taking (adjusted casting score) and real-world drug use (weighted polydrug score) larger in the sunny conditions (pond visible) than in the cloudy conditions (pond hidden)? Predicted sign of the sunny-minus-cloudy contrast: positive.</p>
+<p><strong>Data and sample.</strong> Replication data: the cleaned per-participant file (d10, 161 participants who completed the game; duplicate program entries already removed and the restarted session dropped). Adjusted casting score per condition (Keep-Sunny KS, Keep-Cloudy KC, Release-Sunny RS, Release-Cloudy RC) = mean casts on rounds the participant stopped voluntarily, all rounds in the trial file (practice-flagged rounds included, as the cleaning specifies). <strong>Exclusions:</strong> 8 participants with no drug-use score (questionnaire not completed). <strong>N = 153.</strong> I recomputed the four casting scores from the raw trial file (d08) and they match d10 exactly; the polydrug scores match d09 exactly.</p>
+<p><strong>Test (named in advance).</strong> Pearson r of polydrug with each casting score, Fisher z, and the Meng, Rosenthal &amp; Rubin (1992) contrast test for correlated correlations with weights (+1, −1, +1, −1) on (KS, KC, RS, RC), r_x = median of the six inter-correlations of the casting scores. The claim holds if Z &gt; 0 with two-sided p &lt; .05.</p>
+<p><strong>Results.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>r with polydrug</th>
+<th>95% CI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Keep-Sunny</td>
+<td>+0.026</td>
+<td>[−0.134, +0.183]</td>
+</tr>
+<tr>
+<td>Keep-Cloudy</td>
+<td>−0.046</td>
+<td>[−0.203, +0.114]</td>
+</tr>
+<tr>
+<td>Release-Sunny</td>
+<td>−0.011</td>
+<td>[−0.170, +0.148]</td>
+</tr>
+<tr>
+<td>Release-Cloudy</td>
+<td>−0.099</td>
+<td>[−0.254, +0.060]</td>
+</tr>
+</tbody>
+</table>
+<p>None of the four correlations differs from zero (all p ≥ .22). Inter-correlations of the casting scores range .24–.55, median r_x = 0.389.</p>
+<p><strong>Primary statistic: Z = +1.25, two-sided p = .212 (N = 153).</strong> The contrast points in the predicted direction but is not significant. Effect size: mean sunny-minus-cloudy difference in Fisher z = +0.080, bootstrap 95% CI [−0.076, +0.229] (5000 resamples); contrast correlation r = Z/√(Z² + N − 3) = +0.10.</p>
+<p><img alt="Correlation of each casting score with polydrug, 95% CI (orange: sunny; grey: cloudy)" src="fig1.png" /></p>
+<p><strong>Robustness (not the basis of the conclusion).</strong> Practice rounds excluded: Z = +1.00, p = .316. Spearman correlations: Z = +0.76, p = .450. The result does not depend on these choices.</p>
+<p><strong>Interpretation.</strong> The premise behind the contrast, that the game picks out drug users at all, is not met in this sample: the sunny correlations are themselves about zero (+0.03 and −0.01), so there is little for the cloudy condition to weaken. The interval for the contrast includes zero and also includes moderate positive differences, so this sample rules out a large contrast but not a small one.</p>
+<p><strong>Conclusion.</strong> The claim does not hold on this data: the sunny-minus-cloudy contrast of drug-use correlations is small and not significant (Z = 1.25, p = .21, N = 153), and the game's scores do not correlate with drug use in any condition.</p></body>

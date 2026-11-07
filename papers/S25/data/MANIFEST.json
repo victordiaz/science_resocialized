@@ -1,13 +1,13 @@
 {
  "study": "S25",
  "files": {
-  "d03.zip": {
-   "bytes": 90368,
-   "sha256": "7cc831a87af586a47f5db617372f6ca627601a987c01064f4e044eeaba9ea3e6"
+  "d21.txt": {
+   "bytes": 15512,
+   "sha256": "1f6f6bfccc0cd8ddb93446581f1a6b701a1d88af852e000c29af635cc0060227"
   },
-  "d04.zip": {
-   "bytes": 93716,
-   "sha256": "90bce70b4be2042bc7cf43cba23a9a05f79e190e98f23844ec26d41beb64942c"
+  "d22.txt": {
+   "bytes": 15327,
+   "sha256": "c2cbf7534ac52e3cac1b81fe594fbec40b060586ba653c4384de09c54026b0b8"
   },
   "d06.txt": {
    "bytes": 15438,

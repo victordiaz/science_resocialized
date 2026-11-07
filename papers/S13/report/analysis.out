@@ -1,0 +1,42 @@
+rows (2040, 22) subjects 17 missing angle 0
+
+-- Mapping check: single-dot test-phase error, code 1 vs code 11
+code1 - code11 (individual): n=17 mean_a=6.322 mean_b=8.520 diff=-2.199 95%CI[-3.095,-1.302] t(16)=-5.199 p=8.774e-05 dz=-1.261 95%CI[-1.893,-0.607] | Wilcoxon W=3 p=7.629e-05
+=> distractor code = 11 (larger single-dot error), target code = 1; check p=8.77e-05
+
+-- PRIMARY: distractor centroid (test) minus guessing four-missing
+trials per subject: test [20] guess [20]
+PRIMARY dis-centroid - guess4: n=17 mean_a=2.845 mean_b=7.549 diff=-4.704 95%CI[-5.744,-3.664] t(16)=-9.591 p=4.895e-08 dz=-2.326 95%CI[-3.246,-1.387] | Wilcoxon W=0 p=1.526e-05
+
+-- Same comparison under the other mapping (sensitivity to the code assignment)
+other-code centroid - guess4: n=17 mean_a=3.750 mean_b=7.549 diff=-3.799 95%CI[-4.875,-2.723] t(16)=-7.486 p=1.298e-06 dz=-1.816 95%CI[-2.589,-1.021] | Wilcoxon W=0 p=1.526e-05
+
+-- Secondary
+dis-individual - guess1: n=17 mean_a=8.520 mean_b=9.949 diff=-1.429 95%CI[-2.258,-0.600] t(16)=-3.653 p=0.002143 dz=-0.886 95%CI[-1.441,-0.312] | Wilcoxon W=13 p=0.001343
+tar-individual - guess1: n=17 mean_a=6.322 mean_b=9.949 diff=-3.628 95%CI[-4.984,-2.272] t(16)=-5.672 p=3.471e-05 dz=-1.376 95%CI[-2.035,-0.695] | Wilcoxon W=0 p=1.526e-05
+tar-centroid - guess4: n=17 mean_a=3.750 mean_b=7.549 diff=-3.799 95%CI[-4.875,-2.723] t(16)=-7.486 p=1.298e-06 dz=-1.816 95%CI[-2.589,-1.021] | Wilcoxon W=0 p=1.526e-05
+tar-centroid - dis-centroid: n=17 mean_a=3.750 mean_b=2.845 diff=0.905 95%CI[0.483,1.328] t(16)=4.542 p=0.0003331 dz=1.102 95%CI[0.483,1.699] | Wilcoxon W=6 p=0.0002136
+guess cond3 - cond4: n=17 mean_a=7.942 mean_b=7.155 diff=0.787 95%CI[-0.274,1.849] t(16)=1.572 p=0.1354 dz=0.381 95%CI[-0.117,0.869] | Wilcoxon W=41 p=0.09837
+ROBUST medians dis-centroid - guess4: n=17 mean_a=2.488 mean_b=7.666 diff=-5.179 95%CI[-6.419,-3.939] t(16)=-8.852 p=1.456e-07 dz=-2.147 95%CI[-3.014,-1.260] | Wilcoxon W=0 p=1.526e-05
+
+Per-subject means (dis-centroid, guess4, diff):
+         dis_centroid  guess4    diff
+subject                              
+1.0             3.008   7.260  -4.252
+2.0             3.431   9.657  -6.227
+3.0             2.137  12.874 -10.736
+4.0             3.584   6.133  -2.549
+5.0             3.067   6.337  -3.270
+6.0             3.774  10.839  -7.065
+7.0             1.848   6.847  -5.000
+8.0             2.594   9.421  -6.827
+9.0             2.403   6.061  -3.658
+10.0            2.535   5.459  -2.924
+11.0            2.744   6.715  -3.972
+12.0            2.738   6.079  -3.341
+13.0            4.623   8.282  -3.659
+14.0            2.028   6.572  -4.544
+15.0            2.381   5.921  -3.540
+16.0            3.189   7.472  -4.283
+17.0            2.275   6.394  -4.119
+figure saved

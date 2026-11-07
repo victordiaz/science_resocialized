@@ -24,7 +24,8 @@
    "stat": null,
    "p": null,
    "es": null,
-   "stdout_file": "audit.out"
+   "stdout_file": "audit.out",
+   "why": "package missing: ez (script stops at library('ez'); reshape2 now present). Not installed by me."
   },
   "python": {
    "ran": true,
@@ -33,7 +34,7 @@
    "es": "partial eta^2 = 0.0083",
    "file": "reproduce.py"
   },
-  "agreement": "pending",
+  "agreement": "table and Python agree: table F(1,142)=1.19 p=.28 pes=.008; Python F(1,142)=1.1937 p=0.2764 pes=0.0083 (scipy one-way on Friend-SI difference and pingouin mixed_anova identical). R not run (ez missing).",
   "verdict": "reproduced",
   "n_after_exclusions": 144
  },

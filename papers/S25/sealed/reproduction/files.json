@@ -11,12 +11,22 @@
  },
  "mvpr4__rawdata.zip": {
   "neutral": "d03.zip",
-  "give": true,
+  "give": false,
   "bytes": 90368
+ },
+ "mvpr4__rawdata_extracted/1_newnew.txt": {
+  "neutral": "d21.txt",
+  "give": true,
+  "bytes": 15512
+ },
+ "mvpr4__rawdata_extracted/7new.txt": {
+  "neutral": "d22.txt",
+  "give": true,
+  "bytes": 15327
  },
  "mvpr4__rawdata_preprocessed.zip": {
   "neutral": "d04.zip",
-  "give": true,
+  "give": false,
   "bytes": 93716
  },
  "mvpr4__replicationBeaman_KleinbergKunkels_Rscript.R": {

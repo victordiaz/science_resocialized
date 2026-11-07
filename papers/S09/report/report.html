@@ -1,0 +1,55 @@
+<!doctype html><meta charset='utf-8'><style>
+body{font-family:Georgia,'Times New Roman',serif;font-size:11.5pt;line-height:1.45;max-width:17cm;margin:1.8cm auto;color:#111}
+h1{font-size:19pt;margin:0 0 .4em} h2{font-size:13.5pt;margin:1.2em 0 .3em} h3{font-size:12pt;margin:1em 0 .2em}
+table{border-collapse:collapse;font-size:10pt;margin:.6em 0} th,td{border:1px solid #999;padding:3px 7px;text-align:left}
+code,pre{font-family:Menlo,Consolas,monospace;font-size:9.5pt} pre{background:#f4f4f4;padding:8px;overflow-x:auto;white-space:pre-wrap}
+img{max-width:100%} p{margin:.5em 0}
+</style><body><h1>S09 — Do bilinguals show a deeper attentional blink than monolinguals?</h1>
+<p><strong>Question.</strong> When a second target (T2) follows a correctly identified first target (T1) in a rapid stream, do bilingual adults report T2 less often than monolinguals at short lags, most of all at lag 3 — i.e. is there a Group × Lag interaction on T2|T1 accuracy with the bilingual curve lower at short lags?</p>
+<p><strong>Data and sample.</strong> Replication data file <code>d09.sav</code>: per-participant T2|T1 proportion correct at lags 1, 3, 5, 8 (computed by the replication team from the trial files). Group is coded 1/2 without labels; it was mapped from the questionnaire (Q1, number of fluent languages: 1 for every Group-1 row, 2 for every Group-2 row), so 1 = monolingual, 2 = bilingual. <strong>N = 32 (18 monolingual, 14 bilingual); no exclusions</strong>, as the protocol specifies for this test. All 32 have complete data.</p>
+<p><strong>Test (fixed before analysis).</strong> Mixed-design ANOVA, Type III SS: Group (between) × Lag (within, 4 levels), DV = T2|T1. Primary statistic: Group × Lag interaction, Greenhouse-Geisser corrected (Mauchly W = 0.51, p = .002; ε = 0.776). Effect size: partial η² = SS_int / (SS_int + SS_error), 90% CI by noncentral-F inversion. The claim holds only if the interaction is significant (p &lt; .05) with bilinguals lower at short lags.</p>
+<p><strong>Cell means (SD), T2|T1</strong></p>
+<table>
+<thead>
+<tr>
+<th>Lag</th>
+<th>Monolingual (n = 18)</th>
+<th>Bilingual (n = 14)</th>
+<th>Mono − Bi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>.763 (.162)</td>
+<td>.788 (.242)</td>
+<td>−.025</td>
+</tr>
+<tr>
+<td>3</td>
+<td>.513 (.166)</td>
+<td>.491 (.200)</td>
+<td>+.022</td>
+</tr>
+<tr>
+<td>5</td>
+<td>.471 (.200)</td>
+<td>.480 (.187)</td>
+<td>−.009</td>
+</tr>
+<tr>
+<td>8</td>
+<td>.558 (.189)</td>
+<td>.584 (.224)</td>
+<td>−.026</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="T2|T1 accuracy by lag and group (mean ± SEM)" src="fig_lag.png" /></p>
+<p><strong>Result.</strong> Group × Lag: <strong>F(2.33, 69.84) = 0.38, p = .717 (GG); partial η² = .012, 90% CI [.000, .055]</strong>. Uncorrected F(3, 90) = 0.38, p = .767. The two lag curves are nearly superimposed: both groups show a clear blink (Lag main effect F(3, 90) = 56.0, p &lt; .001, partial η² = .65), but its depth does not differ by group. At lag 3 bilinguals are only .022 below monolinguals (Welch t = 0.33, p = .74; descriptive), and at lags 1, 5 and 8 bilinguals are slightly <em>higher</em>. Group main effect F(1, 30) = 0.02, p = .88.</p>
+<p><strong>Checks (not the basis of the conclusion).</strong>
+- One bilingual (24145) has implausibly low T2|T1 (.02–.17) with normal T1 accuracy, suggesting a response or scoring anomaly. Without this participant: F(2.37, 68.72) = 0.63, p = .563, partial η² = .021.
+- Protocol's exploratory analysis dropping the 4 bilinguals who began English after age 12 (n = 28): F(2.25, 58.45) = 0.16, p = .877, partial η² = .006.
+- The partial η² was computed by hand and checked against pingouin's <code>mixed_anova</code>; the two agree. With a single between-subjects factor, the Type III and Type II sums of squares for the interaction are identical.</p>
+<p><strong>Limitations.</strong> The sample is small (14 bilinguals), so the 90% CI allows a small interaction (up to partial η² ≈ .055). The point estimate is near zero, though, and the pattern is not in the predicted direction. The raw E-Prime files (d01.zip) were not re-scored; the test uses the replication team's per-participant cells, as specified.</p>
+<p><strong>Conclusion.</strong> The claim does not hold on this data: bilinguals did not show a larger attentional blink than monolinguals (Group × Lag F(2.33, 69.84) = 0.38, p = .72, partial η² = .01).</p></body>

@@ -1,0 +1,132 @@
+<!doctype html><meta charset='utf-8'><style>
+body{font-family:Georgia,'Times New Roman',serif;font-size:11.5pt;line-height:1.45;max-width:17cm;margin:1.8cm auto;color:#111}
+h1{font-size:19pt;margin:0 0 .4em} h2{font-size:13.5pt;margin:1.2em 0 .3em} h3{font-size:12pt;margin:1em 0 .2em}
+table{border-collapse:collapse;font-size:10pt;margin:.6em 0} th,td{border:1px solid #999;padding:3px 7px;text-align:left}
+code,pre{font-family:Menlo,Consolas,monospace;font-size:9.5pt} pre{background:#f4f4f4;padding:8px;overflow-x:auto;white-space:pre-wrap}
+img{max-width:100%} p{margin:.5em 0}
+</style><body><h1>S05 — Is temporal selection of a second cued letter suppressed, delayed and diffused with different time courses?</h1>
+<h2>Question</h2>
+<p>In a rapid letter stream with two cued letters, does the report of the second cued letter change in efficacy (how often a report comes from around its position), latency (where reports are centred) and precision (their spread), with time courses across the 1-10 item interval that differ between measures? Predicted: a significant measure (3) x target (2) x SOA (10) interaction.</p>
+<h2>Data and sample</h2>
+<p>One file (<code>d04.csv</code>): 720 per-participant summary values = 12 participants x 3 measures x 2 targets x 10 SOAs. No missing values; every cell has 12 values. Practice trials were already discarded; <strong>no exclusions</strong>, n = 12 participants, 720 values analysed. Column mapping per the card: column <code>efficacy</code> = measure, <code>latency</code> = target, <code>precision</code> = SOA.</p>
+<h2>Test (named in advance)</h2>
+<p>Full-factorial fixed-effects ANOVA, all factors categorical, every value treated as independent (participant not in the model; equivalent to Matlab <code>anovan(..., 'model','full')</code>), Type III sums of squares (balanced design). Term of interest: measure x target x SOA. The claim holds if p &lt; .05.</p>
+<h2>Result</h2>
+<p><strong>Three-way interaction: F(18, 660) = 12.98, p = 3.3 x 10^-33, partial eta-squared = .26, 95% CI [.19, .30].</strong></p>
+<p>Cell means (averaged over participants):</p>
+<table>
+<thead>
+<tr>
+<th>measure</th>
+<th>target</th>
+<th>SOA 1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>efficacy</td>
+<td>T1</td>
+<td>.124</td>
+<td>.126</td>
+<td>.128</td>
+<td>.124</td>
+<td>.124</td>
+<td>.125</td>
+<td>.125</td>
+<td>.127</td>
+<td>.127</td>
+<td>.124</td>
+</tr>
+<tr>
+<td>efficacy</td>
+<td>T2</td>
+<td>.098</td>
+<td>.097</td>
+<td>.084</td>
+<td>.078</td>
+<td>.076</td>
+<td>.084</td>
+<td>.096</td>
+<td>.099</td>
+<td>.110</td>
+<td>.113</td>
+</tr>
+<tr>
+<td>latency</td>
+<td>T1</td>
+<td>.24</td>
+<td>.21</td>
+<td>.10</td>
+<td>.08</td>
+<td>.10</td>
+<td>-.02</td>
+<td>.08</td>
+<td>.06</td>
+<td>.08</td>
+<td>.02</td>
+</tr>
+<tr>
+<td>latency</td>
+<td>T2</td>
+<td>-.22</td>
+<td>-.62</td>
+<td>-.82</td>
+<td>-.14</td>
+<td>.44</td>
+<td>1.13</td>
+<td>.92</td>
+<td>.66</td>
+<td>.68</td>
+<td>.52</td>
+</tr>
+<tr>
+<td>precision</td>
+<td>T1</td>
+<td>1.42</td>
+<td>.91</td>
+<td>1.30</td>
+<td>1.27</td>
+<td>1.18</td>
+<td>1.11</td>
+<td>1.24</td>
+<td>1.07</td>
+<td>1.12</td>
+<td>1.06</td>
+</tr>
+<tr>
+<td>precision</td>
+<td>T2</td>
+<td>1.75</td>
+<td>1.98</td>
+<td>3.25</td>
+<td>4.25</td>
+<td>2.17</td>
+<td>1.27</td>
+<td>1.40</td>
+<td>1.45</td>
+<td>1.18</td>
+<td>1.38</td>
+</tr>
+</tbody>
+</table>
+<p>For T1 all three measures are nearly flat across SOA. For T2, efficacy dips at SOA 3-5 and recovers by 9-10; variance (diffusion) peaks at SOA 3-4; latency is shifted <em>earlier</em> than the target at SOA 1-3 and <em>later</em> at SOA 5-10, peaking at SOA 6.</p>
+<h2>Checks (not primary)</h2>
+<ul>
+<li>Measures are on different scales (probability, positions, positions squared), so part of an interaction across measures could be scale alone. With values z-scored within measure, the three-way term is still F(18, 660) = 10.18, p = 1.6 x 10^-25.</li>
+<li>Repeated-measures ANOVA with participant as a random factor (R <code>aov</code>, Error strata): three-way F(18, 198) = 16.87, p &lt; 2 x 10^-16 (z-scored: F = 14.75).</li>
+<li>Target x SOA within each measure (fixed-effects): efficacy F(9, 220) = 1.98, p = .043; latency F(9, 220) = 12.57, p &lt; 10^-15; precision F(9, 220) = 8.96, p &lt; 10^-10. The efficacy effect is small in absolute terms (a dip of ~.05 against ~.12).</li>
+</ul>
+<h2>Caveats</h2>
+<p>Treating 720 values from 12 people as independent inflates the degrees of freedom; the card specifies that test, and the participant-aware ANOVA gives the same answer. The early-SOA latency shift for T2 is negative (reports before the target), not "delayed"; the delay appears from SOA 5 on. Efficacy values are per-position probabilities (~1/8), so its interaction is the weakest of the three.</p>
+<h2>Conclusion</h2>
+<p><strong>The claim holds on this data: the measure x target x SOA interaction is significant and large (F(18, 660) = 12.98, p &lt; .001, partial eta-squared = .26), and survives rescaling and a participant-level ANOVA.</strong></p>
+<p>Files: <code>analysis.py</code> (all numbers), <code>analysis.out</code>, <code>log.md</code>.</p></body>

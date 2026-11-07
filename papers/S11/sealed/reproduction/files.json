@@ -16,8 +16,218 @@
  },
  "Data/Raw_Txt_Files_Part_1_Replication.zip": {
   "neutral": "d04.zip",
-  "give": true,
+  "give": false,
   "bytes": 3239906
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp01.txt": {
+  "neutral": "d08.txt",
+  "give": true,
+  "bytes": 395031
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp02.txt": {
+  "neutral": "d09.txt",
+  "give": true,
+  "bytes": 395889
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp03.txt": {
+  "neutral": "d10.txt",
+  "give": true,
+  "bytes": 395135
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp05.txt": {
+  "neutral": "d11.txt",
+  "give": true,
+  "bytes": 395745
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp06.txt": {
+  "neutral": "d12.txt",
+  "give": true,
+  "bytes": 392911
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp09.txt": {
+  "neutral": "d13.txt",
+  "give": true,
+  "bytes": 393354
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp10.txt": {
+  "neutral": "d14.txt",
+  "give": true,
+  "bytes": 390816
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp11.txt": {
+  "neutral": "d15.txt",
+  "give": true,
+  "bytes": 390892
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp12.txt": {
+  "neutral": "d16.txt",
+  "give": true,
+  "bytes": 392264
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp13.txt": {
+  "neutral": "d17.txt",
+  "give": true,
+  "bytes": 392718
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp14.txt": {
+  "neutral": "d18.txt",
+  "give": true,
+  "bytes": 392557
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp15.txt": {
+  "neutral": "d19.txt",
+  "give": true,
+  "bytes": 393947
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp16.txt": {
+  "neutral": "d20.txt",
+  "give": true,
+  "bytes": 394119
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp17.txt": {
+  "neutral": "d21.txt",
+  "give": true,
+  "bytes": 390785
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp18.txt": {
+  "neutral": "d22.txt",
+  "give": true,
+  "bytes": 395031
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp19.txt": {
+  "neutral": "d23.txt",
+  "give": true,
+  "bytes": 391426
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp20.txt": {
+  "neutral": "d24.txt",
+  "give": true,
+  "bytes": 390961
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp21.txt": {
+  "neutral": "d25.txt",
+  "give": true,
+  "bytes": 395874
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp22.txt": {
+  "neutral": "d26.txt",
+  "give": true,
+  "bytes": 392516
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp23.txt": {
+  "neutral": "d27.txt",
+  "give": true,
+  "bytes": 391884
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp24.txt": {
+  "neutral": "d28.txt",
+  "give": true,
+  "bytes": 393078
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp25.txt": {
+  "neutral": "d29.txt",
+  "give": true,
+  "bytes": 390571
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp26.txt": {
+  "neutral": "d30.txt",
+  "give": true,
+  "bytes": 389293
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp27.txt": {
+  "neutral": "d31.txt",
+  "give": true,
+  "bytes": 390541
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp28.txt": {
+  "neutral": "d32.txt",
+  "give": true,
+  "bytes": 389657
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp29.txt": {
+  "neutral": "d33.txt",
+  "give": true,
+  "bytes": 390425
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp30.txt": {
+  "neutral": "d34.txt",
+  "give": true,
+  "bytes": 391408
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp31.txt": {
+  "neutral": "d35.txt",
+  "give": true,
+  "bytes": 391295
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp32.txt": {
+  "neutral": "d36.txt",
+  "give": true,
+  "bytes": 388876
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp33.txt": {
+  "neutral": "d37.txt",
+  "give": true,
+  "bytes": 390179
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp34.txt": {
+  "neutral": "d38.txt",
+  "give": true,
+  "bytes": 394274
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp35.txt": {
+  "neutral": "d39.txt",
+  "give": true,
+  "bytes": 390625
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp36.txt": {
+  "neutral": "d40.txt",
+  "give": true,
+  "bytes": 390625
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp37.txt": {
+  "neutral": "d41.txt",
+  "give": true,
+  "bytes": 389052
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp38.txt": {
+  "neutral": "d42.txt",
+  "give": true,
+  "bytes": 386538
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp39.txt": {
+  "neutral": "d43.txt",
+  "give": true,
+  "bytes": 390040
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp40.txt": {
+  "neutral": "d44.txt",
+  "give": true,
+  "bytes": 389243
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp41.txt": {
+  "neutral": "d45.txt",
+  "give": true,
+  "bytes": 387555
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp42.txt": {
+  "neutral": "d46.txt",
+  "give": true,
+  "bytes": 390651
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp43.txt": {
+  "neutral": "d47.txt",
+  "give": true,
+  "bytes": 387134
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp44.txt": {
+  "neutral": "d48.txt",
+  "give": true,
+  "bytes": 388924
+ },
+ "Raw_Txt_Files_Part_1_Replication_extracted/pp45.txt": {
+  "neutral": "d49.txt",
+  "give": true,
+  "bytes": 390751
  },
  "top/nkaw4.json": {
   "neutral": "d05.json",

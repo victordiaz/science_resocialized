@@ -20,10 +20,10 @@
    "es": "d = .21"
   },
   "r_script": {
-   "ran": false,
-   "stat": null,
-   "p": null,
-   "es": null,
+   "ran": true,
+   "stat": "t(3511.1) = -6.30922 (implicit); explicit t(3586.2) = -22.76772",
+   "p": "3.1543e-10 (implicit)",
+   "es": "not calculated by the script",
    "stdout_file": "audit.out"
   },
   "python": {
@@ -33,7 +33,7 @@
    "es": "Cohen's d (pooled SD) = 0.2108",
    "file": "reproduce.py"
   },
-  "agreement": "pending",
+  "agreement": "all three agree: table t(3511.1)=-6.31 p=3.14e-10 d=.21; R t=-6.30922 df=3511.1 p=3.1543e-10; Python t=-6.3092 df=3511.1 p=3.154e-10, Cohen's d=0.2108",
   "verdict": "reproduced",
   "n_after_exclusions": 3597
  },

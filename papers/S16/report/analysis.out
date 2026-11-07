@@ -1,0 +1,56 @@
+rows 1320 participants 22
+value labels {'resp_corr': {0.0: 'False', 1.0: 'True'}, 'typisch': {1.0: 'typisch', 2.0: 'untypisch'}}
+resp_corr agrees with Correct string: 1.0
+trials per subject x condition:
+ typisch   1.0   2.0
+min      30.0  30.0
+max      30.0  30.0
+crosstab conditio x typisch:
+ typisch   1.0  2.0
+conditio          
+!sphigh   330  330
+!splow    330  330
+
+per-participant error rates:
+        typical  atypical
+Subj                    
+1.0     0.0000    0.0333
+2.0     0.0000    0.0333
+3.0     0.1333    0.0667
+4.0     0.1667    0.0333
+5.0     0.0000    0.0000
+6.0     0.1000    0.0333
+7.0     0.0333    0.0000
+8.0     0.0333    0.0333
+9.0     0.0667    0.0333
+10.0    0.0667    0.0000
+11.0    0.1000    0.0000
+12.0    0.0000    0.0667
+13.0    0.0333    0.0000
+14.0    0.0000    0.0000
+101.0   0.0333    0.0333
+102.0   0.0000    0.0333
+103.0   0.0333    0.0333
+104.0   0.0333    0.0333
+110.0   0.0667    0.0000
+111.0   0.0000    0.0333
+112.0   0.0000    0.0667
+113.0   0.0000    0.0333
+
+means: {'typical': 0.0409, 'atypical': 0.0273} SDs: {'typical': 0.0482, 'atypical': 0.0221}
+total errors: typical 27 atypical 18
+
+PRIMARY F1 RM-ANOVA: SS_loc=0.002045 SS_err=0.029621 F(1,21)=1.450 p=0.2419 partial_eta2=0.0646
+partial eta2 95% CI (noncentral F): [0.0000, 0.3058]
+diff typical-atypical = 0.0136 (95% CI -0.0099, 0.0372); paired t(21)=1.204, p=0.2419, t^2=1.450; dz=0.257
+participants with more errors typical/equal/fewer: 9 6 7
+              Anova
+=================================
+    F Value Num DF  Den DF Pr > F
+---------------------------------
+loc  1.4501 1.0000 21.0000 0.2419
+=================================
+
+Wilcoxon signed-rank: W=44.5, p=0.2161
+GEE logistic (trial level, clustered by subject): b_typical=0.420, OR=1.521, z=1.354, p=0.1758
+figure saved fig1.png

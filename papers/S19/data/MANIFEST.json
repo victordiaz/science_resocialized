@@ -1,9 +1,29 @@
 {
  "study": "S19",
  "files": {
-  "d04.zip": {
-   "bytes": 12398,
-   "sha256": "b168b90b20a98c21ad4b309e27087b2a65c323cd42e28c08dd4adc6ed909826e"
+  "d31.csv": {
+   "bytes": 723,
+   "sha256": "807a815af22da99c5b6ca9544335c5c2ec87f019142d390fb6323819dfd08a98"
+  },
+  "d32.csv": {
+   "bytes": 1018,
+   "sha256": "30fb95bb297fecdd86c85726ef25c2e3ce55ecb3e94e34a110b18b816b49eff7"
+  },
+  "d33.csv": {
+   "bytes": 3454,
+   "sha256": "127be88c561fe4251faa2a858ac8414cad0c6f2eb3dd73ad9e328a5fe4c34537"
+  },
+  "d34.csv": {
+   "bytes": 1353,
+   "sha256": "6bfa63b1d4d95f4951bb6d5dc9881821ca2b05b686411a1a91ad765ce2013300"
+  },
+  "d35.csv": {
+   "bytes": 2205,
+   "sha256": "09c9b4689f681da76b368d1811a34e4f3084405f33e5538ad862a030b06465a0"
+  },
+  "d36.csv": {
+   "bytes": 3610,
+   "sha256": "a256ee3206546d900a36d10778b66eea9bae4135ae6b3621742f822c6cd23027"
   },
   "d06.csv": {
    "bytes": 302094,
@@ -16,10 +36,6 @@
   "d09.csv": {
    "bytes": 300377,
    "sha256": "2e59373e8c48c699bedc9857d9bfabfd18a9340f9e68bab1a3fe39d15ac71304"
-  },
-  "d10.zip": {
-   "bytes": 7421,
-   "sha256": "54e3e0705d6257b2702220e291ee34759b11c6f6771e5dbd259e2196bedd983c"
   },
   "d25.sav": {
    "bytes": 1412,

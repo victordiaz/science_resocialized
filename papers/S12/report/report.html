@@ -1,0 +1,43 @@
+<!doctype html><meta charset='utf-8'><style>
+body{font-family:Georgia,'Times New Roman',serif;font-size:11.5pt;line-height:1.45;max-width:17cm;margin:1.8cm auto;color:#111}
+h1{font-size:19pt;margin:0 0 .4em} h2{font-size:13.5pt;margin:1.2em 0 .3em} h3{font-size:12pt;margin:1em 0 .2em}
+table{border-collapse:collapse;font-size:10pt;margin:.6em 0} th,td{border:1px solid #999;padding:3px 7px;text-align:left}
+code,pre{font-family:Menlo,Consolas,monospace;font-size:9.5pt} pre{background:#f4f4f4;padding:8px;overflow-x:auto;white-space:pre-wrap}
+img{max-width:100%} p{margin:.5em 0}
+</style><body><h1>S12: Does a response-speed preference transfer immediately to new group members?</h1>
+<p><strong>Question.</strong> Right after learning about one mostly-positive and one mostly-negative individual from two fictional groups, is the response-speed (sorting-task) preference people show between two <em>new</em> members of those groups as large as the preference others show between the two <em>original</em> individuals? The claim predicts no difference between new-pair and original-pair raters.</p>
+<p><strong>Data and sample.</strong> Replication data <code>d07.csv</code>, 4,267 rows. Exclusions, applied in the stated order: missing self-reported preference, 322; missing sorting-task score, 285; more than 10% of trials under 300 ms, 1; not exactly 200 scored trials, 62. <strong>N = 3,597</strong> remain: 1,638 rated the new pair and 1,959 rated the original pair. No further rows had a missing condition or outcome.</p>
+<p><strong>Test (fixed before analysis).</strong> Two-sided Welch two-sample t-test of <code>imppref</code>, new-pair group vs original-pair group. Cohen's d uses the pooled SD. Before running it I set the decision rule: the claim holds only if the test is non-significant and the 95% CI of d lies inside ±0.2. It fails if p &lt; .05.</p>
+<p><strong>Result.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th>n</th>
+<th>mean imppref</th>
+<th>SD</th>
+<th>vs 0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>New pair</td>
+<td>1,638</td>
+<td>0.050</td>
+<td>0.470</td>
+<td>t = 4.29, p &lt; .001</td>
+</tr>
+<tr>
+<td>Original pair</td>
+<td>1,959</td>
+<td>0.150</td>
+<td>0.481</td>
+<td>t = 13.81, p &lt; .001</td>
+</tr>
+</tbody>
+</table>
+<p>Welch <strong>t(3511.1) = −6.31, p = 3.2 × 10⁻¹⁰</strong>. Mean difference (new − original) = −0.100, 95% CI [−0.132, −0.069]. <strong>Cohen's d = −0.21, 95% CI [−0.28, −0.15].</strong> The preference for the new pair is about one third of the preference for the original pair. An equivalence test at ±0.2 d fails (TOST p = .63).</p>
+<p><img alt="Mean imppref by rated pair, 95% CIs" src="fig1.png" /></p>
+<p><strong>Checks.</strong> The Student t-test gives t(3595) = −6.30, p &lt; .001, and the Mann–Whitney test gives p &lt; .001. Both agree with the primary test. The new-pair preference is above zero, so some transfer does occur, but less than the full amount. On the companion self-report measure the gap is much larger: means 0.19 vs 1.09, Welch t = −22.8, p &lt; .001.</p>
+<p>The two groups are not balanced. The raw data have 2,208 original-pair and 1,946 new-pair rows, and the exclusions removed more new-pair raters (15.8% vs 11.3%). After exclusions the split differs from 50/50 (binomial p &lt; .001). I cannot check from these data whether this affects the result. The difference is large and stable across tests, so the imbalance seems unlikely to reverse it.</p>
+<p><strong>Conclusion.</strong> The claim does not hold on this data: immediately after learning, the response-speed preference for the new group members is reliably smaller than the preference for the original individuals (d = −0.21), not equal to it.</p></body>

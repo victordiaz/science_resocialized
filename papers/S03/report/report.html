@@ -1,0 +1,46 @@
+<!doctype html><meta charset='utf-8'><style>
+body{font-family:Georgia,'Times New Roman',serif;font-size:11.5pt;line-height:1.45;max-width:17cm;margin:1.8cm auto;color:#111}
+h1{font-size:19pt;margin:0 0 .4em} h2{font-size:13.5pt;margin:1.2em 0 .3em} h3{font-size:12pt;margin:1em 0 .2em}
+table{border-collapse:collapse;font-size:10pt;margin:.6em 0} th,td{border:1px solid #999;padding:3px 7px;text-align:left}
+code,pre{font-family:Menlo,Consolas,monospace;font-size:9.5pt} pre{background:#f4f4f4;padding:8px;overflow-x:auto;white-space:pre-wrap}
+img{max-width:100%} p{margin:.5em 0}
+</style><body><h1>S03: Does listing only reasons in favour of one's advice reduce mixed feelings about an unrelated issue?</h1>
+<p><strong>Question.</strong> Do people who list only reasons in favour of a piece of advice they have chosen (condition 1) report less mixed feelings about an unrelated social issue (making the convicted sex-offender list public) than people who list reasons for and against (condition 2), with a neutral control (condition 0)? The key test, fixed in advance, is the omnibus difference among the three conditions; the claim holds if that test is significant at p &lt; .05 with condition 1 below condition 2.</p>
+<p><strong>Data and sample.</strong> Replication analysis file <code>d05.txt</code>: 89 college students. 19 were excluded under the pre-specified rule (reported experience with sexual offenders or the offender list; <code>Include</code> = 0, which matches <code>SexOffender</code> = "Yes" exactly). No other exclusions. <strong>n = 70</strong> (neutral 24, favour-only 23, for-and-against 23). One participant answered two of the three items and was scored on those two.</p>
+<p><strong>Measure.</strong> Mixed-feelings index = mean of StrongMixed, -NotTorn and (Indecisive - 4), range -3..3, higher = more mixed feelings. Cronbach's alpha = .76.</p>
+<p><strong>Test.</strong> One-way between-subjects ANOVA of the index on Condition; eta^2 = SS_condition / (SS_condition + SS_error), 95% CI by noncentral-F inversion.</p>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>n</th>
+<th>Mean</th>
+<th>SD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0 neutral</td>
+<td>24</td>
+<td>-0.38</td>
+<td>1.44</td>
+</tr>
+<tr>
+<td>1 reasons in favour only</td>
+<td>23</td>
+<td>-0.14</td>
+<td>1.66</td>
+</tr>
+<tr>
+<td>2 reasons for and against</td>
+<td>23</td>
+<td>0.39</td>
+<td>1.25</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Result.</strong> <strong>F(2, 67) = 1.70, p = .191, eta^2 = .048, 95% CI [.000, .158].</strong> The means are ordered 0 &lt; 1 &lt; 2, so condition 1 is lower than condition 2 as predicted, but the differences are small relative to the spread and the omnibus test is not significant.</p>
+<p><img alt="Index by condition: points are participants, black dots are means with 95% CIs" src="fig1.png" /></p>
+<p><strong>Checks (not decisive).</strong> Assumptions looked acceptable (Levene p = .46; Shapiro-Wilk on residuals p = .31). Welch ANOVA F(2, 44.1) = 2.01, p = .147; Kruskal-Wallis H(2) = 3.38, p = .185. Condition 1 vs 2: t(44) = -1.24, p = .222, Cohen's d = 0.37, mean difference -0.54, 95% CI [-1.41, 0.34]. Tukey: 0 vs 2 p = .177, 0 vs 1 p = .851. The second file (<code>d06.tsv</code>, 97 rows, filtered to <code>SexOffender</code> = "No", n = 68) gives F(2, 65) = 1.91, p = .156, with the same ordering of means.</p>
+<p><strong>Limitations.</strong> About 23 per group gives low power for a medium effect (power for the 1-vs-2 contrast at the observed d was about .23), so the CI for eta^2 runs up to .16. A non-significant result here does not show that there is no effect. It shows that this sample does not detect one.</p>
+<p><strong>Conclusion.</strong> The claim does not hold on this data: the three conditions do not differ significantly in mixed feelings (F(2, 67) = 1.70, p = .19). Condition 1 is lower than condition 2, the predicted direction, but not reliably so.</p></body>

@@ -1,0 +1,49 @@
+<!doctype html><meta charset='utf-8'><style>
+body{font-family:Georgia,'Times New Roman',serif;font-size:11.5pt;line-height:1.45;max-width:17cm;margin:1.8cm auto;color:#111}
+h1{font-size:19pt;margin:0 0 .4em} h2{font-size:13.5pt;margin:1.2em 0 .3em} h3{font-size:12pt;margin:1em 0 .2em}
+table{border-collapse:collapse;font-size:10pt;margin:.6em 0} th,td{border:1px solid #999;padding:3px 7px;text-align:left}
+code,pre{font-family:Menlo,Consolas,monospace;font-size:9.5pt} pre{background:#f4f4f4;padding:8px;overflow-x:auto;white-space:pre-wrap}
+img{max-width:100%} p{margin:.5em 0}
+</style><body><h1>S08 — Do "more practice would have helped" statements lower later math accuracy?</h1>
+<p><strong>Question.</strong> After failure feedback on a math test, do people who read statements that more practice would have improved performance answer a <em>smaller proportion</em> of attempted items correctly on a surprise second math test than people who read only neutral statements? (Directional: control &gt; more-practice.)</p>
+<p><strong>Data and sample.</strong> One file from the independent replication (<code>d02.csv</code>, 61 rows). Condition 1 = more-practice statements (n = 32), condition 2 = control (n = 29). No exclusions were planned and none were needed: no missing values, no participant with zero items attempted, no case with more correct than attempted. <strong>N = 61.</strong> Two participant ids (1 and 55) are reused across 9 rows, but those rows have different session dates, times and scores, so I treated them as separate people (consistent with the stated N of 61).</p>
+<p><strong>Measure.</strong> Proportion correct on the second exam = Correct / Attempted, computed per participant (matches the file's <code>percent</code> column to 1e-9).</p>
+<p><strong>Primary test (fixed before analysis).</strong> Independent-samples Student t-test, equal variances, one-tailed, H1: control mean &gt; more-practice mean. Criterion: claim holds if one-tailed p &lt; .05 in the predicted direction.</p>
+<h2>Result</h2>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th>n</th>
+<th>Attempted M (SD)</th>
+<th>Correct M (SD)</th>
+<th>Proportion correct M (SD)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>More-practice statements</td>
+<td>32</td>
+<td>11.13 (6.28)</td>
+<td>4.91 (2.67)</td>
+<td>0.466 (0.169)</td>
+</tr>
+<tr>
+<td>Control</td>
+<td>29</td>
+<td>10.34 (5.10)</td>
+<td>6.07 (3.47)</td>
+<td>0.584 (0.224)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>t(59) = 2.33, one-tailed p = .012</strong> (two-tailed p = .024).</li>
+<li>Mean difference (control − practice) = 0.117, 95% CI [0.016, 0.218].</li>
+<li><strong>Cohen's d = 0.60, 95% CI [0.08, 1.11]</strong> (noncentral-t interval).</li>
+</ul>
+<p><strong>Robustness (not primary).</strong> Welch t = 2.29, one-tailed p = .013; Mann–Whitney U = 605.5, one-tailed p = .021. Normality is not rejected in either group (Shapiro p = .64, .24); Levene p = .09. Exploratory counts: items attempted did not differ (10.34 vs 11.13, t(59) = −0.53, p = .60); items correct were lower in the practice group, but not significantly (6.07 vs 4.91, t(59) = 1.47, two-tailed p = .15). The difference therefore lies in accuracy, not in how many items people tried.</p>
+<p><strong>Caveats.</strong> The sample is small, so the effect estimate is imprecise: the interval for d runs from near zero (0.08) to large (1.11). The test is one-tailed, as specified; the two-tailed p (.024) would also be below .05.</p>
+<h2>Conclusion</h2>
+<p><strong>The claim holds on this data:</strong> participants who read more-practice statements answered a smaller proportion of attempted items correctly than controls (t(59) = 2.33, one-tailed p = .012, d = 0.60 [0.08, 1.11]).</p>
+<p><em>Script: <code>analysis.py</code>; output: <code>analysis.out</code>; log: <code>log.md</code>.</em></p></body>

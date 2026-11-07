@@ -6,8 +6,13 @@
  },
  "Data/YapMu.xlsx": {
   "neutral": "d02.xlsx",
-  "give": true,
+  "give": false,
   "bytes": 1871217
+ },
+ "Data/YapMu_sanitized.csv": {
+  "neutral": "d07.csv",
+  "give": true,
+  "bytes": 1157781
  },
  "Data/YapPrimaryAnalysis.spv": {
   "neutral": "d03.spv",

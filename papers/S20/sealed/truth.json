@@ -20,10 +20,10 @@
    "es": "MSE = 9,999 (an error term, not an effect size)"
   },
   "r_script": {
-   "ran": false,
-   "stat": null,
-   "p": null,
-   "es": null,
+   "ran": true,
+   "stat": "F(1,48) = 4.224366",
+   "p": "0.04531021",
+   "es": "partial eta^2 = 0.08088879",
    "stdout_file": "audit.out"
   },
   "python": {
@@ -33,7 +33,7 @@
    "es": "partial eta^2 = 0.0809; MSE = 9999.2",
    "file": "reproduce.py"
   },
-  "agreement": "pending",
+  "agreement": "all three agree: table F(1,48)=4.22 p=.045 (MSE=9,999); R F=4.2244 p=0.04531 pes=0.0809; Python F=4.2244 p=0.045310 pes=0.0809, MSE=9999.2 (matches the table's MSE)",
   "verdict": "reproduced",
   "n_after_exclusions": 49
  },

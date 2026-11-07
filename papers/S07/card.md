@@ -12,10 +12,10 @@
 
 <!-- files:start -->
 **Data files given.** The raw data you receive, under neutral names:
-- `d04.zip` (zip archive, 2.5 MB)
-- `d05.xlsx` (Excel, 49 KB)
 - `d08.dta` (Stata, 74.8 MB)
 - `d09.dta` (Stata, 3 KB)
 - `d10.dta` (Stata, 8 KB)
 - `d11.dta` (Stata, 279 KB)
+- `d14.dta` (Stata, 9 KB)
+- `d15.dta` (Stata, 1.2 MB)
 <!-- files:end -->

@@ -1,0 +1,51 @@
+<!doctype html><meta charset='utf-8'><style>
+body{font-family:Georgia,'Times New Roman',serif;font-size:11.5pt;line-height:1.45;max-width:17cm;margin:1.8cm auto;color:#111}
+h1{font-size:19pt;margin:0 0 .4em} h2{font-size:13.5pt;margin:1.2em 0 .3em} h3{font-size:12pt;margin:1em 0 .2em}
+table{border-collapse:collapse;font-size:10pt;margin:.6em 0} th,td{border:1px solid #999;padding:3px 7px;text-align:left}
+code,pre{font-family:Menlo,Consolas,monospace;font-size:9.5pt} pre{background:#f4f4f4;padding:8px;overflow-x:auto;white-space:pre-wrap}
+img{max-width:100%} p{margin:.5em 0}
+</style><body><h1>S06: Is the control advantage of high-internal/low-external participants specific to race?</h1>
+<p><strong>Question.</strong> Among people high in internal motivation to respond without prejudice, do those low in external motivation (HI/LE) show better response control than those high in it (HI/HE) specifically on the race-primed gun/tool task (Weapons) rather than on a race-neutral flanker task? Tested as the Group × Task interaction on the process-dissociation (PD) control estimate.</p>
+<p><strong>Data and sample.</strong> Replication's derived PD file (<code>d11.csv</code>): three rows per participant (Weapons-Black, Weapons-White, Flankers). N = 75 (46 HI/LE, 29 HI/HE), 225 rows, no missing values. <strong>No exclusions</strong> (as pre-specified on the card); 0 participants removed.</p>
+<p><strong>Pre-specified primary test.</strong> <code>aov(PD ~ Group * Task + Error(ID/Task))</code> in R, both Weapons rows kept; Group × Task F from the ID:Task stratum; partial η² = SS_int / (SS_int + SS_res). Criterion for "holds": p &lt; .05 with the group advantage (HI/LE − HI/HE) larger on Weapons than on Flankers.</p>
+<p><strong>Descriptives (mean PD, SD).</strong></p>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th>Weapons-Black</th>
+<th>Weapons-White</th>
+<th>Weapons (mean)</th>
+<th>Flankers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HI/LE (n = 46)</td>
+<td>.743 (.180)</td>
+<td>.717 (.190)</td>
+<td>.730</td>
+<td>.703 (.182)</td>
+</tr>
+<tr>
+<td>HI/HE (n = 29)</td>
+<td>.702 (.214)</td>
+<td>.644 (.232)</td>
+<td>.673</td>
+<td>.675 (.148)</td>
+</tr>
+<tr>
+<td>Difference</td>
+<td>.040</td>
+<td>.073</td>
+<td>.057</td>
+<td>.028</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Result.</strong> Group × Task: <strong>F(1, 73) = 0.43, p = .513, partial η² = .006 (90% CI [.000, .065]; 95% CI [.000, .083])</strong>. The direction is as predicted (group difference .057 on Weapons vs .028 on Flankers; interaction contrast .029, 95% CI [−.059, .118] on the PD scale), but it is small and far from significant. Neither simple group effect is significant (Weapons: Welch t(51.3) = 1.18, p = .244; Flankers: t(68.4) = 0.72, p = .476), nor is the Group main effect (F(1, 73) = 1.45, p = .232).</p>
+<p><img alt="Mean PD control by group and task (error bars ±1 SE)" src="fig1.png" /></p>
+<p><strong>Checks.</strong> The 2 × 2 mixed ANOVA on the per-participant Weapons mean gives the identical interaction (F(1, 73) = 0.43, p = .513), as does the pingouin cross-check in Python; a Wilcoxon test on the Weapons−Flankers difference score gives p = .476. On the Weapons task, the HI/LE advantage was, if anything, larger on White-face trials (.073) than on Black-face trials (.040), which does not fit a race-bias-specific account.</p>
+<p><strong>Limitations.</strong> Unequal and modest groups (46/29); with this N the 95% CI on partial η² still includes effects up to about .08, so a small-to-moderate interaction cannot be ruled out.</p>
+<p><strong>Conclusion.</strong> The claim does not hold on this data: the HI/LE control advantage is not detectably larger on the race-primed gun/tool task than on the race-neutral task (F(1, 73) = 0.43, p = .51, partial η² = .006).</p>
+<p><em>Files:</em> <code>analysis.py</code> (runs <code>analysis.R</code>), <code>analysis.out</code>, <code>log.md</code>.</p></body>

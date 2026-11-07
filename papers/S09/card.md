@@ -14,6 +14,5 @@
 
 <!-- files:start -->
 **Data files given.** The raw data you receive, under neutral names:
-- `d01.zip` (zip archive, 7.0 MB)
 - `d09.sav` (SPSS, 25 KB)
 <!-- files:end -->

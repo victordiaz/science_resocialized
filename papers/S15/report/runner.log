@@ -1,0 +1,7 @@
+[17:01:13] building sandbox /Users/vladnicolescu/Developer/science-resocialized-target/env/runs/S15
+[17:01:13] sandbox ok: 6 data files under neutral names; seal checked
+[17:01:13] attached mode: waiting for the report to appear in the sandbox
+[17:01:50] report/ now has: log.md
+[17:02:29] report/ now has: analysis.py, analysis.out, log.md
+[17:03:05] report/ now has: analysis.out
+[17:03:20] report/ now has: analysis.py, analysis.out

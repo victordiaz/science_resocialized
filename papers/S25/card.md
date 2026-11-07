@@ -12,8 +12,6 @@
 
 <!-- files:start -->
 **Data files given.** The raw data you receive, under neutral names:
-- `d03.zip` (zip archive, 90 KB)
-- `d04.zip` (zip archive, 94 KB)
 - `d06.txt` (text, 15 KB)
 - `d07.txt` (text, 15 KB)
 - `d08.txt` (text, 15 KB)
@@ -29,4 +27,6 @@
 - `d18.txt` (text, 15 KB)
 - `d19.txt` (text, 15 KB)
 - `d20.txt` (text, 15 KB)
+- `d21.txt` (text, 16 KB)
+- `d22.txt` (text, 15 KB)
 <!-- files:end -->

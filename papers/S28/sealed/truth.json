@@ -24,7 +24,8 @@
    "stat": null,
    "p": null,
    "es": null,
-   "stdout_file": "audit.out"
+   "stdout_file": "audit.out",
+   "why": "package missing: car (library('car') fails; the script needs car::Anova). Not installed by me, per instructions."
   },
   "python": {
    "ran": true,
@@ -33,7 +34,7 @@
    "es": "partial eta^2 = 0.0259",
    "file": "reproduce.py"
   },
-  "agreement": "pending",
+  "agreement": "table and Python agree: table F(2,65)=0.865 p=.426 pes=.0259; Python F(2,65)=0.8653 p=0.4257 pes=0.0259 (type II and type III identical for the interaction). R not run (car missing).",
   "verdict": "reproduced",
   "n_after_exclusions": 71
  },

@@ -14,9 +14,39 @@
   "give": false,
   "bytes": 83472
  },
+ "CSV Raw Data_extracted/SDP_ER_All Notations.csv": {
+  "neutral": "d31.csv",
+  "give": true,
+  "bytes": 723
+ },
+ "CSV Raw Data_extracted/SDP_ER_Different Notation only.csv": {
+  "neutral": "d32.csv",
+  "give": true,
+  "bytes": 1018
+ },
+ "CSV Raw Data_extracted/SDP_RTs_All Notations.csv": {
+  "neutral": "d33.csv",
+  "give": true,
+  "bytes": 3454
+ },
+ "CSV Raw Data_extracted/SDP_RTs_Different Notation only.csv": {
+  "neutral": "d34.csv",
+  "give": true,
+  "bytes": 1353
+ },
+ "CSV Raw Data_extracted/SDV_ER.csv": {
+  "neutral": "d35.csv",
+  "give": true,
+  "bytes": 2205
+ },
+ "CSV Raw Data_extracted/SDV_RTs.csv": {
+  "neutral": "d36.csv",
+  "give": true,
+  "bytes": 3610
+ },
  "Data/CSV Raw Data.zip": {
   "neutral": "d04.zip",
-  "give": true,
+  "give": false,
   "bytes": 12398
  },
  "Data/Codes.docx": {
@@ -46,7 +76,7 @@
  },
  "Data/Raw Data.zip": {
   "neutral": "d10.zip",
-  "give": true,
+  "give": false,
   "bytes": 7421
  },
  "Data/Results.pdf": {

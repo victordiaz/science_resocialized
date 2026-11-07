@@ -1,10 +1,6 @@
 {
  "study": "S04",
  "files": {
-  "d02.zip": {
-   "bytes": 25665,
-   "sha256": "c1762764e473e7e0474c8f207949ee2cf3aeb5470f33d59aec42c3f99eb269ab"
-  },
   "d04.mat": {
    "bytes": 1524,
    "sha256": "eef06f1385014902c73796f4a8386d02066a60f05e41920a0c38254f2a1f4fa5"

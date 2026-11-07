@@ -20,10 +20,10 @@
    "es": "d = .424"
   },
   "r_script": {
-   "ran": false,
-   "stat": null,
-   "p": null,
-   "es": null,
+   "ran": true,
+   "stat": "t(31) = 2.3977",
+   "p": "0.02270886",
+   "es": "d = 0.42 (compute.es::des on t/sqrt(n))",
    "stdout_file": "audit.out"
   },
   "python": {

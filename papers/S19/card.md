@@ -14,15 +14,19 @@
 
 <!-- files:start -->
 **Data files given.** The raw data you receive, under neutral names:
-- `d04.zip` (zip archive, 12 KB)
 - `d06.csv` (CSV, 302 KB): 8448 rows 13 columns Trial level: participant, Notation (1-3), Distance (0/1/2), RT, Distraction, correct, filter_$. filter_$==1 for 3921 trials, matching the script's filter.
 - `d07.csv` (CSV, 0 KB): 31 rows 2 columns Participant 24 absent (dropped per d05.docx)
 - `d09.csv` (CSV, 300 KB)
-- `d10.zip` (zip archive, 7 KB)
 - `d25.sav` (SPSS, 1 KB)
 - `d26.sav` (SPSS, 3 KB)
 - `d27.sav` (SPSS, 3 KB)
 - `d28.sav` (SPSS, 2 KB)
 - `d29.sav` (SPSS, 7 KB)
 - `d30.sav` (SPSS, 7 KB)
+- `d31.csv` (CSV, 1 KB)
+- `d32.csv` (CSV, 1 KB)
+- `d33.csv` (CSV, 3 KB)
+- `d34.csv` (CSV, 1 KB)
+- `d35.csv` (CSV, 2 KB)
+- `d36.csv` (CSV, 4 KB)
 <!-- files:end -->

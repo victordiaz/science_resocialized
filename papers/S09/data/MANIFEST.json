@@ -1,10 +1,6 @@
 {
  "study": "S09",
  "files": {
-  "d01.zip": {
-   "bytes": 7032873,
-   "sha256": "ee35990e60daff2eaf5d24789bccf4b124856122e327889dfd08b432f78b005f"
-  },
   "d09.sav": {
    "bytes": 25137,
    "sha256": "a107825b7f94ad6380fd2ae25fc98f8a42ce1746efa83f15f323139fd23e2109"

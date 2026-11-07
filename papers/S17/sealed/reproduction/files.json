@@ -16,8 +16,13 @@
  },
  "Data/LoBue & DeLoach Replication Raw data.xls": {
   "neutral": "d04.xls",
-  "give": true,
+  "give": false,
   "bytes": 70144
+ },
+ "Data/LoBue & DeLoach Replication Raw data_sanitized.csv": {
+  "neutral": "d08.csv",
+  "give": true,
+  "bytes": 18091
  },
  "Data/LoBue & DeLoache Replication Final File Ready for Analysis.sav": {
   "neutral": "d05.sav",

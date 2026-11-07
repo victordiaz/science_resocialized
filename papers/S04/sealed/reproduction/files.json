@@ -6,7 +6,7 @@
  },
  "Data/data.zip": {
   "neutral": "d02.zip",
-  "give": true,
+  "give": false,
   "bytes": 25665
  },
  "Data/unz/analysis.m": {

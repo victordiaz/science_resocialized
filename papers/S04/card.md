@@ -12,7 +12,6 @@
 
 <!-- files:start -->
 **Data files given.** The raw data you receive, under neutral names:
-- `d02.zip` (zip archive, 26 KB): 15 rows 8 columns 15 subjectNN.mat (struct data: correct, response, order_within_trial, triplet_type, trial_order, params, timestamp, Ntrials; 32 trials each) plus d03.m
 - `d04.mat` (MATLAB, 2 KB)
 - `d05.mat` (MATLAB, 2 KB)
 - `d06.mat` (MATLAB, 2 KB)

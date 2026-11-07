@@ -16,12 +16,27 @@
  },
  "emav8__data_cleaned.zip": {
   "neutral": "d04.zip",
-  "give": true,
+  "give": false,
   "bytes": 2499309
+ },
+ "emav8__data_cleaned_extracted/DopertData.dta": {
+  "neutral": "d13.dta",
+  "give": false,
+  "bytes": 2218782
+ },
+ "emav8__data_cleaned_extracted/DopertData_sanitized.dta": {
+  "neutral": "d15.dta",
+  "give": true,
+  "bytes": 1249855
+ },
+ "emav8__data_cleaned_extracted/FishingExpInitialPars.dta": {
+  "neutral": "d14.dta",
+  "give": true,
+  "bytes": 9010
  },
  "emav8__test_of_correlation_replication_pleskac_2008.xlsx": {
   "neutral": "d05.xlsx",
-  "give": true,
+  "give": false,
   "bytes": 49301
  },
  "emav8__variable_key.rtf": {

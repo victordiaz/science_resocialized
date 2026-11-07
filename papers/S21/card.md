@@ -12,5 +12,5 @@
 
 <!-- files:start -->
 **Data files given.** The raw data you receive, under neutral names:
-- `d02.xlsx` (Excel, 1.9 MB): 71 rows 4 columns Sheet3 (first in workbook, the one the script reads): per-participant mean RT for Highfrequencyclear, Lowfrequencyclear, Highfrequencydegraded, Lowfrequencydegraded; no NA. Other sheets: Sheet1 trial-level (11,816 rows, 71 subjects), Sheet2 trial-level with procedure names (22,481 rows), Sheet4 an instruction-file text, Sheet5 a long-form copy.
+- `d07.csv` (CSV, 1.2 MB)
 <!-- files:end -->

@@ -43,5 +43,11 @@
   "title": "Decision making and learning while taking sequential risks.",
   "authors": "TJ Pleskac",
   "journal": "JEPLMC"
+ },
+ "researcher_exposed": {
+  "study": "S07",
+  "run": "first target-side run, 2026-11-07 evening",
+  "what": "a worked spreadsheet holding the original paper's correlations and the replication's results sat in data/ (d05.xlsx); the researcher saw values while inspecting files, disclosed it in log.md and used nothing from it",
+  "action": "file withheld; study to be re-run; first run kept on record as exposed"
  }
 }

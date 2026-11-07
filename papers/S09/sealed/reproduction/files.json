@@ -1,7 +1,7 @@
 {
  "4qmsg__Attentional Blink data.zip": {
   "neutral": "d01.zip",
-  "give": true,
+  "give": false,
   "bytes": 7032873
  },
  "4qmsg__Colzato et al replication description of attentional blink analysis.txt": {

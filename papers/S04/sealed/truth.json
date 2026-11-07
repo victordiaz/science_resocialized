@@ -42,5 +42,11 @@
   "title": "Multidimensional visual statistical learning.",
   "authors": "NB Turk-Browne, PJ Isola, BJ Scholl, TA Treat",
   "journal": "JEPLMC"
+ },
+ "researcher_exposed": {
+  "study": "S04",
+  "run": "first target-side run, 2026-11-07 evening",
+  "what": "the data zip held the replicators' MATLAB analysis script (analysis.m); the researcher ran its second test as a check only; no result was in it",
+  "action": "zip withheld (the .mat files are given beside it); study to be re-run; first run kept on record as exposed to code"
  }
 }
