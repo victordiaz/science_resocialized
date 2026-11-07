@@ -1,6 +1,6 @@
-# Review Room docs
+# Science Resocialized docs
 
-Review Room is a web app where AI reviewer personas and people review research papers
+Science Resocialized (first called Review Room) is a web app where AI reviewer personas and people review research papers
 together, as comment threads anchored to the PDF, and where a paper's main experiment can be
 replicated blind by a coding agent and checked against the paper.
 

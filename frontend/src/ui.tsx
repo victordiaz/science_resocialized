@@ -148,3 +148,19 @@ export const Icon = {
     </svg>
   ),
 };
+
+/** Brand animations in public/brand/animated; each stops itself under reduced motion. */
+export type LoaderKind = "gather" | "thinking" | "signals" | "orbit" | "reply" | "verified" | "waiting";
+
+export function Loader({ kind = "thinking", size = 20, label }: { kind?: LoaderKind; size?: number; label?: string }) {
+  return (
+    <img
+      className="loader"
+      src={`/brand/animated/${kind}.svg`}
+      width={size}
+      height={size}
+      alt={label ?? ""}
+      aria-hidden={label ? undefined : true}
+    />
+  );
+}

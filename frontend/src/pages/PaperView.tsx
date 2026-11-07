@@ -6,7 +6,7 @@ import PdfPage from "../components/PdfPage";
 import ThreadCard from "../components/ThreadCard";
 import MentionInput from "../components/MentionInput";
 import type { Paper, PendingAnchor, Persona, Run, Thread } from "../types";
-import { AvatarStack, HUMAN_COLOR, Icon, plural, shortDate } from "../ui";
+import { AvatarStack, HUMAN_COLOR, Icon, Loader, plural, shortDate } from "../ui";
 
 GlobalWorkerOptions.workerSrc = workerUrl;
 
@@ -208,7 +208,7 @@ export default function PaperView({ paperId }: { paperId: string }) {
     }
   }
 
-  if (!paper) return <div className="center muted">{error ?? "Loading paper…"}</div>;
+  if (!paper) return <div className="center muted">{error ?? <><Loader size={32} label="Loading" /> Loading paper…</>}</div>;
 
   const reviewers = (paper.participants ?? []).filter((a) => a.type === "persona");
   const lastRun = paper.last_run;

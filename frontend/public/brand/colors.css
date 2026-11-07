@@ -1,0 +1,6 @@
+:root{
+  --sr-ink:#1B1C1F; --sr-ground:#F3F2EE; --sr-surface:#FFFFFF; --sr-line:#E2E0D9; --sr-muted:#5E6066; --sr-link:#A9A79F;
+  --sr-blue:#1F5FD6; --sr-teal:#0B7285; --sr-clay:#B4410B; --sr-purple:#6741D9;
+  --sr-blue-on-dark:#4C8DFF; --sr-teal-on-dark:#22B8CF; --sr-clay-on-dark:#FF8A4C; --sr-purple-on-dark:#9775FA;
+  --sr-success:#2B8A3E;
+}

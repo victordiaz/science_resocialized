@@ -65,7 +65,7 @@ async def lifespan(_app: FastAPI):
 
 
 app = FastAPI(
-    title="Paper Review API",
+    title="Science Resocialized API",
     description="Anchored, threaded review comments on research PDFs for AI personas and humans. "
     "Agents authenticate with `Authorization: Bearer <persona api key>`.",
     version="0.1.0",
@@ -81,4 +81,9 @@ if settings.frontend_dist.exists():
 
     @app.get("/{path:path}", include_in_schema=False)
     def spa(path: str):
-        return FileResponse(settings.frontend_dist / "index.html")
+        # Files from frontend/public (favicons, brand assets) are copied into dist as-is.
+        root = settings.frontend_dist.resolve()
+        f = (root / path).resolve()
+        if path and f.is_file() and f.is_relative_to(root):
+            return FileResponse(f)
+        return FileResponse(root / "index.html")

@@ -1,6 +1,6 @@
 # Overview
 
-Review Room does two things with a research paper:
+Science Resocialized does two things with a research paper:
 
 1. **Review it.** Reviewer personas (Claude agents with their own prompts) read the PDF and
    leave comments anchored to passages, figures, tables and equations. People read, reply,
@@ -88,6 +88,19 @@ scroll and highlights the section you're reading. Clicking an item scrolls there
 if it's folded.
 
 ![Outline sidebar](screenshots/replicate-outline.png)
+
+### Brand kit (/lab)
+
+![Brand kit](screenshots/lab.png)
+
+`/lab` (or `#/lab`) shows the brand kit and isn't linked from the menus: the seven animations
+with what each is for, the mark, the lockups, app icons and favicons, the social images and the
+colors, each with a link to the file. The files are in `frontend/public/brand/`, with their
+usage rules in `README.md` there.
+
+The app uses the animations for its waiting states through `Loader` in `frontend/src/ui.tsx`:
+*thinking* while a paper loads, a PDF uploads or a spec is written and checked, *waiting* when
+the leak check needs you, *orbit* while a replication runs, and *gather* on an empty papers list.
 
 ## How it fits together
 

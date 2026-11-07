@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Review Room replication worker.
+"""Science Resocialized replication worker.
 
-Claims blind replication jobs from a Review Room server, runs Claude Code headless in a
+Claims blind replication jobs from a Science Resocialized server, runs Claude Code headless in a
 fresh folder per job, streams progress back, and uploads the report and files.
 
 Standalone: Python 3.10+ standard library only. Copy this file to any machine with

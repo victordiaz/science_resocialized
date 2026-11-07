@@ -1,4 +1,6 @@
-# Review Room
+# Science Resocialized
+
+![Science Resocialized](frontend/public/brand/lockup/lockup-horizontal.svg)
 
 A web app where AI reviewer personas and humans review research papers together, as comment threads anchored to regions of the PDF.
 

@@ -1,0 +1,36 @@
+.sr-ga .dot{animation:sr-ga-dot 3.6s cubic-bezier(.2,.8,.2,1) infinite}
+@keyframes sr-ga-dot{0%{transform:translate(var(--dx),var(--dy));opacity:0}22%{transform:none;opacity:1}86%{transform:none;opacity:1}100%{transform:none;opacity:0}}
+.sr-ga .link{stroke-dasharray:1;stroke-dashoffset:1;animation:sr-ga-link 3.6s ease infinite}
+@keyframes sr-ga-link{0%,18%{stroke-dashoffset:1;opacity:1}40%,86%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+.sr-ga .page{transform-box:fill-box;transform-origin:center;animation:sr-ga-page 3.6s ease infinite}
+@keyframes sr-ga-page{0%,34%{transform:scale(0);opacity:1}48%{transform:scale(1.15);opacity:1}56%,86%{transform:scale(1);opacity:1}100%{transform:scale(1);opacity:0}}
+.sr-th .dot{transform-box:fill-box;transform-origin:center;animation:sr-th 1.4s ease-in-out infinite}
+.sr-th .dot:nth-of-type(2){animation-delay:.18s}.sr-th .dot:nth-of-type(3){animation-delay:.36s}.sr-th .dot:nth-of-type(4){animation-delay:.54s}
+@keyframes sr-th{0%,60%,100%{transform:scale(1)}30%{transform:scale(1.5)}}
+.sr-sig .spark{animation:sr-sig 2s ease-in infinite;opacity:0}
+@keyframes sr-sig{0%{transform:none;opacity:0}15%{opacity:1}85%{opacity:1}100%{transform:translate(var(--dx),var(--dy));opacity:0}}
+.sr-sig .page{transform-box:fill-box;transform-origin:center;animation:sr-pp .5s ease-out infinite}
+@keyframes sr-pp{0%{transform:scale(1.08)}45%,100%{transform:scale(1)}}
+.sr-or .orbit{transform-origin:24px 25.5px;animation:sr-or 16s linear infinite}
+@keyframes sr-or{to{transform:rotate(360deg)}}
+.sr-ping .ring{transform-box:fill-box;transform-origin:center;animation:sr-ping 1.8s ease-out infinite}
+@keyframes sr-ping{0%{transform:scale(1);opacity:.9}100%{transform:scale(2.8);opacity:0}}
+.sr-ping .hot{animation:sr-hot 1.8s ease-out infinite}
+@keyframes sr-hot{0%{stroke:#1F5FD6}70%,100%{stroke:#A9A79F}}
+.sr-ok .link{stroke-dasharray:1;stroke-dashoffset:1;animation:sr-ok-link 3s ease infinite}
+.sr-ok .link:nth-of-type(2){animation-delay:.12s}.sr-ok .link:nth-of-type(3){animation-delay:.24s}.sr-ok .link:nth-of-type(4){animation-delay:.36s}
+@keyframes sr-ok-link{0%{stroke-dashoffset:1}25%,100%{stroke-dashoffset:0}}
+.sr-ok .page{animation:sr-ok-page 3s ease infinite}
+@keyframes sr-ok-page{0%,35%{fill:#1B1C1F}45%,100%{fill:#2B8A3E}}
+.sr-ok .check{stroke-dasharray:1;stroke-dashoffset:1;animation:sr-ok-check 3s ease infinite}
+@keyframes sr-ok-check{0%,42%{stroke-dashoffset:1}58%,100%{stroke-dashoffset:0}}
+.sr-wait .dim{opacity:.3}
+.sr-wait .blink{animation:sr-blink 1.2s ease-in-out infinite}
+@keyframes sr-blink{0%,100%{opacity:1}50%{opacity:.25}}
+.sr-wait .dash{stroke-dasharray:.08 .08;animation:sr-dash 1s linear infinite}
+@keyframes sr-dash{to{stroke-dashoffset:-.16}}
+@media (prefers-reduced-motion: reduce){
+[class^="sr-"] *{animation:none!important}
+.sr-ga .link,.sr-ok .link,.sr-ok .check{stroke-dashoffset:0}
+.sr-sig .spark,.sr-ping .ring{opacity:0}
+}

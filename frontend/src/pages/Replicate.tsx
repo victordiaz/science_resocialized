@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Markdown from "../components/Markdown";
 import { api } from "../api";
 import type { Attachment, Experiment, Paper, Persona, Replication, ReplicationEvent, Verification } from "../types";
-import { Avatar, Icon, clock, shortDate } from "../ui";
+import { Avatar, Icon, Loader, clock, shortDate } from "../ui";
 
 type Tone = "live" | "idle" | "bad" | "good" | "warn";
 
@@ -363,6 +363,7 @@ function ReplicationBlock({ rep, n, latest, personas, tick, onChanged }: { rep: 
     <details id={`run-${rep.id}`} className={`run-block${active ? " active" : ""}`} open={latest} data-outline>
       <summary className="run-summary">
         <span className="strong">Run {n}</span>
+        {rep.status === "running" && !rep.cancel_requested && <Loader kind="orbit" size={20} label="Replicating" />}
         <Pill label={rep.cancel_requested && active ? "Stopping" : label} tone={tone} />
         <span className="muted small">{meta}</span>
       </summary>
@@ -451,10 +452,10 @@ function ExperimentCard({ exp, personas, ticks, onChanged }: { exp: Experiment; 
   }
 
   const specStatus =
-    exp.status === "extracting" ? "Reading the paper and writing the spec…"
-    : exp.status === "checking" ? "Checking the spec gives nothing away…"
+    exp.status === "extracting" ? <><Loader size={16} /> Reading the paper and writing the spec…</>
+    : exp.status === "checking" ? <><Loader size={16} /> Checking the spec gives nothing away…</>
     : exp.status === "failed" ? "Extraction failed"
-    : exp.status === "needs_review" ? <span className="warn-text">The leak check flagged it; review before replicating</span>
+    : exp.status === "needs_review" ? <span className="warn-text"><Loader kind="waiting" size={16} /> The leak check flagged it; review before replicating</span>
     : exp.leak_found === false ? "Written and checked: no leaks"
     : "Edited by hand";
   const specTone: Tone = busy ? "live" : exp.status === "failed" ? "bad" : exp.status === "needs_review" ? "warn" : "idle";

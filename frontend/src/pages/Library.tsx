@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { api } from "../api";
 import type { Paper } from "../types";
-import { Avatar, Icon, shortDate } from "../ui";
+import { Avatar, Icon, Loader, shortDate } from "../ui";
 
 /** "Row.116 — Does averaging…" → source tag "Row.116" + the real title. */
 function splitSource(title: string): { source: string | null; title: string } {
@@ -227,7 +227,7 @@ export default function Library() {
       <ul className="pl-list" aria-label="Papers">
         {uploading && (
           <li className="pl-row">
-            <span className="cover-lg cover-uploading" aria-hidden>{Icon.upload}</span>
+            <span className="cover-lg cover-uploading" aria-hidden><Loader size={32} /></span>
             <div className="pl-upload">
               <div className="pl-upload-head">
                 <span className="strong-ish">{uploading}</span>
@@ -238,7 +238,7 @@ export default function Library() {
           </li>
         )}
         {papers && shown.length === 0 && !uploading && (
-          <li className="pl-empty">{all.length === 0 ? "No papers yet. Upload a PDF, or drop one anywhere on this page." : "No papers match."}</li>
+          <li className="pl-empty">{all.length === 0 ? <><Loader kind="gather" size={48} /> No papers yet. Upload a PDF, or drop one anywhere on this page.</> : "No papers match."}</li>
         )}
         {shown.map((p) => {
           const { source, title } = splitSource(p.title);

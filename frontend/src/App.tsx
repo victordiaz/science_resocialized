@@ -5,6 +5,7 @@ import PaperView from "./pages/PaperView";
 import Personas from "./pages/Personas";
 import RunReview from "./pages/RunReview";
 import Replicate from "./pages/Replicate";
+import Lab from "./pages/Lab";
 import { Avatar, HUMAN_COLOR, Icon } from "./ui";
 
 type Route =
@@ -12,14 +13,17 @@ type Route =
   | { name: "paper"; id: string }
   | { name: "run"; id: string }
   | { name: "replicate"; id: string }
-  | { name: "personas" };
+  | { name: "personas" }
+  | { name: "lab" };
 
 function parseHash(): Route {
+  if (window.location.pathname.replace(/\/$/, "") === "/lab") return { name: "lab" };
   const [a, b, c] = window.location.hash.replace(/^#\/?/, "").split("/");
   if (a === "paper" && b && c === "run") return { name: "run", id: b };
   if (a === "paper" && b && c === "replicate") return { name: "replicate", id: b };
   if (a === "paper" && b) return { name: "paper", id: b };
   if (a === "personas") return { name: "personas" };
+  if (a === "lab") return { name: "lab" };
   return { name: "library" };
 }
 
@@ -67,18 +71,18 @@ export default function App() {
     return () => window.removeEventListener("hashchange", on);
   }, []);
 
-  const inPapers = route.name !== "personas";
+  const inPapers = route.name !== "personas" && route.name !== "lab";
 
   return (
     <div className="app">
       <header className="topbar">
         <a className="brand" href="#/">
-          {Icon.logo}
-          <span>Review Room</span>
+          <img src="/brand/logo/mark.svg" width="28" height="28" alt="" />
+          <span>Science Resocialized</span>
         </a>
         <nav aria-label="Main">
           <a href="#/" aria-current={inPapers ? "page" : undefined}>Papers</a>
-          <a href="#/personas" aria-current={!inPapers ? "page" : undefined}>Personas</a>
+          <a href="#/personas" aria-current={route.name === "personas" ? "page" : undefined}>Personas</a>
           <a href="/docs" target="_blank" rel="noreferrer">API docs</a>
         </nav>
         <div className="spacer" />
@@ -90,6 +94,7 @@ export default function App() {
         {route.name === "run" && <RunReview key={route.id} paperId={route.id} />}
         {route.name === "replicate" && <Replicate key={route.id} paperId={route.id} />}
         {route.name === "personas" && <Personas />}
+        {route.name === "lab" && <Lab />}
       </main>
     </div>
   );
