@@ -1,0 +1,1 @@
+{"study": "S14", "holds": "no", "primary_test": "3 (sound: quiet/dissimilar/similar, within) x 2 (instruction: free/serial, between) mixed ANOVA, sphericity assumed; sound x instruction interaction", "statistic": "F(2, 232) = 1.63", "p": "0.199", "effect_size": "partial eta^2 = 0.014, 90% CI [0.000, 0.043]", "n_after_exclusions": 118, "minutes": 4}

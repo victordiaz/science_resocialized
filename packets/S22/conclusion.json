@@ -1,0 +1,1 @@
+{"study": "S22", "holds": "yes", "primary_test": "Paired-samples t-test, two-sided, timing task: 4th-latency deviation from quadratic trend (positions 2,3,5,6), grouped vs ungrouped instructions", "statistic": "t(39) = 2.08", "p": "0.044", "effect_size": "d_av = 0.37, 95% bootstrap CI [0.03, 0.78]; mean diff 0.119 s, 95% CI [0.004, 0.235]", "n_after_exclusions": 40, "minutes": 3}

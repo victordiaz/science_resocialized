@@ -1,0 +1,1 @@
+{"study": "S16", "holds": "no", "primary_test": "One-way repeated-measures ANOVA by subjects (F1) on per-participant error rates, typical vs atypical target location", "statistic": "F(1, 21) = 1.45", "p": "0.242", "effect_size": "partial eta squared = 0.065, 95% CI [0.00, 0.31]; typical 4.09% vs atypical 2.73% errors", "n_after_exclusions": 22, "minutes": 3}

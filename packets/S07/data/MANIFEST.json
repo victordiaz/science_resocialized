@@ -1,0 +1,29 @@
+{
+ "study": "S07",
+ "files": {
+  "d15.dta": {
+   "bytes": 1249855,
+   "sha256": "ddac582f4f28d038a3e3b90f2c0f39510c51ef4615ae4a66ca1a2cb884e1ef44"
+  },
+  "d14.dta": {
+   "bytes": 9010,
+   "sha256": "c2dc52cd634fb10347c2bf80843340c7a4b4815944c662c4bf8d258300c9b75c"
+  },
+  "d11.dta": {
+   "bytes": 279193,
+   "sha256": "55427f67bc93192d23ecdc44cf157c0ecfe6d602f0e79f784d22838db2b14b2d"
+  },
+  "d08.dta": {
+   "bytes": 74793398,
+   "sha256": "4285021fbb8fc5ffec5a2008288913abcb53b35a3e87602df874c3e0020868a4"
+  },
+  "d09.dta": {
+   "bytes": 2986,
+   "sha256": "ea237191a39acbb552888dacad8862cb61ece587fbdde2e76f64cdcc2000622a"
+  },
+  "d10.dta": {
+   "bytes": 8262,
+   "sha256": "088a5d1c1a96d2dd2e25edc35cbc5759aae0836ca220fe823e4f80c8fa661ecd"
+  }
+ }
+}

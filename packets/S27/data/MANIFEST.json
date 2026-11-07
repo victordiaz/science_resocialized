@@ -1,0 +1,13 @@
+{
+ "study": "S27",
+ "files": {
+  "d04.csv": {
+   "bytes": 50493,
+   "sha256": "5e6a8fce740f04a803c59151edfed316d63dabbb37f87b5efcb6a8e5e3f0c097"
+  },
+  "d05.sav": {
+   "bytes": 74810,
+   "sha256": "c16cc55882a414a7c76cd7026a097854cb1004fa1e8c5f975f798d83acf5c323"
+  }
+ }
+}

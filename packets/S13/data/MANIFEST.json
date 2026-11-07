@@ -1,0 +1,77 @@
+{
+ "study": "S13",
+ "files": {
+  "d02.txt": {
+   "bytes": 8106,
+   "sha256": "b323ec7b0221eca9959d901560d3bca7af91c3b4e82e6eb1ea33187bc5f5e0f1"
+  },
+  "d03.txt": {
+   "bytes": 7739,
+   "sha256": "b2f05e243d2c6b0b72245e5735accb97dc09d6932f7a9caa3315037ae207bec4"
+  },
+  "d04.txt": {
+   "bytes": 7746,
+   "sha256": "a52e5312e61c17a10131401148d6615453b78b0c94a058c8018cd59d977e9a7c"
+  },
+  "d05.txt": {
+   "bytes": 7742,
+   "sha256": "4464f3b903fcc95c4eebd2edd6b18d72e6bcda14b299cb6f8aa0b1365f46f971"
+  },
+  "d06.txt": {
+   "bytes": 7778,
+   "sha256": "6561646dc84d46d6625c5ec5cf316c0a29f0f381a319ce6cbadea277e004ae39"
+  },
+  "d07.txt": {
+   "bytes": 7742,
+   "sha256": "350e16401264dc8d1181e17e702cef3f3be4fb04780df6f18fca679120b03695"
+  },
+  "d08.txt": {
+   "bytes": 7740,
+   "sha256": "b25efae8ed52159b2000128398baf782abdcfe8bcb454e6d65bcd8dec7f7ba54"
+  },
+  "d09.txt": {
+   "bytes": 7742,
+   "sha256": "b200143f2f290775cf20b7e31358fc3bf85445b34285f9ecc3c3f20298ddfcd9"
+  },
+  "d10.txt": {
+   "bytes": 7738,
+   "sha256": "0b975c6ecabb9df4b1f6b69963163f42d6a87eff61bde00f5b6f4d5814f3963c"
+  },
+  "d11.txt": {
+   "bytes": 8084,
+   "sha256": "b5703a62a97bb32faafe0720c3d5c89666578a5aa02cc9ea720ab98fa533e3e5"
+  },
+  "d12.txt": {
+   "bytes": 7759,
+   "sha256": "6d6b292b51e52269600fe070f8a2a4d779694d31a2bd0573b6f117c8e44285f5"
+  },
+  "d13.txt": {
+   "bytes": 7750,
+   "sha256": "b82be3971a44f91adcaa05f7390c24f18c52006f2a2bcf30d44ac01c1a8084e5"
+  },
+  "d14.txt": {
+   "bytes": 7738,
+   "sha256": "21f8dabbd8914710a41d8dbeb69a0ada8cd294f80b27a98761bbfcf8dfb4f723"
+  },
+  "d15.txt": {
+   "bytes": 7737,
+   "sha256": "90d1084db49c2d161e1ac769fe996d264dc57c8cbaf60f751e9f984380b2e854"
+  },
+  "d16.txt": {
+   "bytes": 7730,
+   "sha256": "cdfa5776420ed88378a89ce07a1a3095ef0c180babac128b5894c6f0601d56b4"
+  },
+  "d17.txt": {
+   "bytes": 7736,
+   "sha256": "3edfeb6b20e46d7918f55fa05df7826f027f88a65ea519a9398f8b5797000eb1"
+  },
+  "d18.txt": {
+   "bytes": 7736,
+   "sha256": "9a04028d27cdcfc78ff1fa607e54cb544308c6b7a950679487be31358e74fc45"
+  },
+  "d19.dta": {
+   "bytes": 136070,
+   "sha256": "48f55c735e027d5575a9ef05d590fc52e9a4784c01c1332fe5113df4416d657c"
+  }
+ }
+}

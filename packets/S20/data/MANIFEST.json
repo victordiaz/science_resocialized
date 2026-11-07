@@ -1,0 +1,13 @@
+{
+ "study": "S20",
+ "files": {
+  "d02.sav": {
+   "bytes": 13736,
+   "sha256": "a36b4d3e2de72472ea6efb3e438be3b01f354964b7fc7924f15f2bdc489f3fe9"
+  },
+  "d04.sav": {
+   "bytes": 13736,
+   "sha256": "a36b4d3e2de72472ea6efb3e438be3b01f354964b7fc7924f15f2bdc489f3fe9"
+  }
+ }
+}

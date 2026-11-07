@@ -1,0 +1,1 @@
+{"study": "S23", "holds": "yes", "primary_test": "paired t-test, per-participant MSE of guess 1 vs MSE of the average of guess 1 and the delayed guess 2 (delayed condition, after exclusions)", "statistic": "t(137) = 4.09", "p": "7.3e-05 (two-sided)", "effect_size": "d_z = 0.35, 95% CI [0.18, 0.52]", "n_after_exclusions": 138, "minutes": 7}

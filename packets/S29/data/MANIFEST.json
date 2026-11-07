@@ -1,0 +1,25 @@
+{
+ "study": "S29",
+ "files": {
+  "d02.csv": {
+   "bytes": 893,
+   "sha256": "615d51bac3eab6fa7daace5942b39602aad71806f598a4155f035b0009f3463c"
+  },
+  "d03.txt": {
+   "bytes": 54190,
+   "sha256": "03d2034c086475ad5f74f21f47442875015cf781c8be9734efa11d0046de0bda"
+  },
+  "d04.txt": {
+   "bytes": 54176,
+   "sha256": "9827ece51e9e1dce766ff4412c2953b82f3d6e82d390e042b5aee73539789135"
+  },
+  "d05.csv": {
+   "bytes": 5964,
+   "sha256": "adfdad94505134cc83e74c084c8b4f29789dbe78a15ec45190777da1e57484d4"
+  },
+  "d08.csv": {
+   "bytes": 5964,
+   "sha256": "adfdad94505134cc83e74c084c8b4f29789dbe78a15ec45190777da1e57484d4"
+  }
+ }
+}
