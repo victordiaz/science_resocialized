@@ -20,3 +20,4 @@ Start: 17:01 (local).
 - Cross-check in R (temporary CSV export of d04, deleted afterwards): `Rscript -e 'summary(aov(r ~ TASK*s + Error(NUMBER/s)))'` → TASK:s F(2, 232) = 1.628, p = .199, identical to pingouin.
 - Result: interaction F(2, 232) = 1.63, p = .199, partial η² = .014. Direction is the predicted one (free 0.035 vs serial 0.013 extra disruption), but by the rule set above (significant interaction required) the claim does not hold. No change of plan.
 - `.venv/bin/python -I score/md2pdf.py papers/S14/report/report.md papers/S14/report/report.pdf`
+- End 17:04; ~3 minutes of analysis time. conclusion.json written last.

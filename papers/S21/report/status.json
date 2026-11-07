@@ -1,0 +1,39 @@
+{
+ "study": "S21",
+ "state": "pdf rendered",
+ "backend": "attached",
+ "model": "opus",
+ "pid": null,
+ "started_at": "2026-11-07T17:06:45+0100",
+ "t0": 1794067605.856565,
+ "sandbox": "/Users/vladnicolescu/Developer/science-resocialized-target/env/runs/S21",
+ "turns": 0,
+ "tool_calls": 0,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "cache_read": 0,
+  "cache_create": 0
+ },
+ "cost_usd": null,
+ "last_tool": null,
+ "budget_usd": 20.0,
+ "elapsed_s": 204,
+ "note": "attached run: an Opus subagent of the bench session worked in the sealed sandbox; 99,597 tokens over 9 tool calls; the cost is not reported by that backend",
+ "finished_at": "2026-11-07T17:10:10+0100",
+ "exit_code": 0,
+ "minutes": 3.4,
+ "conclusion": {
+  "study": "S21",
+  "holds": "yes",
+  "primary_test": "2x2 repeated-measures ANOVA on ex-Gaussian mu (quantile ML fit per participant x condition), quality x frequency interaction",
+  "statistic": "F(1, 70) = 11.41",
+  "p": "0.0012",
+  "effect_size": "partial eta^2 = 0.140, 95% CI [0.024, 0.289]; interaction contrast +86.9 ms [35.6, 138.2]",
+  "n_after_exclusions": 71,
+  "minutes": 4
+ },
+ "tokens_total_from_agent": 99597,
+ "agent_tool_uses": 9,
+ "agent_duration_s": 177
+}

@@ -1,9 +1,9 @@
 {
  "study": "S16",
- "state": "researcher running",
+ "state": "pdf rendered",
  "backend": "attached",
  "model": "opus",
- "pid": 35476,
+ "pid": null,
  "started_at": "2026-11-07T17:01:34+0100",
  "t0": 1794067294.882872,
  "sandbox": "/Users/vladnicolescu/Developer/science-resocialized-target/env/runs/S16",
@@ -18,6 +18,22 @@
  "cost_usd": null,
  "last_tool": null,
  "budget_usd": 20.0,
- "elapsed_s": 111,
- "note": "attached: an outside agent works in /Users/vladnicolescu/Developer/science-resocialized-target/env/runs/S16; waiting for report.md and conclusion.json"
+ "elapsed_s": 117,
+ "note": "attached run: an Opus subagent of the bench session worked in the sealed sandbox; 91,522 tokens over 7 tool calls; the cost is not reported by that backend",
+ "finished_at": "2026-11-07T17:03:32+0100",
+ "exit_code": 0,
+ "minutes": 2.0,
+ "conclusion": {
+  "study": "S16",
+  "holds": "no",
+  "primary_test": "One-way repeated-measures ANOVA by subjects (F1) on per-participant error rates, typical vs atypical target location",
+  "statistic": "F(1, 21) = 1.45",
+  "p": "0.242",
+  "effect_size": "partial eta squared = 0.065, 95% CI [0.00, 0.31]; typical 4.09% vs atypical 2.73% errors",
+  "n_after_exclusions": 22,
+  "minutes": 3
+ },
+ "tokens_total_from_agent": 91522,
+ "agent_tool_uses": 7,
+ "agent_duration_s": 104
 }

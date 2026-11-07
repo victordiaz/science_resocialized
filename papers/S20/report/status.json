@@ -1,0 +1,39 @@
+{
+ "study": "S20",
+ "state": "pdf rendered",
+ "backend": "attached",
+ "model": "opus",
+ "pid": null,
+ "started_at": "2026-11-07T17:04:30+0100",
+ "t0": 1794067470.249846,
+ "sandbox": "/Users/vladnicolescu/Developer/science-resocialized-target/env/runs/S20",
+ "turns": 0,
+ "tool_calls": 0,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "cache_read": 0,
+  "cache_create": 0
+ },
+ "cost_usd": null,
+ "last_tool": null,
+ "budget_usd": 20.0,
+ "elapsed_s": 117,
+ "note": "attached run: an Opus subagent of the bench session worked in the sealed sandbox; 96,269 tokens over 9 tool calls; the cost is not reported by that backend",
+ "finished_at": "2026-11-07T17:06:27+0100",
+ "exit_code": 0,
+ "minutes": 2.0,
+ "conclusion": {
+  "study": "S20",
+  "holds": "yes",
+  "primary_test": "2x2 repeated-measures ANOVA, word pair (AC vs MU) x digit target (sum vs neutral) interaction on mean correct RT; equivalently one-sample t on (sum-neutral)_AC - (sum-neutral)_MU",
+  "statistic": "F(1, 48) = 4.22, MSE = 9999 (t(48) = 2.06); mean difference 58.7 ms, 95% CI [1.3, 116.2]",
+  "p": "0.045",
+  "effect_size": "partial eta^2 = 0.081; dz = 0.29, 95% CI [0.01, 0.58]",
+  "n_after_exclusions": 49,
+  "minutes": 3
+ },
+ "tokens_total_from_agent": 96269,
+ "agent_tool_uses": 9,
+ "agent_duration_s": 102
+}

@@ -1,23 +1,23 @@
 {
  "bundle_version": 1,
  "study": "S04",
- "created_at": "2026-11-07T16:56:51+0100",
+ "created_at": "2026-11-07T17:13:39+0100",
  "files": {
   "report.pdf": {
-   "sha256": "a1d3a92b9b7a55f183d406845847d1c382eaf3220337905a879c6bd565573fc2",
-   "bytes": 107220
+   "sha256": "4bc55f01e5e1c0f9a1009b7fd9f16ac9ef0b87ac56dcc506d0659497d32e8cec",
+   "bytes": 115431
   },
   "report.md": {
-   "sha256": "93ab3ba29d6ca3c0657753b35b3165d6d8db3a5d3fa36be2715a68aa35a3e874",
-   "bytes": 2836
+   "sha256": "6f0dffaa31100f03287b1bf8273bb84eefa5f696ffbb4d434e0f8ae626f7eb3e",
+   "bytes": 2282
   },
   "log.md": {
-   "sha256": "4e39494db329ad4393da11afe2e275ed9e8eef1d39e7fe45639af1488f47e7b3",
-   "bytes": 2067
+   "sha256": "ca8e68b301315b8bf8b1f711764b804a508f03f9de6c3285dd80b2217812a30e",
+   "bytes": 1963
   },
   "card.md": {
-   "sha256": "62e9ab100c427789344cded76bcfc9065a2dc6f34ebb2d875ac227aba3a5f3a4",
-   "bytes": 2420
+   "sha256": "1684fc91449b4fd4663df27f97e3dcdabd883645c0ad61c26aa830a4cb34140d",
+   "bytes": 2216
   }
  },
  "data_files": {
@@ -33,13 +33,9 @@
    "sha256": "f212a9bdde89b5cdfe76dfc75c7cc735af0b3d956cad35cb04f762b6b6885a34",
    "bytes": 1506
   },
-  "d02.zip": {
-   "sha256": "c1762764e473e7e0474c8f207949ee2cf3aeb5470f33d59aec42c3f99eb269ab",
-   "bytes": 25665
-  },
   "MANIFEST.json": {
-   "sha256": "a29efd736b9d3e78fbdac329080fed74ebae93b20966687a61139462c9a2db42",
-   "bytes": 1923
+   "sha256": "495a3b2bd4a7335cc3654b34d0db6adfbeb4b2abde71be0e6f36a1e0e986368b",
+   "bytes": 1804
   },
   "d11.mat": {
    "sha256": "f08220c94f3c5b47f74f027b52cca28f64adf319303fada144cfca5692c84382",
@@ -103,9 +99,9 @@
   },
   "turns": 0,
   "tool_calls": 0,
-  "minutes": 1.8,
-  "started_at": "2026-11-07T16:54:47+0100",
-  "finished_at": "2026-11-07T16:56:32+0100"
+  "minutes": 2.2,
+  "started_at": "2026-11-07T17:11:27+0100",
+  "finished_at": "2026-11-07T17:13:36+0100"
  },
  "conclusion_stated": "yes",
  "reviewers_write_back": "verdicts/S04/<structure>/<reviewer>/round1.json and round2.json (see handoff/README.md)"

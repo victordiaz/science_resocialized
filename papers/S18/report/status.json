@@ -1,0 +1,39 @@
+{
+ "study": "S18",
+ "state": "pdf rendered",
+ "backend": "attached",
+ "model": "opus",
+ "pid": null,
+ "started_at": "2026-11-07T17:03:45+0100",
+ "t0": 1794067425.8074791,
+ "sandbox": "/Users/vladnicolescu/Developer/science-resocialized-target/env/runs/S18",
+ "turns": 0,
+ "tool_calls": 0,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "cache_read": 0,
+  "cache_create": 0
+ },
+ "cost_usd": null,
+ "last_tool": null,
+ "budget_usd": 20.0,
+ "elapsed_s": 138,
+ "note": "attached run: an Opus subagent of the bench session worked in the sealed sandbox; 95,463 tokens over 9 tool calls; the cost is not reported by that backend",
+ "finished_at": "2026-11-07T17:06:04+0100",
+ "exit_code": 0,
+ "minutes": 2.3,
+ "conclusion": {
+  "study": "S18",
+  "holds": "no",
+  "primary_test": "Two-sided Student independent-samples t-test (equal variances) on learning score (mean RT of random blocks minus fixed-sequence block), achievement words minus control, Include1 sample",
+  "statistic": "t(156) = -1.32",
+  "p": "0.189",
+  "effect_size": "Cohen's d = -0.21, 95% CI [-0.52, 0.10]",
+  "n_after_exclusions": 158,
+  "minutes": 2
+ },
+ "tokens_total_from_agent": 95463,
+ "agent_tool_uses": 9,
+ "agent_duration_s": 106
+}

@@ -1,63 +1,69 @@
-"""S04 analysis. Run from the S04 run directory: .venv/bin/python -I papers/S04/report/analysis.py"""
-import io, zipfile, hashlib
+"""S04 analysis: per-participant proportion correct on 'real' triplet trials vs 0.5."""
+import glob, os
 import numpy as np, scipy.io as sio
 from scipy import stats
 
-D = 'papers/S04/data/'
-z = zipfile.ZipFile(D + 'd02.zip')
-
-def load(b):
-    m = sio.loadmat(io.BytesIO(b), squeeze_me=True, struct_as_record=False)
-    return m['data']
+HERE = os.path.dirname(os.path.abspath(__file__))
+DATA = os.path.join(HERE, '..', 'data')
+files = sorted(glob.glob(os.path.join(DATA, 'd*.mat')))
+print(f"files: {len(files)}")
 
 rows = []
-for i in range(1, 16):
-    b = z.read(f'subject{i:02d}.mat')
-    loose = open(D + f'd{i+3:02d}.mat', 'rb').read()
-    same = hashlib.sha256(b).hexdigest() == hashlib.sha256(loose).hexdigest()
-    d = load(b)
-    tt = np.array([str(x) for x in np.atleast_1d(d.triplet_type)])
-    c = np.asarray(d.correct, dtype=float).ravel()
-    real = np.char.lower(tt) == 'real'
-    assert set(np.unique(c)) <= {0.0, 1.0}
-    rows.append(dict(sub=i, n_trials=len(c), n_real=int(real.sum()),
-                     p_real=c[real].mean(), p_pseudo=c[~real].mean(),
-                     k_real=int(c[real].sum()), loose_identical=same))
-
-print('sub n_trials n_real k_real p_real p_pseudo loose_file_identical')
+consist_bad = 0
+for f in files:
+    d = sio.loadmat(f, squeeze_me=True, struct_as_record=False)['data']
+    tt = np.array([str(x) for x in d.triplet_type])
+    corr = np.asarray(d.correct, dtype=float)
+    resp = np.asarray(d.response, dtype=int)
+    order = np.array([str(x) for x in d.order_within_trial])
+    # consistency check: correct == (response picks the base interval)
+    expect = np.where(order == 'base-foil', resp == 1, resp == 2).astype(float)
+    consist_bad += int((expect != corr).sum())
+    real = tt == 'real'
+    rows.append(dict(file=os.path.basename(f), n_trials=len(tt), n_real=int(real.sum()),
+                     p_real=corr[real].mean(), p_pseudo=corr[~real].mean(),
+                     k_real=int(corr[real].sum())))
+print(f"trials where 'correct' disagrees with response/order coding: {consist_bad}")
+print("\nfile   n_trials n_real k_real p_real  p_pseudo")
 for r in rows:
-    print(f"{r['sub']:3d} {r['n_trials']:8d} {r['n_real']:6d} {r['k_real']:6d} {r['p_real']:.4f} {r['p_pseudo']:.4f} {r['loose_identical']}")
+    print(f"{r['file']} {r['n_trials']:8d} {r['n_real']:6d} {r['k_real']:6d} {r['p_real']:.4f}  {r['p_pseudo']:.4f}")
 
-s = np.array([r['p_real'] for r in rows]); n = len(s)
-print(f'\nN = {n}; excluded = 0')
-print(f'Mean proportion real chosen = {s.mean():.4f}, SD = {s.std(ddof=1):.4f}, median = {np.median(s):.4f}')
-
-# Primary test
-t, p = stats.ttest_1samp(s, 0.5)
-df = n - 1
-se = s.std(ddof=1) / np.sqrt(n)
-tc = stats.t.ppf(0.975, df)
-print(f'\nPRIMARY: one-sample t-test vs 0.5 (two-sided): t({df}) = {t:.3f}, p = {p:.4f}')
-print(f'Mean 95% CI = [{s.mean()-tc*se:.4f}, {s.mean()+tc*se:.4f}]')
-dz = t / np.sqrt(n)
-# CI for d via noncentral t inversion
+p = np.array([r['p_real'] for r in rows]); n = len(p)
+print(f"\nN after exclusions: {n} (excluded 0)")
+m, sd = p.mean(), p.std(ddof=1); se = sd / np.sqrt(n)
+t, pv = stats.ttest_1samp(p, 0.5)
+d = t / np.sqrt(n)
+ci_m = m + np.array([-1, 1]) * stats.t.ppf(.975, n - 1) * se
+# 95% CI for d via noncentral t inversion
 from scipy.optimize import brentq
-def nct_cdf(nc): return stats.nct.cdf(t, df, nc)
-lo = brentq(lambda nc: nct_cdf(nc) - 0.975, -20, 20)
-hi = brentq(lambda nc: nct_cdf(nc) - 0.025, -20, 20)
-print(f'd = t/sqrt(n) = {dz:.3f}, 95% CI [{lo/np.sqrt(n):.3f}, {hi/np.sqrt(n):.3f}]')
+nct = stats.nct
+lo_nc = brentq(lambda nc: nct.sf(t, n - 1, nc) - 0.025, t - 10, t + 10)
+hi_nc = brentq(lambda nc: nct.cdf(t, n - 1, nc) - 0.025, t - 10, t + 10)
+print("\nPRIMARY: two-sided one-sample t-test of per-participant proportion (real trials) vs 0.5")
+print(f"mean = {m:.4f}, SD = {sd:.4f}, 95% CI mean [{ci_m[0]:.4f}, {ci_m[1]:.4f}]")
+print(f"t({n-1}) = {t:.3f}, p = {pv:.4f}")
+print(f"d = t/sqrt(n) = {d:.3f}, 95% CI d [{lo_nc/np.sqrt(n):.3f}, {hi_nc/np.sqrt(n):.3f}]")
 
-# Robustness
-w = stats.wilcoxon(s - 0.5)
-print(f'\nRobustness: Wilcoxon signed-rank vs 0.5: W = {w.statistic}, p = {w.pvalue:.4f}')
+print("\nROBUSTNESS (not primary)")
+w = stats.wilcoxon(p - 0.5)
+print(f"Wilcoxon signed-rank vs 0.5: W = {w.statistic}, p = {w.pvalue:.4f} (ties at 0.5 dropped: {(p==0.5).sum()})")
 K = sum(r['k_real'] for r in rows); N = sum(r['n_real'] for r in rows)
-bt = stats.binomtest(K, N, 0.5)
-print(f'Pooled trials: {K}/{N} = {K/N:.4f}, binomial p = {bt.pvalue:.4f} (ignores clustering)')
-print(f'Participants above / at / below 0.5: {(s>0.5).sum()} / {(s==0.5).sum()} / {(s<0.5).sum()}')
-ps = np.array([r['p_pseudo'] for r in rows])
-tp, pp = stats.ttest_1samp(ps, 0.5)
-print(f'Descriptive: pseudo-trial proportion mean = {ps.mean():.4f}, t({n-1}) = {tp:.3f}, p = {pp:.4f}')
-s2 = np.delete(s, [2, 4])
-t2, p2 = stats.ttest_1samp(s2, 0.5)
-print(f'Sensitivity (author script drops subjects 3 and 5 as explicit learners; not our plan): mean = {s2.mean():.4f}, t({len(s2)-1}) = {t2:.3f}, p = {p2:.4f}')
+b = stats.binomtest(K, N, 0.5)
+print(f"Pooled binomial (ignores clustering): {K}/{N} = {K/N:.4f}, p = {b.pvalue:.4f}")
+print(f"Participants above / at / below 0.5: {(p>0.5).sum()} / {(p==0.5).sum()} / {(p<0.5).sum()}")
+pp = np.array([r['p_pseudo'] for r in rows])
+tp, pvp = stats.ttest_1samp(pp, 0.5)
+print(f"Pseudo trials (descriptive, discarded by design): mean = {pp.mean():.4f}, t({n-1}) = {tp:.3f}, p = {pvp:.4f}")
 
+# figure
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+fig, ax = plt.subplots(figsize=(4, 3))
+ax.scatter(np.random.default_rng(0).uniform(-.08, .08, n), p, alpha=.7)
+ax.errorbar([0.25], [m], yerr=[[m - ci_m[0]], [ci_m[1] - m]], fmt='o', color='k', capsize=4)
+ax.axhline(.5, ls='--', color='grey'); ax.set_xlim(-.3, .5); ax.set_xticks([])
+ax.set_ylabel('Proportion real triplet chosen'); ax.set_ylim(0, 1)
+ax.set_title('Real-triplet trials, N = 15'); fig.tight_layout()
+fig.savefig(os.path.join(HERE, 'fig1.png'), dpi=150)
+print("figure: fig1.png")

@@ -1,29 +1,33 @@
-sub n_trials n_real k_real p_real p_pseudo loose_file_identical
-  1       32     16     13 0.8125 0.5000 True
-  2       32     16     10 0.6250 0.4375 True
-  3       32     16     15 0.9375 0.9375 True
-  4       32     16     13 0.8125 0.8750 True
-  5       32     16     16 1.0000 0.9375 True
-  6       32     16     16 1.0000 0.7500 True
-  7       32     16      6 0.3750 0.6250 True
-  8       32     16      9 0.5625 0.6250 True
-  9       32     16      8 0.5000 0.7500 True
- 10       32     16      8 0.5000 0.3125 True
- 11       32     16     11 0.6875 0.4375 True
- 12       32     16     15 0.9375 0.6875 True
- 13       32     16      8 0.5000 0.4375 True
- 14       32     16     12 0.7500 0.4375 True
- 15       32     16      8 0.5000 0.5625 True
+files: 15
+trials where 'correct' disagrees with response/order coding: 0
 
-N = 15; excluded = 0
-Mean proportion real chosen = 0.7000, SD = 0.2089, median = 0.6875
+file   n_trials n_real k_real p_real  p_pseudo
+d04.mat       32     16     13 0.8125  0.5000
+d05.mat       32     16     10 0.6250  0.4375
+d06.mat       32     16     15 0.9375  0.9375
+d07.mat       32     16     13 0.8125  0.8750
+d08.mat       32     16     16 1.0000  0.9375
+d09.mat       32     16     16 1.0000  0.7500
+d10.mat       32     16      6 0.3750  0.6250
+d11.mat       32     16      9 0.5625  0.6250
+d12.mat       32     16      8 0.5000  0.7500
+d13.mat       32     16      8 0.5000  0.3125
+d14.mat       32     16     11 0.6875  0.4375
+d15.mat       32     16     15 0.9375  0.6875
+d16.mat       32     16      8 0.5000  0.4375
+d17.mat       32     16     12 0.7500  0.4375
+d18.mat       32     16      8 0.5000  0.5625
 
-PRIMARY: one-sample t-test vs 0.5 (two-sided): t(14) = 3.708, p = 0.0023
-Mean 95% CI = [0.5843, 0.8157]
-d = t/sqrt(n) = 0.957, 95% CI [0.330, 1.562]
+N after exclusions: 15 (excluded 0)
 
-Robustness: Wilcoxon signed-rank vs 0.5: W = 2.5, p = 0.0066
-Pooled trials: 168/240 = 0.7000, binomial p = 0.0000 (ignores clustering)
+PRIMARY: two-sided one-sample t-test of per-participant proportion (real trials) vs 0.5
+mean = 0.7000, SD = 0.2089, 95% CI mean [0.5843, 0.8157]
+t(14) = 3.708, p = 0.0023
+d = t/sqrt(n) = 0.957, 95% CI d [0.330, 1.562]
+
+ROBUSTNESS (not primary)
+Wilcoxon signed-rank vs 0.5: W = 2.5, p = 0.0066 (ties at 0.5 dropped: 4)
+Pooled binomial (ignores clustering): 168/240 = 0.7000, p = 0.0000
 Participants above / at / below 0.5: 10 / 4 / 1
-Descriptive: pseudo-trial proportion mean = 0.6208, t(14) = 2.360, p = 0.0333
-Sensitivity (author script drops subjects 3 and 5 as explicit learners; not our plan): mean = 0.6587, t(12) = 2.980, p = 0.0115
+Pseudo trials (descriptive, discarded by design): mean = 0.6208, t(14) = 2.360, p = 0.0333
+figure: fig1.png

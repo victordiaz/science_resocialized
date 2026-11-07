@@ -1,9 +1,9 @@
 {
  "study": "S13",
- "state": "researcher running",
+ "state": "pdf rendered",
  "backend": "attached",
  "model": "opus",
- "pid": 31844,
+ "pid": null,
  "started_at": "2026-11-07T17:00:38+0100",
  "t0": 1794067238.252706,
  "sandbox": "/Users/vladnicolescu/Developer/science-resocialized-target/env/runs/S13",
@@ -18,6 +18,22 @@
  "cost_usd": null,
  "last_tool": null,
  "budget_usd": 20.0,
- "elapsed_s": 168,
- "note": "attached: an outside agent works in /Users/vladnicolescu/Developer/science-resocialized-target/env/runs/S13; waiting for report.md and conclusion.json"
+ "elapsed_s": 180,
+ "note": "attached run: an Opus subagent of the bench session worked in the sealed sandbox; 102,300 tokens over 10 tool calls; the cost is not reported by that backend",
+ "finished_at": "2026-11-07T17:03:38+0100",
+ "exit_code": 0,
+ "minutes": 3.0,
+ "conclusion": {
+  "study": "S13",
+  "holds": "yes",
+  "primary_test": "Paired t-test, two-tailed: per-participant mean localisation error (deg) on test-phase trials with all four distractors missing (centroid) minus mean error on four-missing guessing-phase trials",
+  "statistic": "t(16) = -9.59",
+  "p": "4.9e-08",
+  "effect_size": "dz = -2.33, 95% CI [-3.25, -1.39]; mean difference -4.70 deg, 95% CI [-5.74, -3.66]",
+  "n_after_exclusions": 17,
+  "minutes": 4
+ },
+ "tokens_total_from_agent": 102300,
+ "agent_tool_uses": 10,
+ "agent_duration_s": 166
 }

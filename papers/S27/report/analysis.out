@@ -1,0 +1,68 @@
+rows sav/csv: 146 146
+missing role/message code: 2 | missing DV: 5
+N after listwise deletion: 141 (dropped 5 )
+DV recomputed as plain mean of the ten stored items: max abs diff = 0.0000, r = 1.0000
+Cronbach alpha (as recomputed): 0.921, n=135
+
+Cell descriptives
+                         count   mean    std     se
+role        msg                                    
+perpetrator acceptance      37  4.862  1.110  0.182
+            empowerment     37  5.109  0.834  0.137
+victim      acceptance      33  4.082  1.349  0.235
+            empowerment     34  3.867  1.258  0.216
+
+Type III ANOVA
+                             sum_sq     df          F  PR(>F)
+Intercept                 2822.7427    1.0  2150.4431  0.0000
+C(role, Sum)                35.9406    1.0    27.3805  0.0000
+C(msg, Sum)                  0.0092    1.0     0.0070  0.9336
+C(role, Sum):C(msg, Sum)     1.8702    1.0     1.4248  0.2347
+Residual                   179.8307  137.0        NaN     NaN
+
+PRIMARY role x message: F(1, 137) = 1.425, p = 0.2347, partial eta^2 = 0.0103, 95% CI [0.0000, 0.0669]
+  90% CI for partial eta^2: [0.0000, 0.0549]
+victim: empowerment - acceptance = -0.214 ; perpetrator: acceptance - empowerment = -0.247
+predicted crossover signs (both > 0): False
+
+Type II ANOVA (check)
+                  sum_sq     df        F  PR(>F)
+C(role)          36.0714    1.0  27.4802  0.0000
+C(msg)            0.0269    1.0   0.0205  0.8864
+C(role):C(msg)    1.8702    1.0   1.4248  0.2347
+Residual        179.8307  137.0      NaN     NaN
+HC3-robust interaction coefficient test:                              Test for Constraints                             
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+c0            -0.1153      0.099     -1.159      0.246      -0.310       0.080
+==============================================================================
+Levene (median): LeveneResult(statistic=np.float64(2.0955030203146543), pvalue=np.float64(0.10367942766372445))
+
+Simple effects of message within role (Welch t; pooled-error t)
+victim: emp 3.867 (n=34) vs acc 4.082 (n=33); diff=-0.214; Welch t(64.4)=-0.673, p=0.5036; pooled t(137)=-0.766, p=0.4449; d=-0.165; Mann-Whitney U=502.5, p=0.4668
+perpetrator: emp 5.109 (n=37) vs acc 4.862 (n=37); diff=0.247; Welch t(66.8)=1.081, p=0.2834; pooled t(137)=0.926, p=0.3559; d=0.251; Mann-Whitney U=754.5, p=0.4521
+
+Robustness: ANCOVA adjusting for before-message willingness (AvgWillingReconcileTime1)
+n = 141
+                            sum_sq     df        F  PR(>F)
+Intercept                  23.9244    1.0  25.4187  0.0000
+C(role, Sum)                8.5817    1.0   9.1177  0.0030
+C(msg, Sum)                 0.0590    1.0   0.0627  0.8026
+C(role, Sum):C(msg, Sum)    0.1406    1.0   0.1494  0.6997
+AvgWillingReconcileTime1   51.8258    1.0  55.0629  0.0000
+Residual                  128.0049  136.0      NaN     NaN
+Time-1 cell means:
+role         msg        
+perpetrator  acceptance     3.928
+             empowerment    4.126
+victim       acceptance     3.490
+             empowerment    3.222
+Name: AvgWillingReconcileTime1, dtype: float64
+Change (T2-T1) cell means:
+role         msg        
+perpetrator  acceptance     0.935
+             empowerment    0.983
+victim       acceptance     0.592
+             empowerment    0.645
+Name: change, dtype: float64

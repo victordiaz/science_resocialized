@@ -1,10 +1,13 @@
-[16:56:53] building sandbox /Users/vladnicolescu/Developer/science-resocialized-target/env/runs/S07
-[16:56:53] sandbox ok: 6 data files under neutral names; seal checked
-[16:56:53] attached mode: waiting for the report to appear in the sandbox
-[16:57:50] report/ now has: log.md
-[16:58:23] report/ now has: analysis.py, analysis.out
-[16:58:26] report/ now has: fig1.png, analysis.out
-[16:58:47] report/ now has: report.md, log.md, report.html
-[16:58:50] report/ now has: report.pdf
-[16:58:56] report/ now has: conclusion.json
-[16:59:02] done: pdf rendered, 2.2 min, cost None
+[17:11:19] building sandbox /Users/vladnicolescu/Developer/science-resocialized-target/env/runs/S07
+[17:11:19] sandbox ok: 6 data files under neutral names; seal checked
+[17:11:19] attached mode: waiting for the report to appear in the sandbox
+[17:12:13] report/ now has: log.md
+[17:12:53] report/ now has: log.md
+[17:13:23] report/ now has: analysis.py, analysis.out
+[17:13:26] report/ now has: fig1.png, analysis.out
+[17:13:41] report/ now has: analysis.py, analysis.out
+[17:13:44] report/ now has: fig1.png, analysis.out
+[17:14:05] report/ now has: report.md, log.md, report.html
+[17:14:11] report/ now has: report.pdf
+[17:14:17] report/ now has: conclusion.json
+[17:14:23] done: pdf rendered, 3.1 min, cost None

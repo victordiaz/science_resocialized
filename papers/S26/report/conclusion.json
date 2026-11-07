@@ -1,0 +1,1 @@
+{"study": "S26", "holds": "yes", "primary_test": "2x2 between-groups ANOVA (game x communication) on group-mean GivePool_B; game main effect", "statistic": "F(1, 36) = 26.76", "p": "8.8e-06", "effect_size": "partial eta^2 = 0.43, 95% CI [0.17, 0.58]; two-pool minus one-pool = -3.62 tokens [-5.03, -2.20]", "n_after_exclusions": 40, "minutes": 3}

@@ -1,0 +1,39 @@
+{
+ "study": "S24",
+ "state": "pdf rendered",
+ "backend": "attached",
+ "model": "opus",
+ "pid": null,
+ "started_at": "2026-11-07T17:06:50+0100",
+ "t0": 1794067610.032264,
+ "sandbox": "/Users/vladnicolescu/Developer/science-resocialized-target/env/runs/S24",
+ "turns": 0,
+ "tool_calls": 0,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "cache_read": 0,
+  "cache_create": 0
+ },
+ "cost_usd": null,
+ "last_tool": null,
+ "budget_usd": 20.0,
+ "elapsed_s": 135,
+ "note": "attached run: an Opus subagent of the bench session worked in the sealed sandbox; 95,280 tokens over 7 tool calls; the cost is not reported by that backend",
+ "finished_at": "2026-11-07T17:09:05+0100",
+ "exit_code": 0,
+ "minutes": 2.3,
+ "conclusion": {
+  "study": "S24",
+  "holds": "no",
+  "primary_test": "2x3 mixed ANOVA (type III), DV proportion correct, list-type main effect (between: long-short vs short-long; within: correct/intrusion/new)",
+  "statistic": "F(1, 19) = 3.66",
+  "p": "0.071",
+  "effect_size": "partial eta^2 = 0.16, 95% CI [0.00, 0.43]; direction opposite to claim (long-short M = .900 vs short-long M = .807)",
+  "n_after_exclusions": 21,
+  "minutes": 3
+ },
+ "tokens_total_from_agent": 95280,
+ "agent_tool_uses": 7,
+ "agent_duration_s": 97
+}

@@ -10,3 +10,5 @@
 [17:02:55] report/ now has: fig1.png, analysis.out, log.md
 [17:03:10] report/ now has: report.md, report.html
 [17:03:16] report/ now has: report.pdf
+[17:03:28] report/ now has: log.md, conclusion.json
+[17:03:34] done: pdf rendered, 2.7 min, cost None

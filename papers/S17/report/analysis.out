@@ -1,0 +1,54 @@
+N rows: 48
+stim    caterpillar  snake
+age                       
+child            13     12
+parent           12     11
+condition x stim:
+ stim       caterpillar  snake
+condition                    
+A                    0     15
+A2                   0      8
+B                    9      0
+B2                  16      0
+max |average - mean(M1..M24)|: 1066.8416666666667
+valid trials per participant: min 13, median 24
+
+Cell descriptives (average, ms):
+                    count    mean     std
+age    stim                              
+child  caterpillar     13  6317.4  2165.2
+       snake           12  5256.8  1249.4
+parent caterpillar     12  2664.9   983.3
+       snake           11  2691.7  1174.5
+
+Marginal means by stimulus:
+             count    mean     std
+stim                              
+caterpillar     25  4564.2  2501.1
+snake           23  4030.0  1767.5
+
+Type-III ANOVA:
+                                 sum_sq    df         F  PR(>F)
+Intercept                 8.569641e+08   1.0  385.3166  0.0000
+C(stim, Sum)              3.195004e+06   1.0    1.4366  0.2371
+C(age, Sum)               1.155695e+08   1.0   51.9635  0.0000
+C(stim, Sum):C(age, Sum)  3.534648e+06   1.0    1.5893  0.2141
+Residual                  9.785830e+07  44.0       NaN     NaN
+
+PRIMARY stimulus main effect: F(1, 44) = 1.437, p = 0.2371, partial eta^2 = 0.032, 95% CI [0.000, 0.179]
+Unweighted marginal means: snake 3974.3, caterpillar 4491.2, diff (snake - cat) -516.9 ms
+C(age, Sum): F(1, 44) = 51.963, p = 0.0000, partial eta^2 = 0.541
+C(stim, Sum):C(age, Sum): F(1, 44) = 1.589, p = 0.2141, partial eta^2 = 0.035
+
+Robustness:
+Welch t overall snake vs caterpillar: t = -0.860, p = 0.3947
+  child: Welch t = -1.514, p = 0.1461
+  parent: Welch t = 0.059, p = 0.9535
+log-latency ANOVA stimulus: F = 0.671, p = 0.4171
+median-latency ANOVA stimulus: F = 1.096, p = 0.3008
+Levene (4 cells): LeveneResult(statistic=np.float64(4.272111450286191), pvalue=np.float64(0.009876252977534708))
+Shapiro residuals: ShapiroResult(statistic=np.float64(0.9454314850793565), pvalue=np.float64(0.02638146037503717))
+figure saved
+
+Rows where stored average != mean(M1..M24): 9 ['1016c', '2019A', '2019c', '2020 A', '2020c', '2021c', '2022c', '2023 A', '2023 C']
+recomputed-mean ANOVA stimulus: F(1, 44) = 1.117, p = 0.2963, partial eta^2 = 0.025

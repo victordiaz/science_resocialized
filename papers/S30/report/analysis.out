@@ -1,0 +1,46 @@
+rows: 144
+excluded for missing key data: 0
+{'Female': 79, 'Male': 65} {'3000ms': 77, '500ms': 67}
+
+Descriptives (mean, sd, n):
+sex                 Female     Male
+Sens_Friend mean    0.6139   0.6185
+            std     0.1071   0.1045
+            count  79.0000  65.0000
+Sens_SI     mean    0.4416   0.4123
+            std     0.1561   0.1078
+            count  79.0000  65.0000
+diff        mean    0.1723   0.2062
+            std     0.2060   0.1560
+            count  79.0000  65.0000
+
+PRIMARY mixed ANOVA:
+         Source       SS  DF1  DF2       MS          F    p_unc      np2  eps
+0          sex  0.01097    1  142  0.01097    0.86302  0.35447  0.00604  NaN
+1          cat  2.53313    1  142  2.53313  147.78517  0.00000  0.50998  1.0
+2  Interaction  0.02046    1  142  0.02046    1.19369  0.27644  0.00834  1.0
+
+One-way ANOVA on diff: F(1,142) = 1.1937, p = 0.27644, partial eta2 = 0.0083
+partial eta2 95% CI: [0.0000, 0.0608]
+Mean diff (Male - Female) in Friend-SI gap: 0.0339, Welch t = 1.122, p = 0.26377
+Cohen's d on diff: 0.183, 95% CI [-0.15  0.51]
+bootstrap 95% CI for mean diff: [-0.0247  0.0918]
+Mann-Whitney on diff: MannwhitneyuResult(statistic=np.float64(2911.5), pvalue=np.float64(0.16784629953811303))
+
+Secondary: gender effect per category (Welch t):
+  Sens_Friend: M=0.6185 F=0.6139 M-F=0.0045 t=0.256 p=0.79807 d=0.043
+  Sens_SI: M=0.4123 F=0.4416 M-F=-0.0293 t=-1.329 p=0.18598 d=-0.215
+  Sens_Sad: M=0.4077 F=0.4109 M-F=-0.0032 t=-0.145 p=0.88530 d=-0.024
+  Sens_Rej: M=0.3557 F=0.3938 M-F=-0.0381 t=-1.923 p=0.05657 d=-0.323
+
+Robustness: diff ~ sex * pt (type III):
+                         sum_sq     df          F   PR(>F)
+Intercept               5.14267    1.0  149.20216  0.00000
+C(sex, Sum)             0.03444    1.0    0.99917  0.31924
+C(pt, Sum)              0.00229    1.0    0.06653  0.79683
+C(sex, Sum):C(pt, Sum)  0.03817    1.0    1.10750  0.29444
+Residual                4.82550  140.0        NaN      NaN
+figure saved
+power at partial eta2=0.02: 0.399
+power at partial eta2=0.05: 0.781
+power at partial eta2=0.06: 0.853

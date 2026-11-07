@@ -1,0 +1,39 @@
+{
+ "study": "S27",
+ "state": "pdf rendered",
+ "backend": "attached",
+ "model": "opus",
+ "pid": null,
+ "started_at": "2026-11-07T17:09:12+0100",
+ "t0": 1794067752.2866921,
+ "sandbox": "/Users/vladnicolescu/Developer/science-resocialized-target/env/runs/S27",
+ "turns": 0,
+ "tool_calls": 0,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "cache_read": 0,
+  "cache_create": 0
+ },
+ "cost_usd": null,
+ "last_tool": null,
+ "budget_usd": 20.0,
+ "elapsed_s": 126,
+ "note": "attached run: an Opus subagent of the bench session worked in the sealed sandbox; 96,817 tokens over 9 tool calls; the cost is not reported by that backend",
+ "finished_at": "2026-11-07T17:11:18+0100",
+ "exit_code": 0,
+ "minutes": 2.1,
+ "conclusion": {
+  "study": "S27",
+  "holds": "no",
+  "primary_test": "Between-subjects 2x2 ANOVA (Type III) on AvgWillingReconcileTime2: role x message interaction",
+  "statistic": "F(1, 137) = 1.42",
+  "p": "0.235",
+  "effect_size": "partial eta squared = 0.010, 95% CI [0.000, 0.067]; cell pattern opposite to predicted crossover",
+  "n_after_exclusions": 141,
+  "minutes": 3
+ },
+ "tokens_total_from_agent": 96817,
+ "agent_tool_uses": 9,
+ "agent_duration_s": 113
+}

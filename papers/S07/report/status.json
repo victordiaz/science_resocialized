@@ -4,8 +4,8 @@
  "backend": "attached",
  "model": "opus",
  "pid": null,
- "started_at": "2026-11-07T16:56:53+0100",
- "t0": 1794067013.372781,
+ "started_at": "2026-11-07T17:11:19+0100",
+ "t0": 1794067879.5228338,
  "sandbox": "/Users/vladnicolescu/Developer/science-resocialized-target/env/runs/S07",
  "turns": 0,
  "tool_calls": 0,
@@ -18,22 +18,22 @@
  "cost_usd": null,
  "last_tool": null,
  "budget_usd": 20.0,
- "elapsed_s": 129,
- "note": "attached run: an Opus subagent of the bench session worked in the sealed sandbox; 97,304 tokens over 7 tool calls; the cost is not reported by that backend",
- "finished_at": "2026-11-07T16:59:02+0100",
+ "elapsed_s": 183,
+ "note": "attached run: an Opus subagent of the bench session worked in the sealed sandbox; 103,860 tokens over 10 tool calls; the cost is not reported by that backend",
+ "finished_at": "2026-11-07T17:14:23+0100",
  "exit_code": 0,
- "minutes": 2.2,
+ "minutes": 3.1,
  "conclusion": {
   "study": "S07",
   "holds": "no",
-  "primary_test": "Meng, Rosenthal & Rubin (1992) contrast of correlated correlations (polydrug with KS, KC, RS, RC; Fisher z; weights +1,-1,+1,-1 = sunny minus cloudy; r_x = median inter-correlation 0.389)",
+  "primary_test": "Meng-Rosenthal-Rubin (1992) contrast among correlated correlations of polydrug with KS, KC, RS, RC (Fisher z), weights (+1,-1,+1,-1) = sunny minus cloudy, r_x = median inter-correlation of casting scores (0.389)",
   "statistic": "Z = 1.248",
   "p": "0.212",
-  "effect_size": "mean sunny-minus-cloudy Fisher z difference = 0.080, bootstrap 95% CI [-0.076, 0.229]; r_contrast = 0.10",
+  "effect_size": "mean z(sunny) - mean z(cloudy) = 0.080, 95% bootstrap CI [-0.076, 0.229]; r_contrast = 0.10",
   "n_after_exclusions": 153,
-  "minutes": 12
+  "minutes": 5
  },
- "tokens_total_from_agent": 97304,
- "agent_tool_uses": 7,
- "agent_duration_s": 101
+ "tokens_total_from_agent": 103860,
+ "agent_tool_uses": 10,
+ "agent_duration_s": 159
 }

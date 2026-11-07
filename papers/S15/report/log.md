@@ -13,3 +13,6 @@
 
 ## Commands
 1. `head` of each data file and MANIFEST.json (structure only). d11.csv is the processed per-participant file with `decision`, `options`, `focus`; d04/d05/d12–d14 are raw platform exports (questionnaire responses, an IAT-type task, demographics, task/session logs). Primary test uses d11.csv as the card directs.
+2. Wrote `analysis.py`; ran `.venv/bin/python -I papers/S15/report/analysis.py > papers/S15/report/analysis.out`. Checks: 496 rows, 496 unique ids, no duplicate rows; `decision` matches `infochoice == judgment1` in all 469 non-blank rows; 27 blank `decision` excluded (as the card says); control-focus n = 150 (as the card says). Primary: chi2(1, N=150) = 7.10, p = .0077, phi = .22 in the predicted direction (79% vs 59% confirming at ten vs two).
+3. Second run after adding warning suppression (statsmodels perfect-fit warning from the saturated log-linear model, which is expected) and wider pandas display; numbers unchanged. No change of plan.
+4. Wrote report.md; rendered with `.venv/bin/python -I score/md2pdf.py papers/S15/report/report.md papers/S15/report/report.pdf`; wrote conclusion.json last.

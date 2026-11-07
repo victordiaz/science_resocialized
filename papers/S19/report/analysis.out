@@ -1,0 +1,68 @@
+Trials loaded: 8448 participants: 32
+  drop participant 24: -264
+  drop fillers (Distraction==1): -2232
+  drop same-value pairs (Distance==0): -1984
+  drop error trials (correct==0): -107
+  drop RT <200 or >2500 ms: -45
+Trials kept: 3816
+filter_$==1 among kept: 3816 ; filter_$==1 in full file excl. P24: 3921
+Participants in analysis: 31  cells per participant: [6]  order n: {1: 16, 2: 15}
+Trials per cell: min 12
+
+Cell means (ms) [Notation 1=Arabic 2=Indian 3=mixed; Distance 1=small 2=large]:
+                    mean    std
+Notation Distance              
+1        1         780.9  172.7
+         2         735.5  166.1
+2        1         804.2  171.0
+         2         740.6  166.3
+3        1         829.8  164.3
+         2         761.2  166.6
+Distance
+1    804.9
+2    745.7
+Name: RT, dtype: float64
+
+d36.csv cross-check: rows matched 186  max |diff| 0.0
+
+PRIMARY: main effect of numerical difference: F(1, 29) = 45.274, MSE = 3574.9, p = 2.21e-07, partial eta^2 = 0.610
+  large - small (unweighted over order, avg over notation) = -59.0 ms, 95% CI [-77.0, -41.1]
+  90% CI partial eta^2: [0.395, 0.718]
+  paired dz (large-small, all 31, pooled over order) = -1.225; mean = -59.2 ms
+  participants with large < small: 28 of 31
+
+R aov (full 3x2x2 mixed ANOVA, sequential SS within strata; check of the distance row):
+
+Error: participant
+          Df  Sum Sq Mean Sq F value  Pr(>F)   
+Order      1 1301810 1301810    11.3 0.00219 **
+Residuals 29 3342245  115250                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Error: participant:Notation
+               Df Sum Sq Mean Sq F value   Pr(>F)    
+Notation        2  44009   22004   9.624 0.000246 ***
+Notation:Order  2   4870    2435   1.065 0.351384    
+Residuals      58 132615    2286                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Error: participant:Distance
+               Df Sum Sq Mean Sq F value   Pr(>F)    
+Distance        1 162976  162976  45.589 2.07e-07 ***
+Distance:Order  1   1350    1350   0.378    0.544    
+Residuals      29 103672    3575                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Error: participant:Notation:Distance
+                        Df Sum Sq Mean Sq F value Pr(>F)
+Notation:Distance        2   4640    2320   0.760  0.472
+Notation:Distance:Order  2   8478    4239   1.389  0.257
+Residuals               58 176970    3051               
+
+Robustness: large - small within each notation (paired t over 31):
+  Arabic: mean -45.4 ms, t(30) = -2.39, p = 0.0231
+  Indian: mean -63.6 ms, t(30) = -4.97, p = 2.53e-05
+  mixed: mean -68.6 ms, t(30) = -6.80, p = 1.54e-07

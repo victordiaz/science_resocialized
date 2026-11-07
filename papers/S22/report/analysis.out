@@ -1,0 +1,67 @@
+rows 3200 subjects 40
+trials per subject x task x instruction:
+Rhythm?  Grouped?
+0        0           800
+         1           800
+1        0           800
+         1           800
+Name: n_rows, dtype: int64
+cell counts min/max: 20 20
+missing latencies in timing trials: 0
+non-positive latencies in timing trials: 0
+latency summary (timing trials):
+       Out sec 1  Out sec 2  Out sec 3  Out sec 4  Out sec 5  Out sec 6
+count   1600.000   1600.000   1600.000   1600.000   1600.000   1600.000
+mean       1.838      0.923      0.948      1.069      1.042      0.887
+std        0.900      0.404      0.460      0.464      0.792      0.508
+min        0.004      0.142      0.182      0.110      0.097      0.142
+25%        1.356      0.695      0.668      0.726      0.748      0.590
+50%        1.678      0.879      0.871      1.039      0.959      0.799
+75%        2.117      1.095      1.127      1.341      1.215      1.039
+max       14.580      9.509      7.882      3.589     27.741     10.017
+
+Deviation of 4th latency from quadratic trend (s), per condition:
+       ungrouped  grouped
+count    40.0000  40.0000
+mean     -0.0153   0.1038
+std       0.2942   0.3519
+min      -0.8096  -1.1185
+25%      -0.1642  -0.0228
+50%      -0.0102   0.1152
+75%       0.0975   0.2598
+max       0.6010   0.9946
+
+PRIMARY: paired t-test, grouped vs ungrouped deviation
+N = 40; mean grouped = 0.1038 s (SD 0.3519); mean ungrouped = -0.0153 s (SD 0.2942)
+mean diff = 0.1192 s, 95% CI [0.0035, 0.2348]
+t(39) = 2.084, p = 0.0438
+d_av = 0.367, bootstrap 95% CI [0.033, 0.776]; d_z = 0.329
+subjects with grouped > ungrouped: 28 of 40
+
+ROBUSTNESS: Wilcoxon signed-rank on the difference
+W = 236.0, p = 0.0185
+one-sample t of each condition's deviation vs 0:
+  ungrouped: t(39) = -0.329, p = 0.744
+  grouped: t(39) = 1.866, p = 0.0695
+
+SECONDARY: 2 x 6 RM ANOVA on per-subject mean latencies (timing task)
+          Source       SS  ddof1  ddof2       MS        F   p_unc  p_GG_corr     ng2     eps  sphericity  W_spher  p_spher
+0        grouped   0.0587      1     39   0.0587   0.5722  0.4539     0.4539  0.0011  1.0000        True      NaN      1.0
+1            pos  51.7192      5    195  10.3438  78.9038  0.0000     0.0000  0.4904  0.3626       False   0.0253      0.0
+2  grouped * pos   0.3564      5    195   0.0713   2.5440  0.0295     0.0653  0.0066  0.5481       False   0.1252      0.0
+
+Mean latency by position (timing task):
+pos           1       2       3       4       5       6
+grouped                                                
+0        1.8211  0.9286  1.0118  1.0527  1.0497  0.9092
+1        1.8544  0.9179  0.8846  1.0856  1.0336  0.8643
+
+CONTEXT: same deviation measure in the order (NUMBERS) task
+order task: mean dev ungrouped 0.0628, grouped 0.1941; t(39) = 3.025, p = 0.00438
+
+figure written: fig1.png
+
+SENSITIVITY (post hoc, not planned as primary): extreme trial latencies
+timing-trial latencies > 5 s: 20 of 9600
+  per-cell medians instead of means: diff 0.1534; t(39) = 2.428, p = 0.0199
+  latencies > 5 s set missing: diff 0.1329; t(39) = 2.509, p = 0.0164

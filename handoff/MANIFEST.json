@@ -26,11 +26,11 @@
   },
   {
    "study": "S04",
-   "created_at": "2026-11-07T16:56:51+0100",
-   "report_pdf_sha256": "a1d3a92b9b7a55f183d406845847d1c382eaf3220337905a879c6bd565573fc2",
+   "created_at": "2026-11-07T17:13:39+0100",
+   "report_pdf_sha256": "4bc55f01e5e1c0f9a1009b7fd9f16ac9ef0b87ac56dcc506d0659497d32e8cec",
    "model": "opus",
    "cost_usd": null,
-   "minutes": 1.8
+   "minutes": 2.2
   },
   {
    "study": "S05",
@@ -50,11 +50,11 @@
   },
   {
    "study": "S07",
-   "created_at": "2026-11-07T16:59:22+0100",
-   "report_pdf_sha256": "de43e7472de9116c73e1c839f349cae2c61ec076489ccaf172920d02eeafc70c",
+   "created_at": "2026-11-07T17:14:31+0100",
+   "report_pdf_sha256": "a372455caefdaeefaa037de99109254ca0298dd722fce88e4ddceb9826ce8cc7",
    "model": "opus",
    "cost_usd": null,
-   "minutes": 2.2
+   "minutes": 3.1
   },
   {
    "study": "S08",
@@ -97,14 +97,150 @@
    "minutes": 2.0
   },
   {
+   "study": "S13",
+   "created_at": "2026-11-07T17:03:45+0100",
+   "report_pdf_sha256": "68723b76fb1de4e46dd18be2296c6d9583cc58dc1ade038463272d8d3d96660f",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 3.0
+  },
+  {
+   "study": "S14",
+   "created_at": "2026-11-07T17:03:45+0100",
+   "report_pdf_sha256": "01d734337be7455c0e9fcbdd3043034369d212434018a8dba9beb65892d523f8",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 2.7
+  },
+  {
+   "study": "S15",
+   "created_at": "2026-11-07T17:04:30+0100",
+   "report_pdf_sha256": "f37f8fbe9a9536569cd0c727bfcbdde365a6318f7b41e69eb66e4a99ec049ee7",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 3.2
+  },
+  {
+   "study": "S16",
+   "created_at": "2026-11-07T17:03:35+0100",
+   "report_pdf_sha256": "735116b760d2cc5470a1deef502b64dda1aa314724dd4c5e92de615dc1b781cd",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 2.0
+  },
+  {
+   "study": "S17",
+   "created_at": "2026-11-07T17:06:45+0100",
+   "report_pdf_sha256": "3ce5270e174d8e2dd4c95e2765ee304c4a35735d87675231762379b71170036e",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 2.4
+  },
+  {
+   "study": "S18",
+   "created_at": "2026-11-07T17:06:45+0100",
+   "report_pdf_sha256": "96b2e56d27ef5b479baaaca73bee2934f35f090e1d82071b4328695f976a48de",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 2.3
+  },
+  {
+   "study": "S19",
+   "created_at": "2026-11-07T17:06:57+0100",
+   "report_pdf_sha256": "0db2ee71ae962c8abb64ca21289654ab4b92a21d40ec41ba713f8b71644d5fac",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 2.9
+  },
+  {
+   "study": "S20",
+   "created_at": "2026-11-07T17:06:45+0100",
+   "report_pdf_sha256": "e3dc7ba1aefc7d4298dbfe5296af778f61aaa1e7507ba994c5f6a89171f7e0a6",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 2.0
+  },
+  {
+   "study": "S21",
+   "created_at": "2026-11-07T17:10:10+0100",
+   "report_pdf_sha256": "e8b8374c65da351d6e44e21940b703bf2e64a6b4c5eb2b2709cc9464feae1c39",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 3.4
+  },
+  {
+   "study": "S22",
+   "created_at": "2026-11-07T17:08:56+0100",
+   "report_pdf_sha256": "3d7fd4b15dc879fb1f8a19866300c7dbb884f6db74916c75620ef3d004d82f8d",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 2.1
+  },
+  {
    "study": "S23",
    "created_at": "2026-11-07T16:11:07+0100",
    "report_pdf_sha256": "b70aa0948b686550d24bafd31320b1780b771879f5c6eeb81c54ccbf23bccc46",
    "model": "opus",
    "cost_usd": null,
    "minutes": 2.0
+  },
+  {
+   "study": "S24",
+   "created_at": "2026-11-07T17:09:12+0100",
+   "report_pdf_sha256": "8fa9e1243ecac16aef305f03ea5665e44f0c664d384f559d219c5e96931f9d3b",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 2.3
+  },
+  {
+   "study": "S25",
+   "created_at": "2026-11-07T17:09:27+0100",
+   "report_pdf_sha256": "f8c065ea23568db917bbc4229ff0797a824c9d20d611913ab505cbc3c2321493",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 2.3
+  },
+  {
+   "study": "S26",
+   "created_at": "2026-11-07T17:10:44+0100",
+   "report_pdf_sha256": "11f17080699cc53f9c8d3cf534c01cb2b75f28076b6d70a04eb2bc95ab7fa240",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 1.8
+  },
+  {
+   "study": "S27",
+   "created_at": "2026-11-07T17:11:26+0100",
+   "report_pdf_sha256": "a96c7dba99cf1a848cf7b20f118a186be95a117975df623128a522f0007febe4",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 2.1
+  },
+  {
+   "study": "S28",
+   "created_at": "2026-11-07T17:11:19+0100",
+   "report_pdf_sha256": "4f04b2db64d1e6171d33bbeb9e1bf96f7592eb4995f475d37815e05a6b1b6423",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 1.7
+  },
+  {
+   "study": "S29",
+   "created_at": "2026-11-07T17:11:36+0100",
+   "report_pdf_sha256": "0db3200fde1d04d32db827a0dcb5c19a12cb2abf6d5eaebacf7677c1b0c7d50a",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 1.4
+  },
+  {
+   "study": "S30",
+   "created_at": "2026-11-07T17:12:59+0100",
+   "report_pdf_sha256": "3171c9d3460ffbb37c44ca84652f8dbae826ce79b8b835a5750b184da9b75bb9",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 2.2
   }
  ],
- "updated_at": "2026-11-07T17:01:34+0100",
+ "updated_at": "2026-11-07T17:14:31+0100",
  "bundle_version": 1
 }

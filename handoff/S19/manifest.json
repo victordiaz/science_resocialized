@@ -1,0 +1,108 @@
+{
+ "bundle_version": 1,
+ "study": "S19",
+ "created_at": "2026-11-07T17:06:57+0100",
+ "files": {
+  "report.pdf": {
+   "sha256": "0db2ee71ae962c8abb64ca21289654ab4b92a21d40ec41ba713f8b71644d5fac",
+   "bytes": 125534
+  },
+  "report.md": {
+   "sha256": "ec6730680810d4e26782b3f9a0f663c7d98cfa1a79b7aea4e41a7c55866becd3",
+   "bytes": 2911
+  },
+  "log.md": {
+   "sha256": "e32ff0406c0a0a0fd355364e8febdfbac2e529655f3ecb99281039035b3a14b9",
+   "bytes": 3858
+  },
+  "card.md": {
+   "sha256": "27f82afbfa666fb7776ff277b14a3a23295aadbe171475c6bb6f9f912ed79159",
+   "bytes": 3071
+  }
+ },
+ "data_files": {
+  "d30.sav": {
+   "sha256": "13fecd4661cdb247247cd6042aac79fbbef4710dd90293bf9b968b854cd813c1",
+   "bytes": 6737
+  },
+  "d25.sav": {
+   "sha256": "f692718003195082c7af7ec22d5e3971031ca7851908a0e480e4e1289f1ce7bb",
+   "bytes": 1412
+  },
+  "d27.sav": {
+   "sha256": "8e469e610c6fb13001e288cc37305555da62fffd734d9cd016ed9849b31de3c2",
+   "bytes": 3089
+  },
+  "d26.sav": {
+   "sha256": "fa923b60f2655642aa6b77456ef249a00be8f5aa48970b355963214e298d3429",
+   "bytes": 2945
+  },
+  "d07.csv": {
+   "sha256": "430d0c2d3b7665293c88094ffa8796d3fcf72f07b4a1a6734dfe0c85ab7c472c",
+   "bytes": 196
+  },
+  "d06.csv": {
+   "sha256": "3a140eb9c5e29b2fd849c0de5a25ea21fd1a991b83c89cac9a598e9d6a00ee85",
+   "bytes": 302094
+  },
+  "d34.csv": {
+   "sha256": "6bfa63b1d4d95f4951bb6d5dc9881821ca2b05b686411a1a91ad765ce2013300",
+   "bytes": 1353
+  },
+  "d35.csv": {
+   "sha256": "09c9b4689f681da76b368d1811a34e4f3084405f33e5538ad862a030b06465a0",
+   "bytes": 2205
+  },
+  "d09.csv": {
+   "sha256": "2e59373e8c48c699bedc9857d9bfabfd18a9340f9e68bab1a3fe39d15ac71304",
+   "bytes": 300377
+  },
+  "d36.csv": {
+   "sha256": "a256ee3206546d900a36d10778b66eea9bae4135ae6b3621742f822c6cd23027",
+   "bytes": 3610
+  },
+  "d32.csv": {
+   "sha256": "30fb95bb297fecdd86c85726ef25c2e3ce55ecb3e94e34a110b18b816b49eff7",
+   "bytes": 1018
+  },
+  "d33.csv": {
+   "sha256": "127be88c561fe4251faa2a858ac8414cad0c6f2eb3dd73ad9e328a5fe4c34537",
+   "bytes": 3454
+  },
+  "MANIFEST.json": {
+   "sha256": "dccd1b4c9b77229c9d76ab5217700c9e0f5e68802892ed743da12242acba2de4",
+   "bytes": 1806
+  },
+  "d31.csv": {
+   "sha256": "807a815af22da99c5b6ca9544335c5c2ec87f019142d390fb6323819dfd08a98",
+   "bytes": 723
+  },
+  "d28.sav": {
+   "sha256": "32b8793bb342b24cd1a4b9e0241f11a62bb623ae48ba84edb2ed581e14ee5b5e",
+   "bytes": 1589
+  },
+  "d29.sav": {
+   "sha256": "fef322102bb5c9b93dd9408b79304362bbe86197ea7812ec42945dbf2e75d235",
+   "bytes": 6745
+  }
+ },
+ "data_included": true,
+ "researcher": {
+  "model": "opus",
+  "backend": "attached",
+  "cost_usd": null,
+  "tokens": {
+   "input": 0,
+   "output": 0,
+   "cache_read": 0,
+   "cache_create": 0
+  },
+  "turns": 0,
+  "tool_calls": 0,
+  "minutes": 2.9,
+  "started_at": "2026-11-07T17:03:48+0100",
+  "finished_at": "2026-11-07T17:06:42+0100"
+ },
+ "conclusion_stated": "yes",
+ "reviewers_write_back": "verdicts/S19/<structure>/<reviewer>/round1.json and round2.json (see handoff/README.md)"
+}

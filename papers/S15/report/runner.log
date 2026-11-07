@@ -5,3 +5,8 @@
 [17:02:29] report/ now has: analysis.py, analysis.out, log.md
 [17:03:05] report/ now has: analysis.out
 [17:03:20] report/ now has: analysis.py, analysis.out
+[17:03:53] report/ now has: analysis.out, log.md
+[17:04:08] report/ now has: report.md, report.html
+[17:04:11] report/ now has: report.pdf
+[17:04:17] report/ now has: conclusion.json
+[17:04:26] done: pdf rendered, 3.2 min, cost None

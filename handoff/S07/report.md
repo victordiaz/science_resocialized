@@ -1,28 +1,28 @@
-# S07: Is the game–drug-use correlation larger when the pond is visible?
+# S07: Does the angling game predict drug use better in sunny than cloudy conditions?
 
-**Question.** In a sequential fishing risk game, is the correlation between risk taking (adjusted casting score) and real-world drug use (weighted polydrug score) larger in the sunny conditions (pond visible) than in the cloudy conditions (pond hidden)? Predicted sign of the sunny-minus-cloudy contrast: positive.
+**Question.** In a sequential risk-taking (fishing) game, is the correlation between risk taking and real-world drug use larger when the pond's contents are visible (sunny) than when they are hidden (cloudy)? Predicted sign of the contrast sunny minus cloudy: positive.
 
-**Data and sample.** Replication data: the cleaned per-participant file (d10, 161 participants who completed the game; duplicate program entries already removed and the restarted session dropped). Adjusted casting score per condition (Keep-Sunny KS, Keep-Cloudy KC, Release-Sunny RS, Release-Cloudy RC) = mean casts on rounds the participant stopped voluntarily, all rounds in the trial file (practice-flagged rounds included, as the cleaning specifies). **Exclusions:** 8 participants with no drug-use score (questionnaire not completed). **N = 153.** I recomputed the four casting scores from the raw trial file (d08) and they match d10 exactly; the polydrug scores match d09 exactly.
+**Data and sample.** Replication raw data: trial file (20,722 rounds), item-level drug questionnaire, and the cleaned per-participant file. I recomputed every score from the raw files; they match the cleaned file exactly.
 
-**Test (named in advance).** Pearson r of polydrug with each casting score, Fisher z, and the Meng, Rosenthal & Rubin (1992) contrast test for correlated correlations with weights (+1, −1, +1, −1) on (KS, KC, RS, RC), r_x = median of the six inter-correlations of the casting scores. The claim holds if Z > 0 with two-sided p < .05.
+- 161 participants have game data in all four conditions (Keep/Release x Sunny/Cloudy). 150 trial rows with no participant id were dropped as unattributable (no other duplicate rows exist).
+- 8 participants have no drug-use score (questionnaire not completed) and were dropped.
+- **N = 153** with all five values.
 
-**Results.**
+**Measures.** Casting score per condition (KS, KC, RS, RC): mean number of casts on rounds the participant stopped voluntarily (blue-fish rounds excluded; all rounds, including practice, as in the cleaning script). Polydrug: sum over 11 drug classes of (frequency rank at time of heaviest use − 1); mean 6.93, SD 4.39, range 0–25.
 
-| Condition | r with polydrug | 95% CI |
+**Primary test (named in advance).** Pearson r of polydrug with each casting score, Fisher z, Meng–Rosenthal–Rubin (1992) contrast with weights (+1, −1, +1, −1) on (KS, KC, RS, RC), r_x = median inter-correlation of the four casting scores (0.389). Claim holds if Z > 0 and two-sided p < .05.
+
+| Condition | r with polydrug | p |
 |---|---|---|
-| Keep-Sunny | +0.026 | [−0.134, +0.183] |
-| Keep-Cloudy | −0.046 | [−0.203, +0.114] |
-| Release-Sunny | −0.011 | [−0.170, +0.148] |
-| Release-Cloudy | −0.099 | [−0.254, +0.060] |
+| Keep, sunny | 0.026 | .75 |
+| Keep, cloudy | −0.046 | .57 |
+| Release, sunny | −0.011 | .89 |
+| Release, cloudy | −0.099 | .22 |
 
-None of the four correlations differs from zero (all p ≥ .22). Inter-correlations of the casting scores range .24–.55, median r_x = 0.389.
+![Correlations with 95% CIs](fig1.png)
 
-**Primary statistic: Z = +1.25, two-sided p = .212 (N = 153).** The contrast points in the predicted direction but is not significant. Effect size: mean sunny-minus-cloudy difference in Fisher z = +0.080, bootstrap 95% CI [−0.076, +0.229] (5000 resamples); contrast correlation r = Z/√(Z² + N − 3) = +0.10.
+**Result.** Z = 1.25, two-sided p = .21, N = 153 (Z is referred to the standard normal; no df). Effect size: mean Fisher z sunny minus mean z cloudy = 0.080, 95% bootstrap CI [−0.076, 0.229] (5,000 participant resamples); r_contrast = Z/√N = 0.10. The direction is as predicted (sunny correlations slightly higher in both release rules), but none of the four correlations differs from zero (all |r| < .10). So there is little game–drug association to strengthen or weaken in the first place.
 
-![Correlation of each casting score with polydrug, 95% CI (orange: sunny; grey: cloudy)](fig1.png)
+**Robustness (not the basis of the conclusion).** Spearman correlations: Z = 0.76, p = .45. Log(1 + polydrug): Z = 0.81, p = .42. Practice rounds removed: Z = 1.00, p = .32. None reaches significance.
 
-**Robustness (not the basis of the conclusion).** Practice rounds excluded: Z = +1.00, p = .316. Spearman correlations: Z = +0.76, p = .450. The result does not depend on these choices.
-
-**Interpretation.** The premise behind the contrast, that the game picks out drug users at all, is not met in this sample: the sunny correlations are themselves about zero (+0.03 and −0.01), so there is little for the cloudy condition to weaken. The interval for the contrast includes zero and also includes moderate positive differences, so this sample rules out a large contrast but not a small one.
-
-**Conclusion.** The claim does not hold on this data: the sunny-minus-cloudy contrast of drug-use correlations is small and not significant (Z = 1.25, p = .21, N = 153), and the game's scores do not correlate with drug use in any condition.
+**Conclusion.** The claim does not hold on this data: the sunny-minus-cloudy contrast is in the predicted direction but small and not significant (Z = 1.25, p = .21), and the game scores barely correlate with drug use in any condition.

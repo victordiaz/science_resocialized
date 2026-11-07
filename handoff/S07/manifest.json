@@ -1,23 +1,23 @@
 {
  "bundle_version": 1,
  "study": "S07",
- "created_at": "2026-11-07T16:59:22+0100",
+ "created_at": "2026-11-07T17:14:31+0100",
  "files": {
   "report.pdf": {
-   "sha256": "de43e7472de9116c73e1c839f349cae2c61ec076489ccaf172920d02eeafc70c",
-   "bytes": 114070
+   "sha256": "a372455caefdaeefaa037de99109254ca0298dd722fce88e4ddceb9826ce8cc7",
+   "bytes": 109085
   },
   "report.md": {
-   "sha256": "e4d1bbb21899a868d3569cc556a8aa92eb69cda2a6414e6dc7e43511db3d386a",
-   "bytes": 3074
+   "sha256": "0c068633668f67c8af05e9866697e02ac75723a5e94eb54a620e0dbd6132ec22",
+   "bytes": 2699
   },
   "log.md": {
-   "sha256": "634f3392a59e9314bb170a313f82244fc3a0574d6b73619aa0a7e4650b806745",
-   "bytes": 3700
+   "sha256": "aa747158601037e295f3708b0394d08b60c37b8d92f79d560efb2eb336383cc9",
+   "bytes": 4721
   },
   "card.md": {
-   "sha256": "80f07cc450e2060762664dd4be1fc2de7575468d3746a7b2309177d03287ac30",
-   "bytes": 2824
+   "sha256": "c0e04df9814c5850e1dab5bf180c9da8d69130d1e69c38965aea42795ad50529",
+   "bytes": 2816
   }
  },
  "data_files": {
@@ -29,17 +29,9 @@
    "sha256": "ea237191a39acbb552888dacad8862cb61ece587fbdde2e76f64cdcc2000622a",
    "bytes": 2986
   },
-  "d04.zip": {
-   "sha256": "4a34698f3f252ff8384efb77da4903904afc02742f8c50be3f4e8834696b75f3",
-   "bytes": 2499309
-  },
-  "d05.xlsx": {
-   "sha256": "09b361547874fbb504032fb6ff18164ffb08d444678ad939951b1a094212301c",
-   "bytes": 49301
-  },
   "MANIFEST.json": {
-   "sha256": "b1603963644fa646bdb41d16315b3722faf38b5a0f172c00e273a9f144cb686c",
-   "bytes": 753
+   "sha256": "09973fdd185a8412d58d2d63346cdbcbcead2f36a3fb5af94aecce593de642d3",
+   "bytes": 751
   },
   "d10.dta": {
    "sha256": "088a5d1c1a96d2dd2e25edc35cbc5759aae0836ca220fe823e4f80c8fa661ecd",
@@ -48,6 +40,14 @@
   "d11.dta": {
    "sha256": "55427f67bc93192d23ecdc44cf157c0ecfe6d602f0e79f784d22838db2b14b2d",
    "bytes": 279193
+  },
+  "d15.dta": {
+   "sha256": "ddac582f4f28d038a3e3b90f2c0f39510c51ef4615ae4a66ca1a2cb884e1ef44",
+   "bytes": 1249855
+  },
+  "d14.dta": {
+   "sha256": "c2dc52cd634fb10347c2bf80843340c7a4b4815944c662c4bf8d258300c9b75c",
+   "bytes": 9010
   }
  },
  "data_included": true,
@@ -63,9 +63,9 @@
   },
   "turns": 0,
   "tool_calls": 0,
-  "minutes": 2.2,
-  "started_at": "2026-11-07T16:56:53+0100",
-  "finished_at": "2026-11-07T16:59:02+0100"
+  "minutes": 3.1,
+  "started_at": "2026-11-07T17:11:19+0100",
+  "finished_at": "2026-11-07T17:14:23+0100"
  },
  "conclusion_stated": "no",
  "reviewers_write_back": "verdicts/S07/<structure>/<reviewer>/round1.json and round2.json (see handoff/README.md)"

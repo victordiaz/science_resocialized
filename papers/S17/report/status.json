@@ -1,0 +1,39 @@
+{
+ "study": "S17",
+ "state": "pdf rendered",
+ "backend": "attached",
+ "model": "opus",
+ "pid": null,
+ "started_at": "2026-11-07T17:03:35+0100",
+ "t0": 1794067415.9166348,
+ "sandbox": "/Users/vladnicolescu/Developer/science-resocialized-target/env/runs/S17",
+ "turns": 0,
+ "tool_calls": 0,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "cache_read": 0,
+  "cache_create": 0
+ },
+ "cost_usd": null,
+ "last_tool": null,
+ "budget_usd": 20.0,
+ "elapsed_s": 141,
+ "note": "attached run: an Opus subagent of the bench session worked in the sealed sandbox; 97,044 tokens over 8 tool calls; the cost is not reported by that backend",
+ "finished_at": "2026-11-07T17:05:57+0100",
+ "exit_code": 0,
+ "minutes": 2.4,
+ "conclusion": {
+  "study": "S17",
+  "holds": "no",
+  "primary_test": "Two-way between-subjects ANOVA (type III, sum-to-zero coding) on mean latency, target stimulus x age group; key term target stimulus main effect",
+  "statistic": "F(1, 44) = 1.44",
+  "p": "0.237",
+  "effect_size": "partial eta^2 = 0.032, 95% CI [0.000, 0.179]",
+  "n_after_exclusions": 48,
+  "minutes": 6
+ },
+ "tokens_total_from_agent": 97044,
+ "agent_tool_uses": 8,
+ "agent_duration_s": 107
+}
