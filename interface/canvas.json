@@ -1,0 +1,25 @@
+{
+  "v": 3,
+  "createdOnFiles": {"v": 1, "at": "2026-11-07T16:12:00Z"},
+  "title": "Science Resocialized · Lab Bench",
+  "launch": {"view": "canvas"},
+  "pages": [],
+  "boards": {
+    "Main.dc.html":   {"x": 0,    "y": 0,    "w": 1440, "h": 2400, "title": "The bench · desktop, live", "expand": "fill", "is_interactive": true},
+    "Phone.dc.html":  {"x": 1520, "y": 0,    "w": 390,  "h": 2000, "title": "The bench · phone width", "expand": "fill"},
+    "States.dc.html": {"x": 0,    "y": 2760, "w": 1440, "h": 820,  "title": "A finding's eight states"},
+    "Record.dc.html": {"x": 0,    "y": 3700, "w": 1440, "h": 1060, "title": "The record, for the humans on this side"},
+    "Wall.dc.html":   {"x": 0,    "y": 4880, "w": 1440, "h": 600,  "title": "The wall · three moments"},
+    "Factory.dc.html": {"x": 0,   "y": 5600, "w": 1440, "h": 1120, "title": "The factory · production, verification, the reveal"},
+    "Reveal.dc.html":  {"x": 0,   "y": 6840, "w": 1440, "h": 1000, "title": "The reveal · S23, played through (mock verdict)", "is_interactive": true}
+  },
+  "order": ["Main.dc.html", "Phone.dc.html", "States.dc.html", "Record.dc.html", "Wall.dc.html", "Factory.dc.html", "Reveal.dc.html"],
+  "notes": {
+    "t1": {"x": 0, "y": -300, "text": "Science Resocialized · the lab bench, rebuilt in Vivarium", "kind": "title1", "maxW": 1910},
+    "api": {"x": 1520, "y": 2760, "w": 390, "fill": "teal", "text": "Fields the design reads that GET /api/state does not have yet:\n\n• card.handle – four to seven words, no label from the literature (the page falls back to the first clause of the hypothesis)\n• status.stage – data | analysis | report | pdf | wall, so the trellis is read, never guessed\n• status.by – who handed the finding to the desk, and when (the amber lamp)\n• handoff.receipt – {at, sha256_matches} from the reviewers' side, so the wall can show a receipt coming back\n• transport.kind – folder | rsync | tailscale | membrane\n• status.recognised – already on the page as f.recognised; keep it"},
+    "rules": {"x": 1520, "y": 3240, "w": 390, "fill": "orange", "text": "Three rules, kept:\n\n1. Nothing on the page names a paper. Handles are the hypothesis in a few words.\n2. The sealed record is a dashed amber ring. It opens only behind the confirm, for the humans on this side, and the glow lights only where a person decided.\n3. Every state is read from the API. The second desk on the live board runs a DEMO script so the states can be seen without an agent; it says so on the desk."}
+  },
+  "designSystems": [
+    {"title": "Vivarium", "namespace": "vivarium", "artifact": "https://claude.ai/code/artifact/128da7f2-28b0-4d29-927e-4faed73ea30f", "version": "1792617052-b6fc", "copiedAt": "2026-11-07T16:12:00Z"}
+  ]
+}

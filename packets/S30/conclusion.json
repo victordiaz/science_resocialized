@@ -1,0 +1,1 @@
+{"study": "S30", "holds": "no", "primary_test": "2 (category: Sens_Friend vs Sens_SI, within) x 2 (Gender, between) mixed ANOVA; Gender x category interaction (= one-way ANOVA on Sens_Friend - Sens_SI)", "statistic": "F(1, 142) = 1.19", "p": "0.276", "effect_size": "partial eta2 = 0.008, 95% CI [0.000, 0.061]", "n_after_exclusions": 144, "minutes": 3}

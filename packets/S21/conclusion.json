@@ -1,0 +1,1 @@
+{"study": "S21", "holds": "yes", "primary_test": "2x2 repeated-measures ANOVA on ex-Gaussian mu (quantile ML fit per participant x condition), quality x frequency interaction", "statistic": "F(1, 70) = 11.41", "p": "0.0012", "effect_size": "partial eta^2 = 0.140, 95% CI [0.024, 0.289]; interaction contrast +86.9 ms [35.6, 138.2]", "n_after_exclusions": 71, "minutes": 4}

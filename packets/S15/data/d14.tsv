@@ -1,0 +1,939 @@
+session_id	 study_name	 session_date	 session_status	 creation_date	 last_update_date	  previous_session_id	 previous_session_schema	  study_url
+1903322	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 14:30:24		06Apr2012 14:30:24	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903331	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 14:55:37	C	06Apr2012 14:47:08	06Apr2012 14:55:37	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903340	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 15:04:55		06Apr2012 15:04:55	NULL 	1903339	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903349	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 15:14:56		06Apr2012 15:14:56	NULL 	1903348	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903351	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 15:15:35		06Apr2012 15:15:35	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903358	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 15:24:45	C	06Apr2012 15:17:39	06Apr2012 15:24:45	1903355	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903360	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 15:26:06	C	06Apr2012 15:18:13	06Apr2012 15:26:06	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903363	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 15:28:24	C	06Apr2012 15:21:34	06Apr2012 15:28:24	17023299	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904020	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 22:35:11		07Apr2012 22:35:11	NULL 	1904017	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904043	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 00:10:04	C	08Apr2012 00:03:18	08Apr2012 00:10:04	17028208	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904631	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 01:52:21	C	09Apr2012 01:46:28	09Apr2012 01:52:21	1904610	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904669	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 03:25:12	C	09Apr2012 03:17:26	09Apr2012 03:25:12	1904667	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904602	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 00:44:38		09Apr2012 00:44:38	NULL 	1904601	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904633	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 01:46:51		09Apr2012 01:46:51	NULL 	17032529	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904662	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 02:53:36		09Apr2012 02:53:36	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907720	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 13:25:37	C	10Apr2012 13:20:57	10Apr2012 13:25:37	1907698	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907780	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 13:44:08		10Apr2012 13:44:08	NULL 	1907779	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907797	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 13:52:56		10Apr2012 13:52:56	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907806	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 14:00:49	C	10Apr2012 13:56:48	10Apr2012 14:00:49	17051787	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905283	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 16:49:11	C	09Apr2012 16:38:53	09Apr2012 16:49:11	1905282	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906301	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:14:26	C	09Apr2012 22:06:30	09Apr2012 22:14:26	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906308	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:19:02	C	09Apr2012 22:09:28	09Apr2012 22:19:02	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907396	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 10:57:26	C	10Apr2012 10:52:46	10Apr2012 10:57:26	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905780	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:11:54	C	09Apr2012 20:06:58	09Apr2012 20:11:54	1905707	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906656	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 23:45:03	C	09Apr2012 23:40:15	09Apr2012 23:45:03	1906651	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906664	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 23:41:55		09Apr2012 23:41:55	NULL 	1906633	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906563	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 23:25:57	C	09Apr2012 23:18:29	09Apr2012 23:25:57	1906488	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906573	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 23:19:57		09Apr2012 23:19:57	NULL 	1906568	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907533	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 11:44:08		10Apr2012 11:44:08	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907573	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 12:02:32		10Apr2012 12:02:32	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905888	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:28:35		09Apr2012 20:28:35	NULL 	1905884	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907421	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 11:11:06	C	10Apr2012 11:04:03	10Apr2012 11:11:06	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907438	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 11:06:23		10Apr2012 11:06:23	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907444	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 11:16:49	C	10Apr2012 11:06:40	10Apr2012 11:16:49	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907452	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 11:08:58		10Apr2012 11:08:58	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907453	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 11:09:09		10Apr2012 11:09:09	NULL 	1907434	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907553	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 12:00:12	C	10Apr2012 11:53:47	10Apr2012 12:00:12	1907551	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909214	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 12:04:38	C	11Apr2012 11:51:38	11Apr2012 12:04:38	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909254	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 12:31:48	C	11Apr2012 12:25:21	11Apr2012 12:31:48	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909273	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 12:57:18	C	11Apr2012 12:41:22	11Apr2012 12:57:18	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908371	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 19:49:16	C	10Apr2012 19:43:22	10Apr2012 19:49:16	1908334	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908507	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 21:02:34	C	10Apr2012 20:55:38	10Apr2012 21:02:34	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909140	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 10:58:39	C	11Apr2012 10:54:21	11Apr2012 10:58:39	1909136	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909200	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 12:00:51	C	11Apr2012 11:50:45	11Apr2012 12:00:51	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909220	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 12:05:34	C	11Apr2012 11:52:22	11Apr2012 12:05:34	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902843	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 20:52:45	C	05Apr2012 20:45:33	05Apr2012 20:52:45	1902841	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902858	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 21:02:05		05Apr2012 21:02:05	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902864	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 21:13:17	C	05Apr2012 21:05:17	05Apr2012 21:13:17	1902861	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902867	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 21:11:06		05Apr2012 21:11:06	NULL 	1902857	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902879	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 21:38:37	C	05Apr2012 21:23:34	05Apr2012 21:38:37	17020370	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902943	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 22:47:24	C	05Apr2012 22:41:49	05Apr2012 22:47:24	1902932	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904067	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 01:50:22	C	08Apr2012 01:41:04	08Apr2012 01:50:22	1904066	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904087	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 02:16:23		08Apr2012 02:16:23	NULL 	1904084	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904110	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 04:26:25		08Apr2012 04:26:25	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904111	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 04:28:00		08Apr2012 04:28:00	NULL 	1904106	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904694	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 06:30:41		09Apr2012 06:30:41	NULL 	1904693	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904705	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 07:20:03		09Apr2012 07:20:03	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904722	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 07:51:17	C	09Apr2012 07:46:42	09Apr2012 07:51:17	1904721	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904753	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 09:27:14	C	09Apr2012 09:20:37	09Apr2012 09:27:14	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905353	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 17:18:39		09Apr2012 17:18:39	NULL 	1905349	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905481	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 18:57:50		09Apr2012 18:57:50	NULL 	1905478	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907443	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 11:14:01	C	10Apr2012 11:06:36	10Apr2012 11:14:01	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907447	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 11:07:35		10Apr2012 11:07:35	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906695	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 23:58:46	C	09Apr2012 23:51:07	09Apr2012 23:58:46	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905061	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 14:24:06	C	09Apr2012 14:17:52	09Apr2012 14:24:06	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905458	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 18:46:39		09Apr2012 18:46:39	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905470	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 18:58:19	C	09Apr2012 18:51:05	09Apr2012 18:58:19	1905467	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905480	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 18:57:07		09Apr2012 18:57:07	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906927	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 01:47:05	C	10Apr2012 01:36:50	10Apr2012 01:47:05	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906929	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 01:39:24		10Apr2012 01:39:24	NULL 	1906908	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906934	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 01:50:06	C	10Apr2012 01:43:49	10Apr2012 01:50:06	1906914	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906957	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 02:35:04	C	10Apr2012 02:03:10	10Apr2012 02:35:04	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905927	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:42:17	C	09Apr2012 20:37:44	09Apr2012 20:42:17	1905903	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905941	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:47:57	C	09Apr2012 20:41:47	09Apr2012 20:47:57	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905324	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 16:59:14		09Apr2012 16:59:14	NULL 	1905322	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905348	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 17:17:02		09Apr2012 17:17:02	NULL 	1905345	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906436	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:52:53	C	09Apr2012 22:43:17	09Apr2012 22:52:53	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907624	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 12:38:37	C	10Apr2012 12:32:24	10Apr2012 12:38:37	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907758	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 13:35:31		10Apr2012 13:35:31	NULL 	17051497	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907817	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 14:01:06		10Apr2012 14:01:06	NULL 	17051672	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908278	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 18:21:04		10Apr2012 18:21:04	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908674	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 22:40:35	C	10Apr2012 22:27:43	10Apr2012 22:40:35	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908678	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 22:28:51		10Apr2012 22:28:51	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908522	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 21:09:26	C	10Apr2012 21:04:33	10Apr2012 21:09:26	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908540	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 21:19:18	C	10Apr2012 21:10:05	10Apr2012 21:19:18	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902979	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 23:42:36		05Apr2012 23:42:36	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903024	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 00:50:21		06Apr2012 00:50:21	NULL 	1902999	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903522	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 21:17:11		06Apr2012 21:17:11	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903531	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 21:48:32	C	06Apr2012 21:40:45	06Apr2012 21:48:32	1903527	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903543	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 22:20:45	C	06Apr2012 22:08:13	06Apr2012 22:20:45	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903545	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 22:20:18	C	06Apr2012 22:12:28	06Apr2012 22:20:18	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904135	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 07:16:53	C	08Apr2012 07:11:55	08Apr2012 07:16:53	1904134	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904138	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 09:11:11	C	08Apr2012 08:59:52	08Apr2012 09:11:11	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904151	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 10:43:39		08Apr2012 10:43:39	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904171	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 12:14:36		08Apr2012 12:14:36	NULL 	1904170	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904782	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 10:25:23	C	09Apr2012 10:14:09	09Apr2012 10:25:23	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904814	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 11:13:22	C	09Apr2012 10:54:07	09Apr2012 11:13:22	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904757	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 09:33:51		09Apr2012 09:33:51	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904780	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 10:16:37	C	09Apr2012 10:11:53	09Apr2012 10:16:37	1904763	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904795	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 10:36:04	C	09Apr2012 10:26:25	09Apr2012 10:36:04	1904794	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904811	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 10:44:52		09Apr2012 10:44:52	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904815	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 11:02:38	C	09Apr2012 10:56:48	09Apr2012 11:02:38	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905499	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:08:36	C	09Apr2012 19:03:58	09Apr2012 19:08:36	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905571	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:20:53		09Apr2012 19:20:53	NULL 	1905562	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905577	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:29:04	C	09Apr2012 19:21:33	09Apr2012 19:29:04	1905570	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905601	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:32:38	C	09Apr2012 19:26:01	09Apr2012 19:32:38	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905643	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:35:59		09Apr2012 19:35:59	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905289	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 16:48:25	C	09Apr2012 16:41:21	09Apr2012 16:48:25	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905560	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:28:32	C	09Apr2012 19:19:21	09Apr2012 19:28:32	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906317	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:17:56	C	09Apr2012 22:12:41	09Apr2012 22:17:56	17041993	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905803	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:18:17	C	09Apr2012 20:10:25	09Apr2012 20:18:17	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905813	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:12:50		09Apr2012 20:12:50	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905819	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:21:09	C	09Apr2012 20:13:38	09Apr2012 20:21:09	17038988	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905486	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 18:58:57		09Apr2012 18:58:57	NULL 	1905473	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905494	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:01:32		09Apr2012 19:01:32	NULL 	1905460	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905498	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:12:56	C	09Apr2012 19:02:58	09Apr2012 19:12:56	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905502	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:10:33	C	09Apr2012 19:04:47	09Apr2012 19:10:33	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906585	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 23:23:00		09Apr2012 23:23:00	NULL 	1906584	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906632	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 23:43:30	C	09Apr2012 23:32:28	09Apr2012 23:43:30	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906640	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 23:43:00	C	09Apr2012 23:34:28	09Apr2012 23:43:00	1906615	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905951	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:43:59		09Apr2012 20:43:59	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905971	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:53:41	C	09Apr2012 20:49:17	09Apr2012 20:53:41	1905928	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906479	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:56:30		09Apr2012 22:56:30	NULL 	1906444	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906494	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:59:32		09Apr2012 22:59:32	NULL 	1906456	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908417	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 20:04:51		10Apr2012 20:04:51	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908418	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 20:20:09	C	10Apr2012 20:05:11	10Apr2012 20:20:09	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909324	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 13:27:25	C	11Apr2012 13:22:29	11Apr2012 13:27:25	1909323	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909360	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 13:52:46		11Apr2012 13:52:46	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909370	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 14:08:44	C	11Apr2012 13:59:52	11Apr2012 14:08:44	1909339	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907929	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 15:25:02	C	10Apr2012 15:19:55	10Apr2012 15:25:02	17052991	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909276	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 12:43:49		11Apr2012 12:43:49	NULL 	1909268	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903034	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 01:16:05	C	06Apr2012 01:02:46	06Apr2012 01:16:05	1903033	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903044	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 01:19:31	C	06Apr2012 01:14:34	06Apr2012 01:19:31	1903035	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903080	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 03:37:20	C	06Apr2012 03:32:53	06Apr2012 03:37:20	17021546	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903656	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 03:05:34	C	07Apr2012 02:55:42	07Apr2012 03:05:34	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903703	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 07:40:38		07Apr2012 07:40:38	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903767	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 12:52:15	C	07Apr2012 12:42:25	07Apr2012 12:52:15	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904209	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 13:42:32	C	08Apr2012 13:33:38	08Apr2012 13:42:32	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904102	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 03:53:16		08Apr2012 03:53:16	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904875	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 11:54:28	C	09Apr2012 11:50:00	09Apr2012 11:54:28	1904862	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904878	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 12:00:37	C	09Apr2012 11:51:19	09Apr2012 12:00:37	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904834	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 11:26:38	C	09Apr2012 11:19:44	09Apr2012 11:26:38	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904874	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 11:48:59		09Apr2012 11:48:59	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904882	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 11:57:55	C	09Apr2012 11:54:21	09Apr2012 11:57:55	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905347	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 17:14:39		09Apr2012 17:14:39	NULL 	1905344	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906018	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:08:26	C	09Apr2012 20:59:56	09Apr2012 21:08:26	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906026	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:06:29	C	09Apr2012 21:01:29	09Apr2012 21:06:29	1905963	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906036	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:11:52	C	09Apr2012 21:04:56	09Apr2012 21:11:52	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906375	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:34:08	C	09Apr2012 22:26:56	09Apr2012 22:34:08	1906327	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907524	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 11:44:41	C	10Apr2012 11:38:41	10Apr2012 11:44:41	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906733	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 00:04:08		10Apr2012 00:04:08	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906749	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 00:08:05		10Apr2012 00:08:05	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905066	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 14:18:37		09Apr2012 14:18:37	NULL 	1905038	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905071	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 14:22:27		09Apr2012 14:22:27	NULL 	1905031	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905077	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 14:39:28	C	09Apr2012 14:26:40	09Apr2012 14:39:28	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905084	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 14:35:24		09Apr2012 14:35:24	NULL 	17035389	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905091	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 14:41:12		09Apr2012 14:41:12	NULL 	1905090	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906643	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 23:35:05		09Apr2012 23:35:05	NULL 	1906574	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906646	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 23:49:19	C	09Apr2012 23:36:50	09Apr2012 23:49:19	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905516	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:08:58		09Apr2012 19:08:58	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905531	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:13:51		09Apr2012 19:13:51	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905553	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:30:45	C	09Apr2012 19:18:40	09Apr2012 19:30:45	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905555	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:26:24	C	09Apr2012 19:18:55	09Apr2012 19:26:24	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907033	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 03:57:12		10Apr2012 03:57:12	NULL 	1907008	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907043	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 04:19:39	C	10Apr2012 04:12:28	10Apr2012 04:19:39	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905997	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:02:14	C	09Apr2012 20:55:25	09Apr2012 21:02:14	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907481	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 11:25:19	C	10Apr2012 11:18:45	10Apr2012 11:25:19	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907500	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 11:37:37	C	10Apr2012 11:26:33	10Apr2012 11:37:37	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907516	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 11:36:29		10Apr2012 11:36:29	NULL 	1907512	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907517	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 11:43:36	C	10Apr2012 11:36:44	10Apr2012 11:43:36	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907850	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 14:43:29	C	10Apr2012 14:31:19	10Apr2012 14:43:29	1907848	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908006	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 16:05:26	C	10Apr2012 15:58:25	10Apr2012 16:05:26	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909285	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 12:53:56		11Apr2012 12:53:56	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909292	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 13:01:05		11Apr2012 13:01:05	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909329	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 13:33:59	C	11Apr2012 13:25:16	11Apr2012 13:33:59	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908141	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 17:07:41	C	10Apr2012 17:02:46	10Apr2012 17:07:41	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908187	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 17:23:21		10Apr2012 17:23:21	NULL 	17054515	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908195	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 17:32:01	C	10Apr2012 17:27:37	10Apr2012 17:32:01	17054713	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908196	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 17:27:44		10Apr2012 17:27:44	NULL 	1908176	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903164	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 09:29:23		06Apr2012 09:29:23	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903213	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 10:53:55		06Apr2012 10:53:55	NULL 	1903212	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903400	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 16:46:33		06Apr2012 16:46:33	NULL 	1903396	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903415	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 17:27:28	C	06Apr2012 17:18:53	06Apr2012 17:27:28	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904148	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 10:35:36	C	08Apr2012 10:31:22	08Apr2012 10:35:36	1904147	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904177	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 12:26:33		08Apr2012 12:26:33	NULL 	17029222	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904211	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 13:43:54	C	08Apr2012 13:37:30	08Apr2012 13:43:54	1904210	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904218	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 13:58:00	C	08Apr2012 13:52:58	08Apr2012 13:58:00	1904217	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904886	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 12:05:09	C	09Apr2012 11:56:12	09Apr2012 12:05:09	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904908	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 12:26:32	C	09Apr2012 12:18:50	09Apr2012 12:26:32	1904907	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904922	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 12:29:48		09Apr2012 12:29:48	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904927	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 12:33:17		09Apr2012 12:33:17	NULL 	1904926	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904951	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 12:54:40		09Apr2012 12:54:40	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906069	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:22:43	C	09Apr2012 21:13:55	09Apr2012 21:22:43	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907084	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 05:51:30	C	10Apr2012 05:46:25	10Apr2012 05:51:30	1907069	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907563	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 12:06:07	C	10Apr2012 11:59:22	10Apr2012 12:06:07	1907561	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905599	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:31:58	C	09Apr2012 19:25:37	09Apr2012 19:31:58	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905600	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:30:40	C	09Apr2012 19:25:53	09Apr2012 19:30:40	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905614	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:32:42	C	09Apr2012 19:29:08	09Apr2012 19:32:42	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905824	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:20:21	C	09Apr2012 20:14:31	09Apr2012 20:20:21	17038643	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905604	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:26:42		09Apr2012 19:26:42	NULL 	1905534	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906046	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:16:30	C	09Apr2012 21:08:36	09Apr2012 21:16:30	1905983	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906051	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:16:00	C	09Apr2012 21:10:18	09Apr2012 21:16:00	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907060	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 04:52:20		10Apr2012 04:52:20	NULL 	1907047	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906055	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:17:02	C	09Apr2012 21:10:33	09Apr2012 21:17:02	17040410	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906130	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:28:50		09Apr2012 21:28:50	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908556	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 21:30:55	C	10Apr2012 21:21:15	10Apr2012 21:30:55	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908629	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 21:59:52		10Apr2012 21:59:52	NULL 	1908626	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908646	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 22:16:58	C	10Apr2012 22:09:17	10Apr2012 22:16:58	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908021	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 16:09:08	C	10Apr2012 16:03:15	10Apr2012 16:09:08	1907984	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903029	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 00:58:36		06Apr2012 00:58:36	NULL 	1903020	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903076	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 03:18:13		06Apr2012 03:18:13	NULL 	1903075	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903246	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 11:59:12	C	06Apr2012 11:52:00	06Apr2012 11:59:12	1903240	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903262	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 12:26:08		06Apr2012 12:26:08	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903305	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 13:59:28	C	06Apr2012 13:55:51	06Apr2012 13:59:28	1903303	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902539	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 14:27:31		05Apr2012 14:27:31	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903422	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 17:28:29		06Apr2012 17:28:29	NULL 	1903413	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903434	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 17:54:46		06Apr2012 17:54:46	NULL 	1903433	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903455	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 18:29:08		06Apr2012 18:29:08	NULL 	1903449	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903477	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 19:34:44	C	06Apr2012 19:24:29	06Apr2012 19:34:44	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904050	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 00:11:25		08Apr2012 00:11:25	NULL 	1904047	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904057	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 01:15:38	C	08Apr2012 01:08:14	08Apr2012 01:15:38	1904056	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904082	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 02:24:57	C	08Apr2012 02:14:21	08Apr2012 02:24:57	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904962	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 13:08:16		09Apr2012 13:08:16	NULL 	1904950	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904966	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 13:10:52		09Apr2012 13:10:52	NULL 	1904930	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904983	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 13:27:08		09Apr2012 13:27:08	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904980	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 13:56:54	C	09Apr2012 13:20:15	09Apr2012 13:56:54	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905027	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 14:04:06		09Apr2012 14:04:06	NULL 	1905025	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905028	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 14:04:57		09Apr2012 14:04:57	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905664	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:43:23	C	09Apr2012 19:40:13	09Apr2012 19:43:23	1905611	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907128	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 07:28:35	C	10Apr2012 07:24:18	10Apr2012 07:28:35	17046563	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905378	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 17:36:09		09Apr2012 17:36:09	NULL 	1905375	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905380	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 17:37:07		09Apr2012 17:37:07	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905391	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 17:59:41	C	09Apr2012 17:57:59	09Apr2012 17:59:41	17037040	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905394	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 18:09:59	C	09Apr2012 18:02:14	09Apr2012 18:09:59	17036973	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905405	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 18:17:42	C	09Apr2012 18:08:44	09Apr2012 18:17:42	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905406	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 18:14:49	C	09Apr2012 18:08:52	09Apr2012 18:14:49	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906416	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:35:28		09Apr2012 22:35:28	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906426	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:44:04	C	09Apr2012 22:38:55	09Apr2012 22:44:04	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906793	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 00:33:09	C	10Apr2012 00:26:30	10Apr2012 00:33:09	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905125	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 15:06:08		09Apr2012 15:06:08	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905127	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 15:13:19	C	09Apr2012 15:06:44	09Apr2012 15:13:19	1905112	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905251	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 16:27:45		09Apr2012 16:27:45	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907085	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 06:04:26	C	10Apr2012 05:49:08	10Apr2012 06:04:26	1907070	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907089	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 05:52:52		10Apr2012 05:52:52	NULL 	1907088	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906199	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:43:44		09Apr2012 21:43:44	NULL 	1906123	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906238	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:51:40		09Apr2012 21:51:40	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907578	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 12:14:04	C	10Apr2012 12:04:45	10Apr2012 12:14:04	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908061	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 16:21:24		10Apr2012 16:21:24	NULL 	1908032	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908068	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 16:31:25	C	10Apr2012 16:23:42	10Apr2012 16:31:25	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908069	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 16:29:19	C	10Apr2012 16:23:43	10Apr2012 16:29:19	1908067	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908117	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 16:58:10	C	10Apr2012 16:49:22	10Apr2012 16:58:10	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908612	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 21:48:57		10Apr2012 21:48:57	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908631	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 22:16:38	C	10Apr2012 22:00:38	10Apr2012 22:16:38	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908633	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 22:01:34		10Apr2012 22:01:34	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908652	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 22:14:18		10Apr2012 22:14:18	NULL 	17058072	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908660	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 22:26:34	C	10Apr2012 22:19:55	10Apr2012 22:26:34	1908627	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908668	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 22:28:47	C	10Apr2012 22:23:02	10Apr2012 22:28:47	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908789	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 00:07:53	C	11Apr2012 00:02:22	11Apr2012 00:07:53	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908847	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 01:07:57	C	11Apr2012 01:01:10	11Apr2012 01:07:57	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908870	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 01:34:07		11Apr2012 01:34:07	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908871	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 01:41:52	C	11Apr2012 01:34:37	11Apr2012 01:41:52	1908869	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908873	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 01:44:35	C	11Apr2012 01:35:29	11Apr2012 01:44:35	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903087	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 05:43:54		06Apr2012 05:43:54	NULL 	1903086	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903100	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 07:31:25	C	06Apr2012 07:23:05	06Apr2012 07:31:25	1903097	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903110	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 07:57:20	C	06Apr2012 07:51:08	06Apr2012 07:57:20	1903109	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902596	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 15:16:26		05Apr2012 15:16:26	NULL 	1902583	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902605	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 15:37:32	C	05Apr2012 15:30:00	05Apr2012 15:37:32	1902577	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902626	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 16:05:35		05Apr2012 16:05:35	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902627	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 16:06:36		05Apr2012 16:06:36	NULL 	1902617	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903502	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 20:25:58		06Apr2012 20:25:58	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903535	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 21:50:51		06Apr2012 21:50:51	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903540	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 22:10:34	C	06Apr2012 22:05:37	06Apr2012 22:10:34	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903554	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 22:44:40	C	06Apr2012 22:36:37	06Apr2012 22:44:40	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903824	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 15:42:32	C	07Apr2012 15:35:59	07Apr2012 15:42:32	1903819	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903848	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 16:27:48	C	07Apr2012 16:15:58	07Apr2012 16:27:48	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903861	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 17:09:16	C	07Apr2012 17:00:21	07Apr2012 17:09:16	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903868	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 17:25:01	C	07Apr2012 17:14:55	07Apr2012 17:25:01	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903870	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 17:17:32		07Apr2012 17:17:32	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904989	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 13:46:20	C	09Apr2012 13:36:35	09Apr2012 13:46:20	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904993	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 13:45:45	C	09Apr2012 13:39:26	09Apr2012 13:45:45	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904994	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 13:45:25	C	09Apr2012 13:39:56	09Apr2012 13:45:25	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905002	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 13:45:15		09Apr2012 13:45:15	NULL 	17034935	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905008	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 13:58:26	C	09Apr2012 13:49:19	09Apr2012 13:58:26	1905007	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905010	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 13:50:09		09Apr2012 13:50:09	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905728	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:55:33		09Apr2012 19:55:33	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906040	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:06:34		09Apr2012 21:06:34	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906112	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:31:07	C	09Apr2012 21:25:32	09Apr2012 21:31:07	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906113	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:39:05	C	09Apr2012 21:25:41	09Apr2012 21:39:05	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907602	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 12:22:08	C	10Apr2012 12:16:27	10Apr2012 12:22:08	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907616	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 12:25:06		10Apr2012 12:25:06	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906802	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 00:37:00	C	10Apr2012 00:28:59	10Apr2012 00:37:00	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905138	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 15:35:34	C	09Apr2012 15:14:18	09Apr2012 15:35:34	1905136	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905146	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 15:20:06		09Apr2012 15:20:06	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907680	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 13:11:07	C	10Apr2012 13:04:41	10Apr2012 13:11:07	1907676	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906116	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:26:28		09Apr2012 21:26:28	NULL 	1906070	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907156	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 08:12:04	C	10Apr2012 08:04:19	10Apr2012 08:12:04	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906299	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:13:30	C	09Apr2012 22:06:21	09Apr2012 22:13:30	1906239	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906363	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:27:06	C	09Apr2012 22:22:16	09Apr2012 22:27:06	1906360	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908288	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 18:29:22		10Apr2012 18:29:22	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908716	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 23:01:42		10Apr2012 23:01:42	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908731	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 23:17:10	C	10Apr2012 23:10:18	10Apr2012 23:17:10	1908717	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907853	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 14:41:47	C	10Apr2012 14:34:49	10Apr2012 14:41:47	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908895	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 01:57:02		11Apr2012 01:57:02	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907913	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 15:14:41	C	10Apr2012 15:11:14	10Apr2012 15:14:41	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908935	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 02:42:38	C	11Apr2012 02:34:40	11Apr2012 02:42:38	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903138	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 08:46:29		06Apr2012 08:46:29	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903150	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 09:10:42	C	06Apr2012 09:07:12	06Apr2012 09:10:42	1903145	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903159	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 09:28:02	C	06Apr2012 09:22:02	06Apr2012 09:28:02	1903158	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902635	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 16:20:21		05Apr2012 16:20:21	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902639	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 16:24:41		05Apr2012 16:24:41	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902696	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 17:46:56		05Apr2012 17:46:56	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903559	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 22:47:55	C	06Apr2012 22:42:10	06Apr2012 22:47:55	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903568	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 22:55:58		06Apr2012 22:55:58	NULL 	1903565	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903588	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 23:39:02	C	06Apr2012 23:35:46	06Apr2012 23:39:02	1903586	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903606	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 00:02:49	C	06Apr2012 23:52:57	07Apr2012 00:02:49	1903605	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903610	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 23:58:48		06Apr2012 23:58:48	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903630	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 01:17:43	C	07Apr2012 01:08:56	07Apr2012 01:17:43	17025287	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903904	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 18:16:09	C	07Apr2012 18:06:59	07Apr2012 18:16:09	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903909	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 18:10:04		07Apr2012 18:10:04	NULL 	1903908	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903935	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 19:24:43	C	07Apr2012 19:18:38	07Apr2012 19:24:43	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903944	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 19:46:47		07Apr2012 19:46:47	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903988	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 21:21:37		07Apr2012 21:21:37	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905039	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 14:08:12		09Apr2012 14:08:12	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905041	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 14:08:38		09Apr2012 14:08:38	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904253	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 15:13:22	C	08Apr2012 15:03:55	08Apr2012 15:13:22	1904239	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904263	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 15:21:07		08Apr2012 15:21:07	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904275	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 16:01:46	C	08Apr2012 15:55:49	08Apr2012 16:01:46	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904296	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 16:42:39	C	08Apr2012 16:34:23	08Apr2012 16:42:39	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904301	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 16:46:00	C	08Apr2012 16:38:44	08Apr2012 16:46:00	1904300	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906188	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:46:33	C	09Apr2012 21:39:36	09Apr2012 21:46:33	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906287	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:03:18		09Apr2012 22:03:18	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906295	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:13:58	C	09Apr2012 22:05:57	09Apr2012 22:13:58	1906294	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907173	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 08:33:44	C	10Apr2012 08:22:24	10Apr2012 08:33:44	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905622	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:31:10		09Apr2012 19:31:10	NULL 	1905546	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905647	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:36:37		09Apr2012 19:36:37	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905653	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:42:49	C	09Apr2012 19:37:57	09Apr2012 19:42:49	1905616	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905162	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 15:38:29	C	09Apr2012 15:31:33	09Apr2012 15:38:29	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905164	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 15:32:36		09Apr2012 15:32:36	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905881	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:26:58		09Apr2012 20:26:58	NULL 	1905877	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905663	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:50:50	C	09Apr2012 19:40:08	09Apr2012 19:50:50	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905683	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:44:56		09Apr2012 19:44:56	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906153	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:41:32	C	09Apr2012 21:33:11	09Apr2012 21:41:32	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906172	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:50:34	C	09Apr2012 21:36:19	09Apr2012 21:50:34	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906371	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:29:53	C	09Apr2012 22:24:56	09Apr2012 22:29:53	1906281	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906389	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:34:58	C	09Apr2012 22:29:53	09Apr2012 22:34:58	17042436	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906397	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:44:58	C	09Apr2012 22:32:42	09Apr2012 22:44:58	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906408	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:39:29	C	09Apr2012 22:33:30	09Apr2012 22:39:29	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906411	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:33:48		09Apr2012 22:33:48	NULL 	1906403	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906307	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:16:16	C	09Apr2012 22:09:17	09Apr2012 22:16:16	1906258	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906354	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:30:07	C	09Apr2012 22:21:01	09Apr2012 22:30:07	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906396	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:32:06		09Apr2012 22:32:06	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908411	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 20:03:42		10Apr2012 20:03:42	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908453	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 20:25:32		10Apr2012 20:25:32	NULL 	1908451	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908499	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 20:49:25		10Apr2012 20:49:25	NULL 	1908423	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908904	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 02:06:34	C	11Apr2012 02:00:13	11Apr2012 02:06:34	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908907	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 02:08:37	C	11Apr2012 02:00:50	11Apr2012 02:08:37	1908905	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908920	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 02:21:46	C	11Apr2012 02:12:20	11Apr2012 02:21:46	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907878	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 15:03:43	C	10Apr2012 14:56:37	10Apr2012 15:03:43	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907881	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 15:05:03	C	10Apr2012 14:57:01	10Apr2012 15:05:03	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908952	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 03:13:20		11Apr2012 03:13:20	NULL 	1908949	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908956	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 03:24:04		11Apr2012 03:24:04	NULL 	1908951	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907960	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 15:36:21	C	10Apr2012 15:32:55	10Apr2012 15:36:21	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907975	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 15:43:49		10Apr2012 15:43:49	NULL 	1907971	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908018	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 16:02:03		10Apr2012 16:02:03	NULL 	1908014	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908057	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 16:24:56	C	10Apr2012 16:20:09	10Apr2012 16:24:56	1908043	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903183	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 10:03:05		06Apr2012 10:03:05	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903200	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 10:35:59	C	06Apr2012 10:29:58	06Apr2012 10:35:59	1903185	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903202	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 10:55:17	C	06Apr2012 10:37:56	06Apr2012 10:55:17	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903206	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 10:45:50		06Apr2012 10:45:50	NULL 	1903205	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903216	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 10:57:08		06Apr2012 10:57:08	NULL 	1903211	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902704	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 17:52:44		05Apr2012 17:52:44	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902707	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 17:53:24		05Apr2012 17:53:24	NULL 	1902702	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903770	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 12:55:14	C	07Apr2012 12:47:20	07Apr2012 12:55:14	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903542	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 22:14:41	C	06Apr2012 22:06:35	06Apr2012 22:14:41	1903541	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903634	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 01:30:56	C	07Apr2012 01:24:34	07Apr2012 01:30:56	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903684	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 05:53:08	C	07Apr2012 05:40:12	07Apr2012 05:53:08	17025604	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903740	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 11:20:36	C	07Apr2012 11:14:11	07Apr2012 11:20:36	1903738	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903759	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 12:07:36		07Apr2012 12:07:36	NULL 	1903754	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904011	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 22:14:45		07Apr2012 22:14:45	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904032	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 23:24:04		07Apr2012 23:24:04	NULL 	17028084	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904055	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 00:47:10	C	08Apr2012 00:42:57	08Apr2012 00:47:10	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904303	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 16:51:41	C	08Apr2012 16:45:30	08Apr2012 16:51:41	1904302	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904324	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 17:37:17	C	08Apr2012 17:28:15	08Apr2012 17:37:17	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904329	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 17:34:40		08Apr2012 17:34:40	NULL 	1904323	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904331	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 17:45:51	C	08Apr2012 17:37:45	08Apr2012 17:45:51	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904356	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 18:36:37	C	08Apr2012 18:23:21	08Apr2012 18:36:37	1904354	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906368	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:28:12	C	09Apr2012 22:22:52	09Apr2012 22:28:12	1906366	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906380	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:28:32		09Apr2012 22:28:32	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906965	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 02:20:49	C	10Apr2012 02:12:50	10Apr2012 02:20:49	1906932	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906966	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 02:22:03	C	10Apr2012 02:13:30	10Apr2012 02:22:03	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906993	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 02:38:03		10Apr2012 02:38:03	NULL 	17045570	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906126	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:33:53	C	09Apr2012 21:28:22	09Apr2012 21:33:53	1906025	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906132	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:35:34	C	09Apr2012 21:29:13	09Apr2012 21:35:34	1906127	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906156	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:42:29	C	09Apr2012 21:34:07	09Apr2012 21:42:29	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906164	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:42:33	C	09Apr2012 21:35:00	09Apr2012 21:42:33	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906538	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 23:10:18		09Apr2012 23:10:18	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906877	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 01:03:54		10Apr2012 01:03:54	NULL 	1906874	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906888	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 01:18:47	C	10Apr2012 01:11:10	10Apr2012 01:18:47	17044982	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906662	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 23:41:25		09Apr2012 23:41:25	NULL 	1906660	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906713	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 23:57:15		09Apr2012 23:57:15	NULL 	1906667	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907705	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 13:13:14		10Apr2012 13:13:14	NULL 	1907684	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906197	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:48:32	C	09Apr2012 21:42:51	09Apr2012 21:48:32	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907197	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 08:47:18	C	10Apr2012 08:38:28	10Apr2012 08:47:18	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907206	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 08:46:46		10Apr2012 08:46:46	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906472	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:53:49		09Apr2012 22:53:49	NULL 	17042865	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906500	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 23:25:45	C	09Apr2012 23:01:12	09Apr2012 23:25:45	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908514	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 20:59:25		10Apr2012 20:59:25	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908516	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 21:07:02	C	10Apr2012 21:01:15	10Apr2012 21:07:02	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908550	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 21:26:14	C	10Apr2012 21:16:53	10Apr2012 21:26:14	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908553	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 21:27:34	C	10Apr2012 21:18:24	10Apr2012 21:27:34	1908546	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908016	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 16:16:39	C	10Apr2012 16:01:25	10Apr2012 16:16:39	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908960	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 03:29:19		11Apr2012 03:29:19	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909056	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 09:02:48	C	11Apr2012 08:53:56	11Apr2012 09:02:48	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909057	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 08:56:48		11Apr2012 08:56:48	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909104	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 10:22:15	C	11Apr2012 10:05:06	11Apr2012 10:22:15	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909105	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 10:06:13		11Apr2012 10:06:13	NULL 	17062064	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903256	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 12:18:01		06Apr2012 12:18:01	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903609	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 23:58:23		06Apr2012 23:58:23	NULL 	1903608	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903647	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 02:21:15	C	07Apr2012 02:17:22	07Apr2012 02:21:15	1903645	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903390	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 16:33:29	C	06Apr2012 16:26:51	06Apr2012 16:33:29	1903385	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903775	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 13:26:08	C	07Apr2012 13:20:04	07Apr2012 13:26:08	1903771	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903790	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 14:15:44	C	07Apr2012 14:06:26	07Apr2012 14:15:44	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903799	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 14:38:56	C	07Apr2012 14:26:21	07Apr2012 14:38:56	1903797	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904142	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 10:24:53	C	08Apr2012 10:13:14	08Apr2012 10:24:53	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904619	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 01:26:04		09Apr2012 01:26:04	NULL 	1904617	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904626	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 01:30:00		09Apr2012 01:30:00	NULL 	1904618	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904677	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 04:04:37	C	09Apr2012 03:52:34	09Apr2012 04:04:37	1904675	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904724	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 07:55:16	C	09Apr2012 07:49:30	09Apr2012 07:55:16	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904771	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 10:00:16		09Apr2012 10:00:16	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904383	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 19:14:50		08Apr2012 19:14:50	NULL 	1904382	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904384	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 19:23:57	C	08Apr2012 19:15:19	08Apr2012 19:23:57	1904381	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904395	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 19:34:36	C	08Apr2012 19:29:55	08Apr2012 19:34:36	1904394	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904409	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 19:56:24	C	08Apr2012 19:48:43	08Apr2012 19:56:24	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907036	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 04:06:24	C	10Apr2012 04:00:13	10Apr2012 04:06:24	1907035	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907204	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 08:51:14	C	10Apr2012 08:45:44	10Apr2012 08:51:14	1907196	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907297	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 10:10:04	C	10Apr2012 10:03:26	10Apr2012 10:10:04	1907296	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907324	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 10:22:21	C	10Apr2012 10:16:32	10Apr2012 10:22:21	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907336	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 10:22:28		10Apr2012 10:22:28	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907658	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 12:58:53	C	10Apr2012 12:49:27	10Apr2012 12:58:53	1907655	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907660	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 13:04:10	C	10Apr2012 12:55:35	10Apr2012 13:04:10	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907669	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 13:07:30	C	10Apr2012 13:00:25	10Apr2012 13:07:30	1907668	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907688	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 13:12:38	C	10Apr2012 13:07:42	10Apr2012 13:12:38	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905201	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 15:54:44		09Apr2012 15:54:44	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907752	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 13:39:38	C	10Apr2012 13:31:11	10Apr2012 13:39:38	1907692	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905716	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:02:41	C	09Apr2012 19:52:55	09Apr2012 20:02:41	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907236	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 09:12:00		10Apr2012 09:12:00	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906523	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 23:06:22		09Apr2012 23:06:22	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906516	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 23:09:10	C	09Apr2012 23:04:14	09Apr2012 23:09:10	17043110	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906598	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 23:34:45	C	09Apr2012 23:25:17	09Apr2012 23:34:45	1906518	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908573	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 21:28:57	C	10Apr2012 21:23:49	10Apr2012 21:28:57	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908580	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 21:37:16	C	10Apr2012 21:28:09	10Apr2012 21:37:16	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908585	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 21:42:15	C	10Apr2012 21:34:29	10Apr2012 21:42:15	1908568	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908623	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 22:00:28	C	10Apr2012 21:55:34	10Apr2012 22:00:28	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908665	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 22:21:09		10Apr2012 22:21:09	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909077	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 09:38:02		11Apr2012 09:38:02	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908093	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 16:42:48	C	10Apr2012 16:34:12	10Apr2012 16:42:48	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908114	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 16:58:28	C	10Apr2012 16:45:33	10Apr2012 16:58:28	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908142	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 17:03:10		10Apr2012 17:03:10	NULL 	1908116	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908152	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 17:15:34	C	10Apr2012 17:06:27	10Apr2012 17:15:34	1908119	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909173	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 11:31:16		11Apr2012 11:31:16	NULL 	1909172	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908244	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 18:10:09	C	10Apr2012 18:04:54	10Apr2012 18:10:09	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908249	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 18:13:33	C	10Apr2012 18:07:42	10Apr2012 18:13:33	1908247	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908260	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 18:22:34	C	10Apr2012 18:11:33	10Apr2012 18:22:34	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903277	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 13:05:50	C	06Apr2012 13:03:35	06Apr2012 13:05:50	1903275	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903284	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 13:13:07		06Apr2012 13:13:07	NULL 	1903270	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903291	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 13:38:03	C	06Apr2012 13:28:03	06Apr2012 13:38:03	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902540	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 14:27:51		05Apr2012 14:27:51	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903508	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 20:49:14	C	06Apr2012 20:45:05	06Apr2012 20:49:14	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903573	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 23:21:57	C	06Apr2012 23:00:17	06Apr2012 23:21:57	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903934	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 19:18:32	C	07Apr2012 19:12:48	07Apr2012 19:18:32	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904019	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 22:23:43		07Apr2012 22:23:43	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904841	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 11:28:50	C	09Apr2012 11:24:15	09Apr2012 11:28:50	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904470	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 21:41:59	C	08Apr2012 21:34:37	08Apr2012 21:41:59	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904222	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 14:16:33	C	08Apr2012 14:11:37	08Apr2012 14:16:33	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904245	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 14:53:46	C	08Apr2012 14:49:14	08Apr2012 14:53:46	1904231	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907393	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 10:50:38		10Apr2012 10:50:38	NULL 	1907392	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905905	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:33:47		09Apr2012 20:33:47	NULL 	1905896	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905998	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:55:28		09Apr2012 20:55:28	NULL 	1905984	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907341	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 10:23:53		10Apr2012 10:23:53	NULL 	1907337	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907510	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 11:41:41	C	10Apr2012 11:32:30	10Apr2012 11:41:41	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905661	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:39:54		09Apr2012 19:39:54	NULL 	1905621	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905687	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:46:14		09Apr2012 19:46:14	NULL 	1905639	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906550	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 23:14:09		09Apr2012 23:14:09	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905946	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:53:14	C	09Apr2012 20:42:57	09Apr2012 20:53:14	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905948	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:49:01	C	09Apr2012 20:43:14	09Apr2012 20:49:01	1905947	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905957	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:48:23	C	09Apr2012 20:45:49	09Apr2012 20:48:23	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905958	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:46:02		09Apr2012 20:46:02	NULL 	1905804	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905721	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:53:52		09Apr2012 19:53:52	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905722	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:59:47	C	09Apr2012 19:53:54	09Apr2012 19:59:47	1905625	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905740	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:06:18	C	09Apr2012 19:59:56	09Apr2012 20:06:18	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905748	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:07:19	C	09Apr2012 20:01:16	09Apr2012 20:07:19	17038736	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905753	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:02:46		09Apr2012 20:02:46	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906747	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 00:07:58		10Apr2012 00:07:58	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906235	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:57:51	C	09Apr2012 21:51:06	09Apr2012 21:57:51	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906250	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:54:35		09Apr2012 21:54:35	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907244	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 09:25:15	C	10Apr2012 09:18:44	10Apr2012 09:25:15	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907257	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 09:43:52	C	10Apr2012 09:34:11	10Apr2012 09:43:52	1907241	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906769	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 00:19:38		10Apr2012 00:19:38	NULL 	1906699	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906894	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 04:09:32	C	10Apr2012 01:16:11	10Apr2012 04:09:32	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908677	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 22:28:26		10Apr2012 22:28:26	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908690	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 22:38:06		10Apr2012 22:38:06	NULL 	1908689	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908720	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 23:15:06	C	10Apr2012 23:03:30	10Apr2012 23:15:06	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908721	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 23:03:42		10Apr2012 23:03:42	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908723	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 23:04:34		10Apr2012 23:04:34	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909189	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 11:48:10	C	11Apr2012 11:39:12	11Apr2012 11:48:10	1909135	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909207	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 11:58:13	C	11Apr2012 11:51:21	11Apr2012 11:58:13	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909215	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 12:00:10	C	11Apr2012 11:51:40	11Apr2012 12:00:10	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908232	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 17:59:57	C	10Apr2012 17:54:07	10Apr2012 17:59:57	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908238	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 18:07:39	C	10Apr2012 17:58:12	10Apr2012 18:07:39	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909301	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 13:05:27		11Apr2012 13:05:27	NULL 	1909299	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908295	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 18:38:32		10Apr2012 18:38:32	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908352	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 19:31:12		10Apr2012 19:31:12	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902575	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 14:53:24		05Apr2012 14:53:24	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903629	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 01:05:29		07Apr2012 01:05:29	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903943	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 19:52:48	C	07Apr2012 19:45:15	07Apr2012 19:52:48	17027427	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903955	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 20:05:41		07Apr2012 20:05:41	NULL 	17027485	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903958	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 20:25:47	C	07Apr2012 20:20:32	07Apr2012 20:25:47	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904029	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 23:01:07		07Apr2012 23:01:07	NULL 	1904028	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904155	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 10:59:04	C	08Apr2012 10:52:25	08Apr2012 10:59:04	1904146	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905015	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 14:03:44	C	09Apr2012 13:56:01	09Apr2012 14:03:44	1904997	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904527	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 22:47:29		08Apr2012 22:47:29	NULL 	17031692	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904246	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 14:53:48	C	08Apr2012 14:50:01	08Apr2012 14:53:48	1904244	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904281	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 16:10:15	C	08Apr2012 16:04:13	08Apr2012 16:10:15	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904342	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 17:54:25		08Apr2012 17:54:25	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904361	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 18:41:36	C	08Apr2012 18:34:19	08Apr2012 18:41:36	1904352	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906012	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:04:29	C	09Apr2012 20:58:36	09Apr2012 21:04:29	1906010	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906505	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 23:01:57		09Apr2012 23:01:57	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905454	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 18:51:14	C	09Apr2012 18:44:23	09Apr2012 18:51:14	1905427	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905466	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 18:55:40	C	09Apr2012 18:50:37	09Apr2012 18:55:40	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905474	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 18:52:17		09Apr2012 18:52:17	NULL 	1905472	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905484	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:06:59	C	09Apr2012 18:58:28	09Apr2012 19:06:59	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906171	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:43:30	C	09Apr2012 21:36:10	09Apr2012 21:43:30	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906602	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 23:31:12	C	09Apr2012 23:25:41	09Apr2012 23:31:12	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907709	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 13:30:19	C	10Apr2012 13:14:39	10Apr2012 13:30:19	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907716	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 13:24:21	C	10Apr2012 13:18:17	10Apr2012 13:24:21	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906954	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 02:15:42	C	10Apr2012 02:01:37	10Apr2012 02:15:42	1906892	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906771	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 00:25:37	C	10Apr2012 00:20:15	10Apr2012 00:25:37	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906784	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 00:33:32	C	10Apr2012 00:24:35	10Apr2012 00:33:32	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907789	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 13:56:26	C	10Apr2012 13:47:44	10Apr2012 13:56:26	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907275	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 09:49:55		10Apr2012 09:49:55	NULL 	1907268	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907307	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 10:09:24		10Apr2012 10:09:24	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905128	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 15:13:53	C	09Apr2012 15:06:51	09Apr2012 15:13:53	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906712	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 00:05:55	C	09Apr2012 23:56:24	10Apr2012 00:05:55	1906594	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906820	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 00:43:38	C	10Apr2012 00:37:32	10Apr2012 00:43:38	1906817	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906841	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 00:48:52	C	10Apr2012 00:43:38	10Apr2012 00:48:52	17044898	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908738	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 23:22:18	C	10Apr2012 23:15:24	10Apr2012 23:22:18	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908771	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 23:55:20	C	10Apr2012 23:44:18	10Apr2012 23:55:20	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908778	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 23:49:26		10Apr2012 23:49:26	NULL 	17059128	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908792	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 00:09:44	C	11Apr2012 00:05:16	11Apr2012 00:09:44	1908791	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908793	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 00:14:39	C	11Apr2012 00:05:51	11Apr2012 00:14:39	17059097	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908319	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 19:00:10	C	10Apr2012 18:53:24	10Apr2012 19:00:10	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908324	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 19:14:04	C	10Apr2012 19:02:43	10Apr2012 19:14:04	1908309	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908397	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 20:03:57	C	10Apr2012 19:55:49	10Apr2012 20:03:57	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908426	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 20:13:12		10Apr2012 20:13:12	NULL 	17056196	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908529	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 21:11:30	C	10Apr2012 21:07:05	10Apr2012 21:11:30	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908534	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 21:08:41		10Apr2012 21:08:41	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908581	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 21:36:05	C	10Apr2012 21:29:23	10Apr2012 21:36:05	1908552	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902584	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 15:11:25	C	05Apr2012 15:01:26	05Apr2012 15:11:25	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902604	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 15:37:40	C	05Apr2012 15:26:44	05Apr2012 15:37:40	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902610	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 15:39:46	C	05Apr2012 15:32:36	05Apr2012 15:39:46	1902608	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902619	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 15:55:24		05Apr2012 15:55:24	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902621	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 16:03:23	C	05Apr2012 15:58:02	05Apr2012 16:03:23	1902620	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902623	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 16:02:26		05Apr2012 16:02:26	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903436	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 17:56:11		06Apr2012 17:56:11	NULL 	1903429	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903446	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 18:09:57		06Apr2012 18:09:57	NULL 	17023879	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903451	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 18:18:59		06Apr2012 18:18:59	NULL 	17023917	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903470	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 18:58:59		06Apr2012 18:58:59	NULL 	1903468	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904188	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 12:49:13		08Apr2012 12:49:13	NULL 	1904187	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903806	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 14:35:12		07Apr2012 14:35:12	NULL 	1903805	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903813	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 15:25:16	C	07Apr2012 15:10:57	07Apr2012 15:25:16	1903795	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903817	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 15:42:36	C	07Apr2012 15:32:47	07Apr2012 15:42:36	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903820	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 15:34:41		07Apr2012 15:34:41	NULL 	1903815	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904532	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 22:56:06		08Apr2012 22:56:06	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904539	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 23:21:30		08Apr2012 23:21:30	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904547	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 23:40:14	C	08Apr2012 23:34:50	08Apr2012 23:40:14	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904551	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 23:39:58		08Apr2012 23:39:58	NULL 	1904550	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904230	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 14:27:03		08Apr2012 14:27:03	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904440	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 20:50:44		08Apr2012 20:50:44	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906779	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 00:22:46		10Apr2012 00:22:46	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906780	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 00:29:38	C	10Apr2012 00:23:42	10Apr2012 00:29:38	1906702	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906883	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 01:07:08		10Apr2012 01:07:08	NULL 	1906882	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907298	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 10:03:42		10Apr2012 10:03:42	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907744	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 13:29:00		10Apr2012 13:29:00	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907748	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 13:38:40	C	10Apr2012 13:29:57	10Apr2012 13:38:40	1907745	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905710	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:51:29		09Apr2012 19:51:29	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905217	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 16:19:26	C	09Apr2012 16:07:18	09Apr2012 16:19:26	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905225	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 16:17:41	C	09Apr2012 16:13:06	09Apr2012 16:17:41	1905203	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905238	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 16:29:14	C	09Apr2012 16:19:08	09Apr2012 16:29:14	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905252	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 16:27:47		09Apr2012 16:27:47	NULL 	1905250	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905975	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:57:02	C	09Apr2012 20:50:12	09Apr2012 20:57:02	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905977	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:56:45	C	09Apr2012 20:50:26	09Apr2012 20:56:45	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905978	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:50:29		09Apr2012 20:50:29	NULL 	1905901	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905767	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:10:58	C	09Apr2012 20:04:42	09Apr2012 20:10:58	1905765	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906303	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:14:38	C	09Apr2012 22:07:57	09Apr2012 22:14:38	1906252	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907061	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 04:53:12		10Apr2012 04:53:12	NULL 	1907059	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907097	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 06:20:01		10Apr2012 06:20:01	NULL 	1907090	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908832	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 00:41:20	C	11Apr2012 00:35:54	11Apr2012 00:41:20	1908819	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908846	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 00:58:07		11Apr2012 00:58:07	NULL 	1908843	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908449	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 20:27:13	C	10Apr2012 20:22:16	10Apr2012 20:27:13	1908448	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908506	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 20:54:25		10Apr2012 20:54:25	NULL 	17057076	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908884	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 01:56:19	C	11Apr2012 01:47:23	11Apr2012 01:56:19	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908893	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 01:58:18	C	11Apr2012 01:54:43	11Apr2012 01:58:18	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909012	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 07:44:48	C	11Apr2012 07:38:41	11Apr2012 07:44:48	17060820	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909303	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 13:13:48	C	11Apr2012 13:05:38	11Apr2012 13:13:48	1909298	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909310	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 13:12:50	C	11Apr2012 13:08:01	11Apr2012 13:12:50	1909309	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902647	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 16:43:08	C	05Apr2012 16:32:04	05Apr2012 16:43:08	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902648	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 16:32:11		05Apr2012 16:32:11	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902650	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 16:39:26	C	05Apr2012 16:34:20	05Apr2012 16:39:26	1902638	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903661	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 03:25:44	C	07Apr2012 03:10:40	07Apr2012 03:25:44	1903655	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903694	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 06:46:50	C	07Apr2012 06:39:52	07Apr2012 06:46:50	1903693	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903727	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 10:41:23	C	07Apr2012 10:32:59	07Apr2012 10:41:23	1903724	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903835	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 15:54:30		07Apr2012 15:54:30	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903847	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 16:24:09	C	07Apr2012 16:12:06	07Apr2012 16:24:09	1903844	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903869	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 17:15:08		07Apr2012 17:15:08	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903888	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 17:53:11	C	07Apr2012 17:46:09	07Apr2012 17:53:11	17027163	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903891	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 17:47:36		07Apr2012 17:47:36	NULL 	1903890	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904320	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 17:23:25		08Apr2012 17:23:25	NULL 	1904319	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904330	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 17:47:20	C	08Apr2012 17:35:29	08Apr2012 17:47:20	17030212	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904538	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 23:21:12	C	08Apr2012 23:16:53	08Apr2012 23:21:12	1904535	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904247	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 14:55:43	C	08Apr2012 14:51:16	08Apr2012 14:55:43	1904235	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904369	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 18:52:26		08Apr2012 18:52:26	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904472	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 21:38:00		08Apr2012 21:38:00	NULL 	1904467	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907140	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 08:06:22	C	10Apr2012 07:39:06	10Apr2012 08:06:22	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907187	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 08:29:20		10Apr2012 08:29:20	NULL 	17047013	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907299	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 10:10:14	C	10Apr2012 10:04:07	10Apr2012 10:10:14	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907342	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 10:25:27		10Apr2012 10:25:27	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907374	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 10:44:13	C	10Apr2012 10:40:35	10Apr2012 10:44:13	17048690	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907382	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 10:45:39		10Apr2012 10:45:39	NULL 	17048833	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905284	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 16:47:44	C	09Apr2012 16:39:08	09Apr2012 16:47:44	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906607	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 23:26:23		09Apr2012 23:26:23	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906015	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:06:26	C	09Apr2012 20:58:49	09Apr2012 21:06:26	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906800	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 00:33:48	C	10Apr2012 00:28:24	10Apr2012 00:33:48	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906815	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 00:36:06		10Apr2012 00:36:06	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906849	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 00:46:24		10Apr2012 00:46:24	NULL 	1906847	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906340	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:28:33	C	09Apr2012 22:17:52	09Apr2012 22:28:33	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907327	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 10:23:28	C	10Apr2012 10:18:13	10Apr2012 10:23:28	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907004	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 03:21:47	C	10Apr2012 03:11:30	10Apr2012 03:21:47	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907025	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 03:43:50		10Apr2012 03:43:50	NULL 	1907019	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907032	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 03:56:16		10Apr2012 03:56:16	NULL 	1907031	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908865	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 01:21:11		11Apr2012 01:21:11	NULL 	1908857	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909032	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 08:20:58	C	11Apr2012 08:11:57	11Apr2012 08:20:58	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909048	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 08:39:45	C	11Apr2012 08:34:27	11Apr2012 08:39:45	1909044	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909075	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 09:43:06	C	11Apr2012 09:36:31	11Apr2012 09:43:06	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909202	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 12:04:27	C	11Apr2012 11:50:57	11Apr2012 12:04:27	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909204	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 11:59:07	C	11Apr2012 11:51:05	11Apr2012 11:59:07	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909221	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 12:02:20	C	11Apr2012 11:52:29	11Apr2012 12:02:20	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909223	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 11:53:46		11Apr2012 11:53:46	NULL 	1909188	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908933	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 02:31:41		11Apr2012 02:31:41	NULL 	1908932	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909171	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 11:27:14		11Apr2012 11:27:14	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909180	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 11:39:42	C	11Apr2012 11:32:37	11Apr2012 11:39:42	1909177	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909319	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 13:24:47	C	11Apr2012 13:18:21	11Apr2012 13:24:47	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908059	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 16:21:05		10Apr2012 16:21:05	NULL 	1907993	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908084	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 16:35:42	C	10Apr2012 16:28:59	10Apr2012 16:35:42	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908122	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 17:00:09	C	10Apr2012 16:53:59	10Apr2012 17:00:09	17054244	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908129	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 16:58:41		10Apr2012 16:58:41	NULL 	1908089	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908154	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 17:19:22	C	10Apr2012 17:08:43	10Apr2012 17:19:22	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908158	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 17:10:13		10Apr2012 17:10:13	NULL 	17054468	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902716	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 18:00:00		05Apr2012 18:00:00	NULL 	1902714	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903742	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 11:34:07	C	07Apr2012 11:27:48	07Apr2012 11:34:07	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903762	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 12:20:43	C	07Apr2012 12:14:13	07Apr2012 12:20:43	1903761	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903895	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 17:51:10		07Apr2012 17:51:10	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903910	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 18:22:12	C	07Apr2012 18:10:37	07Apr2012 18:22:12	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903918	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 18:24:17		07Apr2012 18:24:17	NULL 	1903916	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903937	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 19:31:31	C	07Apr2012 19:20:17	07Apr2012 19:31:31	1903936	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903940	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 19:40:12	C	07Apr2012 19:31:20	07Apr2012 19:40:12	1903939	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904808	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 10:42:00		09Apr2012 10:42:00	NULL 	1904807	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904479	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 21:50:44		08Apr2012 21:50:44	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904486	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 22:06:16	C	08Apr2012 21:54:29	08Apr2012 22:06:16	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904497	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 22:06:23		08Apr2012 22:06:23	NULL 	1904488	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904505	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 22:21:40	C	08Apr2012 22:15:44	08Apr2012 22:21:40	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904516	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 22:38:52	C	08Apr2012 22:28:33	08Apr2012 22:38:52	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904518	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 22:41:35	C	08Apr2012 22:33:27	08Apr2012 22:41:35	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904521	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 22:38:24		08Apr2012 22:38:24	NULL 	1904520	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904529	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 22:59:13	C	08Apr2012 22:52:01	08Apr2012 22:59:13	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905053	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 14:20:48	C	09Apr2012 14:16:10	09Apr2012 14:20:48	1905026	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907466	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 11:12:40		10Apr2012 11:12:40	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905303	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 16:58:05	C	09Apr2012 16:50:52	09Apr2012 16:58:05	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905327	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 17:16:33	C	09Apr2012 17:00:43	09Apr2012 17:16:33	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905495	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:10:58	C	09Apr2012 19:01:55	09Apr2012 19:10:58	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905509	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:17:19	C	09Apr2012 19:07:07	09Apr2012 19:17:19	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907774	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 13:53:07	C	10Apr2012 13:41:56	10Apr2012 13:53:07	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907027	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 03:45:39		10Apr2012 03:45:39	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905376	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 17:35:30		09Apr2012 17:35:30	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905827	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:20:48	C	09Apr2012 20:15:56	09Apr2012 20:20:48	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905828	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:20:43	C	09Apr2012 20:16:23	09Apr2012 20:20:43	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905835	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:24:29	C	09Apr2012 20:18:31	09Apr2012 20:24:29	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905222	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 16:20:26	C	09Apr2012 16:10:18	09Apr2012 16:20:26	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905269	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 16:39:59	C	09Apr2012 16:35:44	09Apr2012 16:39:59	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907258	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 09:41:40	C	10Apr2012 09:36:54	10Apr2012 09:41:40	1907243	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907315	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 10:16:40	C	10Apr2012 10:11:50	10Apr2012 10:16:40	1907291	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907316	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 10:12:20		10Apr2012 10:12:20	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907320	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 10:20:43	C	10Apr2012 10:14:27	10Apr2012 10:20:43	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907377	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 10:43:46		10Apr2012 10:43:46	NULL 	1907373	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909373	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 14:03:50		11Apr2012 14:03:50	NULL 	1909359	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907832	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 14:20:53	C	10Apr2012 14:16:08	10Apr2012 14:20:53	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907839	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 14:29:00	C	10Apr2012 14:22:10	10Apr2012 14:29:00	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908635	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 22:07:39	C	10Apr2012 22:01:41	10Apr2012 22:07:39	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1908663	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 22:20:44		10Apr2012 22:20:44	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902758	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 18:49:06		05Apr2012 18:49:06	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902793	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 20:04:53	C	05Apr2012 19:57:23	05Apr2012 20:04:53	1902791	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902800	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 20:03:59		05Apr2012 20:03:59	NULL 	1902799	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902817	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 20:21:20		05Apr2012 20:21:20	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902831	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 20:32:03		05Apr2012 20:32:03	NULL 	1902830	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903773	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 13:21:57	C	07Apr2012 13:15:05	07Apr2012 13:21:57	17026355	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903964	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 20:39:03		07Apr2012 20:39:03	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903979	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 21:05:25		07Apr2012 21:05:25	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903998	ratlifflab.kratliff.replicationstudy1fixed	07Apr2012 21:36:25	C	07Apr2012 21:32:44	07Apr2012 21:36:25	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904445	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 20:53:55		08Apr2012 20:53:55	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904557	ratlifflab.kratliff.replicationstudy1fixed	08Apr2012 23:53:17	C	08Apr2012 23:46:58	08Apr2012 23:53:17	17031941	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1904571	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 00:15:52	C	09Apr2012 00:03:49	09Apr2012 00:15:52	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905078	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 14:28:14		09Apr2012 14:28:14	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905237	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 16:27:18	C	09Apr2012 16:18:11	09Apr2012 16:27:18	1905235	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905246	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 16:31:05	C	09Apr2012 16:24:09	09Apr2012 16:31:05	1905224	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905517	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:09:40		09Apr2012 19:09:40	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905524	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 19:11:44		09Apr2012 19:11:44	NULL 	1905519	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906253	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 21:56:03		09Apr2012 21:56:03	NULL 	17041687	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906255	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:10:03	C	09Apr2012 21:57:01	09Apr2012 22:10:03	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906261	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:04:00	C	09Apr2012 21:58:17	09Apr2012 22:04:00	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906262	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:03:24	C	09Apr2012 21:58:35	09Apr2012 22:03:24	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906267	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:06:09	C	09Apr2012 21:59:20	09Apr2012 22:06:09	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907799	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 13:56:37	C	10Apr2012 13:53:28	10Apr2012 13:56:37	1907796	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907804	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 14:01:37	C	10Apr2012 13:56:40	10Apr2012 14:01:37	1907802	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905745	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:01:01		09Apr2012 20:01:01	NULL 	1905742	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905751	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 20:02:22		09Apr2012 20:02:22	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906524	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 23:11:29	C	09Apr2012 23:07:17	09Apr2012 23:11:29	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906539	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 23:19:22	C	09Apr2012 23:10:44	09Apr2012 23:19:22	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906871	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 01:10:54	C	10Apr2012 00:59:54	10Apr2012 01:10:54	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906890	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 01:20:12	C	10Apr2012 01:14:41	10Apr2012 01:20:12	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906898	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 01:23:33	C	10Apr2012 01:18:48	10Apr2012 01:23:33	1906870	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1905306	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 16:52:24		09Apr2012 16:52:24	NULL 	1905305	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906374	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:34:05	C	09Apr2012 22:26:42	09Apr2012 22:34:05	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906387	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:39:19	C	09Apr2012 22:29:30	09Apr2012 22:39:19	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906406	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:40:55	C	09Apr2012 22:33:24	09Apr2012 22:40:55	1906401	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1906418	ratlifflab.kratliff.replicationstudy1fixed	09Apr2012 22:35:43		09Apr2012 22:35:43	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907420	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 11:14:15	C	10Apr2012 11:03:17	10Apr2012 11:14:15	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907423	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 11:04:25		10Apr2012 11:04:25	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907432	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 11:05:16		10Apr2012 11:05:16	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907836	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 14:24:21	C	10Apr2012 14:17:26	10Apr2012 14:24:21	1907816	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907857	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 14:41:10		10Apr2012 14:41:10	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1907876	ratlifflab.kratliff.replicationstudy1fixed	10Apr2012 15:01:04	C	10Apr2012 14:54:50	10Apr2012 15:01:04	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909739	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 19:45:46	C	11Apr2012 19:39:07	11Apr2012 19:45:46	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909740	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 19:43:35		11Apr2012 19:43:35	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909778	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 20:04:16		11Apr2012 20:04:16	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909817	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 20:35:58	C	11Apr2012 20:30:37	11Apr2012 20:35:58	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909827	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 20:43:31		11Apr2012 20:43:31	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909852	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 21:04:29	C	11Apr2012 20:56:12	11Apr2012 21:04:29	1909824	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909425	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 14:44:48	C	11Apr2012 14:36:32	11Apr2012 14:44:48	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909958	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 23:25:25	C	11Apr2012 23:15:32	11Apr2012 23:25:25	1909950	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909969	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 23:33:58		11Apr2012 23:33:58	NULL 	1909968	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1910017	ratlifflab.kratliff.replicationstudy1fixed	12Apr2012 01:31:59		12Apr2012 01:31:59	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909473	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 15:19:43	C	11Apr2012 15:15:15	11Apr2012 15:19:43	1909452	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909626	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 17:21:26		11Apr2012 17:21:26	NULL 	1909608	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909981	ratlifflab.kratliff.replicationstudy1fixed	12Apr2012 00:00:12	C	11Apr2012 23:52:36	12Apr2012 00:00:12	1909980	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909517	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 15:56:21	C	11Apr2012 15:49:11	11Apr2012 15:56:21	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1910071	ratlifflab.kratliff.replicationstudy1fixed	12Apr2012 07:07:43	C	12Apr2012 07:01:10	12Apr2012 07:07:43	1910070	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909594	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 16:57:50	C	11Apr2012 16:50:13	11Apr2012 16:57:50	1909592	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909539	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 15:58:10		11Apr2012 15:58:10	NULL 	1909494	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909543	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 15:59:44		11Apr2012 15:59:44	NULL 	1909542	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909581	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 16:42:40		11Apr2012 16:42:40	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909591	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 17:19:31	C	11Apr2012 16:47:59	11Apr2012 17:19:31	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909932	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 22:33:25		11Apr2012 22:33:25	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909607	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 17:07:35	C	11Apr2012 17:01:42	11Apr2012 17:07:35	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909613	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 17:19:02	C	11Apr2012 17:07:32	11Apr2012 17:19:02	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909706	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 18:46:20		11Apr2012 18:46:20	NULL 	1909705	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909753	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 19:50:42		11Apr2012 19:50:42	NULL 	1909752	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909759	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 19:54:57		11Apr2012 19:54:57	NULL 	1909743	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909768	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 19:58:25		11Apr2012 19:58:25	NULL 	1909755	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909775	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 20:02:57		11Apr2012 20:02:57	NULL 	1909750	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909788	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 20:23:41	C	11Apr2012 20:09:56	11Apr2012 20:23:41	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909798	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 20:16:21		11Apr2012 20:16:21	NULL 	1909736	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909807	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 20:27:38	C	11Apr2012 20:21:15	11Apr2012 20:27:38	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909853	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 20:56:17		11Apr2012 20:56:17	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909854	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 21:01:41	C	11Apr2012 20:56:40	11Apr2012 21:01:41	1909829	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909919	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 22:31:29	C	11Apr2012 22:21:05	11Apr2012 22:31:29	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909899	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 21:54:19	C	11Apr2012 21:47:09	11Apr2012 21:54:19	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909900	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 21:53:47	C	11Apr2012 21:48:48	11Apr2012 21:53:47	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909925	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 22:23:39		11Apr2012 22:23:39	NULL 	1909906	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1910105	ratlifflab.kratliff.replicationstudy1fixed	12Apr2012 09:16:01	C	12Apr2012 09:05:10	12Apr2012 09:16:01	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1910153	ratlifflab.kratliff.replicationstudy1fixed	12Apr2012 10:25:59	C	12Apr2012 10:12:35	12Apr2012 10:25:59	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909939	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 22:41:15		11Apr2012 22:41:15	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909951	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 23:04:13	C	11Apr2012 22:59:17	11Apr2012 23:04:13	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909541	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 16:05:04	C	11Apr2012 15:59:21	11Apr2012 16:05:04	17066632	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909983	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 23:56:31		11Apr2012 23:56:31	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909985	ratlifflab.kratliff.replicationstudy1fixed	12Apr2012 00:03:19	C	11Apr2012 23:58:37	12Apr2012 00:03:19	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1910002	ratlifflab.kratliff.replicationstudy1fixed	12Apr2012 00:31:29		12Apr2012 00:31:29	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1910072	ratlifflab.kratliff.replicationstudy1fixed	12Apr2012 07:51:22	C	12Apr2012 07:41:21	12Apr2012 07:51:22	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909642	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 17:51:56	C	11Apr2012 17:44:44	11Apr2012 17:51:56	1909635	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909669	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 18:15:35		11Apr2012 18:15:35	NULL 	1909644	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1910110	ratlifflab.kratliff.replicationstudy1fixed	12Apr2012 09:17:47	C	12Apr2012 09:12:31	12Apr2012 09:17:47	1910109	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1910125	ratlifflab.kratliff.replicationstudy1fixed	12Apr2012 09:48:49	C	12Apr2012 09:38:29	12Apr2012 09:48:49	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1910138	ratlifflab.kratliff.replicationstudy1fixed	12Apr2012 09:57:21		12Apr2012 09:57:21	NULL 	1910132	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909502	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 15:47:06	C	11Apr2012 15:41:01	11Apr2012 15:47:06	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909514	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 15:48:09		11Apr2012 15:48:09	NULL 	1909512	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1909732	ratlifflab.kratliff.replicationstudy1fixed	11Apr2012 19:27:14		11Apr2012 19:27:14	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902048	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 21:53:52	C	04Apr2012 21:50:54	04Apr2012 21:53:52	1902044	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902056	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 22:03:16		04Apr2012 22:03:16	NULL 	17013021	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902091	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 23:26:17	C	04Apr2012 22:54:21	04Apr2012 23:26:17	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901613	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 14:57:00	C	04Apr2012 14:47:38	04Apr2012 14:57:00	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901831	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 18:37:35	C	04Apr2012 18:25:35	04Apr2012 18:37:35	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902849	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 20:57:32	C	05Apr2012 20:51:27	05Apr2012 20:57:32	1902835	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902850	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 20:51:39		05Apr2012 20:51:39	NULL 	1902829	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902866	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 21:18:26	C	05Apr2012 21:05:29	05Apr2012 21:18:26	1902863	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902870	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 21:12:26		05Apr2012 21:12:26	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902111	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 23:12:29		04Apr2012 23:12:29	NULL 	1902109	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902112	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 23:13:02		04Apr2012 23:13:02	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901901	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 19:17:49		04Apr2012 19:17:49	NULL 	1901900	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901668	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 15:44:36		04Apr2012 15:44:36	NULL 	1901663	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902769	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 19:08:27	C	05Apr2012 19:02:21	05Apr2012 19:08:27	1902768	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902796	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 20:07:53	C	05Apr2012 19:58:18	05Apr2012 20:07:53	17019928	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902911	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 22:08:03	C	05Apr2012 22:01:35	05Apr2012 22:08:03	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902954	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 23:04:57		05Apr2012 23:04:57	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902175	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 00:55:50	C	05Apr2012 00:50:55	05Apr2012 00:55:50	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902213	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 02:11:34		05Apr2012 02:11:34	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901690	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 16:06:16	C	04Apr2012 16:01:27	04Apr2012 16:06:16	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901711	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 16:32:57	C	04Apr2012 16:26:12	04Apr2012 16:32:57	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901949	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 20:05:50	C	04Apr2012 19:58:50	04Apr2012 20:05:50	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901990	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 20:41:42	C	04Apr2012 20:36:12	04Apr2012 20:41:42	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902908	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 22:07:08	C	05Apr2012 21:57:43	05Apr2012 22:07:08	17020535	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902910	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 21:59:13		05Apr2012 21:59:13	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902925	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 22:20:11	C	05Apr2012 22:15:01	05Apr2012 22:20:11	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902933	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 22:34:05	C	05Apr2012 22:27:01	05Apr2012 22:34:05	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902936	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 22:38:10	C	05Apr2012 22:34:09	05Apr2012 22:38:10	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902278	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 07:44:42		05Apr2012 07:44:42	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902036	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 21:41:13	C	04Apr2012 21:33:53	04Apr2012 21:41:13	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901743	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 17:00:24		04Apr2012 17:00:24	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901782	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 17:41:31		04Apr2012 17:41:31	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902945	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 22:47:12		05Apr2012 22:47:12	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902969	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 23:26:07		05Apr2012 23:26:07	NULL 	1902967	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903002	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 00:26:52	C	06Apr2012 00:21:24	06Apr2012 00:26:52	1903001	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902284	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 07:50:20		05Apr2012 07:50:20	NULL 	1902283	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902290	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 07:57:06		05Apr2012 07:57:06	NULL 	1902288	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902311	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 08:44:36	C	05Apr2012 08:39:42	05Apr2012 08:44:36	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902316	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 08:48:55	C	05Apr2012 08:42:11	05Apr2012 08:48:55	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901846	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 18:52:35	C	04Apr2012 18:35:52	04Apr2012 18:52:35	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901848	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 18:36:20		04Apr2012 18:36:20	NULL 	1901829	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901855	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 18:51:15	C	04Apr2012 18:40:37	04Apr2012 18:51:15	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902049	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 21:59:49	C	04Apr2012 21:51:58	04Apr2012 21:59:49	1902037	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902062	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 22:27:00	C	04Apr2012 22:10:25	04Apr2012 22:27:00	1902061	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902108	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 23:14:45	C	04Apr2012 23:08:41	04Apr2012 23:14:45	1902095	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901458	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 11:54:18		04Apr2012 11:54:18	NULL 	1901421	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901465	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 11:58:20		04Apr2012 11:58:20	NULL 	1901462	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901499	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 12:49:57	C	04Apr2012 12:45:57	04Apr2012 12:49:57	17008232	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901507	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 12:54:03		04Apr2012 12:54:03	NULL 	1901472	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902335	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 09:22:04		05Apr2012 09:22:04	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902370	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 10:13:59	C	05Apr2012 10:10:21	05Apr2012 10:13:59	17015863	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901922	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 19:42:39	C	04Apr2012 19:37:29	04Apr2012 19:42:39	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902021	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 21:21:09	C	04Apr2012 21:15:19	04Apr2012 21:21:09	1902020	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902072	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 22:31:54	C	04Apr2012 22:27:20	04Apr2012 22:31:54	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901527	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 13:39:55		04Apr2012 13:39:55	NULL 	17008734	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901529	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 13:40:15		04Apr2012 13:40:15	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902406	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 10:56:03		05Apr2012 10:56:03	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902418	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 11:32:01	C	05Apr2012 11:24:10	05Apr2012 11:32:01	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902419	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 11:32:21	C	05Apr2012 11:25:20	05Apr2012 11:32:21	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902275	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 07:42:03	C	05Apr2012 07:35:33	05Apr2012 07:42:03	1902274	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902289	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 07:54:44		05Apr2012 07:54:44	NULL 	1902281	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902322	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 09:01:15	C	05Apr2012 08:51:04	05Apr2012 09:01:15	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901453	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 11:48:16		04Apr2012 11:48:16	NULL 	1901452	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901547	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 13:52:29		04Apr2012 13:52:29	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902449	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 12:22:56	C	05Apr2012 12:12:38	05Apr2012 12:22:56	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902458	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 12:27:18		05Apr2012 12:27:18	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902154	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 00:16:31	C	05Apr2012 00:09:01	05Apr2012 00:16:31	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902177	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 01:01:39	C	05Apr2012 00:53:40	05Apr2012 01:01:39	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902201	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 01:40:35	C	05Apr2012 01:34:21	05Apr2012 01:40:35	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901476	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 12:23:57	C	04Apr2012 12:18:49	04Apr2012 12:23:57	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901524	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 13:38:49		04Apr2012 13:38:49	NULL 	1901521	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901550	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 13:53:35		04Apr2012 13:53:35	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901562	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 14:04:31		04Apr2012 14:04:31	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901623	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 15:05:36	C	04Apr2012 15:01:59	04Apr2012 15:05:36	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901596	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 14:27:42		04Apr2012 14:27:42	NULL 	1901593	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902488	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 13:08:41		05Apr2012 13:08:41	NULL 	1902487	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902501	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 13:26:38		05Apr2012 13:26:38	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902443	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 12:22:40	C	05Apr2012 12:07:35	05Apr2012 12:22:40	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901494	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 12:39:55	C	04Apr2012 12:33:15	04Apr2012 12:39:55	1901482	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901549	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 13:59:08	C	04Apr2012 13:53:16	04Apr2012 13:59:08	1901533	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901563	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 14:04:48		04Apr2012 14:04:48	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901568	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 14:15:10	C	04Apr2012 14:07:09	04Apr2012 14:15:10	1901537	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901778	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 17:37:11		04Apr2012 17:37:11	NULL 	1901748	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901832	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 18:33:43	C	04Apr2012 18:25:50	04Apr2012 18:33:43	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901607	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 14:40:37		04Apr2012 14:40:37	NULL 	1901606	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901633	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 15:24:36	C	04Apr2012 15:15:57	04Apr2012 15:24:36	1901632	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901664	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 15:50:18	C	04Apr2012 15:43:33	04Apr2012 15:50:18	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901727	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 16:36:14		04Apr2012 16:36:14	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902268	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 07:20:57	C	05Apr2012 07:14:46	05Apr2012 07:20:57	1902267	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902342	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 09:44:27	C	05Apr2012 09:37:22	05Apr2012 09:44:27	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902386	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 10:29:00		05Apr2012 10:29:00	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902402	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 10:50:21		05Apr2012 10:50:21	NULL 	1902389	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901946	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 20:05:55	C	04Apr2012 19:57:47	04Apr2012 20:05:55	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901978	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 20:24:04		04Apr2012 20:24:04	NULL 	1901976	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901774	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 17:40:38	C	04Apr2012 17:34:56	04Apr2012 17:40:38	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901775	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 17:44:30	C	04Apr2012 17:35:50	04Apr2012 17:44:30	1901757	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901793	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 17:52:59		04Apr2012 17:52:59	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902801	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 20:19:16	C	05Apr2012 20:06:13	05Apr2012 20:19:16	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902839	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 20:46:32	C	05Apr2012 20:40:57	05Apr2012 20:46:32	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901488	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 12:29:02		04Apr2012 12:29:02	NULL 	1901487	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901500	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 12:49:41		04Apr2012 12:49:41	NULL 	1901496	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902078	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 22:41:46		04Apr2012 22:41:46	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902127	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 23:28:59		04Apr2012 23:28:59	NULL 	17013699	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902170	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 00:46:13	C	05Apr2012 00:41:32	05Apr2012 00:46:13	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901584	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 14:25:25	C	04Apr2012 14:20:36	04Apr2012 14:25:25	1901571	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901847	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 18:42:24	C	04Apr2012 18:36:15	04Apr2012 18:42:24	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902898	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 21:43:44		05Apr2012 21:43:44	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902927	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 22:21:10		05Apr2012 22:21:10	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902977	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 23:37:11		05Apr2012 23:37:11	NULL 	1902972	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902978	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 23:38:58		05Apr2012 23:38:58	NULL 	1902971	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903046	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 01:30:06	C	06Apr2012 01:16:30	06Apr2012 01:30:06	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903061	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 01:47:15		06Apr2012 01:47:15	NULL 	1903060	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1903092	ratlifflab.kratliff.replicationstudy1fixed	06Apr2012 05:56:22		06Apr2012 05:56:22	NULL 	1903091	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902403	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 10:59:47	C	05Apr2012 10:53:20	05Apr2012 10:59:47	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901612	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 14:56:26	C	04Apr2012 14:45:09	04Apr2012 14:56:26	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901641	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 15:32:47	C	04Apr2012 15:20:05	04Apr2012 15:32:47	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902546	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 14:42:42	C	05Apr2012 14:31:17	05Apr2012 14:42:42	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901716	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 16:36:05	C	04Apr2012 16:28:51	04Apr2012 16:36:05	1901702	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901754	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 17:20:21	C	04Apr2012 17:12:33	04Apr2012 17:20:21	1901737	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901772	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 17:38:53	C	04Apr2012 17:34:07	04Apr2012 17:38:53	1901762	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901924	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 19:47:22	C	04Apr2012 19:37:56	04Apr2012 19:47:22	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901867	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 18:50:54		04Apr2012 18:50:54	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901869	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 18:56:56	C	04Apr2012 18:51:24	04Apr2012 18:56:56	1901856	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901895	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 19:14:36		04Apr2012 19:14:36	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902655	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 16:41:19		05Apr2012 16:41:19	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902749	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 18:37:57	C	05Apr2012 18:31:29	05Apr2012 18:37:57	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902698	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 17:47:51		05Apr2012 17:47:51	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901930	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 19:48:39	C	04Apr2012 19:42:47	04Apr2012 19:48:39	1901929	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901947	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 20:04:16	C	04Apr2012 19:58:01	04Apr2012 20:04:16	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901983	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 20:33:49	C	04Apr2012 20:29:37	04Apr2012 20:33:49	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901984	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 20:30:29		04Apr2012 20:30:29	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901986	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 20:38:12	C	04Apr2012 20:32:27	04Apr2012 20:38:12	1901972	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902468	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 12:53:42	C	05Apr2012 12:40:56	05Apr2012 12:53:42	17017306	s	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902515	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 14:06:29	C	05Apr2012 13:59:31	05Apr2012 14:06:29	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902524	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 14:20:31	C	05Apr2012 14:07:38	05Apr2012 14:20:31	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901595	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 14:27:27		04Apr2012 14:27:27	NULL 	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901609	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 14:49:05	C	04Apr2012 14:42:00	04Apr2012 14:49:05	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902734	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 18:14:15		05Apr2012 18:14:15	NULL 	1902726	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902746	ratlifflab.kratliff.replicationstudy1fixed	05Apr2012 18:26:58		05Apr2012 18:26:58	NULL 	1902742	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902014	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 21:03:07		04Apr2012 21:03:07	NULL 	1902013	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1902032	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 21:37:02	C	04Apr2012 21:29:20	04Apr2012 21:37:02	0		/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901667	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 15:51:20	C	04Apr2012 15:44:21	04Apr2012 15:51:20	1901652	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901780	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 17:39:06		04Apr2012 17:39:06	NULL 	1901779	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml
+1901801	ratlifflab.kratliff.replicationstudy1fixed	04Apr2012 17:59:25		04Apr2012 17:59:25	NULL 	1901798	r	/user/kratliff/replicationstudy/replicationstudy1fixed/replicationstudy1fixed.expt.xml

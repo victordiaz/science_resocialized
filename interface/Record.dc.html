@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The record, for the humans on this side</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/vivarium/tokens.css">
+<link rel="stylesheet" href="bench.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0;background:#0c1114}
+</style>
+</helmet>
+<div class="viv" data-ground="deep-radial" style="width: 1440px; height: 1060px; display: flex; flex-direction: column">
+<svg class="grain" aria-hidden="true"><defs><filter id="noiseR" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><pattern id="grainTileR" width="240" height="240" patternUnits="userSpaceOnUse"><rect width="240" height="240" filter="url(#noiseR)"></rect></pattern></defs><rect width="100%" height="100%" fill="url(#grainTileR)"></rect></svg>
+
+<div class="page" style="padding: 28px; display: grid; grid-template-columns: minmax(0, 1fr) 640px; gap: 42px; height: 100%; align-items: start">
+
+  <div style="display: flex; flex-direction: column; gap: 28px">
+    <div class="sechead">
+      <span class="key sig">record</span>
+      <h2 class="title">The deliberate click, in three steps</h2>
+    </div>
+    <p class="small" style="max-width: 36rem">The drawer opens from a cell with Details. The record sits at its bottom as a dashed amber ring. One press asks, in plain words, who this is for. Only the second press opens it, and the lamp then says by whose hand and when. Nothing here reads truth.json.</p>
+
+    <div style="display: flex; flex-direction: column; gap: 14px; max-width: 520px">
+      <div style="display: flex; gap: 14px; align-items: flex-start">
+        <span class="key sig" style="margin-top: 16px; width: 24px">1</span>
+        <button class="btn btn--flag" style="align-self: flex-start">Open the record for the humans on this side</button>
+      </div>
+      <div style="display: flex; gap: 14px; align-items: flex-start">
+        <span class="key sig" style="margin-top: 16px; width: 24px">2</span>
+        <div class="vault" style="display: flex; flex-direction: column; gap: 10px; flex: 1">
+          <span class="key" style="color: var(--flag, #bc8a34)">a deliberate click</span>
+          <p class="card-text" style="color: var(--ink, #e0e8eb)">This shows the public reproduction receipt and the outcome columns of the public table for this finding. It is for the humans on this side of the wall only. Never show it to a reviewer.</p>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap"><button class="btn btn--flag">Open it, for us</button><button class="btn">Keep it closed</button></div>
+        </div>
+      </div>
+      <div style="display: flex; gap: 14px; align-items: flex-start">
+        <span class="key sig" style="margin-top: 16px; width: 24px">3</span>
+        <div class="vault" style="display: flex; flex-direction: column; gap: 10px; flex: 1">
+          <div style="display: flex; align-items: center; gap: 14px"><span class="lamp" aria-hidden="true"></span><span class="lamp-label">opened by hand · 15:48 · this side only</span></div>
+          <p class="caption">From reproduction.json (public, unsealed) and the public table's outcome columns. Not from truth.json, which only the scorer opens.</p>
+          <pre class="log" style="height: auto">{
+  "id": "Row.116",
+  "public_table": { "outcome": "[outcome column]", "statistic": "[replication statistic]" },
+  "reproduction": { "receipt": "[reproduction.json]", "holds": "[yes | no]" }
+}</pre>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 14px">
+      <span class="metric" style="color: var(--ink-2, #9aa8b0)"><span class="seal-ring" style="margin-right: 8px; vertical-align: middle"></span>the ring, dashed and unlit: sealed, and nothing on this page reads it</span>
+      <span class="metric" style="color: var(--ink-2, #9aa8b0)"><span class="lamp" style="margin-right: 8px; vertical-align: middle; box-shadow: 0 0 0 1px rgba(255,217,138,.5), 0 0 8px 2px rgba(217,164,65,.6)"></span>the lamp, lit: a person decided, and the label says who and when</span>
+      <span class="metric" style="color: var(--ink-2, #9aa8b0)"><span class="mark" style="margin-right: 8px"></span>Escape, the Close plate or a press on the dimmed page closes the drawer; keyboard order is top to bottom</span>
+    </div>
+  </div>
+
+  <aside class="glass glass--panel" role="dialog" aria-label="Finding detail" style="height: 1004px; overflow: hidden; padding: 28px; display: flex; flex-direction: column; gap: 14px; border-radius: 18px">
+    <div style="position: relative; display: flex; justify-content: space-between; align-items: center; gap: 14px">
+      <span class="tag s-handed"><i></i>handed off</span>
+      <button class="btn btn--sm">Close</button>
+    </div>
+    <h2 class="title" style="position: relative">Two guesses beat one guess</h2>
+    <div class="mono" style="position: relative; color: var(--ink-3, #71808a)">Row.116 · one finding: data, paper, reproduction · txt · 10 files · 0.2 MB · n 140 in the public table</div>
+    <div style="position: relative; display: flex; gap: 8px; flex-wrap: wrap">
+      <a class="btn" href="#">card.md</a>
+      <button class="btn btn--flag">Open the record for the humans on this side</button>
+    </div>
+
+    <div class="vault" style="position: relative; display: flex; flex-direction: column; gap: 10px">
+      <div style="display: flex; align-items: center; gap: 14px"><span class="lamp" aria-hidden="true"></span><span class="lamp-label">opened by hand · 15:48 · this side only</span></div>
+      <p class="caption">From reproduction.json (public, unsealed) and the public table's outcome columns. Not from truth.json, which only the scorer opens.</p>
+      <pre class="log" style="height: auto">{
+  "id": "Row.116",
+  "public_table": { "outcome": "[outcome column]", "statistic": "[replication statistic]" },
+  "reproduction": { "receipt": "[reproduction.json]", "holds": "[yes | no]" }
+}</pre>
+    </div>
+
+    <h3 class="key" style="position: relative; margin: 14px 0 0">Hypothesis</h3>
+    <p class="small" style="position: relative">Averaging two estimates of the same quantity given by one person, the second given in a later session, is more accurate than that person's first estimate alone. Direction: the mean squared error of the average of guess 1 and guess 2 is lower than the mean squared error of guess 1. The key test uses the delayed condition only.</p>
+    <h3 class="key" style="position: relative; margin: 14px 0 0">Design</h3>
+    <p class="small" style="position: relative">Within-subjects comparison in the delayed condition: participants answer eight percentage-estimation trivia questions online in session 1, and answer the same eight questions again, unannounced, in session 2 about three weeks later.</p>
+    <h3 class="key" style="position: relative; margin: 14px 0 0">Sample</h3>
+    <p class="small" style="position: relative">Undergraduate students who took part in both delayed sessions; 174 matched participants before exclusions, 140 after.</p>
+    <h3 class="key" style="position: relative; margin: 14px 0 0">Test</h3>
+    <p class="small" style="position: relative">Paired t-test of MSE(guess 1) vs MSE(average of the two guesses), df = n − 1. Effect size d_z = t / sqrt(n).</p>
+    <h3 class="key" style="position: relative; margin: 14px 0 0">Data files given to the researcher</h3>
+    <div style="position: relative; display: flex; gap: 6px; flex-wrap: wrap"><span class="chip">d04.txt</span><span class="chip">d05.txt</span><span class="chip">d06.txt</span></div>
+    <p class="small" style="position: relative">7 other files in the public download are withheld: the replication report, audit script, syntax and codebooks.</p>
+    <h3 class="key" style="position: relative; margin: 14px 0 0">Files in report/</h3>
+    <div style="position: relative; display: flex; gap: 6px; flex-wrap: wrap"><span class="chip">analysis.out</span><span class="chip">analysis.py</span><span class="chip">conclusion.json</span><span class="chip">fig1.png</span><span class="chip">log.md</span><span class="chip">report.html</span><span class="chip">report.md</span><span class="chip out">report.pdf</span></div>
+    <h3 class="key" style="position: relative; margin: 14px 0 0; color: var(--flag, #bc8a34)">The sealed record</h3>
+    <p class="small" style="position: relative; color: var(--ink-2, #9aa8b0)">truth.json holds the published outcome, the replication's statistic and our verified reproduction. No researcher or reviewer prompt reads it. This page never reads it. The scorer opens it last.</p>
+  </aside>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1060}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

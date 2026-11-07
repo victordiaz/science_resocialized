@@ -1,0 +1,1 @@
+{"study": "S28", "holds": "no", "primary_test": "Between-participants ANOVA aggressivenessScore ~ mapCondition * puzzleCondition (type III); map x puzzle interaction", "statistic": "F(2, 65) = 0.87", "p": "0.426", "effect_size": "partial eta^2 = 0.026, 95% CI [0.000, 0.114]", "n_after_exclusions": 71, "minutes": 2}

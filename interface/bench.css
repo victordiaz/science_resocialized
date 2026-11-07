@@ -1,0 +1,208 @@
+/* The lab bench, drawn in Vivarium. Loaded after ds/vivarium/tokens.css.
+   Token names are the system's (api/tokens.md); every var() carries its Dark value as the fallback. */
+*,*::before,*::after{box-sizing:border-box}
+
+/* Ground: Canopy by default (teal above, green below), Deep radial and Void as variants; the 28px hairline grid; the grain lives in an inline svg. */
+.viv{position:relative;isolation:isolate;color:var(--ink,#e0e8eb);font-family:var(--font-sans,"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif);font-size:15px;line-height:1.6;
+  background:radial-gradient(56% 44% at 18% 8%,var(--sig-wash,#0f2a33) 0%,rgba(15,42,51,0) 72%),radial-gradient(56% 44% at 84% 96%,var(--gro-wash,#192b1e) 0%,rgba(25,43,30,0) 72%),linear-gradient(148deg,var(--surface,#131a1e) 0%,var(--paper,#0c1114) 46%,var(--sunk,#080c0e) 100%)}
+.viv[data-ground="deep-radial"]{background:radial-gradient(70% 60% at 50% 112%,var(--sig-wash,#0f2a33) 0%,var(--surface,#131a1e) 46%,var(--sunk,#080c0e) 100%)}
+.viv[data-ground="void"]{background:radial-gradient(56% 44% at 18% 8%,#07222b 0%,rgba(7,34,43,0) 72%),radial-gradient(56% 44% at 84% 96%,#0f2214 0%,rgba(15,34,20,0) 72%),linear-gradient(148deg,#05080a 0%,#000 46%,#000 100%)}
+.viv::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:
+  repeating-linear-gradient(0deg,var(--grid-group,rgba(224,232,235,.062)) 0 1px,transparent 1px 112px),
+  repeating-linear-gradient(90deg,var(--grid-group,rgba(224,232,235,.062)) 0 1px,transparent 1px 112px),
+  repeating-linear-gradient(0deg,var(--grid,rgba(224,232,235,.038)) 0 1px,transparent 1px 28px),
+  repeating-linear-gradient(90deg,var(--grid,rgba(224,232,235,.038)) 0 1px,transparent 1px 28px)}
+.viv>.grain{position:absolute;inset:0;z-index:0;width:100%;height:100%;pointer-events:none;opacity:var(--grain,.3);mix-blend-mode:overlay}
+.viv>.page{position:relative;z-index:1}
+
+/* Type: the named styles, in the sans and the mono. The display face is for a name only and does not appear on the bench. */
+.key{font:400 11px/1 var(--font-mono,"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3,#71808a)}
+.key.sig{color:var(--sig-hi,#6fd6e6)}
+.mono{font:400 12px/1.6 var(--font-mono,"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace);color:var(--ink-2,#9aa8b0)}
+.metric{font:400 11px/1.45 var(--font-mono,"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace);color:var(--sig-hi,#6fd6e6)}
+.title{font:400 22px/1.2 var(--font-sans,"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif);color:var(--ink,#e0e8eb);margin:0}
+.lead{font:300 clamp(18px,1.75vw,23px)/1.5 var(--font-sans,"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif);color:var(--ink-2,#9aa8b0);margin:0}
+.lead b{font-weight:500;color:var(--ink,#e0e8eb)}
+.caption{font:400 13px/1.45 var(--font-sans,"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif);color:var(--ink-2,#9aa8b0);margin:0}
+.small{font:400 15px/1.6 var(--font-sans,"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif);color:var(--ink-2,#9aa8b0);margin:0}
+.cell-title{font:500 15px/1.3 var(--font-sans,"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif);color:var(--ink,#e0e8eb)}
+.card-title{font:500 14px/1.3 var(--font-sans,"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif);color:var(--ink,#e0e8eb);margin:0}
+.card-text{font:300 13px/1.45 var(--font-sans,"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif);color:var(--ink-2,#9aa8b0);margin:0}
+.clock{font:400 26px/1 var(--font-mono,"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace);color:var(--ink,#e0e8eb);letter-spacing:.02em;font-variant-numeric:tabular-nums}
+.clamp2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.clamp3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+
+/* Glass: the cell (fluted, light tint) and the panel (even frost, the legible .46 tint). The hairline is an inset shadow, never a border; no drop shadow under glass. */
+.glass{position:relative;border-radius:var(--radius-panel,18px);overflow:hidden;background:var(--glass-tint-cell,rgba(11,19,23,.14));
+  -webkit-backdrop-filter:blur(.4px) saturate(1.1);backdrop-filter:blur(.4px) saturate(1.1);
+  box-shadow:inset 0 0 0 1px var(--glass-hair,rgba(164,204,214,.36)),inset 1px 1px 0 0 rgba(236,250,253,.34),inset -1px -1px 0 0 rgba(200,230,238,.16),inset 0 0 0 7px rgba(216,240,245,.035),inset 0 0 26px rgba(0,0,0,.2),0 0 0 1px rgba(30,156,176,.08)}
+.glass--panel{background:var(--glass-tint-panel,rgba(11,19,23,.46));-webkit-backdrop-filter:blur(5px) saturate(1.1);backdrop-filter:blur(5px) saturate(1.1)}
+.floor{position:absolute;inset:0;z-index:0;border-radius:inherit;pointer-events:none;background:
+  radial-gradient(72% 50% at 50% -8%,rgba(88,210,232,.20) 0%,rgba(88,210,232,0) 70%),
+  radial-gradient(72% 50% at 50% 108%,rgba(146,210,140,.16) 0%,rgba(146,210,140,0) 70%),
+  repeating-linear-gradient(0deg,var(--chamber-grid,rgba(190,230,235,.055)) 0 1px,transparent 1px 40px),
+  repeating-linear-gradient(90deg,var(--chamber-grid,rgba(190,230,235,.055)) 0 1px,transparent 1px 40px),
+  var(--cell-floor,#08130e)}
+.flutes{position:absolute;inset:0;z-index:2;border-radius:inherit;pointer-events:none;opacity:1;transition:opacity .3s cubic-bezier(.23,1,.32,1);
+  background:repeating-linear-gradient(90deg,rgba(236,250,253,.06) 0 1.5px,rgba(0,0,0,.09) 1.5px 6px,rgba(236,250,253,.015) 6px 15px)}
+.capture{position:absolute;inset:0;z-index:1;display:flex;align-items:flex-end;justify-content:flex-end;padding:0 16px 0 0;opacity:.5;filter:blur(1.1px);transition:opacity .3s cubic-bezier(.23,1,.32,1),filter .3s cubic-bezier(.23,1,.32,1);pointer-events:none}
+.cell .body{position:relative;z-index:3}
+.cell:hover .flutes,.cell:focus-within .flutes,.cell.is-clear .flutes{opacity:0}
+.cell:hover .capture,.cell:focus-within .capture,.cell.is-clear .capture{opacity:.9;filter:none}
+.cell .prov{opacity:0;transition:opacity .3s cubic-bezier(.23,1,.32,1)}
+.cell:hover .prov,.cell:focus-within .prov,.cell.is-clear .prov{opacity:1}
+.ring{position:absolute;top:14px;right:14px;z-index:3;width:15px;height:15px;border-radius:999px;border:1px solid var(--sig-hi,#6fd6e6);display:grid;place-items:center;transition:opacity .3s cubic-bezier(.23,1,.32,1)}
+.ring::after{content:"";width:5px;height:5px;border-radius:999px;background:var(--sig-hi,#6fd6e6)}
+.cell:hover .ring,.cell:focus-within .ring,.cell.is-clear .ring{opacity:0}
+.cell.ghost{filter:saturate(.15);opacity:.8}
+.cell.ghost .floor{background:var(--surface,#131a1e)}
+.cell.ghost .flutes{opacity:.5}
+.dash{border-top:1px dashed var(--ink-3,#71808a)}
+
+/* The key mark (teal hairline) and the lamp (amber, glow): what the system drew, and where a person decided. */
+.mark{display:inline-block;width:14px;height:1px;background:var(--sig-hi,#6fd6e6);vertical-align:middle;flex:none}
+.mark.dashed{background:none;border-top:1px dashed var(--ink-3,#71808a)}
+.lamp{display:inline-block;width:8px;height:8px;border-radius:999px;background:var(--flag-hi,#ffd98a);flex:none;
+  box-shadow:var(--lamp-glow,0 0 0 1px rgba(255,217,138,.5),0 0 12px 3px rgba(217,164,65,.75),0 0 40px 14px rgba(217,164,65,.26))}
+.lamp-label{font:400 11px/1.45 var(--font-mono,"JetBrains Mono",ui-monospace,monospace);letter-spacing:.12em;text-transform:uppercase;color:var(--flag-hi,#ffd98a)}
+.seal-ring{display:inline-block;width:8px;height:8px;border-radius:999px;border:1px solid var(--flag,#bc8a34);flex:none}
+
+/* State tags: mono keys with a ring that fills as the finding moves. Teal while the process has it, green once a report is out, dashed when it stopped. */
+.tag{display:inline-flex;align-items:center;gap:8px;font:400 11px/1 var(--font-mono,"JetBrains Mono",ui-monospace,monospace);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3,#71808a);white-space:nowrap}
+.tag i{display:block;width:8px;height:8px;border-radius:999px;border:1px solid currentColor;flex:none}
+.tag.s-assigned{color:var(--sig,#1e9cb0)} .tag.s-assigned i{background:currentColor}
+.tag.s-running{color:var(--sig-hi,#6fd6e6)} .tag.s-running i{background:currentColor;animation:pulse 1.2s infinite}
+.tag.s-report{color:var(--sig-soft,#5cc4d8)} .tag.s-report i{background:currentColor}
+.tag.s-pdf{color:var(--gro,#5a9d6d)} .tag.s-pdf i{background:currentColor}
+.tag.s-handed{color:var(--gro-bright,#84c595)} .tag.s-handed i{background:currentColor;box-shadow:0 0 8px rgba(132,197,149,.55)}
+.tag.s-failed{color:var(--ink-3,#71808a)} .tag.s-failed i{border-style:dashed}
+.tag.s-nocard{color:var(--ink-4,#5c6a73)} .tag.s-nocard i{border-style:dotted}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+@keyframes pop{from{transform:scale(.85);opacity:.3}to{transform:none;opacity:1}}
+@keyframes march{to{background-position:-24px 0}}
+
+/* The thirty ticks: one per finding, coloured by state. Legible from across a room. */
+.ticks{display:flex;flex-wrap:wrap;gap:5px}
+.tick{width:22px;height:12px;border-radius:var(--radius-hair,4px);border:1px solid var(--ink-4,#5c6a73);background:transparent}
+.tick.t-assigned{border-color:var(--sig,#1e9cb0);background:var(--sig-dim,#2c5c6b)}
+.tick.t-running{border-color:var(--sig-hi,#6fd6e6);background:var(--sig-hi,#6fd6e6);animation:pulse 1.2s infinite}
+.tick.t-report{border-color:var(--sig,#1e9cb0);background:var(--sig,#1e9cb0)}
+.tick.t-pdf{border-color:var(--gro,#5a9d6d);background:var(--gro,#5a9d6d)}
+.tick.t-handed{border-color:var(--gro-bright,#84c595);background:var(--gro-bright,#84c595)}
+.tick.t-failed{border-style:dashed}
+.tick.t-nocard{border-style:dotted}
+
+/* A plain cell: one finding on a panel surface. Glass is kept for the two sealed panes inside it. */
+.cellp{position:relative;background:var(--panel,#182026);border:1px solid var(--line-soft,#1b242a);border-radius:var(--radius-panel,18px);transition:border-color .3s cubic-bezier(.23,1,.32,1)}
+.cellp:hover,.cellp:focus-within{border-color:var(--sig-dim,#2c5c6b)}
+.cellp.ghost{opacity:.72;filter:saturate(.15)}
+.handle{font:500 17px/1.3 var(--font-sans,"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif);color:var(--ink,#e0e8eb)}
+
+/* The sealed panes: frosted glass over the paper and the reproduction. Frosted while sealed; the frost clears when the receipt unlocks them. */
+.pane{position:relative;overflow:hidden;min-height:66px;border:1px dashed var(--flag,#bc8a34);border-radius:var(--radius-plate,8px);padding:7px 9px;display:flex;flex-direction:column;justify-content:space-between;gap:2px;background:var(--glass-tint-cell,rgba(11,19,23,.14));
+  -webkit-backdrop-filter:blur(5px) saturate(1.06);backdrop-filter:blur(5px) saturate(1.06);
+  box-shadow:inset 0 0 0 1px var(--glass-hair,rgba(164,204,214,.2)),inset 1px 1px 0 0 rgba(236,250,253,.22);transition:border-color .3s cubic-bezier(.23,1,.32,1)}
+.pane .behind{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;filter:blur(3px);opacity:.55;pointer-events:none;transition:filter .3s cubic-bezier(.23,1,.32,1),opacity .3s cubic-bezier(.23,1,.32,1)}
+.pane .frost{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(90deg,rgba(236,250,253,.07) 0 1.5px,rgba(0,0,0,.08) 1.5px 6px,rgba(236,250,253,.02) 6px 15px),rgba(216,240,245,.06);transition:opacity .3s cubic-bezier(.23,1,.32,1)}
+.pane .k{position:relative;z-index:2;font:400 10px/1 var(--font-mono,"JetBrains Mono",ui-monospace,monospace);letter-spacing:.16em;text-transform:uppercase;color:var(--flag,#bc8a34);display:flex;align-items:center;gap:6px;white-space:nowrap}
+.pane .v{position:relative;z-index:2;font:400 11px/1.45 var(--font-mono,"JetBrains Mono",ui-monospace,monospace);color:var(--ink-3,#71808a)}
+.pane.open{border-style:solid;background:rgba(42,32,19,.35);-webkit-backdrop-filter:none;backdrop-filter:none}
+.pane.open .behind{filter:none;opacity:.9}
+.pane.open .frost{opacity:0}
+.pane.open .k{color:var(--flag-hi,#ffd98a)}
+.pane.open .v{color:var(--ink-2,#9aa8b0)}
+
+/* The folder: one control per desk that opens the run's files and logs. */
+.folder{appearance:none;width:100%;display:flex;align-items:center;gap:10px;min-height:44px;padding:0 12px;font:400 12px/1 var(--font-mono,"JetBrains Mono",ui-monospace,monospace);color:var(--sig-soft,#5cc4d8);background:rgba(12,17,20,.4);border:1px solid var(--line,#26323a);border-radius:var(--radius-hair,4px);cursor:pointer;text-align:left}
+.folder:hover{border-color:var(--sig-dim,#2c5c6b)}
+.folder .hint{margin-left:auto;color:var(--ink-3,#71808a);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.folder svg{flex:none}
+
+/* Working and loading: an indeterminate teal bar while a researcher works; a filling bar while a package or a receipt crosses; the frost lifting when a seal opens. */
+.bar{position:relative;height:2px;border-radius:1px;background:var(--line-soft,#1b242a);overflow:hidden;width:100%}
+.bar::after{content:"";position:absolute;top:0;left:-30%;height:100%;width:30%;border-radius:1px;background:var(--sig-hi,#6fd6e6);animation:slide 1.4s cubic-bezier(.23,1,.32,1) infinite}
+.bar.det::after{display:none}
+.bar .fill{position:absolute;top:0;left:0;height:100%;border-radius:1px;background:var(--sig-hi,#6fd6e6);transition:width .4s linear}
+.bar .fill.green{background:var(--gro-bright,#84c595)}
+@keyframes slide{from{left:-30%}to{left:100%}}
+.lane.det{background:var(--line-soft,#1b242a)}
+.lane .fill{position:absolute;top:0;left:0;height:100%;background:var(--sig-hi,#6fd6e6);transition:width .4s linear}
+.pane.lift .frost{transition:opacity .8s cubic-bezier(.23,1,.32,1),transform .8s cubic-bezier(.23,1,.32,1)}
+.pane.lift .behind{transition:filter .8s cubic-bezier(.23,1,.32,1),opacity .8s cubic-bezier(.23,1,.32,1)}
+.pane.open .frost{transform:translateY(-100%)}
+.verdict{font:300 40px/1.1 var(--font-sans,"IBM Plex Sans",system-ui,sans-serif);color:var(--ink,#e0e8eb);letter-spacing:-.01em}
+.verdict.yes{color:var(--gro-bright,#84c595)}
+.verdict.no{color:var(--ink-2,#9aa8b0)}
+
+/* The trio inside a cell: the data (teal plate, the thing you pick up) and the two sealed parts (dashed amber rings, no glow). */
+.plate{border:1px solid var(--line,#26323a);border-radius:var(--radius-plate,8px);padding:7px 9px;font:400 11px/1.45 var(--font-mono,"JetBrains Mono",ui-monospace,monospace);color:var(--ink-2,#9aa8b0);min-width:0;display:flex;flex-direction:column;gap:2px;background:rgba(12,17,20,.35)}
+.plate .k{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3,#71808a);display:flex;align-items:center;gap:6px;white-space:nowrap;overflow:hidden}
+.plate--data{border-color:var(--sig-dim,#2c5c6b);background:var(--sig-wash,#0f2a33);color:var(--ink,#e0e8eb);cursor:grab}
+.plate--data .k{color:var(--sig-hi,#6fd6e6)}
+.plate--sealed{border:1px dashed var(--flag,#bc8a34);color:var(--ink-3,#71808a)}
+.plate--sealed .k{color:var(--flag,#bc8a34)}
+.plate--open{border:1px solid var(--flag,#bc8a34);color:var(--ink-2,#9aa8b0);background:var(--flag-wash,#2a2013)}
+.plate--open .k{color:var(--flag-hi,#ffd98a)}
+.vault{border:1px dashed var(--flag,#bc8a34);border-radius:var(--radius-chip,10px);background:var(--flag-wash,#2a2013);padding:14px 16px;color:var(--ink-2,#9aa8b0)}
+
+/* Controls: hairline plates, never pills. Teal for the process's own action, green for a report going out, amber dashed for the humans' deliberate click. */
+.btn{appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 16px;font:500 13px/1 var(--font-sans,"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif);color:var(--ink-2,#9aa8b0);background:rgba(12,17,20,.4);border:1px solid var(--line,#26323a);border-radius:var(--radius-hair,4px);cursor:pointer;text-decoration:none;white-space:nowrap;transition:border-color .2s,color .2s,background .2s}
+.btn:hover{border-color:var(--sig-dim,#2c5c6b);color:var(--ink,#e0e8eb)}
+.btn--sig{border-color:var(--sig-dim,#2c5c6b);background:var(--sig-wash,#0f2a33);color:var(--sig-hi,#6fd6e6)}
+.btn--sig:hover{border-color:var(--sig,#1e9cb0);color:var(--sig-hi,#6fd6e6)}
+.btn--gro{border-color:var(--gro-dim,#3d5e46);background:var(--gro-wash,#192b1e);color:var(--gro-bright,#84c595)}
+.btn--gro:hover{border-color:var(--gro,#5a9d6d);color:var(--gro-bright,#84c595)}
+.btn--flag{border:1px dashed var(--flag,#bc8a34);color:var(--flag-hi,#ffd98a);background:transparent}
+.btn--flag:hover{background:var(--flag-wash,#2a2013);border-color:var(--flag,#bc8a34);color:var(--flag-hi,#ffd98a)}
+.btn--sm{min-height:36px;padding:0 12px;font-size:12px}
+.btn--icon{width:44px;padding:0}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.btn[aria-pressed="true"]{border-color:var(--sig-dim,#2c5c6b);background:var(--sig-wash,#0f2a33);color:var(--sig-hi,#6fd6e6)}
+:focus-visible{outline:2px solid var(--sig-hi,#6fd6e6);outline-offset:2px}
+a{color:var(--sig-soft,#5cc4d8)}a:hover{color:var(--sig-hi,#6fd6e6)}
+.chip{display:inline-flex;align-items:center;font:400 11px/1 var(--font-mono,"JetBrains Mono",ui-monospace,monospace);padding:8px 9px;border-radius:var(--radius-chip,10px);border:1px solid var(--sig-dim,#2c5c6b);color:var(--sig-soft,#5cc4d8);background:rgba(15,42,51,.5);text-decoration:none;white-space:nowrap}
+.chip.new{animation:pop .5s}
+.chip.out{border-color:var(--gro-dim,#3d5e46);color:var(--gro-bright,#84c595);background:rgba(25,43,30,.6)}
+.chip.ghost{border-style:dashed;color:var(--ink-3,#71808a);background:transparent}
+.log{background:var(--surface,#131a1e);border:1px solid var(--line-soft,#1b242a);border-radius:var(--radius-chip,10px);padding:12px 14px;font:400 12px/1.6 var(--font-mono,"JetBrains Mono",ui-monospace,monospace);color:var(--ink-2,#9aa8b0);white-space:pre-wrap;word-break:break-word;overflow:auto;margin:0}
+.well{background:rgba(12,17,20,.45);border:1px solid var(--line-soft,#1b242a);border-radius:var(--radius-plate,8px);padding:8px 10px;display:flex;flex-direction:column;gap:3px;min-width:0}
+.well .v{font:400 14px/1.3 var(--font-mono,"JetBrains Mono",ui-monospace,monospace);color:var(--ink,#e0e8eb);font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.primer{border:1px dashed var(--line,#26323a);border-radius:var(--radius-plate,8px);padding:10px 12px;font:300 13px/1.45 var(--font-sans,"IBM Plex Sans",system-ui,sans-serif);color:var(--ink-4,#5c6a73);background:transparent;width:100%;resize:none;min-height:44px}
+
+/* The trellis: the stages a run climbs, as node rings on a hairline. 01 data · 02 analysis · 03 report · 04 pdf · 05 wall. */
+.trellis{display:flex;align-items:flex-start}
+.node{display:flex;flex-direction:column;align-items:center;gap:8px;flex:none;width:76px}
+.node .o{width:22px;height:22px;border-radius:999px;border:1px solid var(--sig-dim,#2c5c6b);display:grid;place-items:center;font:400 10px/1 var(--font-mono,"JetBrains Mono",ui-monospace,monospace);color:var(--ink-3,#71808a);background:var(--paper,#0c1114)}
+.node .l{font:400 10px/1 var(--font-mono,"JetBrains Mono",ui-monospace,monospace);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3,#71808a)}
+.node.done .o{border-color:var(--sig-hi,#6fd6e6);color:var(--sig-hi,#6fd6e6)}
+.node.now .o{border-color:var(--sig-hi,#6fd6e6);background:var(--sig-hi,#6fd6e6);color:var(--paper,#0c1114);animation:pulse 1.2s infinite}
+.node.out .o{border-color:var(--gro-bright,#84c595);background:var(--gro-bright,#84c595);color:var(--paper,#0c1114)}
+.node.done .l,.node.now .l,.node.out .l{color:var(--ink-2,#9aa8b0)}
+.edge{flex:1 1 16px;min-width:10px;height:1px;background:var(--sig-dim,#2c5c6b);margin-top:11px}
+.edge.done{background:var(--sig-hi,#6fd6e6)}
+.edge.out{background:var(--gro-bright,#84c595)}
+.edge.dash{background:none;border-top:1px dashed var(--sig-dim,#2c5c6b);height:0}
+
+/* The wall: a teal hairline between the two machines; a bundle crosses it, a receipt comes back. */
+.wallline{width:2px;align-self:stretch;background:repeating-linear-gradient(0deg,var(--sig-hi,#6fd6e6) 0 6px,transparent 6px 10px);opacity:.8;flex:none}
+.lane{height:1px;flex:1;background:var(--sig-dim,#2c5c6b);position:relative;min-width:40px}
+.lane.sending{background:repeating-linear-gradient(90deg,var(--sig-hi,#6fd6e6) 0 12px,transparent 12px 24px);animation:march .6s linear infinite}
+.lane.sent{background:var(--sig-hi,#6fd6e6)}
+.lane.back{background:repeating-linear-gradient(90deg,var(--gro-bright,#84c595) 0 4px,transparent 4px 8px)}
+
+/* A sheet: the PDF drawn as paper. */
+.sheet{background:#ffffff;border-radius:var(--radius-plate,8px);padding:14px 12px;display:flex;flex-direction:column;gap:5px;box-shadow:var(--lift,0 1px 1px rgba(0,0,0,.4),0 10px 26px rgba(0,0,0,.32))}
+.sheet i{display:block;height:3px;border-radius:2px;background:#c9d0d4}
+.sheet i.h{height:5px;width:60%;background:#8f9aa1}
+
+/* Layout */
+.cells{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:24px}
+.desks{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(560px,100%),1fr));gap:28px}
+.sec{border-top:1px solid var(--line,#26323a);padding-top:28px;display:flex;flex-direction:column;gap:24px}
+.sechead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.sechead .right{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+@media (max-width:760px){.cells{gap:18px}.desks{gap:18px}.sec{padding-top:20px}}
+
+/* Reduced motion, transparency, contrast. */
+@media (prefers-reduced-motion:reduce){.tag i,.node.now .o,.chip.new,.tick.t-running,.lane.sending{animation:none}.bar::after{animation:none;left:0;width:100%;opacity:.4}.pane.lift .frost,.pane.lift .behind{transition:none}.flutes,.capture,.prov,.ring{transition:none}}
+@media (prefers-reduced-transparency:reduce),(prefers-contrast:more){.viv,.viv[data-ground]{background:var(--paper,#0c1114)}.viv>.grain{display:none}.glass{-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--panel,#182026)}.glass--panel{background:var(--panel,#182026)}}

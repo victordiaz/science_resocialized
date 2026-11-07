@@ -1,0 +1,1 @@
+{"study": "S05", "holds": "yes", "primary_test": "Full-factorial fixed-effects ANOVA (measure x target x SOA, participant not in model, Type III), three-way interaction", "statistic": "F(18, 660) = 12.98", "p": "3.3e-33", "effect_size": "partial eta squared = 0.26, 95% CI [0.19, 0.30]", "n_after_exclusions": 720, "minutes": 2}

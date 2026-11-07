@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The reveal, played through</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/vivarium/tokens.css">
+<link rel="stylesheet" href="bench.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0;background:#000}
+.rv{position:relative;border-radius:var(--radius-panel,18px);border:1px solid var(--line-soft,#1b242a);background:var(--panel,#182026);padding:22px;display:flex;flex-direction:column;gap:12px;min-height:280px;transition:border-color .42s cubic-bezier(.23,1,.32,1),opacity .42s cubic-bezier(.23,1,.32,1)}
+.rv.wait{opacity:.6}
+.rv.in{border-color:var(--gro-dim,#3d5e46);opacity:1}
+.rv .pane{min-height:150px;flex:1}
+.rv .pane .behind{filter:blur(6px);opacity:.5}
+.rv .pane.open .behind{filter:none;opacity:1}
+.rv .pane .v{font:400 13px/1.5 var(--font-mono,"JetBrains Mono",monospace)}
+.rv .pane.open .v{color:var(--ink,#e0e8eb)}
+.step{width:28px;height:28px;border-radius:999px;border:1px solid var(--ink-3,#71808a);display:grid;place-items:center;font:400 11px/1 var(--font-mono,"JetBrains Mono",monospace);color:var(--ink-3,#71808a);flex:none;transition:all .42s cubic-bezier(.23,1,.32,1)}
+.rv.in .step{border-color:var(--sig-hi,#6fd6e6);color:var(--sig-hi,#6fd6e6)}
+.rise{animation:rise .42s cubic-bezier(.23,1,.32,1)}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.rise{animation:none}.rv,.step{transition:none}}
+</style>
+</helmet>
+<div class="viv" data-ground="void" style="width: 1440px; height: 1000px; display: flex; flex-direction: column">
+<svg class="grain" aria-hidden="true"><defs><filter id="noiseV" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><pattern id="grainTileV" width="240" height="240" patternUnits="userSpaceOnUse"><rect width="240" height="240" filter="url(#noiseV)"></rect></pattern></defs><rect width="100%" height="100%" fill="url(#grainTileV)"></rect></svg>
+
+<div class="page" style="padding: 28px; display: flex; flex-direction: column; gap: 24px; height: 100%">
+
+  <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 14px; flex-wrap: wrap">
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <span class="key sig">S23 · run 02 · rules_pushed · the reveal</span>
+      <h1 class="title" style="font-size: 28px">Two guesses beat one guess</h1>
+      <span class="mono">the researcher, blind, concluded: holds · sent 15:37 as S23.zip, report + 3 data files</span>
+    </div>
+    <div style="display: flex; gap: 8px; align-items: center">
+      <span class="chip ghost" style="color: var(--flag, #bc8a34); border-color: var(--flag, #bc8a34)">mock verdict · no panel ran</span>
+      <sc-if value="{{idle}}" hint-placeholder-val="{{true}}"><button class="btn btn--gro" onClick="{{play}}">Receive the panel's verdict</button></sc-if>
+      <sc-if value="{{done}}" hint-placeholder-val="{{false}}"><button class="btn" onClick="{{reset}}">Seal it again</button></sc-if>
+    </div>
+  </div>
+
+  <div style="position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 2px minmax(0, 1fr); gap: 0 20px; align-items: center">
+    <div style="display: flex; align-items: center; gap: 12px"><span class="chip out">S23.zip · report + 3 data files</span><span class="mono">15:37:27</span><span class="lane sent"></span></div>
+    <span class="wallline"></span>
+    <div style="display: flex; align-items: center; gap: 12px">
+      <span class="lane {{laneCls}}"><span class="fill green" style="width: {{pct}}%; background: var(--gro-bright, #84c595)"></span></span>
+      <sc-if value="{{receiving}}" hint-placeholder-val="{{false}}"><span class="mono" style="white-space: nowrap; color: var(--gro-bright, #84c595)">receiving · {{pct}}%</span></sc-if>
+      <span class="chip {{receiptCls}}">{{receiptText}}</span>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px">
+
+    <div class="rv {{c1}}">
+      <div style="display: flex; align-items: center; gap: 12px"><span class="step">1</span><span class="key">the researcher against the paper</span></div>
+      <div class="pane lift {{p1}}" style="min-height: 120px">
+        <div class="behind" aria-hidden="true"><div class="sheet" style="width: 54px; min-height: 68px; padding: 8px 7px; box-shadow: none"><i class="h"></i><i></i><i></i><i style="width: 70%"></i></div></div>
+        <div class="frost"></div>
+        <span class="k">verdict one</span>
+        <sc-if value="{{s1}}" hint-placeholder-val="{{true}}"><span class="verdict yes rise">matches</span></sc-if>
+        <sc-if value="{{w1}}" hint-placeholder-val="{{false}}"><span class="v">sealed</span></sc-if>
+      </div>
+      <sc-if value="{{s1}}" hint-placeholder-val="{{true}}"><p class="small rise" style="color: var(--ink-2, #9aa8b0)">A researcher who knew nothing of the paper reached the paper's conclusion. The paper said the effect holds; so did the researcher.</p></sc-if>
+      <sc-if value="{{w1}}" hint-placeholder-val="{{false}}"><p class="small" style="color: var(--ink-3, #71808a)">Does the blind researcher's conclusion agree with the published paper?</p></sc-if>
+    </div>
+
+    <div class="rv {{c2}}">
+      <div style="display: flex; align-items: center; gap: 12px"><span class="step">2</span><span class="key">the panel against the replication</span></div>
+      <div class="pane lift {{p2}}" style="min-height: 120px">
+        <div class="behind" aria-hidden="true"><svg width="90" height="50" viewBox="0 0 44 30"><path d="M2 22h5v8H2zM9 12h5v18H9zM16 4h5v26h-5zM23 15h5v15h-5zM30 9h5v21h-5zM37 18h5v12h-5z" fill="#5cc4d8"></path></svg></div>
+        <div class="frost"></div>
+        <span class="k">verdict two</span>
+        <sc-if value="{{s2}}" hint-placeholder-val="{{true}}"><span class="verdict yes rise">matches</span></sc-if>
+        <sc-if value="{{w2}}" hint-placeholder-val="{{false}}"><span class="v">sealed</span></sc-if>
+      </div>
+      <sc-if value="{{s2}}" hint-placeholder-val="{{true}}"><p class="small rise" style="color: var(--ink-2, #9aa8b0)">The panel put the odds at 0.81 that the claim holds. The independent replication on record held up. The panel called it the way the record did.</p></sc-if>
+      <sc-if value="{{w2}}" hint-placeholder-val="{{false}}"><p class="small" style="color: var(--ink-3, #71808a)">Does the reviewers' verdict agree with the independent replication?</p></sc-if>
+    </div>
+  </div>
+
+  <sc-if value="{{done}}" hint-placeholder-val="{{false}}">
+    <div class="rise" style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap">
+      <span class="lamp" aria-hidden="true"></span>
+      <span class="lamp-label">revealed by hand · {{at}} · for the humans on this side</span>
+      <div style="margin-left: auto; display: flex; gap: 8px">
+        <button class="btn btn--flag" onClick="{{togglePaper}}" aria-pressed="{{paperOn}}">Read the paper</button>
+        <button class="btn btn--flag" onClick="{{toggleRepl}}" aria-pressed="{{replOn}}">Read the replication and the analysis</button>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{anyOpen}}" hint-placeholder-val="{{false}}">
+    <div class="rise" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px">
+      <sc-if value="{{paperOn}}" hint-placeholder-val="{{false}}">
+        <div class="vault" style="display: flex; flex-direction: column; gap: 10px">
+          <span class="key" style="color: var(--flag, #bc8a34)">the paper · this side only</span>
+          <p class="small" style="color: var(--ink, #e0e8eb)">E Vul, H Pashler. Measuring the crowd within: probabilistic representations within individuals. Psychological Science 19(7).</p>
+          <span class="mono">on record: t(172) = 3.94 · p &lt; .01 · d 0.47 · N 173</span>
+          <a class="btn btn--sm" href="#" style="align-self: flex-start">Open the materials</a>
+        </div>
+      </sc-if>
+      <sc-if value="{{paperOff}}" hint-placeholder-val="{{true}}"><div></div></sc-if>
+      <sc-if value="{{replOn}}" hint-placeholder-val="{{false}}">
+        <div class="vault" style="display: flex; flex-direction: column; gap: 10px">
+          <span class="key" style="color: var(--flag, #bc8a34)">the replication and the analysis · this side only</span>
+          <span class="mono" style="color: var(--ink, #e0e8eb)">replication on record: t(139) = 4.02 · p .001 · d 0.34 · N 140 · same direction · held up: yes</span>
+          <span class="mono" style="color: var(--ink, #e0e8eb)">our recomputation: reproduced</span>
+          <span class="mono" style="color: var(--ink, #e0e8eb)">the blind researcher: t(139) = 4.02 · d_z 0.34 · the same number</span>
+          <span class="mono" style="color: var(--ink, #e0e8eb)">the panel: 0.81 · 5 reviewers · 2 rounds · 1 recomputed from the data</span>
+          <a class="btn btn--sm" href="#" style="align-self: flex-start">Open the analysis</a>
+        </div>
+      </sc-if>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{idle}}" hint-placeholder-val="{{true}}">
+    <div style="display: flex; align-items: center; gap: 14px; margin-top: auto">
+      <span class="seal-ring"></span>
+      <span class="metric" style="color: var(--ink-2, #9aa8b0)">frosted until the verdict is back; then the two verdicts lift their frost one beat apart; the paper and the replication open only on a further click</span>
+    </div>
+  </sc-if>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1000}}'>
+class Component extends DCLogic {
+  state = { step: 0, at: '', paper: false, repl: false, t0: 0, now: 0 };
+  componentWillUnmount() { (this.timers || []).forEach(clearTimeout); clearInterval(this.tick); }
+  play() {
+    const hh = () => { const d = new Date(); return String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0'); };
+    this.timers = [];
+    const t0 = Date.now();
+    this.setState({ step: 1, at: hh(), t0, now: t0, paper: false, repl: false });
+    this.tick = setInterval(() => { if (this.state.step === 1) this.setState({ now: Date.now() }); }, 120);
+    this.timers.push(setTimeout(() => this.setState({ step: 2 }), 2600));
+    this.timers.push(setTimeout(() => this.setState({ step: 3 }), 4000));
+    this.timers.push(setTimeout(() => this.setState({ step: 4 }), 5400));
+  }
+  renderVals() {
+    const s = this.state.step;
+    const pct = s === 0 ? 0 : s === 1 ? Math.min(99, Math.round((this.state.now - this.state.t0) / 26)) : 100;
+    return {
+      idle: s === 0, done: s >= 4, at: this.state.at, pct,
+      receiving: s === 1, laneCls: s === 0 ? '' : s === 1 ? 'det' : 'back',
+      receiptCls: s >= 2 ? 'out' : 'ghost', receiptText: s >= 2 ? 'receipt · sha256 matches · verdict attached' : s === 1 ? 'the other machine is answering' : 'waiting for the receipt',
+      c1: s >= 2 ? 'in' : 'wait', p1: s >= 2 ? 'open' : '', s1: s >= 2, w1: s < 2,
+      c2: s >= 3 ? 'in' : 'wait', p2: s >= 3 ? 'open' : '', s2: s >= 3, w2: s < 3,
+      paperOn: this.state.paper, paperOff: !this.state.paper, replOn: this.state.repl, anyOpen: this.state.paper || this.state.repl,
+      togglePaper: () => this.setState({ paper: !this.state.paper }),
+      toggleRepl: () => this.setState({ repl: !this.state.repl }),
+      play: () => this.play(),
+      reset: () => { (this.timers || []).forEach(clearTimeout); clearInterval(this.tick); this.setState({ step: 0, paper: false, repl: false }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

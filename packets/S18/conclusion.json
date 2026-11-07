@@ -1,0 +1,1 @@
+{"study": "S18", "holds": "no", "primary_test": "Two-sided Student independent-samples t-test (equal variances) on learning score (mean RT of random blocks minus fixed-sequence block), achievement words minus control, Include1 sample", "statistic": "t(156) = -1.32", "p": "0.189", "effect_size": "Cohen's d = -0.21, 95% CI [-0.52, 0.10]", "n_after_exclusions": 158, "minutes": 2}

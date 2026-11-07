@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The factory: production, the wall, verification, the reveal</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/vivarium/tokens.css">
+<link rel="stylesheet" href="bench.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0;background:#0c1114}
+.station{position:relative;display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center;flex:1 1 0;min-width:0}
+.station .o{width:56px;height:56px;border-radius:999px;border:1px solid var(--sig-dim,#2c5c6b);display:grid;place-items:center;background:var(--paper,#0c1114);color:var(--sig-hi,#6fd6e6)}
+.station.done .o{border-color:var(--sig-hi,#6fd6e6)}
+.station.out .o{border-color:var(--gro-bright,#84c595);color:var(--gro-bright,#84c595)}
+.station .n{font:400 11px/1 var(--font-mono,"JetBrains Mono",monospace);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2,#9aa8b0)}
+.station .c{font:400 12px/1.4 var(--font-mono,"JetBrains Mono",monospace);color:var(--ink-3,#71808a)}
+.belt{flex:0 0 36px;height:1px;background:repeating-linear-gradient(90deg,var(--sig-hi,#6fd6e6) 0 6px,transparent 6px 12px);margin-top:28px;opacity:.9}
+.belt.green{background:repeating-linear-gradient(90deg,var(--gro-bright,#84c595) 0 6px,transparent 6px 12px)}
+.reveal{position:relative;border-radius:var(--radius-panel,18px);border:1px solid var(--line-soft,#1b242a);background:var(--panel,#182026);padding:18px;display:flex;flex-direction:column;gap:10px;min-height:180px}
+.reveal.verdict{border-color:var(--gro-dim,#3d5e46)}
+.reveal .big{font:300 34px/1.1 var(--font-sans,"IBM Plex Sans",system-ui,sans-serif);color:var(--ink,#e0e8eb);letter-spacing:-.01em}
+.reveal .pane{min-height:96px}
+.step{width:28px;height:28px;border-radius:999px;border:1px solid var(--sig-hi,#6fd6e6);display:grid;place-items:center;font:400 11px/1 var(--font-mono,"JetBrains Mono",monospace);color:var(--sig-hi,#6fd6e6);flex:none}
+</style>
+</helmet>
+<div class="viv" data-ground="canopy" style="width: 1440px; height: 1120px; display: flex; flex-direction: column">
+<svg class="grain" aria-hidden="true"><defs><filter id="noiseF" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><pattern id="grainTileF" width="240" height="240" patternUnits="userSpaceOnUse"><rect width="240" height="240" filter="url(#noiseF)"></rect></pattern></defs><rect width="100%" height="100%" fill="url(#grainTileF)"></rect></svg>
+
+<div class="page" style="padding: 28px; display: flex; flex-direction: column; gap: 28px; height: 100%">
+
+  <div style="display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap">
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <span class="key sig">Science Resocialized · the factory</span>
+      <h1 class="title">Production, the wall, verification, the reveal</h1>
+    </div>
+    <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap">
+      <span class="key">run</span>
+      <span class="chip" style="padding: 10px 12px; font-size: 12px">run 02 · strategy rules_pushed</span>
+      <span class="chip ghost" style="padding: 10px 12px">run 01 · baseline</span>
+      <button class="btn btn--sm">New run</button>
+      <span class="metric" style="color: var(--ink-2, #9aa8b0)"><span class="mark" style="margin-right: 8px"></span>the same alias on both machines; every run in its own folder, nothing shared between runs</span>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: minmax(0, 1fr) 2px minmax(0, 1fr); gap: 0 28px; align-items: stretch">
+
+    <section class="glass glass--panel" style="padding: 22px; display: flex; flex-direction: column; gap: 22px" aria-label="Production, this machine">
+      <div class="floor" style="opacity: .7"></div>
+      <div class="sechead" style="position: relative"><span class="key sig">01</span><h2 class="title">Production</h2><span class="key" style="margin-left: auto">this machine</span></div>
+      <div style="position: relative; display: flex; align-items: flex-start">
+        <div class="station done"><span class="o"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><rect x="3" y="3" width="7" height="7" fill="none" stroke="currentColor" stroke-width="1.2"></rect><rect x="12" y="3" width="7" height="7" fill="none" stroke="currentColor" stroke-width="1.2"></rect><rect x="3" y="12" width="7" height="7" fill="none" stroke="currentColor" stroke-width="1.2"></rect><rect x="12" y="12" width="7" height="7" fill="none" stroke="currentColor" stroke-width="1.2"></rect></svg></span><span class="n">findings</span><span class="c">30 · data ready</span></div>
+        <span class="belt"></span>
+        <div class="station done"><span class="o"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.2"></circle><path d="M11 6v5l3 2" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg></span><span class="n">desks</span><span class="c">2 researchers · opus</span></div>
+        <span class="belt"></span>
+        <div class="station done"><span class="o"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M5 3h8l4 4v12H5z" fill="none" stroke="currentColor" stroke-width="1.2"></path><path d="M8 11h6M8 14h6" stroke="currentColor" stroke-width="1.2"></path></svg></span><span class="n">reports</span><span class="c">1 pdf · this run</span></div>
+        <span class="belt"></span>
+        <div class="station out"><span class="o"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M3 7l8-4 8 4v9l-8 4-8-4z" fill="none" stroke="currentColor" stroke-width="1.2"></path><path d="M3 7l8 4 8-4M11 11v9" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg></span><span class="n">packages</span><span class="c">report + data</span></div>
+      </div>
+      <div style="position: relative; display: flex; flex-direction: column; gap: 6px">
+        <span class="key">traces out · run 02</span>
+        <div class="mono" style="color: var(--ink-2, #9aa8b0)">15:37:27 → S23.zip · report + 3 data files · sha256 61ce7336… · to the outbox (api url to come)</div>
+        <div class="mono" style="color: var(--ink-3, #71808a)">15:52:03 → S24 · packed, waiting for the channel</div>
+      </div>
+      <div style="position: relative; display: flex; gap: 14px; align-items: center"><span class="lamp" aria-hidden="true"></span><span class="lamp-label">strategy set by hand · rules_pushed · 15:10</span></div>
+    </section>
+
+    <span class="wallline" style="opacity: 1"></span>
+
+    <section class="glass glass--panel" style="padding: 22px; display: flex; flex-direction: column; gap: 22px" aria-label="Verification, the other machine">
+      <div class="floor" style="opacity: .7"></div>
+      <div class="sechead" style="position: relative"><span class="key sig">02</span><h2 class="title">Verification</h2><span class="key" style="margin-left: auto">the other machine</span></div>
+      <div style="position: relative; display: flex; align-items: flex-start">
+        <div class="station done"><span class="o"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M3 6h16v11H3z" fill="none" stroke="currentColor" stroke-width="1.2"></path><path d="M3 6l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg></span><span class="n">inbox</span><span class="c">1 package · verified</span></div>
+        <span class="belt"></span>
+        <div class="station done"><span class="o"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="7" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.2"></circle><circle cx="15" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.2"></circle><path d="M2 19c0-3 2-5 5-5s5 2 5 5M10 19c0-3 2-5 5-5s5 2 5 5" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg></span><span class="n">panels</span><span class="c">solo · rules · people</span></div>
+        <span class="belt"></span>
+        <div class="station done"><span class="o"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 12l5 5 9-10" fill="none" stroke="currentColor" stroke-width="1.4"></path></svg></span><span class="n">verdicts</span><span class="c">round 1 · round 2</span></div>
+        <span class="belt green"></span>
+        <div class="station out"><span class="o"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M17 11H5M10 6l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.3"></path></svg></span><span class="n">receipts</span><span class="c">back over the wall</span></div>
+      </div>
+      <div style="position: relative; display: flex; flex-direction: column; gap: 6px">
+        <span class="key">traces back · run 02</span>
+        <div class="mono" style="color: var(--gro-bright, #84c595)">15:37:27 ← S23 · receipt · sha256 matches</div>
+        <div class="mono" style="color: var(--gro-bright, #84c595)">[hh:mm] ← S23 · verdict · odds holds [0.00–1.00] · 5 reviewers · 2 rounds</div>
+      </div>
+      <div style="position: relative; display: flex; gap: 14px; align-items: center"><span class="lamp" aria-hidden="true"></span><span class="lamp-label">scenario set by hand · a planted colleague · 15:12</span></div>
+    </section>
+  </div>
+
+  <div class="sec" style="gap: 18px">
+    <div class="sechead"><span class="key sig">03</span><h2 class="title">The reveal</h2><span class="caption">S23 · Two guesses beat one guess · run 02</span></div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px">
+
+      <div class="reveal verdict">
+        <div style="display: flex; align-items: center; gap: 12px"><span class="step">1</span><span class="key">the panel's verdict · came back</span></div>
+        <div class="big">odds it holds · [0.00]</div>
+        <div class="mono" style="color: var(--ink-2, #9aa8b0)">5 reviewers · 2 rounds · 1 recomputed from the data · [minutes] min</div>
+        <div class="metric" style="color: var(--gro-bright, #84c595); margin-top: auto"><span class="mark" style="background: var(--gro-bright, #84c595); margin-right: 8px"></span>received · this unlocks the two sealed parts</div>
+      </div>
+
+      <div class="reveal">
+        <div style="display: flex; align-items: center; gap: 12px"><span class="step">2</span><span class="key">the researcher against the paper</span></div>
+        <div class="pane open" style="flex: 1">
+          <div class="behind" aria-hidden="true"><div class="sheet" style="width: 54px; min-height: 68px; padding: 8px 7px; box-shadow: none"><i class="h"></i><i></i><i></i><i style="width: 70%"></i><i></i></div></div>
+          <div class="frost"></div>
+          <span class="k">verdict one</span>
+          <span class="verdict yes">matches</span>
+        </div>
+        <div class="mono" style="color: var(--ink-3, #71808a)">the blind researcher reached the paper's conclusion; the paper itself opens on a further click</div>
+      </div>
+
+      <div class="reveal">
+        <div style="display: flex; align-items: center; gap: 12px"><span class="step">3</span><span class="key">the panel against the replication</span></div>
+        <div class="pane open" style="flex: 1">
+          <div class="behind" aria-hidden="true"><svg width="90" height="50" viewBox="0 0 44 30"><path d="M2 22h5v8H2zM9 12h5v18H9zM16 4h5v26h-5zM23 15h5v15h-5zM30 9h5v21h-5zM37 18h5v12h-5z" fill="#5cc4d8"></path></svg></div>
+          <div class="frost"></div>
+          <span class="k">verdict two</span>
+          <span class="verdict yes">matches</span>
+        </div>
+        <div class="mono" style="color: var(--ink-3, #71808a)">the panel called it the way the independent replication did; the numbers open on a further click</div>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px">
+      <div class="reveal" style="min-height: 0; opacity: .75">
+        <div style="display: flex; align-items: center; gap: 12px"><span class="step" style="border-color: var(--ink-3, #71808a); color: var(--ink-3, #71808a)">1</span><span class="key">S24 · verdict · waiting</span></div>
+        <div class="mono" style="color: var(--ink-3, #71808a)">package packed 15:52 · not yet over the wall</div>
+      </div>
+      <div class="reveal" style="min-height: 0; opacity: .75">
+        <div class="pane" style="min-height: 56px"><div class="behind" aria-hidden="true"><div class="sheet" style="width: 34px; min-height: 42px; padding: 6px 5px; box-shadow: none"><i class="h"></i><i></i><i></i></div></div><div class="frost"></div><span class="k">paper</span><span class="v">sealed · frosted until the verdict is back</span></div>
+      </div>
+      <div class="reveal" style="min-height: 0; opacity: .75">
+        <div class="pane" style="min-height: 56px"><div class="behind" aria-hidden="true"><svg width="44" height="30" viewBox="0 0 44 30"><path d="M2 22h5v8H2zM9 12h5v18H9zM16 4h5v26h-5zM23 15h5v15h-5zM30 9h5v21h-5zM37 18h5v12h-5z" fill="#5cc4d8"></path></svg></div><div class="frost"></div><span class="k">reproduction</span><span class="v">sealed · frosted until the verdict is back</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; gap: 10px 28px; flex-wrap: wrap; align-items: center; margin-top: auto">
+    <span class="metric" style="color: var(--ink-2, #9aa8b0)"><span class="mark" style="margin-right: 8px"></span>teal: the production line and every trace that leaves</span>
+    <span class="metric" style="color: var(--ink-2, #9aa8b0)"><span class="mark" style="background: var(--gro-bright, #84c595); margin-right: 8px"></span>green: what comes back</span>
+    <span class="metric" style="color: var(--ink-2, #9aa8b0)"><span class="seal-ring" style="margin-right: 8px; vertical-align: middle"></span>frost: sealed; the verdict clears it, one finding at a time, in the order the receipts arrive</span>
+    <span class="metric" style="color: var(--ink-2, #9aa8b0)"><span class="lamp" style="margin-right: 8px; vertical-align: middle; box-shadow: 0 0 0 1px rgba(255,217,138,.5), 0 0 8px 2px rgba(217,164,65,.6)"></span>a lamp where a person set the strategy or the scenario</span>
+  </div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1120}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

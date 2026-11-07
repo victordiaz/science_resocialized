@@ -1,0 +1,1 @@
+{"study": "S17", "holds": "no", "primary_test": "Two-way between-subjects ANOVA (type III, sum-to-zero coding) on mean latency, target stimulus x age group; key term target stimulus main effect", "statistic": "F(1, 44) = 1.44", "p": "0.237", "effect_size": "partial eta^2 = 0.032, 95% CI [0.000, 0.179]", "n_after_exclusions": 48, "minutes": 6}

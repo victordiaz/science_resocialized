@@ -1,0 +1,1 @@
+{"study": "S15", "holds": "yes", "primary_test": "Pearson chi-square (no Yates) on options (two/ten) x decision (confirming/disconfirming), control-focus participants only", "statistic": "chi2(1, N=150) = 7.10", "p": "0.0077", "effect_size": "phi = 0.22, 95% CI [0.06, 0.37]; Cohen's d = 0.45 [0.12, 0.78]", "n_after_exclusions": 150, "minutes": 3}
