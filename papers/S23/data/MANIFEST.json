@@ -1,0 +1,17 @@
+{
+ "study": "S23",
+ "files": {
+  "d04.txt": {
+   "bytes": 34998,
+   "sha256": "12c3c26a6d0aef08d2b1ddfb61b672d39fb4d5594d186e0078355b273bbc0d87"
+  },
+  "d05.txt": {
+   "bytes": 20847,
+   "sha256": "a3e1168a67e24d5fc227ba741ba3895ee0ae9f522cd365990a54554ac8b3d9c5"
+  },
+  "d06.txt": {
+   "bytes": 95468,
+   "sha256": "2c4d074cade7729016f3aea5efe6cd1d22cfe6c8f860494fc84b860407e7c06a"
+  }
+ }
+}

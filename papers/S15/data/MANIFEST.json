@@ -1,0 +1,29 @@
+{
+ "study": "S15",
+ "files": {
+  "d02.sas7bdat": {
+   "bytes": 443392,
+   "sha256": "542f85b356baf5d3709de9352f3c2d71c40e044a40e13b4464e6fa252a3a8854"
+  },
+  "d03.txt": {
+   "bytes": 1047461,
+   "sha256": "969c9f9582315da2a560011556f4a623d176daf84d9a65977452ff7444c15daa"
+  },
+  "d04.txt": {
+   "bytes": 807234,
+   "sha256": "eb8b8686d68537f6594df9f17127f0efdd8654285fffc25846f07a46bb369b09"
+  },
+  "d05.txt": {
+   "bytes": 6434893,
+   "sha256": "f96f0cfdb9609fec675b0af76d4593646ad817cae48de17cc009eb8344154a34"
+  },
+  "d07.txt": {
+   "bytes": 4675221,
+   "sha256": "0701aa5a904e98a85349daf63ff5d008b23c9bf21e89e2666b0ca426d37dcc07"
+  },
+  "d08.txt": {
+   "bytes": 321992,
+   "sha256": "5ecc341218ccaf94607fe4fcf7c75d4cf12c35b19bb444b94530f576bcdab04e"
+  }
+ }
+}

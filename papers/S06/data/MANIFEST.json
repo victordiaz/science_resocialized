@@ -1,0 +1,37 @@
+{
+ "study": "S06",
+ "files": {
+  "d02.csv": {
+   "bytes": 735722,
+   "sha256": "0a348990974d15a7fc8b93beb6fc0f4decac4f726cb2d049187294c316875f3a"
+  },
+  "d04.csv": {
+   "bytes": 22664,
+   "sha256": "d41e68907aa86187f6f57a7339b6b4234a4ee96f3e0db2654a7c21a5f13c5d86"
+  },
+  "d07.csv": {
+   "bytes": 991473,
+   "sha256": "aa5dcac9d5e8a4e3fff52a988e80e11bc35567eddacf1674ff97e23fc2b1258e"
+  },
+  "d08.csv": {
+   "bytes": 1989681,
+   "sha256": "d1c0a96663896c1ff3928475547002b338e97a25ca08180ffe63b982b78a975f"
+  },
+  "d09.csv": {
+   "bytes": 8529,
+   "sha256": "9d2f6e19e41d44bd76899671eccc2f72017140ee3f51c290c3c3eae46aea4e82"
+  },
+  "d11.csv": {
+   "bytes": 15479,
+   "sha256": "ce32c9ebcaecaeb2c0f169eb82502bda5057f5592e15d7bfc31f1771008e9c9c"
+  },
+  "d12.csv": {
+   "bytes": 6601,
+   "sha256": "2d728613b6cff8651f437f8afbe16289b068158468c6491b98fa2a49eeec4456"
+  },
+  "d13.csv": {
+   "bytes": 23920,
+   "sha256": "0e8712a66d783b7901d85a79ca62ce5a3d067fd0be65de9aa83b90d234d3e101"
+  }
+ }
+}

@@ -1,0 +1,13 @@
+{
+ "study": "S26",
+ "files": {
+  "d04.sav": {
+   "bytes": 5150,
+   "sha256": "c3098f6923a9294cb84fff2ace6a37e7a2f0591fac8b510804cd6e1a7c355e64"
+  },
+  "d05.sav": {
+   "bytes": 9392,
+   "sha256": "0ffa84d2a79f0aab0ac3d29e84356a88cef3a3bbe6eaa4789fbe66c7a18110fd"
+  }
+ }
+}

@@ -1,0 +1,13 @@
+{
+ "study": "S14",
+ "files": {
+  "d04.sav": {
+   "bytes": 9441,
+   "sha256": "df52a44c94fa68f04f6f4e6e50fe41e20f62ecd0c18f230a5d3f75cfaa0fe385"
+  },
+  "d05.xlsx": {
+   "bytes": 14047,
+   "sha256": "a12f34f7281b7b7e5eb1cab9a1b21d38106b394272ce869777cfe211ac4c40f6"
+  }
+ }
+}

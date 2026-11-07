@@ -1,0 +1,45 @@
+{
+ "study": "S02",
+ "files": {
+  "d02.txt": {
+   "bytes": 95,
+   "sha256": "b1fdf19bc63b654ae07138200306d7417bb771838acf031f77e960153cfd310c"
+  },
+  "d03.dat": {
+   "bytes": 1622,
+   "sha256": "2e38e81bf2d41c9f5a67979ee46bb9ffd37c4062c07303686f321423c95d00da"
+  },
+  "d04.sav": {
+   "bytes": 1625,
+   "sha256": "8073aa2ce70d90e0d7895c51dd0dc14d89eef41f53a060e98c02d49d70303ec8"
+  },
+  "d05.dat": {
+   "bytes": 1516,
+   "sha256": "e9ef7644edd49fc4513663f322219853219d5bb44973c0f0b1f3458d7f8bc3e3"
+  },
+  "d06.sav": {
+   "bytes": 1966,
+   "sha256": "ca6779fc2fec9c39a1029eb4dfdf1a336f575603312c07c848b9ee5cce913223"
+  },
+  "d07.dat": {
+   "bytes": 1802,
+   "sha256": "162c5575d5d8298fe12193f5cd381a370a3036528ee6c1c314c8c950c8cd4307"
+  },
+  "d08.sav": {
+   "bytes": 1964,
+   "sha256": "8e3a37c2db5bec0d6c61d82ac9ab5e36ece375f3870fa318a4de533ad1b8a02c"
+  },
+  "d09.dat": {
+   "bytes": 2094,
+   "sha256": "dba0dafe95fe737bc24c8716ad635c49a36733035182022044c2be4630ccdbf4"
+  },
+  "d10.sav": {
+   "bytes": 2425,
+   "sha256": "1dc8604d52f51070c9df532cae1de2b675008ef50e32ff389de9e31525da8971"
+  },
+  "d11.sav": {
+   "bytes": 2294938,
+   "sha256": "7a862abe054d104f051eb107b056d4c42a0ecf3687aaf7b3f039641dc9b876a5"
+  }
+ }
+}

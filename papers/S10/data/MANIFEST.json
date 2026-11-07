@@ -1,0 +1,17 @@
+{
+ "study": "S10",
+ "files": {
+  "d02.sav": {
+   "bytes": 1579,
+   "sha256": "1b6f6c83d5be23a543d6d057b54f29e7c1ed089a7dfb46535741ad6f01409220"
+  },
+  "d03.sav": {
+   "bytes": 3592,
+   "sha256": "bda0ff3e4ca1c3b95139a8a86da4530c060c522dc846bc3de090a7ddc32fb66a"
+  },
+  "d06.sav": {
+   "bytes": 127756,
+   "sha256": "11f3b084898d7c22b3343f68643a8bbe34bce16b926a067db6a6f9ad1ed5a4a2"
+  }
+ }
+}

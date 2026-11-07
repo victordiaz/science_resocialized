@@ -1,0 +1,13 @@
+{
+ "study": "S03",
+ "files": {
+  "d04.dat": {
+   "bytes": 37486,
+   "sha256": "05456175a6e6f5f1b7b9c72bb9c3334e69b544c1910e64c6360ee995ad06fda7"
+  },
+  "d05.txt": {
+   "bytes": 46293,
+   "sha256": "6ecdcdc35e9a73f249375cabde964a5b7c1d9833d5db45c9df3ac9c81f6c2fab"
+  }
+ }
+}

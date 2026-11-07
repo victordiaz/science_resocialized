@@ -1,0 +1,73 @@
+{
+ "study": "S25",
+ "files": {
+  "d03.zip": {
+   "bytes": 90368,
+   "sha256": "7cc831a87af586a47f5db617372f6ca627601a987c01064f4e044eeaba9ea3e6"
+  },
+  "d04.zip": {
+   "bytes": 93716,
+   "sha256": "90bce70b4be2042bc7cf43cba23a9a05f79e190e98f23844ec26d41beb64942c"
+  },
+  "d06.txt": {
+   "bytes": 15438,
+   "sha256": "ade0bc104aa7290d3cc0e95408a2df9521f9ace53f146848906415ecd6b9c68c"
+  },
+  "d07.txt": {
+   "bytes": 15409,
+   "sha256": "db7df38cbf6af172b7929c6394172e85e5249e30c27dfaec0e153801b3eb08f9"
+  },
+  "d08.txt": {
+   "bytes": 15379,
+   "sha256": "a0272fd4828356f773096332296db23ff3b5983145eed681308171b16c6035ca"
+  },
+  "d09.txt": {
+   "bytes": 15217,
+   "sha256": "7ac39c63b1a8a0d5001cdebdd517ae7d3125cfe09d458d1b88f1d08b83bded2f"
+  },
+  "d10.txt": {
+   "bytes": 15231,
+   "sha256": "576347ab37dc601b66f9b30829983607b1fd36326588e1d7ea56c0add9b6dae9"
+  },
+  "d11.txt": {
+   "bytes": 15280,
+   "sha256": "bde876e6af3de734e42bb87e4ab41d86013ec27ad9bbb4a958689ef00f1f3860"
+  },
+  "d12.txt": {
+   "bytes": 15158,
+   "sha256": "4ecc95b55b7f13dc075bff9a19f8c070c591b83f9ddd4fa113a580a43065b2ff"
+  },
+  "d13.txt": {
+   "bytes": 15344,
+   "sha256": "dea80dbc0e969bcc70018bba8d08593264db2f9651d06abcf50bca127ccfd1ff"
+  },
+  "d14.txt": {
+   "bytes": 15384,
+   "sha256": "7569b25fdb7255e98cd38c45615b049a0abffe67a9196da46457ad4de540f998"
+  },
+  "d15.txt": {
+   "bytes": 15455,
+   "sha256": "d88fe4ed3585ad2f49654d374aead66d038033d31a5c512003b61c89d0df837f"
+  },
+  "d16.txt": {
+   "bytes": 15316,
+   "sha256": "0e469f2405e7660f6cacf206f62b159fbca3a06d2176cdd2cb107f4ed27f957b"
+  },
+  "d17.txt": {
+   "bytes": 15259,
+   "sha256": "33238fec742a9120a468c96b5ce6df1676596cd925212a2a5c8b931ccbc295a8"
+  },
+  "d18.txt": {
+   "bytes": 15193,
+   "sha256": "9c6b0d9aaa4045d05d5837dcced77f56ec9fdba5c8c7625de636a5d625da55c0"
+  },
+  "d19.txt": {
+   "bytes": 15098,
+   "sha256": "96f40768836c2c9f2bc47dac92e603a25b5f0ad93d5e752c86a0f83bb56c2d8b"
+  },
+  "d20.txt": {
+   "bytes": 15184,
+   "sha256": "ce6279d86f37591a8f1b29123ff9d642cd4fefe6d143696991fc7772c2d010a4"
+  }
+ }
+}

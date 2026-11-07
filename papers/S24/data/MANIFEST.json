@@ -1,0 +1,13 @@
+{
+ "study": "S24",
+ "files": {
+  "d03.sav": {
+   "bytes": 1772,
+   "sha256": "b75657db1045a2b23796b4e6d01d867ebb6f2be9e53efaea6554c3582e061708"
+  },
+  "d05.csv": {
+   "bytes": 751989,
+   "sha256": "f79a979674183c6b4763ef51267bafa12e2bf9efd6c4ed205a9c47791597cc5f"
+  }
+ }
+}

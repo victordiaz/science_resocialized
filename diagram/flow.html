@@ -1,0 +1,255 @@
+<title>Science Resocialized Flow</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one pipeline of five stations across the top, a sealed vault lane beneath it that only touches the last station,
+   and a detail drawer that answers to whichever station is selected. Structure chips and a bad-actor switch change the panel station. */
+:root{
+  --bg:#f3f5f6; --paper:#ffffff; --ink:#15202b; --ink-2:#4a5866; --ink-3:#8593a0; --line:#d6dde3;
+  --flow:#0f6e72; --flow-soft:#d7eceb; --seal:#b4591c; --seal-soft:#f6e3d3; --bad:#9b1c31; --bad-soft:#f6dadd;
+  --good:#2f7a3b; --good-soft:#dcefdd; --focus:#0f6e72;
+  --display:"Newsreader",Georgia,"Times New Roman",serif; --body:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif; --mono:"IBM Plex Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0f161c; --paper:#161f27; --ink:#e8edf1; --ink-2:#aab6c1; --ink-3:#6f7d8a; --line:#2a3741;
+  --flow:#5fc1c4; --flow-soft:#143538; --seal:#e39a62; --seal-soft:#3a2516; --bad:#ef6f84; --bad-soft:#3d1a21;
+  --good:#7cc98a; --good-soft:#1d3322; --focus:#5fc1c4; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#0f161c; --paper:#161f27; --ink:#e8edf1; --ink-2:#aab6c1; --ink-3:#6f7d8a; --line:#2a3741;
+  --flow:#5fc1c4; --flow-soft:#143538; --seal:#e39a62; --seal-soft:#3a2516; --bad:#ef6f84; --bad-soft:#3d1a21;
+  --good:#7cc98a; --good-soft:#1d3322; --focus:#5fc1c4; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 48px}
+.wrap{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
+header h1{font-family:var(--display);font-weight:500;font-size:clamp(28px,4vw,40px);margin:0 0 6px;letter-spacing:-.01em;text-wrap:balance}
+header p{margin:0;color:var(--ink-2);max-width:62ch}
+.controls{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font:500 13px var(--body);border:1px solid var(--line);background:var(--paper);color:var(--ink-2);border-radius:999px;padding:6px 12px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--flow);border-color:var(--flow);color:#fff}
+.switch{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-2);cursor:pointer;user-select:none}
+.switch input{appearance:none;width:36px;height:20px;border-radius:999px;background:var(--line);position:relative;cursor:pointer;margin:0}
+.switch input::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:var(--paper);transition:left .18s}
+.switch input:checked{background:var(--bad)} .switch input:checked::after{left:18px}
+.play{font:500 13px var(--body);border:1px solid var(--flow);background:transparent;color:var(--flow);border-radius:8px;padding:6px 12px;cursor:pointer;margin-left:auto}
+.play:hover{background:var(--flow-soft)}
+button:focus-visible,input:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.stage{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 10px 6px;overflow-x:auto}
+svg{display:block;width:100%;height:auto;font-family:var(--body)}
+.station{cursor:pointer}
+.station rect.box{fill:var(--paper);stroke:var(--line);stroke-width:1.2;transition:stroke .15s}
+.station:hover rect.box,.station[data-active="true"] rect.box{stroke:var(--flow);stroke-width:2}
+.station text.t{font:600 14px var(--body);fill:var(--ink)}
+.station text.s{font:12px var(--body);fill:var(--ink-2)}
+.station text.n{font:500 11px var(--mono);fill:var(--ink-3);letter-spacing:.06em}
+.edge{stroke:var(--flow);stroke-width:1.8;fill:none}
+.edge-label{font:500 11px var(--mono);fill:var(--flow)}
+.vault rect{fill:var(--seal-soft);stroke:var(--seal);stroke-dasharray:4 3;stroke-width:1.2}
+.vault text{font:12px var(--body);fill:var(--seal)} .vault text.t{font-weight:600}
+.vault-edge{stroke:var(--seal);stroke-width:1.6;stroke-dasharray:4 3;fill:none}
+.reviewer circle{fill:var(--flow-soft);stroke:var(--flow);stroke-width:1.4}
+.reviewer.bad circle{fill:var(--bad-soft);stroke:var(--bad)}
+.reviewer.person circle{fill:var(--good-soft);stroke:var(--good)}
+.reviewer text{font:500 10px var(--mono);fill:var(--ink-2);text-anchor:middle}
+.board{fill:none;stroke:var(--ink-3);stroke-dasharray:2 3}
+.token{fill:var(--seal);stroke:var(--paper);stroke-width:1.5}
+.drawer{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:16px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.drawer>div{min-width:0}
+.drawer h2{font-family:var(--display);font-weight:500;font-size:22px;margin:0 0 6px}
+.drawer h3{font:600 11px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin:0 0 6px}
+.drawer p{margin:0 0 8px;color:var(--ink-2);font-size:14px}
+.drawer ul{margin:0;padding-left:18px;color:var(--ink-2);font-size:14px}
+.drawer li{margin-bottom:4px}
+.tag{display:inline-block;font:500 11px var(--mono);padding:2px 7px;border-radius:5px;background:var(--seal-soft);color:var(--seal);margin-right:6px}
+.tag.bad{background:var(--bad-soft);color:var(--bad)} .tag.good{background:var(--good-soft);color:var(--good)} .tag.flow{background:var(--flow-soft);color:var(--flow)}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:var(--ink-2)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.legend .l-flow::before{background:var(--flow)} .legend .l-seal::before{background:var(--seal)} .legend .l-bad::before{background:var(--bad)} .legend .l-good::before{background:var(--good)}
+@media (max-width:760px){ .drawer{grid-template-columns:1fr} .play{margin-left:0} }
+@media (prefers-reduced-motion: reduce){ .token{transition:none} .switch input::after{transition:none} }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Science, resocialized: the flow of one finding</h1>
+    <p>A finding's public data goes to a researcher agent with the result masked. The report it writes is reviewed by a panel under rules you can change. Only the scorer ever opens the sealed record. Click a station; switch the panel's structure; plant a bad actor; press play.</p>
+  </header>
+
+  <div class="controls">
+    <div class="chips" role="group" aria-label="Panel structure">
+      <button class="chip" data-structure="solo" aria-pressed="false">One model alone</button>
+      <button class="chip" data-structure="rules" aria-pressed="true">Agents under rules</button>
+      <button class="chip" data-structure="people" aria-pressed="false">People with agents</button>
+    </div>
+    <label class="switch"><input type="checkbox" id="badActor"> Plant a bad actor</label>
+    <button class="play" id="play">Play one finding</button>
+  </div>
+
+  <div class="stage"><svg id="flow" viewBox="0 0 1040 400" role="img" aria-label="Pipeline: source, seal, researcher, panel, score, with a sealed vault lane"></svg></div>
+
+  <div class="legend"><span class="l-flow">what the process sees</span><span class="l-seal">sealed: the record</span><span class="l-bad">planted</span><span class="l-good">a person</span></div>
+
+  <section class="drawer" id="drawer" aria-live="polite"></section>
+</div>
+
+<script>
+(function(){
+  const svg=document.getElementById('flow');
+  const NS='http://www.w3.org/2000/svg';
+  const el=(n,a={},parent=svg)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);parent.appendChild(e);return e;};
+  const txt=(x,y,s,cls,parent=svg,extra={})=>{const t=el('text',Object.assign({x,y,class:cls},extra),parent);t.textContent=s;return t;};
+
+  const stations=[
+    {id:'source', n:'01', t:'Source', s:'99 replicated findings', x:20},
+    {id:'seal',   n:'02', t:'Seal',   s:'result masked', x:220},
+    {id:'research',n:'03',t:'Researcher', s:'data in, report out', x:420},
+    {id:'panel',  n:'04', t:'Panel',  s:'reviews the PDF', x:620},
+    {id:'score',  n:'05', t:'Score',  s:'against the record', x:860}
+  ];
+  const W=180,H=74,Y=40;
+  const detail={
+    source:{
+      h:'Source: the Reproducibility Project, Psychology',
+      p:'A hundred published psychology findings were each run again by an independent lab in 2015. For 99 of them the outcome is on record, and for most the replication\'s raw data and its audit script are public on the Open Science Framework. The census of all 99 is mechanical; a survey agent then opens every data file and marks it usable, unclear or unusable.',
+      in:['The public table (168 rows; 99 with an outcome: 38 held, 61 did not)','One OSF component per replication: Data, Materials, Analysis Audit'],
+      out:['Only findings whose data a survey agent opened and judged complete go on','Receipts with row counts, variables, the audit script\'s test']
+    },
+    seal:{
+      h:'Seal: the result leaves the process',
+      p:'Before anything is handed to a researcher, the published outcome, the replication\'s statistic and our own verified reproduction are written to a sealed file. No prompt in the process reads it. The seal is a rule of the scripts, not secrecy: the data is public. It is what makes the later verdicts a measurement instead of a recall test.',
+      in:['The outcome column, the replication\'s p and effect size','A reproduction recomputed twice: by the audit script and independently in Python'],
+      out:['<span class="tag">sealed</span> truth.json, opened only by the scorer','The researcher receives the claim, the design and the raw data; nothing else']
+    },
+    research:{
+      h:'Researcher: one agent, one dataset, one report',
+      p:'The researcher agent gets the claim as a question, the design, and the raw data. It decides how to test the claim, runs the analysis, and writes a short report with its conclusion, its method and its numbers, exported as a PDF. It does not know what the original lab found or what the replication found. Its report is the artifact the panel will mark.',
+      in:['card.md: the claim in plain words, the design, the sample','download/: the raw data as fetched from OSF'],
+      out:['report.pdf: conclusion, method, statistics, one figure','A log of every command the agent ran, for the record']
+    },
+    panel:{
+      h:'Panel: the report is marked and judged',
+      p:'Reviewer agents read the PDF, may reopen the data, and give odds that the conclusion holds. The structure of the panel is the experiment\'s variable: alone; under commit-first rules with an anonymous board and one revision; or people in the room with their own agents. A planted bad actor, or an incentive, can push the panel. Each verdict is on the record with its reasons.',
+      in:['report.pdf and the same data the researcher had','The structure: who commits first, who sees whom, who may revise'],
+      out:['One set of odds per reviewer, before and after the board','The panel\'s aggregate: the mean, with the median and the log-odds pool recorded beside it']
+    },
+    score:{
+      h:'Score: the seal is opened',
+      p:'Only now does the scoring script open the sealed record and compare each panel\'s odds with what the replication actually found and with the verified reproduction. Two numbers per structure, accuracy and the Brier score, beside the cost in tokens and in people\'s minutes. The number to beat is the base rate, said first.',
+      in:['Every reviewer\'s odds, before and after the board','<span class="tag">sealed</span> truth.json, now opened'],
+      out:['One table: structure by structure, with and without the bad actor','The limits, in the README, before the result']
+    }
+  };
+  const structures={
+    solo:{label:'One model alone',desc:'One reviewer reads the report and gives its odds. No board, no revision. This is the floor every other structure must beat.'},
+    rules:{label:'Agents under rules',desc:'Five reviewers. Each commits its odds before it sees the others. Then the board shows the four others\' odds and reasons without names, and each may revise once and say why.'},
+    people:{label:'People with agents',desc:'Three to five people, each with one agent, under the same rule: commit, then the board, then one revision. Their minutes are the cost.'}
+  };
+
+  // edges between stations
+  const edges=[['source','seal','data + audit script'],['seal','research','claim + raw data'],['research','panel','report.pdf'],['panel','score','odds, before and after']];
+  const byId=Object.fromEntries(stations.map(s=>[s.id,s]));
+  edges.forEach(([a,b,l])=>{
+    const A=byId[a],B=byId[b]; const x1=A.x+W,x2=B.x,y=Y+H/2;
+    el('path',{class:'edge',d:`M${x1} ${y} L${x2-8} ${y}`,'marker-end':'url(#arrow)'});
+    txt((x1+x2)/2,y-10,l,'edge-label',svg,{'text-anchor':'middle'});
+  });
+  const defs=el('defs');
+  const m=el('marker',{id:'arrow',viewBox:'0 0 10 10',refX:'8',refY:'5',markerWidth:'7',markerHeight:'7',orient:'auto-start-reverse'},defs);
+  el('path',{d:'M0 0 L10 5 L0 10 z',fill:'var(--flow)'},m);
+
+  // stations
+  stations.forEach(s=>{
+    const g=el('g',{class:'station',id:'st-'+s.id,tabindex:'0',role:'button','aria-label':s.t,'data-active':'false'});
+    el('rect',{class:'box',x:s.x,y:Y,width:W,height:H,rx:10},g);
+    txt(s.x+14,Y+22,s.n,'n',g); txt(s.x+14,Y+44,s.t,'t',g); txt(s.x+14,Y+62,s.s,'s',g);
+    g.addEventListener('click',()=>select(s.id)); g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select(s.id);}});
+  });
+
+  // the panel's reviewers, drawn under the panel station
+  const panel=byId.panel; const cx=panel.x+W/2, cy=Y+H+92, R=52;
+  const ring=el('g',{id:'ring'});
+  el('circle',{class:'board',cx,cy,r:R-18},ring);
+  txt(cx,cy+4,'board','n',ring,{'text-anchor':'middle'});
+  el('path',{class:'edge',d:`M${cx} ${Y+H} L${cx} ${cy-R-14}`,'marker-end':'url(#arrow)'});
+  function drawRing(){
+    [...ring.querySelectorAll('.reviewer')].forEach(n=>n.remove());
+    const st=state.structure, bad=state.bad;
+    const n=st==='solo'?1:5;
+    for(let i=0;i<n;i++){
+      const ang=-Math.PI/2+i*2*Math.PI/n; const x=n===1?cx:cx+R*Math.cos(ang), y=n===1?cy:cy+R*Math.sin(ang);
+      const isBad=bad&&i===(n===1?0:2); const cls='reviewer'+(isBad?' bad':st==='people'?' person':'');
+      const g=el('g',{class:cls},ring);
+      el('circle',{cx:x,cy:y,r:13},g);
+      txt(x,y+3.5,isBad?'!':(st==='people'?'P':'A')+(n===1?'':i+1),'',g);
+    }
+  }
+
+  // the vault lane
+  const vault=el('g',{class:'vault'});
+  const vx=byId.seal.x, vy=Y+H+170, vw=byId.score.x+W-vx, vh=58;
+  el('rect',{x:vx,y:vy,width:vw,height:vh,rx:10},vault);
+  txt(vx+14,vy+22,'The sealed record',' t',vault).setAttribute('class','t');
+  txt(vx+14,vy+42,'published outcome · replication statistic · our verified reproduction · which reviewer was planted',' ',vault);
+  // seal writes into the vault; score reads from it
+  el('path',{class:'vault-edge',d:`M${byId.seal.x+W/2} ${Y+H} L${byId.seal.x+W/2} ${vy}`,'marker-end':'url(#arrow-seal)'});
+  el('path',{class:'vault-edge',d:`M${byId.score.x+W/2} ${vy} L${byId.score.x+W/2} ${Y+H}`,'marker-end':'url(#arrow-seal)'});
+  const m2=el('marker',{id:'arrow-seal',viewBox:'0 0 10 10',refX:'8',refY:'5',markerWidth:'7',markerHeight:'7',orient:'auto-start-reverse'},defs);
+  el('path',{d:'M0 0 L10 5 L0 10 z',fill:'var(--seal)'},m2);
+  txt(byId.seal.x+W/2+8,vy-14,'written, then closed','edge-label',svg).style.fill='var(--seal)';
+  txt(byId.score.x+W/2+8,vy-14,'opened last','edge-label',svg).style.fill='var(--seal)';
+  // lock glyph on the vault
+  const lx=vx+vw-30, ly=vy+18;
+  el('rect',{x:lx-7,y:ly+4,width:14,height:11,rx:2,fill:'var(--seal)'},vault);
+  el('path',{d:`M${lx-4} ${ly+4} v-4 a4 4 0 0 1 8 0 v4`,stroke:'var(--seal)','stroke-width':'2',fill:'none'},vault);
+
+  // token for play
+  const token=el('circle',{class:'token',r:7,cx:byId.source.x+W/2,cy:Y+H/2,opacity:0});
+
+  const state={structure:'rules',bad:false,selected:'panel'};
+  const drawer=document.getElementById('drawer');
+  function render(){
+    stations.forEach(s=>document.getElementById('st-'+s.id).setAttribute('data-active',String(s.id===state.selected)));
+    drawRing();
+    const d=detail[state.selected];
+    let extra='';
+    if(state.selected==='panel'){
+      const s=structures[state.structure];
+      extra=`<p><span class="tag flow">${s.label}</span>${s.desc}</p>`+
+        (state.bad?`<p><span class="tag bad">planted</span>One reviewer is told to argue against the first-round majority as strongly as the evidence allows, or is given an incentive that pulls one way. It does not know what the record says. Whether the panel still lands on the truth is the question.</p>`:
+        `<p><span class="tag good">clean</span>No reviewer is planted. Switch the bad actor on to see where the pressure enters.</p>`);
+    }
+    if(state.selected==='score'){
+      extra=`<p>Reported for <strong>${structures[state.structure].label.toLowerCase()}</strong>, ${state.bad?'with':'without'} a planted reviewer. Each structure is scored with and without, so the cost of a bad actor is itself a number.</p>`;
+    }
+    drawer.innerHTML=`<div><h2>${d.h}</h2><p>${d.p}</p>${extra}</div>
+      <div><h3>What comes in</h3><ul>${d.in.map(i=>`<li>${i}</li>`).join('')}</ul></div>
+      <div><h3>What goes out</h3><ul>${d.out.map(i=>`<li>${i}</li>`).join('')}</ul></div>`;
+  }
+  function select(id){state.selected=id;render();}
+  document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
+    document.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-pressed','false'));
+    c.setAttribute('aria-pressed','true'); state.structure=c.dataset.structure; if(state.selected!=='score')state.selected='panel'; render();
+  }));
+  document.getElementById('badActor').addEventListener('change',e=>{state.bad=e.target.checked; if(state.selected!=='score')state.selected='panel'; render();});
+
+  // play: the token walks the stations, pausing at each, and the drawer follows
+  let playing=false;
+  document.getElementById('play').addEventListener('click',async()=>{
+    if(playing)return; playing=true;
+    const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const stops=stations.map(s=>({id:s.id,x:s.x+W/2}));
+    token.setAttribute('opacity',1);
+    for(let i=0;i<stops.length;i++){
+      const from=i===0?stops[0].x:stops[i-1].x, to=stops[i].x;
+      if(!reduce){const t0=performance.now(),dur=650;await new Promise(res=>{(function step(now){const k=Math.min(1,(now-t0)/dur);token.setAttribute('cx',from+(to-from)*k);k<1?requestAnimationFrame(step):res();})(t0);});}
+      else token.setAttribute('cx',to);
+      select(stops[i].id);
+      await new Promise(r=>setTimeout(r,reduce?400:900));
+    }
+    token.setAttribute('opacity',0); token.setAttribute('cx',stops[0].x); playing=false;
+  });
+
+  render();
+})();
+</script>
