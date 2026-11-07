@@ -33,5 +33,5 @@
 - `d16.txt` (text, 8 KB)
 - `d17.txt` (text, 8 KB)
 - `d18.txt` (text, 8 KB)
-- `d19.dta` (Stata, 136 KB): [year] rows 22 columns Stata file the audit script reads (osf.io/d5im2). 120 trials per subject (80 experimental, 40 guessing). 'angle' is the localization error in degrees, derived by the do-file from mouse and dot coordinates.
+- `d19.dta` (Stata, 136 KB): [year] rows 22 columns Stata file the key test reads. 120 trials per subject (80 experimental, 40 guessing). 'angle' is the localization error in degrees, derived by the do-file from mouse and dot coordinates.
 <!-- files:end -->

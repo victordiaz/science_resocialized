@@ -19,7 +19,7 @@
 - `d04.sav` (SPSS, 2 KB)
 - `d05.dat` (text, 2 KB)
 - `d06.sav` (SPSS, 2 KB)
-- `d07.dat` (text, 2 KB): 32 rows 5 columns tab-delimited, UTF-8 BOM, CRLF; per-participant mean RTs for hit/cr/fa/miss; meanRT_fa has 2 NA (not used by key test). The file the audit script loads.
+- `d07.dat` (text, 2 KB): 32 rows 5 columns tab-delimited, UTF-8 BOM, CRLF; per-participant mean RTs for hit/cr/fa/miss; meanRT_fa has 2 NA (not used by key test). The file the key test loads.
 - `d08.sav` (SPSS, 2 KB): SPSS twin of the .dat, not opened
 - `d09.dat` (text, 2 KB)
 - `d10.sav` (SPSS, 2 KB)

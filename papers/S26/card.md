@@ -13,5 +13,5 @@
 <!-- files:start -->
 **Data files given.** The raw data you receive, under neutral names:
 - `d04.sav` (SPSS, 5 KB): 40 rows 17 columns Group-level aggregate; the SPSS syntax uses its Pool_B_Percent.
-- `d05.sav` (SPSS, 9 KB): 120 rows 19 columns The file the audit script reads (osf.io/m3b7k resolves to this name). 10 groups per cell.
+- `d05.sav` (SPSS, 9 KB): 120 rows 19 columns The file the key test reads. 10 groups per cell.
 <!-- files:end -->

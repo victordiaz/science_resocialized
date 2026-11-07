@@ -12,9 +12,9 @@
 
 <!-- files:start -->
 **Data files given.** The raw data you receive, under neutral names:
-- `d02.csv` (CSV, 1 KB): 72 rows 2 columns ERN/EPS pairs, apparently the combined original+replication set used for a secondary analysis; not the key test
+- `d02.csv` (CSV, 1 KB): 72 rows 2 columns [label removed]/EPS pairs, apparently the combined original+replication set used for a secondary analysis; not the key test
 - `d03.txt` (text, 54 KB)
 - `d04.txt` (text, 54 KB): ERP waveform exports, not needed for the key test; not opened
-- `d05.csv` (CSV, 6 KB): 126 rows 8 columns CR-only line endings; long format, ERN and EPS repeated across the 3 startle_type rows per participant; participant ids 1-51 minus 3,4,10,18,20,28,37,40,44; one startle value '???' in an unpred row (not used by the key test)
-- `d08.csv` (CSV, 6 KB): 126 rows 8 columns CR-only line endings; long format, ERN and EPS repeated across the 3 startle_type rows per participant; participant ids 1-51 minus 3,4,10,18,20,28,37,40,44; one startle value '???' in an unpred row (not used by the key test)
+- `d05.csv` (CSV, 6 KB): 126 rows 8 columns CR-only line endings; long format, [label removed] and EPS repeated across the 3 startle_type rows per participant; participant ids 1-51 minus 3,4,10,18,20,28,37,40,44; one startle value '???' in an unpred row (not used by the key test)
+- `d08.csv` (CSV, 6 KB): 126 rows 8 columns CR-only line endings; long format, [label removed] and EPS repeated across the 3 startle_type rows per participant; participant ids 1-51 minus 3,4,10,18,20,28,37,40,44; one startle value '???' in an unpred row (not used by the key test)
 <!-- files:end -->

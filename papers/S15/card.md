@@ -12,7 +12,7 @@
 
 <!-- files:start -->
 **Data files given.** The raw data you receive, under neutral names:
-- `d02.sas7bdat` (SAS, 443 KB): 496 rows 26 columns SAS dataset, read with pyreadstat. This is the merged file the audit script reads (osf.io/c9z3d). Raw txt exports (sessions, sessionTasks, explicit, demographics, iat) also posted and downloaded; not opened beyond listing.
+- `d02.sas7bdat` (SAS, 443 KB): 496 rows 26 columns SAS dataset, read with pyreadstat. This is the merged file the key test reads. Raw txt exports (sessions, sessionTasks, explicit, demographics, [label removed]) also posted and downloaded; not opened beyond listing.
 - `d03.txt` (text, 1.0 MB)
 - `d04.txt` (text, 807 KB)
 - `d05.txt` (text, 6.4 MB)
