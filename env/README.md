@@ -21,8 +21,8 @@ once in a terminal). The page shows the CLI's state top right and retries every 
   `log.md`, `analysis.out` or `report.md`, the files appearing in `report/`, and the finished PDF in place.
 - "Hand off" packs the bundle (`env/handoff.py`) into `handoff/<id>/` with hashes; see `handoff/README.md` for the
   contract with the reviewers' machine.
-- "Details" opens the full card and the run's record. The published outcome and the reproduction are not on this
-  machine at all: they live in the operator repository, which shares no history with this one.
+- "Details" opens the full card and the run's record. The paper and the reproduction sit in `papers/S##/sealed/`,
+  which the page never reads; they are opened only after the verdicts are in.
 - "Send over the wall" (on a handed-off desk) moves the bundle to the transport target set in the header pill:
   `user@host:/path` (rsync over ssh; a Tailscale host name works once both machines are on the tailnet), `/local/path`
   (a folder copy), or `tailscale:<machine>` (`tailscale file cp` of a zip). The receipt is `handoff/<id>/sent.json`.
@@ -45,15 +45,17 @@ A page reload loses nothing: the desks are in `env/state.json`, each run in `pap
 
 ## The seal, as the runner enforces it
 
-The agent never sees `papers/<study>/` itself. The runner builds `env/runs/<study>/` shaped like the repo:
+Each study folder is a trio: `card.md` and `data/` are given; `sealed/` (the paper, the outcome on record, our
+reproduction, `truth.json`) is never read by the bench, never copied into a work folder, and is on the researcher's
+deny-read list. The agent never sees `papers/<study>/` itself. The runner builds `env/runs/<study>/` shaped like the repo:
 `briefs/research-brief.md`, `score/md2pdf.py`, `.venv` (a symlink), `papers/<study>/card.md`, `papers/<study>/data/`
 (as it is: neutral names and the manifest; the replication's report, scripts and codebooks were withheld on the operator
 side before export) and an empty `report/`. What was given is recorded in `papers/<study>/report/work.json`. The run
-refuses to start if anything named `truth.json`, `files.json`, `survey.json` or `reproduction.json` is reachable from
-the sandbox (none exists in this repository; the guard stays) or any symlink leads back into the repo. The CLI runs
+refuses to start if a `sealed/` folder or anything named `truth.json`, `files.json`, `survey.json` or `reproduction.json`
+is reachable from the sandbox, or any symlink leads back into the repo. The CLI runs
 with `--setting-sources ""` (no user settings, plugins or hooks), `--strict-mcp-config`, no web tools, no network for
-Bash, and Claude Code's filesystem sandbox denying reads of `.git/`, `handoff/`, `env/runs/`, the operator repository on
-the same laptop, and the user's Claude transcripts. `--dry-run` builds and checks the sandbox and prints the command;
+Bash, and Claude Code's filesystem sandbox denying reads of every `papers/*/sealed/`, `.git/`, `handoff/`, `env/runs/`, the
+operator repository on the same laptop, and the user's Claude transcripts. `--dry-run` builds and checks the sandbox and prints the command;
 `--attach` builds it and waits for an outside agent to write the report there (used when the CLI is logged out; the
 status then says backend `attached` and carries no token counts).
 

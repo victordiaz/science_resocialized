@@ -125,7 +125,7 @@ button:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--focus);out
   <header>
     <div>
       <h1>The lab bench</h1>
-      <p>Thirty studies, each a claim with its raw data and no result. Hand one to a researcher agent; it reaches its own conclusion and writes a PDF. The record of what held lives on another machine; the PDF goes over the wall to the reviewers' machine.</p>
+      <p>Thirty studies, each a claim with its raw data and no result. Hand one to a researcher agent; it reaches its own conclusion and writes a PDF. Each study's paper and record stay sealed beside its data; the PDF goes over the wall to the reviewers' machine.</p>
     </div>
     <div class="meta" id="meta"></div>
   </header>
@@ -140,7 +140,7 @@ button:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--focus);out
   <section>
     <div class="sec-head"><h2>Studies</h2><span id="counts"></span>
       <div class="right"><label style="font-size:12px;color:var(--ink-2)">sort <select id="sort" style="font:inherit"><option value="id">by id</option><option value="state">by state</option><option value="size">by data size</option></select></label></div></div>
-    <div class="legend" style="margin:8px 0 10px"><span class="l-flow">the process</span><span class="l-good">a report out</span><span class="l-seal">sealed: the record (on another machine)</span><span class="l-bad">failed or stopped</span></div>
+    <div class="legend" style="margin:8px 0 10px"><span class="l-flow">the process</span><span class="l-good">a report out</span><span class="l-seal">sealed: the paper and the record (opened after the verdicts)</span><span class="l-bad">failed or stopped</span></div>
     <div class="grid" id="grid"></div>
   </section>
 </div>
@@ -258,10 +258,10 @@ button:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--focus);out
       <div class="top"><span class="id">${f.id}</span><span class="badge ${cls(f.state)}">${esc(f.state)}</span></div>
       ${c.label?`<div class="label">${esc(c.label)}</div>`:''}
       <div class="hyp" style="-webkit-line-clamp:2">${f.card?esc(hyp):hyp}</div>
-      <div class="trio" title="One study is three things: the data (what a researcher gets, here), the paper and the reproduction (on another machine, sealed until scoring).">
+      <div class="trio" title="One study is three things: the data (what a researcher gets), the paper and the reproduction (in papers/S##/sealed/, never read by the bench or any agent until the verdicts are in).">
         <div class="data" draggable="${!!f.card&&!running(f)}"><div class="k">data <span class="grip" aria-hidden="true">⠿</span></div><div class="v">${c.files_given&&c.files_given.length?`${c.files_given.length} files`:`${s.n_files} files`} · ${(s.formats||[]).join(' ')||'–'} · ${s.mb} MB${nText?` · ${nText}`:''}</div></div>
-        <div class="sealed"><div class="k">${LOCK} paper</div><div class="v">elsewhere: sealed</div></div>
-        <div class="sealed"><div class="k">${LOCK} reproduction</div><div class="v">outcome and recomputation: elsewhere</div></div>
+        <div class="sealed"><div class="k">${LOCK} paper</div><div class="v">here, sealed until the verdicts</div></div>
+        <div class="sealed"><div class="k">${LOCK} reproduction</div><div class="v">outcome and recomputation: sealed until the verdicts</div></div>
       </div>
       <div class="foot">${st.cost_usd!=null||st.minutes?`<span>${money(st.cost_usd)} · ${st.minutes||0} min · ${esc(st.model||'opus')}</span>`:''}${f.recognised===true?`<span style="color:var(--seal)">recognised the paradigm</span>`:''}</div>
       <div class="cta">${cta}<button data-open="${f.id}">Details</button></div></div>`;
@@ -303,7 +303,7 @@ button:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--focus);out
     const files=(f.files||[]).map(x=>`<a class="file" href="/report/${f.id}/${x.name}" target="_blank">${esc(x.name)}</a>`).join(' ');
     d.innerHTML=`<button class="close" id="dclose">close</button>
       <div><span class="badge ${cls(f.state)}" style="margin:0">${esc(f.state)}</span></div>
-      <h2>${esc(c.label||f.id)}</h2><p style="font:12px var(--mono);color:var(--ink-3);margin:0">study ${f.id} · data here; paper and reproduction elsewhere</p>
+      <h2>${esc(c.label||f.id)}</h2><p style="font:12px var(--mono);color:var(--ink-3);margin:0">study ${f.id} · data given; paper and reproduction sealed in papers/${f.id}/sealed/</p>
       <p style="font:12px var(--mono);color:var(--ink-3)">${(s.formats||[]).join(' ')} · ${s.n_files} files · ${s.mb} MB</p>
       <div class="actions" style="display:flex;gap:8px;flex-wrap:wrap">
         ${canRun(f)&&f.state!=='handed off'?`<button class="primary" id="drun">${f.state==='data ready'?'Hand to a researcher':'Run again'}</button>`:''}
@@ -316,7 +316,7 @@ button:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--focus);out
       ${st.conclusion?`<h3>Stated conclusion</h3><p>${esc(st.conclusion.holds)} · ${esc(st.conclusion.primary_test||'')} · ${esc(st.conclusion.statistic||'')} · p ${esc(st.conclusion.p||'')} · ${esc(st.conclusion.effect_size||'')}</p>`:''}
       ${files?`<h3>Files in report/</h3><div class="files">${files}</div>`:''}
       ${f.handoff?`<h3>Hand-off</h3><p class="hash">${esc(f.handoff.at)} · report.pdf ${esc(f.handoff.sha256)}</p>`:''}
-      <h3>The sealed record</h3><p style="color:var(--seal)">The published outcome, the replication's statistic and our verified reproduction live on another machine, in a repository this one shares no history with. Nothing here traces a study to its paper; the scorer joins the two at the end.</p>`;
+      <h3>The sealed record</h3><p style="color:var(--seal)">papers/${f.id}/sealed/ holds the paper, the outcome on record and our reproduction. The bench never reads it, no agent's work folder ever contains it, and the researcher's filesystem sandbox denies it; it is opened only after the verdicts are in.</p>`;
     $('#dclose').onclick=()=>{d.classList.remove('open');sel=null;renderGrid()};
     const r=$('#drun'); if(r) r.onclick=()=>{run(id);d.classList.remove('open');sel=null};
     const hb=$('#dhand'); if(hb) hb.onclick=async()=>{hb.disabled=true;await api('/api/handoff',{id});toast('bundle written: handoff/'+id+'/');tick();openDrawer(id)};

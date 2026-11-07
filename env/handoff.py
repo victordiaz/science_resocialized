@@ -12,7 +12,7 @@ saw it; git-ignored, so git carries the report and the folder copy carries the d
 the manifest has study codes, hashes, times, the researcher's model and cost."""
 import argparse, json, os, re, shutil, subprocess, sys, zipfile
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import ROOT, HANDOFF, RUNS, check_id, finding_dir, report_dir, read_json, now_iso, sha256, atomic_write_json
+from common import ROOT, HANDOFF, RUNS, check_id, finding_dir, report_dir, read_json, now_iso, sha256, atomic_write_json, safe_finding_file
 
 BUNDLE_VERSION = 1
 RECOG_RE = re.compile(r"^\s*[*#]*\s*recogni|\bI (do not |don't )?recogni[sz]e\b", re.I)
@@ -42,7 +42,7 @@ def pack(lid):
         files[name] = {"sha256": sha256(os.path.join(dst, name)), "bytes": os.path.getsize(os.path.join(dst, name))}
     # the data, as the researcher saw it (the sandbox copy if it exists, else the study's data folder itself)
     sb_dl = os.path.join(RUNS, lid, "papers", lid, "data")
-    if not os.path.isdir(sb_dl): sb_dl = os.path.join(fd, "data")
+    if not os.path.isdir(sb_dl): sb_dl = safe_finding_file(lid, "data")
     ddst = os.path.join(dst, "data")
     data_files = {}
     if os.path.isdir(sb_dl):

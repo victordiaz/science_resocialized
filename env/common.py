@@ -33,13 +33,20 @@ def finding_dir(lid):
 def report_dir(lid):
     return os.path.join(finding_dir(lid), "report")
 
+SEALED_DIR = "sealed"                         # papers/<study>/sealed/: the trio's other two thirds; never read on this side before the verdicts
+
 def safe_finding_file(lid, *parts):
-    """A path inside papers/<study>/ that is never a sealed file and never leaves the folder."""
+    """A path inside papers/<study>/ that is never a sealed file, never under sealed/, and never leaves the folder."""
     base = os.path.realpath(finding_dir(lid))
     p = os.path.realpath(os.path.join(base, *parts))
-    if not p.startswith(base + os.sep) or os.path.basename(p) in SEALED or any(x in SEALED for x in parts):
+    rel = os.path.relpath(p, base).split(os.sep)
+    if not p.startswith(base + os.sep) or os.path.basename(p) in SEALED or any(x in SEALED for x in parts) or SEALED_DIR in rel:
         raise PermissionError(f"refused: {os.path.join(*parts)}")
     return p
+
+def sealed_dirs():
+    """Every papers/<study>/sealed/ folder, for the researcher's deny-read list."""
+    return [os.path.join(PAPERS, d, SEALED_DIR) for d in sorted(os.listdir(PAPERS)) if ID_RE.match(d)]
 
 def atomic_write_json(path, obj):
     os.makedirs(os.path.dirname(path), exist_ok=True)

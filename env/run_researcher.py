@@ -6,8 +6,10 @@
 What it does, in order:
  1. Builds a sandbox at env/runs/<study>/ shaped like the repo: briefs/research-brief.md, score/md2pdf.py, .venv
     (symlink), papers/<study>/card.md and papers/<study>/data/ (everything in data/ is given on this side; the
-    withholding happened on the operator side before export). The run refuses to start if anything named truth.json,
-    files.json, survey.json or reproduction.json is reachable from the sandbox, or a symlink leads back into the repo.
+    withholding happened on the operator side before export). papers/<study>/sealed/ (the paper, the outcome, the
+    reproduction) never enters the sandbox: the run refuses to start if a sealed/ folder or anything named truth.json,
+    files.json, survey.json or reproduction.json is reachable from it, or a symlink leads back into the repo; and the
+    agent's filesystem sandbox denies reads of every papers/*/sealed/.
  2. Starts `claude -p` on an Opus model in the sandbox, with the brief as the prompt, no settings, no MCP, no web tools,
     and Claude Code's own filesystem sandbox denying reads of data/, .git/, results/, handoff/ and the user's Claude
     transcripts. It records every tool call and the tokens from the stream into report/status.json and report/runner.log.
@@ -20,7 +22,7 @@ the CLI is logged out); the status then says backend "attached" and carries no t
 import argparse, json, os, shutil, signal, subprocess, sys, threading, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import (ROOT, RUNS, PAPERS, atomic_write_json, check_id, finding_dir, report_dir, read_json, now_iso,
-                    REPORT_FILES, read_status, SEALED)
+                    REPORT_FILES, read_status, SEALED, SEALED_DIR, sealed_dirs)
 
 DENY_READ_REL = [".git", "handoff", "env/state.json", "env/runs"]
 # the operator repository on the same laptop holds the sealed record; the agent's Bash sandbox may not read it
@@ -40,6 +42,7 @@ def build_sandbox(lid, sb, out):
     shutil.copy(os.path.join(ROOT, "score", "md2pdf.py"), os.path.join(sb, "score"))
     os.symlink(os.path.join(ROOT, ".venv"), os.path.join(sb, ".venv"))
     fd = os.path.join(sb, "papers", lid); os.makedirs(os.path.join(fd, "report"))
+    # only card.md and data/ cross: papers/<study>/sealed/ (the paper, the outcome, the reproduction) never does
     shutil.copy(os.path.join(finding_dir(lid), "card.md"), fd)
     src = os.path.join(finding_dir(lid), "data"); dst = os.path.join(fd, "data"); os.makedirs(dst)
     given = []
@@ -59,7 +62,7 @@ def check_seal(sb):
     for r, dirs, files in os.walk(sb):
         for f in files + dirs:
             p = os.path.join(r, f)
-            if f in SEALED:
+            if f in SEALED or f == SEALED_DIR:
                 bad.append(p)
             if os.path.islink(p):
                 tgt = os.path.realpath(p)
@@ -76,7 +79,7 @@ def prompt_text(lid, brief):
             f"environment and R. There is no network. The study code is {lid}. Begin now; the brief follows.\n\n" + brief)
 
 def claude_cmd(sb, model, budget, lid):
-    deny = [os.path.join(ROOT, p) for p in DENY_READ_REL] + DENY_READ_ABS
+    deny = [os.path.join(ROOT, p) for p in DENY_READ_REL] + DENY_READ_ABS + sealed_dirs()
     deny += [os.path.expanduser(p) for p in ("~/.claude/projects", "~/.claude/sessions", "~/.claude/todos",
                                               "~/Library/Application Support/Claude/side-session-notes")]
     settings = {"sandbox": {"enabled": True, "autoAllowBashIfSandboxed": True,
