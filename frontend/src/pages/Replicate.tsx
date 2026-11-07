@@ -48,9 +48,9 @@ function filesMentioned(spec: string): string[] {
 // ---------------------------------------------------------------- building blocks
 
 /** One numbered step of the experiment: number, title, one-line status, then its content. */
-function Step({ n, title, status, tone = "idle", children, done }: { n: number | string; title: string; status?: React.ReactNode; tone?: Tone; done?: boolean; children?: React.ReactNode }) {
+function Step({ id, n, title, status, tone = "idle", children, done }: { id?: string; n: number | string; title: string; status?: React.ReactNode; tone?: Tone; done?: boolean; children?: React.ReactNode }) {
   return (
-    <section className={`step-block tone-${tone}${done ? " done" : ""}`}>
+    <section id={id} className={`step-block tone-${tone}${done ? " done" : ""}`} data-outline>
       <header className="step-head">
         <span className="step-num" aria-hidden>{done ? "✓" : n}</span>
         <h3>{title}</h3>
@@ -137,7 +137,7 @@ function VerificationCard({ v }: { v: Verification }) {
   const name = v.persona_name ?? "Verifier";
   const color = v.persona_color ?? "#495057";
   return (
-    <details className="verification">
+    <details className="verification" id={`ver-${v.id}`} data-outline>
       <summary className="ver-head">
         <Avatar name={name} color={color} size={26} />
         <span className="ver-title">
@@ -220,7 +220,7 @@ function FilesStep({ exp, onChanged }: { exp: Experiment; onChanged: () => void 
       : "Optional: datasets, archives, code";
 
   return (
-    <Step n={2} title="Files for the replicator" status={status} tone={missing.length ? "warn" : "idle"} done={exp.attachments.length > 0 && missing.length === 0}>
+    <Step id={`${exp.id}-files`} n={2} title="Files for the replicator" status={status} tone={missing.length ? "warn" : "idle"} done={exp.attachments.length > 0 && missing.length === 0}>
       {mentioned.length > 0 && (
         <div className="mentioned">
           <span className="small">The spec mentions:</span>
@@ -306,7 +306,7 @@ function ReplicateStep({ exp, personas, onStarted }: { exp: Experiment; personas
     : `Claude Code gets the spec${exp.attachments.length ? ` and ${exp.attachments.length} ${exp.attachments.length === 1 ? "file" : "files"}` : ""}, nothing else`;
 
   return (
-    <Step n={3} title={latest ? "Replicate again" : "Replicate it blind"} status={status} tone={running ? "live" : "idle"}>
+    <Step id={`${exp.id}-replicate`} n={3} title={latest ? "Replicate again" : "Replicate it blind"} status={status} tone={running ? "live" : "idle"}>
       {!running && (
         <>
           <div className="rep-form">
@@ -360,7 +360,7 @@ function ReplicationBlock({ rep, n, latest, personas, tick, onChanged }: { rep: 
   ].filter(Boolean).join(" · ");
 
   return (
-    <details className={`run-block${active ? " active" : ""}`} open={latest}>
+    <details id={`run-${rep.id}`} className={`run-block${active ? " active" : ""}`} open={latest} data-outline>
       <summary className="run-summary">
         <span className="strong">Run {n}</span>
         <Pill label={rep.cancel_requested && active ? "Stopping" : label} tone={tone} />
@@ -460,13 +460,13 @@ function ExperimentCard({ exp, personas, ticks, onChanged }: { exp: Experiment; 
   const specTone: Tone = busy ? "live" : exp.status === "failed" ? "bad" : exp.status === "needs_review" ? "warn" : "idle";
 
   return (
-    <article className="experiment">
+    <article className="experiment" id={exp.id}>
       <header className="exp-head">
         <h2>{exp.title || "Main experiment"}</h2>
         <span className="muted small">Extracted {shortDate(exp.created_at)}, {clock(exp.created_at)}</span>
       </header>
 
-      <Step n={1} title="Experiment spec" status={specStatus} tone={specTone} done={!busy && exp.status !== "failed" && exp.status !== "needs_review" && !!exp.spec_md}>
+      <Step id={`${exp.id}-spec`} n={1} title="Experiment spec" status={specStatus} tone={specTone} done={!busy && exp.status !== "failed" && exp.status !== "needs_review" && !!exp.spec_md}>
         {exp.error && <p className="error">{exp.error}</p>}
         {exp.status === "needs_review" && (
           <div className="callout warn-box">
@@ -513,6 +513,105 @@ function ExperimentCard({ exp, personas, ticks, onChanged }: { exp: Experiment; 
         </section>
       )}
     </article>
+  );
+}
+
+// ---------------------------------------------------------------- outline sidebar
+
+function missingFiles(exp: Experiment) {
+  return filesMentioned(exp.spec_md).filter((m) => !exp.attachments.some((a) => a.filename.toLowerCase() === m.toLowerCase()));
+}
+
+function goTo(id: string) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  // Open it and every folded section around it.
+  for (let d: HTMLElement | null = el; d; d = d.parentElement?.closest("details") ?? null) {
+    if (d instanceof HTMLDetailsElement) d.open = true;
+  }
+  el.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+type OutlineItem = { id: string; label: string; sub?: string; mark: "done" | "warn" | "live" | "bad" | "todo"; depth: 0 | 1 | 2 };
+
+function outlineFor(exp: Experiment): OutlineItem[] {
+  const busy = exp.status === "extracting" || exp.status === "checking";
+  const missing = missingFiles(exp);
+  const latest = exp.replications[0];
+  const items: OutlineItem[] = [
+    { id: exp.id, label: exp.title || "Main experiment", mark: "todo", depth: 0 },
+    {
+      id: `${exp.id}-spec`,
+      label: "1  Experiment spec",
+      sub: busy ? (exp.status === "extracting" ? "Extracting…" : "Checking leaks…") : exp.status === "needs_review" ? "Leak flagged" : exp.status === "failed" ? "Failed" : "Ready",
+      mark: busy ? "live" : exp.status === "needs_review" ? "warn" : exp.status === "failed" ? "bad" : "done",
+      depth: 1,
+    },
+  ];
+  if (exp.spec_md && !busy) {
+    items.push({
+      id: `${exp.id}-files`,
+      label: "2  Files",
+      sub: missing.length ? `${missing.length} missing` : exp.attachments.length ? `${exp.attachments.length} attached` : "None",
+      mark: missing.length ? "warn" : exp.attachments.length ? "done" : "todo",
+      depth: 1,
+    });
+    const running = latest && (latest.status === "queued" || latest.status === "running");
+    items.push({ id: `${exp.id}-replicate`, label: "3  Replicate", sub: running ? "Running" : latest ? `${exp.replications.length} ${exp.replications.length === 1 ? "run" : "runs"}` : "Not started", mark: running ? "live" : latest ? "done" : "todo", depth: 1 });
+  }
+  exp.replications.forEach((r, i) => {
+    const n = exp.replications.length - i;
+    const verdict = r.report_md?.split("\n").find((l) => /^\*{0,2}status/i.test(l.replace(/^#+\s*/, "")))?.replace(/^#+\s*|\*\*/g, "").replace(/^status:\s*/i, "");
+    items.push({
+      id: `run-${r.id}`,
+      label: `Run ${n}`,
+      sub: verdict ? verdict.split(",")[0] : REP_STATUS[r.status][0],
+      mark: r.status === "running" || r.status === "queued" ? "live" : r.status === "failed" ? "bad" : r.status === "done" ? "done" : "todo",
+      depth: 1,
+    });
+    for (const v of r.verifications) {
+      items.push({ id: `ver-${v.id}`, label: v.persona_name ?? "Verifier", sub: v.status === "done" ? "Report" : v.status, mark: v.status === "done" ? "done" : v.status === "failed" ? "bad" : "live", depth: 2 });
+    }
+  });
+  return items;
+}
+
+const MARK: Record<OutlineItem["mark"], string> = { done: "✓", warn: "!", live: "●", bad: "×", todo: "○" };
+
+function Outline({ experiments }: { experiments: Experiment[] }) {
+  const [current, setCurrent] = useState<string | null>(null);
+
+  useEffect(() => {
+    const els = [...document.querySelectorAll<HTMLElement>("[data-outline]")];
+    if (!els.length) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((e) => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible[0]) setCurrent(visible[0].target.id);
+      },
+      { rootMargin: "-80px 0px -60% 0px" }
+    );
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, [experiments]);
+
+  return (
+    <nav className="outline" aria-label="On this page">
+      <div className="outline-title">On this page</div>
+      {experiments.map((exp) => (
+        <ul key={exp.id}>
+          {outlineFor(exp).map((it, i) => (
+            <li key={it.id + i} className={`d${it.depth}${current === it.id && it.depth > 0 ? " current" : ""}`}>
+              <button onClick={() => goTo(it.id)}>
+                {it.depth > 0 && <span className={`o-mark m-${it.mark}`} aria-hidden>{MARK[it.mark]}</span>}
+                <span className="o-label">{it.label}</span>
+                {it.sub && <span className="o-sub">{it.sub}</span>}
+              </button>
+            </li>
+          ))}
+        </ul>
+      ))}
+    </nav>
   );
 }
 
@@ -613,9 +712,16 @@ export default function Replicate({ paperId }: { paperId: string }) {
         </div>
       )}
 
-      {(experiments ?? []).map((e) => (
-        <ExperimentCard key={e.id} exp={e} personas={personas} ticks={ticks} onChanged={load} />
-      ))}
+      {experiments && experiments.length > 0 && (
+        <div className="replicate-layout">
+          <Outline experiments={experiments} />
+          <div className="replicate-main">
+            {experiments.map((e) => (
+              <ExperimentCard key={e.id} exp={e} personas={personas} ticks={ticks} onChanged={load} />
+            ))}
+          </div>
+        </div>
+      )}
 
       {!none && experiments && (
         <details className="how-details">

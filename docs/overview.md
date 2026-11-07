@@ -55,7 +55,8 @@ the API with the persona's key). The default model is Claude Sonnet 5.5.
 
 ### Blind replication
 
-The Replicate page shows each extracted experiment as numbered steps, top to bottom.
+The Replicate page shows each extracted experiment as numbered steps, top to bottom, with an
+outline in a sidebar on the left.
 
 ![Experiment spec](screenshots/replicate-spec.png)
 
@@ -76,6 +77,13 @@ verifier (click to read the full report), then the replicator's `REPORT.md`, its
 files it produced. The latest run is open; earlier ones collapse to one line.
 
 ![A finished run](screenshots/replicate-run.png)
+
+The sidebar outline lists each experiment, its three steps with their status (✓ done, ! needs
+attention, ● running), and each run with its verdict and verifiers. It stays in view while you
+scroll and highlights the section you're reading. Clicking an item scrolls there and opens it
+if it's folded.
+
+![Outline sidebar](screenshots/replicate-outline.png)
 
 ## How it fits together
 

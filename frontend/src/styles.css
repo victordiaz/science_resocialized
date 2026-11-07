@@ -560,3 +560,31 @@ details.verification > summary::after { content: "Read report"; font-size: 12px;
 details.verification[open] > summary::after { content: "Hide"; }
 details.verification > summary { align-items: flex-start; }
 details.verification .ver-head .muted.small { white-space: nowrap; }
+
+/* ---------- replicate page outline sidebar */
+.replicate-page { max-width: 1320px; }
+.replicate-layout { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 28px; align-items: start; }
+.replicate-main { display: flex; flex-direction: column; gap: 24px; min-width: 0; }
+.outline { position: sticky; top: 20px; max-height: calc(100vh - 40px); overflow-y: auto; padding: 4px 0; }
+.outline-title { font-size: 12px; font-weight: 600; color: var(--muted); margin: 0 0 8px 10px; }
+.outline ul { list-style: none; margin: 0 0 16px; padding: 0; }
+.outline button { width: 100%; text-align: left; background: none; border: 0; border-radius: 8px; padding: 6px 10px; cursor: pointer; display: grid; grid-template-columns: 18px 1fr; column-gap: 6px; align-items: baseline; color: var(--ink); }
+.outline button:hover { background: var(--chip); }
+.outline li.d0 button { grid-template-columns: 1fr; font-family: var(--display); font-weight: 600; font-size: 14px; line-height: 1.3; padding-bottom: 8px; }
+.outline li.d1 .o-label { font-size: 13.5px; font-weight: 500; white-space: pre; }
+.outline li.d2 button { padding-left: 34px; }
+.outline li.d2 .o-label { font-size: 12.5px; color: var(--ink-2); }
+.outline .o-sub { grid-column: 2; font-size: 12px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.outline li.current > button { background: var(--surface); box-shadow: inset 3px 0 0 var(--ink); }
+.outline .o-mark { font-size: 11px; font-weight: 700; text-align: center; }
+.outline .m-done { color: #1e6b34; }
+.outline .m-warn { color: #a66a00; }
+.outline .m-live { color: var(--accent); }
+.outline .m-bad { color: #b42318; }
+.outline .m-todo { color: var(--muted); }
+@media (max-width: 960px) {
+  .replicate-layout { grid-template-columns: 1fr; }
+  .outline { position: static; max-height: none; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); padding: 10px 6px; }
+}
+.replicate-main .experiment, .replicate-main .run-block, .replicate-main .step-block { scroll-margin-top: 16px; }
+.replicate-main details.verification { scroll-margin-top: 16px; }
