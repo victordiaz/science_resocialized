@@ -429,6 +429,8 @@ function ExperimentCard({ exp, personas, ticks, onChanged }: { exp: Experiment; 
       <Stages exp={exp} />
       {exp.error && <p className="error">{exp.error}</p>}
 
+      {!!exp.spec_md && !busy && !editing && <Attachments exp={exp} onChanged={onChanged} />}
+
       {exp.status === "needs_review" && (
         <div className="callout warn-box">
           <p className="strong">The leak check flagged the spec before it went to the replicator.</p>
@@ -463,8 +465,6 @@ function ExperimentCard({ exp, personas, ticks, onChanged }: { exp: Experiment; 
       {exp.leak_check_md && exp.status !== "needs_review" && <Doc title="Leak check" hint={exp.leak_found ? "leak found" : exp.leak_found === false ? "clean" : ""} md={exp.leak_check_md} />}
 
       {error && <p className="error">{error}</p>}
-      {!!exp.spec_md && !busy && !editing && <Attachments exp={exp} onChanged={onChanged} />}
-
       {canReplicate && !editing && (
         <StartReplication exp={exp} personas={personas} anyway={exp.status === "needs_review"} onStarted={onChanged} />
       )}
