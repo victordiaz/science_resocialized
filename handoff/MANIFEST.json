@@ -1,0 +1,14 @@
+{
+ "bundles": [
+  {
+   "study": "S23",
+   "created_at": "2026-11-07T16:11:07+0100",
+   "report_pdf_sha256": "b70aa0948b686550d24bafd31320b1780b771879f5c6eeb81c54ccbf23bccc46",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 2.0
+  }
+ ],
+ "updated_at": "2026-11-07T16:11:07+0100",
+ "bundle_version": 1
+}
