@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The wall in three moments</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/vivarium/tokens.css">
+<link rel="stylesheet" href="bench.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0;background:#0c1114}
+</style>
+</helmet>
+<div class="viv" data-ground="void" style="width: 1440px; height: 600px; display: flex; flex-direction: column">
+<svg class="grain" aria-hidden="true"><defs><filter id="noiseW" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><pattern id="grainTileW" width="240" height="240" patternUnits="userSpaceOnUse"><rect width="240" height="240" filter="url(#noiseW)"></rect></pattern></defs><rect width="100%" height="100%" fill="url(#grainTileW)"></rect></svg>
+
+<div class="page" style="padding: 28px; display: flex; flex-direction: column; gap: 24px; height: 100%">
+  <div class="sechead">
+    <span class="key sig">wall</span>
+    <h2 class="title">The wall, in three moments</h2>
+    <span class="caption">the climax of each finding: the report leaves with its data, and the receipt that comes back unlocks the record here</span>
+  </div>
+
+  <div class="glass" style="padding: 20px 22px; display: flex; flex-direction: column; gap: 14px">
+    <div class="floor" style="opacity: .5"></div>
+    <div style="position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 2px minmax(0, 1fr); gap: 0 20px; align-items: center">
+      <span class="key">this machine · researchers</span><span></span><span class="key" style="text-align: right">the reviewers' machine · panels</span>
+    </div>
+
+    <div style="position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 2px minmax(0, 1fr); gap: 0 20px; align-items: center">
+      <div style="display: flex; align-items: center; gap: 12px; min-width: 0">
+        <span class="key sig" style="width: 56px">1</span>
+        <span class="chip">S24.zip · report + 2 data files</span>
+        <span class="mono" style="white-space: nowrap">bundle written 15:52:03</span>
+        <span class="lane"></span>
+      </div>
+      <span class="wallline"></span>
+      <div style="display: flex; align-items: center; gap: 12px; min-width: 0">
+        <span class="lane" style="opacity: .35"></span>
+        <span class="chip ghost">no transport set</span>
+      </div>
+    </div>
+    <p class="caption" style="position: relative; color: var(--ink-3, #71808a); padding-left: 68px">packed and waiting: the package sits in handoff/ with its sha256; Send waits for a channel</p>
+
+    <div style="position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 2px minmax(0, 1fr); gap: 0 20px; align-items: center">
+      <div style="display: flex; align-items: center; gap: 12px; min-width: 0">
+        <span class="key sig" style="width: 56px">2</span>
+        <span class="chip out">S14.zip · report + 2 data files</span>
+        <span class="mono" style="white-space: nowrap">sending 15:53:40</span>
+        <span class="lane sending"></span>
+      </div>
+      <span class="wallline"></span>
+      <div style="display: flex; align-items: center; gap: 12px; min-width: 0">
+        <span class="lane" style="opacity: .35"></span>
+        <span class="chip ghost">waiting for the receipt</span>
+      </div>
+    </div>
+    <p class="caption" style="position: relative; color: var(--ink-3, #71808a); padding-left: 68px">crossing: the lane marches while the copy runs over ssh; the tick stays teal until the other side answers</p>
+
+    <div style="position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 2px minmax(0, 1fr); gap: 0 20px; align-items: center">
+      <div style="display: flex; align-items: center; gap: 12px; min-width: 0">
+        <span class="key sig" style="width: 56px">3</span>
+        <span class="chip out">S23.zip · report + 3 data files</span>
+        <span class="mono" style="white-space: nowrap">sent 15:37:27</span>
+        <span class="lane sent"></span>
+      </div>
+      <span class="wallline"></span>
+      <div style="display: flex; align-items: center; gap: 12px; min-width: 0">
+        <span class="lane back"></span>
+        <span class="chip out">receipt 15:37:27 · sha256 matches · record unlocked</span>
+      </div>
+    </div>
+    <p class="caption" style="position: relative; color: var(--ink-3, #71808a); padding-left: 68px">received: the receipt names the sha256 the package left with; the tick turns green and the paper and reproduction unlock on this side</p>
+  </div>
+
+  <div style="display: flex; gap: 10px 28px; flex-wrap: wrap; align-items: center; margin-top: auto">
+    <span class="mono"><span class="key">channel</span>&nbsp; api · Victor's server (url to come) · outbox meanwhile</span>
+    <button class="btn btn--sm">Change</button>
+    <span class="metric" style="color: var(--ink-2, #9aa8b0); margin-left: auto"><span class="mark" style="margin-right: 8px"></span>the package is the report with its data; the receipt that comes back over the same channel clears the frosted panes on this side</span>
+  </div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":600}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>A finding's eight states</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/vivarium/tokens.css">
+<link rel="stylesheet" href="bench.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0;background:#0c1114}
+</style>
+</helmet>
+<div class="viv" data-ground="deep-radial" style="width: 1440px; height: 820px; display: flex; flex-direction: column">
+<svg class="grain" aria-hidden="true"><defs><filter id="noiseS" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><pattern id="grainTileS" width="240" height="240" patternUnits="userSpaceOnUse"><rect width="240" height="240" filter="url(#noiseS)"></rect></pattern></defs><rect width="100%" height="100%" fill="url(#grainTileS)"></rect></svg>
+
+<div class="page" style="padding: 28px; display: flex; flex-direction: column; gap: 28px; height: 100%">
+  <div class="sechead">
+    <span class="key sig">states</span>
+    <h2 class="title">One finding, eight states</h2>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px">
+    <sc-for list="{{cells}}" as="f" hint-placeholder-count="8">
+      <article class="cellp {{f.ghost}}" style="min-height: 250px; display: flex; flex-direction: column; gap: 12px; padding: 18px" aria-label="{{f.handle}}">
+        <div style="display: flex; justify-content: space-between; gap: 10px; align-items: center">
+          <span class="key">{{f.num}}</span>
+          <span class="tag {{f.stateCls}}"><i></i>{{f.state}}</span>
+        </div>
+        <div class="handle">{{f.handle}}</div>
+        <div class="metric" style="color: {{f.metricColor}}">{{f.metric}}</div>
+        <sc-if value="{{f.isGhost}}" hint-placeholder-val="{{false}}"><div class="dash"></div></sc-if>
+        <div style="display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 6px; margin-top: auto">
+          <div class="plate plate--data"><span class="k">data</span><span>{{f.dataLine}}</span></div>
+          <div class="pane {{f.paneCls}}">
+            <div class="behind" aria-hidden="true"><div class="sheet" style="width: 34px; min-height: 42px; padding: 6px 5px; gap: 3px; box-shadow: none"><i class="h"></i><i></i><i></i><i style="width: 70%"></i></div></div>
+            <div class="frost"></div>
+            <span class="k"><svg width="10" height="11" viewBox="0 0 11 12" aria-hidden="true"><rect x="1" y="5" width="9" height="6.5" rx="1.5" fill="currentColor"></rect><path d="M3 5V3.5a2.5 2.5 0 0 1 5 0V5" stroke="currentColor" stroke-width="1.6" fill="none"></path></svg> paper</span>
+            <span class="v">{{f.paneText}}</span>
+          </div>
+          <div class="pane {{f.paneCls}}">
+            <div class="behind" aria-hidden="true"><svg width="44" height="30" viewBox="0 0 44 30"><path d="M2 22h5v8H2zM9 12h5v18H9zM16 4h5v26h-5zM23 15h5v15h-5zM30 9h5v21h-5zM37 18h5v12h-5z" fill="#5cc4d8"></path></svg></div>
+            <div class="frost"></div>
+            <span class="k"><svg width="10" height="11" viewBox="0 0 11 12" aria-hidden="true"><rect x="1" y="5" width="9" height="6.5" rx="1.5" fill="currentColor"></rect><path d="M3 5V3.5a2.5 2.5 0 0 1 5 0V5" stroke="currentColor" stroke-width="1.6" fill="none"></path></svg> reproduction</span>
+            <span class="v">{{f.paneText}}</span>
+          </div>
+        </div>
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap">
+          <sc-if value="{{f.hasAction}}" hint-placeholder-val="{{true}}"><button class="btn btn--sig btn--sm" disabled="{{f.disabled}}">{{f.action}}</button></sc-if>
+          <sc-if value="{{f.hasNote}}" hint-placeholder-val="{{false}}"><span class="mono" style="color: {{f.noteColor}}">{{f.note}}</span></sc-if>
+          <button class="btn btn--sm" style="margin-left: auto">Details</button>
+        </div>
+      </article>
+    </sc-for>
+  </div>
+
+  <div style="display: flex; gap: 10px 28px; flex-wrap: wrap; align-items: center; margin-top: auto">
+    <span class="metric" style="color: var(--ink-2, #9aa8b0)"><span class="mark" style="margin-right: 8px"></span>teal while the process has it; green once the report is out</span>
+    <span class="metric" style="color: var(--ink-2, #9aa8b0)"><span class="seal-ring" style="margin-right: 8px; vertical-align: middle"></span>the paper and the reproduction sit behind frosted glass; the receipt from the other machine clears it</span>
+    <span class="metric" style="color: var(--ink-2, #9aa8b0)"><span class="mark dashed" style="margin-right: 8px"></span>the two ghosts: a run that stopped, and a finding with no card</span>
+  </div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const ink2 = 'var(--ink-2, #9aa8b0)', sigHi = 'var(--sig-hi, #6fd6e6)', soft = 'var(--sig-soft, #5cc4d8)', gro = 'var(--gro-bright, #84c595)';
+    const mk = (num, handle, state, stateCls, metric, dataLine, o) => Object.assign({ num, handle, state, stateCls, metric, dataLine, metricColor: sigHi, ghost: '', isGhost: false, paneCls: '', paneText: 'sealed', hasAction: false, disabled: false, action: '', hasNote: false, note: '', noteColor: soft }, o || {});
+    return { cells: [
+      mk('S02', 'Unrecognised words still prime', 'data ready', '', 'n 32 · 2.4 MB · 10 of 13 files', '10 files · sav txt', { hasAction: true, action: 'Hand to a researcher' }),
+      mk('S25', 'Short words recalled in better order', 'assigned', 's-assigned', 'n 15 · 0.4 MB · 17 of 35 files', '17 files · txt', { hasNote: true, note: 'on desk 02' }),
+      mk('S19', 'Far-apart digits judged faster', 'researcher running', 's-running', 'n 32 · 2.0 MB · 11 of 39 files', '11 files · csv sav', { hasNote: true, note: 'on desk 03 · 4:12' }),
+      mk('S14', 'Rhyming noise hurts free recall', 'report written', 's-report', 'n 118 · 0.2 MB · 2 of 5 files', '2 files · sav', { hasNote: true, note: 'on desk 04 · rendering' }),
+      mk('S24', 'Longer lists, less accurate recognition', 'pdf rendered', 's-pdf', 'n 21 · 0.8 MB · 2 of 5 files', '2 files · sav', { hasAction: true, action: 'Run again', hasNote: true, note: 'on desk 01 · ready to pack' }),
+      mk('S23', 'Two guesses beat one guess', 'handed off', 's-handed', 'n 140 · 0.2 MB · 3 of 10 files', '3 files · txt', { paneCls: 'open', paneText: 'unlocked', hasNote: true, note: 'over the wall · receipt 15:37', noteColor: gro }),
+      mk('S07', 'Visible odds tie risk-taking to drug use', 'failed', 's-failed', 'stopped 15:52 · 78.1 MB · 6 of 10 files', '6 files · other', { ghost: 'ghost', isGhost: true, metricColor: ink2, hasAction: true, action: 'Run again' }),
+      mk('S15', '[no handle yet]', 'no card', 's-nocard', '13.9 MB on disk · 10 files · no card yet', 'not surveyed', { ghost: 'ghost', isGhost: true, metricColor: ink2, hasAction: true, action: 'Hand to a researcher', disabled: true })
+    ] };
+  }
+}
+</script>
+</body>
+</html>
