@@ -281,3 +281,17 @@ def test_worker_fetches_and_reuses_inputs(tmp_path):
     (tmp_path / "REPORT.md").write_text("r")
     (tmp_path / "inputs" / "x.csv").write_text("1")
     assert [f["path"] for f in w.collect_files(tmp_path)] == ["REPORT.md"]
+
+
+def test_papers_list_replication_status(client, paper, personas, fake_client):
+    assert services.list_papers()[0]["replication"]["status"] == "none"
+    exp = _ready_experiment(paper, fake_client)
+    assert services.list_papers()[0]["replication"]["status"] == "ready"
+    rep = service.queue_replication(exp["id"], [personas[0]["id"]])
+    assert services.list_papers()[0]["replication"]["status"] == "running"
+    service.claim_job("w")
+    report = "# R\n\n## Status: REPLICATED, matches within 1 point\n"
+    files = [{"path": "REPORT.md", "content_b64": base64.b64encode(report.encode()).decode()}]
+    service.complete_job(rep["id"], "done", report, 0.5, None, files)
+    s = services.list_papers()[0]["replication"]
+    assert s["status"] == "verified" and s["verdict"] == "REPLICATED, matches within 1 point" and s["runs"] == 1

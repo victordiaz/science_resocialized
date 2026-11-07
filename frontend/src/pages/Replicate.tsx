@@ -532,7 +532,7 @@ function goTo(id: string) {
   el.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-type OutlineItem = { id: string; label: string; sub?: string; mark: "done" | "warn" | "live" | "bad" | "todo"; depth: 0 | 1 | 2 };
+type OutlineItem = { id: string; label: string; sub?: string; mark: "done" | "warn" | "live" | "bad" | "todo"; depth: 0 | 1 | 2; n?: number; color?: string };
 
 function outlineFor(exp: Experiment): OutlineItem[] {
   const busy = exp.status === "extracting" || exp.status === "checking";
@@ -542,7 +542,8 @@ function outlineFor(exp: Experiment): OutlineItem[] {
     { id: exp.id, label: exp.title || "Main experiment", mark: "todo", depth: 0 },
     {
       id: `${exp.id}-spec`,
-      label: "1  Experiment spec",
+      label: "Experiment spec",
+      n: 1,
       sub: busy ? (exp.status === "extracting" ? "Extracting…" : "Checking leaks…") : exp.status === "needs_review" ? "Leak flagged" : exp.status === "failed" ? "Failed" : "Ready",
       mark: busy ? "live" : exp.status === "needs_review" ? "warn" : exp.status === "failed" ? "bad" : "done",
       depth: 1,
@@ -551,13 +552,14 @@ function outlineFor(exp: Experiment): OutlineItem[] {
   if (exp.spec_md && !busy) {
     items.push({
       id: `${exp.id}-files`,
-      label: "2  Files",
+      label: "Files",
+      n: 2,
       sub: missing.length ? `${missing.length} missing` : exp.attachments.length ? `${exp.attachments.length} attached` : "None",
       mark: missing.length ? "warn" : exp.attachments.length ? "done" : "todo",
       depth: 1,
     });
     const running = latest && (latest.status === "queued" || latest.status === "running");
-    items.push({ id: `${exp.id}-replicate`, label: "3  Replicate", sub: running ? "Running" : latest ? `${exp.replications.length} ${exp.replications.length === 1 ? "run" : "runs"}` : "Not started", mark: running ? "live" : latest ? "done" : "todo", depth: 1 });
+    items.push({ id: `${exp.id}-replicate`, label: "Replicate", n: 3, sub: running ? "Running" : latest ? `${exp.replications.length} ${exp.replications.length === 1 ? "run" : "runs"}` : "Not started", mark: running ? "live" : latest ? "done" : "todo", depth: 1 });
   }
   exp.replications.forEach((r, i) => {
     const n = exp.replications.length - i;
@@ -566,17 +568,34 @@ function outlineFor(exp: Experiment): OutlineItem[] {
       id: `run-${r.id}`,
       label: `Run ${n}`,
       sub: verdict ? verdict.split(",")[0] : REP_STATUS[r.status][0],
-      mark: r.status === "running" || r.status === "queued" ? "live" : r.status === "failed" ? "bad" : r.status === "done" ? "done" : "todo",
+      mark:
+        r.status === "running" || r.status === "queued" ? "live"
+        : r.status === "failed" ? "bad"
+        : r.status === "done" && verdict && /\bnot\b|\bfail/i.test(verdict) ? "warn"
+        : r.status === "done" ? "done"
+        : "todo",
       depth: 1,
     });
     for (const v of r.verifications) {
-      items.push({ id: `ver-${v.id}`, label: v.persona_name ?? "Verifier", sub: v.status === "done" ? "Report" : v.status, mark: v.status === "done" ? "done" : v.status === "failed" ? "bad" : "live", depth: 2 });
+      items.push({
+        id: `ver-${v.id}`,
+        label: v.persona_name ?? "Verifier",
+        sub: v.status === "done" ? "Report ready" : v.status === "failed" ? "Failed" : "Verifying…",
+        mark: v.status === "done" ? "done" : v.status === "failed" ? "bad" : "live",
+        depth: 2,
+        color: v.persona_color ?? undefined,
+      });
     }
   });
   return items;
 }
 
-const MARK: Record<OutlineItem["mark"], string> = { done: "✓", warn: "!", live: "●", bad: "×", todo: "○" };
+function markText(it: OutlineItem) {
+  if (it.mark === "done") return "✓";
+  if (it.mark === "warn") return "!";
+  if (it.mark === "bad") return "×";
+  return it.n ? String(it.n) : "";
+}
 
 function Outline({ experiments }: { experiments: Experiment[] }) {
   const [current, setCurrent] = useState<string | null>(null);
@@ -597,20 +616,39 @@ function Outline({ experiments }: { experiments: Experiment[] }) {
 
   return (
     <nav className="outline" aria-label="On this page">
-      <div className="outline-title">On this page</div>
-      {experiments.map((exp) => (
-        <ul key={exp.id}>
-          {outlineFor(exp).map((it, i) => (
-            <li key={it.id + i} className={`d${it.depth}${current === it.id && it.depth > 0 ? " current" : ""}`}>
-              <button onClick={() => goTo(it.id)}>
-                {it.depth > 0 && <span className={`o-mark m-${it.mark}`} aria-hidden>{MARK[it.mark]}</span>}
+      {experiments.map((exp) => {
+        const items = outlineFor(exp);
+        const [head, ...rest] = items;
+        const steps = rest.filter((it) => it.n);
+        const runs = rest.filter((it) => !it.n);
+        const row = (it: OutlineItem, i: number) => (
+          <li key={it.id + i} className={`o-${it.depth === 2 ? "sub" : it.n ? "step" : "run"}${current === it.id ? " current" : ""}`}>
+            <button onClick={() => goTo(it.id)}>
+              {it.depth === 2 ? (
+                <span className="o-dot" style={{ background: it.color ?? "var(--muted)" }} aria-hidden />
+              ) : (
+                <span className={`o-mark m-${it.mark}`} aria-hidden>{markText(it)}</span>
+              )}
+              <span className="o-text">
                 <span className="o-label">{it.label}</span>
-                {it.sub && <span className="o-sub">{it.sub}</span>}
-              </button>
-            </li>
-          ))}
-        </ul>
-      ))}
+                {it.sub && <span className={`o-sub s-${it.mark}`}>{it.sub}</span>}
+              </span>
+            </button>
+          </li>
+        );
+        return (
+          <div key={exp.id} className="o-exp">
+            <button className="o-title" onClick={() => goTo(head.id)}>{head.label}</button>
+            <ol className="o-steps">{steps.map(row)}</ol>
+            {runs.length > 0 && (
+              <>
+                <div className="o-section">Runs</div>
+                <ul className="o-runs">{runs.map(row)}</ul>
+              </>
+            )}
+          </div>
+        );
+      })}
     </nav>
   );
 }

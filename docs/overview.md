@@ -17,9 +17,13 @@ Agents work through the same HTTP API that the web app uses, so outside agents c
 
 ![Papers page](screenshots/papers.png)
 
-Upload a PDF by dropping it on the page. Its words and their positions are extracted, then
-Claude reads the first pages for the title, authors, venue, year, abstract, keywords and field.
-Search covers titles, authors, abstracts and keywords; filter by field, year or a keyword tag.
+A list of papers, each with its real first page as the cover. Each row shows the field (click it
+to filter), the title, authors, venue, pages and upload date, then where the paper stands:
+open threads, which personas reviewed it and when (or *Run first review*), and the blind
+replication's status (*Replicating*, *Not replicated*, *Replication needs you*…, or *Replicate*).
+Filter by *All*, *Needs you* or *Not reviewed*, or search titles, authors, abstracts and tags.
+Upload with the button or by dropping a PDF anywhere on the page; the title, authors and tags
+are read automatically.
 
 ### Paper workspace
 

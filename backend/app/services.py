@@ -142,7 +142,51 @@ def _paper_stats(conn, paper_ids: list[str]) -> dict[str, dict]:
     for r in conn.execute("SELECT * FROM runs ORDER BY created_at DESC"):
         if r["paper_id"] in stats and stats[r["paper_id"]]["last_run"] is None:
             stats[r["paper_id"]]["last_run"] = _run_summary(r)
+    for pid in paper_ids:
+        stats[pid]["replication"] = _replication_summary(conn, pid)
     return stats
+
+
+def _replication_summary(conn, paper_id: str) -> dict:
+    """One status for the papers list, from the newest experiment and its newest run.
+
+    none | extracting | needs_you | ready | running | verifying | verified | finished | failed
+    """
+    exp = conn.execute(
+        "SELECT id, status FROM experiments WHERE paper_id=? ORDER BY created_at DESC LIMIT 1", (paper_id,)
+    ).fetchone()
+    if not exp:
+        return {"status": "none", "runs": 0}
+    runs = conn.execute("SELECT COUNT(*) AS n FROM replications WHERE paper_id=?", (paper_id,)).fetchone()["n"]
+    rep = conn.execute(
+        "SELECT id, status, report_md FROM replications WHERE experiment_id=? ORDER BY created_at DESC LIMIT 1", (exp["id"],)
+    ).fetchone()
+    out = {"runs": runs, "experiment_id": exp["id"]}
+    if exp["status"] in ("extracting", "checking"):
+        return {**out, "status": "extracting"}
+    if exp["status"] == "needs_review":
+        return {**out, "status": "needs_you"}
+    if exp["status"] == "failed" and not rep:
+        return {**out, "status": "failed"}
+    if not rep:
+        return {**out, "status": "ready"}
+    if rep["status"] in ("queued", "running"):
+        return {**out, "status": "running"}
+    if rep["status"] in ("failed", "cancelled"):
+        return {**out, "status": "failed" if rep["status"] == "failed" else "ready"}
+    vs = [v["status"] for v in conn.execute("SELECT status FROM verifications WHERE replication_id=?", (rep["id"],))]
+    verdict = None
+    for line in (rep["report_md"] or "").splitlines():
+        t = line.lstrip("#").strip().replace("**", "")
+        if t.lower().startswith("status:"):
+            verdict = t.split(":", 1)[1].strip()
+            break
+    out["verdict"] = verdict
+    if any(v in ("pending", "running") for v in vs):
+        return {**out, "status": "verifying"}
+    if vs and all(v == "done" for v in vs):
+        return {**out, "status": "verified"}
+    return {**out, "status": "finished"}
 
 
 def list_papers() -> list[dict]:

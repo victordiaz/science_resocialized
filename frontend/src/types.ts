@@ -48,6 +48,12 @@ export type Paper = {
   resolved_count: number;
   participants: Author[]; // who has commented
   last_run: RunSummary | null;
+  replication: {
+    status: "none" | "extracting" | "needs_you" | "ready" | "running" | "verifying" | "verified" | "finished" | "failed";
+    runs: number;
+    experiment_id?: string;
+    verdict?: string | null;
+  };
   // Extracted details
   authors: string[];
   year: number | null;
