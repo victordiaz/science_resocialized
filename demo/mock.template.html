@@ -1,0 +1,112 @@
+<title>Science Resocialized Reveal</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one stage, three acts. Act 1 a button and thirty packets that get worked; act 2 the panel's verdict arrives;
+   act 3 the two answers side by side per study. Same tokens as the flow diagram. */
+:root{--bg:#f3f5f6;--paper:#fff;--ink:#15202b;--ink-2:#4a5866;--ink-3:#8593a0;--line:#d6dde3;--flow:#0f6e72;--flow-soft:#d7eceb;--seal:#b4591c;--seal-soft:#f6e3d3;--bad:#9b1c31;--bad-soft:#f6dadd;--good:#2f7a3b;--good-soft:#dcefdd;
+ --display:"Newsreader",Georgia,serif;--body:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;--mono:"IBM Plex Mono",Menlo,monospace}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0f161c;--paper:#161f27;--ink:#e8edf1;--ink-2:#aab6c1;--ink-3:#6f7d8a;--line:#2a3741;--flow:#5fc1c4;--flow-soft:#143538;--seal:#e39a62;--seal-soft:#3a2516;--bad:#ef6f84;--bad-soft:#3d1a21;--good:#7cc98a;--good-soft:#1d3322;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f161c;--paper:#161f27;--ink:#e8edf1;--ink-2:#aab6c1;--ink-3:#6f7d8a;--line:#2a3741;--flow:#5fc1c4;--flow-soft:#143538;--seal:#e39a62;--seal-soft:#3a2516;--bad:#ef6f84;--bad-soft:#3d1a21;--good:#7cc98a;--good-soft:#1d3322;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.45;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:26px 48px}
+.wrap{max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+h1{font-family:var(--display);font-weight:500;font-size:clamp(26px,3.6vw,38px);margin:0;letter-spacing:-.01em}
+.sub{color:var(--ink-2);margin:4px 0 0;max-width:70ch}
+.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn{font:600 15px var(--body);border:0;border-radius:10px;padding:12px 18px;cursor:pointer;background:var(--flow);color:#fff;display:inline-flex;gap:10px;align-items:center}
+.btn[disabled]{opacity:.45;cursor:default}
+.btn.seal{background:var(--seal)} .btn.ghost{background:var(--paper);color:var(--ink-2);border:1px solid var(--line)}
+.btn:focus-visible{outline:2px solid var(--flow);outline-offset:2px}
+.stat{font:500 13px var(--mono);color:var(--ink-3);letter-spacing:.04em}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:10px}
+.pk{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-height:92px;display:flex;flex-direction:column;gap:6px;position:relative;overflow:hidden;transition:border-color .25s}
+.pk .code{font:500 12px var(--mono);color:var(--ink-3)} .pk .hyp{font-size:12px;color:var(--ink-2);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.pk .state{font:500 11px var(--mono);letter-spacing:.05em;color:var(--ink-3)}
+.pk.working{border-color:var(--flow)} .pk.working::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--flow-soft),var(--flow),var(--flow-soft));background-size:200% 100%;animation:sweep 1.1s linear infinite}
+.pk.done{border-color:var(--flow)} .pk.done .state{color:var(--flow)}
+@keyframes sweep{from{background-position:200% 0}to{background-position:-200% 0}}
+@keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+.pulse{animation:pulse 1.2s ease-in-out infinite}
+.table{background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.row{display:grid;grid-template-columns:52px minmax(0,1fr) 150px 150px 150px;gap:10px;align-items:center;padding:9px 14px;border-top:1px solid var(--line);font-size:13px}
+.row.head{border-top:0;background:var(--bg);font:600 11px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.row .code{font:500 12px var(--mono);color:var(--ink-3)} .row .hyp{color:var(--ink-2);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row a{color:var(--flow);text-decoration:none} .row a:hover{text-decoration:underline}
+.chip{display:inline-flex;align-items:center;gap:6px;font:500 12px var(--mono);padding:3px 9px;border-radius:999px;border:1px solid var(--line);color:var(--ink-3);background:var(--paper);min-width:112px;justify-content:center}
+.chip.yes{background:var(--good-soft);color:var(--good);border-color:transparent} .chip.no{background:var(--bad-soft);color:var(--bad);border-color:transparent}
+.chip.mock{border-style:dashed} .chip.seal{background:var(--seal-soft);color:var(--seal);border-color:transparent}
+.chip.hidden-seal{background:var(--seal-soft);color:var(--seal);border:1px dashed var(--seal)}
+.row.agree{} .row.differ{background:color-mix(in srgb,var(--bad-soft) 35%,transparent)}
+.row.differ .code{color:var(--bad)}
+.summary{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--ink-2)}
+.summary b{color:var(--ink);font-weight:600}
+.legend{font-size:12px;color:var(--ink-3)}
+.legend span{display:inline-block;margin-right:14px}
+@media (max-width:860px){.row{grid-template-columns:48px minmax(0,1fr) 120px 120px 120px;font-size:12px}}
+@media (max-width:640px){.row{grid-template-columns:44px 1fr;row-gap:6px}.row .hyp{white-space:normal}.row .c3,.row .c4,.row .c5{grid-column:2}}
+@media (prefers-reduced-motion: reduce){.pk.working::after,.pulse{animation:none}}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Thirty findings, redone from the data, judged, then revealed</h1>
+    <p class="sub">The packets went out: each holds one study's raw data and the hypothesis in plain words, nothing of the paper. Press once and the researchers produce the science. Press again and the panel's verdict comes back. Then the two answers stand side by side against the sealed record.</p>
+  </header>
+
+  <div class="bar">
+    <button class="btn" id="b1">Produce the science</button>
+    <button class="btn seal" id="b2" disabled>Receive the panel's verdict</button>
+    <button class="btn ghost" id="b3" disabled>Reveal the record</button>
+    <span class="stat" id="stat">30 packets sent · 0 papers</span>
+  </div>
+
+  <section class="grid" id="grid" aria-live="polite"></section>
+
+  <section class="table" id="table" hidden>
+    <div class="row head"><div>Study</div><div>Hypothesis</div><div class="c3">Researcher says</div><div class="c4">Panel verdict</div><div class="c5">The record</div></div>
+    <div id="rows"></div>
+  </section>
+  <div class="summary" id="summary" hidden></div>
+  <p class="legend" id="legend" hidden><span>Researcher says: the synthetic paper's conclusion on this data.</span><span>Panel verdict: <b>mock</b> until the reviewers' machine returns receipts; dashed chips are placeholders.</span><span>The record: the published replication, opened from the seal.</span></p>
+</div>
+
+<script>
+const DATA=/*DATA*/[];
+const grid=document.getElementById('grid'), rows=document.getElementById('rows'), stat=document.getElementById('stat');
+const b1=document.getElementById('b1'), b2=document.getElementById('b2'), b3=document.getElementById('b3');
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const sleep=ms=>new Promise(r=>setTimeout(r,reduce?Math.min(ms,80):ms));
+// act 0: the packets as sent
+DATA.forEach(s=>{const d=document.createElement('div');d.className='pk';d.id='pk-'+s.code;d.innerHTML=`<div class="code">${s.code}</div><div class="hyp">${s.hypothesis}</div><div class="state">packet sent</div>`;grid.appendChild(d);});
+let produced=false, verdict=false;
+// act 1: produce the science
+b1.addEventListener('click',async()=>{
+  if(produced)return; b1.disabled=true; b1.innerHTML='<span class="pulse">●</span> researchers at work';
+  const order=[...DATA]; let done=0;
+  // four desks, as on the bench
+  const desks=[0,1,2,3].map(async k=>{for(let i=k;i<order.length;i+=4){const s=order[i];const el=document.getElementById('pk-'+s.code);el.classList.add('working');el.querySelector('.state').textContent='reading the data';await sleep(500+Math.random()*500);el.querySelector('.state').textContent='running the test';await sleep(500+Math.random()*700);el.querySelector('.state').textContent='writing the paper';await sleep(400+Math.random()*500);el.classList.remove('working');el.classList.add('done');el.querySelector('.state').innerHTML=`<a href="${s.paper}" target="_blank" rel="noopener" style="color:inherit">paper.pdf</a> · ${s.statistic||'done'}`;done++;stat.textContent=`30 packets sent · ${done} papers`;}});
+  await Promise.all(desks); produced=true; b1.textContent='Science produced: 30 papers'; b2.disabled=false;
+});
+// act 2: the panel's verdict arrives
+b2.addEventListener('click',async()=>{
+  if(verdict)return; b2.disabled=true; b2.innerHTML='<span class="pulse">●</span> waiting on the panel';
+  await sleep(1400);
+  document.getElementById('table').hidden=false; grid.hidden=true;
+  rows.innerHTML=DATA.map(s=>`<div class="row" id="row-${s.code}"><div class="code">${s.code}</div><div class="hyp" title="${s.hypothesis.replace(/"/g,'&quot;')}"><a href="${s.paper}" target="_blank" rel="noopener">${s.hypothesis}</a></div>
+    <div class="c3"><span class="chip ${s.researcher==='yes'?'yes':s.researcher==='no'?'no':''}">${s.researcher==='yes'?'holds':s.researcher==='no'?'does not hold':'cannot tell'}</span></div>
+    <div class="c4"><span class="chip mock" data-code="${s.code}">…</span></div>
+    <div class="c5"><span class="chip hidden-seal">sealed</span></div></div>`).join('');
+  for(const s of DATA){await sleep(90+Math.random()*120);const c=rows.querySelector(`.chip.mock[data-code="${s.code}"]`);const yes=s.panel_mock_odds>=0.5;c.classList.add(yes?'yes':'no');c.textContent=`${yes?'holds':'does not hold'} · ${Math.round(s.panel_mock_odds*100)}%`;c.title='mock verdict: no panel has run yet';}
+  verdict=true; b2.textContent='Verdict received (mock)'; b3.disabled=false; document.getElementById('legend').hidden=false;
+});
+// act 3: the reveal
+b3.addEventListener('click',async()=>{
+  b3.disabled=true; let agreeR=0, agreeP=0;
+  for(const s of DATA){await sleep(70+Math.random()*90);const row=document.getElementById('row-'+s.code);const c=row.querySelector('.c5 .chip');c.className='chip seal';c.textContent=(s.record==='yes'?'held up':'did not hold')+(s.record_p?` · p=${s.record_p}`:'');
+    const rOK=(s.researcher==='yes')===(s.record==='yes'); const pOK=(s.panel_mock_odds>=0.5)===(s.record==='yes'); if(rOK)agreeR++; if(pOK)agreeP++; row.classList.add(rOK?'agree':'differ');}
+  const sm=document.getElementById('summary'); sm.hidden=false;
+  sm.innerHTML=`<div>Researchers agree with the record: <b>${agreeR} of ${DATA.length}</b></div><div>Mock panel agrees with the record: <b>${agreeP} of ${DATA.length}</b></div><div>On record: <b>${DATA.filter(s=>s.record==='yes').length}</b> held up, <b>${DATA.filter(s=>s.record!=='yes').length}</b> did not</div>`;
+  b3.textContent='Record revealed';
+});
+</script>
