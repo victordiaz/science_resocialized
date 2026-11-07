@@ -106,7 +106,7 @@ def full_state():
     return {"time": now_iso(), "run": run, "admin": s.get("admin") is True, "slots": s["slots"], "assignments": s["assignments"], "cli": cli_status(), "transport": s.get("transport"),
             "findings": findings, "counts": counts, "totals": totals}
 
-def start_run(lid, model, slot, backend="claude-cli"):
+def start_run(lid, model, slot, backend="claude-cli", replace=False):
     with LOCK:
         s = state_load()
         f = finding_state(lid)
@@ -125,7 +125,7 @@ def start_run(lid, model, slot, backend="claude-cli"):
             if slot is None: return {"error": "every desk is busy"}, 409
         os.makedirs(report_dir(lid), exist_ok=True)
         outp = open(os.path.join(report_dir(lid), "runner.stdout"), "ab")
-        cmd = [PY, "-I", os.path.join(HERE, "run_researcher.py"), lid, "--model", model] + (["--attach"] if backend == "attached" else [])
+        cmd = [PY, "-I", os.path.join(HERE, "run_researcher.py"), lid, "--model", model] + (["--attach"] if backend == "attached" else []) + (["--replace"] if replace else [])
         p = subprocess.Popen(cmd, cwd=ROOT, stdout=outp, stderr=subprocess.STDOUT, start_new_session=True)
         s["assignments"][str(slot)] = lid
         s["runs"][lid] = {"pid": p.pid, "started_at": now_iso(), "model": model, "slot": str(slot), "backend": backend}
@@ -233,7 +233,7 @@ class H(BaseHTTPRequestHandler):
         lid = body.get("id", "")
         try:
             if self.path in ("/api/run", "/api/stop", "/api/handoff") and not ID_RE.match(lid): return self.send_json({"error": "bad id"}, 400)
-            if self.path == "/api/run": obj, code = start_run(lid, body.get("model") or "opus", body.get("slot"), body.get("backend") or "claude-cli"); return self.send_json(obj, code)
+            if self.path == "/api/run": obj, code = start_run(lid, body.get("model") or "opus", body.get("slot"), body.get("backend") or "claude-cli", bool(body.get("replace"))); return self.send_json(obj, code)
             if self.path == "/api/stop": return self.send_json(stop_run(lid))
             if self.path == "/api/handoff": obj, code = run_handoff(lid); return self.send_json(obj, code)
             if self.path == "/api/send":

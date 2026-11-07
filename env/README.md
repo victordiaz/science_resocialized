@@ -56,8 +56,12 @@ side before export) and an empty `report/`. What was given is recorded in `paper
 refuses to start if a `sealed/` folder or anything named `truth.json`, `files.json`, `survey.json` or `reproduction.json`
 is reachable from the sandbox, or any symlink leads back into the repo. The CLI runs
 with `--setting-sources ""` (no user settings, plugins or hooks), `--strict-mcp-config`, no web tools, no network for
-Bash, and Claude Code's filesystem sandbox denying reads of every `papers/*/sealed/`, `.git/`, `handoff/`, `env/runs/`, the
-operator repository on the same laptop, and the user's Claude transcripts. `--dry-run` builds and checks the sandbox and prints the command;
+Bash, and Claude Code's filesystem sandbox denying reads of everything in this repository except the agent's own
+sandbox and `.venv` (computed at run time, so a folder added later, such as `interface/` with its baked numbers, is
+denied without being listed), every `papers/*/sealed/`, the operator repository on the same laptop, and the user's
+Claude transcripts. `--dry-run` builds and checks a throwaway sandbox, prints the command and the deny list, and never touches
+`papers/<study>/report/`; a real run refuses to overwrite a finished report unless given `--replace` (the bench's
+"Run again" passes it after its confirm);
 `--attach` builds it and waits for an outside agent to write the report there (used when the CLI is logged out; the
 status then says backend `attached` and carries no token counts).
 

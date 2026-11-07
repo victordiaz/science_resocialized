@@ -613,11 +613,11 @@ button.chip{cursor:pointer}
   function closeDrawer(){open=null;review={open:false,call:'agree',note:''};renderDrawer()}
 
   // ---- actions ----
-  async function run(id,slot){
+  async function run(id,slot,replace){
     const f=byId()[id]; if(!f||!f.card){toast(id+' has no card yet');return}
     if(running(f)){toast(id+' is already running');return}
     if(S.cli&&S.cli.logged_in===false){toast('the claude cli is logged out: run `claude auth login` in a terminal');return}
-    try{const r=await api('/api/run',{id,slot:slot?String(slot):null,model:'opus'});toast(`${code(f)} handed to desk ${pad2(r.slot)}`)}catch(e){}
+    try{const r=await api('/api/run',{id,slot:slot?String(slot):null,model:'opus',replace:!!replace});toast(`${code(f)} handed to desk ${pad2(r.slot)}`)}catch(e){}
     setTimeout(tick,400);
   }
   async function handoff(id,btn){
@@ -642,7 +642,7 @@ button.chip{cursor:pointer}
     if(a==='folder'){folders[id]=!folders[id];renderDesks();if(folders[id])refreshTails(true)}
     else if(a==='stop'){if(confirm('Stop the researcher on '+id+'?')){try{await api('/api/stop',{id});toast('stopped '+id)}catch(e){}tick()}}
     else if(a==='clear'){try{await api('/api/clear',{slot})}catch(e){}tick()}
-    else if(a==='rerun'){if(confirm('Run '+id+' again? The last report is replaced.'))run(id,slot)}
+    else if(a==='rerun'){if(confirm('Run '+id+' again? The last report is replaced.'))run(id,slot,true)}
     else if(a==='handoff'){handoff(id,b)}
     else if(a==='send'){send(id)}
   });

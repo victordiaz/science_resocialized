@@ -24,7 +24,16 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import (ROOT, RUNS, PAPERS, atomic_write_json, check_id, finding_dir, report_dir, read_json, now_iso,
                     REPORT_FILES, read_status, SEALED, SEALED_DIR, sealed_dirs)
 
-DENY_READ_REL = [".git", "handoff", "env/state.json", "env/runs"]
+def deny_in_repo(sb):
+    """Everything in this repository except the agent's own sandbox and the Python environment: every top-level entry
+    but env/ and .venv, every entry of env/ but runs/, and every other study's sandbox under env/runs/. Computed at run
+    time, so a folder added later (interface/, results/, demo/ ...) is denied without anyone remembering to list it."""
+    out = [os.path.join(ROOT, e) for e in os.listdir(ROOT) if e not in ("env", ".venv")]
+    env = os.path.join(ROOT, "env")
+    out += [os.path.join(env, e) for e in os.listdir(env) if e != "runs"]
+    mine = os.path.realpath(sb)
+    out += [p for p in (os.path.join(RUNS, e) for e in os.listdir(RUNS)) if os.path.realpath(p) != mine]
+    return sorted(out)
 # the operator repository on the same laptop holds the sealed record; the agent's Bash sandbox may not read it
 DENY_READ_ABS = [os.path.join(os.path.dirname(ROOT), "science-resocialized")]
 
@@ -53,7 +62,7 @@ def build_sandbox(lid, sb, out):
         if f != "MANIFEST.json": given.append({"file": f, "bytes": os.path.getsize(p)})
     if not given:
         raise SystemExit(f"{lid}: no data files under papers/{lid}/data/")
-    atomic_write_json(os.path.join(out, "work.json"), {"study": lid, "given": [g["file"] for g in given], "at": now_iso()})
+    if out: atomic_write_json(os.path.join(out, "work.json"), {"study": lid, "given": [g["file"] for g in given], "at": now_iso()})
     return given, 0
 
 def check_seal(sb):
@@ -79,7 +88,7 @@ def prompt_text(lid, brief):
             f"environment and R. There is no network. The study code is {lid}. Begin now; the brief follows.\n\n" + brief)
 
 def claude_cmd(sb, model, budget, lid):
-    deny = [os.path.join(ROOT, p) for p in DENY_READ_REL] + DENY_READ_ABS + sealed_dirs()
+    deny = deny_in_repo(sb) + DENY_READ_ABS + sealed_dirs()
     deny += [os.path.expanduser(p) for p in ("~/.claude/projects", "~/.claude/sessions", "~/.claude/todos",
                                               "~/Library/Application Support/Claude/side-session-notes")]
     settings = {"sandbox": {"enabled": True, "autoAllowBashIfSandboxed": True,
@@ -126,7 +135,7 @@ def render_pdf(out, logf):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("study"); ap.add_argument("--model", default="opus"); ap.add_argument("--budget", type=float, default=20.0)
-    ap.add_argument("--attach", action="store_true"); ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--attach", action="store_true"); ap.add_argument("--dry-run", action="store_true"); ap.add_argument("--replace", action="store_true")
     ap.add_argument("--timeout", type=int, default=75 * 60, help="seconds before the agent is stopped")
     a = ap.parse_args()
     lid = check_id(a.study)
@@ -137,6 +146,17 @@ def main():
     if st.get("state") in ("assigned", "researcher running") and st.get("pid") and st["pid"] != os.getpid():
         try: os.kill(st["pid"], 0); raise SystemExit(f"{lid}: already running (pid {st['pid']})")
         except OSError: pass
+    if a.dry_run:
+        # a dry run builds and checks the sandbox only; it never touches papers/<study>/report/
+        sb = os.path.join(RUNS, lid) + ".dryrun"
+        kept, _ = build_sandbox(lid, sb, None); check_seal(sb)
+        cmd, settings = claude_cmd(sb, a.model, a.budget, lid)
+        print("sandbox:", sb, f"({len(kept)} data files)"); print("cmd:", " ".join(cmd[:14]), "...")
+        print("denyRead:", *settings["sandbox"]["filesystem"]["denyRead"], sep="\n  ")
+        shutil.rmtree(sb); return
+    if os.path.exists(os.path.join(out, "conclusion.json")) and not a.replace:
+        raise SystemExit(f"{lid}: a finished report is already in papers/{lid}/report/; pass --replace to run again "
+                         f"(the bench's 'Run again' does), or move the folder aside first")
     os.makedirs(out, exist_ok=True)
     for f in REPORT_FILES + ("report.html", "runner.log", "runner.jsonl"):   # a fresh run replaces the last report
         p = os.path.join(out, f)
@@ -156,12 +176,6 @@ def main():
     brief = open(os.path.join(sb, "briefs", "research-brief.md")).read()
     prompt = prompt_text(lid, brief); open(os.path.join(out, "PROMPT.md"), "w").write(prompt)
     cmd, settings = claude_cmd(sb, a.model, a.budget, lid)
-    if a.dry_run:
-        print("sandbox:", sb); print("cmd:", " ".join(cmd[:14]), "..."); print("denyRead:", *settings["sandbox"]["filesystem"]["denyRead"], sep="\n  ")
-        logf.close()
-        for f in ("status.json", "runner.log", "PROMPT.md", "work.json"): os.remove(os.path.join(out, f))
-        if not os.listdir(out): os.rmdir(out)
-        return
     stop = {"flag": False}
     def syncer():
         while not stop["flag"]:
