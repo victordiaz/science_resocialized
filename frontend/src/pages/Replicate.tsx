@@ -1,18 +1,10 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Markdown from "../components/Markdown";
 import { api } from "../api";
 import type { Attachment, Experiment, Paper, Persona, Replication, ReplicationEvent, Verification } from "../types";
-import { Avatar, Icon, clock, modelLabel, shortDate } from "../ui";
+import { Avatar, Icon, clock, shortDate } from "../ui";
 
 type Tone = "live" | "idle" | "bad" | "good" | "warn";
-
-const EXP_STATUS: Record<Experiment["status"], [string, Tone]> = {
-  extracting: ["Extracting the experiment", "live"],
-  checking: ["Checking for leaks", "live"],
-  ready: ["Ready", "idle"],
-  needs_review: ["Needs your review", "warn"],
-  failed: ["Failed", "bad"],
-};
 
 const REP_STATUS: Record<Replication["status"], [string, Tone]> = {
   queued: ["Waiting for a worker", "idle"],
@@ -39,46 +31,33 @@ function duration(from: string | null, to: string | null) {
   if (!from) return null;
   const ms = (to ? new Date(to) : new Date()).getTime() - new Date(from).getTime();
   const m = Math.floor(ms / 60000);
-  return m < 60 ? `${m} min` : `${Math.floor(m / 60)} h ${m % 60} min`;
+  return m < 1 ? "under a minute" : m < 60 ? `${m} min` : `${Math.floor(m / 60)} h ${m % 60} min`;
 }
 
-/** Pipeline stages for one experiment: extract → leak check → replicate → verify. */
-function Stages({ exp }: { exp: Experiment }) {
-  const rep = exp.replications[0];
-  const vs = rep?.verifications ?? [];
-  const stage = (name: string, state: "done" | "live" | "todo" | "bad" | "warn", sub: string) => ({ name, state, sub });
-  const s = [
-    stage(
-      "Extract",
-      exp.status === "extracting" ? "live" : exp.status === "failed" && !exp.spec_md ? "bad" : "done",
-      exp.status === "extracting" ? "Reading the paper" : exp.spec_md ? "Spec written" : "Failed",
-    ),
-    stage(
-      "Leak check",
-      exp.status === "extracting" ? "todo" : exp.status === "checking" ? "live" : exp.leak_found ? "warn" : exp.spec_md ? "done" : "todo",
-      exp.status === "checking" ? "Comparing spec and outcome" : exp.leak_found ? "Leak found" : exp.leak_found === false ? "Clean" : exp.spec_md ? "Edited by hand" : "",
-    ),
-    stage(
-      "Replicate",
-      !rep ? "todo" : rep.status === "running" || rep.status === "queued" ? "live" : rep.status === "done" ? "done" : "bad",
-      !rep ? "Not started" : REP_STATUS[rep.status][0],
-    ),
-    stage(
-      "Verify",
-      vs.length === 0 ? "todo" : vs.some((v) => v.status === "running" || v.status === "pending") ? "live" : vs.every((v) => v.status === "done") ? "done" : "bad",
-      vs.length === 0 ? (rep?.status === "done" ? "No verifiers picked" : "After the run") : `${vs.filter((v) => v.status === "done").length} of ${vs.length} reports`,
-    ),
-  ];
+/** File names the spec mentions (e.g. d04.txt, train.csv), so we can tell what still needs attaching. */
+const FILE_RE = /(?<![\w/.-])([\w-][\w.-]*\.(?:txt|csv|tsv|json|jsonl|xlsx?|parquet|zip|tar|gz|tgz|npz|npy|h5|hdf5|pkl|pt|mat|sav|dta|rds|rdata|dat|xml|yaml|yml|py|r|ipynb))(?![\w])/gi;
+function filesMentioned(spec: string): string[] {
+  const out = new Set<string>();
+  for (const m of spec.matchAll(FILE_RE)) {
+    const name = m[1];
+    if (!/^(task|report)\.md$/i.test(name) && !/^outputs?\//i.test(name)) out.add(name);
+  }
+  return [...out].slice(0, 20);
+}
+
+// ---------------------------------------------------------------- building blocks
+
+/** One numbered step of the experiment: number, title, one-line status, then its content. */
+function Step({ n, title, status, tone = "idle", children, done }: { n: number | string; title: string; status?: React.ReactNode; tone?: Tone; done?: boolean; children?: React.ReactNode }) {
   return (
-    <ol className="stages pipeline" aria-label="Pipeline" style={{ gridTemplateColumns: "repeat(4, minmax(0, 1fr))" }}>
-      {s.map((x) => (
-        <li key={x.name} aria-current={x.state === "live" ? "step" : undefined}>
-          <span className={`track st-${x.state}`}><span /></span>
-          <span className={`stage-name${x.state === "todo" ? " muted" : ""}`}>{x.name}</span>
-          <span className="muted small">{x.sub}</span>
-        </li>
-      ))}
-    </ol>
+    <section className={`step-block tone-${tone}${done ? " done" : ""}`}>
+      <header className="step-head">
+        <span className="step-num" aria-hidden>{done ? "✓" : n}</span>
+        <h3>{title}</h3>
+        {status && <span className="step-status">{status}</span>}
+      </header>
+      {children && <div className="step-body">{children}</div>}
+    </section>
   );
 }
 
@@ -124,20 +103,21 @@ function Log({ rep, tick }: { rep: Replication; tick: number }) {
     if (el && el.scrollHeight - el.scrollTop - el.clientHeight < 80) el.scrollTop = el.scrollHeight;
   }, [events]);
 
+  const shown = events.filter((e) => e.text.trim());
   return (
     <div className="activity">
       <div className="activity-head">
         <h3>Replicator log</h3>
         <span>Claude Code, blind{rep.worker ? `, on worker “${rep.worker}”` : ""}</span>
       </div>
-      {events.length === 0 ? (
+      {shown.length === 0 ? (
         <p className="activity-empty">{rep.status === "queued" ? "Waiting for a worker to pick up the job." : "Nothing logged yet."}</p>
       ) : (
         <ol ref={box}>
-          {events.map((e) => (
+          {shown.map((e) => (
             <li key={e.seq} className={`ev-${e.kind}`}>
               <span className="t">{clock(e.at, true)}</span>
-              <span className="call">{e.text}</span>
+              <span className="call">{e.text.trim()}</span>
             </li>
           ))}
         </ol>
@@ -146,103 +126,38 @@ function Log({ rep, tick }: { rep: Replication; tick: number }) {
   );
 }
 
+/** First meaningful line of a report, without markdown markers, for a one-line summary. */
+function firstLine(md: string | null): string {
+  if (!md) return "";
+  const line = md.split("\n").map((l) => l.replace(/^#+\s*|^[-*]\s+|\*\*|__|`/g, "").trim()).find((l) => l.length > 0) ?? "";
+  return line.replace(/^summary:\s*/i, "");
+}
+
 function VerificationCard({ v }: { v: Verification }) {
   const name = v.persona_name ?? "Verifier";
   const color = v.persona_color ?? "#495057";
   return (
-    <section className="card verification">
-      <div className="ver-head">
-        <Avatar name={name} color={color} size={28} />
-        <span className="strong">{name}</span>
+    <details className="verification">
+      <summary className="ver-head">
+        <Avatar name={name} color={color} size={26} />
+        <span className="ver-title">
+          <span className="strong">{name}</span>
+          {v.report_md && <span className="ver-line">{firstLine(v.report_md)}</span>}
+        </span>
         <span className="spacer" />
         {v.status === "done" ? (
           <span className="muted small">{v.finished_at ? clock(v.finished_at) : ""}</span>
         ) : (
           <Pill label={v.status === "failed" ? "Failed" : v.status === "pending" ? "Queued" : "Verifying"} tone={v.status === "failed" ? "bad" : v.status === "pending" ? "idle" : "live"} />
         )}
-      </div>
+      </summary>
       {v.report_md && <div className="md ver-body"><Markdown>{v.report_md}</Markdown></div>}
       {v.error && <p className="error">{v.error}</p>}
-    </section>
+    </details>
   );
 }
 
-function ReplicationBlock({ rep, n, personas, tick, onChanged }: { rep: Replication; n: number; personas: Persona[]; tick: number; onChanged: () => void }) {
-  const [label, tone] = REP_STATUS[rep.status];
-  const active = rep.status === "queued" || rep.status === "running";
-  const [verifyPick, setVerifyPick] = useState<string[] | null>(null);
-  const runnable = personas.filter((p) => p.kind === "builtin" && p.enabled);
-  const meta = [
-    rep.started_at ? `started ${clock(rep.started_at)}` : `queued ${clock(rep.created_at)}`,
-    duration(rep.started_at, rep.finished_at),
-    rep.cost_usd != null ? `$${rep.cost_usd.toFixed(2)} of $${rep.budget_usd.toFixed(0)}` : `budget $${rep.budget_usd.toFixed(0)}`,
-    rep.attachments.length ? `${rep.attachments.length} input ${rep.attachments.length === 1 ? "file" : "files"}` : null,
-  ].filter(Boolean).join(" · ");
-
-  return (
-    <div className="rep">
-      <div className="run-head">
-        <h3>Replication {n}</h3>
-        <Pill label={rep.cancel_requested && active ? "Stopping" : label} tone={tone} />
-        <span className="muted small">{meta}</span>
-        <span className="spacer" />
-        {active && !rep.cancel_requested && <button className="btn" onClick={() => api.cancelReplication(rep.id).then(onChanged)}>Stop</button>}
-        {!active && <button className="btn ghost" onClick={() => setVerifyPick(verifyPick ? null : runnable.map((p) => p.id))}>Verify again</button>}
-      </div>
-      {rep.error && <p className="error small">{rep.error}</p>}
-
-      {verifyPick && (
-        <div className="verify-pick">
-          {runnable.map((p) => (
-            <label key={p.id} className="check small">
-              <input
-                type="checkbox"
-                checked={verifyPick.includes(p.id)}
-                onChange={() => setVerifyPick(verifyPick.includes(p.id) ? verifyPick.filter((x) => x !== p.id) : [...verifyPick, p.id])}
-              />
-              <span className="dot" style={{ background: p.color }} /> {p.name}
-            </label>
-          ))}
-          <button
-            className="btn dark"
-            disabled={verifyPick.length === 0}
-            onClick={() => api.verify(rep.id, verifyPick).then(() => (setVerifyPick(null), onChanged()))}
-          >
-            Start verification
-          </button>
-        </div>
-      )}
-
-      <Log rep={rep} tick={tick} />
-
-      {rep.report_md && <Doc title="Replicator's report" hint="REPORT.md" md={rep.report_md} open />}
-
-      {rep.files.length > 0 && (
-        <details className="doc">
-          <summary>
-            <span className="strong">Files</span>
-            <span className="muted small">{rep.files.length} uploaded: code, outputs, plots</span>
-          </summary>
-          <ul className="files">
-            {rep.files.map((f) => (
-              <li key={f.path}>
-                <a href={api.replicationFileUrl(rep.id, f.path)} target="_blank" rel="noreferrer" className="mono-link">{f.path}</a>
-                <span className="muted xsmall">{bytes(f.size)}</span>
-              </li>
-            ))}
-          </ul>
-        </details>
-      )}
-
-      {rep.verifications.length > 0 && (
-        <div className="verifications">
-          <h3>Verification</h3>
-          {rep.verifications.map((v) => <VerificationCard key={v.id} v={v} />)}
-        </div>
-      )}
-    </div>
-  );
-}
+// ---------------------------------------------------------------- files
 
 function AttachmentRow({ a, onChanged }: { a: Attachment; onChanged: () => void }) {
   const [note, setNote] = useState(a.note);
@@ -258,7 +173,7 @@ function AttachmentRow({ a, onChanged }: { a: Attachment; onChanged: () => void 
         <input
           className="att-note"
           value={note}
-          placeholder="What is this? (shown to the replicator)"
+          placeholder="Add a note: what is this file? (the replicator sees it)"
           aria-label={`Note for ${a.filename}`}
           onChange={(e) => setNote(e.target.value)}
           onBlur={() => note !== a.note && api.updateAttachment(a.id, note).then(onChanged)}
@@ -272,13 +187,15 @@ function AttachmentRow({ a, onChanged }: { a: Attachment; onChanged: () => void 
   );
 }
 
-/** Files a person provides for the replicator (datasets, archives, code). They land in ./inputs/. */
-function Attachments({ exp, onChanged }: { exp: Experiment; onChanged: () => void }) {
+function FilesStep({ exp, onChanged }: { exp: Experiment; onChanged: () => void }) {
   const [over, setOver] = useState(false);
   const [progress, setProgress] = useState<{ names: string; fraction: number } | null>(null);
   const [error, setError] = useState<string | null>(null);
   const input = useRef<HTMLInputElement>(null);
   const total = exp.attachments.reduce((n, a) => n + a.size, 0);
+  const mentioned = useMemo(() => filesMentioned(exp.spec_md), [exp.spec_md]);
+  const have = new Set(exp.attachments.map((a) => a.filename.toLowerCase()));
+  const missing = mentioned.filter((m) => !have.has(m.toLowerCase()));
 
   async function upload(list: FileList | File[]) {
     const files = [...list];
@@ -296,21 +213,36 @@ function Attachments({ exp, onChanged }: { exp: Experiment; onChanged: () => voi
     }
   }
 
+  const status = missing.length
+    ? <span className="warn-text">{missing.length === 1 ? "1 file the spec mentions is missing" : `${missing.length} files the spec mentions are missing`}</span>
+    : exp.attachments.length
+      ? `${exp.attachments.length} ${exp.attachments.length === 1 ? "file" : "files"} in inputs/, ${bytes(total)}`
+      : "Optional: datasets, archives, code";
+
   return (
-    <section className="attachments" aria-label="Files for the replicator">
-      <div className="att-head">
-        <span className="strong">Files for the replicator</span>
-        <span className="muted small">
-          {exp.attachments.length ? `${exp.attachments.length} in inputs/, ${bytes(total)}` : "Datasets, archives, code: any type, any number"}
-        </span>
-      </div>
+    <Step n={2} title="Files for the replicator" status={status} tone={missing.length ? "warn" : "idle"} done={exp.attachments.length > 0 && missing.length === 0}>
+      {mentioned.length > 0 && (
+        <div className="mentioned">
+          <span className="small">The spec mentions:</span>
+          {mentioned.map((m) => {
+            const ok = have.has(m.toLowerCase());
+            return (
+              <span key={m} className={`need${ok ? " ok" : ""}`} title={ok ? "Attached" : "Not attached yet"}>
+                <span aria-hidden>{ok ? "✓" : "○"}</span> {m}
+              </span>
+            );
+          })}
+        </div>
+      )}
+
       {exp.attachments.length > 0 && (
         <ul className="att-list">
           {exp.attachments.map((a) => <AttachmentRow key={a.id} a={a} onChanged={onChanged} />)}
         </ul>
       )}
+
       <label
-        className={`att-drop${over ? " over" : ""}`}
+        className={`att-drop big${over ? " over" : ""}${missing.length ? " needed" : ""}`}
         onDragOver={(e) => (e.preventDefault(), setOver(true))}
         onDragLeave={() => setOver(false)}
         onDrop={(e) => {
@@ -319,33 +251,44 @@ function Attachments({ exp, onChanged }: { exp: Experiment; onChanged: () => voi
           upload(e.dataTransfer.files);
         }}
       >
+        <span className="dz-icon">{Icon.upload}</span>
         {progress ? (
           <span className="att-progress">
-            <span className="small">Uploading {progress.names}… {Math.round(progress.fraction * 100)}%</span>
+            <strong>Uploading {progress.names}… {Math.round(progress.fraction * 100)}%</strong>
             <span className="bar"><span style={{ width: `${progress.fraction * 100}%` }} /></span>
           </span>
         ) : (
-          <span className="small">
-            <strong>Drop files here</strong> or <span className="link">choose files</span>. Zips stay zipped; the replicator unpacks them.
-            Don't include anything with the paper's results.
+          <span className="dz-text">
+            <strong>Drop files here, or click to choose</strong>
+            <span>Any type and any number. They go to <code>inputs/</code> in the replicator's folder; zips stay zipped. Don't include anything with the paper's results.</span>
           </span>
         )}
         <input ref={input} type="file" multiple className="sr-only" onChange={(e) => e.target.files && upload(e.target.files)} />
       </label>
       {error && <p className="error">{error}</p>}
-    </section>
+    </Step>
   );
 }
 
-/** Step 2: pick verifiers and a budget, then queue the blind replication. */
-function StartReplication({ exp, personas, anyway, onStarted }: { exp: Experiment; personas: Persona[]; anyway: boolean; onStarted: () => void }) {
+// ---------------------------------------------------------------- replicate
+
+function ReplicateStep({ exp, personas, onStarted }: { exp: Experiment; personas: Persona[]; onStarted: () => void }) {
   const runnable = personas.filter((p) => p.kind === "builtin" && p.enabled);
   const [picked, setPicked] = useState<string[]>(() => runnable.slice(0, 2).map((p) => p.id));
   const [budget, setBudget] = useState(3);
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  const latest = exp.replications[0];
+  const running = latest && (latest.status === "queued" || latest.status === "running");
+  const missing = filesMentioned(exp.spec_md).filter((m) => !exp.attachments.some((a) => a.filename.toLowerCase() === m.toLowerCase()));
+
+  useEffect(() => {
+    if (picked.length === 0 && runnable.length) setPicked(runnable.slice(0, 2).map((p) => p.id));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [personas]);
 
   async function go() {
+    if (missing.length && !confirm(`The spec mentions ${missing.join(", ")}, which ${missing.length === 1 ? "isn't" : "aren't"} attached. Start anyway?`)) return;
     setError(null);
     setBusy(true);
     try {
@@ -358,56 +301,144 @@ function StartReplication({ exp, personas, anyway, onStarted }: { exp: Experimen
     }
   }
 
+  const status = running
+    ? "A replication is running; see below"
+    : `Claude Code gets the spec${exp.attachments.length ? ` and ${exp.attachments.length} ${exp.attachments.length === 1 ? "file" : "files"}` : ""}, nothing else`;
+
   return (
-    <div className="start-rep">
-      <div className="start-rep-head">
-        <span className="step">2</span>
-        <span className="strong">{exp.replications.length ? "Replicate again" : "Replicate it blind"}</span>
-        <span className="muted small">
-          Claude Code gets only the spec above{exp.attachments.length ? ` and the ${exp.attachments.length === 1 ? "file" : `${exp.attachments.length} files`} in inputs/` : ""}
-        </span>
-      </div>
-      <div className="start-rep-body">
-        <fieldset>
-          <legend>Verifiers, after the run</legend>
-          <div className="chips">
-            {runnable.map((p) => (
-              <label key={p.id} className={`chip-btn${picked.includes(p.id) ? " on" : ""}`}>
-                <input
-                  type="checkbox"
-                  className="sr-only"
-                  checked={picked.includes(p.id)}
-                  onChange={() => setPicked(picked.includes(p.id) ? picked.filter((x) => x !== p.id) : [...picked, p.id])}
-                />
-                <span className="dot" style={{ background: p.color }} aria-hidden />
-                {p.name}
-              </label>
-            ))}
+    <Step n={3} title={latest ? "Replicate again" : "Replicate it blind"} status={status} tone={running ? "live" : "idle"}>
+      {!running && (
+        <>
+          <div className="rep-form">
+            <fieldset>
+              <legend>Verifiers, after the run</legend>
+              <div className="chips">
+                {runnable.map((p) => (
+                  <label key={p.id} className={`chip-btn${picked.includes(p.id) ? " on" : ""}`}>
+                    <input
+                      type="checkbox"
+                      className="sr-only"
+                      checked={picked.includes(p.id)}
+                      onChange={() => setPicked(picked.includes(p.id) ? picked.filter((x) => x !== p.id) : [...picked, p.id])}
+                    />
+                    <span className="dot" style={{ background: p.color }} aria-hidden />
+                    {p.name}
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+            <label className="budget">
+              <span className="legend-like">Budget</span>
+              <span className="budget-input">$<input type="number" min={1} max={500} value={budget} onChange={(e) => setBudget(Math.max(1, Math.min(500, +e.target.value || 1)))} /></span>
+            </label>
+            <button className="btn dark big" disabled={busy} onClick={go}>
+              {Icon.play}
+              {exp.status === "needs_review" ? "Replicate anyway" : "Start replication"}
+            </button>
           </div>
-        </fieldset>
-        <label className="budget">
-          <span className="strong small">Budget</span>
-          $<input type="number" min={1} max={500} value={budget} onChange={(e) => setBudget(Math.max(1, Math.min(500, +e.target.value || 1)))} />
-        </label>
-        <span className="spacer" />
-        <button className="btn dark big" disabled={busy} onClick={go}>
-          {Icon.play}
-          {anyway ? "Replicate anyway" : "Start replication"}
-        </button>
-      </div>
-      {error && <p className="error">{error}</p>}
-    </div>
+          {missing.length > 0 && <p className="warn small">Missing files: {missing.join(", ")}. Attach them in step 2 first.</p>}
+          {error && <p className="error">{error}</p>}
+        </>
+      )}
+    </Step>
   );
 }
 
+// ---------------------------------------------------------------- runs
+
+function ReplicationBlock({ rep, n, latest, personas, tick, onChanged }: { rep: Replication; n: number; latest: boolean; personas: Persona[]; tick: number; onChanged: () => void }) {
+  const [label, tone] = REP_STATUS[rep.status];
+  const active = rep.status === "queued" || rep.status === "running";
+  const [verifyPick, setVerifyPick] = useState<string[] | null>(null);
+  const runnable = personas.filter((p) => p.kind === "builtin" && p.enabled);
+  const reportHead = rep.report_md?.split("\n").find((l) => /^\*{0,2}status/i.test(l.replace(/^#+\s*/, "")))?.replace(/^#+\s*/, "").replace(/\*\*/g, "");
+  const meta = [
+    rep.started_at ? `${shortDate(rep.started_at)}, ${clock(rep.started_at)}` : `queued ${clock(rep.created_at)}`,
+    duration(rep.started_at, rep.finished_at),
+    rep.cost_usd != null ? `$${rep.cost_usd.toFixed(2)} of $${rep.budget_usd.toFixed(0)}` : `budget $${rep.budget_usd.toFixed(0)}`,
+    rep.attachments.length ? `${rep.attachments.length} input ${rep.attachments.length === 1 ? "file" : "files"}` : "no input files",
+  ].filter(Boolean).join(" · ");
+
+  return (
+    <details className={`run-block${active ? " active" : ""}`} open={latest}>
+      <summary className="run-summary">
+        <span className="strong">Run {n}</span>
+        <Pill label={rep.cancel_requested && active ? "Stopping" : label} tone={tone} />
+        <span className="muted small">{meta}</span>
+      </summary>
+      <div className="run-body">
+        {reportHead && <p className="run-verdict">{reportHead}</p>}
+        {rep.error && <p className="error small">{rep.error}</p>}
+        <div className="row">
+          {active && !rep.cancel_requested && <button className="btn" onClick={() => api.cancelReplication(rep.id).then(onChanged)}>Stop run</button>}
+          {!active && <button className="btn" onClick={() => setVerifyPick(verifyPick ? null : runnable.map((p) => p.id))}>Verify again</button>}
+        </div>
+
+        {verifyPick && (
+          <div className="verify-pick">
+            {runnable.map((p) => (
+              <label key={p.id} className="check small">
+                <input
+                  type="checkbox"
+                  checked={verifyPick.includes(p.id)}
+                  onChange={() => setVerifyPick(verifyPick.includes(p.id) ? verifyPick.filter((x) => x !== p.id) : [...verifyPick, p.id])}
+                />
+                <span className="dot" style={{ background: p.color }} /> {p.name}
+              </label>
+            ))}
+            <button className="btn dark" disabled={verifyPick.length === 0} onClick={() => api.verify(rep.id, verifyPick).then(() => (setVerifyPick(null), onChanged()))}>
+              Start verification
+            </button>
+          </div>
+        )}
+
+        {rep.verifications.length > 0 && (
+          <div className="verifications">
+            <h4>Verification reports</h4>
+            {rep.verifications.map((v) => <VerificationCard key={v.id} v={v} />)}
+          </div>
+        )}
+
+
+        {rep.report_md && <Doc title="Replicator's report" hint="REPORT.md: what it built, ran and measured" md={rep.report_md} open={latest && rep.verifications.length === 0} />}
+        {active ? (
+          <Log rep={rep} tick={tick} />
+        ) : (
+          <details className="doc">
+            <summary><span className="strong">Replicator log</span><span className="muted small">every command it ran</span></summary>
+            <div className="doc-body"><Log rep={rep} tick={tick} /></div>
+          </details>
+        )}
+
+        {rep.files.length > 0 && (
+          <details className="doc">
+            <summary>
+              <span className="strong">Files it produced</span>
+              <span className="muted small">{rep.files.length}: code, outputs, plots</span>
+            </summary>
+            <ul className="files">
+              {rep.files.map((f) => (
+                <li key={f.path}>
+                  <a href={api.replicationFileUrl(rep.id, f.path)} target="_blank" rel="noreferrer" className="mono-link">{f.path}</a>
+                  <span className="muted xsmall">{bytes(f.size)}</span>
+                </li>
+              ))}
+            </ul>
+          </details>
+        )}
+
+      </div>
+    </details>
+  );
+}
+
+// ---------------------------------------------------------------- experiment
+
 function ExperimentCard({ exp, personas, ticks, onChanged }: { exp: Experiment; personas: Persona[]; ticks: Record<string, number>; onChanged: () => void }) {
-  const [label, tone] = EXP_STATUS[exp.status];
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(exp.spec_md);
   const [error, setError] = useState<string | null>(null);
   const busy = exp.status === "extracting" || exp.status === "checking";
-  const latest = exp.replications[0];
-  const canReplicate = !!exp.spec_md && !busy && !(latest && (latest.status === "queued" || latest.status === "running"));
 
   async function act(fn: () => Promise<unknown>) {
     setError(null);
@@ -419,60 +450,82 @@ function ExperimentCard({ exp, personas, ticks, onChanged }: { exp: Experiment; 
     }
   }
 
+  const specStatus =
+    exp.status === "extracting" ? "Reading the paper and writing the spec…"
+    : exp.status === "checking" ? "Checking the spec gives nothing away…"
+    : exp.status === "failed" ? "Extraction failed"
+    : exp.status === "needs_review" ? <span className="warn-text">The leak check flagged it; review before replicating</span>
+    : exp.leak_found === false ? "Written and checked: no leaks"
+    : "Edited by hand";
+  const specTone: Tone = busy ? "live" : exp.status === "failed" ? "bad" : exp.status === "needs_review" ? "warn" : "idle";
+
   return (
-    <article className="card experiment">
-      <div className="run-head">
+    <article className="experiment">
+      <header className="exp-head">
         <h2>{exp.title || "Main experiment"}</h2>
-        <Pill label={label} tone={tone} />
-        <span className="muted small">{shortDate(exp.created_at)}, {clock(exp.created_at)}</span>
-      </div>
-      <Stages exp={exp} />
-      {exp.error && <p className="error">{exp.error}</p>}
+        <span className="muted small">Extracted {shortDate(exp.created_at)}, {clock(exp.created_at)}</span>
+      </header>
 
-      {!!exp.spec_md && !busy && !editing && <Attachments exp={exp} onChanged={onChanged} />}
-
-      {exp.status === "needs_review" && (
-        <div className="callout warn-box">
-          <p className="strong">The leak check flagged the spec before it went to the replicator.</p>
-          {exp.leak_check_md && <div className="md"><Markdown>{exp.leak_check_md}</Markdown></div>}
-          <div className="row">
-            <button className="btn" onClick={() => (setDraft(exp.spec_md), setEditing(true))}>Edit the spec</button>
-            <button className="btn" onClick={() => act(() => api.recheckLeaks(exp.id))}>Check again</button>
-          </div>
-        </div>
-      )}
-
-      {exp.spec_md && !editing && (
-        <Doc title="Experiment spec" hint="what the replicator gets" md={exp.spec_md} open={exp.status === "needs_review" || exp.replications.length === 0}>
-          {!busy && (
+      <Step n={1} title="Experiment spec" status={specStatus} tone={specTone} done={!busy && exp.status !== "failed" && exp.status !== "needs_review" && !!exp.spec_md}>
+        {exp.error && <p className="error">{exp.error}</p>}
+        {exp.status === "needs_review" && (
+          <div className="callout warn-box">
+            {exp.leak_check_md && <div className="md"><Markdown>{exp.leak_check_md}</Markdown></div>}
             <div className="row">
-              <button className="btn" onClick={() => (setDraft(exp.spec_md), setEditing(true))}>Edit spec</button>
+              <button className="btn" onClick={() => (setDraft(exp.spec_md), setEditing(true))}>Edit the spec</button>
+              <button className="btn" onClick={() => act(() => api.recheckLeaks(exp.id))}>Check again</button>
             </div>
-          )}
-        </Doc>
-      )}
-      {editing && (
-        <div className="spec-edit">
-          <label className="field-label" htmlFor={`spec-${exp.id}`}>Experiment spec (markdown). Keep results and anything that identifies the paper out of it.</label>
-          <textarea id={`spec-${exp.id}`} className="mono-area" rows={18} value={draft} onChange={(e) => setDraft(e.target.value)} />
-          <div className="row end">
-            <button className="btn" onClick={() => setEditing(false)}>Cancel</button>
-            <button className="btn dark" onClick={() => act(async () => (await api.updateExperiment(exp.id, { spec_md: draft }), setEditing(false)))}>Save spec</button>
           </div>
-        </div>
-      )}
-      {exp.outcome_md && <Doc title="Paper's reported outcome" hint="hidden from the replicator, given to verifiers" md={exp.outcome_md} />}
-      {exp.leak_check_md && exp.status !== "needs_review" && <Doc title="Leak check" hint={exp.leak_found ? "leak found" : exp.leak_found === false ? "clean" : ""} md={exp.leak_check_md} />}
+        )}
+        {exp.spec_md && !editing && (
+          <Doc title="What the replicator gets" hint="the spec" md={exp.spec_md} open={exp.replications.length === 0 && exp.status !== "needs_review"}>
+            {!busy && (
+              <div className="row">
+                <button className="btn" onClick={() => (setDraft(exp.spec_md), setEditing(true))}>Edit spec</button>
+              </div>
+            )}
+          </Doc>
+        )}
+        {editing && (
+          <div className="spec-edit">
+            <label className="field-label" htmlFor={`spec-${exp.id}`}>Experiment spec (markdown). Keep results and anything that identifies the paper out of it.</label>
+            <textarea id={`spec-${exp.id}`} className="mono-area" rows={18} value={draft} onChange={(e) => setDraft(e.target.value)} />
+            <div className="row end">
+              <button className="btn" onClick={() => setEditing(false)}>Cancel</button>
+              <button className="btn dark" onClick={() => act(async () => (await api.updateExperiment(exp.id, { spec_md: draft }), setEditing(false)))}>Save spec</button>
+            </div>
+          </div>
+        )}
+        {exp.outcome_md && <Doc title="What the paper reports" hint="hidden from the replicator; for verifiers" md={exp.outcome_md} />}
+        {exp.leak_check_md && exp.status !== "needs_review" && <Doc title="Leak check" hint={exp.leak_found ? "leak found" : exp.leak_found === false ? "clean" : ""} md={exp.leak_check_md} />}
+        {error && <p className="error">{error}</p>}
+      </Step>
 
-      {error && <p className="error">{error}</p>}
-      {canReplicate && !editing && (
-        <StartReplication exp={exp} personas={personas} anyway={exp.status === "needs_review"} onStarted={onChanged} />
-      )}
+      {!!exp.spec_md && !busy && <FilesStep exp={exp} onChanged={onChanged} />}
+      {!!exp.spec_md && !busy && !editing && <ReplicateStep exp={exp} personas={personas} onStarted={onChanged} />}
 
-      {exp.replications.map((r, i) => (
-        <ReplicationBlock key={r.id} rep={r} n={exp.replications.length - i} personas={personas} tick={ticks[r.id] ?? 0} onChanged={onChanged} />
-      ))}
+      {exp.replications.length > 0 && (
+        <section className="runs">
+          <h3 className="runs-title">Runs</h3>
+          {exp.replications.map((r, i) => (
+            <ReplicationBlock key={r.id} rep={r} n={exp.replications.length - i} latest={i === 0} personas={personas} tick={ticks[r.id] ?? 0} onChanged={onChanged} />
+          ))}
+        </section>
+      )}
     </article>
+  );
+}
+
+// ---------------------------------------------------------------- page
+
+function HowItWorks() {
+  return (
+    <ol className="how-strip">
+      <li><strong>Extract.</strong> An agent writes the experiment spec and, separately, what the paper reports. A second agent checks the spec gives nothing away.</li>
+      <li><strong>Attach files.</strong> Add any datasets or code the replicator needs.</li>
+      <li><strong>Replicate.</strong> Claude Code gets only the spec and files, writes and runs the code, and reports what it measured. No web search.</li>
+      <li><strong>Verify.</strong> The personas you pick compare the run with the paper.</li>
+    </ol>
   );
 }
 
@@ -513,8 +566,9 @@ export default function Replicate({ paperId }: { paperId: string }) {
   }, [paperId, load]);
 
   const busy = (experiments ?? []).some((e) => e.status === "extracting" || e.status === "checking");
+  const none = experiments !== null && experiments.length === 0;
 
-  async function start() {
+  async function extract() {
     setError(null);
     setStarting(true);
     try {
@@ -527,47 +581,48 @@ export default function Replicate({ paperId }: { paperId: string }) {
     }
   }
 
+  const extractButton = (
+    <button className={`btn big ${none ? "dark" : ""}`} disabled={starting || busy} onClick={extract}>
+      {Icon.play}
+      {busy ? "Extracting…" : starting ? "Starting…" : none ? "Extract the experiment" : "Extract again"}
+    </button>
+  );
+
   return (
-    <div className="page-wrap wide">
-      <div className="page-title">
-        <div className="crumbs">
-          <a href="#/">Papers</a> / <a href={`#/paper/${paperId}`}>{paper?.title ?? "Paper"}</a>
-        </div>
-        <h1>Blind replication</h1>
-        <p>Pull out the paper's main experiment, have Claude Code replicate it without seeing the results, then let personas check the replication against the paper.</p>
-      </div>
-
-      <div className="run-layout">
-        <section className="card setup" aria-label="Start a replication">
-          <ol className="how">
-            <li><strong>Extract.</strong> An agent writes the experiment spec and, separately, the results the paper reports. A second agent checks the spec gives nothing away. Then it stops so you can read or edit the spec.</li>
-            <li><strong>Replicate.</strong> When you start it, Claude Code gets only the spec, writes and runs the code in its own folder, and writes a report. No web search; told not to look the paper up. It runs code on the worker machine with permissions bypassed.</li>
-            <li><strong>Verify.</strong> When the run finishes, each persona you picked compares it with the paper and writes a report.</li>
-          </ol>
-
-          <div className="setup-go">
-            {!configured && <p className="warn">No Anthropic API key found. Set ANTHROPIC_API_KEY in backend/.env and restart the server.</p>}
-            {error && <p className="error">{error}</p>}
-            <button className="btn dark big full" disabled={starting || busy} onClick={start}>
-              {Icon.play}
-              {busy ? "Extracting…" : starting ? "Starting…" : "Extract experiment"}
-            </button>
-            <span className="muted xsmall center-text">Step 1 only. Nothing runs until you start the replication on the experiment.</span>
+    <div className="page-wrap replicate-page">
+      <div className="page-head">
+        <div className="page-title">
+          <div className="crumbs">
+            <a href="#/">Papers</a> / <a href={`#/paper/${paperId}`}>{paper?.title ?? "Paper"}</a>
           </div>
-        </section>
-
-        <section className="run-side" aria-label="Experiments">
-          {experiments && experiments.length === 0 && (
-            <div className="card empty-run">
-              <h2>No experiment extracted yet</h2>
-              <p className="muted">Extract the experiment on the left. It takes a minute or two; you start the replication afterwards.</p>
-            </div>
-          )}
-          {(experiments ?? []).map((e) => (
-            <ExperimentCard key={e.id} exp={e} personas={personas} ticks={ticks} onChanged={load} />
-          ))}
-        </section>
+          <h1>Blind replication</h1>
+          <p>Have Claude Code replicate the paper's main experiment without seeing its results, then let personas check the run against the paper.</p>
+        </div>
+        {!none && extractButton}
       </div>
+
+      {!configured && <p className="warn">No Anthropic API key found. Set ANTHROPIC_API_KEY in backend/.env and restart the server.</p>}
+      {error && <p className="error">{error}</p>}
+
+      {none && (
+        <div className="card empty-run start-card">
+          <h2>Start by extracting the main experiment</h2>
+          <HowItWorks />
+          <div>{extractButton}</div>
+          <p className="muted xsmall">Extraction uses the Claude API and takes a minute or two. Nothing runs code until you start a replication.</p>
+        </div>
+      )}
+
+      {(experiments ?? []).map((e) => (
+        <ExperimentCard key={e.id} exp={e} personas={personas} ticks={ticks} onChanged={load} />
+      ))}
+
+      {!none && experiments && (
+        <details className="how-details">
+          <summary className="muted small">How blind replication works</summary>
+          <HowItWorks />
+        </details>
+      )}
     </div>
   );
 }

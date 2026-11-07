@@ -55,27 +55,27 @@ the API with the persona's key). The default model is Claude Sonnet 5.5.
 
 ### Blind replication
 
-![Extracted experiment spec](screenshots/replicate-spec.png)
+The Replicate page shows each extracted experiment as numbered steps, top to bottom.
 
-Two steps, each started by a person:
+![Experiment spec](screenshots/replicate-spec.png)
 
-1. **Extract experiment.** An agent writes the spec (everything needed to replicate, nothing
-   about the outcome, the method renamed neutrally, and a scaled-down version if the full
-   experiment won't fit on one machine) and, separately, the outcome the paper reports. A
-   second agent checks the spec leaks nothing. It then stops, so you can read or edit the spec.
-2. **Attach files (optional).** Datasets, archives, code: any type and number. They go to the
-   replicator's `inputs/` folder, each with a note saying what it is.
+1. **Experiment spec.** *Extract the experiment* has an agent write the spec (everything
+   needed to replicate, nothing about the outcome, the method renamed neutrally, and a
+   scaled-down version if the full experiment won't fit on one machine). It separately writes
+   what the paper reports, which is hidden from the replicator. A second agent checks the spec
+   gives nothing away. Then it stops, so you can read or edit the spec.
+2. **Files for the replicator.** Attach datasets, archives or code: any type, any number. They
+   go to the replicator's `inputs/` folder, each with a note. Files the spec mentions (such as
+   `d04.txt`) are listed and ticked off as they are attached; a warning shows while any are missing.
+3. **Replicate.** Pick verifier personas and a budget, then start.
 
-   ![Files for the replicator](screenshots/replicate-files.png)
+![Files step and replicate step](screenshots/replicate-files.png)
 
-3. **Start replication.** Pick verifier personas and a budget.
+Runs are listed below the steps. Each run shows its verdict, a one-line summary from each
+verifier (click to read the full report), then the replicator's `REPORT.md`, its log and the
+files it produced. The latest run is open; earlier ones collapse to one line.
 
-![Starting a replication](screenshots/replicate-start.png)
-
-A worker runs Claude Code with only the spec, writes and runs the code, and writes
-`REPORT.md`. The page shows its live log, the report and the files it produced. When it
-finishes, each verifier compares it with the paper and writes a report. Reviewer personas can
-read those reports.
+![A finished run](screenshots/replicate-run.png)
 
 ## How it fits together
 
