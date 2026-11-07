@@ -1,0 +1,37 @@
+{
+ "Analysis Audit/RPP_edcr7.R": {
+  "neutral": "d01.r",
+  "give": false,
+  "bytes": 2955
+ },
+ "Dataset/SPSS Analysis syntax replication of Study 2 Eitam et al 2008 PS.sps": {
+  "neutral": "d02.sps",
+  "give": false,
+  "bytes": 5736
+ },
+ "Dataset/SPSS analysis output replication of Study 2 Eitam et al 2008 PS.spv": {
+  "neutral": "d03.spv",
+  "give": false,
+  "bytes": 174951
+ },
+ "Dataset/SPSS dataset replication of Study 2 Eitam et al 2008 PS.sav": {
+  "neutral": "d04.sav",
+  "give": false,
+  "bytes": 137187
+ },
+ "Dataset/SPSS dataset replication of Study 2 Eitam et al 2008 PS_sanitized.sav": {
+  "neutral": "d07.sav",
+  "give": true,
+  "bytes": 178400
+ },
+ "top/Replication of Study 2 by Eitam Hassin and Schul 2008 Psychological Science Final Report.pdf": {
+  "neutral": "d05.pdf",
+  "give": false,
+  "bytes": 315497
+ },
+ "top/reaction to replication final.docx": {
+  "neutral": "d06.docx",
+  "give": false,
+  "bytes": 509597
+ }
+}

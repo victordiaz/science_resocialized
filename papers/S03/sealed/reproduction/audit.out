@@ -1,0 +1,32 @@
+dropped lines:
+library("httr")
+library("RCurl")
+source("http://sachaepskamp.com/files/OSF/getOSFfile.R") # the getOSFfile function
+> File <- getOSFfile("https://osf.io/3xv8u/")
+> Data <- read.delim(File, header = TRUE, skip = 3)
+> Data <- Data[Data$Include == 1, ]
+> Data$Indecisive <- as.numeric(as.character(Data$Indecisive))
+> Data$Condition <- as.factor(Data$Condition)
+> Data$NotTorn <- Data$NotTorn * -1
+> Data$Indecisive <- Data$Indecisive - 4
+> Data$value <- (Data$StrongMixed + Data$NotTorn + Data$Indecisive)/3
+> Data[49, 33] <- (Data[49, 22] + Data[49, 22])/2
+> Results <- aov(value ~ Condition, data = Data)
+> summary(Results)
+            Df Sum Sq Mean Sq F value Pr(>F)
+Condition    2   7.22   3.611   1.699  0.191
+Residuals   67 142.40   2.125               
+> summary(Results)[[1]][["F value"]][[1]]
+[1] 1.698809
+> summary(Results)[[1]][["Pr(>F)"]][[1]]
+[1] 0.190684
+> nrow(Data)
+[1] 70
+> SumSq_effect <- summary(Results)[[1]][["Sum Sq"]][1]
+> SumSq_error <- summary(Results)[[1]][["Sum Sq"]][2]
+> SumSq_effect/(SumSq_effect + SumSq_error)
+[1] 0.04826325
+> TRUE
+[1] TRUE
+Warning message:
+In eval(ei, envir) : NAs introduced by coercion

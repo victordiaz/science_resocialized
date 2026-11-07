@@ -1,0 +1,47 @@
+{
+ "local_id": "Row.84",
+ "node": "v8vft",
+ "replicate_r": "yes",
+ "table": {
+  "p_r": "0.008",
+  "es_r": "d = .46",
+  "n_r": "150",
+  "direction_r": "same",
+  "test_r": "is",
+  "p_o": "0.001",
+  "es_o": "d = 1.1653",
+  "n_o": "52"
+ },
+ "reproduction": {
+  "key_test": "Pearson chi-square without Yates correction, options (two/ten) x decision (confirming/disconfirming), focus == 'control' only; d from phi",
+  "table": {
+   "stat": "X^2(1, N=150) = 7.10",
+   "p": "0.008",
+   "es": "d = .46"
+  },
+  "r_script": {
+   "ran": false,
+   "stat": "",
+   "p": "",
+   "es": "script hard-codes d from 7.095 and 150: 2r/(1-r^2) = .457",
+   "stdout_file": "",
+   "why": "package missing: sas7bdat (no SAS reader; haven also missing), dplyr, gmodels; effsize present but unused"
+  },
+  "python": {
+   "ran": true,
+   "stat": "chi2(1, N=150) = 7.0950",
+   "p": "0.00773",
+   "es": "phi = 0.2175; d = 0.4456 by 2phi/sqrt(1-phi^2); 0.4566 by the script's 2phi/(1-phi^2)",
+   "file": "reproduce.py"
+  },
+  "agreement": "Python and table agree on chi2 7.095 vs 7.10, p .0077 vs .008, N 150. R absent for this script (packages missing). The table's d = .46 follows the script's non-standard conversion 2r/(1-r^2); the standard 2r/sqrt(1-r^2) gives .446",
+  "verdict": "reproduced",
+  "n_after_exclusions": 150
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "Selective exposure and information quantity: How different information quantities moderate decision makers' preference for consistent and inconsistent information.",
+  "authors": "P Fischer, S Schulz-Hardt, D Frey",
+  "journal": "JPSP"
+ }
+}

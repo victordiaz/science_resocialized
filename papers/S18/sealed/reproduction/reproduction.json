@@ -1,0 +1,41 @@
+{
+ "local_id": "Row.107",
+ "node": "edcr7",
+ "key_test": "independent-samples Student t-test (var.equal), learning = RB12Mean - FSMean, Achievement prime (1) vs Control (2), rows with Include1 = 'Include for analyses'",
+ "variables": [
+  "Condition",
+  "Include1",
+  "RB12Mean",
+  "FSMean",
+  "R1Mean",
+  "R2Mean"
+ ],
+ "exclusions": "Include1 == 0 ('Include for analyses'): first 79 usable per condition after awareness, technical and 4-SD exclusions",
+ "n_rows_raw": 206,
+ "n_after_exclusions": 158,
+ "N_R_table": 158,
+ "table": {
+  "stat": "t(156) = 1.318",
+  "p": "0.189",
+  "es": "d = -0.21"
+ },
+ "r_script": {
+  "ran": true,
+  "stat": "t(156) = -1.318166",
+  "p": "0.1893802",
+  "es": "d = -0.1 (compute.es::des on t/sqrt(N) with n1 = n2 = N)",
+  "stdout_file": "audit.out",
+  "how": "audit script run unmodified through a shim that maps getOSFfile() to the local downloaded copy and skips library(httr), library(RCurl) and the remote source() of getOSFfile.R (no network beyond osf.io)"
+ },
+ "python": {
+  "ran": true,
+  "stat": "t(156) = -1.3182",
+  "p": "0.1894",
+  "es": "Cohen's d pooled (prime - control) = -0.2097",
+  "file": "reproduce.py"
+ },
+ "agreement": "t and p: all three agree (|t| 1.318, p .189; the table stores |t| with Direction 'opposite'). Effect size: table -0.21 and Python -0.2097 agree; the R script prints -0.10, wrong by a factor of two because it feeds t/sqrt(N) as d and sets both group sizes to N = 158.",
+ "verdict": "reproduced",
+ "notes": "Anchored on the test statistic and p (script, table and Python agree), and on the pooled d for the effect size (script's ES line is wrong). Mean learning prime 22.27 ms vs control 33.11 ms: opposite to the prediction. RB12Mean verified = (R1Mean+R2Mean)/2 exactly; stored 'Learning' is FS - RB, the negative of the analysed score. Welch gives the same t (equal n, near-equal SD).",
+ "minutes": 6
+}

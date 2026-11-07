@@ -1,0 +1,54 @@
+
+> library("httr")
+[shim] skip library httr 
+
+> library("RCurl")
+[shim] skip library RCurl 
+
+> source("http://sachaepskamp.com/files/OSF/getOSFfile.R")
+[shim] skip remote source http://sachaepskamp.com/files/OSF/getOSFfile.R 
+
+> File <- getOSFfile("https://osf.io/xdzas/")
+[shim] getOSFfile https://osf.io/xdzas/ -> download/Dataset/repdatalong.csv 
+
+> Data <- read.csv(File)
+
+> Data$ID <- as.factor(Data$ID)
+
+> Results <- aov(PD ~ HiLoCat * Task + Error(ID/Task), 
++     data = Data)
+
+> summary(Results)
+
+Error: ID
+          Df Sum Sq Mean Sq F value Pr(>F)
+HiLoCat    1  0.118 0.11792   1.454  0.232
+Residuals 73  5.920 0.08109               
+
+Error: ID:Task
+             Df Sum Sq Mean Sq F value Pr(>F)
+Task          1 0.0118 0.01183   0.505  0.480
+HiLoCat:Task  1 0.0101 0.01014   0.432  0.513
+Residuals    73 1.7115 0.02345               
+
+Error: Within
+          Df Sum Sq  Mean Sq F value Pr(>F)
+Residuals 75 0.4044 0.005392               
+
+> summary(Results)[[2]][[1]][["F value"]][[2]]
+[1] 0.432348
+
+> summary(Results)[[2]][[1]][["Pr(>F)"]][[2]]
+[1] 0.5129071
+
+> length(unique(Data$ID))
+[1] 75
+
+> SS_effect <- summary(Results)[[2]][[1]][["Sum Sq"]][2]
+
+> SS_error <- summary(Results)[[2]][[1]][["Sum Sq"]][3]
+
+> partial_eta_squared = SS_effect/(SS_effect + SS_error)
+
+> TRUE
+[1] TRUE

@@ -1,0 +1,90 @@
+{
+  "local_id": "Row.10",
+  "node": "vmipw",
+  "title_o": "Across-notation automatic numerical processing.",
+  "verdict": "usable",
+  "verdict_reason": "Trial-level Numerical_task.csv (8448 rows, 32 participants) plus Order.csv reproduce the table exactly (Distance F(1,29)=45.27, MSE=3574.895, n=31) once the stated filter AND correct-trials-only are applied; the audit script omits the correct==1 filter and gets F=42.58, MSE=3520.78.",
+  "data_files": [
+    {
+      "path": "Data/Numerical_task.csv",
+      "opened": true,
+      "format": "csv",
+      "rows": 8448,
+      "cols": 13,
+      "notes": "Trial level: participant, Notation (1-3), Distance (0/1/2), RT, Distraction, correct, filter_$. filter_$==1 for 3921 trials, matching the script's filter."
+    },
+    {
+      "path": "Data/Order.csv",
+      "opened": true,
+      "format": "csv",
+      "rows": 31,
+      "cols": 2,
+      "notes": "Participant 24 absent (dropped per Codes.docx)"
+    },
+    {
+      "path": "Data/Raw Data.zip -> SDV_RTs.sav",
+      "opened": true,
+      "format": "sav",
+      "rows": 186,
+      "cols": 4,
+      "notes": "Replication's aggregated cell means (31 x 3 x 2); equals trial means over filter_$==1 & correct==1"
+    },
+    {
+      "path": "Data/Results.pdf",
+      "opened": true,
+      "format": "other",
+      "rows": null,
+      "cols": null,
+      "notes": "Replication's SPSS GLM: NumerDiffere F=45.274, Error MS 3574.895, df 29"
+    },
+    {
+      "path": "Analysis_Audit/Analysis Audit output.zip -> ANOVA table.png",
+      "opened": true,
+      "format": "other",
+      "rows": null,
+      "cols": null,
+      "notes": "Audit's own result: Distance F(1,29)=42.58, MSE 3520.779"
+    }
+  ],
+  "key_test": {
+    "from_script": "RPP_vmipw.r",
+    "test": "mixed ANOVA on per-cell mean RT: within Notation (3) x Distance (small/large), between Order (2); key effect = Distance main effect",
+    "variables": [
+      "participant",
+      "Notation",
+      "Distance",
+      "RT",
+      "Distraction",
+      "correct",
+      "Order"
+    ],
+    "all_variables_present": true,
+    "statistic_reported": {
+      "p": "0.001 (table; actual p<.001)",
+      "es": "MSE = 3574.9 (no standardized effect size in table)"
+    }
+  },
+  "recompute": {
+    "attempted": true,
+    "method": "python recomputation (mixed-design distance effect via per-subject difference scores; checked against the SDV_RTs.sav aggregate)",
+    "result": "With correct==1: F(1,29)=45.27, p=2.2e-7, MSE=3574.89 (exact match). Audit-script path without correct filter: F=42.33-42.58, MSE=3520.78.",
+    "matches_table": "yes"
+  },
+  "n_check": {
+    "N_R_table": 32,
+    "rows_after_exclusions": 31,
+    "match": "yes"
+  },
+  "obstacles": [
+    "The audit script's filter is incomplete (no correct-trials restriction); following it literally gives F=42.6 not 45.3, so the 'truth' depends on which pipeline a judge trusts",
+    "Table effect size is an MSE and p is a floor (0.001), weak anchors for catching a planted error",
+    "N.R 32 but one participant (24) excluded in all analyses"
+  ],
+  "minutes": 18,
+  "sources_opened": [
+    "https://api.osf.io/v2/nodes/wt3ay/files/osfstorage/",
+    "https://api.osf.io/v2/nodes/c5q6p/files/osfstorage/",
+    "https://api.osf.io/v2/files/rwusn/",
+    "https://api.osf.io/v2/files/hcg5m/"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "local_id": "Row.135",
+  "node": "2gkjt",
+  "title_o": "Implicit attitude generalization occurs immediately; explicit attitude generalization takes time",
+  "verdict": "usable",
+  "verdict_reason": "impex_final_dataset.csv (osf.io/8tzep) has 4267 rows, 3597 after the script's four exclusions; the implicit (IAT) Welch t-test by rateorig gives t(3511)=-6.31, p=3.2e-10, d about .21, matching N, p (~0) and d=.21 in the table and report.",
+  "data_files": [
+    {
+      "path": "Data and Analysis/impex_final_dataset.csv",
+      "opened": true,
+      "format": "csv",
+      "rows": 4267,
+      "cols": 122,
+      "notes": "processed per-participant file: exppref, imppref, d, fastpct10, alltrials, rateorig"
+    },
+    {
+      "path": "Data and Analysis/iat.txt",
+      "opened": false,
+      "format": "txt",
+      "rows": null,
+      "cols": null,
+      "notes": "88.6 MB raw IAT trials; not downloaded (final dataset suffices; under the 150 MB cap)"
+    }
+  ],
+  "key_test": {
+    "from_script": "RPP_2gkjt.R",
+    "test": "Welch t-test of implicit preference imppref by rateorig (original vs new pair); the script also runs the explicit test exppref (t=-22.8), the table's d=.21 matches the implicit test",
+    "variables": [
+      "exppref",
+      "imppref",
+      "d",
+      "fastpct10",
+      "alltrials",
+      "rateorig"
+    ],
+    "all_variables_present": true,
+    "statistic_reported": {
+      "p": "0.0",
+      "es": "d=.21"
+    }
+  },
+  "recompute": {
+    "attempted": true,
+    "method": "ran the R script (Hmisc/psych describe lines removed; not needed for the statistic)",
+    "result": "implicit t(3511.1)=-6.309, p=3.15e-10, N=3597, d=2t/sqrt(df) about 0.21; explicit t(3586)=-22.77",
+    "matches_table": "yes"
+  },
+  "n_check": {
+    "N_R_table": 3597,
+    "rows_after_exclusions": 3597,
+    "match": "yes"
+  },
+  "obstacles": [
+    "script reports two tests and prints the explicit one first; the implicit one is the key, confirmed by description and d=.21",
+    "effect size not computed by the script",
+    "final dataset derived from raw txt files by prep_dataset.R / iatscoring.R (not re-run)"
+  ],
+  "minutes": 10,
+  "sources_opened": [
+    "https://osf.io/2gkjt/",
+    "https://api.osf.io/v2/nodes/v3eri/files/osfstorage/",
+    "https://api.osf.io/v2/nodes/a5gc3/files/osfstorage/",
+    "https://osf.io/8tzep/"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+ "local_id": "Row.135",
+ "node": "2gkjt",
+ "key_test": "Welch two-sample t-test of implicit preference imppref (sign-aligned IAT D), new-pair raters (rateorig 0) vs original-pair raters (rateorig 1), immediate session",
+ "variables": [
+  "imppref",
+  "d",
+  "reemgood",
+  "exppref",
+  "fastpct10",
+  "alltrials",
+  "rateorig"
+ ],
+ "exclusions": "exppref NA (322), d NA (285), fastpct10 == 1 (1), alltrials != 200 (62), applied in that order",
+ "n_rows_raw": 4267,
+ "n_after_exclusions": 3597,
+ "N_R_table": 3597,
+ "table": {
+  "stat": "t(3511.1) = -6.31",
+  "p": "0 (recalc 3.14e-10)",
+  "es": "d = .21"
+ },
+ "r_script": {
+  "ran": true,
+  "stat": "t(3511.1) = -6.30922 (implicit); explicit t(3586.2) = -22.76772",
+  "p": "3.1543e-10 (implicit)",
+  "es": "not calculated by the script",
+  "stdout_file": "audit.out"
+ },
+ "python": {
+  "ran": true,
+  "stat": "t(3511.1) = -6.3092",
+  "p": "3.154e-10",
+  "es": "Cohen's d (pooled SD) = 0.2108",
+  "file": "reproduce.py"
+ },
+ "agreement": "all three agree: table t(3511.1)=-6.31 p=3.14e-10 d=.21; R t=-6.30922 df=3511.1 p=3.1543e-10; Python t=-6.3092 df=3511.1 p=3.154e-10, Cohen's d=0.2108",
+ "verdict": "reproduced",
+ "notes": "Key test is the implicit one (the report names it the single key result; d=.21 and df=3511.1 match only it). The script prints the explicit test first (t=-22.77, d=.75 pooled / .76 by 2t/sqrt(df)). DV check: imppref equals the IAT D score sign-flipped where reemgood is true, rebuilt for all 3597 rows. The script's exclusions screen on d (raw D) and exppref, not on imppref; no imppref NA remains. rateorig 0 = new pair, so t is new minus original. The final dataset was not rebuilt from the 88 MB raw IAT trials. R ran in full (Hmisc and psych present).",
+ "minutes": 10
+}

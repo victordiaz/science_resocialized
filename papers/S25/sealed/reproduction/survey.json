@@ -1,0 +1,18 @@
+{
+  "local_id": "Row.7",
+  "node": "6n3bm",
+  "title_o": "Modeling distributions of immediate memory effects: No strategies needed?",
+  "verdict": "usable",
+  "verdict_reason": "The script reads osf.io/srnvg = Dataset/rawdata_preprocessed.zip: 15 tab-separated files, 80 trials each. The per-subject proportion of words in correct order (English lists, short vs long) feeds a one-sided paired t-test, which recomputes to t(14) = 0.496, p = .314, d = .13, matching the table exactly with N = 15.",
+  "data_files": [
+    {"path": "Dataset/rawdata_preprocessed.zip", "opened": true, "format": "txt", "rows": 1200, "cols": 36, "notes": "15 files (1.txt..15.txt) x 80 trials; columns list (EN/NL), trnr, length (1 short / 2 long), nr_correct (0-8), W1-W8, w1-w8, rt1-rt8, R1-R8. Trial-level."},
+    {"path": "Dataset/rawdata.zip", "opened": false, "format": "txt", "rows": null, "cols": null, "notes": "Downloaded, listed only: 15 .txt plus __MACOSX resource forks; the unprocessed version."},
+    {"path": "Dataset/codebook_beamanetal2008_kleinbergkunkels.txt", "opened": true, "format": "txt", "rows": null, "cols": null, "notes": "Variable definitions; demographics (eng, age, gender, lang) are not in the files and are typed into the audit script by hand."}
+  ],
+  "key_test": {"from_script": "RPP_6n3bm.R", "test": "paired t-test, one-sided (greater), mean nr_correct/8 per subject for English short vs English long lists; d = t/sqrt(n) via compute.es", "variables": ["list", "length", "nr_correct", "subject (file)"], "all_variables_present": true, "statistic_reported": {"p": "0.314", "es": "d = .13"}},
+  "recompute": {"attempted": true, "method": "python recomputation (pandas groupby per file, scipy ttest_rel greater)", "result": "t(14) = 0.496, p = .3139, d = .128", "matches_table": "yes"},
+  "n_check": {"N_R_table": 15, "rows_after_exclusions": 15, "match": "yes"},
+  "obstacles": ["subject id comes from file order, not from a column; the R script's list.files order (1,10,11,...) mislabels the hand-typed demographics, which does not affect the key test", "the key test uses only the English lists (pr[,1] vs pr[,3]); the Dutch lists are a second condition a reproducer could pick by mistake", "R script needs compute.es; not run"],
+  "minutes": 9,
+  "sources_opened": ["https://api.osf.io/v2/nodes/mvpr4/files/osfstorage/", "https://api.osf.io/v2/nodes/ibd4a/files/osfstorage/", "https://api.osf.io/v2/files/srnvg/"]
+}

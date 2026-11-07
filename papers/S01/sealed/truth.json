@@ -1,0 +1,47 @@
+{
+ "local_id": "Row.151",
+ "node": "apidb",
+ "replicate_r": "no",
+ "table": {
+  "p_r": "0.97",
+  "es_r": "d = .006",
+  "n_r": "126",
+  "direction_r": "same",
+  "test_r": "is",
+  "p_o": "prep = .97",
+  "es_o": "__p^2 = .16",
+  "n_o": "43"
+ },
+ "reproduction": {
+  "key_test": "one-way ANOVA mean_vignettes ~ Condition (Study 2 file), excluding Madeup_dummy==1 or Exp_Error==1; Cohen's d pooled",
+  "table": {
+   "stat": "F(1, 124) = 0.001",
+   "p": "0.97",
+   "es": "d = .006"
+  },
+  "r_script": {
+   "ran": true,
+   "stat": "F(1,124) = 0.00102671",
+   "p": "0.9744898",
+   "es": "cohensD = 0.005727178 (unsigned)",
+   "stdout_file": "audit.out",
+   "how": "audit_harness.R: getOSFfile mapped to the local .sav, external source() skipped, httr/RCurl missing -> skipped; analysis lines unchanged, each wrapped in tryCatch (no errors raised)"
+  },
+  "python": {
+   "ran": true,
+   "stat": "F(1,124) = 0.00103 (t = 0.032)",
+   "p": "0.9745",
+   "es": "d = +0.0057 (hand-washing minus no hand-washing, codebook coding)",
+   "file": "reproduce.py"
+  },
+  "agreement": "all three agree: F(1,124) = .001, p = .974, d = .006, N = 126",
+  "verdict": "reproduced",
+  "n_after_exclusions": 126
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "With a clean conscience: Cleanliness reduces the severity of moral judgments.",
+  "authors": "S Schnall, J Benton, S Harvey",
+  "journal": "PS"
+ }
+}

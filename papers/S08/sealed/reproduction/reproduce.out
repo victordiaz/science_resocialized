@@ -1,0 +1,13 @@
+raw shape: (61, 32)
+acc equals the 'percent' column (to 2 dp): True
+Attempted values: {10: 9, 7: 8, 5: 6, 8: 6, 16: 5, 6: 4, 11: 4, 25: 3, 17: 3, 4: 3, 15: 2, 21: 2, 9: 2, 22: 1, 12: 1, 3: 1, 19: 1}
+      count    mean     std
+Cond                       
+1        32  0.4662  0.1688
+2        29  0.5835  0.2236
+
+Student t, Control > Handicap: t(59) = 2.3255, one-tailed p = 0.01175, two-tailed p = 0.02351
+Cohen's d (pooled SD) = 0.5962;  t*sqrt(1/n1+1/n2) = 0.5962
+Script's d: t/sqrt(N) = 0.2977;  r = t/sqrt(t^2+df) = 0.2898;  r^2 = 0.0840
+Welch (check): t = 2.2938, one-tailed p = 0.01294
+On Correct count: t = 1.4739, one-tailed p = 0.07291

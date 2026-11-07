@@ -1,0 +1,26 @@
+dta shape: (2040, 22) subjects: 17
+tar_vs_dis                -1.0    1.0    11.0
+ExGuess      one_vs_four                     
+experimental 1.0              0    340    340
+             4.0              0    340    340
+guessing     1.0            340      0      0
+             4.0            340      0      0
+
+Route A (.dta): rows used 680; n = 17
+{'experimental': 2.845, 'guessing': 7.549}
+  paired t(16) = -9.5910, two-sided p = 4.9e-08, dz = -2.3262
+
+raw txt rows: 2040 subjects: 17
+Route B (raw txt, stata_sentinel=True): rows used 680; n = 17
+{'experimental': 2.845, 'guessing': 7.549}
+  paired t(16) = -9.5910, two-sided p = 4.9e-08, dz = -2.3262
+Route B (raw txt, stata_sentinel=False): rows used 680; n = 17
+{'experimental': 2.834, 'guessing': 7.552}
+  paired t(16) = -9.6675, two-sided p = 4.39e-08, dz = -2.3447
+[geometric ordering] trial-level |angle_py - angle_dta|: matched rows 2040, max 3.53e+00, rows > 1e-3: 2
+[stata sentinel ordering] trial-level max |diff| = 4.03e-06
+
+trials where the rebuilt angle differs from the .dta:
+   subject  trial       ExGuess  v2  angle_py  angle_dta  v12  v13  v14  v15   v16  v17  v18  v19
+0        5     25  experimental   3  1.370540   4.899389  469   79  725  158  1172  276  467  232
+1        5     24      guessing   3  8.522569   7.204000  470  457  514  674   424  762  427  255

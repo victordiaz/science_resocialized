@@ -1,0 +1,16 @@
+{
+ "local_id": "Row.161",
+ "removed": [
+  {
+   "label": "fear-relevant / fear-irrelevant picture",
+   "replaced_with": "a snake among caterpillars vs a caterpillar among snakes"
+  }
+ ],
+ "kept_terms": [
+  "latency",
+  "target",
+  "distractors",
+  "z score"
+ ],
+ "notes": "No 'visual search' label present."
+}

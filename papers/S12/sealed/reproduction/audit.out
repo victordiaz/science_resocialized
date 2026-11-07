@@ -1,0 +1,102 @@
+[shim] dropped line(s): 31 
+> library("httr") 
+[shim] skipped library( httr )
+> library("RCurl") 
+[shim] skipped library( RCurl )
+> library(Hmisc) 
+
+Attaching package: 'Hmisc'
+
+The following objects are masked from 'package:base':
+
+    format.pval, units
+
+> file <- getOSFfile("https://osf.io/8tzep/") 
+> data <- read.csv(file, header = TRUE) 
+> fie = data 
+> nrow(fie) 
+[1] 4267
+> fin <- fie[!is.na(fie$exppref), ] 
+> nrow(fin) 
+[1] 3945
+> fin <- fin[!is.na(fin$d), ] 
+> nrow(fin) 
+[1] 3660
+> fin <- fin[fin$fastpct10 == 0, ] 
+> nrow(fin) 
+[1] 3659
+> fin <- fin[fin$alltrials == 200, ] 
+> t_ex <- t.test(fin$exppref[fin$rateorig == 0], fin$exppref[fin$rateorig == 
++     1]) 
+> print(t_ex) 
+
+	Welch Two Sample t-test
+
+data:  fin$exppref[fin$rateorig == 0] and fin$exppref[fin$rateorig == 1]
+t = -22.768, df = 3586.2, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.9735996 -0.8192129
+sample estimates:
+mean of x mean of y 
+0.1908832 1.0872894 
+
+> tapply(fin$imppref, fin$rateorig, psych::describe) 
+$`0`
+   vars    n mean   sd median trimmed  mad   min  max range skew kurtosis   se
+X1    1 1638 0.05 0.47   0.04    0.05 0.47 -1.63 1.69  3.32 0.07     0.04 0.01
+
+$`1`
+   vars    n mean   sd median trimmed  mad   min  max range  skew kurtosis   se
+X1    1 1959 0.15 0.48   0.17    0.16 0.49 -1.52 1.94  3.47 -0.07     0.06 0.01
+
+> tapply(fin$imppref, fin$rateorig, Hmisc::describe) 
+$`0`
+X[[i]] 
+       n  missing distinct     Info     Mean  pMedian      Gmd      .05 
+    1638        0     1638        1  0.04984  0.04671    0.529 -0.74978 
+     .10      .25      .50      .75      .90      .95 
+-0.54905 -0.26710  0.03514  0.37347  0.66080  0.82323 
+
+lowest : -1.63392 -1.37153 -1.23736 -1.20392 -1.19706
+highest: 1.39027  1.3909   1.40899  1.53691  1.69003 
+
+$`1`
+X[[i]] 
+       n  missing distinct     Info     Mean  pMedian      Gmd      .05 
+    1959        0     1959        1   0.1502   0.1541   0.5427  -0.6590 
+     .10      .25      .50      .75      .90      .95 
+ -0.4640  -0.1705   0.1667   0.4856   0.7567   0.9006 
+
+lowest : -1.52479 -1.46823 -1.32306 -1.28321 -1.25724
+highest: 1.46576  1.57229  1.60746  1.80663  1.94263 
+
+> t_in <- t.test(fin$imppref[fin$rateorig == 0], fin$imppref[fin$rateorig == 
++     1]) 
+> print(t_in) 
+
+	Welch Two Sample t-test
+
+data:  fin$imppref[fin$rateorig == 0] and fin$imppref[fin$rateorig == 1]
+t = -6.3092, df = 3511.1, p-value = 3.154e-10
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.13152842 -0.06916222
+sample estimates:
+ mean of x  mean of y 
+0.04983945 0.15018477 
+
+> t_ex$statistic 
+        t 
+-22.76772 
+> t_in$statistic 
+       t 
+-6.30922 
+> t_ex$p.value 
+[1] 2.742884e-107
+> t_in$p.value 
+[1] 3.1543e-10
+> nrow(fin) 
+[1] 3597
+> TRUE 
+[1] TRUE

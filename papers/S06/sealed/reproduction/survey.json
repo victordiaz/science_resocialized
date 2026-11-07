@@ -1,0 +1,69 @@
+{
+  "local_id": "Row.53",
+  "node": "wkgpq",
+  "title_o": "Individual differences in the regulation of intergroup bias: The role of conflict monitoring and neural signals for control.",
+  "verdict": "usable",
+  "verdict_reason": "repdatalong.csv (osf.io/xdzas; 225 rows, 75 IDs) has ID, HiLoCat, Task and PD; running the audit script's base-R aov reproduces HiLoCat x Task F(1,73)=0.432, p=.513, partial eta2=.006, n=75, matching the table.",
+  "data_files": [
+    {
+      "path": "Dataset/repdatalong.csv",
+      "opened": true,
+      "format": "csv",
+      "rows": 225,
+      "cols": 8,
+      "notes": "Derived file: process-dissociation (PD) control estimates per participant per task; Weapons has 2 rows per ID (TrialType), Flankers 1"
+    },
+    {
+      "path": "Dataset/Weapons.csv, flankers.csv",
+      "opened": true,
+      "format": "csv",
+      "rows": null,
+      "cols": null,
+      "notes": "Trial-level raw data present (wc only). Flanker.csv and 'Replication study NO EMAIL ID.csv' have CR line endings (wc 0)"
+    },
+    {
+      "path": "Dataset/Replication_Data_Prep_FINAL.R",
+      "opened": true,
+      "format": "other",
+      "rows": null,
+      "cols": null,
+      "notes": "Builds repdatalong from trials; reads Dropbox paths and sources an external 'TH Functions Complete.R' that is not on OSF"
+    }
+  ],
+  "key_test": {
+    "from_script": "RPP_wkgpq.R",
+    "test": "mixed ANOVA aov(PD ~ HiLoCat * Task + Error(ID/Task)); key = HiLoCat:Task interaction in the ID:Task stratum",
+    "variables": [
+      "ID",
+      "HiLoCat",
+      "Task",
+      "PD"
+    ],
+    "all_variables_present": true,
+    "statistic_reported": {
+      "p": "0.513",
+      "es": "partial eta2 = 0.006"
+    }
+  },
+  "recompute": {
+    "attempted": true,
+    "method": "ran the R script's analysis in base R (aov) on the local copy",
+    "result": "HiLoCat:Task F(1,73)=0.432, p=.513, partial eta2=.0059, n=75",
+    "matches_table": "yes"
+  },
+  "n_check": {
+    "N_R_table": 75,
+    "rows_after_exclusions": 75,
+    "match": "yes"
+  },
+  "obstacles": [
+    "Key test runs on derived PD scores; rebuilding them from trials needs a helper script (TH Functions Complete.R) that is not on OSF",
+    "Weapons rows are duplicated per TrialType inside the aov, which the audit accepted; a 'cleaner' reproduction averaging them would differ"
+  ],
+  "minutes": 7,
+  "sources_opened": [
+    "https://api.osf.io/v2/nodes/svjbh/files/osfstorage/",
+    "https://api.osf.io/v2/nodes/g7ape/files/osfstorage/",
+    "https://api.osf.io/v2/files/xdzas/"
+  ]
+}

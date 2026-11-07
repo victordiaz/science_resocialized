@@ -1,0 +1,37 @@
+{
+ "Analysis_Audit/RPP_2gkjt.R": {
+  "neutral": "d01.r",
+  "give": false,
+  "bytes": 2872
+ },
+ "Data_and_Analysis/analysis.R": {
+  "neutral": "d02.r",
+  "give": false,
+  "bytes": 8859
+ },
+ "Data_and_Analysis/iatscoring.R": {
+  "neutral": "d03.r",
+  "give": false,
+  "bytes": 8925
+ },
+ "Data_and_Analysis/impex_final_dataset.csv": {
+  "neutral": "d04.csv",
+  "give": false,
+  "bytes": 4084018
+ },
+ "Data_and_Analysis/impex_final_dataset_sanitized.csv": {
+  "neutral": "d07.csv",
+  "give": true,
+  "bytes": 3138067
+ },
+ "Data_and_Analysis/prep_dataset.R": {
+  "neutral": "d05.r",
+  "give": false,
+  "bytes": 4497
+ },
+ "top/final_replication_report.docx": {
+  "neutral": "d06.docx",
+  "give": false,
+  "bytes": 216593
+ }
+}

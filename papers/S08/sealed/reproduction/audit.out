@@ -1,0 +1,97 @@
+
+> library("httr")
+
+> library("RCurl")
+
+> library("compute.es")
+
+> source("http://sachaepskamp.com/files/OSF/getOSFfile.R")
+
+> file <- getOSFfile("https://osf.io/dy3zn/")
+
+> mcdata <- read.csv(file, as.is = TRUE)
+
+> mcdata$Cond <- factor(mcdata$Cond)
+
+> levels(mcdata$Cond) <- c("Handicap", "Control")
+
+> mcdata$Cond <- relevel(mcdata$Cond, ref = "Control")
+
+> mct.test <- t.test(Correct/Attempted ~ Cond, data = mcdata, 
++     alternative = "greater", var.equal = TRUE)
+
+> print(mct.test)
+
+	Two Sample t-test
+
+data:  Correct/Attempted by Cond
+t = 2.3255, df = 59, p-value = 0.01175
+alternative hypothesis: true difference in means between group Control and group Handicap is greater than 0
+95 percent confidence interval:
+ 0.03300357        Inf
+sample estimates:
+ mean in group Control mean in group Handicap 
+             0.5834651              0.4661788 
+
+
+> mct.test$statistic
+       t 
+2.325462 
+
+> mct.test$p.value
+[1] 0.0117526
+
+> nrow(mcdata)
+[1] 61
+
+> t = mct.test$statistic
+
+> n = nrow(mcdata)
+
+> efd = t/sqrt(n)
+
+> effectSize <- des(efd, n.1 = n, n.2 = n, level = 95, 
++     dig = 2, id = NULL, data = NULL)
+Mean Differences ES: 
+ 
+ d [ 95 %CI] = 0.3 [ -0.06 , 0.65 ] 
+  var(d) = 0.03 
+  p-value(d) = 0.1 
+  U3(d) = 61.71 % 
+  CLES(d) = 58.34 % 
+  Cliff's Delta = 0.17 
+ 
+ g [ 95 %CI] = 0.3 [ -0.06 , 0.65 ] 
+  var(g) = 0.03 
+  p-value(g) = 0.1 
+  U3(g) = 61.63 % 
+  CLES(g) = 58.29 % 
+ 
+ Correlation ES: 
+ 
+ r [ 95 %CI] = 0.15 [ -0.03 , 0.32 ] 
+  var(r) = 0.01 
+  p-value(r) = 0.11 
+ 
+ z [ 95 %CI] = 0.15 [ -0.03 , 0.33 ] 
+  var(z) = 0.01 
+  p-value(z) = 0.11 
+ 
+ Odds Ratio ES: 
+ 
+ OR [ 95 %CI] = 1.72 [ 0.9 , 3.28 ] 
+  p-value(OR) = 0.1 
+ 
+ Log OR [ 95 %CI] = 0.54 [ -0.11 , 1.19 ] 
+  var(lOR) = 0.11 
+  p-value(Log OR) = 0.1 
+ 
+ Other: 
+ 
+ NNT = 10.72 
+ Total N = 122
+> effectSize$d
+[1] 0.3
+
+> TRUE
+[1] TRUE

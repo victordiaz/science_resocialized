@@ -1,0 +1,47 @@
+{
+ "local_id": "Row.33",
+ "node": "swrhy",
+ "replicate_r": "yes",
+ "table": {
+  "p_r": "0.044",
+  "es_r": "d = .37",
+  "n_r": "40",
+  "direction_r": "same",
+  "test_r": "is",
+  "p_o": "0.001",
+  "es_o": "d=0.6",
+  "n_o": "40"
+ },
+ "reproduction": {
+  "key_test": "timing task (Rhythm?==1): per subject x instruction, mean latency per output position; quadratic fit to positions 2,3,5,6; deviation of mean 4th latency from the fit's prediction; paired t grouped vs ungrouped, two-sided; d_av",
+  "table": {
+   "stat": "t(39) = 2.08",
+   "p": "0.044",
+   "es": "d = .37"
+  },
+  "r_script": {
+   "ran": true,
+   "stat": "F(5,195) = 2.54401 (grouping x position interaction, a different test)",
+   "p": "0.02950693",
+   "es": "partial eta^2 = 0.0612",
+   "stdout_file": "audit.out",
+   "how": "audit_harness.R: getOSFfile mapped to the local csv, external source() skipped, httr/RCurl missing -> skipped; analysis lines unchanged"
+  },
+  "python": {
+   "ran": true,
+   "stat": "t(39) = 2.0839",
+   "p": "0.0438",
+   "es": "d_av = 0.3674 (d_z = 0.3295)",
+   "file": "reproduce.py"
+  },
+  "agreement": "Python and table agree (t 2.084 vs 2.08, p .0438 vs .044, d .367 vs .37). The audit script computes the 2x6 ANOVA interaction, F(5,195)=2.544, p=.0295, pes=.061, which Python also reproduces (pingouin, uncorrected p .0295; GG-corrected .0653) but which is not the table's test",
+  "verdict": "reproduced",
+  "n_after_exclusions": 40
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "Multiple roles for time in short-term memory: Evidence from serial recall of order and timing.",
+  "authors": "S Farrell",
+  "journal": "JEPLMC"
+ }
+}

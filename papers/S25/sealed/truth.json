@@ -1,0 +1,47 @@
+{
+ "local_id": "Row.7",
+ "node": "6n3bm",
+ "replicate_r": "no",
+ "table": {
+  "p_r": "0.314",
+  "es_r": "d = .13",
+  "n_r": "15",
+  "direction_r": "same",
+  "test_r": "is",
+  "p_o": "<0.05",
+  "es_o": "d = 1.02",
+  "n_o": "100"
+ },
+ "reproduction": {
+  "key_test": "paired t-test, one-sided (greater): per-subject mean of nr_correct/8 (rounded to 3 dp) for English short-word lists (list=EN, length=1) vs English long-word lists (list=EN, length=2); d = t/sqrt(n)",
+  "table": {
+   "stat": "t(14) = 0.496",
+   "p": "0.314 (one-sided)",
+   "es": "d = .13"
+  },
+  "r_script": {
+   "ran": true,
+   "stat": "t(14) = 0.4928",
+   "p": "0.3149",
+   "es": "d = 0.13",
+   "stdout_file": "audit.out",
+   "how": "RPP_6n3bm.R run unchanged in R 4.6.2 except its loading lines: library(httr), library(RCurl) and source(getOSFfile.R) dropped (httr/RCurl not installed; the source is an external URL), getOSFfile() defined to return the downloaded srnvg zip (run_audit.R)"
+  },
+  "python": {
+   "ran": true,
+   "stat": "t(14) = 0.4956 (DV rounded to 3 dp as the script); 0.4944 unrounded",
+   "p": "0.3139 (one-sided); 0.3143 unrounded",
+   "es": "d_z = 0.128",
+   "file": "reproduce.py"
+  },
+  "agreement": "Python and table agree (t 0.4956 vs 0.496, p .3139 vs .314, d .13). The R script today gives t 0.4928, p .3149: off by 0.003 in t. Cause: the per-subject means are multiples of 0.05, so mean/8 ends in an exact tie at the 4th decimal for most cells, and the script's round(., 3) resolves ties by the rounding algorithm, which R changed in 4.0.0. Exact half-even rounding gives 0.4956 (the table, and the value hard-coded in the replication team's own script, t = .4956); half-up gives 0.4984; no rounding gives 0.4944. All p in .313-.315.",
+  "verdict": "reproduced with a discrepancy",
+  "n_after_exclusions": 15
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "Modeling distributions of immediate memory effects: No strategies needed?",
+  "authors": "CP Beaman, I Neath, AM Surprenant",
+  "journal": "JEPLMC"
+ }
+}

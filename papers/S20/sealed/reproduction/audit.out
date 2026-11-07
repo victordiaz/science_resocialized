@@ -1,0 +1,38 @@
+[shim] dropped line(s): 34 
+> library("httr") 
+[shim] skipped library( httr )
+> library("RCurl") 
+[shim] skipped library( RCurl )
+> library("foreign") 
+> library("reshape2") 
+> file <- getOSFfile("https://osf.io/c3zid/") 
+> bass.data <- read.spss(file, to.data.frame = TRUE) 
+> bass.data <- bass.data[1:49, ] 
+> bass.long <- melt(bass.data, id.vars = "id", measure.vars = c("avg_time_sum_ac", 
++     "avg_time_neutral_ac", "avg_time_sum_mu", "avg_time_neutral_mu"), 
++     variable.name = "cond", value.name = "RT") 
+> bass.long$prime <- 1 
+> bass.long$prime[grep("mu", bass.long$cond)] <- 2 
+> bass.long <- transform(bass.long, prime = factor(prime, labels = c("ac", 
++     "mu"))) 
+> bass.long$sum <- 1 
+> bass.long$sum[grep("neu", bass.long$cond)] <- 2 
+> bass.long <- transform(bass.long, sum = factor(sum, labels = c("sum", 
++     "neutral"))) 
+> bass.long <- transform(bass.long, id = factor(id)) 
+> bass.aov1 = aov(RT ~ (prime * sum) + Error(id/(prime * sum)), 
++     data = bass.long) 
+> summ.a1 <- summary(bass.aov1) 
+> summ.a1[["Error: id:prime:sum"]][[1]][["F value"]][[1]] 
+[1] 4.224366
+> summ.a1[["Error: id:prime:sum"]][[1]][["Pr(>F)"]][[1]] 
+[1] 0.04531021
+> nrow(bass.data) 
+[1] 49
+> sumsq.error <- summ.a1[["Error: id:prime:sum"]][[1]][["Sum Sq"]][[2]] 
+> sumsq.effect <- summ.a1[["Error: id:prime:sum"]][[1]][["Sum Sq"]][[1]] 
+> effect.size <- sumsq.effect/(sumsq.effect + sumsq.error) 
+> print(effect.size) 
+[1] 0.08088879
+> TRUE 
+[1] TRUE

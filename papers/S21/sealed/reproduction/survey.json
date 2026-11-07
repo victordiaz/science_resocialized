@@ -1,0 +1,17 @@
+{
+  "local_id": "Row.27",
+  "node": "ahpik",
+  "title_o": "On the additive effects of stimulus quality and word frequency in lexical decision: Evidence for opposing interactive influences revealed by RT distributional analyses.",
+  "verdict": "usable",
+  "verdict_reason": "The audit script reads the first sheet (Sheet3) of YapMu.xlsx (guid 6kaw2): 71 participants x 4 condition mean RTs, and runs a 2x2 within ANOVA; the recomputed quality x frequency interaction F(1,70)=11.78, p=.0010, partial eta^2=.144 matches the table, and the sums of squares equal the ones hard-coded in the script (115052.2 / 683497.9).",
+  "data_files": [
+    {"path": "Data/YapMu.xlsx", "opened": true, "format": "xlsx", "rows": 71, "cols": 4, "notes": "Sheet3 (first in workbook, the one the script reads): per-participant mean RT for Highfrequencyclear, Lowfrequencyclear, Highfrequencydegraded, Lowfrequencydegraded; no NA. Other sheets: Sheet1 trial-level (11,816 rows, 71 subjects), Sheet2 trial-level with procedure names (22,481 rows), Sheet4 an instruction-file text, Sheet5 a long-form copy."},
+    {"path": "Data/YapPrimaryAnalysis.spv", "opened": false, "format": "other", "rows": null, "cols": null, "notes": "SPSS output viewer file, proprietary; not opened"}
+  ],
+  "key_test": {"from_script": "RPP.ahpik.R", "test": "ez::ezANOVA, within quality (clear/degraded) x frequency (high/low), key statistic = interaction (row 3)", "variables": ["Highfrequencyclear", "Lowfrequencyclear", "Highfrequencydegraded", "Lowfrequencydegraded"], "all_variables_present": true, "statistic_reported": {"p": "0.001", "es": "partial eta^2 = .144"}},
+  "recompute": {"attempted": true, "method": "python recomputation (interaction contrast one-sample t, F = t^2, SS from contrast)", "result": "F(1,70)=11.783, p=0.00101, partial eta^2=0.1441", "matches_table": "yes"},
+  "n_check": {"N_R_table": 71, "rows_after_exclusions": 71, "match": "yes"},
+  "obstacles": ["the step from trial-level RTs (Sheet1/Sheet2) to the condition means in Sheet3 (trimming via the z column) is not scripted", "script depends on sheet order (read.xlsx(file,1)) and positional factor labels; needs xlsx, gdata, tidyr, ez (not installed)"],
+  "minutes": 7,
+  "sources_opened": ["https://osf.io/ahpik/", "https://api.osf.io/v2/files/6kaw2/", "https://api.osf.io/v2/nodes/mz7sv/files/osfstorage/", "https://api.osf.io/v2/nodes/msqk3/files/osfstorage/"]
+}

@@ -1,0 +1,47 @@
+{
+ "Analysis Audit/RPP_mxryb.R": {
+  "neutral": "d01.r",
+  "give": false,
+  "bytes": 2705
+ },
+ "Data/RPP analysis.R": {
+  "neutral": "d02.r",
+  "give": false,
+  "bytes": 4366
+ },
+ "Data/RPP codebook.csv": {
+  "neutral": "d03.csv",
+  "give": false,
+  "bytes": 2197
+ },
+ "Data/RPP data.csv": {
+  "neutral": "d04.csv",
+  "give": false,
+  "bytes": 20845
+ },
+ "Data/RPP data_sanitized.csv": {
+  "neutral": "d09.csv",
+  "give": true,
+  "bytes": 20521
+ },
+ "Data/functions.R": {
+  "neutral": "d05.r",
+  "give": false,
+  "bytes": 1912
+ },
+ "_top/J Fo\u0308rster, N Liberman, S Kuschel Replication Report.pdf": {
+  "neutral": "d06.pdf",
+  "give": false,
+  "bytes": 155004
+ },
+ "_top/Replication Project Response 2015 - Jens Fo\u0308rster & Nira Liberman.pdf": {
+  "neutral": "d07.pdf",
+  "give": false,
+  "bytes": 131690
+ },
+ "_top/pre data collection J Fo\u0308rster, N Liberman, S Kuschel Replication Report.pdf": {
+  "neutral": "d08.pdf",
+  "give": false,
+  "bytes": 109025
+ }
+}

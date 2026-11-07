@@ -1,0 +1,13 @@
+{
+ "local_id": "Row.116",
+ "removed": [
+  {
+   "label": "\"crowd within\"",
+   "replaced_with": "dropped; the averaging is already described"
+  }
+ ],
+ "kept_terms": [
+  "mean squared error"
+ ],
+ "notes": ""
+}

@@ -1,0 +1,112 @@
+{
+ "Analysis Audit/RPP_dnaxe.r": {
+  "neutral": "d01.r",
+  "give": false,
+  "bytes": 3648
+ },
+ "Data/Alvarez_1.txt": {
+  "neutral": "d02.txt",
+  "give": true,
+  "bytes": 8106
+ },
+ "Data/Alvarez_10.txt": {
+  "neutral": "d03.txt",
+  "give": true,
+  "bytes": 7739
+ },
+ "Data/Alvarez_11.txt": {
+  "neutral": "d04.txt",
+  "give": true,
+  "bytes": 7746
+ },
+ "Data/Alvarez_12.txt": {
+  "neutral": "d05.txt",
+  "give": true,
+  "bytes": 7742
+ },
+ "Data/Alvarez_13.txt": {
+  "neutral": "d06.txt",
+  "give": true,
+  "bytes": 7778
+ },
+ "Data/Alvarez_14.txt": {
+  "neutral": "d07.txt",
+  "give": true,
+  "bytes": 7742
+ },
+ "Data/Alvarez_15.txt": {
+  "neutral": "d08.txt",
+  "give": true,
+  "bytes": 7740
+ },
+ "Data/Alvarez_16.txt": {
+  "neutral": "d09.txt",
+  "give": true,
+  "bytes": 7742
+ },
+ "Data/Alvarez_17.txt": {
+  "neutral": "d10.txt",
+  "give": true,
+  "bytes": 7738
+ },
+ "Data/Alvarez_2.txt": {
+  "neutral": "d11.txt",
+  "give": true,
+  "bytes": 8084
+ },
+ "Data/Alvarez_3.txt": {
+  "neutral": "d12.txt",
+  "give": true,
+  "bytes": 7759
+ },
+ "Data/Alvarez_4.txt": {
+  "neutral": "d13.txt",
+  "give": true,
+  "bytes": 7750
+ },
+ "Data/Alvarez_5.txt": {
+  "neutral": "d14.txt",
+  "give": true,
+  "bytes": 7738
+ },
+ "Data/Alvarez_6.txt": {
+  "neutral": "d15.txt",
+  "give": true,
+  "bytes": 7737
+ },
+ "Data/Alvarez_7.txt": {
+  "neutral": "d16.txt",
+  "give": true,
+  "bytes": 7730
+ },
+ "Data/Alvarez_8.txt": {
+  "neutral": "d17.txt",
+  "give": true,
+  "bytes": 7736
+ },
+ "Data/Alvarez_9.txt": {
+  "neutral": "d18.txt",
+  "give": true,
+  "bytes": 7736
+ },
+ "Data/Alvarez_Data.dta": {
+  "neutral": "d19.dta",
+  "give": true,
+  "bytes": 136070
+ },
+ "Data/RPP_Rep_Participants_descriptives.xlsx": {
+  "neutral": "d20.xlsx",
+  "give": false,
+  "bytes": 10090
+ },
+ "Data/merge and analyze.do": {
+  "neutral": "d21.do",
+  "give": false,
+  "bytes": 14816
+ },
+ "top/Replication of Alvarez&Oliva2008.docx": {
+  "neutral": "d22.docx",
+  "give": false,
+  "bytes": 31954
+ }
+}

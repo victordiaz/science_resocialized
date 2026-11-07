@@ -1,0 +1,11 @@
+raw shape (206, 84)
+Condition labels {1.0: 'Achievement prime', 2.0: 'Control'} | Include1 labels {0.0: 'Include for analyses', 1.0: 'Exclude from analyses'}
+after Include1 == 0: 158 | per condition {2.0: 79, 1.0: 79}
+max |RB12Mean - (R1Mean+R2Mean)/2| = 0.0
+max |learn + Learning(stored)| = 0.0 (stored Learning = FS - RB)
+missing learn: 0
+
+=== KEY TEST: learning, prime vs control, Student t ===
+mean learning prime = 22.272 ms (sd 51.313, n 79); control = 33.114 ms (sd 52.066, n 79)
+t(156) = -1.3182, p two-sided = 0.1894, Cohen's d (pooled sd, prime - control) = -0.2097
+(Welch, for reference: t = -1.3182, p = 0.1894)

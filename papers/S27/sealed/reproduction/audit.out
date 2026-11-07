@@ -1,0 +1,61 @@
+> library("httr")
+[shim] skipped httr (download only)
+> library("RCurl")
+[shim] skipped RCurl (download only)
+> library("foreign")
+> source("http://sachaepskamp.com/files/OSF/getOSFfile.R")
+[shim] skipped remote source: http://sachaepskamp.com/files/OSF/getOSFfile.R 
+> file <- getOSFfile("https://osf.io/8y94x/")
+[shim] getOSFfile https://osf.io/8y94x/ -> download/Data, codebook, and syntax/Shnabel & Nadler Rep Data - for OSF upload 2.23.2015.sav 
+> shn.data <- read.spss(file, to.data.frame = TRUE)
+> shn.data <- transform(shn.data, ParticipantNumber = factor(ParticipantNumber))
+> shn.aov1 = aov(AvgWillingReconcileTime2 ~ VictimOrPerpV0P1 * 
++     AcceptOrEmpowerA0E1 + Error(ParticipantNumber), data = shn.data)
+Error in storage.mode(y) <- "double" : 
+  invalid to change the storage mode of a factor
+Calls: withVisible -> eval -> eval -> aov -> as.matrix -> qr.qty
+In addition: There were 50 or more warnings (use warnings() to see the first 50)
+Execution halted
+
+######## SECOND RUN: one change only, read.spss(..., use.value.labels=FALSE) (diff above in receipt)
+> library("httr")
+[shim] skipped httr (download only)
+> library("RCurl")
+[shim] skipped RCurl (download only)
+> library("foreign")
+> source("http://sachaepskamp.com/files/OSF/getOSFfile.R")
+[shim] skipped remote source: http://sachaepskamp.com/files/OSF/getOSFfile.R 
+> file <- getOSFfile("https://osf.io/8y94x/")
+[shim] getOSFfile https://osf.io/8y94x/ -> download/Data, codebook, and syntax/Shnabel & Nadler Rep Data - for OSF upload 2.23.2015.sav 
+> shn.data <- read.spss(file, to.data.frame = TRUE, use.value.labels = FALSE)
+> shn.data <- transform(shn.data, ParticipantNumber = factor(ParticipantNumber))
+> shn.aov1 = aov(AvgWillingReconcileTime2 ~ VictimOrPerpV0P1 * 
++     AcceptOrEmpowerA0E1 + Error(ParticipantNumber), data = shn.data)
+> summ.shn.aov1 <- summary(shn.aov1)
+> print(summ.shn.aov1)
+
+Error: ParticipantNumber
+                                      Df Sum Sq Mean Sq F value   Pr(>F)    
+VictimOrPerpV0P1                       1  36.06   36.06  27.471 5.89e-07 ***
+AcceptOrEmpowerA0E1                    1   0.03    0.03   0.020    0.886    
+VictimOrPerpV0P1:AcceptOrEmpowerA0E1   1   1.87    1.87   1.425    0.235    
+Residuals                            137 179.83    1.31                     
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+> summ.shn.aov1[["Error: ParticipantNumber"]][[1]][["F value"]][[3]]
+[1] 1.424765
+> summ.shn.aov1[["Error: ParticipantNumber"]][[1]][["Pr(>F)"]][[3]]
+[1] 0.2346836
+> nrow(shn.data[which(!(is.na(shn.data$AvgWillingReconcileTime2))), 
++     ])
+[1] 141
+> sumsq.error <- summ.shn.aov1[["Error: ParticipantNumber"]][[1]][["Sum Sq"]][[4]]
+> sumsq.effect <- summ.shn.aov1[["Error: ParticipantNumber"]][[1]][["Sum Sq"]][[3]]
+> effect.size <- sumsq.effect/(sumsq.effect + sumsq.error)
+> print(effect.size)
+[1] 0.0102927
+> TRUE
+[1] TRUE
+Warning message:
+In read.spss(file, to.data.frame = TRUE, use.value.labels = FALSE) :
+  download/Data, codebook, and syntax/Shnabel & Nadler Rep Data - for OSF upload 2.23.2015.sav: Very long string record(s) found (record type 7, subtype 14), each will be imported in consecutive separate variables

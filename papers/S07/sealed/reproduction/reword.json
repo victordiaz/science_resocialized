@@ -1,0 +1,28 @@
+{
+ "local_id": "Row.39",
+ "removed": [
+  {
+   "label": "Angling Risk Task",
+   "replaced_with": "a sequential risk-taking game (procedure in Design)"
+  },
+  {
+   "label": "ART",
+   "replaced_with": "dropped"
+  },
+  {
+   "label": "Adjusted ART score",
+   "replaced_with": "adjusted casting score"
+  },
+  {
+   "label": "\"weighted polydrug\" (quoted)",
+   "replaced_with": "the weighted polydrug score (unquoted, defined by its steps)"
+  }
+ ],
+ "kept_terms": [
+  "Pearson correlation",
+  "Fisher z",
+  "Meng, Rosenthal & Rubin (1992) test (the test to run, kept verbatim)",
+  "polydrug"
+ ],
+ "notes": "Procedure was already described; only labels removed."
+}

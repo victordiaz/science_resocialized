@@ -1,0 +1,37 @@
+{
+ "Analysis Audit/RPP_76qc5.R": {
+  "neutral": "d01.r",
+  "give": false,
+  "bytes": 2866
+ },
+ "Data/Halevy et al., 2008_Output_11 Dec 2014.spv": {
+  "neutral": "d02.spv",
+  "give": false,
+  "bytes": 12532
+ },
+ "Data/Halevy et al., 2008_Syntax_11 Dec 2014.sps": {
+  "neutral": "d03.sps",
+  "give": false,
+  "bytes": 647
+ },
+ "Data/Halevy_et_al._(2008)_Aggregated_Replication_Data.sav": {
+  "neutral": "d04.sav",
+  "give": true,
+  "bytes": 5150
+ },
+ "Data/Halevy_et_al._(2008)_Replication_Data.sav": {
+  "neutral": "d05.sav",
+  "give": true,
+  "bytes": 9392
+ },
+ "top/FINAL REPORT of Halevy, Bornstein & Sagiv Replication - 05 January 2015.pdf": {
+  "neutral": "d06.pdf",
+  "give": false,
+  "bytes": 350953
+ },
+ "top/pre data collection report Halevy, Bornstein & Sagiv Replication.pdf": {
+  "neutral": "d07.pdf",
+  "give": false,
+  "bytes": 326097
+ }
+}

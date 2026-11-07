@@ -1,0 +1,10 @@
+Warning message:
+In readLines("download/RPP_swrhy.R") :
+  incomplete final line found on 'download/RPP_swrhy.R'
+[harness] package missing, skipped: httr 
+[harness] package missing, skipped: RCurl 
+[1] 2.54401
+[1] 0.02950693
+[1] 40
+[1] 0.06123651
+[1] TRUE

@@ -1,0 +1,27 @@
+{
+ "FinalReportv3.pdf": {
+  "neutral": "d01.pdf",
+  "give": false,
+  "bytes": 149067
+ },
+ "RPP_7rtcz.R": {
+  "neutral": "d02.r",
+  "give": false,
+  "bytes": 2942
+ },
+ "Syntax.sps": {
+  "neutral": "d03.sps",
+  "give": false,
+  "bytes": 1164
+ },
+ "replication_marsh.sav": {
+  "neutral": "d04.sav",
+  "give": true,
+  "bytes": 9441
+ },
+ "replication_marsh.xlsx": {
+  "neutral": "d05.xlsx",
+  "give": true,
+  "bytes": 14047
+ }
+}

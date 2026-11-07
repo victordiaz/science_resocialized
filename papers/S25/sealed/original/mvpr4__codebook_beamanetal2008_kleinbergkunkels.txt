@@ -1,0 +1,45 @@
+Replication of Beaman et al. (2008) by Kleinberg & Kunkels (2014)
+
+Codebook for variables in output file:
+
+"id"  = subject ID
+"eng" = self-reported English language proficiency
+"age"
+"gender"
+"lang" = mothertongue
+"list" = language of word list (either English, EN or Dutch, NL)
+"trnr" = trialnr
+"length" = length of list (either short = 1, or long = 2)
+"nr_correct" = number of correctly ordered words per list of eight words
+"W1" =  true first word in a list of eigth words
+"W2" = second word ~
+"W3"        
+"W4"
+"W5"
+"W6"
+"W7"
+“W8"
+"w1" = first word chosen by the subject       
+"rt1" = reaction time until click on the first chosen word (w1): counting begins once the answer options are shown
+"R1" = coding of the response (false = 0, correct = 1)
+"w2" = second word chosen by the subject
+"rt2" = reaction time until click on the second chosen word
+"R2" = response coding of the second word
+"w3"        
+"rt3"
+"R3"
+"w4"
+"rt4"
+"R4"
+"w5"        
+"rt5"
+"R5"
+"w6"
+"rt6"
+"R6"
+"w7"        
+"rt7"
+"R7"
+"w8.1"
+"rt8"
+"R8"

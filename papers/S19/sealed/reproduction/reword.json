@@ -1,0 +1,31 @@
+{
+  "local_id": "Row.10",
+  "removed": [
+    {
+      "label": "(a comparative distance effect)",
+      "replaced_with": "removed; the claim states the far-vs-close RT difference"
+    },
+    {
+      "label": "Numerical same-different task",
+      "replaced_with": "Participants see two digits and judge whether their numerical values are the same or different (the numerical task)"
+    },
+    {
+      "label": "physical same-different task",
+      "replaced_with": "a second task in which participants judge whether the two digits look physically the same"
+    },
+    {
+      "label": "the notation effect",
+      "replaced_with": "the main effect of notation"
+    },
+    {
+      "label": "(\"distracting\") filler trials",
+      "replaced_with": "filler trials"
+    }
+  ],
+  "kept_terms": [
+    "response time",
+    "notation",
+    "fixation cross"
+  ],
+  "notes": ""
+}

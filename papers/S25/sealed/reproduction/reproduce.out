@@ -1,0 +1,12 @@
+files 15 rows 1200 cols 36
+trials per subject x list x length:
+list  length
+EN    1         300
+      2         300
+NL    1         300
+      2         300
+unrounded: n=15 mean short=0.5787 mean long=0.5692 t(14)=0.4944 p(one-sided)=0.3143 p(two-sided)=0.6287 d_z=t/sqrt(n)=0.1277
+rounded to 3 dp (as the script): n=15 mean short=0.5788 mean long=0.5692 t(14)=0.4956 p(one-sided)=0.3139 p(two-sided)=0.6279 d_z=t/sqrt(n)=0.1280
+(not the key test) Dutch short vs long: t(14)=0.9871 p(one-sided)=0.1702
+exact decimal rounding ROUND_HALF_EVEN: t(14)=0.4956 p(one-sided)=0.3139
+exact decimal rounding ROUND_HALF_UP: t(14)=0.4984 p(one-sided)=0.3130

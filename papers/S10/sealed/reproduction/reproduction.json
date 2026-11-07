@@ -1,0 +1,39 @@
+{
+ "local_id": "Row.146",
+ "node": "dncxa",
+ "key_test": "two-sided paired t-test, congruent vs incongruent per-participant mean naming RT, object-naming group only (NamingTask=='naming'), by subjects (F1); dz = t/sqrt(n)",
+ "variables": [
+  "Subject",
+  "NamingTask",
+  "congruent_mean",
+  "incongruent_mean (F1RT_readyforanalysis.sav)",
+  "alldata.sav: Subject, NamingTask, RT, Errors, Condition"
+ ],
+ "exclusions": "error trials (Errors==1; 47 of 960 object-naming trials); then trials beyond +/-3 SD of the participant's error-free mean RT (14 object-naming trials); colour-naming group not in the key test",
+ "n_rows_raw": 1920,
+ "n_after_exclusions": 12,
+ "N_R_table": 12,
+ "table": {
+  "stat": "t(11) = 1.9",
+  "p": "0.09 (T.pval.recalc.R = 0.0840, from t rounded to 1.9)",
+  "es": "dz = .548"
+ },
+ "r_script": {
+  "ran": false,
+  "stat": "not run (package missing: dplyr; also needs tidyr)",
+  "p": "n/a",
+  "es": "n/a",
+  "stdout_file": "audit.out"
+ },
+ "python": {
+  "ran": true,
+  "stat": "t(11) = -1.882 (congruent minus incongruent; |t| = 1.882)",
+  "p": "0.0866",
+  "es": "dz = 0.543",
+  "file": "reproduce.py"
+ },
+ "agreement": "Table and Python agree on df and, within rounding, on t (1.9 vs 1.882) and p (.09 vs .0866). The table's dz .548 is 1.9/sqrt(12) from the rounded t; from the unrounded t it is .543 (difference .005). The table's recalculated p .0840 is likewise from the rounded t. R not run.",
+ "verdict": "reproduced",
+ "notes": "Two routes give identical numbers: the replication's own per-subject means file, and a rebuild from trial-level alldata.sav with the stated exclusions (max per-subject difference 0.0 ms; error and outlier counts 47/14 object, 5/12 colour, equal the report's). Means 708.3 vs 720.6 ms, difference 12.3 ms, as reported. T.N.R in the table is 24 (both tasks) while N.R is 12 (the key group). The audit script's sample-size line nrow(subjects)/2 = 12 happens to equal the per-task n. Colour naming (not key): t(11)=-1.552, p=.149.",
+ "minutes": 8
+}

@@ -1,0 +1,19 @@
+subject files: 15
+  subject01.mat: trials=32, real=16, types=[np.str_('pseudo'), np.str_('real')], p_correct_real=0.8125
+  subject02.mat: trials=32, real=16, types=[np.str_('pseudo'), np.str_('real')], p_correct_real=0.6250
+  subject03.mat: trials=32, real=16, types=[np.str_('pseudo'), np.str_('real')], p_correct_real=0.9375
+  subject04.mat: trials=32, real=16, types=[np.str_('pseudo'), np.str_('real')], p_correct_real=0.8125
+  subject05.mat: trials=32, real=16, types=[np.str_('pseudo'), np.str_('real')], p_correct_real=1.0000
+  subject06.mat: trials=32, real=16, types=[np.str_('pseudo'), np.str_('real')], p_correct_real=1.0000
+  subject07.mat: trials=32, real=16, types=[np.str_('pseudo'), np.str_('real')], p_correct_real=0.3750
+  subject08.mat: trials=32, real=16, types=[np.str_('pseudo'), np.str_('real')], p_correct_real=0.5625
+  subject09.mat: trials=32, real=16, types=[np.str_('pseudo'), np.str_('real')], p_correct_real=0.5000
+  subject10.mat: trials=32, real=16, types=[np.str_('pseudo'), np.str_('real')], p_correct_real=0.5000
+  subject11.mat: trials=32, real=16, types=[np.str_('pseudo'), np.str_('real')], p_correct_real=0.6875
+  subject12.mat: trials=32, real=16, types=[np.str_('pseudo'), np.str_('real')], p_correct_real=0.9375
+  subject13.mat: trials=32, real=16, types=[np.str_('pseudo'), np.str_('real')], p_correct_real=0.5000
+  subject14.mat: trials=32, real=16, types=[np.str_('pseudo'), np.str_('real')], p_correct_real=0.7500
+  subject15.mat: trials=32, real=16, types=[np.str_('pseudo'), np.str_('real')], p_correct_real=0.5000
+
+n = 15; mean proportion correct (real triplets) = 0.7000, sd = 0.2089, 95% CI [0.584, 0.816]
+one-sample t vs 0.5: t(14) = 3.708, p = 0.00234, d = t/sqrt(n) = 0.957

@@ -1,0 +1,39 @@
+{
+ "local_id": "Row.24",
+ "node": "sqim7",
+ "key_test": "2 (prime AC vs MU) x 2 (digit target sum vs neutral) repeated-measures ANOVA on mean correct-response latency; prime x target interaction F",
+ "variables": [
+  "id",
+  "avg_time_sum_ac",
+  "avg_time_neutral_ac",
+  "avg_time_sum_mu",
+  "avg_time_neutral_mu"
+ ],
+ "exclusions": "rows 50-320 of EXP 1s.sav are empty and dropped; the one participant excluded for low accuracy is already absent from the file",
+ "n_rows_raw": 320,
+ "n_after_exclusions": 49,
+ "N_R_table": 49,
+ "table": {
+  "stat": "F(1, 48) = 4.22",
+  "p": "0.045 (recalc 0.04542)",
+  "es": "MSE = 9,999 (an error term, not an effect size)"
+ },
+ "r_script": {
+  "ran": true,
+  "stat": "F(1,48) = 4.224366",
+  "p": "0.04531021",
+  "es": "partial eta^2 = 0.08088879",
+  "stdout_file": "audit.out"
+ },
+ "python": {
+  "ran": true,
+  "stat": "F(1,48) = 4.2244",
+  "p": "0.045310",
+  "es": "partial eta^2 = 0.0809; MSE = 9999.2",
+  "file": "reproduce.py"
+ },
+ "agreement": "all three agree: table F(1,48)=4.22 p=.045 (MSE=9,999); R F=4.2244 p=0.04531 pes=0.0809; Python F=4.2244 p=0.045310 pes=0.0809, MSE=9999.2 (matches the table's MSE)",
+ "verdict": "reproduced",
+ "notes": "Anchored on the script, which runs the report's key interaction. The table's 'effect size' is the interaction error mean square, reproduced exactly (9999.2). Cell means 933/856/864/845 ms match the report's table. Simple effects also match the report: sum vs neutral within AC t(48)=3.37, within MU t(48)=1.14. R ran with the remote helper source() line dropped and getOSFfile pointed at the local copy of OSF c3zid.",
+ "minutes": 8
+}

@@ -1,0 +1,23 @@
+[harness] package missing, skipped: httr 
+[harness] package missing, skipped: RCurl 
+[harness] package missing, skipped: reshape2 
+
+Error: NUMBER
+           Df Sum Sq Mean Sq F value Pr(>F)    
+TASK        1  3.151  3.1513   323.5 <2e-16 ***
+Residuals 116  1.130  0.0097                   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Error: NUMBER:SOUND
+            Df Sum Sq Mean Sq F value   Pr(>F)    
+SOUND        2 0.1301 0.06504  26.598 3.98e-11 ***
+SOUND:TASK   2 0.0080 0.00398   1.628    0.199    
+Residuals  232 0.5673 0.00245                     
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+[1] 1.627978
+[1] 0.1985608
+[1] 118
+[1] 0.01128769
+[1] TRUE

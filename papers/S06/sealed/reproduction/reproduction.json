@@ -1,0 +1,40 @@
+{
+ "local_id": "Row.53",
+ "node": "wkgpq",
+ "key_test": "aov(PD ~ HiLoCat * Task + Error(ID/Task)) on repdatalong.csv (3 rows per ID: Weapons-Black, Weapons-White, Flankers); key effect HiLoCat:Task in the ID:Task stratum",
+ "variables": [
+  "ID",
+  "HiLoCat",
+  "Task",
+  "PD",
+  "TrialType"
+ ],
+ "exclusions": "none; all 75 IDs in the derived PD file",
+ "n_rows_raw": 225,
+ "n_after_exclusions": 225,
+ "N_R_table": 75,
+ "table": {
+  "stat": "F(1, 73) = 0.432",
+  "p": "0.513",
+  "es": "partial eta^2 = 0.006"
+ },
+ "r_script": {
+  "ran": true,
+  "stat": "F(1, 73) = 0.432348",
+  "p": "0.5129071",
+  "es": "not printed by the script (assignment only); from its printed SS 0.01014/(0.01014+1.7115) = 0.0059",
+  "stdout_file": "audit.out",
+  "how": "audit script run unmodified through a shim that maps getOSFfile() to the local downloaded copy and skips library(httr), library(RCurl) and the remote source() of getOSFfile.R (no network beyond osf.io)"
+ },
+ "python": {
+  "ran": true,
+  "stat": "F(1, 73) = 0.4323",
+  "p": "0.5129",
+  "es": "partial eta^2 = 0.0059",
+  "file": "reproduce.py"
+ },
+ "agreement": "all three agree (F 0.432, p .513, partial eta^2 .006); every stratum of the Python projection fit matches R's summary (HiLoCat F 1.454 p .232; Task F .505 p .480)",
+ "verdict": "reproduced",
+ "notes": "n_after_exclusions counts rows; 75 participants. The survey's worry that the duplicated Weapons rows make a 'cleaner' analysis differ does not hold for the interaction: averaging the two Weapons rows per ID gives the identical F(1,73) = 0.4323, p = .5129, because the ID:Task stratum already contrasts Flankers with the Weapons mean. The authors' own analysis file fits the same aov. PD scores are derived; rebuilding them from trials needs a helper script not on OSF, so this reproduces the test, not the scoring.",
+ "minutes": 7
+}

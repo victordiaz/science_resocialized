@@ -1,0 +1,37 @@
+{
+ "Analysis Audit/RPP_sd7kg.R": {
+  "neutral": "d01.r",
+  "give": false,
+  "bytes": 2898
+ },
+ "Data/Analysis description.docx": {
+  "neutral": "d02.docx",
+  "give": false,
+  "bytes": 13828
+ },
+ "Data/Data screening & clean up explanation.pdf": {
+  "neutral": "d03.pdf",
+  "give": false,
+  "bytes": 74994
+ },
+ "Data/LoBue & DeLoach Replication Raw data.xls": {
+  "neutral": "d04.xls",
+  "give": true,
+  "bytes": 70144
+ },
+ "Data/LoBue & DeLoache Replication Final File Ready for Analysis.sav": {
+  "neutral": "d05.sav",
+  "give": true,
+  "bytes": 36316
+ },
+ "_top/LoBue & DeLoach replication FINAL REPORT 2015.docx": {
+  "neutral": "d06.docx",
+  "give": false,
+  "bytes": 42525
+ },
+ "_top/LoBue Commentary on Replication.docx": {
+  "neutral": "d07.docx",
+  "give": false,
+  "bytes": 23352
+ }
+}

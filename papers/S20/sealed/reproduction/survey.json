@@ -1,0 +1,62 @@
+{
+  "local_id": "Row.24",
+  "node": "sqim7",
+  "title_o": "Priming addition facts with semantic relations.",
+  "verdict": "usable",
+  "verdict_reason": "EXP 1s.sav holds the four per-participant mean RTs the 2x2 within-subject interaction needs; recomputed F(1,48)=4.22, p=.0453 on the 49 rows the script keeps, matching P.value.R .045.",
+  "data_files": [
+    {
+      "path": "Data/EXP 1s.sav",
+      "opened": true,
+      "format": "sav",
+      "rows": 320,
+      "cols": 21,
+      "notes": "rows 50-320 are empty; 49 participants with data"
+    },
+    {
+      "path": "Data/Syntax1.sps",
+      "opened": true,
+      "format": "other",
+      "rows": 0,
+      "cols": 0,
+      "notes": "SPSS GLM 2x2 within syntax"
+    }
+  ],
+  "key_test": {
+    "from_script": "RPP_sqim7.R",
+    "test": "2x2 repeated-measures ANOVA (prime ac/mu x target sum/neutral), interaction F",
+    "variables": [
+      "id",
+      "avg_time_sum_ac",
+      "avg_time_neutral_ac",
+      "avg_time_sum_mu",
+      "avg_time_neutral_mu"
+    ],
+    "all_variables_present": true,
+    "statistic_reported": {
+      "p": "0.045",
+      "es": "MSE = 9,999 (table); script outputs partial eta^2"
+    }
+  },
+  "recompute": {
+    "attempted": true,
+    "method": "python recomputation (interaction F = t^2 of difference-of-differences)",
+    "result": "F(1,48)=4.224, p=0.0453, partial eta^2=0.081",
+    "matches_table": "yes"
+  },
+  "n_check": {
+    "N_R_table": 49,
+    "rows_after_exclusions": 49,
+    "match": "yes"
+  },
+  "obstacles": [
+    "getOSFfile() is sourced from http://sachaepskamp.com/files/OSF/getOSFfile.R (external, not run); script not runnable offline as written",
+    "Effect.Size.R in table is 'MSE = 9,999', not an effect size"
+  ],
+  "minutes": 8,
+  "sources_opened": [
+    "https://osf.io/sqim7/",
+    "https://api.osf.io/v2/nodes/i2nc8/files/osfstorage/",
+    "https://api.osf.io/v2/nodes/3jk5t/files/osfstorage/"
+  ]
+}

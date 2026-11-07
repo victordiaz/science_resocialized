@@ -1,0 +1,80 @@
+{
+  "local_id": "Row.116",
+  "node": "ivfu6",
+  "title_o": "Measuring the crowd within: Probabilistic representations within individuals.",
+  "verdict": "usable",
+  "verdict_reason": "The two delayed-session raw txt files merge to 174, the script's exclusions leave 140 (125 F / 15 M, age 22.0/3.1 as the script's checks say); one-sided paired t on MSE gives d=.34 as the table.",
+  "data_files": [
+    {
+      "path": "Data/rawdata_delayed_session1.txt",
+      "opened": true,
+      "format": "txt",
+      "rows": 231,
+      "cols": 32,
+      "notes": "tab-separated, NaN for missing"
+    },
+    {
+      "path": "Data/rawdata_delayed_session2.txt",
+      "opened": true,
+      "format": "txt",
+      "rows": 171,
+      "cols": 29,
+      "notes": "carries 'peaking' exclusion column"
+    },
+    {
+      "path": "Data/rawdata_immediate.txt",
+      "opened": true,
+      "format": "txt",
+      "rows": 484,
+      "cols": 0,
+      "notes": "other condition, not used by key test"
+    },
+    {
+      "path": "Data/data_steegenetal2014.mat",
+      "opened": false,
+      "format": "mat",
+      "rows": 0,
+      "cols": 0,
+      "notes": "postprocessed, not needed"
+    }
+  ],
+  "key_test": {
+    "from_script": "RPP_ivfu6.R",
+    "test": "one-sided paired t-test, MSE of first guess vs MSE of mean of two guesses (delayed condition); d = t/sqrt(n)",
+    "variables": [
+      "student_number_simple",
+      "q1..q8 (both sessions)",
+      "defocus_q1..q8 (both)",
+      "peaking"
+    ],
+    "all_variables_present": true,
+    "statistic_reported": {
+      "p": "0.001",
+      "es": "d = .34"
+    }
+  },
+  "recompute": {
+    "attempted": true,
+    "method": "python recomputation following the script's merge, exclusions and MSE",
+    "result": "t(139)=4.02, p(one-sided)=4.7e-05, d=0.340",
+    "matches_table": "yes"
+  },
+  "n_check": {
+    "N_R_table": 140,
+    "rows_after_exclusions": 140,
+    "match": "yes"
+  },
+  "obstacles": [
+    "getOSFfile() is sourced from http://sachaepskamp.com/files/OSF/getOSFfile.R (external, not run); script not runnable offline as written",
+    "script needs dplyr and compute.es::des (not base R)",
+    "table p .001 is a rounded upper bound of 4.7e-05",
+    "raw files carry student numbers"
+  ],
+  "minutes": 8,
+  "sources_opened": [
+    "https://osf.io/ivfu6/",
+    "https://api.osf.io/v2/nodes/arxvg/files/osfstorage/",
+    "https://api.osf.io/v2/nodes/hx25g/files/osfstorage/",
+    "https://api.osf.io/v2/nodes/8zdqt/files/osfstorage/"
+  ]
+}

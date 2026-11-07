@@ -1,0 +1,57 @@
+{
+ "dzu9b__RPP_38ges.R": {
+  "neutral": "d01.r",
+  "give": false,
+  "bytes": 2576
+ },
+ "emav8__analyse_data.do": {
+  "neutral": "d02.do",
+  "give": false,
+  "bytes": 739
+ },
+ "emav8__clean_data.do": {
+  "neutral": "d03.do",
+  "give": false,
+  "bytes": 6769
+ },
+ "emav8__data_cleaned.zip": {
+  "neutral": "d04.zip",
+  "give": true,
+  "bytes": 2499309
+ },
+ "emav8__test_of_correlation_replication_pleskac_2008.xlsx": {
+  "neutral": "d05.xlsx",
+  "give": true,
+  "bytes": 49301
+ },
+ "emav8__variable_key.rtf": {
+  "neutral": "d06.rtf",
+  "give": false,
+  "bytes": 2602
+ },
+ "unz/DrugData.dta": {
+  "neutral": "d07.dta",
+  "give": false,
+  "bytes": 685760
+ },
+ "unz/DrugData_sanitized.dta": {
+  "neutral": "d11.dta",
+  "give": true,
+  "bytes": 279193
+ },
+ "unz/fishingData.dta": {
+  "neutral": "d08.dta",
+  "give": true,
+  "bytes": 74793398
+ },
+ "unz/polydrug.dta": {
+  "neutral": "d09.dta",
+  "give": true,
+  "bytes": 2986
+ },
+ "unz/table6data.dta": {
+  "neutral": "d10.dta",
+  "give": true,
+  "bytes": 8262
+ }
+}

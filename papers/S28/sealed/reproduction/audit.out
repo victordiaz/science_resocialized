@@ -1,0 +1,10 @@
+[shim] dropped line(s): 32 
+> library("httr") 
+[shim] skipped library( httr )
+> library("RCurl") 
+[shim] skipped library( RCurl )
+> library("car") 
+Error in base::library(p, character.only = TRUE, ...) : 
+  there is no package called 'car'
+Calls: withVisible -> eval -> eval -> library -> <Anonymous>
+Execution halted

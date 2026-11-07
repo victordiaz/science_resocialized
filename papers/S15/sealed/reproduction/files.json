@@ -1,0 +1,72 @@
+{
+ "Analysis Audit/RPP_v8vft.R": {
+  "neutral": "d01.r",
+  "give": false,
+  "bytes": 3182
+ },
+ "Dataset - Replication of Fischer et al. (2008, JPSP)/all.sas7bdat": {
+  "neutral": "d02.sas7bdat",
+  "give": false,
+  "bytes": 443392
+ },
+ "Dataset - Replication of Fischer et al. (2008, JPSP)/all_sanitized.csv": {
+  "neutral": "d11.csv",
+  "give": true,
+  "bytes": 58609
+ },
+ "Dataset - Replication of Fischer et al. (2008, JPSP)/demographics.txt": {
+  "neutral": "d03.txt",
+  "give": false,
+  "bytes": 1047461
+ },
+ "Dataset - Replication of Fischer et al. (2008, JPSP)/demographics_sanitized.tsv": {
+  "neutral": "d12.tsv",
+  "give": true,
+  "bytes": 935426
+ },
+ "Dataset - Replication of Fischer et al. (2008, JPSP)/explicit.txt": {
+  "neutral": "d04.txt",
+  "give": true,
+  "bytes": 807234
+ },
+ "Dataset - Replication of Fischer et al. (2008, JPSP)/iat.txt": {
+  "neutral": "d05.txt",
+  "give": true,
+  "bytes": 6434893
+ },
+ "Dataset - Replication of Fischer et al. (2008, JPSP)/replicationanalysis.sas": {
+  "neutral": "d06.sas",
+  "give": false,
+  "bytes": 6452
+ },
+ "Dataset - Replication of Fischer et al. (2008, JPSP)/sessionTasks.txt": {
+  "neutral": "d07.txt",
+  "give": false,
+  "bytes": 4675221
+ },
+ "Dataset - Replication of Fischer et al. (2008, JPSP)/sessionTasks_sanitized.tsv": {
+  "neutral": "d13.tsv",
+  "give": true,
+  "bytes": 3403217
+ },
+ "Dataset - Replication of Fischer et al. (2008, JPSP)/sessions.txt": {
+  "neutral": "d08.txt",
+  "give": false,
+  "bytes": 321992
+ },
+ "Dataset - Replication of Fischer et al. (2008, JPSP)/sessions_sanitized.tsv": {
+  "neutral": "d14.tsv",
+  "give": true,
+  "bytes": 185245
+ },
+ "Final Report - Replication of Fischer et al. (2008, JPSP)/pre data collection ratliffreplicationoffischeretal.doc": {
+  "neutral": "d09.doc",
+  "give": false,
+  "bytes": 48128
+ },
+ "Final Report - Replication of Fischer et al. (2008, JPSP)/ratliffreplicationoffischeretal.finalreport.final.doc": {
+  "neutral": "d10.doc",
+  "give": false,
+  "bytes": 78848
+ }
+}

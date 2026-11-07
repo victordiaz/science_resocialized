@@ -1,0 +1,21 @@
+{
+ "local_id": "Row.64",
+ "removed": [
+  {
+   "label": "semantic prime / aggression prime",
+   "replaced_with": "word puzzle with aggression words"
+  },
+  {
+   "label": "global/local processing, processing style",
+   "replaced_with": "attending to the map's overall shape vs its details"
+  },
+  {
+   "label": "assimilate / contrast",
+   "replaced_with": "rated as more / less aggressive"
+  }
+ ],
+ "kept_terms": [
+  "`Global`/`Local`/`Control` as data values of mapCondition"
+ ],
+ "notes": "Data values kept in backticks so the analyst can map conditions."
+}

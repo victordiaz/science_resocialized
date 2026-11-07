@@ -1,0 +1,24 @@
+{
+  "local_id": "Row.12",
+  "removed": [
+    {
+      "label": "Irrelevant speech",
+      "replaced_with": "spoken words that participants are told to ignore"
+    },
+    {
+      "label": "phonologically similar / dissimilar speech",
+      "replaced_with": "similar-sounding / dissimilar-sounding speech"
+    },
+    {
+      "label": "irrelevant-sound condition",
+      "replaced_with": "background-sound condition"
+    }
+  ],
+  "kept_terms": [
+    "free recall",
+    "serial recall",
+    "strict serial criterion",
+    "Greenhouse-Geisser correction"
+  ],
+  "notes": "free/serial recall kept per the slice instructions, each now glossed (any order / presented order)."
+}

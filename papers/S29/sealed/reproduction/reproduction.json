@@ -1,0 +1,12 @@
+{"local_id":"Row.120","node":"73pnd",
+ "key_test":"Pearson r between ERN and EPS, one row per participant (startle_type == 'error'); predicted negative; protocol says one-tailed",
+ "variables":["participant","ERN","EPS","startle_type"],
+ "exclusions":"none in the posted file; it holds 42 participants (ids 1-51 minus 3,4,10,18,20,28,37,40,44). The report says 8 of 51 excluded (impedance > 5 kOhm or muscle artefact) leaving 43",
+ "n_rows_raw":126,"n_after_exclusions":42,"N_R_table":43,
+ "table":{"stat":"r = -.25","p":"0.11 (Tails.R = 1; T.pval.USE.R = .053)","es":"r = -.25"},
+ "r_script":{"ran":true,"stat":"t(40) = -1.654611, r = -0.2530988","p":"0.1058305 (two-sided)","es":"r = -0.2531","stdout_file":"audit.out","how":"audit_harness.R: getOSFfile mapped to the local csv, external source() skipped, httr/RCurl missing -> skipped; analysis lines unchanged"},
+ "python":{"ran":true,"stat":"r = -0.2531, t(40) = -1.6546","p":"0.1058 two-sided; 0.0529 one-sided (r < 0)","es":"r = -0.2531","file":"reproduce.py"},
+ "agreement":"all three agree on r = -.253 and p = .106 two-sided. N disagrees: table and report say 43, data and df give 42 (the report's own paired t-tests also use t(40)). Tails: the table and report label p = .11 one-tailed, but .11 is the two-sided value; the one-tailed p the protocol calls for is .053",
+ "verdict":"reproduced with a discrepancy",
+ "notes":"Anchored on the script and the table's r and p, which the data reproduce exactly. Two discrepancies, neither in the statistic: (1) N.R = 43 vs 42 in the data; with N = 43 the same r would give p = .1015, so the table's .11 matches 42, not 43. (2) The one-tailed label: the report writes 'r = -.25, p = .11, one-tailed', the table carries Tails.R = 1 and its own T.pval.USE.R = .053 (half of .106). The verdict on significance at .05 is the same either way (not significant), but a judge computing the protocol's one-tailed test gets p = .053, not .11.",
+ "minutes":9}

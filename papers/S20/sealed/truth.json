@@ -1,0 +1,46 @@
+{
+ "local_id": "Row.24",
+ "node": "sqim7",
+ "replicate_r": "yes",
+ "table": {
+  "p_r": "0.045",
+  "es_r": "MSE = 9,999",
+  "n_r": "49",
+  "direction_r": "same",
+  "test_r": "is",
+  "p_o": "<.001",
+  "es_o": "X",
+  "n_o": "154"
+ },
+ "reproduction": {
+  "key_test": "2 (prime AC vs MU) x 2 (digit target sum vs neutral) repeated-measures ANOVA on mean correct-response latency; prime x target interaction F",
+  "table": {
+   "stat": "F(1, 48) = 4.22",
+   "p": "0.045 (recalc 0.04542)",
+   "es": "MSE = 9,999 (an error term, not an effect size)"
+  },
+  "r_script": {
+   "ran": false,
+   "stat": null,
+   "p": null,
+   "es": null,
+   "stdout_file": "audit.out"
+  },
+  "python": {
+   "ran": true,
+   "stat": "F(1,48) = 4.2244",
+   "p": "0.045310",
+   "es": "partial eta^2 = 0.0809; MSE = 9999.2",
+   "file": "reproduce.py"
+  },
+  "agreement": "pending",
+  "verdict": "reproduced",
+  "n_after_exclusions": 49
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "Priming addition facts with semantic relations.",
+  "authors": "M Bassok, SF Pedigo, AT Oskarsson",
+  "journal": "JEPLMC"
+ }
+}

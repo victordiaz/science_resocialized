@@ -1,0 +1,25 @@
+raw shape (225, 8) | unique IDs 75
+{('Flankers', 'Flankers'): 75, ('Weapons', 'Black'): 75, ('Weapons', 'White'): 75}
+IDs per HiLoCat {'HighIMSHighEMS': 29, 'HighIMSLowEMS': 46}
+
+Stratum ID: df 74
+  HiLoCat       df 1  SS 0.11792  F 1.4541  p 0.2318
+  Residuals     df 73  SS 5.91985
+
+Stratum ID:Task: df 75
+  Task          df 1  SS 0.01183  F 0.5046  p 0.4797
+  HiLoCat:Task  df 1  SS 0.01014  F 0.4323  p 0.5129
+  Residuals     df 73  SS 1.71154
+
+Stratum Within: df 75
+  Residuals     df 75  SS 0.40440
+
+=== KEY TEST: HiLoCat x Task interaction (ID:Task stratum, as fit by the authors and the audit) ===
+F(1,73) = 0.4323, p = 0.5129, partial eta^2 = 0.0059, n IDs = 75
+
+(secondary, Weapons averaged per ID) interaction F(1,73) = 0.4323, p = 0.5129, partial eta^2 = 0.0059
+cell means (Weapons averaged):
+ Task            Flankers  Weapons
+HiLoCat                          
+HighIMSHighEMS    0.6755   0.6729
+HighIMSLowEMS     0.7030   0.7297

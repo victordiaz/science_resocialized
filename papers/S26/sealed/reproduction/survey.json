@@ -1,0 +1,74 @@
+{
+ "local_id": "Row.145",
+ "node": "76qc5",
+ "verdict": "usable",
+ "verdict_reason": "The individual-level .sav (120 participants in 40 groups of three) holds GivePool_B and both condition factors; averaging by group and running the 2x2 ANOVA gives F(1,36)=26.76, p=8.8e-6, partial eta2=.426, matching the table (p<1e-4, .426).",
+ "data_files": [
+  {
+   "path": "Data/Halevy_et_al._(2008)_Replication_Data.sav",
+   "opened": true,
+   "format": "sav",
+   "rows": 120,
+   "cols": 19,
+   "notes": "The file the audit script reads (osf.io/m3b7k resolves to this name). 10 groups per cell."
+  },
+  {
+   "path": "Data/Halevy_et_al._(2008)_Aggregated_Replication_Data.sav",
+   "opened": true,
+   "format": "sav",
+   "rows": 40,
+   "cols": 17,
+   "notes": "Group-level aggregate; the SPSS syntax uses its Pool_B_Percent."
+  },
+  {
+   "path": "Data/Halevy et al., 2008_Syntax_11 Dec 2014.sps",
+   "opened": true,
+   "format": "other",
+   "rows": null,
+   "cols": null,
+   "notes": "UNIANOVA Pool_B_Percent BY game x communication."
+  }
+ ],
+ "key_test": {
+  "from_script": "RPP_76qc5.R",
+  "test": "2x2 between-groups ANOVA (game IPD vs IPD-MD x communication) on group-mean GivePool_B; key term is the game main effect",
+  "variables": [
+   "Group_Num",
+   "Condition_Game",
+   "Condition_Communication",
+   "GivePool_B"
+  ],
+  "all_variables_present": true,
+  "statistic_reported": {
+   "p": "1e-04",
+   "es": "partial eta^2 = .426"
+  }
+ },
+ "recompute": {
+  "attempted": true,
+  "method": "python recomputation (statsmodels OLS, type I SS, balanced design)",
+  "result": "F(1,36)=26.76, p=8.8e-06, partial eta2=.4264",
+  "matches_table": "yes"
+ },
+ "n_check": {
+  "N_R_table": 120,
+  "rows_after_exclusions": 120,
+  "match": "yes"
+ },
+ "obstacles": [
+  "Unit of analysis is the group (40), N.R counts participants (120); a reproducer must aggregate first",
+  "Table p '1e-04' is a floor, the exact p is 8.8e-6"
+ ],
+ "minutes": 8,
+ "sources_opened": [
+  "https://api.osf.io/v2/nodes/76qc5/files/osfstorage/",
+  "https://api.osf.io/v2/nodes/zuimy/files/osfstorage/",
+  "https://api.osf.io/v2/nodes/94hng/files/osfstorage/",
+  "https://api.osf.io/v2/files/m3b7k/",
+  "Data/Halevy_et_al._(2008)_Replication_Data.sav",
+  "Data/Halevy_et_al._(2008)_Aggregated_Replication_Data.sav",
+  "Data/Halevy et al., 2008_Syntax_11 Dec 2014.sps",
+  "Analysis Audit/RPP_76qc5.R"
+ ],
+ "title_o": "ñIn_Group Loveî and ñOut_Group Hateî as Motives for Individual Participation in Intergroup Conflict: A New Game Paradigm"
+}

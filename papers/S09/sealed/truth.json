@@ -1,0 +1,47 @@
+{
+ "local_id": "Row.22",
+ "node": "p9thw",
+ "replicate_r": "no",
+ "table": {
+  "p_r": "0.72",
+  "es_r": "_2 = .01",
+  "n_r": "32",
+  "direction_r": "same",
+  "test_r": "is",
+  "p_o": "0.002",
+  "es_o": "MSE = .009",
+  "n_o": "18"
+ },
+ "reproduction": {
+  "key_test": "mixed ANOVA Type III, Group (monolingual 1 / bilingual 2, between) x Lag (1,3,5,8, within) on T2|T1 proportion correct; key effect Group x Lag interaction, Greenhouse-Geisser corrected",
+  "table": {
+   "stat": "F(2.33, 90) = 0.38",
+   "p": "0.72 (recalc 0.7166)",
+   "es": "eta^2 = .01"
+  },
+  "r_script": {
+   "ran": false,
+   "stat": "package missing (ez, reshape2)",
+   "p": "package missing",
+   "es": "package missing",
+   "stdout_file": null,
+   "note": "stopped at library('ez'): there is no package called 'ez'. As written its P-VALUE line prints res$ANOVA$p[4], the uncorrected p, not the GG p the table carries"
+  },
+  "python": {
+   "ran": true,
+   "stat": "F(3, 90) = 0.3803; GG eps = 0.7760, GG df (2.328, 69.837)",
+   "p": "p_GG = 0.7165 (uncorrected 0.7674)",
+   "es": "partial eta^2 = 0.0125",
+   "file": "reproduce.py"
+  },
+  "agreement": "Python and table agree: F 0.38 both, table p .72 = Python p_GG .7165 (table's recalculated p .7166), eta^2 .01 vs .0125 partial. R not run (ez missing). The table's df2 = 90 is the uncorrected df2 beside a corrected df1 2.33; the consistent GG df2 is 69.84 (p is unchanged by this, since it is computed from both corrected df).",
+  "verdict": "reproduced",
+  "n_after_exclusions": 32
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "How does bilingualism improve executive control? A comparison of active and reactive inhibition mechanisms.",
+  "authors": "LS Colzato, MT Bajo, W van den Wildenberg, D Paolieri, S Nieuwenhuis, W La Heij, B Hommel",
+  "journal": "JEPLMC"
+ }
+}

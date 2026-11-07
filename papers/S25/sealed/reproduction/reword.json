@@ -1,0 +1,18 @@
+{
+  "local_id": "Row.7",
+  "removed": [
+    {
+      "label": "In immediate serial recall",
+      "replaced_with": "When a list of words is shown and the participant must reproduce it in order straight away"
+    },
+    {
+      "label": "(the word-length effect)",
+      "replaced_with": "removed; the claim already states the direction plainly"
+    }
+  ],
+  "kept_terms": [
+    "serial position",
+    "recall"
+  ],
+  "notes": ""
+}

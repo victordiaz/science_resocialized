@@ -1,0 +1,71 @@
+{
+  "local_id": "Row.80",
+  "node": "79dey",
+  "title_o": "The effects of an implemental mind-set on attitude strength.",
+  "verdict": "usable",
+  "verdict_reason": "The script reads reconciling.for.repro.txt (skip 3 header lines); 70 rows flagged Include, ambivalence index from three items; one-way 3-group ANOVA gives F(2,67)=1.70, p=.191, eta^2=.048 as the table.",
+  "data_files": [
+    {
+      "path": "Data File/reconciling.for.repro.txt",
+      "opened": true,
+      "format": "txt",
+      "rows": 89,
+      "cols": 32,
+      "notes": "tab-separated, 3 summary lines above the header; Include column; free-text responses inside"
+    },
+    {
+      "path": "Data File/henderson.replication.data.dat",
+      "opened": true,
+      "format": "txt",
+      "rows": 97,
+      "cols": 34,
+      "notes": "full data, no Include flag"
+    },
+    {
+      "path": "Data File/henderson.replication.analysis.script.sas",
+      "opened": true,
+      "format": "other",
+      "rows": 0,
+      "cols": 0,
+      "notes": "SAS, references local V: drive"
+    }
+  ],
+  "key_test": {
+    "from_script": "RPP_79dey.R",
+    "test": "one-way between-subjects ANOVA of ambivalence (mean of StrongMixed, -NotTorn, Indecisive-4) across 3 conditions",
+    "variables": [
+      "Include",
+      "Condition",
+      "StrongMixed",
+      "NotTorn",
+      "Indecisive"
+    ],
+    "all_variables_present": true,
+    "statistic_reported": {
+      "p": "0.19",
+      "es": "eta^2 = .048"
+    }
+  },
+  "recompute": {
+    "attempted": true,
+    "method": "python recomputation",
+    "result": "F(2,67)=1.699, p=0.1907, eta^2=0.0483",
+    "matches_table": "yes"
+  },
+  "n_check": {
+    "N_R_table": 70,
+    "rows_after_exclusions": 70,
+    "match": "yes"
+  },
+  "obstacles": [
+    "getOSFfile() is sourced from http://sachaepskamp.com/files/OSF/getOSFfile.R (external, not run); script not runnable offline as written",
+    "one participant lacks Indecisive; script imputes via Data[49,33] <- (Data[49,22]+Data[49,22])/2, which uses one column twice and only gives the right value by coincidence (dropping the case gives p=.229)",
+    "omnibus is 3-group although the description names one-sided vs two-sided only"
+  ],
+  "minutes": 10,
+  "sources_opened": [
+    "https://osf.io/79dey/",
+    "https://api.osf.io/v2/nodes/wmnh8/files/osfstorage/",
+    "https://api.osf.io/v2/nodes/6vgt5/files/osfstorage/"
+  ]
+}

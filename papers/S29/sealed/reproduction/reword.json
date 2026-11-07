@@ -1,0 +1,30 @@
+{
+ "local_id": "Row.120",
+ "removed": [
+  {
+   "label": "error-related negativity / ERN (as a label)",
+   "replaced_with": "the error-minus-correct difference in scalp voltage 0-100 ms after the response; referred to by the column name `ERN`"
+  },
+  {
+   "label": "startle reflex potentiation / error-potentiated startle",
+   "replaced_with": "increase in the eye-blink to a sudden loud noise after errors vs after correct responses; column `EPS`"
+  },
+  {
+   "label": "arrow flanker task",
+   "replaced_with": "row of five arrowheads, press for the central one's direction, outer ones same or opposite"
+  },
+  {
+   "label": "startle probe",
+   "replaced_with": "the noise probe"
+  }
+ ],
+ "kept_terms": [
+  "EEG",
+  "EMG",
+  "eye-blink",
+  "reaction time",
+  "`ERN`",
+  "`EPS`"
+ ],
+ "notes": "`ERN` and `EPS` survive only as the data file's column names (verbatim per rule 5); prose no longer uses them as names of effects."
+}

@@ -1,0 +1,46 @@
+{
+ "local_id": "Row.29",
+ "node": "ujhlw",
+ "replicate_r": "yes",
+ "table": {
+  "p_r": "0.002",
+  "es_r": "d = .957",
+  "n_r": "15",
+  "direction_r": "same",
+  "test_r": "is",
+  "p_o": "0.023",
+  "es_o": "__p^2 = .09",
+  "n_o": "8"
+ },
+ "reproduction": {
+  "key_test": "two-sided one-sample t-test of per-participant proportion correct on triplet_type=='real' test trials (16 per participant) against 0.5; d = t/sqrt(n)",
+  "table": {
+   "stat": "t(14) = 3.708",
+   "p": "0.002 (T.pval.recalc.R = 0.00234)",
+   "es": "d = .957"
+  },
+  "r_script": {
+   "ran": false,
+   "stat": "not run (package missing: R.matlab)",
+   "p": "n/a",
+   "es": "n/a",
+   "stdout_file": "audit.out"
+  },
+  "python": {
+   "ran": true,
+   "stat": "t(14) = 3.708",
+   "p": "0.00234",
+   "es": "d = 0.957 (mean .700, sd .209, 95% CI [.584, .816])",
+   "file": "reproduce.py"
+  },
+  "agreement": "Table and Python agree exactly on t, df, p and d; R not run (R.matlab missing).",
+  "verdict": "reproduced",
+  "n_after_exclusions": 15
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "Multidimensional visual statistical learning.",
+  "authors": "NB Turk-Browne, PJ Isola, BJ Scholl, TA Treat",
+  "journal": "JEPLMC"
+ }
+}

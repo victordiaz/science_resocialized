@@ -1,0 +1,47 @@
+{
+ "local_id": "Row.145",
+ "node": "76qc5",
+ "replicate_r": "yes",
+ "table": {
+  "p_r": "1e-04",
+  "es_r": "__p^2 = .426",
+  "n_r": "120",
+  "direction_r": "same",
+  "test_r": "is",
+  "p_o": "0",
+  "es_o": "__p^2 = .59",
+  "n_o": "240"
+ },
+ "reproduction": {
+  "key_test": "2x2 between-groups ANOVA (Condition_Game x Condition_Communication) on group-mean GivePool_B (40 groups of 3); key term = Condition_Game main effect F(1,36); partial eta^2 = SS_game/(SS_game+SS_error)",
+  "table": {
+   "stat": "F(1,36) = 26.76",
+   "p": "1e-04 (a floor; recalc 8.85e-06)",
+   "es": "partial eta^2 = .426"
+  },
+  "r_script": {
+   "ran": false,
+   "stat": null,
+   "p": null,
+   "es": null,
+   "stdout_file": null,
+   "why": "package missing: dplyr is not installed in R 4.6.2 (foreign is present); the script also sources getOSFfile.R from an external URL"
+  },
+  "python": {
+   "ran": true,
+   "stat": "F(1,36) = 26.7636",
+   "p": "8.84e-06",
+   "es": "partial eta^2 = 0.4264",
+   "file": "reproduce.py"
+  },
+  "agreement": "table and Python agree (F 26.76, df 1/36, partial eta^2 .426; p 8.84e-06 vs the table's recalculated 8.85e-06, the table's 1e-04 is a floor). Cross-check on the team's aggregated file (Pool_B_Percent, the DV of their SPSS UNIANOVA, type III) gives the same F. R script not run.",
+  "verdict": "reproduced",
+  "n_after_exclusions": 120
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "\ufffdIn_Group Love\ufffd and \ufffdOut_Group Hate\ufffd as Motives for Individual Participation in Intergroup Conflict: A New Game Paradigm",
+  "authors": "N Halevy, G Bornstein, L Sagiv",
+  "journal": "PS"
+ }
+}

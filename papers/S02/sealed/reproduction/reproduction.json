@@ -1,0 +1,37 @@
+{
+ "local_id": "Row.6",
+ "node": "atgp5",
+ "key_test": "two-sided paired t-test of per-participant mean identification RT, correct rejections (meanRT_cr) vs misses (meanRT_miss); effect size dz = t/sqrt(n)",
+ "variables": [
+  "vpnum",
+  "meanRT_cr",
+  "meanRT_miss"
+ ],
+ "exclusions": "none at participant level; the shipped aggregate Agg_priming_ANOVA.dat averages all classified test trials (no misidentification filter, although the protocol text excludes misidentified study/test trials)",
+ "n_rows_raw": 32,
+ "n_after_exclusions": 32,
+ "N_R_table": 32,
+ "table": {
+  "stat": "t(31) = 2.40",
+  "p": "0.023 (recalc 0.02259)",
+  "es": "d = .424"
+ },
+ "r_script": {
+  "ran": true,
+  "stat": "t(31) = 2.3977",
+  "p": "0.02270886",
+  "es": "d = 0.42 (compute.es::des on t/sqrt(n))",
+  "stdout_file": "audit.out"
+ },
+ "python": {
+  "ran": true,
+  "stat": "t(31) = 2.3977",
+  "p": "0.022709",
+  "es": "dz = 0.4239",
+  "file": "reproduce.py"
+ },
+ "agreement": "all three agree on the aggregate file: table t(31)=2.40 p=.023 d=.424; R t=2.3977 p=0.02271 d=0.42; Python t=2.3977 p=0.022709 dz=0.4239",
+ "verdict": "reproduced",
+ "notes": "Anchored on the script's test, which matches the report's key effect. Trial-level check from Analysedaten_1.sav (5440 rows; phase 2, SDT_category 1-4): aggregating ALL labelled test trials reproduces every participant's meanRT_cr and meanRT_miss exactly (32/32), so the aggregate applies no identification filter. Applying the protocol's stated rule changes the numbers: excluding test misidentifications gives t(31)=2.136, p=.0407, t/sqrt(n)=.378; excluding study and test misidentifications drops participant 20 (no miss trials left) and gives t(30)=2.427, p=.0215. Same direction and significance either way. R ran with the remote helper source() line dropped and getOSFfile pointed at the local copy of OSF btr65; httr/RCurl skipped (only the helper used them). compute.es::des returns d = 0.42 (it passes the t/sqrt(n) value through).",
+ "minutes": 12
+}

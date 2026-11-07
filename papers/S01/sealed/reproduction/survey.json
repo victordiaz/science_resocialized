@@ -1,0 +1,67 @@
+{
+ "local_id": "Row.151",
+ "node": "apidb",
+ "verdict": "usable",
+ "verdict_reason": "The audit script reads Exp2_Data.sav (osf.io/qghwy; 132 rows) which holds mean_vignettes, Condition, Madeup_dummy and Exp_Error; excluding made-up answers and experimenter errors leaves 126, and the one-way ANOVA gives F(1,124)=.001, p=.974, d=.006, matching the table (p=.97, d=.006).",
+ "data_files": [
+  {
+   "path": "Study 2 Dataset/Exp2_Data.sav",
+   "opened": true,
+   "format": "sav",
+   "rows": 132,
+   "cols": 56,
+   "notes": "The key-test file (Study 2 = the replication of the targeted study). Condition 0/1 (69/63) without value labels; mean_vignettes precomputed from Dog, Trolley, Wallet, Plane, Resume, Kitten."
+  },
+  {
+   "path": "Study 1 Dataset/Exp1_Data.sav",
+   "opened": true,
+   "format": "sav",
+   "rows": 219,
+   "cols": 100,
+   "notes": "Study 1 data, not used by the key test; no mean_vignettes column."
+  }
+ ],
+ "key_test": {
+  "from_script": "RPP_apidb.R",
+  "test": "one-way ANOVA (equivalent to Student t), mean_vignettes ~ Condition, excluding Madeup_dummy==1 or Exp_Error==1; Cohen's d via lsr::cohensD",
+  "variables": [
+   "mean_vignettes",
+   "Condition",
+   "Madeup_dummy",
+   "Exp_Error"
+  ],
+  "all_variables_present": true,
+  "statistic_reported": {
+   "p": "0.97",
+   "es": "d = .006"
+  }
+ },
+ "recompute": {
+  "attempted": true,
+  "method": "python recomputation (scipy ttest_ind, F=t^2, pooled d)",
+  "result": "t(124)=-0.032, F(1,124)=0.001, p=.9745, |d|=.0057",
+  "matches_table": "yes"
+ },
+ "n_check": {
+  "N_R_table": 126,
+  "rows_after_exclusions": 126,
+  "match": "yes"
+ },
+ "obstacles": [
+  "Script builds the exclusion flag by writing to column index 60 of a 57-column frame (56 + Exclude); as written it would likely error in current R; the intent (exclude made-up or experimenter-error cases) is clear and reproduces N=126",
+  "Two datasets posted (Study 1, Study 2); only Study 2 is the key test",
+  "Top-level 'pre-data collection report.docx' (23.1 MB) skipped as non-data; not run in R"
+ ],
+ "minutes": 10,
+ "sources_opened": [
+  "https://api.osf.io/v2/nodes/apidb/files/osfstorage/",
+  "https://api.osf.io/v2/nodes/fsaau/files/osfstorage/",
+  "https://api.osf.io/v2/nodes/18fk6/files/osfstorage/",
+  "https://api.osf.io/v2/nodes/gkw5v/files/osfstorage/",
+  "https://api.osf.io/v2/files/qghwy/",
+  "Study 2 Dataset/Exp2_Data.sav",
+  "Study 1 Dataset/Exp1_Data.sav",
+  "Analysis Audit/RPP_apidb.R"
+ ],
+ "title_o": "With a clean conscience: Cleanliness reduces the severity of moral judgments."
+}

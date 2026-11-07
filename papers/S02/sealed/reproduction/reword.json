@@ -1,0 +1,26 @@
+{
+  "local_id": "Row.6",
+  "removed": [
+    {
+      "label": "Priming occurs for items that are not recognised",
+      "replaced_with": "Words a participant has studied but then fails to recognise are still identified faster than words they never studied"
+    },
+    {
+      "label": "continuous-identification trials",
+      "replaced_with": "word-identification trials of the kind described under Task and measure"
+    },
+    {
+      "label": "primacy/recency fillers",
+      "replaced_with": "filler words"
+    }
+  ],
+  "kept_terms": [
+    "identification RT",
+    "recognition judgement",
+    "hit",
+    "miss",
+    "false alarm",
+    "correct rejection"
+  ],
+  "notes": "hit/miss/false alarm/correct rejection kept: each is defined on the card by item status x judgement, and the column names use cr and miss."
+}

@@ -1,0 +1,68 @@
+{
+  "local_id": "Row.94",
+  "node": "mua6d",
+  "title_o": "Self-handicapping, excuse making, and counterfactual thinking: Consequences for self-esteem and future motivation.",
+  "verdict": "usable",
+  "verdict_reason": "McCrea.csv (OSF dy3zn) has 61 rows with Cond, Attempted, Correct; a one-tailed equal-variance t-test on Correct/Attempted, Control (Cond 2) > Handicap (Cond 1), reproduces t(59)=2.325, p=.01175. The table's d=.197 matches neither the script's d (0.30) nor the usual two-group d (~0.60).",
+  "data_files": [
+    {
+      "path": "Data/McCrea.csv",
+      "opened": true,
+      "format": "csv",
+      "rows": 61,
+      "cols": 32,
+      "notes": "Subject, Cond (1=32, 2=29), Attempted, Correct, percent, Date, Time, SMT1-25"
+    },
+    {
+      "path": "Data/effect size calculation.png",
+      "opened": true,
+      "format": "other",
+      "rows": null,
+      "cols": null,
+      "notes": "spreadsheet screenshot of the original study's effect size (t=1.87, df=26), not the replication"
+    },
+    {
+      "path": "Data/McCreaPrimaryAnalysis.spv",
+      "opened": false,
+      "format": "other",
+      "rows": null,
+      "cols": null,
+      "notes": "SPSS output, not opened"
+    }
+  ],
+  "key_test": {
+    "from_script": "RPP_mua6d.R",
+    "test": "one-tailed independent t-test, equal variances, accuracy Correct/Attempted, Control > Handicap",
+    "variables": [
+      "Cond",
+      "Correct",
+      "Attempted"
+    ],
+    "all_variables_present": true,
+    "statistic_reported": {
+      "p": "0.01175",
+      "es": "d = .197"
+    }
+  },
+  "recompute": {
+    "attempted": true,
+    "method": "python recomputation (scipy ttest_ind, alternative=greater)",
+    "result": "t(59)=2.325, p=0.01175 (one-tailed); script's d=t/sqrt(n)=0.298",
+    "matches_table": "yes"
+  },
+  "n_check": {
+    "N_R_table": 61,
+    "rows_after_exclusions": 61,
+    "match": "yes"
+  },
+  "obstacles": [
+    "Cond coding (2 = Control) is stated only in the R script",
+    "table effect size d=.197 not reproduced by the script's formula"
+  ],
+  "minutes": 6,
+  "sources_opened": [
+    "https://api.osf.io/v2/nodes/pnfr4/files/osfstorage/",
+    "https://api.osf.io/v2/nodes/bn9if/files/osfstorage/",
+    "https://api.osf.io/v2/files/dy3zn/"
+  ]
+}

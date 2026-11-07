@@ -1,0 +1,36 @@
+{
+ "local_id": "Row.29",
+ "node": "ujhlw",
+ "key_test": "two-sided one-sample t-test of per-participant proportion correct on triplet_type=='real' test trials (16 per participant) against 0.5; d = t/sqrt(n)",
+ "variables": [
+  "correct",
+  "triplet_type (per subjectNN.mat struct 'data')"
+ ],
+ "exclusions": "none (pseudo-triplet trials discarded by design; no participants excluded)",
+ "n_rows_raw": 480,
+ "n_after_exclusions": 15,
+ "N_R_table": 15,
+ "table": {
+  "stat": "t(14) = 3.708",
+  "p": "0.002 (T.pval.recalc.R = 0.00234)",
+  "es": "d = .957"
+ },
+ "r_script": {
+  "ran": false,
+  "stat": "not run (package missing: R.matlab)",
+  "p": "n/a",
+  "es": "n/a",
+  "stdout_file": "audit.out"
+ },
+ "python": {
+  "ran": true,
+  "stat": "t(14) = 3.708",
+  "p": "0.00234",
+  "es": "d = 0.957 (mean .700, sd .209, 95% CI [.584, .816])",
+  "file": "reproduce.py"
+ },
+ "agreement": "Table and Python agree exactly on t, df, p and d; R not run (R.matlab missing).",
+ "verdict": "reproduced",
+ "notes": "n_rows_raw = 15 files x 32 test trials. Per-participant proportions match the report's table of recall rates (e.g. 81, 63, 94, 81, 100 ...). Script defects noted by the survey stand: n <- nrow(p.cor) on a vector is NULL, so its d line would fail even with R.matlab; d = t/sqrt(15) is what the report uses. Exploratory exclusion of aware participants is not part of the key test.",
+ "minutes": 6
+}

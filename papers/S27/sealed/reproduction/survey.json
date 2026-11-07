@@ -1,0 +1,18 @@
+{
+  "local_id": "Row.81",
+  "node": "xse7q",
+  "title_o": "A needs-based model of reconciliation: Satisfying the differential emotional needs of victim and perpetrator as a key to promoting reconciliation.",
+  "verdict": "usable",
+  "verdict_reason": "The .sav (guid 8y94x) has 146 rows, 141 with AvgWillingReconcileTime2 and both factor codes; the audit script's 2x2 between ANOVA, run in base R, gives the role x message interaction F(1,137)=1.425, p=.235, partial eta^2=.0103, matching the table. The script as written fails on current foreign because value labels turn the DV into a factor; use.value.labels=FALSE fixes it.",
+  "data_files": [
+    {"path": "Data, codebook, and syntax/Shnabel & Nadler Rep Data - for OSF upload 2.23.2015.sav", "opened": true, "format": "sav", "rows": 146, "cols": 95, "notes": "one row per participant; 2 rows lack the role/message codes, 5 lack the DV; 141 complete cases; cells 33/35/39/37"},
+    {"path": "Data, codebook, and syntax/Shnabel & Nadler Rep Data - for OSF upload 2.23.2015.csv", "opened": false, "format": "csv", "rows": null, "cols": null, "notes": "csv twin of the .sav, not opened"},
+    {"path": "Data, codebook, and syntax/Shnabel & Nadler Exp 4 Syntax for Upload.sps", "opened": false, "format": "other", "rows": null, "cols": null, "notes": "SPSS syntax, not opened"}
+  ],
+  "key_test": {"from_script": "RPP_xse7q.R", "test": "aov AvgWillingReconcileTime2 ~ VictimOrPerpV0P1 * AcceptOrEmpowerA0E1 (between subjects, type 1 SS), key statistic = interaction", "variables": ["ParticipantNumber", "AvgWillingReconcileTime2", "VictimOrPerpV0P1", "AcceptOrEmpowerA0E1"], "all_variables_present": true, "statistic_reported": {"p": "0.235", "es": "partial eta^2 = .010"}},
+  "recompute": {"attempted": true, "method": "ran the audit script's model in base R (foreign, aov) with use.value.labels=FALSE; also type-3 via drop1", "result": "F(1,137)=1.425, p=0.2347, partial eta^2=0.0103 (type 1 and type 3 identical for the interaction)", "matches_table": "yes"},
+  "n_check": {"N_R_table": 141, "rows_after_exclusions": 141, "match": "yes"},
+  "obstacles": ["audit script errors as written: read.spss with value labels makes the DV a factor (value 1 is labelled 'Low willingness to reconcile'); needs use.value.labels=FALSE"],
+  "minutes": 7,
+  "sources_opened": ["https://osf.io/xse7q/", "https://api.osf.io/v2/files/8y94x/", "https://api.osf.io/v2/nodes/7dhum/files/osfstorage/", "https://api.osf.io/v2/nodes/wgate/files/osfstorage/"]
+}

@@ -1,0 +1,47 @@
+{
+ "local_id": "Row.107",
+ "node": "edcr7",
+ "replicate_r": "no",
+ "table": {
+  "p_r": "0.189",
+  "es_r": "d = -0.21",
+  "n_r": "158",
+  "direction_r": "opposite",
+  "test_r": "is",
+  "p_o": "prep = .92",
+  "es_o": "d = .45",
+  "n_o": "86"
+ },
+ "reproduction": {
+  "key_test": "independent-samples Student t-test (var.equal), learning = RB12Mean - FSMean, Achievement prime (1) vs Control (2), rows with Include1 = 'Include for analyses'",
+  "table": {
+   "stat": "t(156) = 1.318",
+   "p": "0.189",
+   "es": "d = -0.21"
+  },
+  "r_script": {
+   "ran": true,
+   "stat": "t(156) = -1.318166",
+   "p": "0.1893802",
+   "es": "d = -0.1 (compute.es::des on t/sqrt(N) with n1 = n2 = N)",
+   "stdout_file": "audit.out",
+   "how": "audit script run unmodified through a shim that maps getOSFfile() to the local downloaded copy and skips library(httr), library(RCurl) and the remote source() of getOSFfile.R (no network beyond osf.io)"
+  },
+  "python": {
+   "ran": true,
+   "stat": "t(156) = -1.3182",
+   "p": "0.1894",
+   "es": "Cohen's d pooled (prime - control) = -0.2097",
+   "file": "reproduce.py"
+  },
+  "agreement": "t and p: all three agree (|t| 1.318, p .189; the table stores |t| with Direction 'opposite'). Effect size: table -0.21 and Python -0.2097 agree; the R script prints -0.10, wrong by a factor of two because it feeds t/sqrt(N) as d and sets both group sizes to N = 158.",
+  "verdict": "reproduced",
+  "n_after_exclusions": 158
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "Nonconscious goal pursuit in novel environments: The case of implicit learning.",
+  "authors": "B Eitam, RR Hassin, Y Schul",
+  "journal": "PS"
+ }
+}

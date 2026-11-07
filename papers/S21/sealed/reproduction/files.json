@@ -1,0 +1,32 @@
+{
+ "Analysis Audit/RPP.ahpik.R": {
+  "neutral": "d01.r",
+  "give": false,
+  "bytes": 2668
+ },
+ "Data/YapMu.xlsx": {
+  "neutral": "d02.xlsx",
+  "give": true,
+  "bytes": 1871217
+ },
+ "Data/YapPrimaryAnalysis.spv": {
+  "neutral": "d03.spv",
+  "give": false,
+  "bytes": 16199
+ },
+ "_top/MJYapDABalotaCSTseDBesner2008ReplicationReport_final.docx": {
+  "neutral": "d04.docx",
+  "give": false,
+  "bytes": 24862
+ },
+ "_top/Yap power.R": {
+  "neutral": "d05.r",
+  "give": false,
+  "bytes": 1074
+ },
+ "_top/pre data collection MJYapDABalotaCSTseDBesnerReplicationReport.docx": {
+  "neutral": "d06.docx",
+  "give": false,
+  "bytes": 10186
+ }
+}

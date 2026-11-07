@@ -1,0 +1,46 @@
+{
+ "local_id": "Row.135",
+ "node": "2gkjt",
+ "replicate_r": "no",
+ "table": {
+  "p_r": "0",
+  "es_r": "d=.21",
+  "n_r": "3597",
+  "direction_r": "same",
+  "test_r": "is",
+  "p_o": "prep = .18",
+  "es_o": "d = -.004",
+  "n_o": "564"
+ },
+ "reproduction": {
+  "key_test": "Welch two-sample t-test of implicit preference imppref (sign-aligned IAT D), new-pair raters (rateorig 0) vs original-pair raters (rateorig 1), immediate session",
+  "table": {
+   "stat": "t(3511.1) = -6.31",
+   "p": "0 (recalc 3.14e-10)",
+   "es": "d = .21"
+  },
+  "r_script": {
+   "ran": false,
+   "stat": null,
+   "p": null,
+   "es": null,
+   "stdout_file": "audit.out"
+  },
+  "python": {
+   "ran": true,
+   "stat": "t(3511.1) = -6.3092",
+   "p": "3.154e-10",
+   "es": "Cohen's d (pooled SD) = 0.2108",
+   "file": "reproduce.py"
+  },
+  "agreement": "pending",
+  "verdict": "reproduced",
+  "n_after_exclusions": 3597
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "Implicit attitude generalization occurs immediately; explicit attitude generalization takes time",
+  "authors": "KA Ranganath, BA Nosek",
+  "journal": "PS"
+ }
+}

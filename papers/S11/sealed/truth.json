@@ -1,0 +1,46 @@
+{
+ "local_id": "Row.132",
+ "node": "b98zw",
+ "replicate_r": "no",
+ "table": {
+  "p_r": "0.254",
+  "es_r": "__p^2 = 0.0476",
+  "n_r": "30",
+  "direction_r": "same",
+  "test_r": "is",
+  "p_o": "<.005",
+  "es_o": "__p^2 = .18",
+  "n_o": "25"
+ },
+ "reproduction": {
+  "key_test": "mixed ANOVA, Condi (2 = headphones off, 4 = headphones on; between) x Discussant (1-4; within) on Looktime; key effect interaction, Greenhouse-Geisser corrected",
+  "table": {
+   "stat": "F(1.48, 41.458) = 1.401",
+   "p": "0.254",
+   "es": "partial eta^2 = 0.0476"
+  },
+  "r_script": {
+   "ran": false,
+   "stat": "package missing (ez)",
+   "p": "package missing",
+   "es": "package missing",
+   "stdout_file": null
+  },
+  "python": {
+   "ran": true,
+   "stat": "F(3, 84) = 1.4008; GG eps = 0.4935, GG df (1.481, 41.458)",
+   "p": "p_GG = 0.2542 (uncorrected 0.2483)",
+   "es": "partial eta^2 = 0.0476",
+   "file": "reproduce.py"
+  },
+  "agreement": "Python and table agree exactly (F 1.401, GG df 1.48/41.458, p .254, partial eta^2 .0476). R not run (ez missing).",
+  "verdict": "reproduced",
+  "n_after_exclusions": 120
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "Where do we look during potentially offensive behavior?",
+  "authors": "JR Crosby, B Monin, D Richardson",
+  "journal": "PS"
+ }
+}

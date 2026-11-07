@@ -1,0 +1,55 @@
+{
+  "local_id": "Row.29",
+  "node": "ujhlw",
+  "title_o": "Multidimensional visual statistical learning.",
+  "verdict": "usable",
+  "verdict_reason": "data.zip (osf.io/mfeq5) holds 15 subject .mat files with correct and triplet_type; a one-sample t-test of the proportion correct on real triplets against .5 gives t(14)=3.708, p=.0023, d=.957, exactly the table and report.",
+  "data_files": [
+    {
+      "path": "Data/data.zip",
+      "opened": true,
+      "format": "mat",
+      "rows": 15,
+      "cols": 8,
+      "notes": "15 subjectNN.mat (struct data: correct, response, order_within_trial, triplet_type, trial_order, params, timestamp, Ntrials; 32 trials each) plus analysis.m"
+    }
+  ],
+  "key_test": {
+    "from_script": "RPP_ujhlw.R",
+    "test": "one-sample t-test of per-subject proportion correct on triplet_type==\"real\" trials vs 0.5; d = t/sqrt(n)",
+    "variables": [
+      "correct",
+      "triplet_type"
+    ],
+    "all_variables_present": true,
+    "statistic_reported": {
+      "p": "0.002",
+      "es": "d = .957"
+    }
+  },
+  "recompute": {
+    "attempted": true,
+    "method": "python recomputation (scipy.io.loadmat; R.matlab not installed)",
+    "result": "t(14)=3.708, p=0.00234, d=0.957",
+    "matches_table": "yes"
+  },
+  "n_check": {
+    "N_R_table": 15,
+    "rows_after_exclusions": 15,
+    "match": "yes"
+  },
+  "obstacles": [
+    "MATLAB .mat format; script needs R.matlab",
+    "script bug: nrow(p.cor) on a vector returns NULL, so its effect-size line fails as written",
+    "zip has files at root, not in the TurkFiles folder the script expects (harmless)"
+  ],
+  "minutes": 8,
+  "sources_opened": [
+    "https://osf.io/ujhlw/",
+    "https://api.osf.io/v2/nodes/vkybt/files/osfstorage/",
+    "https://api.osf.io/v2/nodes/76hmp/files/osfstorage/",
+    "https://api.osf.io/v2/nodes/rf5su/files/osfstorage/",
+    "https://api.osf.io/v2/nodes/4mqib/files/osfstorage/",
+    "https://osf.io/mfeq5/"
+  ]
+}

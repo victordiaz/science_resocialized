@@ -1,0 +1,70 @@
+{
+  "local_id": "Row.146",
+  "node": "dncxa",
+  "title_o": "A word-order constraint on phonological activation",
+  "verdict": "usable",
+  "verdict_reason": "F1RT_readyforanalysis.sav (osf.io/d3mpe; 24 subjects x congruent/incongruent means) holds the object-naming group (n=12 = N.R); a paired t-test gives t(11)=-1.88, p=.087, dz=.543, matching the table (p .09, dz .548, which is 1.9/sqrt(12) from the rounded t).",
+  "data_files": [
+    {
+      "path": "Data/F1RT_readyforanalysis.sav",
+      "opened": true,
+      "format": "sav",
+      "rows": 24,
+      "cols": 4,
+      "notes": "Per-subject condition means; 12 colour-naming and 12 object-naming ('naming') subjects"
+    },
+    {
+      "path": "Data/alldata.sav",
+      "opened": true,
+      "format": "sav",
+      "rows": 1920,
+      "cols": 9,
+      "notes": "Trial-level data (Subject, NamingTask, Item, RT, Errors, Condition, ...); the aggregation into F1 was not re-derived"
+    },
+    {
+      "path": "Data/F2RT_readyforanalysis.sav",
+      "opened": true,
+      "format": "sav",
+      "rows": 80,
+      "cols": 4,
+      "notes": "By-item means (F2), not used for the key test"
+    }
+  ],
+  "key_test": {
+    "from_script": "RPP_dncxa.R",
+    "test": "paired t-test of congruent vs incongruent mean naming RT, object-naming subjects only (by-subjects F1)",
+    "variables": [
+      "Subject",
+      "NamingTask",
+      "congruent_mean",
+      "incongruent_mean"
+    ],
+    "all_variables_present": true,
+    "statistic_reported": {
+      "p": "0.09",
+      "es": "dz = .548"
+    }
+  },
+  "recompute": {
+    "attempted": true,
+    "method": "python recomputation (scipy ttest_rel)",
+    "result": "t(11)=-1.882, p=.0866, dz=t/sqrt(12)=.543",
+    "matches_table": "yes"
+  },
+  "n_check": {
+    "N_R_table": 12,
+    "rows_after_exclusions": 12,
+    "match": "yes"
+  },
+  "obstacles": [
+    "Key test runs on pre-aggregated means; deriving them from alldata.sav (error/outlier rules in the .sps) was not checked",
+    "Audit script's nrow(subjects)/2 is the per-task n; the two tasks have different subjects",
+    "Script needs tidyr"
+  ],
+  "minutes": 6,
+  "sources_opened": [
+    "https://api.osf.io/v2/nodes/saez8/files/osfstorage/",
+    "https://api.osf.io/v2/nodes/8nxp3/files/osfstorage/",
+    "https://api.osf.io/v2/files/d3mpe/"
+  ]
+}

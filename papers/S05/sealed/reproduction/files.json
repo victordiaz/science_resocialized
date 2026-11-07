@@ -1,0 +1,37 @@
+{
+ "Analysis_Audit/RPP_rzjvn.R": {
+  "neutral": "d01.r",
+  "give": false,
+  "bytes": 2774
+ },
+ "Dataset/Vul_etal_Original_Replication_ANOVA_datasets.csv": {
+  "neutral": "d02.csv",
+  "give": false,
+  "bytes": 29139
+ },
+ "Dataset/Vul_etal_Original_Replication_ANOVA_datasets.xlsx": {
+  "neutral": "d03.xlsx",
+  "give": false,
+  "bytes": 83784
+ },
+ "Dataset/anova_datasets_header_removed.csv": {
+  "neutral": "d04.csv",
+  "give": true,
+  "bytes": 14010
+ },
+ "Dataset/atp6-compress.zip": {
+  "neutral": "d05.zip",
+  "give": false,
+  "bytes": 3596071
+ },
+ "Replication_Report/Pre-DataCollection_report.pdf": {
+  "neutral": "d06.pdf",
+  "give": false,
+  "bytes": 53516
+ },
+ "Replication_Report/RP_Barnett-Cowan_ReplicationReport.pdf": {
+  "neutral": "d07.pdf",
+  "give": false,
+  "bytes": 171410
+ }
+}

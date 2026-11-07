@@ -1,0 +1,47 @@
+{
+ "local_id": "Row.116",
+ "node": "ivfu6",
+ "replicate_r": "yes",
+ "table": {
+  "p_r": "0.001",
+  "es_r": "d = .34",
+  "n_r": "140",
+  "direction_r": "same",
+  "test_r": "is",
+  "p_o": "<.01",
+  "es_o": "d = 0.47",
+  "n_o": "173"
+ },
+ "reproduction": {
+  "key_test": "paired t-test, delayed condition: per-participant MSE of guess 1 (session 1) vs MSE of the per-question mean of guess 1 and guess 2 (session 2), 8 questions, true values from the script; d_z = t/sqrt(n)",
+  "table": {
+   "stat": "t(139) = 4.02",
+   "p": "0.001 (recalc two-sided 9.5e-05)",
+   "es": "d = .34"
+  },
+  "r_script": {
+   "ran": false,
+   "stat": null,
+   "p": null,
+   "es": null,
+   "stdout_file": null,
+   "why": "package missing: dplyr is not installed in R 4.6.2 (requireNamespace FALSE; compute.es is present); the script also sources getOSFfile.R from an external URL"
+  },
+  "python": {
+   "ran": true,
+   "stat": "t(139) = 4.0217",
+   "p": "4.72e-05 one-sided (the audit script's alternative='greater'); 9.44e-05 two-sided",
+   "es": "d_z = 0.340",
+   "file": "reproduce.py"
+  },
+  "agreement": "table and Python agree on t (4.02), df (139), d (.34) and p (table's recalculated two-sided 9.5e-05 vs 9.44e-05; the table's .001 is a rounded bound). R script not run. The sample checks the script prints (125 F / 15 M, age 22.0 / 3.1) are matched.",
+  "verdict": "reproduced",
+  "n_after_exclusions": 140
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "Measuring the crowd within: Probabilistic representations within individuals.",
+  "authors": "E Vul, H Pashler",
+  "journal": "PS"
+ }
+}

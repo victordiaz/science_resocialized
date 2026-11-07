@@ -1,0 +1,32 @@
+{
+ "Analysis_Audit/RPP_mua6d.R": {
+  "neutral": "d01.r",
+  "give": false,
+  "bytes": 2837
+ },
+ "Data/McCrea.csv": {
+  "neutral": "d02.csv",
+  "give": true,
+  "bytes": 6624
+ },
+ "Data/McCreaPrimaryAnalysis.spv": {
+  "neutral": "d03.spv",
+  "give": false,
+  "bytes": 5270
+ },
+ "Data/effect size calculation.png": {
+  "neutral": "d04.png",
+  "give": false,
+  "bytes": 30308
+ },
+ "Data/power analysis.png": {
+  "neutral": "d05.png",
+  "give": false,
+  "bytes": 101344
+ },
+ "top/ReplicationReport_final.docx": {
+  "neutral": "d06.docx",
+  "give": false,
+  "bytes": 24320
+ }
+}

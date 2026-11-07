@@ -1,0 +1,46 @@
+{
+ "local_id": "Row.6",
+ "node": "atgp5",
+ "replicate_r": "yes",
+ "table": {
+  "p_r": "0.023",
+  "es_r": "d = .424",
+  "n_r": "32",
+  "direction_r": "same",
+  "test_r": "is",
+  "p_o": "0.002",
+  "es_o": "dz = 0.724",
+  "n_o": "24"
+ },
+ "reproduction": {
+  "key_test": "two-sided paired t-test of per-participant mean identification RT, correct rejections (meanRT_cr) vs misses (meanRT_miss); effect size dz = t/sqrt(n)",
+  "table": {
+   "stat": "t(31) = 2.40",
+   "p": "0.023 (recalc 0.02259)",
+   "es": "d = .424"
+  },
+  "r_script": {
+   "ran": false,
+   "stat": null,
+   "p": null,
+   "es": null,
+   "stdout_file": "audit.out"
+  },
+  "python": {
+   "ran": true,
+   "stat": "t(31) = 2.3977",
+   "p": "0.022709",
+   "es": "dz = 0.4239",
+   "file": "reproduce.py"
+  },
+  "agreement": "all three agree on the aggregate file: table t(31)=2.40 p=.023 d=.424; R t=2.3977 p=0.02271 d=0.42; Python t=2.3977 p=0.022709 dz=0.4239",
+  "verdict": "reproduced",
+  "n_after_exclusions": 32
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "A single-system account of the relationship between priming, recognition, and fluency.",
+  "authors": "CJ Berry, DR Shanks, RN Henson",
+  "journal": "JEPLMC"
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "local_id": "Row.81",
+ "node": "xse7q",
+ "key_test": "between-subjects 2 (VictimOrPerpV0P1) x 2 (AcceptOrEmpowerA0E1) ANOVA on AvgWillingReconcileTime2; term = role x message interaction",
+ "variables": [
+  "ParticipantNumber",
+  "VictimOrPerpV0P1",
+  "AcceptOrEmpowerA0E1",
+  "AvgWillingReconcileTime2"
+ ],
+ "exclusions": "listwise deletion of cases missing the DV (5) or the condition codes (2); 146 -> 141; cells 33/34/37/37",
+ "n_rows_raw": 146,
+ "n_after_exclusions": 141,
+ "N_R_table": 141,
+ "table": {
+  "stat": "F(1, 137) = 1.43",
+  "p": "0.235",
+  "es": "partial eta^2 = .010"
+ },
+ "r_script": {
+  "ran": true,
+  "stat": "as written: error (read.spss value labels turn the DV into a factor; aov fails). With one change, use.value.labels=FALSE: F(1,137) = 1.425",
+  "p": "0.2347",
+  "es": "partial eta^2 = 0.0103",
+  "stdout_file": "audit.out"
+ },
+ "python": {
+  "ran": true,
+  "stat": "F(1, 137) = 1.425 (type I and type III identical)",
+  "p": "0.2347",
+  "es": "partial eta^2 = 0.0103",
+  "file": "reproduce.py"
+ },
+ "agreement": "All three agree (table 1.43 / .235 / .010; R with the one-line label fix 1.4248 / .2347 / .0103; Python 1.425 / .2347 / .0103). The script as written does not run.",
+ "verdict": "reproduced",
+ "notes": "Cell means show the pattern opposite to the prediction (victims 4.08 acceptance vs 3.87 empowerment; perpetrators 4.86 vs 5.11), consistent with Direction.R = opposite. Second plausible test held apart: the mixed-ANOVA Time x Role x Message term on willingness gives F(1,137)=0.0002, p=.988; the table and report key the time-2 between-subjects interaction. T.pval.recalc.R (.2338) is from the rounded F=1.43. pyreadstat reads 93 columns where foreign reports 95 (long-string split), irrelevant to the test.",
+ "minutes": 8
+}

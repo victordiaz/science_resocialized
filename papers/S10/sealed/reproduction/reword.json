@@ -1,0 +1,25 @@
+{
+ "local_id": "Row.146",
+ "removed": [
+  {
+   "label": "phonological activation",
+   "replaced_with": "preparing the sounds of the word"
+  },
+  {
+   "label": "picture-word naming (paradigm label)",
+   "replaced_with": "participants name coloured line drawings aloud"
+  },
+  {
+   "label": "voice-key",
+   "replaced_with": "speech onsets detected by a microphone trigger"
+  }
+ ],
+ "kept_terms": [
+  "noun phrase",
+  "onset",
+  "congruent/incongruent (defined in card)",
+  "Latin-square",
+  "F1/F2 (by-subjects/by-items)"
+ ],
+ "notes": ""
+}

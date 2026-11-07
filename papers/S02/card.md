@@ -23,5 +23,5 @@
 - `d08.sav` (SPSS, 2 KB): SPSS twin of the .dat, not opened
 - `d09.dat` (text, 2 KB)
 - `d10.sav` (SPSS, 2 KB)
-- `d11.sav` (SPSS, 2.3 MB): 5440 rows 58 columns trial-level raw data, 32 unique vpnum; aggregation to the .dat file is not scripted anywhere on the node
+- `d14.sav` (SPSS, 2.7 MB)
 <!-- files:end -->

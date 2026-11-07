@@ -1,0 +1,46 @@
+{
+ "local_id": "Row.117",
+ "node": "rzjvn",
+ "replicate_r": "yes",
+ "table": {
+  "p_r": "1e-12",
+  "es_r": "_^2 = .261",
+  "n_r": "12",
+  "direction_r": "same",
+  "test_r": "is",
+  "p_o": "<.00001",
+  "es_o": "__p^2 = .308",
+  "n_o": "12"
+ },
+ "reproduction": {
+  "key_test": "full-factorial fixed-effects OLS ANOVA on 720 per-subject cell values (temporal selection) with factors measure(3) x target(2) x SOA(10), subject not modelled (Matlab anovan 'full'); term = three-way interaction measure x target x SOA",
+  "table": {
+   "stat": "F(18, 660) = 12.98",
+   "p": "1e-12 (placeholder; T.pval.recalc.R = 3.35e-33)",
+   "es": "eta^2 = .261"
+  },
+  "r_script": {
+   "ran": false,
+   "stat": "not run (package missing: car; also needs heplots, xlsx, reshape2)",
+   "p": "n/a",
+   "es": "n/a",
+   "stdout_file": "audit.out"
+  },
+  "python": {
+   "ran": true,
+   "stat": "F(18, 660) = 12.982 (type II = type III, balanced)",
+   "p": "3.3e-33",
+   "es": "partial eta^2 = 0.261",
+   "file": "reproduce.py"
+  },
+  "agreement": "Table and Python agree (F 12.98 vs 12.982, df 18/660, partial eta^2 .261, recalc p 3.35e-33 vs 3.3e-33). R not run.",
+  "verdict": "reproduced",
+  "n_after_exclusions": 720
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "Temporal selection is suppressed, delayed, and diffused during the attentional blink.",
+  "authors": "E Vul, M Nieuwenstein, N Kanwisher",
+  "journal": "PS"
+ }
+}

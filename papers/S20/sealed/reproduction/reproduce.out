@@ -1,0 +1,16 @@
+EXP 1s.sav shape: (320, 21)
+rows with an id: 49  unique ids: 49  NA in the four cells: 0
+cell means (ms): {'avg_time_sum_ac': np.float64(933.3), 'avg_time_neutral_ac': np.float64(855.8), 'avg_time_sum_mu': np.float64(863.5), 'avg_time_neutral_mu': np.float64(844.8)}
+cell SEMs (ms): {'avg_time_sum_ac': np.float64(30.4), 'avg_time_neutral_ac': np.float64(23.3), 'avg_time_sum_mu': np.float64(21.8), 'avg_time_neutral_mu': np.float64(21.3)}
+
+statsmodels AnovaRM (2x2 within):
+                 F Value  Num DF  Den DF    Pr > F
+prime          8.427671     1.0    48.0  0.005568
+target        11.836908     1.0    48.0  0.001212
+prime:target   4.224366     1.0    48.0  0.045310
+
+[hand] interaction contrast (sum-neutral)AC - (sum-neutral)MU: mean = 58.72 ms
+[hand] F(1,48) = 4.2244 (t^2 = 4.2244), p = 0.045310
+[hand] SS_effect = 42240.1, SS_error = 479959.4, MSE = 9999.2, partial eta^2 = 0.0809
+[simple] sum vs neutral within AC: t(48) = 3.371, p = 0.0015
+[simple] sum vs neutral within MU: t(48) = 1.139, p = 0.2603

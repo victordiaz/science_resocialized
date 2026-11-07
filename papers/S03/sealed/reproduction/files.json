@@ -1,0 +1,32 @@
+{
+ "RPP_79dey.R": {
+  "neutral": "d01.r",
+  "give": false,
+  "bytes": 3120
+ },
+ "henderson.replication.analysis.script.sas": {
+  "neutral": "d02.sas",
+  "give": false,
+  "bytes": 2342
+ },
+ "henderson.replication.data.codebook.xlsx": {
+  "neutral": "d03.xlsx",
+  "give": false,
+  "bytes": 13961
+ },
+ "henderson.replication.data.dat": {
+  "neutral": "d04.dat",
+  "give": false,
+  "bytes": 37486
+ },
+ "henderson.replication.data_sanitized.tsv": {
+  "neutral": "d06.tsv",
+  "give": true,
+  "bytes": 37082
+ },
+ "reconciling.for.repro.txt": {
+  "neutral": "d05.txt",
+  "give": true,
+  "bytes": 46293
+ }
+}

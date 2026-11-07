@@ -1,0 +1,47 @@
+{
+ "local_id": "Row.122",
+ "node": "dnaxe",
+ "replicate_r": "yes",
+ "table": {
+  "p_r": "1e-04",
+  "es_r": "dz= -2.33",
+  "n_r": "17",
+  "direction_r": "same",
+  "test_r": "0.02809598",
+  "p_o": "0.028",
+  "es_o": "dz = 0.976",
+  "n_o": "8"
+ },
+ "reproduction": {
+  "key_test": "paired t-test, two-sided: per-subject mean localization error (angle, deg) on test-phase distractor-centroid trials (one_vs_four=4, tar_vs_dis=11) vs guessing-phase four-missing trials (ExGuess=guessing, one_vs_four=4); dz = t/sqrt(n)",
+  "table": {
+   "stat": "t(16) = -9.59",
+   "p": "1e-04 (a floor; report says p<.05)",
+   "es": "dz = -2.33"
+  },
+  "r_script": {
+   "ran": false,
+   "stat": null,
+   "p": null,
+   "es": null,
+   "stdout_file": null,
+   "why_not": "package missing: readstata13, doBy, lsr (and httr, RCurl) not installed; the script also sources sachaepskamp.com, outside the allowed hosts"
+  },
+  "python": {
+   "ran": true,
+   "stat": "t(16) = -9.5910",
+   "p": "4.9e-08",
+   "es": "dz = -2.3262",
+   "file": "reproduce.py"
+  },
+  "agreement": "table and Python agree (t -9.59 vs -9.591, dz -2.33 vs -2.326; table p 1e-04 is a floor, exact p 4.9e-8); R script not run",
+  "verdict": "reproduced",
+  "n_after_exclusions": 17
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "The representation of simple ensemble visual features outside the focus of attention",
+  "authors": "GA Alvarez, A Oliva",
+  "journal": "PS"
+ }
+}

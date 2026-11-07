@@ -1,0 +1,69 @@
+{
+  "local_id": "Row.132",
+  "node": "b98zw",
+  "title_o": "Where do we look during potentially offensive behavior?",
+  "verdict": "usable",
+  "verdict_reason": "Amsterdam_data.txt (OSF mkyvt) has 120 rows = 30 participants x 4 discussants with Looktime, Discussant, Condi; a mixed ANOVA with Greenhouse-Geisser correction reproduces the interaction F=1.401, p=.254, partial eta^2=.0476 exactly. Subject ids are absent and inferred from row order, as the script does.",
+  "data_files": [
+    {
+      "path": "Data/Amsterdam_data.txt",
+      "opened": true,
+      "format": "txt",
+      "rows": 120,
+      "cols": 3,
+      "notes": "long format, no subject column; rows ordered by Discussant, subject = position within block"
+    },
+    {
+      "path": "Data/Look_Replication_Data_Processing (1).m",
+      "opened": true,
+      "format": "other",
+      "rows": null,
+      "cols": null,
+      "notes": "MATLAB preprocessing from raw eye-tracker files to look times"
+    },
+    {
+      "path": "Data/Raw_Txt_Files_Part_1_Replication.zip",
+      "opened": false,
+      "format": "other",
+      "rows": null,
+      "cols": null,
+      "notes": "listed only: ~41 pp*.txt raw files; named 'Part 1', no part 2 in the Data child"
+    }
+  ],
+  "key_test": {
+    "from_script": "RPP_b98zw.R",
+    "test": "mixed ANOVA, Discussant (4, within) x Condi (2, between) on Looktime; interaction, GG-corrected p",
+    "variables": [
+      "Looktime",
+      "Discussant",
+      "Condi",
+      "Subject (inferred from row order)"
+    ],
+    "all_variables_present": true,
+    "statistic_reported": {
+      "p": "0.254",
+      "es": "partial eta^2 = 0.0476"
+    }
+  },
+  "recompute": {
+    "attempted": true,
+    "method": "python recomputation (pingouin mixed_anova, correction=True)",
+    "result": "F(3,84)=1.401, GG eps=.49, p_GG=0.2542, partial eta^2=0.0476",
+    "matches_table": "yes"
+  },
+  "n_check": {
+    "N_R_table": 30,
+    "rows_after_exclusions": 30,
+    "match": "yes"
+  },
+  "obstacles": [
+    "no subject identifier; pairing by row order (exact match with the table supports it)",
+    "raw eye-tracking zip labelled Part 1 only"
+  ],
+  "minutes": 8,
+  "sources_opened": [
+    "https://api.osf.io/v2/nodes/ix2tq/files/osfstorage/",
+    "https://api.osf.io/v2/nodes/k7iap/files/osfstorage/",
+    "https://api.osf.io/v2/files/mkyvt/"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "local_id": "Row.19",
+  "removed": [
+    {
+      "label": "In a short-term recognition task",
+      "replaced_with": "When participants study a short list of words and then judge whether a single test word was in that list"
+    },
+    {
+      "label": "negative probes / positive probe / probe type",
+      "replaced_with": "test words not in the list / a word from the current list / test-word type"
+    }
+  ],
+  "kept_terms": [
+    "proportion correct",
+    "intrusion (column name)"
+  ],
+  "notes": "No named paradigm in the card; probe wording replaced by plain test-word wording."
+}

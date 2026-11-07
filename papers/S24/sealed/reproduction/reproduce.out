@@ -1,0 +1,16 @@
+raw shape: (21, 5) columns: ['subject', 'listtype', 'correct', 'intrusion', 'new']
+listtype
+long-short    11
+short-long    10
+
+Route 1 (subject means): F(1,19) = 3.6612, p = 0.07088, pes = 0.1616
+
+Route 2 (pingouin mixed_anova):
+         Source       SS  DF1  DF2       MS        F    p_unc      np2      eps
+0     listtype  0.13686    1   19  0.13686  3.66120  0.07088  0.16156      NaN
+1    probetype  0.15083    2   38  0.07542  9.58695  0.00043  0.33536  0.92833
+2  Interaction  0.00548    2   38  0.00274  0.34829  0.70812  0.01800  0.92833
+
+Alternative, new probes only, listtype: F(1,19) = 1.9099, p = 0.18300
+cell means (new): {'long-short': 0.9503, 'short-long': 0.8797}
+cell means (all probes): {'long-short': 0.9001, 'short-long': 0.8068}

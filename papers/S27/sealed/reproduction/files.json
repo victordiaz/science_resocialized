@@ -1,0 +1,32 @@
+{
+ "Analysis Audit/RPP_xse7q.R": {
+  "neutral": "d01.r",
+  "give": false,
+  "bytes": 3204
+ },
+ "Data, codebook, and syntax/Reproducibility Project (Shnabel & Nadler 2008) Code Book 2.23.15.docx": {
+  "neutral": "d02.docx",
+  "give": false,
+  "bytes": 31230
+ },
+ "Data, codebook, and syntax/Shnabel & Nadler Exp 4 Syntax for Upload.sps": {
+  "neutral": "d03.sps",
+  "give": false,
+  "bytes": 8210
+ },
+ "Data, codebook, and syntax/Shnabel & Nadler Rep Data - for OSF upload 2.23.2015.csv": {
+  "neutral": "d04.csv",
+  "give": true,
+  "bytes": 50493
+ },
+ "Data, codebook, and syntax/Shnabel & Nadler Rep Data - for OSF upload 2.23.2015.sav": {
+  "neutral": "d05.sav",
+  "give": true,
+  "bytes": 74810
+ },
+ "Pre- and Post-study writeup/Shnabel_Final rev 4.24.15.docx": {
+  "neutral": "d06.docx",
+  "give": false,
+  "bytes": 43791
+ }
+}

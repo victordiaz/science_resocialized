@@ -1,0 +1,152 @@
+{
+ "Analysis_Audit/Analysis Audit output.zip": {
+  "neutral": "d01.zip",
+  "give": false,
+  "bytes": 192643
+ },
+ "Analysis_Audit/RPP_vmipw.r": {
+  "neutral": "d02.r",
+  "give": false,
+  "bytes": 4917
+ },
+ "Analysis_Audit/Replication original output.zip": {
+  "neutral": "d03.zip",
+  "give": false,
+  "bytes": 83472
+ },
+ "Data/CSV Raw Data.zip": {
+  "neutral": "d04.zip",
+  "give": true,
+  "bytes": 12398
+ },
+ "Data/Codes.docx": {
+  "neutral": "d05.docx",
+  "give": false,
+  "bytes": 10400
+ },
+ "Data/Numerical_task.csv": {
+  "neutral": "d06.csv",
+  "give": true,
+  "bytes": 302094
+ },
+ "Data/Order.csv": {
+  "neutral": "d07.csv",
+  "give": true,
+  "bytes": 196
+ },
+ "Data/Output.zip": {
+  "neutral": "d08.zip",
+  "give": false,
+  "bytes": 299709
+ },
+ "Data/Physical_task.csv": {
+  "neutral": "d09.csv",
+  "give": true,
+  "bytes": 300377
+ },
+ "Data/Raw Data.zip": {
+  "neutral": "d10.zip",
+  "give": true,
+  "bytes": 7421
+ },
+ "Data/Results.pdf": {
+  "neutral": "d11.pdf",
+  "give": false,
+  "bytes": 34300
+ },
+ "Data/SDV_RTs.spv": {
+  "neutral": "d12.spv",
+  "give": false,
+  "bytes": 61634
+ },
+ "Report/replication-report.docx": {
+  "neutral": "d13.docx",
+  "give": false,
+  "bytes": 36251
+ },
+ "x/audit/Analysis Audit output/ANOVA table.png": {
+  "neutral": "d14.png",
+  "give": false,
+  "bytes": 155741
+ },
+ "x/audit/Analysis Audit output/auditData.csv": {
+  "neutral": "d15.csv",
+  "give": false,
+  "bytes": 6565
+ },
+ "x/audit/Analysis Audit output/descriptive discrepancy.png": {
+  "neutral": "d16.png",
+  "give": false,
+  "bytes": 35148
+ },
+ "x/orig/Replication original output/Results.pdf": {
+  "neutral": "d17.pdf",
+  "give": false,
+  "bytes": 34300
+ },
+ "x/orig/Replication original output/SDV_RTs.spv": {
+  "neutral": "d18.spv",
+  "give": false,
+  "bytes": 61634
+ },
+ "x/out/Output/SDP_ER_All Notation.sav.spv": {
+  "neutral": "d19.spv",
+  "give": false,
+  "bytes": 58571
+ },
+ "x/out/Output/SDP_ER_Different Notation only.sav.spv": {
+  "neutral": "d20.spv",
+  "give": false,
+  "bytes": 43153
+ },
+ "x/out/Output/SDP_RTs_All Notation.sav.spv": {
+  "neutral": "d21.spv",
+  "give": false,
+  "bytes": 60111
+ },
+ "x/out/Output/SDP_RTs_Different Notation onl.sav.spv": {
+  "neutral": "d22.spv",
+  "give": false,
+  "bytes": 42471
+ },
+ "x/out/Output/SDV_ER.spv": {
+  "neutral": "d23.spv",
+  "give": false,
+  "bytes": 64057
+ },
+ "x/out/Output/SDV_RTs.spv": {
+  "neutral": "d24.spv",
+  "give": false,
+  "bytes": 61634
+ },
+ "x/raw/Raw Data/SDP_ER_All Notations.sav": {
+  "neutral": "d25.sav",
+  "give": true,
+  "bytes": 1412
+ },
+ "x/raw/Raw Data/SDP_ER_Different Notation only.sav": {
+  "neutral": "d26.sav",
+  "give": true,
+  "bytes": 2945
+ },
+ "x/raw/Raw Data/SDP_RTs_All Notations.sav": {
+  "neutral": "d27.sav",
+  "give": true,
+  "bytes": 3089
+ },
+ "x/raw/Raw Data/SDP_RTs_Different Notation only.sav": {
+  "neutral": "d28.sav",
+  "give": true,
+  "bytes": 1589
+ },
+ "x/raw/Raw Data/SDV_ER.sav": {
+  "neutral": "d29.sav",
+  "give": true,
+  "bytes": 6745
+ },
+ "x/raw/Raw Data/SDV_RTs.sav": {
+  "neutral": "d30.sav",
+  "give": true,
+  "bytes": 6737
+ }
+}

@@ -1,0 +1,13 @@
+{"local_id":"Row.19","node":"gcj7x",
+ "key_test":"2 (listtype, between: long-short vs short-long) x 3 (probe type, within: correct, intrusion, new) mixed ANOVA, type-III SS, DV proportion correct; key term = listtype main effect (row 2 of ezANOVA detailed table)",
+ "variables":["subject","listtype","correct","intrusion","new"],
+ "exclusions":"none (all 21 rows of the wide .sav)",
+ "n_rows_raw":21,"n_after_exclusions":21,"N_R_table":21,
+ "table":{"stat":"F(1,19)=3.661","p":"0.071 (recalc 0.07089)","es":"partial eta^2 = .162"},
+ "r_script":{"ran":false,"stat":null,"p":null,"es":null,"stdout_file":null,
+   "why_not":"package missing: ez and reshape2 not installed; the script also sources http://sachaepskamp.com/files/OSF/getOSFfile.R, a host outside the allowed set, so it was not run"},
+ "python":{"ran":true,"stat":"F(1,19)=3.6612","p":"0.07088","es":"partial eta^2 = 0.1616","file":"reproduce.py"},
+ "agreement":"table and Python agree (F 3.661 vs 3.6612, p .071 vs .07088, pes .162 vs .1616); R script not run",
+ "verdict":"reproduced",
+ "notes":"Anchored on the script's term (listtype main effect) and the table's F and df, which agree. Two routes in Python (one-way ANOVA on subject means; pingouin mixed_anova) give the same F. Caveat: the table's effect text is about NEW probes, long vs short lists; the tested factor is a between-subject group labelled long-short / short-long, and in dat2.csv every trial shows 6 words in both groups, so what 'long' means is not on the page. Alternative test on new probes only: F(1,19)=1.910, p=.183. No replication report linked (script header says NA).",
+ "minutes":12}

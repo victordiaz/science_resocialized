@@ -1,0 +1,15 @@
+{
+ "local_id": "Row.167",
+ "removed": [
+  {
+   "label": "perceptual simulation (the reader simulates the object; the simulation occupies perceptual resources)",
+   "replaced_with": "reading the word engages seeing at that location"
+  }
+ ],
+ "kept_terms": [
+  "typical location",
+  "error rate",
+  "F1/F2"
+ ],
+ "notes": "Direction and test unchanged."
+}

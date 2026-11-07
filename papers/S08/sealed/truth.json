@@ -1,0 +1,47 @@
+{
+ "local_id": "Row.94",
+ "node": "mua6d",
+ "replicate_r": "yes",
+ "table": {
+  "p_r": "0.01175",
+  "es_r": "d = .197",
+  "n_r": "61",
+  "direction_r": "same",
+  "test_r": "is",
+  "p_o": "<.05",
+  "es_o": "d = .736",
+  "n_o": "28"
+ },
+ "reproduction": {
+  "key_test": "independent-samples Student t (equal variances), one-tailed, H1 Control (Cond 2) > Self-handicap (Cond 1), DV = Correct/Attempted on the second math exam",
+  "table": {
+   "stat": "t(59)=2.325",
+   "p": "0.01175 (one-tailed)",
+   "es": "d = .197"
+  },
+  "r_script": {
+   "ran": true,
+   "stat": "t(59)=2.3255",
+   "p": "0.0117526 (one-tailed)",
+   "es": "d = 0.30 (script: t/sqrt(N) fed to compute.es::des with n1=n2=61)",
+   "stdout_file": "audit.out",
+   "how": "run unchanged via audit_shim.R, which only redefines getOSFfile to the already-downloaded OSF dy3zn file and skips the absent httr/RCurl and the sachaepskamp.com source line"
+  },
+  "python": {
+   "ran": true,
+   "stat": "t(59)=2.3255",
+   "p": "0.01175 (one-tailed)",
+   "es": "Cohen's d (pooled SD) = 0.596",
+   "file": "reproduce.py"
+  },
+  "agreement": "all three agree on t(59)=2.325 and one-tailed p=.01175; effect sizes disagree three ways: table d=.197, script d=0.30, pooled-SD d=0.596",
+  "verdict": "reproduced with a discrepancy",
+  "n_after_exclusions": 61
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "Self-handicapping, excuse making, and counterfactual thinking: Consequences for self-esteem and future motivation.",
+  "authors": "SM McCrea",
+  "journal": "JPSP"
+ }
+}

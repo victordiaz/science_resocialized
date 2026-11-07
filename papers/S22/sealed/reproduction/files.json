@@ -1,0 +1,22 @@
+{
+ "OSF-Farrell-analysis-script.R": {
+  "neutral": "d01.r",
+  "give": false,
+  "bytes": 5802
+ },
+ "OSF-Farrell-report-updated.pdf": {
+  "neutral": "d02.pdf",
+  "give": false,
+  "bytes": 364673
+ },
+ "OSF-Farrell-results-csv.csv": {
+  "neutral": "d03.csv",
+  "give": true,
+  "bytes": 706853
+ },
+ "RPP_swrhy.R": {
+  "neutral": "d04.r",
+  "give": false,
+  "bytes": 4986
+ }
+}

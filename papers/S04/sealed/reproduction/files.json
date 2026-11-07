@@ -1,0 +1,97 @@
+{
+ "Analysis_Audit/RPP_ujhlw.R": {
+  "neutral": "d01.r",
+  "give": false,
+  "bytes": 3104
+ },
+ "Data/data.zip": {
+  "neutral": "d02.zip",
+  "give": true,
+  "bytes": 25665
+ },
+ "Data/unz/analysis.m": {
+  "neutral": "d03.m",
+  "give": false,
+  "bytes": 902
+ },
+ "Data/unz/subject01.mat": {
+  "neutral": "d04.mat",
+  "give": true,
+  "bytes": 1524
+ },
+ "Data/unz/subject02.mat": {
+  "neutral": "d05.mat",
+  "give": true,
+  "bytes": 1523
+ },
+ "Data/unz/subject03.mat": {
+  "neutral": "d06.mat",
+  "give": true,
+  "bytes": 1515
+ },
+ "Data/unz/subject04.mat": {
+  "neutral": "d07.mat",
+  "give": true,
+  "bytes": 1523
+ },
+ "Data/unz/subject05.mat": {
+  "neutral": "d08.mat",
+  "give": true,
+  "bytes": 1506
+ },
+ "Data/unz/subject06.mat": {
+  "neutral": "d09.mat",
+  "give": true,
+  "bytes": 1521
+ },
+ "Data/unz/subject07.mat": {
+  "neutral": "d10.mat",
+  "give": true,
+  "bytes": 1526
+ },
+ "Data/unz/subject08.mat": {
+  "neutral": "d11.mat",
+  "give": true,
+  "bytes": 1517
+ },
+ "Data/unz/subject09.mat": {
+  "neutral": "d12.mat",
+  "give": true,
+  "bytes": 1521
+ },
+ "Data/unz/subject10.mat": {
+  "neutral": "d13.mat",
+  "give": true,
+  "bytes": 1513
+ },
+ "Data/unz/subject11.mat": {
+  "neutral": "d14.mat",
+  "give": true,
+  "bytes": 1524
+ },
+ "Data/unz/subject12.mat": {
+  "neutral": "d15.mat",
+  "give": true,
+  "bytes": 1518
+ },
+ "Data/unz/subject13.mat": {
+  "neutral": "d16.mat",
+  "give": true,
+  "bytes": 1515
+ },
+ "Data/unz/subject14.mat": {
+  "neutral": "d17.mat",
+  "give": true,
+  "bytes": 1514
+ },
+ "Data/unz/subject15.mat": {
+  "neutral": "d18.mat",
+  "give": true,
+  "bytes": 1518
+ },
+ "Project_Reports/replication-report-lostkamp-final_REVISION_1.pdf": {
+  "neutral": "d19.pdf",
+  "give": false,
+  "bytes": 67844
+ }
+}

@@ -1,0 +1,62 @@
+<!doctype html><meta charset='utf-8'><style>
+body{font-family:Georgia,'Times New Roman',serif;font-size:11.5pt;line-height:1.45;max-width:17cm;margin:1.8cm auto;color:#111}
+h1{font-size:19pt;margin:0 0 .4em} h2{font-size:13.5pt;margin:1.2em 0 .3em} h3{font-size:12pt;margin:1em 0 .2em}
+table{border-collapse:collapse;font-size:10pt;margin:.6em 0} th,td{border:1px solid #999;padding:3px 7px;text-align:left}
+code,pre{font-family:Menlo,Consolas,monospace;font-size:9.5pt} pre{background:#f4f4f4;padding:8px;overflow-x:auto;white-space:pre-wrap}
+img{max-width:100%} p{margin:.5em 0}
+</style><body><h1>S23: Does averaging a person's first estimate with a delayed second estimate beat the first estimate?</h1>
+<p><strong>Question.</strong> When one person estimates the same quantity twice, the second time unannounced about three weeks later, is the mean squared error (MSE) of the average of the two guesses lower than the MSE of the first guess alone?</p>
+<p><strong>Data and sample.</strong> Session 1 (<code>d04.txt</code>, 231 rows) and session 2 (<code>d05.txt</code>, 171 rows) of the delayed condition, eight percentage-estimation questions each, merged on <code>student_number_simple</code>. Some IDs occur more than once within a session (5 IDs in session 1, one of them blank; 3 IDs in session 2); as planned before the analysis, I dropped those because they cannot be matched unambiguously, leaving <strong>160</strong> matched participants. Exclusions, applied in order: browser defocus on any question in either session (<strong>20</strong>), any of the 16 answers missing (<strong>1</strong>), admitted looking up answers in session 2 (<code>peaking</code> not "Nee") (<strong>1</strong>). <strong>n = 138</strong> after exclusions. The card's sample definition keeps the duplicate-ID rows (174 matched, 140 after the same exclusions, 125 women and 15 men); that version is reported as a robustness check.</p>
+<p><strong>Measures.</strong> Per participant, with truths 6.3, 43.3, 32.3, 13.4, 53.6, 54.8, 26.4, 22.4: MSE1 = mean over the 8 questions of (guess1 − truth)²; MSEavg = mean of ((guess1 + guess2)/2 − truth)².</p>
+<p><strong>Primary test (fixed in advance).</strong> Paired t-test of MSE1 vs MSEavg; the claim holds if MSE1 &gt; MSEavg with two-sided p &lt; .05. Effect size d_z = mean difference / SD of differences, 95% CI by inverting the noncentral t.</p>
+<h2>Result</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>n</th>
+<th>MSE1 mean (SD)</th>
+<th>MSEavg mean (SD)</th>
+<th>Diff [95% CI]</th>
+<th>t (df)</th>
+<th>p (two-sided)</th>
+<th>d_z [95% CI]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Primary</strong></td>
+<td>138</td>
+<td>521.0 (288.6)</td>
+<td>469.6 (261.5)</td>
+<td>51.4 [26.5, 76.2]</td>
+<td><strong>t(137) = 4.09</strong></td>
+<td><strong>7.3 × 10⁻⁵</strong></td>
+<td><strong>0.35 [0.18, 0.52]</strong></td>
+</tr>
+<tr>
+<td>Card sample (duplicates kept)</td>
+<td>140</td>
+<td>517.4 (288.1)</td>
+<td>467.5 (260.3)</td>
+<td>50.0 [25.4, 74.5]</td>
+<td>t(139) = 4.02</td>
+<td>9.4 × 10⁻⁵</td>
+<td>0.34 [0.17, 0.51]</td>
+</tr>
+<tr>
+<td>No exclusions (complete answers only)</td>
+<td>159</td>
+<td>526.7 (302.0)</td>
+<td>469.6 (273.7)</td>
+<td>57.0 [34.0, 80.1]</td>
+<td>t(158) = 4.88</td>
+<td>2.5 × 10⁻⁶</td>
+<td>0.39 [0.23, 0.55]</td>
+</tr>
+</tbody>
+</table>
+<p>The average beat guess 1 for 64% of participants. A Wilcoxon signed-rank test agrees (W = 3118, p = .0004). The average was more accurate than guess 1 on 7 of 8 questions (not on q4). Descriptively, the delayed second guess alone was <em>less</em> accurate than the first (MSE2 = 591.4; MSE1 − MSE2 = −70.4, t(137) = −2.83, p = .005), yet the average still beat both guesses (MSE2 vs MSEavg: t(137) = 8.39, d_z = 0.71). Guesses 1 and 2 correlate only moderately across people (r = .35 to .62 by question), and 13.5% of answers were repeated exactly.</p>
+<p><img alt="Per-participant difference MSE(guess 1) − MSE(average); positive values favour the average." src="fig1.png" /></p>
+<p><strong>Conclusion.</strong> The claim holds on this data: averaging a person's first estimate with their own estimate three weeks later reduced mean squared error relative to the first estimate alone (t(137) = 4.09, p &lt; .001, d_z = 0.35, 95% CI [0.18, 0.52]).</p>
+<p><em>Files: <code>analysis.py</code> produces every number above; output in <code>analysis.out</code>; plan and commands in <code>log.md</code>.</em></p></body>

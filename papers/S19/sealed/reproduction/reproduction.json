@@ -1,0 +1,42 @@
+{
+ "local_id": "Row.10",
+ "node": "vmipw",
+ "key_test": "3 (notation, within) x 2 (numerical difference small/large, within) x 2 (task order, between) mixed ANOVA, type III, on per-participant cell-mean RT of correct 'different' responses in the numerical same-different task; term = main effect of numerical difference (Distance)",
+ "variables": [
+  "participant",
+  "Notation",
+  "Distance",
+  "RT",
+  "Distraction",
+  "correct",
+  "Order (Order.csv)"
+ ],
+ "exclusions": "RT<200 or >2500 ms; participant 24 (absent from Order.csv; dropped per Codes.docx); Distraction==1 (filler trials); Distance==0 (same-value pairs); correct==0 (error trials, per the report: 'means of reaction time (RT) of correct responses')",
+ "n_rows_raw": 8448,
+ "n_after_exclusions": 31,
+ "N_R_table": 32,
+ "table": {
+  "stat": "F(1, 29) = 45.27",
+  "p": "0.001 (floor; T.pval.recalc.R = 2.21e-07)",
+  "es": "MSE=3574.9"
+ },
+ "r_script": {
+  "ran": false,
+  "stat": "not run (package missing: ez; also needs car, doBy, reshape2, schoRsch)",
+  "p": "n/a",
+  "es": "n/a",
+  "stdout_file": "audit.out",
+  "saved_audit_output": "the audit's own ANOVA table.png (Analysis Audit output.zip): Distance F(1,29)=42.58, p<.001, MSE=3520.779, petasq .59"
+ },
+ "python": {
+  "ran": true,
+  "stat": "F(1, 29) = 45.274, MSE = 3574.895",
+  "p": "2.21e-07",
+  "es": "partial eta^2 = 0.610",
+  "file": "reproduce.py"
+ },
+ "agreement": "Table and Python agree exactly (F 45.27 vs 45.274; MSE 3574.9 vs 3574.895; p 2.21e-07 vs recalc 2.21e-07). The R script could not be run here; its saved output reports F=42.58, MSE=3520.779. Python reproduces both of its numbers: the script omits the correct-trials filter (all-trials MSE 3520.779 exact) and its F equals the type-2 (n-weighted) test on all trials (42.576); type 3 on all trials gives 42.334.",
+ "verdict": "reproduced",
+ "notes": "Anchored on the replication report and the replicators' SPSS output (Results.pdf: NumerDiffere F=45.274, error MS 3574.895, df 29, N 31 = 16+15), not on the audit script, because the script drops error trials nowhere while the report states RT means of correct responses. Mean RT small 804.9 vs large 745.7 ms (report: 807.55 vs 748, small rounding of a different averaging). N.R=32 in the table counts the dropped participant 24; analysed n=31. Table ES is an MSE, not a standardized effect. audit_shim.R runs the script offline (local files for getOSFfile, httr/RCurl skipped) and stops on any missing package.",
+ "minutes": 14
+}

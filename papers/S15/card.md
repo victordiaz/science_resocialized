@@ -4,7 +4,7 @@
 
 **Conditions and procedure.** Online. Participants read a short case about a store manager, Mr. Miller, with mixed performance, and decide whether his contract should be extended (yes/no). They are then shown one-sentence summaries of expert opinions: two (one for, one against extension) or ten (five for, five against), and select one to read in full. Control condition: no instruction beyond "you can select only one". Quality focus: select the most important and credible piece. Direction focus: consider whether you want a piece that supports or contradicts your decision. Then a second judgment and an open question on what the study was about.
 
-**Measure.** Whether the chosen piece confirms or disconfirms the participant's own first judgment (`decision`: confirming / disconfirming; built from `judgment1` and `infochoice`). Quantity: `options` (two / ten). Focus: `focus` (control / quality / direction). Participant id: `_session_id`. File: `d02.sas7bdat`.
+**Measure.** Whether the chosen piece confirms or disconfirms the participant's own first judgment (`decision`: confirming / disconfirming; built from `judgment1` and `infochoice`). Quantity: `options` (two / ten). Focus: `focus` (control / quality / direction). Participant id: `_session_id`. File: `d11.csv`.
 
 **Sample and exclusions.** Volunteers on a public research website, restricted to US citizens who completed the session; planned N = 435 across all focus conditions. Exclusions under the protocol: participants who did not answer the information-choice question (blank `decision`; 27 rows of the file); participants whom independent coders judged to have guessed the study's hypothesis from the open response (already removed from the posted file). After exclusions the control-focus cell holds 150 participants.
 
@@ -12,10 +12,10 @@
 
 <!-- files:start -->
 **Data files given.** The raw data you receive, under neutral names:
-- `d02.sas7bdat` (SAS, 443 KB): 496 rows 26 columns SAS dataset, read with pyreadstat. This is the merged file the key test reads. Raw txt exports (sessions, sessionTasks, explicit, demographics, [label removed]) also posted and downloaded; not opened beyond listing.
-- `d03.txt` (text, 1.0 MB)
 - `d04.txt` (text, 807 KB)
 - `d05.txt` (text, 6.4 MB)
-- `d07.txt` (text, 4.7 MB)
-- `d08.txt` (text, 322 KB)
+- `d11.csv` (CSV, 59 KB)
+- `d12.tsv` (TSV, 935 KB)
+- `d13.tsv` (TSV, 3.4 MB)
+- `d14.tsv` (TSV, 185 KB)
 <!-- files:end -->

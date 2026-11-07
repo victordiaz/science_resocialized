@@ -1,0 +1,12 @@
+{"local_id":"Row.151","node":"apidb",
+ "key_test":"one-way ANOVA mean_vignettes ~ Condition (Study 2 file), excluding Madeup_dummy==1 or Exp_Error==1; Cohen's d pooled",
+ "variables":["mean_vignettes","Dog","Trolley","Wallet","Plane","Resume","Kitten","Condition","Madeup_dummy","Exp_Error"],
+ "exclusions":"Madeup_dummy == 1 (4) or Exp_Error == 1 (3), overlap 1: 6 removed, 132 -> 126",
+ "n_rows_raw":132,"n_after_exclusions":126,"N_R_table":126,
+ "table":{"stat":"F(1, 124) = 0.001","p":"0.97","es":"d = .006"},
+ "r_script":{"ran":true,"stat":"F(1,124) = 0.00102671","p":"0.9744898","es":"cohensD = 0.005727178 (unsigned)","stdout_file":"audit.out","how":"audit_harness.R: getOSFfile mapped to the local .sav, external source() skipped, httr/RCurl missing -> skipped; analysis lines unchanged, each wrapped in tryCatch (no errors raised)"},
+ "python":{"ran":true,"stat":"F(1,124) = 0.00103 (t = 0.032)","p":"0.9745","es":"d = +0.0057 (hand-washing minus no hand-washing, codebook coding)","file":"reproduce.py"},
+ "agreement":"all three agree: F(1,124) = .001, p = .974, d = .006, N = 126",
+ "verdict":"reproduced",
+ "notes":"Anchored on the script, the table and the write-up (Online_Write-up_1-9.docx: F(1,124)=0.001, p=.97, d=0.01). The survey's worry about the script writing to column 60 does not bite: read.spss splits a very long string record into extra columns, so the frame has 59 columns and Exclude lands at column 60; the exclusion works as intended (by accident). Three side discrepancies, none touching F or p: (1) group labels: the codebook says 0 = no hand-washing (68 after exclusions), the write-up says hand-washing n = 68 and control n = 58, so the sign of d (+.006 by the codebook, washers slightly MORE severe; -.006 by the write-up) depends on which label is right; the table's Direction.R = 'same' follows the write-up. (2) The write-up says eight participants were removed; the data give six (132 -> 126). (3) The codebook gives a 0-9 vignette scale; the data and write-up use 1-7.",
+ "minutes":11}

@@ -1,0 +1,17 @@
+{
+ "Analysis_Audit/RPP_vwnit.r": {
+  "neutral": "d01.r",
+  "give": false,
+  "bytes": 2818
+ },
+ "Dataset/Data_Replication_EstesEtAl_PS2008_20130622150957.sav": {
+  "neutral": "d02.sav",
+  "give": true,
+  "bytes": 92806
+ },
+ "top/Replication_EstesEtAl_PS2008_20130622150342.pdf": {
+  "neutral": "d03.pdf",
+  "give": false,
+  "bytes": 109217
+ }
+}

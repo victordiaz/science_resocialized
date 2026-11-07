@@ -1,0 +1,13 @@
+rows 120 cols 19 | missing GivePool_B 0
+participants per group: {3: 40}
+groups 40 | groups per cell: {(1.0, 1.0): 10, (1.0, 2.0): 10, (2.0, 1.0): 10, (2.0, 2.0): 10}
+mean pool-B tokens by game (1=IPD, 2=IPD-MD): {1.0: 5.15, 2.0: 1.533}
+                                                            sum_sq    df          F    PR(>F)  partial_eta2
+C(Condition_Game, Sum)                                  130.802778   1.0  26.763562  0.000009      0.426419
+C(Condition_Communication, Sum)                           0.802778   1.0   0.164256  0.687666      0.004542
+C(Condition_Game, Sum):C(Condition_Communication, Sum)    1.002778   1.0   0.205178  0.653291      0.005667
+Residual                                                175.944444  36.0        NaN       NaN      0.500000
+KEY game main effect: F(1,36) = 26.7636, p = 8.84e-06, partial eta^2 = 0.4264
+aggregated file rows 40 | columns ['Group_Num', 'Group3', 'Group6', 'Condition', 'Condition_Game', 'Condition_Communication', 'Keep', 'Give', 'Give_Percent', 'GivePool_B', 'Pool_B_Percent', 'GivePool_W', 'Pool_W_Percent', 'Earned', 'Earned_Percent', 'CE_Percent', 'Sex']
+max |10*mean tokens - Pool_B_Percent| = 0.003333333333337407
+cross-check on Pool_B_Percent (team's SPSS DV): F = 26.7633, p = 8.84e-06, partial eta^2 = 0.4264

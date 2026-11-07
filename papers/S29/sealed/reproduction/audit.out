@@ -1,0 +1,24 @@
+Warning message:
+In readLines("download/Analysis Audit/RPP_73pnd.R") :
+  incomplete final line found on 'download/Analysis Audit/RPP_73pnd.R'
+[harness] package missing, skipped: httr 
+[harness] package missing, skipped: RCurl 
+
+	Pearson's product-moment correlation
+
+data:  data[data$startle_type == "error", ]$ERN and data[data$startle_type == "error", ]$EPS
+t = -1.6546, df = 40, p-value = 0.1058
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.51724156  0.05506866
+sample estimates:
+       cor 
+-0.2530988 
+
+        t 
+-1.654611 
+[1] 0.1058305
+[1] 126
+       cor 
+-0.2530988 
+[1] TRUE

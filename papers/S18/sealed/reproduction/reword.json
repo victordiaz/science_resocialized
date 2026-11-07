@@ -1,0 +1,23 @@
+{
+ "local_id": "Row.107",
+ "removed": [
+  {
+   "label": "Priming an achievement goal outside awareness / achievement prime",
+   "replaced_with": "word search containing achievement words"
+  },
+  {
+   "label": "implicit-learning task / implicit sequence-learning score",
+   "replaced_with": "key-press task with a hidden repeating sequence / sequence-learning score"
+  },
+  {
+   "label": "serial reaction time (SRT) task",
+   "replaced_with": "key-press task, described"
+  }
+ ],
+ "kept_terms": [
+  "RT",
+  "Include1",
+  "awareness"
+ ],
+ "notes": ""
+}

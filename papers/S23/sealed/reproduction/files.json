@@ -1,0 +1,52 @@
+{
+ "RPP_ivfu6.R": {
+  "neutral": "d01.r",
+  "give": false,
+  "bytes": 6119
+ },
+ "crowdwithin_analysis.m": {
+  "neutral": "d02.m",
+  "give": false,
+  "bytes": 0
+ },
+ "data_steegenetal2014.mat": {
+  "neutral": "d03.mat",
+  "give": false,
+  "bytes": 7151
+ },
+ "rawdata_delayed_session1.txt": {
+  "neutral": "d04.txt",
+  "give": true,
+  "bytes": 34998
+ },
+ "rawdata_delayed_session2.txt": {
+  "neutral": "d05.txt",
+  "give": true,
+  "bytes": 20847
+ },
+ "rawdata_immediate.txt": {
+  "neutral": "d06.txt",
+  "give": true,
+  "bytes": 95468
+ },
+ "readme.txt": {
+  "neutral": "d07.txt",
+  "give": false,
+  "bytes": 1057
+ },
+ "steegenetal2014_confirmatoryanalyses.m": {
+  "neutral": "d08.m",
+  "give": false,
+  "bytes": 5967
+ },
+ "steegenetal2014_posthocanalyses.m": {
+  "neutral": "d09.m",
+  "give": false,
+  "bytes": 1146
+ },
+ "steegenetal2014_postprocessing.m": {
+  "neutral": "d10.m",
+  "give": false,
+  "bytes": 3925
+ }
+}

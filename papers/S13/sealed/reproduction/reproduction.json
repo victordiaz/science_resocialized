@@ -1,0 +1,13 @@
+{"local_id":"Row.122","node":"dnaxe",
+ "key_test":"paired t-test, two-sided: per-subject mean localization error (angle, deg) on test-phase distractor-centroid trials (one_vs_four=4, tar_vs_dis=11) vs guessing-phase four-missing trials (ExGuess=guessing, one_vs_four=4); dz = t/sqrt(n)",
+ "variables":["subject","ExGuess","one_vs_four","tar_vs_dis","angle (route B: v2,v4,v7-v10,v12-v19 from raw txt)"],
+ "exclusions":"none at participant level; trial selection only (680 of 2040 trials)",
+ "n_rows_raw":2040,"n_after_exclusions":17,"N_R_table":17,
+ "table":{"stat":"t(16) = -9.59","p":"1e-04 (a floor; report says p<.05)","es":"dz = -2.33"},
+ "r_script":{"ran":false,"stat":null,"p":null,"es":null,"stdout_file":null,
+   "why_not":"package missing: readstata13, doBy, lsr (and httr, RCurl) not installed; the script also sources sachaepskamp.com, outside the allowed hosts"},
+ "python":{"ran":true,"stat":"t(16) = -9.5910","p":"4.9e-08","es":"dz = -2.3262","file":"reproduce.py"},
+ "agreement":"table and Python agree (t -9.59 vs -9.591, dz -2.33 vs -2.326; table p 1e-04 is a floor, exact p 4.9e-8); R script not run",
+ "verdict":"reproduced",
+ "notes":"Route A uses the posted .dta's angle. Route B rebuilds angle from the 17 raw MATLAB txt files (files 1-2 have a v1..v19 header, 3-17 none) following 'merge and analyze.do'. Emulating the do-file exactly reproduces every trial's angle (max diff 4e-6) and the same t. Surprise: the do-file orders the quadrilateral's corners by slope from the leftmost point but gives that point a sentinel slope of -50, so a corner with slope below -50 sorts ahead of it and the centroid is computed on a self-crossing polygon. This hits 2 trials (subject 5: experimental trial 25, guessing trial 24); with the geometrically correct ordering, t(16) = -9.668, p = 4.4e-8, dz = -2.345. Negligible for the verdict. Means: test phase 2.845 deg, guessing 7.549 deg (report: distractor centroid M=2.84; guessing four-missing M=7.56).",
+ "minutes":20}

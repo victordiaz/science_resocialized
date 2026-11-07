@@ -1,0 +1,47 @@
+{
+ "local_id": "Row.53",
+ "node": "wkgpq",
+ "replicate_r": "no",
+ "table": {
+  "p_r": "0.513",
+  "es_r": "__p^2 = 0.006",
+  "n_r": "75",
+  "direction_r": "same",
+  "test_r": "is",
+  "p_o": "0.03",
+  "es_o": "__p^2 = .16",
+  "n_o": "48"
+ },
+ "reproduction": {
+  "key_test": "aov(PD ~ HiLoCat * Task + Error(ID/Task)) on repdatalong.csv (3 rows per ID: Weapons-Black, Weapons-White, Flankers); key effect HiLoCat:Task in the ID:Task stratum",
+  "table": {
+   "stat": "F(1, 73) = 0.432",
+   "p": "0.513",
+   "es": "partial eta^2 = 0.006"
+  },
+  "r_script": {
+   "ran": true,
+   "stat": "F(1, 73) = 0.432348",
+   "p": "0.5129071",
+   "es": "not printed by the script (assignment only); from its printed SS 0.01014/(0.01014+1.7115) = 0.0059",
+   "stdout_file": "audit.out",
+   "how": "audit script run unmodified through a shim that maps getOSFfile() to the local downloaded copy and skips library(httr), library(RCurl) and the remote source() of getOSFfile.R (no network beyond osf.io)"
+  },
+  "python": {
+   "ran": true,
+   "stat": "F(1, 73) = 0.4323",
+   "p": "0.5129",
+   "es": "partial eta^2 = 0.0059",
+   "file": "reproduce.py"
+  },
+  "agreement": "all three agree (F 0.432, p .513, partial eta^2 .006); every stratum of the Python projection fit matches R's summary (HiLoCat F 1.454 p .232; Task F .505 p .480)",
+  "verdict": "reproduced",
+  "n_after_exclusions": 225
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "Individual differences in the regulation of intergroup bias: The role of conflict monitoring and neural signals for control.",
+  "authors": "DM Amodio, PG Devine, E Harmon-Jones",
+  "journal": "JPSP"
+ }
+}

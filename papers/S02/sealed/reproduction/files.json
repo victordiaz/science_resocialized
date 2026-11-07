@@ -1,0 +1,72 @@
+{
+ "Analysis Audit/RPP_atgp5.R": {
+  "neutral": "d01.r",
+  "give": false,
+  "bytes": 2640
+ },
+ "Analysis Script/analysis_hints.txt": {
+  "neutral": "d02.txt",
+  "give": true,
+  "bytes": 95
+ },
+ "Data/Agg_fluency.dat": {
+  "neutral": "d03.dat",
+  "give": true,
+  "bytes": 1622
+ },
+ "Data/Agg_fluency.sav": {
+  "neutral": "d04.sav",
+  "give": true,
+  "bytes": 1625
+ },
+ "Data/Agg_priming_1.dat": {
+  "neutral": "d05.dat",
+  "give": true,
+  "bytes": 1516
+ },
+ "Data/Agg_priming_1.sav": {
+  "neutral": "d06.sav",
+  "give": true,
+  "bytes": 1966
+ },
+ "Data/Agg_priming_ANOVA.dat": {
+  "neutral": "d07.dat",
+  "give": true,
+  "bytes": 1802
+ },
+ "Data/Agg_priming_ANOVA.sav": {
+  "neutral": "d08.sav",
+  "give": true,
+  "bytes": 1964
+ },
+ "Data/Agg_recognition.dat": {
+  "neutral": "d09.dat",
+  "give": true,
+  "bytes": 2094
+ },
+ "Data/Agg_recognition.sav": {
+  "neutral": "d10.sav",
+  "give": true,
+  "bytes": 2425
+ },
+ "Data/Analysedaten_1.sav": {
+  "neutral": "d11.sav",
+  "give": false,
+  "bytes": 2294938
+ },
+ "Data/Analysedaten_1_sanitized.sav": {
+  "neutral": "d14.sav",
+  "give": true,
+  "bytes": 2658640
+ },
+ "Report/CJBerryDRShanksRNHensonReplicationReport-final.docx": {
+  "neutral": "d12.docx",
+  "give": false,
+  "bytes": 46886
+ },
+ "_top/CJBerryDRShanksRNHensonReplicationReport-pre data collection.docx": {
+  "neutral": "d13.docx",
+  "give": false,
+  "bytes": 25356
+ }
+}

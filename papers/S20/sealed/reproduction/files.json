@@ -1,0 +1,37 @@
+{
+ "Analysis Audit/RPP_sqim7.R": {
+  "neutral": "d01.r",
+  "give": false,
+  "bytes": 3467
+ },
+ "Data/EXP 1s.sav": {
+  "neutral": "d02.sav",
+  "give": true,
+  "bytes": 13736
+ },
+ "Data/Syntax1.sps": {
+  "neutral": "d03.sps",
+  "give": false,
+  "bytes": 531
+ },
+ "EXP 1s.sav": {
+  "neutral": "d04.sav",
+  "give": true,
+  "bytes": 13736
+ },
+ "Syntax1.sps": {
+  "neutral": "d05.sps",
+  "give": false,
+  "bytes": 531
+ },
+ "top/Final Report Bassok et al 2008 Priming Addition Facts With Semantic Relations (Feb 2015).docx": {
+  "neutral": "d06.docx",
+  "give": false,
+  "bytes": 1483199
+ },
+ "top/Pre-data_collection_bassok.docx": {
+  "neutral": "d07.docx",
+  "give": false,
+  "bytes": 1589920
+ }
+}

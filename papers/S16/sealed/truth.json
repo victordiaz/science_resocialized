@@ -1,0 +1,47 @@
+{
+ "local_id": "Row.167",
+ "node": "vwnit",
+ "replicate_r": "no",
+ "table": {
+  "p_r": "0.24",
+  "es_r": "__p^2 = .065",
+  "n_r": "22",
+  "direction_r": "same",
+  "test_r": "is",
+  "p_o": "prep = .97",
+  "es_o": "_^2 =.7",
+  "n_o": "18"
+ },
+ "reproduction": {
+  "key_test": "one-way repeated-measures ANOVA (F1, by subjects), typisch (1 typical / 2 atypical) on per-subject error rate (1 - resp_corr) over the 60 experimental trials",
+  "table": {
+   "stat": "F(1, 21) = 1.45",
+   "p": "0.24 (recalc 0.2419)",
+   "es": "partial eta^2 = .065"
+  },
+  "r_script": {
+   "ran": false,
+   "stat": "package missing (ez)",
+   "p": "package missing",
+   "es": "package missing",
+   "stdout_file": null,
+   "note": "even with ez, as written it would fail or mislead: as.numeric(data$Correct) on the string 'True '/'False' gives NA; its ES line prints generalized eta^2 (0.0335 here), not the partial .065 in the table"
+  },
+  "python": {
+   "ran": true,
+   "stat": "F(1, 21) = 1.4501",
+   "p": "0.2419",
+   "es": "partial eta^2 = 0.0646 (generalized 0.0335)",
+   "file": "reproduce.py"
+  },
+  "agreement": "Python and table agree (F 1.45, p .242, partial eta^2 .065). R not run (ez missing).",
+  "verdict": "reproduced",
+  "n_after_exclusions": 1320
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "Head up, foot down: Object words orient attention to the objects' typical location.",
+  "authors": "Z Estes, M Verges, LW Barsalou",
+  "journal": "PS"
+ }
+}

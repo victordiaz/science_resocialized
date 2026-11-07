@@ -1,9 +1,9 @@
 {
  "study": "S03",
  "files": {
-  "d04.dat": {
-   "bytes": 37486,
-   "sha256": "05456175a6e6f5f1b7b9c72bb9c3334e69b544c1910e64c6360ee995ad06fda7"
+  "d06.tsv": {
+   "bytes": 37082,
+   "sha256": "439eb4f4bd1b1828bd4b92d925aa2d4a07a97d03b7d62ae4b0e2463c08bf9de9"
   },
   "d05.txt": {
    "bytes": 46293,

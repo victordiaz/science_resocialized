@@ -1,0 +1,38 @@
+{
+ "local_id": "Row.132",
+ "node": "b98zw",
+ "key_test": "mixed ANOVA, Condi (2 = headphones off, 4 = headphones on; between) x Discussant (1-4; within) on Looktime; key effect interaction, Greenhouse-Geisser corrected",
+ "variables": [
+  "Looktime",
+  "Discussant",
+  "Condi",
+  "Subject (row position within each discussant block)"
+ ],
+ "exclusions": "none in the file; exclusions (dark-skinned, poor comprehension, eye-tracker failure) applied before it",
+ "n_rows_raw": 120,
+ "n_after_exclusions": 120,
+ "N_R_table": 30,
+ "table": {
+  "stat": "F(1.48, 41.458) = 1.401",
+  "p": "0.254",
+  "es": "partial eta^2 = 0.0476"
+ },
+ "r_script": {
+  "ran": false,
+  "stat": "package missing (ez)",
+  "p": "package missing",
+  "es": "package missing",
+  "stdout_file": null
+ },
+ "python": {
+  "ran": true,
+  "stat": "F(3, 84) = 1.4008; GG eps = 0.4935, GG df (1.481, 41.458)",
+  "p": "p_GG = 0.2542 (uncorrected 0.2483)",
+  "es": "partial eta^2 = 0.0476",
+  "file": "reproduce.py"
+ },
+ "agreement": "Python and table agree exactly (F 1.401, GG df 1.48/41.458, p .254, partial eta^2 .0476). R not run (ez missing).",
+ "verdict": "reproduced",
+ "notes": "n_after_exclusions counts rows; 30 participants (15 per condition). Subject ids inferred from row order, as the audit script does (Data$Subject <- 1:30 recycled); checked that Condi is identical across the four blocks for every inferred subject, and the cell means match the report's Table 1. Condi coding (2 off, 4 on) read from the report's cell means. The table's row is the single-site sample (N=30), one of three analyses in the report (the other site: F = 0.146, p = .890; combined: F = 0.07, p = .917). The report gives Cohen's d = 2.39 for discussant 3; the data give t(28) = 1.69 for that contrast (d about 0.62), so the report's d looks wrong. Fetched the replication report (osf.io/nkaw4) into download/top/.",
+ "minutes": 8
+}

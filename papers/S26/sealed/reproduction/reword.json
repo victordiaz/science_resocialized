@@ -1,0 +1,21 @@
+{
+ "local_id": "Row.145",
+ "removed": [
+  {
+   "label": "intergroup prisoner's dilemma game (IPD)",
+   "replaced_with": "the one-pool game: keep (2 units/token) or give to pool B"
+  },
+  {
+   "label": "intergroup prisoner's dilemma-maximizing difference game (IPD-MD)",
+   "replaced_with": "the two-pool game: keep, pool W, or pool B"
+  }
+ ],
+ "kept_terms": [
+  "pool W",
+  "pool B",
+  "tokens",
+  "ingroup",
+  "outgroup"
+ ],
+ "notes": "Payoffs were already described in Design and are unchanged."
+}

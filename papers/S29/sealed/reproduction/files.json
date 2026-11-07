@@ -1,0 +1,42 @@
+{
+ "Analysis Audit/RPP_73pnd.R": {
+  "neutral": "d01.r",
+  "give": false,
+  "bytes": 2231
+ },
+ "Data/collaboration.csv": {
+  "neutral": "d02.csv",
+  "give": true,
+  "bytes": 893
+ },
+ "Data/rep_Cor_all.txt": {
+  "neutral": "d03.txt",
+  "give": true,
+  "bytes": 54190
+ },
+ "Data/rep_Inc_All.txt": {
+  "neutral": "d04.txt",
+  "give": true,
+  "bytes": 54176
+ },
+ "Data/rp.csv": {
+  "neutral": "d05.csv",
+  "give": true,
+  "bytes": 5964
+ },
+ "_top/lewis_pitts_report.pdf": {
+  "neutral": "d06.pdf",
+  "give": false,
+  "bytes": 1287518
+ },
+ "analysis code/RP_code.R": {
+  "neutral": "d07.r",
+  "give": false,
+  "bytes": 767
+ },
+ "analysis code/rp.csv": {
+  "neutral": "d08.csv",
+  "give": true,
+  "bytes": 5964
+ }
+}

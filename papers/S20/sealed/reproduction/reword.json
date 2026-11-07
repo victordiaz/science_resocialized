@@ -1,0 +1,29 @@
+{
+  "local_id": "Row.24",
+  "removed": [
+    {
+      "label": "activates their sum automatically",
+      "replaced_with": "makes their sum come to mind without being asked for"
+    },
+    {
+      "label": "the \"sum effect\"",
+      "replaced_with": "the sum - neutral slowing"
+    },
+    {
+      "label": "word primes / aligned categorical / misaligned unrelated",
+      "replaced_with": "a pair of words shown before the digits / word pairs from one category / pairs of unrelated words"
+    },
+    {
+      "label": "prime x target interaction",
+      "replaced_with": "word pair x target interaction"
+    }
+  ],
+  "kept_terms": [
+    "AC",
+    "MU",
+    "latency",
+    "cue",
+    "target"
+  ],
+  "notes": "AC/MU codes kept because the column names use them; each is defined plainly."
+}

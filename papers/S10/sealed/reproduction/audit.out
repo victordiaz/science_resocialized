@@ -1,0 +1,9 @@
+> library("httr")
+[shim] skipped httr (download only)
+> library("RCurl")
+[shim] skipped RCurl (download only)
+> library("foreign")
+> library("dplyr")
+Error in library("dplyr") : package missing: dplyr
+Calls: withVisible -> eval -> eval -> library
+Execution halted

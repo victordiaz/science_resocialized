@@ -1,0 +1,18 @@
+Agg_priming_ANOVA.dat shape: (32, 5) columns: ['vpnum', 'meanRT_hit', 'meanRT_cr', 'meanRT_fa', 'meanRT_miss']
+NA per column: {'vpnum': 0, 'meanRT_hit': 0, 'meanRT_cr': 0, 'meanRT_fa': 2, 'meanRT_miss': 0}
+
+[aggregate file] n=32  mean CR=1566.03  mean miss=1508.14  mean diff (CR-miss)=57.89 ms, SEM=24.14
+[aggregate file] paired t(31) = 2.3977, p = 0.022709, dz = mean/sd = 0.4239, t/sqrt(n) = 0.4239
+[aggregate file] participants with CR slower than miss: 22 of 32
+
+Analysedaten_1.sav shape: (5440, 58)  unique vpnum: 32
+test-phase trials: 3200  of which correctly identified (word_korrekt==1): 3158
+test trials with a labelled SDT category (1-4): 3197
+study-phase misidentified trials: 42
+[A: all labelled test trials (no identification filter)] trials=3197 n=32  paired t(31) = 2.3977, p = 0.022709, t/sqrt(n) = 0.4239
+    vs shipped aggregate: participants matching exactly CR 32/32, miss 32/32; max abs diff CR 0.00 ms, miss 0.00 ms
+[B: test misidentifications excluded] trials=3156 n=32  paired t(31) = 2.1360, p = 0.040684, t/sqrt(n) = 0.3776
+    vs shipped aggregate: participants matching exactly CR 17/32, miss 23/32; max abs diff CR 29.77 ms, miss 142.00 ms
+    [C: test and study misidentifications excluded (protocol text)] participants with no trial in CR or miss, dropped: [20.0]
+[C: test and study misidentifications excluded (protocol text)] trials=3134 n=31  paired t(30) = 2.4266, p = 0.021458, t/sqrt(n) = 0.4358
+    vs shipped aggregate: participants matching exactly CR 17/32, miss 19/32; max abs diff CR 29.77 ms, miss 116.67 ms

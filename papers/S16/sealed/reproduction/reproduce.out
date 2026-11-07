@@ -1,0 +1,12 @@
+raw shape (1320, 12) | subjects 22 | trials per subject [60]
+typisch labels {1.0: 'typisch', 2.0: 'untypisch'} | resp_corr labels {0.0: 'False', 1.0: 'True'}
+Correct (string) and resp_corr agree on every trial: yes
+
+=== KEY TEST: location typicality on error rate (F1, by subjects) ===
+mean error rate typical = 0.0409, atypical = 0.0273  (n = 22)
+F(1,21) = 1.4501, p = 0.2419, partial eta^2 = 0.0646
+paired t check: t^2 = 1.4501, p = 0.2419
+generalized eta^2 = 0.0335
+
+(secondary) RT analysis: kept 1262 of 1320 trials (3.4% incorrect, 1.0% > 1000 ms)
+RT typical = 499.30 ms, atypical = 499.53 ms; F(1,21) = 0.0014, p = 0.9704, partial eta^2 = 0.00007

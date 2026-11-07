@@ -1,0 +1,31 @@
+
+{Begin Comments
+
+}
+{Begin Filters
+}
+{Begin Rows
+Lag	1
+}
+{Begin Cols
+}
+{Begin Data
+PerceivedTarg1.ACC	4
+}
+{Begin Options
+0
+0
+1
+0
+2
+2
+1
+1
+1
+0
+1
+1
+PerceivedTarg1.ACC:Mean by Lag
+1
+PerceivedTarg1.ACC:Mean
+}

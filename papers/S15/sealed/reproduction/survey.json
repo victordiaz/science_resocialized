@@ -1,0 +1,64 @@
+{
+ "local_id": "Row.84",
+ "node": "v8vft",
+ "verdict": "usable",
+ "verdict_reason": "all.sas7bdat (496 rows) holds options, decision, focus and session ids; after the script's 27 listed exclusions and the control-condition filter, 150 rows give chi2(1)=7.095, p=.0077, and the script's d formula gives .457, matching the table (p=.008, d=.46).",
+ "data_files": [
+  {
+   "path": "Dataset/all.sas7bdat",
+   "opened": true,
+   "format": "other",
+   "rows": 496,
+   "cols": 26,
+   "notes": "SAS dataset, read with pyreadstat. This is the merged file the audit script reads (osf.io/c9z3d). Raw txt exports (sessions, sessionTasks, explicit, demographics, iat) also posted and downloaded; not opened beyond listing."
+  },
+  {
+   "path": "Dataset/replicationanalysis.sas",
+   "opened": true,
+   "format": "other",
+   "rows": null,
+   "cols": null,
+   "notes": "SAS build script from the raw txt files to all; also deletes 30 participants deemed aware of the study purpose."
+  }
+ ],
+ "key_test": {
+  "from_script": "RPP_v8vft.R",
+  "test": "Pearson chi-square without Yates correction, options (two vs ten pieces) x decision (confirming vs disconfirming), control-focus participants only, after excluding 27 listed session ids",
+  "variables": [
+   "_session_id",
+   "focus",
+   "options",
+   "decision"
+  ],
+  "all_variables_present": true,
+  "statistic_reported": {
+   "p": "0.008",
+   "es": "d = .46"
+  }
+ },
+ "recompute": {
+  "attempted": true,
+  "method": "python recomputation (scipy chi2_contingency, correction=False)",
+  "result": "chi2(1)=7.095, p=.00773, N=150; r=sqrt(chi2/N), d=2r/(1-r^2)=.457",
+  "matches_table": "yes"
+ },
+ "n_check": {
+  "N_R_table": 150,
+  "rows_after_exclusions": 150,
+  "match": "yes"
+ },
+ "obstacles": [
+  "The script's d conversion is 2r/(1-r^2), not the usual 2r/sqrt(1-r^2) (which gives .446); the table value .46 follows the script's formula",
+  "R packages sas7bdat, gmodels, effsize not installed; not run in R"
+ ],
+ "minutes": 10,
+ "sources_opened": [
+  "https://api.osf.io/v2/nodes/v8vft/files/osfstorage/",
+  "https://api.osf.io/v2/nodes/drck7/files/osfstorage/",
+  "https://api.osf.io/v2/nodes/dwvc9/files/osfstorage/",
+  "Dataset/all.sas7bdat",
+  "Dataset/replicationanalysis.sas",
+  "Analysis Audit/RPP_v8vft.R"
+ ],
+ "title_o": "Selective exposure and information quantity: How different information quantities moderate decision makers' preference for consistent and inconsistent information."
+}

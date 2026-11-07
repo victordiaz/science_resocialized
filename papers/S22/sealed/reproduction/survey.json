@@ -1,0 +1,72 @@
+{
+  "local_id": "Row.33",
+  "node": "swrhy",
+  "title_o": "Multiple roles for time in short-term memory: Evidence from serial recall of order and timing.",
+  "verdict": "usable",
+  "verdict_reason": "Raw csv (40 subjects x 80 trials) reproduces the report's key test exactly: paired t on 4th-latency deviation from a quadratic fit, timing task, t(39)=2.08, p=.0438, d=.367 (table .044/.37). Caution: the RPP audit script computes a different test (index x grouped F, p=.0295).",
+  "data_files": [
+    {
+      "path": "Data/OSF-Farrell-results-csv.csv",
+      "opened": true,
+      "format": "csv",
+      "rows": 3200,
+      "cols": 40,
+      "notes": "trial-level; xlsx twin (2.5 MB) not downloaded"
+    },
+    {
+      "path": "Analysis script/OSF-Farrell-analysis-script.R",
+      "opened": true,
+      "format": "other",
+      "rows": 0,
+      "cols": 0,
+      "notes": "replicators' script; key test with item=4, rhythm=1 (both set by hand, 'MODIFY ME')"
+    },
+    {
+      "path": "Report/OSF-Farrell-report-updated.pdf",
+      "opened": true,
+      "format": "other",
+      "rows": 0,
+      "cols": 0,
+      "notes": "states t(39)=2.08, p=0.044, d=0.37 for the timing task"
+    }
+  ],
+  "key_test": {
+    "from_script": "RPP_swrhy.R (header says t/d) ; actual key test from OSF-Farrell-analysis-script.R + report",
+    "test": "paired t-test, grouped vs ungrouped, of per-subject mean deviation of 4th output latency from a quadratic fit to latencies 2,3,5,6; timing trials (Rhythm.==1); d_av",
+    "variables": [
+      "Subject",
+      "Grouped.",
+      "Rhythm.",
+      "Out.sec.1..Out.sec.6"
+    ],
+    "all_variables_present": true,
+    "statistic_reported": {
+      "p": "0.044",
+      "es": "d = .37"
+    }
+  },
+  "recompute": {
+    "attempted": true,
+    "method": "ran the replicators' R code (base R) on the local csv; also ran RPP_swrhy.R's analysis section",
+    "result": "replicators' test: t(39)=2.084, p=0.0438, d=0.367; RPP audit script: F(5,195)=2.544, p=0.0295, pes=0.061",
+    "matches_table": "yes"
+  },
+  "n_check": {
+    "N_R_table": 40,
+    "rows_after_exclusions": 40,
+    "match": "yes"
+  },
+  "obstacles": [
+    "getOSFfile() is sourced from http://sachaepskamp.com/files/OSF/getOSFfile.R (external, not run); script not runnable offline as written",
+    "RPP audit script RPP_swrhy.R computes an index x grouped ANOVA that does NOT give the table's p/d; the key test lives in the replicators' script and report",
+    "replicators' script sets item and rhythm by hand and needs car/ez"
+  ],
+  "minutes": 15,
+  "sources_opened": [
+    "https://osf.io/swrhy/",
+    "https://api.osf.io/v2/nodes/6dvuq/files/osfstorage/",
+    "https://api.osf.io/v2/nodes/ipfw8/files/osfstorage/",
+    "https://api.osf.io/v2/nodes/7chq9/files/osfstorage/",
+    "https://api.osf.io/v2/nodes/uq742/files/osfstorage/"
+  ]
+}

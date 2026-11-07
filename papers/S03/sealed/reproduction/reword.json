@@ -1,0 +1,19 @@
+{
+ "local_id": "Row.80",
+ "removed": [
+  {
+   "label": "mind-set, one-sided/two-sided focus",
+   "replaced_with": "listing reasons in favour only vs reasons for and against"
+  },
+  {
+   "label": "attitude ambivalence / ambivalence index",
+   "replaced_with": "mixed feelings / mixed-feelings index"
+  }
+ ],
+ "kept_terms": [
+  "StrongMixed",
+  "NotTorn",
+  "Indecisive"
+ ],
+ "notes": ""
+}

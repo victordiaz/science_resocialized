@@ -1,0 +1,19 @@
+raw shape (120, 3) | columns ['Looktime', 'Discussant', 'Condi']
+Condi constant within inferred subject across all 4 blocks: yes
+n subjects 30 | per Condi {2: 15, 4: 15}
+
+=== KEY TEST: Condi x Discussant interaction ===
+F(3,84) = 1.4008; p_uncorrected = 0.2483
+GG epsilon = 0.4935; GG df = (1.481, 41.458); p_GG = 0.2542
+partial eta^2 = 0.0476
+cell means (rows Condi [2, 4] ; cols Discussant 1-4):
+ [[  985.6 20252.2   366.6   310. ]
+ [  688.8 19280.   1003.3   635.5]]
+
+pingouin mixed_anova:
+         Source            SS  DF1  DF2            MS            F         p_unc     p_GG_corr       np2       eps sphericity   W_spher       p_spher
+0        Condi  1.764100e+05    1   28  1.764100e+05     2.247607  1.450127e-01           NaN  0.074307       NaN        NaN       NaN           NaN
+1   Discussant  8.211200e+09    3   84  2.737067e+09  1008.230232  9.853561e-66  1.140303e-33  0.972979  0.493546      False  0.121586  7.472077e-11
+2  Interaction  1.140857e+07    3   84  3.802858e+06     1.400827  2.482866e-01  2.542141e-01  0.047646  0.493546      False  0.121586  7.472077e-11
+
+(secondary, not the table's test) discussant 3, headphones on vs off: t(28) = 1.690, p = 0.1021

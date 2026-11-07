@@ -1,0 +1,18 @@
+{
+  "local_id": "Row.120",
+  "node": "73pnd",
+  "title_o": "Errors Are Aversive: Defensive Motivation and the Error-Related Negativity",
+  "verdict": "usable",
+  "verdict_reason": "rp.csv (guid 2hgsk; an identical copy sits in 'analysis code') has 126 rows = 42 participants x 3 startle types with ERN and EPS; the audit script's Pearson correlation on the 'error' rows gives r=-.253, t(40)=-1.65, p=.106, matching the table (r=-.25, p=.11). The data hold 42 participants while the table and the report say 43 (report: 8 of 51 excluded; the data lack 9 ids), a one-person gap the statistic itself confirms (df=40).",
+  "data_files": [
+    {"path": "Data/rp.csv", "opened": true, "format": "csv", "rows": 126, "cols": 8, "notes": "CR-only line endings; long format, ERN and EPS repeated across the 3 startle_type rows per participant; participant ids 1-51 minus 3,4,10,18,20,28,37,40,44; one startle value '???' in an unpred row (not used by the key test)"},
+    {"path": "Data/collaboration.csv", "opened": true, "format": "csv", "rows": 72, "cols": 2, "notes": "ERN/EPS pairs, apparently the combined original+replication set used for a secondary analysis; not the key test"},
+    {"path": "Data/rep_Cor_all.txt, Data/rep_Inc_All.txt", "opened": false, "format": "txt", "rows": null, "cols": null, "notes": "ERP waveform exports, not needed for the key test; not opened"}
+  ],
+  "key_test": {"from_script": "RPP_73pnd.R", "test": "Pearson cor.test(ERN, EPS) on rows with startle_type == 'error' (two-sided)", "variables": ["ERN", "EPS", "startle_type"], "all_variables_present": true, "statistic_reported": {"p": "0.11", "es": "r = -.25"}},
+  "recompute": {"attempted": true, "method": "base R cor.test on the downloaded file (the audit script's exact call)", "result": "r=-0.2531, t(40)=-1.655, p=0.1058 (two-sided)", "matches_table": "yes"},
+  "n_check": {"N_R_table": 43, "rows_after_exclusions": 42, "match": "no"},
+  "obstacles": ["N.R=43 and the report's 43 disagree with the 42 participants in the data; the reported r and p are reproduced only with 42", "report calls p=.11 one-tailed; it is the two-sided value (one-sided would be .053)", "audit script's sample-size line prints nrow(data)=126, not participants"],
+  "minutes": 10,
+  "sources_opened": ["https://osf.io/73pnd/", "https://api.osf.io/v2/files/2hgsk/", "https://api.osf.io/v2/nodes/4gx78/files/osfstorage/", "https://api.osf.io/v2/nodes/689ns/files/osfstorage/", "https://api.osf.io/v2/nodes/nhfx6/files/osfstorage/", "lewis_pitts_report.pdf (node top level)"]
+}

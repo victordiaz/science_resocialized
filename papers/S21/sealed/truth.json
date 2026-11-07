@@ -1,0 +1,47 @@
+{
+ "local_id": "Row.27",
+ "node": "ahpik",
+ "replicate_r": "yes",
+ "table": {
+  "p_r": "0.001",
+  "es_r": "__p^2 = .144",
+  "n_r": "71",
+  "direction_r": "same",
+  "test_r": "is",
+  "p_o": "0.03",
+  "es_o": "__p^2 = .143",
+  "n_o": "32"
+ },
+ "reproduction": {
+  "key_test": "2x2 within-subjects ANOVA (quality clear/degraded x frequency high/low) on per-participant ex-Gaussian mu; key term = quality x frequency interaction F(1,70); partial eta^2 from interaction SS and its error SS",
+  "table": {
+   "stat": "F(1,70) = 11.783",
+   "p": "0.001 (recalc .001008)",
+   "es": "partial eta^2 = .144"
+  },
+  "r_script": {
+   "ran": false,
+   "stat": null,
+   "p": null,
+   "es": "script hard-codes SS 115052.2 / (115052.2 + 683497.9) = .1441",
+   "stdout_file": null,
+   "why": "package missing: gdata, tidyr, ez and xlsx are not installed in R 4.6.2 (checked with requireNamespace); not installed per instructions"
+  },
+  "python": {
+   "ran": true,
+   "stat": "F(1,70) = 11.7830",
+   "p": "0.001008",
+   "es": "partial eta^2 = 0.1441 (SS 115052.2 / error SS 683497.9)",
+   "file": "reproduce.py"
+  },
+  "agreement": "table and Python agree exactly (F 11.783, p .001008, partial eta^2 .144); Python's SS equal the SS hard-coded in the audit script to the decimal; R script not run (packages missing). Two independent Python routes (statsmodels AnovaRM and interaction-contrast t^2) agree.",
+  "verdict": "reproduced",
+  "n_after_exclusions": 71
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "On the additive effects of stimulus quality and word frequency in lexical decision: Evidence for opposing interactive influences revealed by RT distributional analyses.",
+  "authors": "MJ Yap, DA Balota, CS Tse, D Besner",
+  "journal": "JEPLMC"
+ }
+}

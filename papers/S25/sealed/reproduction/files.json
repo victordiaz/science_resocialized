@@ -1,0 +1,102 @@
+{
+ "ibd4a__RPP_6n3bm.R": {
+  "neutral": "d01.r",
+  "give": false,
+  "bytes": 3461
+ },
+ "mvpr4__codebook_beamanetal2008_kleinbergkunkels.txt": {
+  "neutral": "d02.txt",
+  "give": false,
+  "bytes": 1018
+ },
+ "mvpr4__rawdata.zip": {
+  "neutral": "d03.zip",
+  "give": true,
+  "bytes": 90368
+ },
+ "mvpr4__rawdata_preprocessed.zip": {
+  "neutral": "d04.zip",
+  "give": true,
+  "bytes": 93716
+ },
+ "mvpr4__replicationBeaman_KleinbergKunkels_Rscript.R": {
+  "neutral": "d05.r",
+  "give": false,
+  "bytes": 8492
+ },
+ "unz/1.txt": {
+  "neutral": "d06.txt",
+  "give": true,
+  "bytes": 15438
+ },
+ "unz/10.txt": {
+  "neutral": "d07.txt",
+  "give": true,
+  "bytes": 15409
+ },
+ "unz/11.txt": {
+  "neutral": "d08.txt",
+  "give": true,
+  "bytes": 15379
+ },
+ "unz/12.txt": {
+  "neutral": "d09.txt",
+  "give": true,
+  "bytes": 15217
+ },
+ "unz/13.txt": {
+  "neutral": "d10.txt",
+  "give": true,
+  "bytes": 15231
+ },
+ "unz/14.txt": {
+  "neutral": "d11.txt",
+  "give": true,
+  "bytes": 15280
+ },
+ "unz/15.txt": {
+  "neutral": "d12.txt",
+  "give": true,
+  "bytes": 15158
+ },
+ "unz/2.txt": {
+  "neutral": "d13.txt",
+  "give": true,
+  "bytes": 15344
+ },
+ "unz/3.txt": {
+  "neutral": "d14.txt",
+  "give": true,
+  "bytes": 15384
+ },
+ "unz/4.txt": {
+  "neutral": "d15.txt",
+  "give": true,
+  "bytes": 15455
+ },
+ "unz/5.txt": {
+  "neutral": "d16.txt",
+  "give": true,
+  "bytes": 15316
+ },
+ "unz/6.txt": {
+  "neutral": "d17.txt",
+  "give": true,
+  "bytes": 15259
+ },
+ "unz/7.txt": {
+  "neutral": "d18.txt",
+  "give": true,
+  "bytes": 15193
+ },
+ "unz/8.txt": {
+  "neutral": "d19.txt",
+  "give": true,
+  "bytes": 15098
+ },
+ "unz/9.txt": {
+  "neutral": "d20.txt",
+  "give": true,
+  "bytes": 15184
+ }
+}

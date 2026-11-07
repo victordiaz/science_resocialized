@@ -1,0 +1,12 @@
+F1RT_readyforanalysis.sav: (24, 4) {'colour': 12, 'naming': 12}
+[A: F1 file, object naming] n = 12; congruent M = 708.3, incongruent M = 720.6, mean diff (incong - cong) = 12.28 ms
+    paired t(11) = -1.882 (congruent minus incongruent), p = 0.0866, |dz| = 0.543
+[not key: F1 file, colour naming] n = 12; congruent M = 635.4, incongruent M = 653.7, mean diff (incong - cong) = 18.34 ms
+    paired t(11) = -1.552 (congruent minus incongruent), p = 0.1490, |dz| = 0.448
+
+alldata.sav: (1920, 9) subjects: 24
+  naming: trials=960, errors=47, outliers=14
+  colour: trials=960, errors=5, outliers=12
+[B: rebuilt from alldata.sav, object naming] n = 12; congruent M = 708.3, incongruent M = 720.6, mean diff (incong - cong) = 12.28 ms
+    paired t(11) = -1.882 (congruent minus incongruent), p = 0.0866, |dz| = 0.543
+  max |rebuilt - F1 file| per-subject mean: 0.0 0.0

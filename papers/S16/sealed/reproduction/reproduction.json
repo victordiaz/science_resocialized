@@ -1,0 +1,39 @@
+{
+ "local_id": "Row.167",
+ "node": "vwnit",
+ "key_test": "one-way repeated-measures ANOVA (F1, by subjects), typisch (1 typical / 2 atypical) on per-subject error rate (1 - resp_corr) over the 60 experimental trials",
+ "variables": [
+  "Subj",
+  "typisch",
+  "resp_corr",
+  "RT"
+ ],
+ "exclusions": "none for error rates; RT secondary drops incorrect trials and RT > 1000 ms",
+ "n_rows_raw": 1320,
+ "n_after_exclusions": 1320,
+ "N_R_table": 22,
+ "table": {
+  "stat": "F(1, 21) = 1.45",
+  "p": "0.24 (recalc 0.2419)",
+  "es": "partial eta^2 = .065"
+ },
+ "r_script": {
+  "ran": false,
+  "stat": "package missing (ez)",
+  "p": "package missing",
+  "es": "package missing",
+  "stdout_file": null,
+  "note": "even with ez, as written it would fail or mislead: as.numeric(data$Correct) on the string 'True '/'False' gives NA; its ES line prints generalized eta^2 (0.0335 here), not the partial .065 in the table"
+ },
+ "python": {
+  "ran": true,
+  "stat": "F(1, 21) = 1.4501",
+  "p": "0.2419",
+  "es": "partial eta^2 = 0.0646 (generalized 0.0335)",
+  "file": "reproduce.py"
+ },
+ "agreement": "Python and table agree (F 1.45, p .242, partial eta^2 .065). R not run (ez missing).",
+ "verdict": "reproduced",
+ "notes": "n_after_exclusions counts trials; 22 participants x 60. Anchored on the report's error-rate line and the table's F/p; the RT test (the original's headline effect, whose eta^2 .70 sits in the table's original-effect column) gives F(1,21) = 0.0014, p = .970, typical 499.30 vs atypical 499.53 ms, matching the report. Error rate typical 4.09% vs atypical 2.73%: the predicted direction, not significant. Correct (string) and resp_corr agree on all 1320 trials.",
+ "minutes": 7
+}

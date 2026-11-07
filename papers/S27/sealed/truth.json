@@ -1,0 +1,46 @@
+{
+ "local_id": "Row.81",
+ "node": "xse7q",
+ "replicate_r": "no",
+ "table": {
+  "p_r": "0.235",
+  "es_r": "__p^2 = .010",
+  "n_r": "141",
+  "direction_r": "opposite",
+  "test_r": "is",
+  "p_o": "<.05",
+  "es_o": "__p2 = .07",
+  "n_o": "94"
+ },
+ "reproduction": {
+  "key_test": "between-subjects 2 (VictimOrPerpV0P1) x 2 (AcceptOrEmpowerA0E1) ANOVA on AvgWillingReconcileTime2; term = role x message interaction",
+  "table": {
+   "stat": "F(1, 137) = 1.43",
+   "p": "0.235",
+   "es": "partial eta^2 = .010"
+  },
+  "r_script": {
+   "ran": true,
+   "stat": "as written: error (read.spss value labels turn the DV into a factor; aov fails). With one change, use.value.labels=FALSE: F(1,137) = 1.425",
+   "p": "0.2347",
+   "es": "partial eta^2 = 0.0103",
+   "stdout_file": "audit.out"
+  },
+  "python": {
+   "ran": true,
+   "stat": "F(1, 137) = 1.425 (type I and type III identical)",
+   "p": "0.2347",
+   "es": "partial eta^2 = 0.0103",
+   "file": "reproduce.py"
+  },
+  "agreement": "All three agree (table 1.43 / .235 / .010; R with the one-line label fix 1.4248 / .2347 / .0103; Python 1.425 / .2347 / .0103). The script as written does not run.",
+  "verdict": "reproduced",
+  "n_after_exclusions": 141
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "A needs-based model of reconciliation: Satisfying the differential emotional needs of victim and perpetrator as a key to promoting reconciliation.",
+  "authors": "N Shnabel, A Nadler",
+  "journal": "JPSP"
+ }
+}

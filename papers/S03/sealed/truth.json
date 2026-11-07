@@ -1,0 +1,47 @@
+{
+ "local_id": "Row.80",
+ "node": "79dey",
+ "replicate_r": "no",
+ "table": {
+  "p_r": "0.19",
+  "es_r": "_^2 = .048",
+  "n_r": "70",
+  "direction_r": "same",
+  "test_r": "is",
+  "p_o": "<.05",
+  "es_o": "__p^2 = 0.135",
+  "n_o": "46"
+ },
+ "reproduction": {
+  "key_test": "one-way between-subjects ANOVA, ambivalence = mean(StrongMixed, -NotTorn, Indecisive-4) on Condition (0 neutral, 1 one-sided, 2 two-sided); omnibus F(2,67); eta^2 = SS_cond/(SS_cond+SS_err)",
+  "table": {
+   "stat": "F(2,67) = 1.70",
+   "p": "0.19 (recalc .1905)",
+   "es": "eta^2 = .048"
+  },
+  "r_script": {
+   "ran": true,
+   "stat": "F(2,67) = 1.6988",
+   "p": "0.1907",
+   "es": "eta^2 = 0.0483",
+   "stdout_file": "audit.out",
+   "how": "RPP_79dey.R run unchanged in R 4.6.2 except library(httr), library(RCurl) and source(getOSFfile.R) dropped and getOSFfile() mapped to the downloaded 3xv8u file (run_audit.R)"
+  },
+  "python": {
+   "ran": true,
+   "stat": "F(2,67) = 1.6988",
+   "p": "0.1907",
+   "es": "eta^2 = 0.0483",
+   "file": "reproduce.py"
+  },
+  "agreement": "all three agree (F 1.70, p .19, eta^2 .048)",
+  "verdict": "reproduced",
+  "n_after_exclusions": 70
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "The effects of an implemental mind-set on attitude strength.",
+  "authors": "MD Henderson, Y de Liver, PM Gollwitzer",
+  "journal": "JPSP"
+ }
+}

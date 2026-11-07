@@ -1,0 +1,27 @@
+{
+ "q63gx__RPP_gcj7x.R": {
+  "neutral": "d01.r",
+  "give": false,
+  "bytes": 2580
+ },
+ "r2zcn__Output list length analysis (last analysis in results).spv": {
+  "neutral": "d02.spv",
+  "give": false,
+  "bytes": 22016
+ },
+ "r2zcn__Proportion correct wide 2.sav": {
+  "neutral": "d03.sav",
+  "give": true,
+  "bytes": 1772
+ },
+ "r2zcn__Syntax list length analyse.sps": {
+  "neutral": "d04.sps",
+  "give": false,
+  "bytes": 372
+ },
+ "r2zcn__dat2.csv": {
+  "neutral": "d05.csv",
+  "give": true,
+  "bytes": 751989
+ }
+}

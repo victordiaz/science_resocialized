@@ -1,0 +1,13 @@
+{"local_id":"Row.116","node":"ivfu6",
+ "key_test":"paired t-test, delayed condition: per-participant MSE of guess 1 (session 1) vs MSE of the per-question mean of guess 1 and guess 2 (session 2), 8 questions, true values from the script; d_z = t/sqrt(n)",
+ "variables":["student_number_simple","q1..q8 (both sessions)","defocus_q1..q8 (both sessions)","peaking","sex","age"],
+ "exclusions":"inner merge of the two sessions on student_number_simple (174 rows); drop any defocus (25), any missing answer (12), peaking != 'Nee' (9); overlapping; 140 remain",
+ "n_rows_raw":402,"n_after_exclusions":140,"N_R_table":140,
+ "table":{"stat":"t(139) = 4.02","p":"0.001 (recalc two-sided 9.5e-05)","es":"d = .34"},
+ "r_script":{"ran":false,"stat":null,"p":null,"es":null,"stdout_file":null,
+   "why":"package missing: dplyr is not installed in R 4.6.2 (requireNamespace FALSE; compute.es is present); the script also sources getOSFfile.R from an external URL"},
+ "python":{"ran":true,"stat":"t(139) = 4.0217","p":"4.72e-05 one-sided (the audit script's alternative='greater'); 9.44e-05 two-sided","es":"d_z = 0.340","file":"reproduce.py"},
+ "agreement":"table and Python agree on t (4.02), df (139), d (.34) and p (table's recalculated two-sided 9.5e-05 vs 9.44e-05; the table's .001 is a rounded bound). R script not run. The sample checks the script prints (125 F / 15 M, age 22.0 / 3.1) are matched.",
+ "verdict":"reproduced",
+ "notes":"Anchored on the audit script's test and the table; the authors' MATLAB confirmatory code runs the same comparison two-sided (ttest on d1 - d3) and the table's Tails.R = 2, while the audit script runs it one-sided: same t, p differs by a factor of 2, irrelevant at this size. raw n_rows = 231 + 171 session rows. Both raw files hold duplicate student numbers (13 in session 1, 5 in session 2, plus blank ids); every merged duplicate row has missing answers and is dropped, so no participant is counted twice. Second plausible test: guess 2 vs average, t(139) = 8.48 (much larger, not the claim). Raw files carry student numbers (identifiers); not copied anywhere.",
+ "minutes":10}

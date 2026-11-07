@@ -1,0 +1,16 @@
+raw shape (118, 16)
+n after dropping missing on key vars: 118 {'FREE': 59, 'SERIAL': 59}
+cell means by task:
+         R_QUIET  R_DISSIMILAR  R_SIMILAR
+TASK                                    
+FREE      0.369         0.355      0.319
+SERIAL    0.184         0.153      0.140
+main Sound: F(2,232)=26.598, p=3.981e-11
+main Task:  F(1,116)=323.487, p=2.408e-35
+KEY Sound x Task: F(2,232)=1.6280, p=0.1986, partial eta^2=0.0138, within-stratum eta^2=0.0113
+        Source      SS  DF1  DF2      MS         F   p_unc     np2     eps
+0         TASK  3.1513    1  116  3.1513  323.4865  0.0000  0.7361     NaN
+1        SOUND  0.1301    2  232  0.0650   26.5980  0.0000  0.1865  0.9956
+2  Interaction  0.0080    2  232  0.0040    1.6280  0.1986  0.0138  0.9956
+secondary, FREE: paired t(58)=4.418, p=4.412e-05
+secondary, SERIAL: paired t(58)=1.346, p=0.1835

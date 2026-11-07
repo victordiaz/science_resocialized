@@ -1,0 +1,41 @@
+{
+ "local_id": "Row.64",
+ "node": "mxryb",
+ "key_test": "between-participants ANOVA aggressivenessScore ~ mapCondition * puzzleCondition; interaction F (identical SS under type II and III)",
+ "variables": [
+  "discard",
+  "mapCondition",
+  "puzzleCondition",
+  "aggressivenessScore",
+  "Q5",
+  "Q8"
+ ],
+ "exclusions": "discard == 1 (3 participants who guessed the purpose: rows 16, 23, 68; PIDs 40, 82, 52)",
+ "n_rows_raw": 74,
+ "n_after_exclusions": 71,
+ "N_R_table": 71,
+ "table": {
+  "stat": "F(2, 65) = 0.865",
+  "p": "0.426",
+  "es": "partial eta^2 = 0.0259"
+ },
+ "r_script": {
+  "ran": false,
+  "stat": null,
+  "p": null,
+  "es": null,
+  "stdout_file": "audit.out",
+  "why": "package missing: car (library('car') fails; the script needs car::Anova). Not installed by me, per instructions."
+ },
+ "python": {
+  "ran": true,
+  "stat": "F(2,65) = 0.8653",
+  "p": "0.425726",
+  "es": "partial eta^2 = 0.0259",
+  "file": "reproduce.py"
+ },
+ "agreement": "table and Python agree: table F(2,65)=0.865 p=.426 pes=.0259; Python F(2,65)=0.8653 p=0.4257 pes=0.0259 (type II and type III identical for the interaction). R not run (car missing).",
+ "verdict": "reproduced",
+ "notes": "Anchored on the script's term (the interaction), which is also the replicators' own target analysis (RPP analysis.R, type III, sum contrasts). The script's position-based exclusion (drop rows 16, 23, 68) selects exactly the discard==1 rows. Data file has CR-only line endings. Duplicate PID 18 (two different people) makes the script's sample-size line, length(unique(PID)), print 70 rather than 71. Cell n after exclusion: Control 11/9, Global 15/12, Local 13/11 (aggression/neutral). Survey receipt's cell counts (12/10, 15/12, 14/11) are the pre-exclusion counts.",
+ "minutes": 7
+}

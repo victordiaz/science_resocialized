@@ -1,0 +1,63 @@
+{
+  "local_id": "Row.19",
+  "node": "gcj7x",
+  "title_o": "How to say no: Single-and dual-process theories of short-term recognition tested on negative probes.",
+  "verdict": "usable",
+  "verdict_reason": "Wide .sav opened (21 subjects); the between-subject listtype effect recomputes to F(1,19)=3.661, p=.071, pes=.162, exactly the table.",
+  "data_files": [
+    {
+      "path": "Data/Proportion correct wide 2.sav",
+      "opened": true,
+      "format": "sav",
+      "rows": 21,
+      "cols": 5,
+      "notes": "subject, listtype (long-short / short-long), correct, intrusion, new; OSF n87dw, the one the script reads."
+    },
+    {
+      "path": "Data/dat2.csv",
+      "opened": false,
+      "format": "csv",
+      "rows": null,
+      "cols": null,
+      "notes": "Trial-level raw data, downloaded, not used by the script."
+    }
+  ],
+  "key_test": {
+    "from_script": "RPP_gcj7x.R",
+    "test": "ezANOVA type 3: proportion correct ~ listtype (between) x probe type (within: correct, intrusion, new); row 2 = listtype main effect",
+    "variables": [
+      "subject",
+      "listtype",
+      "correct",
+      "intrusion",
+      "new"
+    ],
+    "all_variables_present": true,
+    "statistic_reported": {
+      "p": "0.071",
+      "es": "pes=.162"
+    }
+  },
+  "recompute": {
+    "attempted": true,
+    "method": "python recomputation (one-way ANOVA on subject means = between effect)",
+    "result": "F(1,19)=3.661, p=0.0709, pes=0.1616",
+    "matches_table": "yes"
+  },
+  "n_check": {
+    "N_R_table": 21,
+    "rows_after_exclusions": 21,
+    "match": "yes"
+  },
+  "obstacles": [
+    "ez not installed; recomputed in Python",
+    "the tested factor is the list-order group (long-short vs short-long), not obviously the 'new probes, long vs short lists' effect the table describes; the numbers match regardless"
+  ],
+  "minutes": 6,
+  "sources_opened": [
+    "https://osf.io/gcj7x/",
+    "https://osf.io/n87dw/",
+    "https://api.osf.io/v2/nodes/r2zcn/files/osfstorage/",
+    "https://api.osf.io/v2/nodes/q63gx/files/osfstorage/"
+  ]
+}

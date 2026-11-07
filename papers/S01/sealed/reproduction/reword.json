@@ -1,0 +1,19 @@
+{
+ "local_id": "Row.151",
+ "removed": [
+  {
+   "label": "the trolley dilemma",
+   "replaced_with": "a dilemma about diverting a runaway trolley to kill one person instead of five"
+  },
+  {
+   "label": "private-body-consciousness scale",
+   "replaced_with": "a questionnaire on how closely they attend to their own bodily sensations"
+  }
+ ],
+ "kept_terms": [
+  "moral judgment",
+  "disgust / disgusting film clip (plain description of the stimulus)",
+  "wrongness rating"
+ ],
+ "notes": "No 'disgust induction' label present; column `Trolley` kept verbatim."
+}

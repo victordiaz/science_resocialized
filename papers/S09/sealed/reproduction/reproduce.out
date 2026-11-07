@@ -1,0 +1,20 @@
+raw shape (32, 63)
+rows after dropping missing in key columns 32 | Group counts {1.0: 18, 2.0: 14} | labels {1.0: 'monolingual', 2.0: 'bilingual'}
+check: SS_within_total 2.703500 = SS_lag+SS_int+SS_err 2.703500
+
+=== KEY TEST: Group x Lag interaction ===
+F(3,90) = 0.3803; p_uncorrected = 0.7674
+GG epsilon = 0.7760; GG df = (2.328, 69.837); p_GG = 0.7165
+partial eta^2 = 0.0125
+(Lag main effect F(3,90) = 56.007)
+cell means (rows = Group [np.float64(1.0), np.float64(2.0)] ; cols = lag 1,3,5,8):
+ [[0.7633 0.5128 0.4706 0.5578]
+ [0.7879 0.4907 0.48   0.5843]]
+
+pingouin mixed_anova:
+         Source        SS  DF1  DF2        MS          F         p_unc     p_GG_corr       np2       eps sphericity   W_spher   p_spher
+0        Group  0.002905    1   30  0.002905   0.023846  8.783105e-01           NaN  0.000794       NaN        NaN       NaN       NaN
+1          Lag  1.752744    3   90  0.584248  56.006818  1.616188e-20  1.926543e-16  0.651190  0.775964      False  0.506467  0.001535
+2  Interaction  0.011901    3   90  0.003967   0.380272  7.674495e-01  7.164784e-01  0.012517  0.775964      False  0.506467  0.001535
+
+(secondary, not the table's test) lag-3 t-test mono vs bi: t(30) = 0.341, p = 0.7358

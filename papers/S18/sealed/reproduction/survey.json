@@ -1,0 +1,66 @@
+{
+ "local_id": "Row.107",
+ "node": "edcr7",
+ "verdict": "usable",
+ "verdict_reason": "The .sav (206 rows) holds RB12Mean, FSMean, Condition and Include1; the audit script's Student t-test on learning (RB12Mean - FSMean) among the 158 included gives t(156)=-1.318, p=.189, matching the table and report; the pooled d is -0.21 as in the table, though the script's own ES line would give -0.10 (see obstacles).",
+ "data_files": [
+  {
+   "path": "Dataset/SPSS dataset replication of Study 2 Eitam et al 2008 PS.sav",
+   "opened": true,
+   "format": "sav",
+   "rows": 206,
+   "cols": 84,
+   "notes": "Include1 0 = 'Include for analyses' (158 rows, 79 per condition). Condition 1 achievement priming, 2 control. Precomputed 'Learning' = FSMean - RB12Mean (exact negative of the script's mean.learn)."
+  },
+  {
+   "path": "Dataset/SPSS Analysis syntax replication of Study 2 Eitam et al 2008 PS.sps",
+   "opened": true,
+   "format": "other",
+   "rows": null,
+   "cols": null,
+   "notes": "Computes Learning; filters with filter_$."
+  }
+ ],
+ "key_test": {
+  "from_script": "RPP_edcr7.R",
+  "test": "independent-samples Student t-test (var.equal=TRUE), mean.learn = RB12Mean - FSMean by Condition, rows with Include1 == 'Include for analyses'",
+  "variables": [
+   "RB12Mean",
+   "FSMean",
+   "Condition",
+   "Include1"
+  ],
+  "all_variables_present": true,
+  "statistic_reported": {
+   "p": "0.189",
+   "es": "d = -0.21"
+  }
+ },
+ "recompute": {
+  "attempted": true,
+  "method": "python recomputation (scipy ttest_ind, pooled)",
+  "result": "t(156)=-1.318, p=.1894, pooled d=-0.21 (2t/sqrt(N)); script's ES line des(t/sqrt(n)) gives -0.105",
+  "matches_table": "yes"
+ },
+ "n_check": {
+  "N_R_table": 158,
+  "rows_after_exclusions": 158,
+  "match": "yes"
+ },
+ "obstacles": [
+  "Audit script ES is wrong by a factor of two: it passes t/sqrt(N) as d to compute.es::des with n1=n2=N; the table's -0.21 matches the report, not the script",
+  "Sign of d depends on condition order; table and report use prime minus control on RT-based learning",
+  "R package compute.es not installed; not run in R"
+ ],
+ "minutes": 14,
+ "sources_opened": [
+  "https://api.osf.io/v2/nodes/edcr7/files/osfstorage/",
+  "https://api.osf.io/v2/nodes/br2id/files/osfstorage/",
+  "https://api.osf.io/v2/nodes/7fmjt/files/osfstorage/",
+  "Dataset/SPSS dataset replication of Study 2 Eitam et al 2008 PS.sav",
+  "Dataset/SPSS Analysis syntax replication of Study 2 Eitam et al 2008 PS.sps",
+  "Analysis Audit/RPP_edcr7.R",
+  "top/Replication of Study 2 by Eitam Hassin and Schul 2008 Psychological Science Final Report.pdf"
+ ],
+ "title_o": "Nonconscious goal pursuit in novel environments: The case of implicit learning."
+}

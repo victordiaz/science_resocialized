@@ -1,0 +1,47 @@
+{
+ "local_id": "Row.39",
+ "node": "38ges",
+ "replicate_r": "no",
+ "table": {
+  "p_r": "0.21",
+  "es_r": "X",
+  "n_r": "153",
+  "direction_r": "same",
+  "test_r": "is",
+  "p_o": "<.05",
+  "es_o": "X",
+  "n_o": "68"
+ },
+ "reproduction": {
+  "key_test": "Meng-Rosenthal-Rubin (1992) contrast of correlated correlations: r(polydrug, adjusted ART) in KS, KC, RS, RC, Fisher z, lambda (+1,-1,+1,-1) = sunny minus cloudy, r_x = median ART inter-correlation; Z, two-sided p",
+  "table": {
+   "stat": "z = 1.25",
+   "p": "0.21 (USE 0.2113)",
+   "es": "X (none)"
+  },
+  "r_script": {
+   "ran": false,
+   "stat": null,
+   "p": null,
+   "es": null,
+   "stdout_file": null,
+   "why_not": "package missing: haven not installed; the script also sources http://sachaepskamp.com/files/OSF/getOSFfile.R, outside the allowed hosts"
+  },
+  "python": {
+   "ran": true,
+   "stat": "Z = 1.2479",
+   "p": "0.2121",
+   "es": "none (correlations r = .0255, -.0458, -.0114, -.0993)",
+   "file": "reproduce.py"
+  },
+  "agreement": "table and Python agree (z 1.25 vs 1.2479, p .21 vs .2121, N 153); R script not run",
+  "verdict": "reproduced",
+  "n_after_exclusions": 153
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "Decision making and learning while taking sequential risks.",
+  "authors": "TJ Pleskac",
+  "journal": "JEPLMC"
+ }
+}

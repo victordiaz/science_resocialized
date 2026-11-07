@@ -1,0 +1,13 @@
+{"local_id":"Row.94","node":"mua6d",
+ "key_test":"independent-samples Student t (equal variances), one-tailed, H1 Control (Cond 2) > Self-handicap (Cond 1), DV = Correct/Attempted on the second math exam",
+ "variables":["Cond","Correct","Attempted"],
+ "exclusions":"none (report: 'No data were excluded')",
+ "n_rows_raw":61,"n_after_exclusions":61,"N_R_table":61,
+ "table":{"stat":"t(59)=2.325","p":"0.01175 (one-tailed)","es":"d = .197"},
+ "r_script":{"ran":true,"stat":"t(59)=2.3255","p":"0.0117526 (one-tailed)","es":"d = 0.30 (script: t/sqrt(N) fed to compute.es::des with n1=n2=61)","stdout_file":"audit.out",
+   "how":"run unchanged via audit_shim.R, which only redefines getOSFfile to the already-downloaded OSF dy3zn file and skips the absent httr/RCurl and the sachaepskamp.com source line"},
+ "python":{"ran":true,"stat":"t(59)=2.3255","p":"0.01175 (one-tailed)","es":"Cohen's d (pooled SD) = 0.596","file":"reproduce.py"},
+ "agreement":"all three agree on t(59)=2.325 and one-tailed p=.01175; effect sizes disagree three ways: table d=.197, script d=0.30, pooled-SD d=0.596",
+ "verdict":"reproduced with a discrepancy",
+ "notes":"Statistic, df and p reproduced exactly by R and Python. The table's effect size d=.197 is not produced by any formula tried (pooled d .596; t/sqrt(N) .298; r .290; r^2 .084); the script's d is itself wrong (it uses N=61 as each group's n). Cond coding (1=Handicap, 2=Control) is in the script and confirmed by the replication report's group means (handicap M=.47 SD=.17, control M=.58 SD=.22; Python .466/.169 and .583/.224). Fetched the final replication report (OSF ytxgr) into download/top/. Exploratory count test t(59)=1.474, p=.073 also matches the report. T.pval.recalc.R in the table (0.0235) is the two-tailed p.",
+ "minutes":14}

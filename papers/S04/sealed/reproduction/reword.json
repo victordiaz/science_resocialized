@@ -1,0 +1,19 @@
+{
+  "local_id": "Row.29",
+  "removed": [
+    {
+      "label": "Statistical learning of a temporal sequence",
+      "replaced_with": "People who merely watch a sequence of objects can pick up which features tend to follow which in time"
+    },
+    {
+      "label": "two-alternative forced-choice familiarity judgements",
+      "replaced_with": "sees two triplet sequences one after the other and chooses which seems more familiar"
+    }
+  ],
+  "kept_terms": [
+    "familiarity",
+    "foil",
+    "chance"
+  ],
+  "notes": ""
+}

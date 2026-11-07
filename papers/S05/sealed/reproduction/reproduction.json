@@ -1,0 +1,39 @@
+{
+ "local_id": "Row.117",
+ "node": "rzjvn",
+ "key_test": "full-factorial fixed-effects OLS ANOVA on 720 per-subject cell values (temporal selection) with factors measure(3) x target(2) x SOA(10), subject not modelled (Matlab anovan 'full'); term = three-way interaction measure x target x SOA",
+ "variables": [
+  "temporal selection",
+  "efficacy (= measure, 3 levels)",
+  "latency (= target, 2 levels)",
+  "precision (= SOA, 10 levels)",
+  "subject"
+ ],
+ "exclusions": "none at this stage (the sheet is already aggregated; practice trials discarded upstream)",
+ "n_rows_raw": 720,
+ "n_after_exclusions": 720,
+ "N_R_table": 12,
+ "table": {
+  "stat": "F(18, 660) = 12.98",
+  "p": "1e-12 (placeholder; T.pval.recalc.R = 3.35e-33)",
+  "es": "eta^2 = .261"
+ },
+ "r_script": {
+  "ran": false,
+  "stat": "not run (package missing: car; also needs heplots, xlsx, reshape2)",
+  "p": "n/a",
+  "es": "n/a",
+  "stdout_file": "audit.out"
+ },
+ "python": {
+  "ran": true,
+  "stat": "F(18, 660) = 12.982 (type II = type III, balanced)",
+  "p": "3.3e-33",
+  "es": "partial eta^2 = 0.261",
+  "file": "reproduce.py"
+ },
+ "agreement": "Table and Python agree (F 12.98 vs 12.982, df 18/660, partial eta^2 .261, recalc p 3.35e-33 vs 3.3e-33). R not run.",
+ "verdict": "reproduced",
+ "notes": "The spreadsheet's column headings 'efficacy', 'latency', 'precision' are factor slots, not measures: the sheet's note maps me -> efficacy, ta -> latency, so -> precision, and the level counts are 3, 2, 10. The model ignores the repeated-measures structure, as the original did; adding subject as a blocking factor gives F(18,649)=14.99 (sensitivity only). The same code on the original block of the sheet gives F(18,660)=16.311, matching the original's reported statistic, which supports the model specification. Mixing three measures on different scales in one ANOVA is the protocol's choice, kept as is. Only the aggregated sheet was used; the per-trial .mat files were not re-aggregated.",
+ "minutes": 7
+}

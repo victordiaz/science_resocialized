@@ -1,0 +1,54 @@
+raw shape: (48, 44)
+Stim_cond      caterpillars  snakes
+parentvschild                      
+children                 13      12
+parent                   12      11
+average recomputed from M1..M24 equals the file's 'average': False
+valid trials: 1102 of 1152
+
+===== Route A: DV = the file's 'average' column (what the protocol analysed) =====
+                         count    mean     std
+parentvschild Stim_cond                       
+1.0           1.0           12  5256.8  1249.4
+              2.0           13  6317.4  2165.2
+2.0           1.0           11  2691.7  1174.5
+              2.0           12  2664.9   983.3
+Type-III ANOVA (sum contrasts):
+                                                sum_sq    df           F        PR(>F)
+Intercept                                8.569641e+08   1.0  385.316559  2.162745e-23
+C(parentvschild, Sum)                    1.155695e+08   1.0   51.963489  5.661163e-09
+C(Stim_cond, Sum)                        3.195004e+06   1.0    1.436569  2.371112e-01
+C(parentvschild, Sum):C(Stim_cond, Sum)  3.534648e+06   1.0    1.589283  2.140729e-01
+Residual                                 9.785830e+07  44.0         NaN           NaN
+KEY: target stimulus main effect: F(1,44) = 1.4366, p = 0.2371, partial eta^2 = 0.0316
+age main effect: F(1,44) = 51.9635, p = 0.0000, partial eta^2 = 0.5415
+age x stimulus interaction (the script's row [[4]]): F(1,44) = 1.5893, p = 0.2141, partial eta^2 = 0.0349
+
+===== Route B: DV = mean of the valid trials M1..M24, recomputed =====
+                         count    mean     std
+parentvschild Stim_cond                       
+1.0           1.0           12  5260.1  1247.9
+              2.0           13  6294.3  2161.5
+2.0           1.0           11  2790.4  1245.9
+              2.0           12  2673.8   973.0
+Type-III ANOVA (sum contrasts):
+                                                sum_sq    df           F        PR(>F)
+Intercept                                8.658723e+08   1.0  384.320137  2.276468e-23
+C(parentvschild, Sum)                    1.108816e+08   1.0   49.215129  1.085467e-08
+C(Stim_cond, Sum)                        2.516804e+06   1.0    1.117091  2.963142e-01
+C(parentvschild, Sum):C(Stim_cond, Sum)  3.959425e+06   1.0    1.757403  1.917906e-01
+Residual                                 9.913189e+07  44.0         NaN           NaN
+KEY: target stimulus main effect: F(1,44) = 1.1171, p = 0.2963, partial eta^2 = 0.0248
+age main effect: F(1,44) = 49.2151, p = 0.0000, partial eta^2 = 0.5280
+age x stimulus interaction (the script's row [[4]]): F(1,44) = 1.7574, p = 0.1918, partial eta^2 = 0.0384
+
+participants whose 'average' != mean(M1..M24): 9
+  1016c    average=6804.24 mean(M1..M24)=6494.95 matches: ['mean(M1..M23)']
+  2019A    average=3026.95 mean(M1..M24)=4093.79 matches: ['mean(M5..M24)']
+  2019c    average=4030.35 mean(M1..M24)=4107.04 matches: ['mean(M5..M24)']
+  2020 A   average=1573.85 mean(M1..M24)=1680.17 matches: ['mean(M5..M24)']
+  2020c    average=3380.95 mean(M1..M24)=3367.43 matches: ['mean(M5..M24)']
+  2021c    average=4160.45 mean(M1..M24)=4033.88 matches: ['mean(M5..M24)']
+  2022c    average=4993.50 mean(M1..M24)=5015.95 matches: ['mean(M5..M24)']
+  2023 A   average=2171.10 mean(M1..M24)=2190.29 matches: ['mean(M5..M24)']
+  2023 C   average=4368.10 mean(M1..M24)=4457.39 matches: ['mean(M5..M24)']

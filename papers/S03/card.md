@@ -12,6 +12,6 @@
 
 <!-- files:start -->
 **Data files given.** The raw data you receive, under neutral names:
-- `d04.dat` (text, 37 KB): 97 rows 34 columns full data, no Include flag
 - `d05.txt` (text, 46 KB): 89 rows 32 columns tab-separated, 3 summary lines above the header; Include column; free-text responses inside
+- `d06.tsv` (TSV, 37 KB)
 <!-- files:end -->

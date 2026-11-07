@@ -1,0 +1,11 @@
+raw shape (132, 56) | Condition counts {0.0: 69, 1.0: 63}
+item range: 1.0 - 7.0
+max |rebuilt composite - mean_vignettes|: 0.0
+Madeup_dummy x Exp_Error:
+ Exp_Error     0.0  1.0
+Madeup_dummy          
+0.0           126    2
+1.0             3    1
+after exclusions: 126 | by Condition {0.0: 68, 1.0: 58}
+means: no-wash 5.6544 (n=68), wash 5.6580 (n=58)
+KEY F(1,124) = 0.00103, p = 0.9745; t(124) = 0.0320; d (wash - no wash, pooled) = 0.0057

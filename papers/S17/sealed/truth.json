@@ -1,0 +1,47 @@
+{
+ "local_id": "Row.161",
+ "node": "sd7kg",
+ "replicate_r": "no",
+ "table": {
+  "p_r": "0.237",
+  "es_r": "_2 = .032",
+  "n_r": "48",
+  "direction_r": "same",
+  "test_r": "is",
+  "p_o": "<.01",
+  "es_o": "__p^2 = . 23",
+  "n_o": "48"
+ },
+ "reproduction": {
+  "key_test": "2 (parentvschild: children/parent) x 2 (Stim_cond: snakes/caterpillars) between-subjects ANOVA on mean RT, type-III SS, sum contrasts; key term = Stim_cond MAIN EFFECT (table and report), not the interaction the script extracts",
+  "table": {
+   "stat": "F(1,44) = 1.437",
+   "p": "0.237",
+   "es": "eta^2 = .032"
+  },
+  "r_script": {
+   "ran": true,
+   "stat": "F(1,44) = 1.5893 (row [[4]], the age x stimulus interaction); the same drop1 table gives Stim_cond F = 1.4366",
+   "p": "0.2141 (interaction); Stim_cond 0.2371",
+   "es": "0.0349 (interaction); Stim_cond SS/(SS+RSS) = 3195004/(3195004+97858296) = 0.0316",
+   "stdout_file": "audit.out",
+   "how": "run unchanged via audit_shim.R, which only redefines getOSFfile to the already-downloaded OSF nd7we file and skips the absent httr/RCurl and the sachaepskamp.com source line"
+  },
+  "python": {
+   "ran": true,
+   "stat": "F(1,44) = 1.4366 (Stim_cond, file's average)",
+   "p": "0.2371",
+   "es": "partial eta^2 = 0.0316",
+   "file": "reproduce.py"
+  },
+  "agreement": "table, Python and the Stim_cond row of the R script's own drop1 table agree (F 1.437, p .237, .032); the script's extracted statistic is the interaction (F 1.589, p .214, .035), a different term",
+  "verdict": "reproduced with a discrepancy",
+  "n_after_exclusions": 48
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "Detecting the snake in the grass: attention to fear-relevant stimuli by adults and young children.",
+  "authors": "V Lobue, JS DeLoache",
+  "journal": "PS"
+ }
+}

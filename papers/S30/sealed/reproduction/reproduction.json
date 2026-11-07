@@ -1,0 +1,39 @@
+{
+ "local_id": "Row.110",
+ "node": "7dyp5",
+ "key_test": "2 (category: Sens_Friend vs Sens_SI, within) x 2 (Gender, between) mixed ANOVA; Gender x category interaction F",
+ "variables": [
+  "ID",
+  "Gender",
+  "Sens_Friend",
+  "Sens_SI"
+ ],
+ "exclusions": "none",
+ "n_rows_raw": 144,
+ "n_after_exclusions": 144,
+ "N_R_table": 144,
+ "table": {
+  "stat": "F(1, 142) = 1.19",
+  "p": "0.28 (recalc 0.2772)",
+  "es": "partial eta^2 = 0.008"
+ },
+ "r_script": {
+  "ran": false,
+  "stat": null,
+  "p": null,
+  "es": null,
+  "stdout_file": "audit.out",
+  "why": "package missing: ez (script stops at library('ez'); reshape2 now present). Not installed by me."
+ },
+ "python": {
+  "ran": true,
+  "stat": "F(1,142) = 1.1937",
+  "p": "0.276437",
+  "es": "partial eta^2 = 0.0083",
+  "file": "reproduce.py"
+ },
+ "agreement": "table and Python agree: table F(1,142)=1.19 p=.28 pes=.008; Python F(1,142)=1.1937 p=0.2764 pes=0.0083 (scipy one-way on Friend-SI difference and pingouin mixed_anova identical). R not run (ez missing).",
+ "verdict": "reproduced",
+ "notes": "Anchored on the replication report's 'primary analysis of interest' (GLM Sens_Friend Sens_SI BY Gender, interaction) and the script's fit$ANOVA[3,] row, which is the Gender:Condition interaction. Second plausible test: gender main effect on positive-affect sensitivity, F(1,142)=0.863, p=.354 - a different answer to the same verbal claim, not the table's. The report's full factorial three-way gender x affect x intent term also reproduces: F(1,140)=0.0005, p=.98 (report: <.001, p=.98). Sensitivity scores are precomputed in the .sav; the 4x4 confusion counts needed to rebuild them are not in the file (it holds only per-category hit/FA/miss/CR totals), so the DV itself was not re-derived. Replication report downloaded to download/top/ from OSF 5u4km.",
+ "minutes": 10
+}

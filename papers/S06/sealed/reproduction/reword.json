@@ -1,0 +1,35 @@
+{
+ "local_id": "Row.53",
+ "removed": [
+  {
+   "label": "stereotype-inhibition task / Weapons identification",
+   "replaced_with": "gun/tool classification after a Black or White face, described"
+  },
+  {
+   "label": "Flankers task / race-neutral conflict task",
+   "replaced_with": "classify a central target while flanking items call for the same or opposite response"
+  },
+  {
+   "label": "Internal and External Motivation to Respond Without Prejudice scales (IMS, EMS)",
+   "replaced_with": "two self-report questionnaires on values-based vs disapproval-based motivation"
+  },
+  {
+   "label": "HighIMS-LowEMS / HighIMS-HighEMS",
+   "replaced_with": "high internal/low external, high internal/high external"
+  },
+  {
+   "label": "Process-dissociation (PD) estimates",
+   "replaced_with": "accuracy-based control estimate with its formula; `PD` kept as column name"
+  },
+  {
+   "label": "face prime",
+   "replaced_with": "a face is flashed"
+  }
+ ],
+ "kept_terms": [
+  "prejudice",
+  "response control",
+  "`Weapons`/`Flankers` as data values"
+ ],
+ "notes": "Flanker stimulus type (arrows vs letters) not stated in card or survey; described generically. PD formula is the standard one."
+}

@@ -1,0 +1,47 @@
+{
+ "local_id": "Row.120",
+ "node": "73pnd",
+ "replicate_r": "no",
+ "table": {
+  "p_r": "0.11",
+  "es_r": "r = -.25",
+  "n_r": "43",
+  "direction_r": "same",
+  "test_r": "is",
+  "p_o": "<.05",
+  "es_o": "F not calculable (no effect size, no SD on means); |rho| = .38",
+  "n_o": "31"
+ },
+ "reproduction": {
+  "key_test": "Pearson r between ERN and EPS, one row per participant (startle_type == 'error'); predicted negative; protocol says one-tailed",
+  "table": {
+   "stat": "r = -.25",
+   "p": "0.11 (Tails.R = 1; T.pval.USE.R = .053)",
+   "es": "r = -.25"
+  },
+  "r_script": {
+   "ran": true,
+   "stat": "t(40) = -1.654611, r = -0.2530988",
+   "p": "0.1058305 (two-sided)",
+   "es": "r = -0.2531",
+   "stdout_file": "audit.out",
+   "how": "audit_harness.R: getOSFfile mapped to the local csv, external source() skipped, httr/RCurl missing -> skipped; analysis lines unchanged"
+  },
+  "python": {
+   "ran": true,
+   "stat": "r = -0.2531, t(40) = -1.6546",
+   "p": "0.1058 two-sided; 0.0529 one-sided (r < 0)",
+   "es": "r = -0.2531",
+   "file": "reproduce.py"
+  },
+  "agreement": "all three agree on r = -.253 and p = .106 two-sided. N disagrees: table and report say 43, data and df give 42 (the report's own paired t-tests also use t(40)). Tails: the table and report label p = .11 one-tailed, but .11 is the two-sided value; the one-tailed p the protocol calls for is .053",
+  "verdict": "reproduced with a discrepancy",
+  "n_after_exclusions": 42
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "Errors Are Aversive: Defensive Motivation and the Error-Related Negativity",
+  "authors": "G Hajcak, D Foti",
+  "journal": "PS"
+ }
+}

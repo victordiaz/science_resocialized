@@ -1,0 +1,37 @@
+{
+ "Analysis_Audit/RPP_dncxa.R": {
+  "neutral": "d01.r",
+  "give": false,
+  "bytes": 2706
+ },
+ "Data/F1RT_readyforanalysis.sav": {
+  "neutral": "d02.sav",
+  "give": true,
+  "bytes": 1579
+ },
+ "Data/F2RT_readyforanalysis.sav": {
+  "neutral": "d03.sav",
+  "give": true,
+  "bytes": 3592
+ },
+ "Data/Janssen et al 2008 results.spv": {
+  "neutral": "d04.spv",
+  "give": false,
+  "bytes": 30762
+ },
+ "Data/Janssen et al 2008 syntax.sps": {
+  "neutral": "d05.sps",
+  "give": false,
+  "bytes": 6185
+ },
+ "Data/alldata.sav": {
+  "neutral": "d06.sav",
+  "give": true,
+  "bytes": 127756
+ },
+ "Report/replication-report.pdf": {
+  "neutral": "d07.pdf",
+  "give": false,
+  "bytes": 123015
+ }
+}

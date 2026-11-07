@@ -1,0 +1,497 @@
+_session_id,judgment2,judgment1,newtenpieces,newtwopieces,focus,options,occupation,politicalid,religion,religionid,sex,zipcode,education,residence,ethnicityomb,raceomb,genoccupatio,major,relfamily,_session_date,infochoice,decision
+1901476.0,2,1,,1,quality,two,,0,catholic,2,m,48060,5,us,2,6,,13,roman cat,2012-04-04 12:23:57,1.0,confirming
+1901494.0,1,2,,2,quality,two,99-9999,0,none,1,m,49079,5,us,2,6,99-9999,7,agnostic,2012-04-04 12:39:55,2.0,confirming
+1901568.0,1,1,2.0,,direction,ten,25-2000,2,protestan,4,m,02062,9,us,2,6,25,5,nondenomi,2012-04-04 14:15:10,2.0,disconfirming
+1901584.0,1,1,1.0,,quality,ten,25-2000,3,none,1,m,71901,9,us,2,6,25,8,agnostic,2012-04-04 14:25:25,1.0,confirming
+1901609.0,2,2,,2,control,two,25-9999,0,jewish,2,f,43614,5,sm,2,6,25-9999,7,reform,2012-04-04 14:49:05,2.0,confirming
+1901612.0,2,2,,2,quality,two,25-9999,0,none,1,f,63021,4,us,2,6,25-9999,,atheist,2012-04-04 14:56:26,2.0,confirming
+1901613.0,2,2,2.0,,control,ten,25-9999,3,none,2,f,37072,5,us,2,6,25-9999,10,spiritual,2012-04-04 14:57:00,2.0,confirming
+1901623.0,1,2,,2,direction,two,,,,,f,,,sm,2,6,,,,2012-04-04 15:05:36,2.0,confirming
+1901633.0,2,2,,1,direction,two,25-1000,0,protestan,4,f,32605,9,us,2,4,25,7,lds,2012-04-04 15:24:36,1.0,disconfirming
+1901641.0,2,2,,2,quality,two,99-9999,0,none,1,m,44314,5,us,2,6,99-9999,4,other non,2012-04-04 15:32:47,2.0,confirming
+1901664.0,2,2,2.0,,direction,ten,00-0000,-2,catholic,3,f,02478,10,sm,2,6,00-0000,9,roman cat,2012-04-04 15:50:18,2.0,confirming
+1901667.0,2,2,,2,control,two,,3,none,1,m,94709,9,us,2,2,,7,atheist,2012-04-04 15:51:20,2.0,confirming
+1901690.0,1,1,,2,direction,two,25-2000,3,protestan,4,f,28306,7,sm,2,6,25,5,lutheran,2012-04-04 16:06:16,2.0,disconfirming
+1901711.0,2,2,2.0,,quality,ten,25-9999,0,catholic,2,f,48236,7,us,2,6,25-9999,7,roman cat,2012-04-04 16:32:57,2.0,confirming
+1901716.0,2,2,,2,direction,two,17-2000,0,protestan,2,m,,5,us,3,9,17,6,lutheran,2012-04-04 16:36:05,2.0,confirming
+1901754.0,1,1,,2,control,two,25-9000,0,catholic,2,f,91740,8,us,1,8,25,7,other ort,2012-04-04 17:20:21,2.0,disconfirming
+1901772.0,2,2,1.0,,direction,ten,13-1000,2,catholic,3,f,43055,6,sm,2,6,13,2,roman cat,2012-04-04 17:38:53,1.0,disconfirming
+1901774.0,2,2,,1,quality,two,21-9999,3,none,2,f,98144,9,sm,2,6,21,11,agnostic,2012-04-04 17:40:38,1.0,disconfirming
+1901775.0,2,,2.0,,direction,ten,43-9000,0,none,,f,01108,6,sm,2,6,43,8,deist,2012-04-04 17:44:30,2.0,
+1901831.0,2,2,2.0,,direction,ten,41-9000,-1,muslim,3,m,43612,5,us,2,5,41,2,sunni,2012-04-04 18:37:35,2.0,confirming
+1901832.0,1,1,,1,quality,two,31-9000,-1,otherreli,2,f,33615,3,us,2,6,2931,,other: no,2012-04-04 18:33:43,1.0,confirming
+1901846.0,2,2,2.0,,quality,ten,17-2000,1,muslim,3,m,43560,5,sm,2,6,17,6,shiite,2012-04-04 18:52:35,2.0,confirming
+1901847.0,1,2,,1,quality,two,25-9999,2,none,2,m,90813,3,us,1,9,25-9999,,spiritual,2012-04-04 18:42:24,1.0,disconfirming
+1901855.0,1,1,1.0,,quality,ten,15-1000,2,protestan,2,m,91030,6,us,2,5,15,8,otherchri,2012-04-04 18:51:15,1.0,confirming
+1901869.0,2,2,2.0,,quality,ten,55-3000,-3,protestan,2,m,22407,5,sm,2,6,55,11,pentecost,2012-04-04 18:56:56,2.0,confirming
+1901922.0,1,2,1.0,,direction,ten,25-9999,-1,none,1,m,19104,7,us,1,6,25-9999,1,spiritual,2012-04-04 19:42:39,1.0,disconfirming
+1901924.0,2,2,,2,direction,two,25-9999,2,none,1,m,93117,3,us,2,4,25-9999,,agnostic,2012-04-04 19:47:22,2.0,confirming
+1901946.0,2,2,,2,quality,two,25-9999,1,none,1,m,98032,7,us,2,8,25-9999,1,other non,2012-04-04 20:05:55,2.0,confirming
+1901947.0,2,2,,2,quality,two,25-9999,0,catholic,2,m,98105,5,us,2,4,25-9999,6,roman cat,2012-04-04 20:04:16,2.0,confirming
+1901949.0,2,2,2.0,,quality,ten,25-9999,0,protestan,3,m,50112,7,sm,2,6,25-9999,6,nondenomi,2012-04-04 20:05:50,2.0,confirming
+1901983.0,2,2,,1,control,two,25-9999,2,none,1,f,,3,sm,2,6,25-9999,,agnostic,2012-04-04 20:33:49,1.0,disconfirming
+1901986.0,2,2,,2,quality,two,25-9999,0,otherreli,2,f,53186,5,us,2,6,25-9999,2,other: no,2012-04-04 20:38:12,2.0,confirming
+1901990.0,1,2,1.0,,quality,ten,25-9999,1,none,1,f,10009,5,sm,2,8,25-9999,13,agnostic,2012-04-04 20:41:42,1.0,disconfirming
+1902021.0,2,2,2.0,,quality,ten,25-9999,2,none,1,m,20015,3,us,2,6,25-9999,,,2012-04-04 21:21:09,2.0,confirming
+1902032.0,2,2,2.0,,control,ten,29-2000,0,none,1,m,22042,5,us,2,2,2931,7,atheist,2012-04-04 21:37:02,2.0,confirming
+1902036.0,1,1,,1,control,two,41-2000,0,catholic,2,f,02904,5,us,2,6,41,5,roman cat,2012-04-04 21:41:13,1.0,confirming
+1902048.0,1,1,1.0,,direction,ten,25-9999,-1,jewish,2,m,10023,5,sm,2,6,25-9999,9,secular,2012-04-04 21:53:52,1.0,confirming
+1902049.0,1,1,,1,quality,two,25-9000,3,none,1,f,97206,9,us,2,6,25,5,atheist,2012-04-04 21:59:49,1.0,confirming
+1902062.0,1,1,1.0,,control,ten,00-0000,-2,protestan,4,f,84124,5,sm,2,6,00-0000,13,lds,2012-04-04 22:27:00,1.0,confirming
+1902072.0,1,1,,2,direction,two,25-9999,0,none,1,m,43566,5,sm,2,6,25-9999,6,atheist,2012-04-04 22:31:54,2.0,disconfirming
+1902108.0,1,1,,2,control,two,25-9999,-1,protestan,3,f,32612,8,us,2,6,25-9999,7,nondenomi,2012-04-04 23:14:45,2.0,disconfirming
+1902154.0,1,1,,1,direction,two,27-3000,2,protestan,4,f,11249,7,us,2,6,27,8,anglican,2012-04-05 00:16:31,1.0,confirming
+1902170.0,2,1,,2,quality,two,25-9999,3,none,2,f,01510,3,us,2,8,25-9999,,agnostic,2012-04-05 00:46:13,2.0,disconfirming
+1902175.0,1,1,,1,quality,two,39-9000,-3,protestan,4,m,43614,5,us,2,6,39,2,nondenomi,2012-04-05 00:55:50,1.0,confirming
+1902177.0,1,1,1.0,,quality,ten,41-3000,0,none,1,m,76706,5,us,2,6,41,11,other non,2012-04-05 01:01:39,1.0,confirming
+1902201.0,1,1,1.0,,direction,ten,41-2000,,none,,m,60641,5,sm,1,9,41,10,,2012-04-05 01:40:35,1.0,confirming
+1902268.0,,,,,quality,two,31-9000,0,catholic,2,f,78132,8,us,2,6,2931,5,roman cat,2012-04-05 07:20:57,,
+1902275.0,1,2,,1,quality,two,31-1000,2,protestan,2,m,43551,6,us,2,6,2931,7,methodist,2012-04-05 07:42:03,1.0,disconfirming
+1902311.0,2,1,,1,quality,two,99-9999,0,catholic,1,m,11946,3,us,3,6,99-9999,,other cat,2012-04-05 08:44:36,1.0,confirming
+1902316.0,2,2,2.0,,control,ten,25-9999,0,protestan,3,f,46032,5,us,2,5,25-9999,10,nondenomi,2012-04-05 08:48:55,2.0,confirming
+1902322.0,2,2,,1,direction,two,19-2000,3,none,2,m,65644,7,us,2,6,19,6,deist,2012-04-05 09:01:15,1.0,disconfirming
+1902342.0,2,2,,2,direction,two,25-9999,-3,protestan,4,f,37130,5,us,2,6,25-9999,7,baptist,2012-04-05 09:44:27,2.0,confirming
+1902370.0,2,1,,1,quality,two,99-9999,-1,none,1,m,12203,3,us,2,6,99-9999,,spiritual,2012-04-05 10:13:59,1.0,confirming
+1902403.0,1,1,1.0,,control,ten,27-9999,-2,catholic,2,f,43571,5,us,2,6,27,7,roman cat,2012-04-05 10:59:47,1.0,confirming
+1902418.0,2,2,,1,control,two,25-9999,1,protestan,3,f,93111,7,sm,2,6,25-9999,8,presbyter,2012-04-05 11:32:01,1.0,disconfirming
+1902419.0,,,,,quality,ten,25-xxxx,2,protestan,3,f,27834,12,us,2,5,25,10,baptist,2012-04-05 11:32:21,,
+1902443.0,2,1,,1,direction,two,43-6000,-2,protestan,1,f,49508,5,us,2,5,43,2,pentecost,2012-04-05 12:22:40,1.0,confirming
+1902449.0,1,1,1.0,,direction,ten,25-9999,0,protestan,3,f,85050,9,us,2,6,25-9999,10,nondenomi,2012-04-05 12:22:56,1.0,confirming
+1902515.0,2,2,1.0,,direction,ten,25-3000,0,none,1,m,97478,6,us,2,6,25,1,atheist,2012-04-05 14:06:29,1.0,disconfirming
+1902524.0,1,2,,2,quality,two,25-9999,0,protestan,4,m,90262,5,us,1,9,25-9999,13,pentecost,2012-04-05 14:20:31,2.0,confirming
+1902546.0,1,1,1.0,,quality,ten,25-9999,-2,protestan,3,f,54405,5,us,,6,25-9999,13,methodist,2012-04-05 14:42:42,1.0,confirming
+1902584.0,2,2,,1,control,two,25-9999,2,none,1,f,32817,6,us,2,6,25-9999,10,atheist,2012-04-05 15:11:25,1.0,disconfirming
+1902604.0,1,1,,1,quality,two,,,,,m,38002,,us,2,5,,,,2012-04-05 15:37:40,1.0,confirming
+1902605.0,1,2,2.0,,direction,ten,13-9999,0,protestan,3,f,47374,5,us,2,7,13,2,pentecost,2012-04-05 15:37:32,2.0,confirming
+1902621.0,1,1,,2,direction,two,19-1000,2,protestan,4,f,02138,7,us,2,5,19,1,baptist,2012-04-05 16:03:23,2.0,disconfirming
+1902647.0,2,1,1.0,,quality,ten,00-0000,3,protestan,2,f,43609,5,sm,2,6,00-0000,1,otherchri,2012-04-05 16:43:08,1.0,confirming
+1902650.0,2,2,,1,quality,two,11-3000,-3,catholic,2,f,89502,6,us,2,8,11,13,roman cat,2012-04-05 16:39:26,1.0,disconfirming
+1902749.0,1,1,1.0,,control,ten,00-0000,-2,protestan,3,f,30263,5,sm,2,6,00-0000,12,methodist,2012-04-05 18:37:57,1.0,confirming
+1902769.0,2,2,2.0,,control,ten,,2,none,1,f,,6,us,2,6,,13,atheist,2012-04-05 19:08:27,2.0,confirming
+1902793.0,2,1,,2,quality,two,25-9999,1,protestan,3,f,84117,7,us,2,9,25-9999,11,,2012-04-05 20:04:53,2.0,disconfirming
+1902796.0,2,2,,1,quality,two,25-9999,-1,catholic,2,f,48032,5,us,3,6,25-9999,13,other cat,2012-04-05 20:07:53,1.0,disconfirming
+1902801.0,2,2,2.0,,direction,ten,25-9999,2,protestan,4,f,48060,5,sm,2,6,25-9999,7,nondenomi,2012-04-05 20:19:16,2.0,confirming
+1902839.0,2,2,,1,direction,two,25-xxxx,3,none,1,f,32504,6,us,2,6,25,10,agnostic,2012-04-05 20:46:32,1.0,disconfirming
+1902843.0,2,2,,2,quality,two,25-9999,2,none,1,f,15143,2,us,2,6,25-9999,,agnostic,2012-04-05 20:52:45,2.0,confirming
+1902849.0,1,2,,1,direction,two,99-9999,0,catholic,2,m,,5,us,2,6,99-9999,6,,2012-04-05 20:57:32,1.0,disconfirming
+1902864.0,1,1,,1,quality,two,43-6000,1,protestan,4,f,43606,5,us,2,5,43,3,nondenomi,2012-04-05 21:13:17,1.0,confirming
+1902866.0,2,2,2.0,,quality,ten,25-9999,2,none,1,m,30609,5,us,2,6,25-9999,1,agnostic,2012-04-05 21:18:26,2.0,confirming
+1902879.0,1,1,,2,direction,two,99-9999,-2,catholic,3,m,01830,5,us,2,6,99-9999,2,other cat,2012-04-05 21:38:37,2.0,disconfirming
+1902908.0,1,1,,2,control,two,25-9999,-1,none,1,m,48117,5,us,2,6,25-9999,6,atheist,2012-04-05 22:07:08,2.0,disconfirming
+1902911.0,1,1,,1,control,two,21-9999,3,protestan,2,f,98272,9,us,2,6,21,5,congregat,2012-04-05 22:08:03,1.0,confirming
+1902925.0,2,2,1.0,,direction,ten,43-9000,2,none,2,f,55429,7,sm,2,6,43,8,spiritual,2012-04-05 22:20:11,1.0,disconfirming
+1902933.0,2,2,2.0,,quality,ten,25-9999,1,protestan,3,f,74074,5,us,2,6,25-9999,11,baptist,2012-04-05 22:34:05,2.0,confirming
+1902936.0,1,1,,1,quality,two,00-0000,3,none,2,f,30601,7,us,2,6,00-0000,12,spiritual,2012-04-05 22:38:10,1.0,confirming
+1902943.0,1,1,1.0,,direction,ten,13-2000,0,catholic,2,f,,9,us,2,6,13,2,orthodox:,2012-04-05 22:47:24,1.0,confirming
+1903002.0,1,1,2.0,,direction,ten,99-9999,3,none,1,f,55406,3,sm,2,3,99-9999,,agnostic,2012-04-06 00:26:52,2.0,disconfirming
+1903034.0,1,1,,1,direction,two,99-9999,2,none,1,f,20002,7,sm,2,5,99-9999,10,atheist,2012-04-06 01:16:05,1.0,confirming
+1903044.0,2,2,,2,quality,two,25-9999,-1,protestan,3,m,72701,5,sm,2,6,25-9999,2,methodist,2012-04-06 01:19:31,2.0,confirming
+1903046.0,2,1,2.0,,quality,ten,25-9999,3,protestan,4,f,67216,6,sm,3,8,25-9999,8,otherchri,2012-04-06 01:30:06,2.0,disconfirming
+1903080.0,2,2,2.0,,control,ten,19-4000,0,jewish,2,m,90806,4,sm,1,8,19,,other jew,2012-04-06 03:37:20,2.0,confirming
+1903100.0,1,1,1.0,,direction,ten,00-0000,0,protestan,2,f,97127,5,us,2,6,00-0000,2,nondenomi,2012-04-06 07:31:25,1.0,confirming
+1903110.0,1,1,,2,direction,two,55-3000,0,catholic,2,m,10997,5,us,,5,55,13,roman cat,2012-04-06 07:57:20,2.0,disconfirming
+1903150.0,1,1,,1,quality,two,,,none,,f,02458,4,sm,2,6,,,atheist,2012-04-06 09:10:42,1.0,confirming
+1903159.0,1,1,,1,quality,two,25-9999,3,none,2,f,48104,14,us,2,6,25-9999,2,spiritual,2012-04-06 09:28:02,1.0,confirming
+1903202.0,2,2,2.0,,quality,ten,15-1000,2,protestan,3,m,10029,5,us,3,5,15,4,nondenomi,2012-04-06 10:55:17,2.0,confirming
+1903246.0,1,1,,1,quality,two,25-9999,-1,protestan,4,f,97330,5,us,2,6,25-9999,11,pentecost,2012-04-06 11:59:12,1.0,confirming
+1903277.0,,,,,quality,ten,99-9999,,none,2,f,,5,us,2,6,99-9999,10,spiritual,2012-04-06 13:05:50,,
+1903291.0,1,1,,2,direction,two,25-9999,-3,protestan,4,f,80526,7,us,3,6,25-9999,8,presbyter,2012-04-06 13:38:03,2.0,disconfirming
+1903305.0,1,2,2.0,,direction,ten,51-9000,2,none,2,f,97006,9,us,,6,51,13,other non,2012-04-06 13:59:28,2.0,confirming
+1903331.0,1,1,,1,control,two,13-9999,2,none,1,m,85254,14,sm,2,6,13,2,atheist,2012-04-06 14:55:37,1.0,confirming
+1903360.0,1,1,,1,direction,two,21-1000,2,protestan,2,m,12561,7,sm,2,8,21,10,nondenomi,2012-04-06 15:26:06,1.0,confirming
+1903363.0,1,1,,1,control,two,25-9999,-2,protestan,4,f,80017-335,3,sm,2,6,25-9999,,lds,2012-04-06 15:28:24,1.0,confirming
+1903390.0,2,2,1.0,,control,ten,11-9000,0,catholic,3,f,53217,9,us,2,6,11,5,roman cat,2012-04-06 16:33:29,1.0,disconfirming
+1903415.0,1,1,,2,control,two,25-9999,2,catholic,2,m,21230,10,sm,2,6,25-9999,9,roman cat,2012-04-06 17:27:28,2.0,disconfirming
+1903477.0,1,1,2.0,,control,ten,19-3000,3,catholic,2,f,94501,12,us,2,6,19,11,orthodox:,2012-04-06 19:34:44,2.0,disconfirming
+1903508.0,1,,1.0,,direction,ten,00-0000,2,none,1,f,40391,4,us,2,6,00-0000,,spiritual,2012-04-06 20:49:14,1.0,
+1903531.0,1,1,,1,quality,two,41-2000,-2,none,1,f,30263,5,us,2,6,41,5,,2012-04-06 21:48:32,1.0,confirming
+1903540.0,1,2,,1,direction,two,25-9999,2,hindu,2,f,10533,5,sm,2,3,25-9999,1,other hin,2012-04-06 22:10:34,1.0,disconfirming
+1903542.0,2,2,2.0,,quality,ten,13-2000,2,protestan,4,m,81301,9,sm,2,6,13,10,lutheran,2012-04-06 22:14:41,2.0,confirming
+1903543.0,2,2,2.0,,quality,ten,29-1000,-1,catholic,3,m,43015,7,us,2,6,2931,7,roman cat,2012-04-06 22:20:45,2.0,confirming
+1903545.0,,,,,control,two,25-9999,2,catholic,2,f,93060,5,us,1,6,25-9999,3,roman cat,2012-04-06 22:20:18,,
+1903554.0,2,2,2.0,,direction,ten,13-2000,-2,catholic,3,f,51525,14,sm,2,6,13,2,roman cat,2012-04-06 22:44:40,2.0,confirming
+1903559.0,1,1,1.0,,quality,ten,,-1,protestan,2,m,78728,3,us,2,1,,,nondenomi,2012-04-06 22:47:55,1.0,confirming
+1903573.0,,,,,quality,ten,25-9999,0,catholic,1,m,32826,6,us,1,6,25-9999,10,roman cat,2012-04-06 23:21:57,,
+1903630.0,1,1,,1,control,two,33-9000,0,protestan,3,m,76543,6,us,2,8,33,4,nondenomi,2012-04-07 01:17:43,1.0,confirming
+1903634.0,2,2,,2,quality,two,13-2000,1,otherreli,3,m,94952,14,us,2,6,13,2,other: no,2012-04-07 01:30:56,2.0,confirming
+1903656.0,2,2,,2,control,two,11-9000,0,protestan,2,f,07017,5,us,2,5,11,2,nondenomi,2012-04-07 03:05:34,2.0,confirming
+1903684.0,2,2,2.0,,quality,ten,27-2000,3,none,2,f,01606,5,us,2,5,27,12,spiritual,2012-04-07 05:53:08,2.0,confirming
+1903727.0,2,2,,2,direction,two,25-9999,-1,none,1,m,31909,5,sm,1,9,25-9999,11,atheist,2012-04-07 10:41:23,2.0,confirming
+1903740.0,1,1,1.0,,control,ten,25-9999,1,protestan,2,m,21230,10,us,2,6,25-9999,9,anglican,2012-04-07 11:20:36,1.0,confirming
+1903742.0,1,1,,1,control,two,55-3000,0,none,2,m,30441,5,sm,2,5,55,2,spiritual,2012-04-07 11:34:07,1.0,confirming
+1903762.0,2,2,2.0,,control,ten,13-1000,2,protestan,2,m,84322,7,us,2,6,13,2,anglican,2012-04-07 12:20:43,2.0,confirming
+1903767.0,2,2,2.0,,quality,ten,25-9999,0,catholic,2,f,92054,6,us,2,6,25-9999,11,roman cat,2012-04-07 12:52:15,2.0,confirming
+1903770.0,2,2,2.0,,quality,ten,25-9999,0,catholic,2,m,22801,5,us,2,6,25-9999,2,roman cat,2012-04-07 12:55:14,2.0,confirming
+1903773.0,2,1,,2,control,two,00-0000,-1,protestan,2,f,36561,5,us,2,6,00-0000,2,anglican,2012-04-07 13:21:57,2.0,disconfirming
+1903775.0,1,1,,2,direction,two,25-9999,1,catholic,1,f,57702,5,us,1,8,25-9999,11,roman cat,2012-04-07 13:26:08,2.0,disconfirming
+1903790.0,2,2,1.0,,quality,ten,13-9999,2,catholic,2,f,32566,7,us,1,7,13,2,roman cat,2012-04-07 14:15:44,1.0,disconfirming
+1903799.0,2,2,,1,direction,two,99-9999,1,none,1,m,95060,6,sm,2,6,99-9999,7,agnostic,2012-04-07 14:38:56,1.0,disconfirming
+1903813.0,2,2,2.0,,control,ten,25-3000,0,protestan,3,f,76661,6,sm,2,6,25,5,lutheran,2012-04-07 15:25:16,2.0,confirming
+1903817.0,1,,,1,direction,two,21-1000,0,protestan,1,f,12542,6,us,1,9,21,8,otherchri,2012-04-07 15:42:36,1.0,
+1903824.0,2,2,,2,control,two,99-9999,1,protestan,2,m,98403,6,us,2,8,99-9999,2,churcheso,2012-04-07 15:42:32,2.0,confirming
+1903847.0,1,1,,2,direction,two,25-9999,3,catholic,1,f,90640,8,sm,1,9,25-9999,11,roman cat,2012-04-07 16:24:09,2.0,disconfirming
+1903861.0,1,2,,1,control,two,41-2000,0,protestan,3,m,80521,5,us,2,5,41,7,pentecost,2012-04-07 17:09:16,1.0,disconfirming
+1903868.0,1,1,1.0,,quality,ten,29-1000,3,none,1,m,10461,11,us,2,6,2931,7,atheist,2012-04-07 17:25:01,1.0,confirming
+1903888.0,2,2,2.0,,control,ten,47-3000,-1,protestan,2,m,83705,4,us,2,6,47,,nondenomi,2012-04-07 17:53:11,2.0,confirming
+1903904.0,1,2,1.0,,quality,ten,31-1000,0,otherreli,2,f,66523,5,sm,2,6,2931,7,other: no,2012-04-07 18:16:09,1.0,disconfirming
+1903910.0,1,1,1.0,,control,ten,55-2000,-2,protestan,2,m,15205,5,us,2,6,55,2,baptist,2012-04-07 18:22:12,1.0,confirming
+1903934.0,1,1,,1,control,two,25-9999,1,protestan,3,f,80521,5,us,2,6,25-9999,3,lutheran,2012-04-07 19:18:32,1.0,confirming
+1903935.0,1,2,2.0,,control,ten,19-4000,2,none,1,f,02446,9,sm,2,5,19,1,atheist,2012-04-07 19:24:43,2.0,confirming
+1903937.0,1,2,1.0,,direction,ten,25-9999,0,protestan,2,m,43783,6,sm,2,6,25-9999,10,methodist,2012-04-07 19:31:31,1.0,disconfirming
+1903940.0,2,2,2.0,,quality,ten,31-2000,-2,protestan,,f,,5,us,2,6,2931,7,nondenomi,2012-04-07 19:40:12,2.0,confirming
+1903943.0,1,1,2.0,,quality,ten,21-1000,2,none,2,f,97206,5,us,2,6,21,11,spiritual,2012-04-07 19:52:48,2.0,disconfirming
+1903958.0,2,2,2.0,,direction,ten,25-9999,2,buddhist,2,f,28307,5,us,2,8,25-9999,10,other bud,2012-04-07 20:25:47,2.0,confirming
+1903998.0,1,1,1.0,,control,ten,13-9999,0,protestan,2,m,80523,6,us,2,6,13,2,baptist,2012-04-07 21:36:25,1.0,confirming
+1904043.0,1,1,,1,quality,two,25-9999,3,protestan,2,f,12303,5,us,2,6,25-9999,11,nondenomi,2012-04-08 00:10:04,1.0,confirming
+1904055.0,1,1,2.0,,quality,ten,43-6000,2,religious,2,m,91607,9,us,,,,,,2012-04-08 00:47:10,2.0,disconfirming
+1904057.0,1,1,,2,quality,two,29-2000,-1,protestan,2,f,33068,6,us,2,5,2931,10,baptist,2012-04-08 01:15:38,2.0,disconfirming
+1904067.0,2,2,2.0,,quality,ten,25-9999,0,catholic,2,f,95120,3,us,2,3,25-9999,,other cat,2012-04-08 01:50:22,2.0,confirming
+1904082.0,1,2,,1,quality,two,99-9999,0,catholic,2,f,93015,6,us,1,9,99-9999,10,roman cat,2012-04-08 02:24:57,1.0,disconfirming
+1904135.0,2,2,2.0,,quality,ten,29-2000,0,catholic,1,f,48453,5,us,2,6,2931,7,roman cat,2012-04-08 07:16:53,2.0,confirming
+1904138.0,1,1,1.0,,control,ten,23-1000,3,none,1,f,73130,7,us,2,6,23,9,agnostic,2012-04-08 09:11:11,1.0,confirming
+1904142.0,2,2,2.0,,control,ten,29-2000,0,otherreli,3,f,84533,6,us,2,6,2931,7,other: no,2012-04-08 10:24:53,2.0,confirming
+1904155.0,2,2,,2,quality,two,11-9000,0,none,1,m,22191,5,us,2,2,11,4,spiritual,2012-04-08 10:59:04,2.0,confirming
+1904209.0,2,2,1.0,,quality,ten,25-9999,0,,1,m,80504,3,us,2,6,25-9999,,,2012-04-08 13:42:32,1.0,disconfirming
+1904211.0,2,2,,2,quality,two,25-9999,0,catholic,2,f,01450,5,us,2,6,25-9999,3,roman cat,2012-04-08 13:43:54,2.0,confirming
+1904218.0,2,2,2.0,,quality,ten,25-9999,1,none,1,f,92115,5,sm,2,6,25-9999,8,spiritual,2012-04-08 13:58:00,2.0,confirming
+1904222.0,2,2,,1,control,two,41-2000,-1,protestan,2,f,98208,7,us,2,6,41,13,otherchri,2012-04-08 14:16:33,1.0,disconfirming
+1904245.0,2,2,,2,control,two,25-9999,1,protestan,2,f,02138,5,sm,2,8,25-9999,1,congregat,2012-04-08 14:53:46,2.0,confirming
+1904246.0,1,1,,1,quality,two,25-9999,2,protestan,3,m,47501,5,us,2,6,25-9999,13,methodist,2012-04-08 14:53:48,1.0,confirming
+1904247.0,1,1,,2,control,two,00-0000,0,catholic,2,f,24401,5,sm,2,6,00-0000,8,roman cat,2012-04-08 14:55:43,2.0,disconfirming
+1904253.0,1,2,2.0,,quality,ten,53-7000,-1,catholic,3,m,24401,5,sm,2,6,53,9,roman cat,2012-04-08 15:13:22,2.0,confirming
+1904275.0,2,2,,2,control,two,41-2000,0,protestan,2,f,80031,5,us,2,6,41,10,nondenomi,2012-04-08 16:01:46,2.0,confirming
+1904281.0,1,1,1.0,,control,ten,,2,jewish,2,f,07042,3,us,2,6,,,reform,2012-04-08 16:10:15,1.0,confirming
+1904296.0,2,2,2.0,,quality,ten,25-9999,3,none,1,m,80521,5,us,2,6,25-9999,8,atheist,2012-04-08 16:42:39,2.0,confirming
+1904301.0,2,2,2.0,,direction,ten,99-9999,0,none,1,m,43055,5,us,2,6,99-9999,7,other non,2012-04-08 16:46:00,2.0,confirming
+1904303.0,1,2,1.0,,quality,ten,99-9999,2,none,1,f,33139,3,us,2,6,99-9999,,atheist,2012-04-08 16:51:41,1.0,disconfirming
+1904324.0,2,2,2.0,,control,ten,25-9999,3,none,4,m,43606,5,us,2,6,25-9999,12,atheist,2012-04-08 17:37:17,2.0,confirming
+1904330.0,1,2,,2,quality,two,43-6000,0,protestan,4,f,39328,5,us,2,5,43,2,baptist,2012-04-08 17:47:20,2.0,confirming
+1904331.0,2,2,,1,quality,two,25-9000,0,protestan,2,f,43725,5,sm,,6,25,10,presbyter,2012-04-08 17:45:51,1.0,disconfirming
+1904356.0,1,,,1,quality,two,31-9000,3,jewish,2,f,22903,9,us,2,6,2931,7,reform,2012-04-08 18:36:37,1.0,
+1904361.0,2,1,,2,quality,two,21-1000,3,otherreli,2,f,30218,5,us,3,6,21,11,other: no,2012-04-08 18:41:36,2.0,disconfirming
+1904384.0,2,2,,1,direction,two,19-1000,0,none,1,m,07082,5,sm,2,2,19,1,agnostic,2012-04-08 19:23:57,1.0,disconfirming
+1904395.0,2,2,,2,quality,two,25-9999,0,protestan,2,f,73096,5,sm,2,6,25-9999,7,nondenomi,2012-04-08 19:34:36,2.0,confirming
+1904409.0,2,2,,2,direction,two,55-2000,-2,none,1,m,46815,5,us,2,6,55,2,agnostic,2012-04-08 19:56:24,2.0,confirming
+1904470.0,2,2,,2,quality,two,41-1000,0,protestan,1,m,24482,6,us,1,6,41,8,nondenomi,2012-04-08 21:41:59,2.0,confirming
+1904486.0,2,2,2.0,,quality,ten,43-9000,,otherreli,2,f,95660,5,sm,2,5,43,11,spiritist,2012-04-08 22:06:16,2.0,confirming
+1904505.0,1,1,,1,control,two,13-1000,2,protestan,3,f,61938,7,us,2,6,13,2,methodist,2012-04-08 22:21:40,1.0,confirming
+1904516.0,2,2,2.0,,quality,ten,21-9999,0,protestan,4,f,22803,4,us,1,9,21,,churchofg,2012-04-08 22:38:52,2.0,confirming
+1904518.0,1,1,,1,direction,two,39-9000,0,none,1,f,48079,5,us,2,6,39,13,other non,2012-04-08 22:41:35,1.0,confirming
+1904529.0,1,2,,1,direction,two,31-2000,2,hindu,2,f,19440,7,us,2,3,2931,7,other hin,2012-04-08 22:59:13,1.0,disconfirming
+1904538.0,2,1,2.0,,quality,ten,25-9999,1,none,1,f,03820,5,sm,2,6,25-9999,8,atheist,2012-04-08 23:21:12,2.0,disconfirming
+1904547.0,2,2,1.0,,direction,ten,39-9000,1,none,1,f,80538,5,sm,2,6,39,10,spiritual,2012-04-08 23:40:14,1.0,disconfirming
+1904557.0,2,2,2.0,,control,ten,99-9999,2,none,1,m,84087,6,sm,2,6,99-9999,8,agnostic,2012-04-08 23:53:17,2.0,confirming
+1904571.0,1,1,2.0,,quality,ten,99-9999,,protestan,2,f,36856,6,us,2,5,99-9999,7,nondenomi,2012-04-09 00:15:52,2.0,disconfirming
+1904631.0,1,1,,2,quality,two,31-1000,2,none,2,f,48416,5,sm,2,6,2931,7,theist,2012-04-09 01:52:21,2.0,disconfirming
+1904669.0,1,2,,2,quality,two,99-9999,2,protestan,4,f,80239,4,us,2,5,99-9999,,nondenomi,2012-04-09 03:25:12,2.0,confirming
+1904722.0,1,,,1,direction,two,25-9999,0,none,1,m,75025,4,us,1,8,25-9999,,atheist,2012-04-09 07:51:17,1.0,
+1904724.0,2,2,1.0,,control,ten,99-9999,-2,protestan,3,f,32829,3,sm,2,5,99-9999,,nondenomi,2012-04-09 07:55:16,1.0,disconfirming
+1904753.0,1,1,,2,direction,two,25-9999,-1,protestan,3,m,80521,7,us,2,6,25-9999,6,nondenomi,2012-04-09 09:27:14,2.0,disconfirming
+1904780.0,1,,,2,control,two,25-9999,2,protestan,3,f,60637,9,us,2,7,25-9999,8,adventist,2012-04-09 10:16:37,2.0,
+1904782.0,1,1,,2,direction,two,,-1,,3,f,,5,,1,8,,13,,2012-04-09 10:25:23,2.0,disconfirming
+1904795.0,,2,1.0,,direction,ten,39-9000,3,none,1,m,80634,7,us,1,9,39,11,atheist,2012-04-09 10:36:04,1.0,disconfirming
+1904814.0,2,1,2.0,,quality,ten,25-9999,2,muslim,3,f,92881,7,us,2,3,25-9999,7,sunni,2012-04-09 11:13:22,2.0,disconfirming
+1904815.0,2,2,,2,control,two,23-1000,3,protestan,3,m,37411,10,sm,2,6,23,9,methodist,2012-04-09 11:02:38,2.0,confirming
+1904834.0,1,,1.0,,direction,ten,99-9999,0,jewish,3,f,21774,5,us,2,6,99-9999,2,conservat,2012-04-09 11:26:38,1.0,
+1904841.0,2,2,2.0,,quality,ten,25-9999,2,jewish,2,f,53405,8,sm,2,6,25-9999,9,reform,2012-04-09 11:28:50,2.0,confirming
+1904875.0,1,1,,1,control,two,15-1000,-3,protestan,2,m,83442,7,sm,2,6,15,10,nondenomi,2012-04-09 11:54:28,1.0,confirming
+1904882.0,1,1,1.0,,control,ten,25-9999,0,protestan,3,f,80521,5,sm,2,2,25-9999,1,presbyter,2012-04-09 11:57:55,1.0,confirming
+1904886.0,2,2,2.0,,quality,ten,99-0001,0,none,1,m,98133,6,sm,2,6,99-0001,8,atheist,2012-04-09 12:05:09,2.0,confirming
+1904908.0,2,1,2.0,,control,ten,25-2000,-1,protestan,2,m,46978,7,us,2,6,25,5,nondenomi,2012-04-09 12:26:32,2.0,disconfirming
+1904980.0,1,1,,1,quality,two,21-1000,0,jewish,1,f,30338,9,us,2,6,21,11,secular,2012-04-09 13:56:54,1.0,confirming
+1904993.0,2,2,,1,direction,two,25-9999,1,protestan,2,f,80033,7,us,2,6,25-9999,10,lutheran,2012-04-09 13:45:45,1.0,disconfirming
+1904994.0,1,1,1.0,,quality,ten,13-1000,3,catholic,3,m,44030,6,us,3,6,13,3,roman cat,2012-04-09 13:45:25,1.0,confirming
+1905008.0,1,1,,1,quality,two,55-2000,0,protestan,3,m,09705,6,be,2,8,55,2,nondenomi,2012-04-09 13:58:26,1.0,confirming
+1905053.0,2,1,,1,direction,two,31-9000,2,protestan,1,f,92570,8,us,2,6,2931,7,nondenomi,2012-04-09 14:20:48,1.0,confirming
+1905061.0,2,2,2.0,,control,ten,25-9999,,protestan,2,f,38606,5,us,,6,25-9999,7,baptist,2012-04-09 14:24:06,2.0,confirming
+1905077.0,1,1,,2,quality,two,25-9999,1,protestan,2,f,02138,5,sm,2,6,25-9999,1,,2012-04-09 14:39:28,2.0,disconfirming
+1905127.0,2,2,,1,control,two,25-9999,-2,catholic,3,m,02138,5,us,2,6,25-9999,8,roman cat,2012-04-09 15:13:19,1.0,disconfirming
+1905128.0,2,2,2.0,,control,ten,25-9999,-2,protestan,4,f,29212,5,us,2,6,25-9999,10,lutheran,2012-04-09 15:13:53,2.0,confirming
+1905138.0,1,1,,1,direction,two,25-9999,0,otherreli,3,f,38655,5,us,2,5,25-9999,7,other: no,2012-04-09 15:35:34,1.0,confirming
+1905162.0,1,1,,1,direction,two,47-4000,2,protestan,2,f,11565,8,us,2,6,47,6,congregat,2012-04-09 15:38:29,1.0,confirming
+1905217.0,2,2,1.0,,control,ten,41-3000,1,none,1,f,44118,5,us,2,5,41,2,spiritual,2012-04-09 16:19:26,1.0,disconfirming
+1905222.0,1,1,,,control,two,19-9999,2,none,1,m,19123,6,sm,2,8,19,13,other non,2012-04-09 16:20:26,,
+1905225.0,1,1,,1,direction,two,25-9999,1,none,1,f,84321,5,us,3,6,25-9999,8,agnostic,2012-04-09 16:17:41,1.0,confirming
+1905237.0,2,2,2.0,,direction,ten,,,,,f,30313,7,sm,2,6,,11,,2012-04-09 16:27:18,2.0,confirming
+1905238.0,1,1,1.0,,quality,ten,25-9999,3,protestan,2,f,20816,3,us,3,6,25-9999,,anglican,2012-04-09 16:29:14,1.0,confirming
+1905246.0,2,2,2.0,,quality,ten,25-9999,-2,catholic,2,m,07652,6,sm,2,9,25-9999,8,roman cat,2012-04-09 16:31:05,2.0,confirming
+1905269.0,1,,1.0,,quality,ten,25-2000,0,protestan,3,f,27559,5,us,2,6,25,5,baptist,2012-04-09 16:39:59,1.0,
+1905283.0,1,2,2.0,,control,ten,55-2000,0,protestan,1,m,91711,6,sm,2,5,55,8,nondenomi,2012-04-09 16:49:11,2.0,confirming
+1905284.0,1,2,1.0,,quality,ten,25-9999,1,catholic,2,m,80521,5,sm,,6,25,1,roman cat,2012-04-09 16:47:44,1.0,disconfirming
+1905303.0,1,1,2.0,,direction,ten,11-9000,2,catholic,2,f,10025,8,us,,6,11,3,roman cat,2012-04-09 16:58:05,2.0,disconfirming
+1905327.0,2,2,1.0,,quality,ten,31-1000,2,none,1,m,49221,5,us,2,6,2931,7,agnostic,2012-04-09 17:16:33,1.0,disconfirming
+1905391.0,,,,,control,two,41-2000,1,none,1,m,92503,5,sm,2,6,41,2,other non,2012-04-09 17:59:41,,
+1905394.0,1,2,,1,control,two,21-1000,1,catholic,3,m,06470,7,sm,2,6,21,11,roman cat,2012-04-09 18:09:59,1.0,disconfirming
+1905405.0,2,2,,2,direction,two,25-9999,-2,,,f,38633,5,sm,,6,25-9999,7,,2012-04-09 18:17:42,2.0,confirming
+1905406.0,2,1,,1,control,two,25-9999,0,catholic,2,f,66216,5,us,2,6,25-9999,7,other cat,2012-04-09 18:14:49,1.0,confirming
+1905454.0,1,1,,1,quality,two,00-0000,2,otherreli,3,f,53704,7,us,2,6,00-0000,8,baha'i,2012-04-09 18:51:14,1.0,confirming
+1905466.0,2,2,2.0,,control,ten,25-9999,0,protestan,3,m,60106,4,us,2,6,25-9999,,,2012-04-09 18:55:40,2.0,confirming
+1905470.0,2,2,,2,quality,two,99-9999,1,none,1,m,60047,3,us,2,6,99-9999,,,2012-04-09 18:58:19,2.0,confirming
+1905495.0,1,1,1.0,,control,ten,99-9999,0,,1,m,95005,5,sm,3,6,99-9999,13,,2012-04-09 19:10:58,1.0,confirming
+1905498.0,1,,1.0,,quality,ten,99-9999,2,none,1,f,44720,3,sm,2,6,99-9999,,other non,2012-04-09 19:12:56,1.0,
+1905499.0,2,2,,2,direction,two,25-2000,2,none,1,m,30329,9,sm,2,6,25,8,agnostic,2012-04-09 19:08:36,2.0,confirming
+1905502.0,1,2,,1,direction,two,25-9999,2,none,1,m,98102,7,us,2,6,25-9999,11,atheist,2012-04-09 19:10:33,1.0,disconfirming
+1905553.0,2,2,2.0,,direction,ten,25-2000,1,catholic,3,f,95322,7,us,2,6,25,5,roman cat,2012-04-09 19:30:45,2.0,confirming
+1905555.0,1,1,1.0,,direction,ten,27-3000,0,none,1,f,40204,7,sm,2,6,27,8,deist,2012-04-09 19:26:24,1.0,confirming
+1905577.0,2,2,,1,quality,two,27-3000,2,none,1,m,11215,7,sm,2,6,27,3,agnostic,2012-04-09 19:29:04,1.0,disconfirming
+1905599.0,2,2,,1,direction,two,39-1000,0,none,1,f,90210,6,sm,2,3,39,6,atheist,2012-04-09 19:31:58,1.0,disconfirming
+1905600.0,1,1,,2,quality,two,17-2000,1,protestan,1,f,04101,9,us,2,6,17,6,anglican,2012-04-09 19:30:40,2.0,disconfirming
+1905601.0,2,2,2.0,,direction,ten,99-9999,-2,catholic,2,f,95624,7,us,2,8,99-9999,11,roman cat,2012-04-09 19:32:38,2.0,confirming
+1905614.0,2,2,,2,control,two,25-2000,2,catholic,3,m,30066,8,sm,2,6,25,5,roman cat,2012-04-09 19:32:42,2.0,confirming
+1905653.0,1,2,,1,control,two,27-4000,-1,none,1,m,07060,5,us,2,6,27,12,atheist,2012-04-09 19:42:49,1.0,disconfirming
+1905663.0,2,2,2.0,,control,ten,41-2000,2,none,1,m,27616,5,sm,2,5,41,3,agnostic,2012-04-09 19:50:50,2.0,confirming
+1905664.0,2,2,,1,control,two,25-9999,-1,none,1,m,98346,5,us,2,6,25-9999,6,atheist,2012-04-09 19:43:23,1.0,disconfirming
+1905716.0,2,2,,2,control,two,23-9999,1,none,1,f,94118,9,us,2,6,23,3,spiritual,2012-04-09 20:02:41,2.0,confirming
+1905722.0,1,1,1.0,,direction,ten,27-1000,3,none,1,f,02114,9,us,1,6,27,4,atheist,2012-04-09 19:59:47,1.0,confirming
+1905740.0,1,2,2.0,,quality,ten,27-1000,3,none,1,f,10009,8,us,2,6,27,3,agnostic,2012-04-09 20:06:18,2.0,confirming
+1905748.0,2,2,,1,quality,two,13-2000,2,none,1,m,6060,14,us,2,6,13,4,atheist,2012-04-09 20:07:19,1.0,disconfirming
+1905767.0,1,1,,2,quality,two,13-2000,2,none,1,m,55408,9,us,,,,,,2012-04-09 20:10:58,2.0,disconfirming
+1905780.0,2,2,,2,direction,two,27-9999,-2,buddhist,2,m,33411,7,us,2,6,27,13,buddhist:,2012-04-09 20:11:54,2.0,confirming
+1905803.0,1,1,,1,quality,two,25-3000,2,catholic,1,f,97403,9,us,3,6,25,8,roman cat,2012-04-09 20:18:17,1.0,confirming
+1905819.0,1,1,1.0,,quality,ten,33-3000,-2,protestan,2,m,75006,7,us,2,6,33,9,baptist,2012-04-09 20:21:09,1.0,confirming
+1905824.0,2,2,1.0,,quality,ten,11-9000,2,protestan,2,m,38104,8,us,2,5,11,11,otherchri,2012-04-09 20:20:21,1.0,disconfirming
+1905827.0,1,2,1.0,,direction,ten,25-9999,3,none,1,f,02139,7,us,2,6,25-9999,1,agnostic,2012-04-09 20:20:48,1.0,disconfirming
+1905828.0,2,1,,2,direction,two,25-9999,1,protestan,3,m,48103,8,sm,2,6,25-9999,8,methodist,2012-04-09 20:20:43,2.0,disconfirming
+1905835.0,2,2,,1,control,two,41-9000,3,none,1,m,11385,5,sm,1,8,41,11,atheist,2012-04-09 20:24:29,1.0,disconfirming
+1905927.0,1,1,,1,control,two,25-9999,0,protestan,4,m,77598,5,us,1,8,25-9999,3,presbyter,2012-04-09 20:42:17,1.0,confirming
+1905941.0,2,2,2.0,,direction,ten,25-9999,1,none,1,m,48439,10,us,2,6,25-9999,9,atheist,2012-04-09 20:47:57,2.0,confirming
+1905948.0,2,2,2.0,,control,ten,11-xxxx,2,none,1,m,97211,7,us,,6,11,8,,2012-04-09 20:49:01,2.0,confirming
+1905957.0,2,2,2.0,,direction,ten,25-9999,0,none,1,f,98501,5,sm,2,6,25-9999,5,atheist,2012-04-09 20:48:23,2.0,confirming
+1905971.0,1,1,2.0,,control,ten,29-2000,3,none,1,f,63104,5,us,2,6,2931,1,atheist,2012-04-09 20:53:41,2.0,disconfirming
+1905975.0,1,1,1.0,,control,ten,41-2000,3,none,1,f,48306,7,sm,2,9,41,8,agnostic,2012-04-09 20:57:02,1.0,confirming
+1905977.0,1,1,,1,quality,two,27-3000,2,jewish,1,f,10024,8,us,2,6,27,3,secular,2012-04-09 20:56:45,1.0,confirming
+1905997.0,2,2,2.0,,quality,ten,25-9999,2,none,1,f,36544,5,us,3,5,25-9999,11,agnostic,2012-04-09 21:02:14,2.0,confirming
+1906012.0,1,1,1.0,,quality,ten,43-6000,2,none,1,f,76017,5,sm,2,6,43,8,atheist,2012-04-09 21:04:29,1.0,confirming
+1906015.0,2,2,,2,control,two,25-9999,3,none,1,f,11238,12,us,2,8,25-9999,8,other non,2012-04-09 21:06:26,2.0,confirming
+1906018.0,1,1,1.0,,direction,ten,99-9999,3,buddhist,4,m,48104,14,us,2,6,99-9999,2,buddhist:,2012-04-09 21:08:26,1.0,confirming
+1906026.0,1,1,1.0,,control,ten,27-3000,2,none,1,m,37343,5,us,2,6,27,3,atheist,2012-04-09 21:06:29,1.0,confirming
+1906036.0,2,2,,2,quality,two,25-1000,3,none,1,f,61822,12,us,2,8,25,3,agnostic,2012-04-09 21:11:52,2.0,confirming
+1906046.0,1,1,,1,direction,two,99-9999,1,none,2,m,22630,5,us,2,6,99-9999,13,spiritual,2012-04-09 21:16:30,1.0,confirming
+1906051.0,1,1,1.0,,quality,ten,25-1000,3,none,2,f,14850,9,us,2,6,25,8,spiritual,2012-04-09 21:16:00,1.0,confirming
+1906055.0,1,1,1.0,,control,ten,25-1000,2,otherreli,2,f,08840,12,us,2,6,25,10,other: no,2012-04-09 21:17:02,1.0,confirming
+1906069.0,1,1,,2,control,two,15-1000,2,none,1,m,85003,7,sm,1,8,15,4,atheist,2012-04-09 21:22:43,2.0,disconfirming
+1906112.0,1,1,,1,direction,two,25-9999,0,protestan,2,m,49770,7,us,2,5,25-9999,2,otherchri,2012-04-09 21:31:07,1.0,confirming
+1906113.0,1,1,1.0,,control,ten,25-9999,-3,protestan,4,m,84321,7,us,2,6,25-9999,8,lds,2012-04-09 21:39:05,1.0,confirming
+1906126.0,2,2,1.0,,quality,ten,25-9999,3,protestan,2,f,20814,7,sm,2,7,25-9999,8,otherchri,2012-04-09 21:33:53,1.0,disconfirming
+1906132.0,1,2,,1,quality,two,29-1000,3,none,1,f,78108,9,sm,2,6,2931,7,atheist,2012-04-09 21:35:34,1.0,disconfirming
+1906153.0,1,1,,1,control,two,13-1000,1,buddhist,2,m,19104,7,sm,2,6,13,2,buddhist:,2012-04-09 21:41:32,1.0,confirming
+1906156.0,2,2,2.0,,direction,ten,43-9000,3,none,1,m,02806,7,us,2,6,43,11,agnostic,2012-04-09 21:42:29,2.0,confirming
+1906164.0,1,1,2.0,,control,ten,17-1000,2,none,2,m,11238,9,us,2,6,17,13,agnostic,2012-04-09 21:42:33,2.0,disconfirming
+1906171.0,1,1,1.0,,control,ten,25-9999,-2,catholic,3,f,01940,5,us,2,6,25-9999,6,roman cat,2012-04-09 21:43:30,1.0,confirming
+1906172.0,2,2,,1,direction,two,43-6000,3,catholic,1,f,98122,7,us,,2,43,8,roman cat,2012-04-09 21:50:34,1.0,disconfirming
+1906188.0,2,1,2.0,,control,ten,25-9999,0,protestan,3,f,48237,5,us,2,5,25-9999,7,baptist,2012-04-09 21:46:33,2.0,disconfirming
+1906235.0,1,1,,2,quality,two,13-9999,2,none,1,f,78665,5,sm,2,8,13,1,atheist,2012-04-09 21:57:51,2.0,disconfirming
+1906255.0,2,2,2.0,,direction,ten,25-9999,0,catholic,3,m,,5,sm,2,6,25-9999,,roman cat,2012-04-09 22:10:03,2.0,confirming
+1906261.0,2,2,,2,control,two,25-9999,0,protestan,3,f,29607,5,sm,2,6,25-9999,2,baptist,2012-04-09 22:04:00,2.0,confirming
+1906262.0,1,1,1.0,,quality,ten,25-9999,2,catholic,2,m,02038,5,sm,2,6,25-9999,11,roman cat,2012-04-09 22:03:24,1.0,confirming
+1906267.0,1,1,,1,control,two,00-0000,3,none,1,m,60626,9,us,2,6,00-0000,8,agnostic,2012-04-09 22:06:09,1.0,confirming
+1906295.0,2,2,,1,control,two,25-9999,2,otherreli,2,f,94704,7,us,2,6,25-9999,8,other: no,2012-04-09 22:13:58,1.0,disconfirming
+1906299.0,2,2,,1,quality,two,27-3000,3,none,1,m,19132,7,us,,5,27,8,deist,2012-04-09 22:13:30,1.0,disconfirming
+1906301.0,2,2,,2,quality,two,25-9000,3,buddhist,3,m,,7,us,2,7,25,11,taoist,2012-04-09 22:14:26,2.0,confirming
+1906303.0,2,2,1.0,,quality,ten,25-9999,2,none,,f,48706,5,sm,,6,25-9999,2,spiritual,2012-04-09 22:14:38,1.0,disconfirming
+1906307.0,2,2,2.0,,direction,ten,25-9999,2,none,1,f,67864,3,sm,2,6,25-9999,,,2012-04-09 22:16:16,2.0,confirming
+1906308.0,1,2,,1,quality,two,41-2000,-2,none,1,f,22182,5,us,2,6,41,10,agnostic,2012-04-09 22:19:02,1.0,disconfirming
+1906340.0,1,1,1.0,,control,ten,51-2000,0,none,1,m,60451,5,us,1,7,51,5,agnostic,2012-04-09 22:28:33,1.0,confirming
+1906354.0,2,2,2.0,,quality,ten,41-2000,3,none,1,m,98108,5,sm,2,6,41,9,agnostic,2012-04-09 22:30:07,2.0,confirming
+1906363.0,2,2,,1,direction,two,19-1000,3,none,1,f,22903,9,sm,2,3,19,1,atheist,2012-04-09 22:27:06,1.0,disconfirming
+1906368.0,1,2,,1,control,two,27-9999,3,none,1,m,10009,7,us,,6,27,12,spiritual,2012-04-09 22:28:12,1.0,disconfirming
+1906371.0,1,1,1.0,,control,ten,31-2000,1,protestan,2,f,32608,13,us,2,6,2931,7,nondenomi,2012-04-09 22:29:53,1.0,confirming
+1906374.0,2,2,2.0,,control,ten,25-9999,2,none,1,f,01605,8,us,2,6,25-9999,7,other non,2012-04-09 22:34:05,2.0,confirming
+1906375.0,1,1,,2,quality,two,27-1000,2,none,1,m,90021,4,us,,,,,,2012-04-09 22:34:08,2.0,disconfirming
+1906387.0,1,1,,2,direction,two,25-5000,-2,protestan,3,m,88101,8,us,,6,25,3,lutheran,2012-04-09 22:39:19,2.0,disconfirming
+1906389.0,1,1,,2,quality,two,23-1000,1,protestan,3,m,32444,10,us,2,6,23,9,anglican,2012-04-09 22:34:58,2.0,disconfirming
+1906397.0,2,2,,1,quality,two,33-3000,1,none,1,m,91913,7,us,2,8,33,9,atheist,2012-04-09 22:44:58,1.0,disconfirming
+1906406.0,1,1,2.0,,direction,ten,25-9999,1,protestan,4,f,03750,5,us,,6,25-9999,,lds,2012-04-09 22:40:55,2.0,disconfirming
+1906408.0,2,2,2.0,,control,ten,25-4000,2,none,2,m,93901,6,us,1,8,25,8,agnostic,2012-04-09 22:39:29,2.0,confirming
+1906436.0,1,1,1.0,,direction,ten,27-9999,0,protestan,2,f,94123,7,sm,2,6,27,3,baptist,2012-04-09 22:52:53,1.0,confirming
+1906500.0,2,2,,,control,two,25-9000,0,protestan,3,f,38668,5,us,3,6,25,7,otherchri,2012-04-09 23:25:45,,
+1906516.0,2,2,,1,direction,two,25-9999,2,none,1,f,48104,8,sm,2,6,25-9999,9,agnostic,2012-04-09 23:09:10,1.0,disconfirming
+1906524.0,1,1,,1,control,two,25-3000,2,none,,m,15216,9,us,2,6,25,5,atheist,2012-04-09 23:11:29,1.0,confirming
+1906563.0,1,1,,1,direction,two,25-5000,2,protestan,2,f,95758,5,us,2,6,25,13,nondenomi,2012-04-09 23:25:57,1.0,confirming
+1906598.0,1,1,1.0,,direction,ten,25-9999,0,protestan,2,f,48471,4,sm,2,6,25-9999,,lutheran,2012-04-09 23:34:45,1.0,confirming
+1906602.0,1,2,,1,control,two,39-9000,2,none,1,m,61616,4,us,2,6,39,,agnostic,2012-04-09 23:31:12,1.0,disconfirming
+1906632.0,2,2,,2,control,two,25-9999,0,protestan,3,f,29657,5,us,,6,25-9999,7,pentecost,2012-04-09 23:43:30,2.0,confirming
+1906640.0,2,2,,2,control,two,23-2000,0,none,1,m,10024,7,us,2,6,23,8,atheist,2012-04-09 23:43:00,2.0,confirming
+1906646.0,1,2,,1,quality,two,25-9999,0,muslim,4,f,92324,9,us,1,8,25-9999,7,sunni,2012-04-09 23:49:19,1.0,disconfirming
+1906656.0,,2,2.0,,quality,ten,25-9999,,none,2,f,96825,5,us,2,2,25-9999,5,spiritual,2012-04-09 23:45:03,2.0,confirming
+1906712.0,2,2,,1,direction,two,25-9999,0,otherreli,3,f,84321,5,sm,2,6,25-9999,8,other: no,2012-04-10 00:05:55,1.0,disconfirming
+1906771.0,1,1,1.0,,quality,ten,25-5000,2,none,1,f,,9,sm,2,6,25,8,other non,2012-04-10 00:25:37,1.0,confirming
+1906780.0,2,2,1.0,,quality,ten,19-1000,3,none,1,m,64105,7,us,2,6,19,1,agnostic,2012-04-10 00:29:38,1.0,disconfirming
+1906784.0,2,2,,2,direction,two,25-9999,1,none,1,m,01604,8,sm,2,6,25-9999,1,atheist,2012-04-10 00:33:32,2.0,confirming
+1906793.0,1,1,,1,direction,two,13-9999,-1,catholic,1,m,60016,9,us,1,6,13,13,roman cat,2012-04-10 00:33:09,1.0,confirming
+1906800.0,2,2,,1,control,two,25-9999,1,jewish,2,f,94702,5,sm,2,6,25-9999,12,reform,2012-04-10 00:33:48,1.0,disconfirming
+1906802.0,2,2,,1,direction,two,43-6000,2,protestan,2,f,62703,7,sm,3,6,43,10,nondenomi,2012-04-10 00:37:00,1.0,disconfirming
+1906820.0,1,1,,2,direction,two,27-2000,3,none,1,m,90069,7,sm,2,6,27,8,atheist,2012-04-10 00:43:38,2.0,disconfirming
+1906841.0,1,1,,1,direction,two,43-9000,3,protestan,3,f,92584,5,us,2,6,43,2,nondenomi,2012-04-10 00:48:52,1.0,confirming
+1906871.0,2,2,1.0,,quality,ten,41-3000,-2,protestan,4,m,84341,5,us,2,2,41,2,lds,2012-04-10 01:10:54,1.0,disconfirming
+1906890.0,2,2,2.0,,direction,ten,,-3,none,2,m,22201,8,us,2,6,,6,theist,2012-04-10 01:20:12,2.0,confirming
+1906894.0,1,1,2.0,,direction,ten,15-9999,1,protestan,2,f,85204,7,us,1,8,15,4,nondenomi,2012-04-10 04:09:32,2.0,disconfirming
+1906898.0,1,1,,1,direction,two,23-1000,3,none,1,m,02130,10,us,2,6,23,9,agnostic,2012-04-10 01:23:33,1.0,confirming
+1906927.0,1,2,,1,quality,two,15-1000,2,none,1,m,19143,5,us,2,5,15,4,atheist,2012-04-10 01:47:05,1.0,disconfirming
+1906934.0,1,1,2.0,,quality,ten,25-9999,3,none,1,f,10901,5,sm,2,6,25-9999,11,atheist,2012-04-10 01:50:06,2.0,disconfirming
+1906954.0,1,1,,1,direction,two,25-9999,0,none,1,f,96825,5,us,2,2,25-9999,5,spiritual,2012-04-10 02:15:42,1.0,confirming
+1906957.0,2,2,,2,control,two,25-9999,-2,protestan,3,f,92354,9,us,2,3,25-9999,7,adventist,2012-04-10 02:35:04,2.0,confirming
+1906965.0,1,1,2.0,,quality,ten,21-1000,3,none,1,f,84005,9,us,2,8,21,11,other non,2012-04-10 02:20:49,2.0,disconfirming
+1906966.0,1,1,,1,direction,two,33-9000,-3,otherreli,3,m,20152,5,us,2,6,33,6,pagan or,2012-04-10 02:22:03,1.0,confirming
+1907004.0,1,1,,1,control,two,99-9999,2,muslim,2,f,,9,ua,2,3,99-9999,13,sunni,2012-04-10 03:21:47,1.0,confirming
+1907036.0,2,2,2.0,,quality,ten,99-9999,3,otherreli,3,f,37221,7,us,2,6,99-9999,11,unitarian,2012-04-10 04:06:24,2.0,confirming
+1907084.0,2,2,1.0,,direction,ten,17-2000,3,protestan,2,m,90066,8,us,2,2,17,7,nondenomi,2012-04-10 05:51:30,1.0,disconfirming
+1907085.0,1,1,1.0,,quality,ten,00-0000,2,protestan,3,f,32907,8,sm,2,6,00-0000,7,lutheran,2012-04-10 06:04:26,1.0,confirming
+1907128.0,1,1,,1,control,two,25-9999,0,otherreli,2,m,44883,5,us,2,6,25-9999,9,,2012-04-10 07:28:35,1.0,confirming
+1907140.0,1,1,,1,quality,two,21-1000,-1,protestan,2,m,04680,5,us,2,6,21,13,methodist,2012-04-10 08:06:22,1.0,confirming
+1907156.0,2,2,2.0,,quality,ten,13-1000,1,protestan,2,m,08021,4,us,2,6,13,,anglican,2012-04-10 08:12:04,2.0,confirming
+1907173.0,1,1,,1,control,two,11-9000,3,none,2,m,,9,cv,2,6,11,13,agnostic,2012-04-10 08:33:44,1.0,confirming
+1907197.0,1,1,,1,control,two,11-2000,1,protestan,2,f,55812,5,us,,6,11,3,anglican,2012-04-10 08:47:18,1.0,confirming
+1907204.0,2,2,2.0,,direction,ten,41-4000,0,none,1,m,43221,7,us,,6,41,2,other non,2012-04-10 08:51:14,2.0,confirming
+1907244.0,,2,,1,direction,two,13-1000,2,protestan,1,m,33436,7,us,2,6,13,11,nondenomi,2012-04-10 09:25:15,1.0,disconfirming
+1907257.0,2,2,2.0,,control,ten,,-2,,,m,,,us,2,6,,,,2012-04-10 09:43:52,2.0,confirming
+1907258.0,1,1,,1,control,two,23-1000,3,none,1,m,18954,10,us,2,6,23,9,agnostic,2012-04-10 09:41:40,1.0,confirming
+1907297.0,2,2,,2,quality,two,27-3000,2,none,2,f,32806,7,sm,2,6,27,3,agnostic,2012-04-10 10:10:04,2.0,confirming
+1907299.0,2,2,2.0,,direction,ten,13-1000,2,none,1,f,10009,7,sm,2,6,13,11,agnostic,2012-04-10 10:10:14,2.0,confirming
+1907315.0,1,1,,1,control,two,99-9999,0,jewish,1,f,60089,4,us,2,6,99-9999,,other jew,2012-04-10 10:16:40,1.0,confirming
+1907320.0,1,,1.0,,control,ten,15-1000,3,none,1,f,02021,8,sm,3,6,15,8,other non,2012-04-10 10:20:43,1.0,
+1907324.0,1,1,1.0,,control,ten,13-2000,1,catholic,2,m,07028,10,us,2,6,13,9,roman cat,2012-04-10 10:22:21,1.0,confirming
+1907327.0,1,2,,1,control,two,43-6000,2,none,1,f,20906,7,us,2,6,43,8,atheist,2012-04-10 10:23:28,1.0,disconfirming
+1907374.0,1,1,,1,quality,two,43-9000,0,catholic,1,m,21777,5,us,2,6,43,1,roman cat,2012-04-10 10:44:13,1.0,confirming
+1907396.0,1,1,1.0,,quality,ten,25-9999,0,none,2,f,24450,10,sm,2,6,25-9999,9,deist,2012-04-10 10:57:26,1.0,confirming
+1907420.0,2,2,,1,control,two,99-9999,0,catholic,2,m,48063,5,us,2,6,99-9999,1,other cat,2012-04-10 11:14:15,1.0,disconfirming
+1907421.0,1,2,1.0,,quality,ten,23-1000,-3,catholic,2,m,,10,us,2,6,23,9,roman cat,2012-04-10 11:11:06,1.0,disconfirming
+1907443.0,1,1,,1,quality,two,17-2000,0,protestan,2,m,36274,4,sm,,6,17,,baptist,2012-04-10 11:14:01,1.0,confirming
+1907444.0,2,2,2.0,,quality,ten,29-2000,3,catholic,3,f,36274,3,us,3,5,2931,,roman cat,2012-04-10 11:16:49,2.0,confirming
+1907481.0,2,2,,1,control,two,11-9000,2,none,2,f,11103,7,sm,2,6,11,8,spiritual,2012-04-10 11:25:19,1.0,disconfirming
+1907500.0,2,2,,1,direction,two,25-9999,3,none,1,f,11215,8,us,2,6,25-9999,7,spiritual,2012-04-10 11:37:37,1.0,disconfirming
+1907510.0,2,2,,2,quality,two,25-9999,2,none,1,f,19144,5,us,2,6,25-9999,10,atheist,2012-04-10 11:41:41,2.0,confirming
+1907517.0,2,2,2.0,,control,ten,17-1000,0,none,1,f,92373,7,sm,2,6,17,6,other non,2012-04-10 11:43:36,2.0,confirming
+1907524.0,1,1,,1,quality,two,25-3000,-2,protestan,2,m,97305,7,us,2,6,25,11,baptist,2012-04-10 11:44:41,1.0,confirming
+1907553.0,2,2,,1,quality,two,31-9000,0,none,1,f,48413,5,us,2,6,2931,7,spiritual,2012-04-10 12:00:12,1.0,disconfirming
+1907563.0,1,1,,2,control,two,17-2000,-3,protestan,2,m,15644,5,us,2,6,17,8,methodist,2012-04-10 12:06:07,2.0,disconfirming
+1907578.0,2,2,2.0,,quality,ten,41-3000,-3,catholic,3,m,16506,7,us,2,6,41,2,roman cat,2012-04-10 12:14:04,2.0,confirming
+1907602.0,1,1,1.0,,direction,ten,27-2000,2,none,1,m,45701,9,us,,,,,,2012-04-10 12:22:08,1.0,confirming
+1907624.0,1,2,,2,control,two,25-9999,0,none,2,f,84321,5,sm,2,6,25-9999,3,spiritual,2012-04-10 12:38:37,2.0,confirming
+1907658.0,2,2,2.0,,quality,ten,31-9000,3,otherreli,3,f,24018,9,sm,2,6,2931,7,unitarian,2012-04-10 12:58:53,2.0,confirming
+1907660.0,1,1,2.0,,quality,ten,25-2000,2,none,1,f,08234,8,us,2,6,,,,2012-04-10 13:04:10,2.0,disconfirming
+1907669.0,1,1,,2,direction,two,25-9000,3,none,1,f,10025,9,us,2,6,25,8,other non,2012-04-10 13:07:30,2.0,disconfirming
+1907680.0,1,1,,1,direction,two,25-9999,-1,protestan,4,f,84321,6,sm,2,6,25-9999,10,lds,2012-04-10 13:11:07,1.0,confirming
+1907709.0,2,2,1.0,,quality,ten,31-1000,0,catholic,2,f,48422,5,us,2,6,2931,7,other cat,2012-04-10 13:30:19,1.0,disconfirming
+1907716.0,2,1,1.0,,control,ten,25-9999,2,catholic,2,f,,4,us,1,8,25-9999,,roman cat,2012-04-10 13:24:21,1.0,confirming
+1907720.0,2,2,2.0,,control,ten,,,,,f,90005,4,sm,,,,,,2012-04-10 13:25:37,2.0,confirming
+1907748.0,2,2,,1,quality,two,25-9999,0,protestan,4,f,48655,7,sm,,6,25-9999,10,otherchri,2012-04-10 13:38:40,1.0,disconfirming
+1907752.0,1,1,1.0,,control,ten,31-1000,0,protestan,4,f,32703,5,sm,2,5,2931,7,adventist,2012-04-10 13:39:38,1.0,confirming
+1907774.0,1,2,,2,direction,two,23-9999,-2,catholic,3,m,30135,5,us,,6,23,9,roman cat,2012-04-10 13:53:07,2.0,confirming
+1907789.0,2,2,2.0,,control,ten,25-9999,2,protestan,4,f,84321,5,us,2,6,25-9999,11,lds,2012-04-10 13:56:26,2.0,confirming
+1907799.0,2,2,,1,quality,two,43-4000,0,none,3,f,98360,7,sm,2,6,43,8,spiritual,2012-04-10 13:56:37,1.0,disconfirming
+1907804.0,1,1,,2,control,two,25-9999,3,none,1,m,,9,us,2,6,25-9999,1,atheist,2012-04-10 14:01:37,2.0,disconfirming
+1907832.0,1,1,,2,direction,two,25-9999,2,episcopal,2,m,10012,8,us,,,,,,2012-04-10 14:20:53,2.0,disconfirming
+1907836.0,1,2,,2,direction,two,25-3000,-3,protestan,4,m,46526,9,us,2,6,25,13,brethren,2012-04-10 14:24:21,2.0,confirming
+1907839.0,,,,,direction,two,25-9999,2,none,1,m,10010,9,sm,2,6,25-9999,7,other non,2012-04-10 14:29:00,,
+1907850.0,1,1,,1,quality,two,99-9999,-2,protestan,3,f,97062,5,sm,2,8,99-9999,3,baptist,2012-04-10 14:43:29,1.0,confirming
+1907853.0,2,2,,2,direction,two,43-6000,2,otherreli,2,f,21220,5,us,2,5,43,7,other: no,2012-04-10 14:41:47,2.0,confirming
+1907876.0,2,2,2.0,,quality,ten,25-9999,0,protestan,2,m,19104,10,us,2,5,25-9999,9,baptist,2012-04-10 15:01:04,2.0,confirming
+1907878.0,2,2,2.0,,control,ten,99-0001,3,none,1,f,92110,5,sm,2,6,99-0001,12,agnostic,2012-04-10 15:03:43,2.0,confirming
+1907881.0,2,2,,2,direction,two,25-3000,3,none,1,f,92313,8,us,2,6,25,7,agnostic,2012-04-10 15:05:03,2.0,confirming
+1907913.0,1,1,,1,quality,two,25-9999,-1,otherreli,4,f,60016,5,sm,2,3,25-9999,7,jain,2012-04-10 15:14:41,1.0,confirming
+1907929.0,1,1,,1,control,two,27-3000,2,protestan,3,f,63021,7,us,2,6,27,6,lds,2012-04-10 15:25:02,1.0,confirming
+1907960.0,1,1,,,control,ten,27-3000,2,otherreli,1,f,10012,7,us,2,2,27,2,other: no,2012-04-10 15:36:21,,
+1908006.0,2,2,,1,control,two,13-9999,0,otherreli,2,m,10011,14,us,2,7,13,10,other: no,2012-04-10 16:05:26,1.0,disconfirming
+1908021.0,2,2,2.0,,direction,ten,11-9000,0,none,1,f,12210,7,us,2,6,11,8,other non,2012-04-10 16:09:08,2.0,confirming
+1908068.0,1,2,1.0,,control,ten,23-1000,2,none,1,f,13057,,,,,,,,2012-04-10 16:31:25,1.0,disconfirming
+1908069.0,2,1,2.0,,direction,ten,25-9999,2,jewish,3,f,02420,5,sm,2,6,25-9999,7,other jew,2012-04-10 16:29:19,2.0,disconfirming
+1908084.0,2,1,,1,quality,two,99-9999,0,protestan,3,f,38901,5,sm,2,6,99-9999,7,baptist,2012-04-10 16:35:42,1.0,confirming
+1908114.0,2,1,2.0,,control,ten,31-9000,1,none,1,f,92504,8,us,1,8,2931,7,other non,2012-04-10 16:58:28,2.0,disconfirming
+1908117.0,1,2,1.0,,quality,ten,25-9999,2,protestan,2,f,19707,5,us,2,6,25-9999,11,anglican,2012-04-10 16:58:10,1.0,disconfirming
+1908122.0,1,2,1.0,,control,ten,43-6000,2,none,1,m,02888,7,us,2,6,43,11,agnostic,2012-04-10 17:00:09,1.0,disconfirming
+1908141.0,2,2,,2,quality,two,29-2000,0,otherreli,2,m,48038,5,us,2,6,2931,7,vodoun,2012-04-10 17:07:41,2.0,confirming
+1908152.0,1,2,2.0,,direction,ten,25-9999,-2,protestan,4,m,92506,8,us,2,6,25-9999,7,anglican,2012-04-10 17:15:34,2.0,confirming
+1908154.0,1,1,,1,direction,two,31-1000,0,protestan,2,f,18103,6,sm,1,8,2931,12,nondenomi,2012-04-10 17:19:22,1.0,confirming
+1908195.0,2,2,,1,control,two,15-1000,2,none,1,m,22033,7,us,2,6,15,4,deist,2012-04-10 17:32:01,1.0,disconfirming
+1908232.0,,1,,,control,two,41-2000,0,none,1,f,04240,5,us,2,6,41,7,other non,2012-04-10 17:59:57,,
+1908238.0,2,1,2.0,,control,ten,25-9999,3,none,1,m,19115,5,sm,2,6,25-9999,4,atheist,2012-04-10 18:07:39,2.0,disconfirming
+1908244.0,2,2,,2,direction,two,25-2000,-3,catholic,4,m,85250,7,sm,2,6,25,8,roman cat,2012-04-10 18:10:09,2.0,confirming
+1908249.0,1,1,1.0,,control,ten,,3,none,1,f,48126,7,us,2,6,,8,other non,2012-04-10 18:13:33,1.0,confirming
+1908260.0,2,2,2.0,,direction,ten,99-9999,1,none,2,f,98405,7,us,3,6,99-9999,8,spiritual,2012-04-10 18:22:34,2.0,confirming
+1908319.0,1,1,,1,quality,two,31-9000,-1,protestan,3,f,21617,5,us,2,6,2931,7,methodist,2012-04-10 19:00:10,1.0,confirming
+1908324.0,2,2,1.0,,direction,ten,31-2000,2,otherreli,3,f,49617,6,us,3,6,2931,7,unitarian,2012-04-10 19:14:04,1.0,disconfirming
+1908371.0,1,1,,1,quality,two,,,,,m,,,us,,,,,,2012-04-10 19:49:16,1.0,confirming
+1908397.0,2,2,,2,control,two,43-9000,,protestan,3,f,20109,4,us,2,5,43,,baptist,2012-04-10 20:03:57,2.0,confirming
+1908449.0,1,1,1.0,,quality,ten,31-9000,2,none,1,f,17257,9,us,2,6,2931,10,atheist,2012-04-10 20:27:13,1.0,confirming
+1908507.0,2,2,,1,direction,two,25-9999,2,none,1,f,55303,5,sm,2,6,25-9999,7,agnostic,2012-04-10 21:02:34,1.0,disconfirming
+1908516.0,2,1,2.0,,quality,ten,23-2000,1,jewish,2,m,20006,7,sm,2,6,23,11,reform,2012-04-10 21:07:02,2.0,disconfirming
+1908522.0,2,2,,1,direction,two,25-9999,3,none,1,f,95116,5,us,2,2,25-9999,1,atheist,2012-04-10 21:09:26,1.0,disconfirming
+1908529.0,2,2,,2,control,two,15-1000,-3,catholic,3,m,10036,5,us,2,6,15,8,roman cat,2012-04-10 21:11:30,2.0,confirming
+1908540.0,,,,1,control,two,99-0001,-2,none,1,m,81147,5,us,2,6,99-0001,4,atheist,2012-04-10 21:19:18,1.0,
+1908550.0,2,2,2.0,,quality,ten,25-9999,-2,,4,f,38635,5,us,,6,25-9999,7,,2012-04-10 21:26:14,2.0,confirming
+1908553.0,1,1,,1,direction,two,15-1000,-3,protestan,3,m,66030,7,us,2,6,15,4,baptist,2012-04-10 21:27:34,1.0,confirming
+1908556.0,,,,1,direction,two,99-0001,2,jewish,2,m,,7,sm,3,6,99-0001,2,reform,2012-04-10 21:30:55,1.0,
+1908573.0,1,1,,1,quality,two,41-2000,3,none,1,f,98001,6,sm,2,1,41,10,spiritual,2012-04-10 21:28:57,1.0,confirming
+1908581.0,1,,1.0,,direction,ten,,0,,,m,,5,us,2,6,,,,2012-04-10 21:36:05,1.0,
+1908623.0,1,1,1.0,,control,ten,25-9999,2,protestan,2,m,11217,9,sm,2,6,25-9999,11,anglican,2012-04-10 22:00:28,1.0,confirming
+1908631.0,2,2,2.0,,control,ten,31-1000,2,none,1,f,43822,5,sm,2,6,2931,7,agnostic,2012-04-10 22:16:38,2.0,confirming
+1908635.0,2,2,,2,quality,two,15-1000,-2,catholic,3,m,30066,5,sm,1,8,15,6,roman cat,2012-04-10 22:07:39,2.0,confirming
+1908646.0,2,2,1.0,,control,ten,99-9999,1,atheist,1,m,43229,5,us,2,8,,,,2012-04-10 22:16:58,1.0,disconfirming
+1908660.0,2,2,2.0,,control,ten,25-2000,-1,protestan,2,f,76657,8,us,2,6,25,5,baptist,2012-04-10 22:26:34,2.0,confirming
+1908674.0,1,1,2.0,,control,ten,25-9999,3,none,1,m,02038,5,us,2,6,25-9999,6,atheist,2012-04-10 22:40:35,2.0,disconfirming
+1908720.0,1,,1.0,,direction,ten,25-9999,0,otherreli,2,f,99004,5,us,1,9,25-9999,10,other: no,2012-04-10 23:15:06,1.0,
+1908731.0,1,1,,1,direction,two,25-9999,0,protestan,1,f,60025,4,us,,9,25-9999,,otherchri,2012-04-10 23:17:10,1.0,confirming
+1908738.0,2,2,,2,quality,two,21-9999,0,protestan,2,f,97520,5,us,2,2,21,10,lds,2012-04-10 23:22:18,2.0,confirming
+1908771.0,1,1,,1,direction,two,25-9999,-2,protestan,4,f,47220,5,us,2,6,25-9999,5,churcheso,2012-04-10 23:55:20,1.0,confirming
+1908789.0,1,1,,1,control,two,99-9999,2,none,2,m,05408,5,us,2,6,99-9999,3,spiritual,2012-04-11 00:07:53,1.0,confirming
+1908792.0,1,1,1.0,,quality,ten,25-9999,3,none,1,m,77384,6,us,2,6,25-9999,6,atheist,2012-04-11 00:09:44,1.0,confirming
+1908793.0,2,2,,1,direction,two,41-2000,-1,church of,3,m,83440,5,us,2,6,,,,2012-04-11 00:14:39,1.0,disconfirming
+1908832.0,1,1,,2,direction,two,,1,none,1,f,87048,7,us,2,6,,8,agnostic,2012-04-11 00:41:20,2.0,disconfirming
+1908847.0,2,2,,1,control,two,25-2000,3,roman cat,2,m,90230,10,us,,,,,,2012-04-11 01:07:57,1.0,disconfirming
+1908871.0,2,2,1.0,,control,ten,25-9999,2,protestan,4,f,30046,3,us,2,5,25-9999,,nondenomi,2012-04-11 01:41:52,1.0,disconfirming
+1908873.0,1,1,,1,direction,two,23-1000,3,protestan,3,m,94110,10,us,2,6,23,8,anglican,2012-04-11 01:44:35,1.0,confirming
+1908884.0,2,2,2.0,,direction,ten,17-3000,-3,protestan,2,f,98382,7,us,2,6,17,6,brethren,2012-04-11 01:56:19,2.0,confirming
+1908893.0,2,1,1.0,,quality,ten,43-6000,-2,otherreli,3,f,98374,5,us,2,3,43,9,sikh,2012-04-11 01:58:18,1.0,confirming
+1908904.0,2,2,,2,quality,two,,-2,,,f,,5,us,3,6,,3,,2012-04-11 02:06:34,2.0,confirming
+1908907.0,1,1,1.0,,control,ten,11-9000,2,none,1,m,98199,7,us,2,6,11,6,spiritual,2012-04-11 02:08:37,1.0,confirming
+1908920.0,1,1,,1,control,two,99-9999,2,catholic,4,m,99004,5,us,3,5,99-9999,3,other ort,2012-04-11 02:21:46,1.0,confirming
+1908935.0,1,2,1.0,,quality,ten,25-9999,3,buddhist,2,f,91775,3,sm,2,2,25-9999,,other bud,2012-04-11 02:42:38,1.0,disconfirming
+1909012.0,1,2,,1,quality,two,15-1000,0,protestan,4,m,40422,7,us,2,6,15,4,baptist,2012-04-11 07:44:48,1.0,disconfirming
+1909032.0,2,2,2.0,,control,ten,99-9999,0,none,1,f,30501,7,us,3,9,99-9999,12,,2012-04-11 08:20:58,2.0,confirming
+1909048.0,2,2,2.0,,direction,ten,25-9999,0,none,1,f,02155,3,us,2,6,25-9999,,other non,2012-04-11 08:39:45,2.0,confirming
+1909056.0,1,1,2.0,,quality,ten,11-2000,-2,protestan,3,m,43017,14,sm,2,6,11,2,methodist,2012-04-11 09:02:48,2.0,disconfirming
+1909104.0,2,2,,2,direction,two,39-9000,0,otherreli,2,f,05661,5,us,2,6,39,2,other: no,2012-04-11 10:22:15,2.0,confirming
+1909140.0,1,1,,1,control,two,23-xxxx,2,none,1,f,62269,10,us,2,6,23,9,atheist,2012-04-11 10:58:39,1.0,confirming
+1909180.0,1,1,,2,quality,two,15-1000,-3,protestan,4,m,30114,5,us,2,6,15,13,nondenomi,2012-04-11 11:39:42,2.0,disconfirming
+1909189.0,1,1,2.0,,direction,ten,11-9000,1,none,3,f,61275,7,sm,2,6,11,8,spiritual,2012-04-11 11:48:10,2.0,disconfirming
+1909200.0,2,2,,2,quality,two,25-9999,-2,protestan,4,f,54935,5,us,2,6,25-9999,7,lutheran,2012-04-11 12:00:51,2.0,confirming
+1909202.0,2,1,1.0,,quality,ten,25-9999,-2,protestan,4,f,53051,5,sm,2,6,25-9999,7,lutheran,2012-04-11 12:04:27,1.0,confirming
+1909204.0,2,1,,1,control,two,25-9999,-3,protestan,4,f,53049,5,us,2,6,25-9999,7,lutheran,2012-04-11 11:59:07,1.0,confirming
+1909207.0,2,2,2.0,,control,ten,25-9999,0,protestan,3,f,53130,5,us,2,6,25-9999,7,nondenomi,2012-04-11 11:58:13,2.0,confirming
+1909214.0,1,1,,1,control,two,25-9999,-3,catholic,3,f,53226,5,sm,2,6,25-9999,7,roman cat,2012-04-11 12:04:38,1.0,confirming
+1909215.0,2,2,2.0,,direction,ten,25-9999,0,otherreli,2,f,53226,5,us,2,6,25-9999,7,other: no,2012-04-11 12:00:10,2.0,confirming
+1909220.0,1,2,,1,quality,two,31-1000,-3,protestan,4,f,53038,5,us,2,6,2931,7,lutheran,2012-04-11 12:05:34,1.0,disconfirming
+1909221.0,2,2,1.0,,direction,ten,25-9999,0,protestan,3,f,53185,5,us,2,6,25-9999,7,lutheran,2012-04-11 12:02:20,1.0,disconfirming
+1909254.0,1,1,,1,quality,two,27-3000,-3,catholic,2,m,11215,10,us,2,6,27,9,roman cat,2012-04-11 12:31:48,1.0,confirming
+1909273.0,1,1,1.0,,direction,ten,15-1000,-3,protestan,4,m,32765,5,us,3,6,15,4,methodist,2012-04-11 12:57:18,1.0,confirming
+1909303.0,2,2,2.0,,control,ten,25-5000,2,protestan,3,f,02135,9,us,2,6,25,5,methodist,2012-04-11 13:13:48,2.0,confirming
+1909310.0,1,2,,1,quality,two,25-9999,0,none,1,f,86301,5,sm,2,6,25-9999,6,atheist,2012-04-11 13:12:50,1.0,disconfirming
+1909319.0,2,2,,1,control,two,15-1000,-3,none,3,m,45150,7,us,2,6,15,4,spiritual,2012-04-11 13:24:47,1.0,disconfirming
+1909324.0,2,2,,1,direction,two,25-2000,1,catholic,2,m,28078,9,sm,2,6,25,5,roman cat,2012-04-11 13:27:25,1.0,disconfirming
+1909370.0,1,1,1.0,,control,ten,13-2000,,protestan,3,f,76692,6,us,2,6,13,11,nondenomi,2012-04-11 14:08:44,1.0,confirming
+1909425.0,1,1,,1,control,two,25-9999,0,none,1,m,80304,5,us,2,6,25-9999,13,other non,2012-04-11 14:44:48,1.0,confirming
+1909502.0,2,2,2.0,,quality,ten,55-2000,1,none,1,m,02301,6,sm,2,6,55,2,agnostic,2012-04-11 15:47:06,2.0,confirming
+1909517.0,1,1,2.0,,quality,ten,11-0000,3,none,1,f,80503,5,us,2,8,11,2,spiritual,2012-04-11 15:56:21,2.0,disconfirming
+1909541.0,1,1,,1,control,two,99-0001,3,none,1,f,53532,8,us,2,6,99-0001,13,agnostic,2012-04-11 16:05:04,1.0,confirming
+1909591.0,1,,,1,direction,two,25-9999,1,none,1,m,,5,sm,2,6,25-9999,6,atheist,2012-04-11 17:19:31,1.0,
+1909607.0,2,2,,2,quality,two,13-1000,-3,protestan,4,m,63129,5,us,2,6,13,12,baptist,2012-04-11 17:07:35,2.0,confirming
+1909613.0,1,1,1.0,,direction,ten,23-9999,0,protestan,3,f,92651,12,us,2,6,23,10,nondenomi,2012-04-11 17:19:02,1.0,confirming
+1909642.0,1,2,1.0,,direction,ten,11-9000,0,none,,m,98101,5,us,,6,11,,,2012-04-11 17:51:56,1.0,disconfirming
+1909739.0,2,2,,1,control,two,25-9999,-1,none,1,f,33576,6,us,2,6,25,1,other non,2012-04-11 19:45:46,1.0,disconfirming
+1909807.0,2,2,,2,direction,two,25-9999,1,hindu,1,f,48393,7,us,,2,25-9999,8,,2012-04-11 20:27:38,2.0,confirming
+1909817.0,,2,1.0,,direction,ten,29-1000,3,none,1,m,10538,11,sm,2,2,2931,7,agnostic,2012-04-11 20:35:58,1.0,disconfirming
+1909852.0,1,1,,1,quality,two,99-9999,0,catholic,3,f,60026,4,us,2,3,99-9999,,roman cat,2012-04-11 21:04:29,1.0,confirming
+1909854.0,1,1,2.0,,quality,ten,25-9999,0,catholic,2,f,01830,6,us,1,5,25-9999,5,,2012-04-11 21:01:41,2.0,disconfirming
+1909899.0,2,2,,2,control,two,15-1000,-1,protestan,2,m,72076,6,us,2,6,15,4,pentecost,2012-04-11 21:54:19,2.0,confirming
+1909900.0,2,1,,2,control,two,25-9999,0,muslim,3,f,60062,3,sm,2,9,25-9999,,shiite,2012-04-11 21:53:47,2.0,disconfirming
+1909919.0,2,2,2.0,,direction,ten,33-9000,0,protestan,2,f,60612,5,sm,2,5,33,10,baptist,2012-04-11 22:31:29,2.0,confirming
+1909951.0,2,2,,,quality,ten,25-9999,0,jewish,2,f,60026,3,sm,2,6,25-9999,,reform,2012-04-11 23:04:13,,
+1909981.0,2,2,2.0,,control,ten,25-9999,0,otherreli,2,f,58103,3,sm,2,6,25-9999,,other: no,2012-04-12 00:00:12,2.0,confirming
+1909985.0,2,2,2.0,,direction,ten,25-9999,2,catholic,3,f,,4,us,2,3,25-9999,,roman cat,2012-04-12 00:03:19,2.0,confirming
+1910071.0,2,2,1.0,,direction,ten,13-9999,0,protestan,3,f,19317,5,us,2,6,13,2,anglican,2012-04-12 07:07:43,1.0,disconfirming
+1910072.0,2,2,,2,direction,two,,0,catholic,2,m,60025,3,sm,2,3,,,roman cat,2012-04-12 07:51:22,2.0,confirming
+1910105.0,1,1,1.0,,control,ten,11-9000,0,none,1,f,30126,7,sm,2,6,11,2,spiritual,2012-04-12 09:16:01,1.0,confirming
+1910110.0,1,1,1.0,,quality,ten,29-1000,-2,protestan,3,f,43235,11,us,3,9,2931,7,otherchri,2012-04-12 09:17:47,1.0,confirming
+1910125.0,2,1,,1,quality,two,25-9999,1,none,1,f,80503,3,us,2,6,25-9999,,agnostic,2012-04-12 09:48:49,1.0,confirming
+1910153.0,2,2,2.0,,control,ten,13-1000,-3,protestan,4,f,30040,7,us,2,6,13,2,churcheso,2012-04-12 10:25:59,2.0,confirming

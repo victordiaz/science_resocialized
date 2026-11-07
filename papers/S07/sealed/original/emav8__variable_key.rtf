@@ -1,0 +1,83 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww15100\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs24 \cf0 DopertData.dta
+\b0 \
+id - Subject id\
+start_time - Time questionnaire was started\
+write_time - Time answer was recorded\
+dopertType - Type of Dopert questionnaire: Likelihood of engaging in / Perceived magnitude of risk / Expected benefit\
+qOrder - Order of questions\
+qID - Question specific ID\
+qText - Question text\
+domain - Question domain\
+answer - Subject answer on a scale from 1 to 5\
+\
+
+\b DrugData.dta\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b0 \cf0 id - Subject id\
+start_time - Time questionnaire was started\
+write_time - Time answer was recorded\
+qCumulative - Question order (counting unanswered questions)\
+qID - Question specific ID\
+topic - Question topic\
+topicOrder - Order of topics\
+qType - Question type: Ever used / How often using now / How often using when used most\
+qText - Question text\
+answer - Subject answer\
+answerExp - Text explanation of answer\
+polydrug - Sum of subject answers (answer-1) for \'93How often using when used most\'94\
+testeddrugs - Number of drugs tested\
+\
+
+\b fishingData.dta\
+
+\b0 id - Subject id\
+start_time - Time questionnaire was started\
+write_time - Time answer was recorded\
+practice - Practice or actual round (test)\
+how_many_fish - How many fish in the pond\
+num_trips - How many trips in current condition\
+release_rule - Current release rule\
+weather - Current weather\
+visit - Round number\
+casts - Times cast\
+bluefish - Caught blue fish?\
+cast_data - String data for each cast\
+response_time - Response time for each cast\
+\
+
+\b FishingExpInitialPars.dta
+\b0 \
+id - Subject id\
+write_time - Time answer was recorded\
+v3-v12 - Initial parameters deciding randomization\
+age - Subject\'92s age\
+race - Subject\'92s race\
+gender - Subject\'92s gender\
+dup - Duplicate entry 1 - Yes, 0 - No\
+\
+
+\b polydrug.dta
+\b0 \
+id - Subject id\
+polydrug - The polydrug score\
+tested drugs - Number of drugs tested\
+\
+
+\b table6data.dta
+\b0 \
+id - Subject id\
+KS - Adjusted ART Score for Keep/Sunny\
+KC - Adjusted ART Score for Keep/Cloudy\
+RS - Adjusted ART Score for Release/Sunny\
+RC - Adjusted ART Score for Release/Cloudy\
+polydrug - The polydrug score\
+tested drugs - Number of drugs tested\
+age - Subject\'92s age\
+gender - Subject\'92s gender}

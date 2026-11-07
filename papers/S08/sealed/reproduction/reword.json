@@ -1,0 +1,23 @@
+{
+ "local_id": "Row.94",
+ "removed": [
+  {
+   "label": "handicap-related upward counterfactual",
+   "replaced_with": "statements that more practice would have made them do better"
+  },
+  {
+   "label": "Self-handicap condition",
+   "replaced_with": "more-practice statements condition (Cond 1)"
+  },
+  {
+   "label": "self-esteem inventory / stress inventory",
+   "replaced_with": "self-esteem questionnaire / stress questionnaire"
+  }
+ ],
+ "kept_terms": [
+  "Cond",
+  "Attempted",
+  "Correct"
+ ],
+ "notes": ""
+}

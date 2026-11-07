@@ -1,0 +1,16 @@
+raw trials: (8448, 13) participants: 32
+Order.csv: (31, 2) participants: [1, 2, 3] ...
+rows after filter (no correctness rule): 3921 | equals filter_$==1 count: 3921
+
+[KEY: correct trials only (report)] n participants = 31 (Order 1: 16, Order 2: 15); trials used = 3816
+  mean RT small = 804.94 ms, large = 745.74 ms
+  Distance main effect: F(1,29) = 45.274, p = 2.21e-07, MSE = 3574.895, partial eta^2 = 0.610
+
+[AUDIT-SCRIPT PATH: all trials, correct and error] n participants = 31 (Order 1: 16, Order 2: 15); trials used = 3921
+  mean RT small = 802.56 ms, large = 745.79 ms
+  Distance main effect: F(1,29) = 42.334, p = 4.01e-07, MSE = 3520.779, partial eta^2 = 0.593
+
+SDV_RTs.sav (replication's aggregate): (186, 4) ['Notation', 'Distance', 'participant', 'RT_mean']
+
+[type 2, correct trials only] F(1,29) = 45.589, p = 2.07e-07, MSE = 3574.895
+[type 2, all trials] F(1,29) = 42.576, p = 3.81e-07, MSE = 3520.779

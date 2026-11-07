@@ -1,0 +1,56 @@
+{
+  "local_id": "Row.167",
+  "node": "vwnit",
+  "title_o": "Head up, foot down: Object words orient attention to the objects' typical location.",
+  "verdict": "usable",
+  "verdict_reason": "The trial-level .sav (osf.io/nk74v; 1320 trials, 22 subjects) holds RT, accuracy and typicality; the within-subject ANOVA on error rate reproduces F(1,21)=1.45, p=.242, eta_p^2=.065, the table's numbers; the report states both the RT and the error-rate tests.",
+  "data_files": [
+    {
+      "path": "Dataset/Data_Replication_EstesEtAl_PS2008_20130622150957.sav",
+      "opened": true,
+      "format": "sav",
+      "rows": 1320,
+      "cols": 12,
+      "notes": "Subj, Trial, conditio, item, RT, Correct (string \"True \"/\"False\"), resp_corr (factor), typisch"
+    }
+  ],
+  "key_test": {
+    "from_script": "RPP_vwnit.r",
+    "test": "one-way repeated-measures ANOVA, typisch (typical vs atypical location), on per-subject error rate; the table records the error-rate effect (RT effect: F=0.001, p=.97)",
+    "variables": [
+      "Subj",
+      "typisch",
+      "resp_corr",
+      "RT"
+    ],
+    "all_variables_present": true,
+    "statistic_reported": {
+      "p": "0.24",
+      "es": "eta_p^2 = .065"
+    }
+  },
+  "recompute": {
+    "attempted": true,
+    "method": "base R recomputation (aov with Error(S/T) on subject x typicality means; ez not installed)",
+    "result": "error rate F(1,21)=1.450, p=0.2419, eta_p^2=0.0646 (generalized eta^2 0.033); RT F(1,21)=0.0013, p=0.97",
+    "matches_table": "yes"
+  },
+  "n_check": {
+    "N_R_table": 22,
+    "rows_after_exclusions": 22,
+    "match": "yes"
+  },
+  "obstacles": [
+    "script runs two tests (RT and error rate); only the p-value match says the table uses error rate",
+    "script's as.numeric(data$Correct) yields NA under current read.spss (Correct is a string); resp_corr must be used",
+    "script reports generalized eta^2 (.033) while the table's .065 is partial eta^2",
+    "script's RT exclusion keeps incorrect trials, unlike the report (no effect on the error-rate test)"
+  ],
+  "minutes": 12,
+  "sources_opened": [
+    "https://osf.io/vwnit/",
+    "https://api.osf.io/v2/nodes/dcibl/files/osfstorage/",
+    "https://api.osf.io/v2/nodes/8eq9j/files/osfstorage/",
+    "https://osf.io/nk74v/"
+  ]
+}

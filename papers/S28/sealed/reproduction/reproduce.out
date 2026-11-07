@@ -1,0 +1,33 @@
+line endings: CR-only
+raw shape: (74, 37)
+discard==1 at 1-based row positions: [16, 23, 68] PIDs: ['40', '82', '52']
+aggressivenessScore == (Q5+Q8)/2 for all rows: True
+after exclusions: 71  unique PID: 70  (PID 18 rows: [['Female', '19'], ['Male', '21']] )
+cell n:
+ puzzleCondition  Aggression  Neutral
+mapCondition                        
+Control                  11        9
+Global                   15       12
+Local                    13       11
+cell means:
+ mapCondition     Control  Global  Local
+puzzleCondition                        
+Aggression          6.27    7.77   6.38
+Neutral             7.00    7.67   7.23
+
+Type III (sum contrasts, as in the replicators' own script):
+                                                    sum_sq    df            F        PR(>F)
+Intercept                                     3444.841050   1.0  1797.925666  4.361345e-49
+C(mapCondition, Sum)                            16.456832   2.0     4.294561  1.771093e-02
+C(puzzleCondition, Sum)                          4.156362   1.0     2.169281  1.456181e-01
+C(mapCondition, Sum):C(puzzleCondition, Sum)     3.315761   2.0     0.865278  4.257257e-01
+Residual                                       124.540559  65.0          NaN           NaN
+
+Type II (as in RPP_mxryb.R):
+                                         sum_sq    df         F    PR(>F)
+C(mapCondition)                      18.179137   2.0  4.744012  0.011936
+C(puzzleCondition)                    3.599930   1.0  1.878869  0.175178
+C(mapCondition):C(puzzleCondition)    3.315761   2.0  0.865278  0.425726
+Residual                            124.540559  65.0       NaN       NaN
+
+[interaction] F(2,65) = 0.8653, p = 0.425726, partial eta^2 = 0.0259

@@ -1,13 +1,13 @@
 {
  "study": "S15",
  "files": {
-  "d02.sas7bdat": {
-   "bytes": 443392,
-   "sha256": "542f85b356baf5d3709de9352f3c2d71c40e044a40e13b4464e6fa252a3a8854"
+  "d11.csv": {
+   "bytes": 58609,
+   "sha256": "558b21d61894abf762c030321b2c7b0c005157de284e5c0bc6524bb941f0cffc"
   },
-  "d03.txt": {
-   "bytes": 1047461,
-   "sha256": "969c9f9582315da2a560011556f4a623d176daf84d9a65977452ff7444c15daa"
+  "d12.tsv": {
+   "bytes": 935426,
+   "sha256": "78b0eaddedb3214bf38f3588514f39503ff92ae0104485137d006e1aaa47d41e"
   },
   "d04.txt": {
    "bytes": 807234,
@@ -17,13 +17,13 @@
    "bytes": 6434893,
    "sha256": "f96f0cfdb9609fec675b0af76d4593646ad817cae48de17cc009eb8344154a34"
   },
-  "d07.txt": {
-   "bytes": 4675221,
-   "sha256": "0701aa5a904e98a85349daf63ff5d008b23c9bf21e89e2666b0ca426d37dcc07"
+  "d13.tsv": {
+   "bytes": 3403217,
+   "sha256": "ee6b728bee7052d56a0f47aead35724f9e5186b3db61d9642e9f0215bc1a3a46"
   },
-  "d08.txt": {
-   "bytes": 321992,
-   "sha256": "5ecc341218ccaf94607fe4fcf7c75d4cf12c35b19bb444b94530f576bcdab04e"
+  "d14.tsv": {
+   "bytes": 185245,
+   "sha256": "9e46aff9f040272eff3335f66f271e1b8931953a96bad05fc37f2b22428d32a7"
   }
  }
 }

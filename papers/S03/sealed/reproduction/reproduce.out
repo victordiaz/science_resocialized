@@ -1,0 +1,8 @@
+rows 89 cols 32
+Include == (SexOffender == "No") for every row: True
+missing item values among included: {'StrongMixed': 0, 'NotTorn_R': 0, 'Indecisive_RC': 1}
+n per condition: {0: 24, 1: 23, 2: 23}
+mean ambivalence per condition: {0: -0.375, 1: -0.1449, 2: 0.3913}
+one-way ANOVA: F(2,67) = 1.6988, p = 0.1907, eta^2 = SSb/(SSb+SSw) = 0.0483, n = 70
+sensitivity (complete cases, n=69): F(2,66) = 1.5093, p = 0.2286
+(not the table test) one-sided focus vs two-sided focus, Student t: t(44) = -1.2390, p(two-sided) = 0.2219

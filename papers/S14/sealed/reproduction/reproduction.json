@@ -1,0 +1,12 @@
+{"local_id":"Row.12","node":"7rtcz",
+ "key_test":"2x3 mixed ANOVA, uncorrected: Sound (R_QUIET, R_DISSIMILAR, R_SIMILAR; within) x TASK (FREE/SERIAL; between), proportion correct; key term = SOUND:TASK interaction F(2,232); partial eta^2",
+ "variables":["NUMBER","TASK","R_QUIET","R_DISSIMILAR","R_SIMILAR"],
+ "exclusions":"none in the posted file; the report excluded 3 of 121 before posting (one overwritten file, two unscorable recall sheets)",
+ "n_rows_raw":118,"n_after_exclusions":118,"N_R_table":118,
+ "table":{"stat":"F(2, 232) = 1.63","p":"0.1986","es":"eta^2 = .014 (encoding garbled; partial eta^2 by value)"},
+ "r_script":{"ran":true,"stat":"F(2,232) = 1.627978","p":"0.1985608","es":"0.01128769 (SS_int / (SS_sound+SS_int+SS_err) in the within stratum, not partial eta^2)","stdout_file":"audit.out","how":"audit_harness.R: getOSFfile mapped to the local .sav, external source() skipped, httr/RCurl/reshape2 missing -> skipped, base-R melt() shim; the analysis lines run unchanged"},
+ "python":{"ran":true,"stat":"F(2,232) = 1.6280","p":"0.1986","es":"partial eta^2 = 0.0138 (within-stratum eta^2 0.0113)","file":"reproduce.py"},
+ "agreement":"all three agree on F(2,232)=1.63, p=.1986. Effect size: table .014 = partial eta^2 (Python .0138); the R script's line computes a different quantity (.0113), which does not match the table",
+ "verdict":"reproduced",
+ "notes":"Anchored on the table's statistic and the replication report (FinalReportv3.pdf, osf.io/sqcwk, fetched for the card), which reports F(2,232)=1.63, p=.20, eta_p^2=.01; the script agrees on F and p. Second plausible test: the follow-up paired t, dissimilar vs similar, is significant in free recall t(58)=4.42, p<.001 and not in serial t(58)=1.35, p=.18 (both reproduced), so a reader taking the simple effect as the claim would score it differently from the interaction the table carries.",
+ "minutes":12}

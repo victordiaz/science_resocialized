@@ -1,0 +1,13 @@
+{"local_id":"Row.27","node":"ahpik",
+ "key_test":"2x2 within-subjects ANOVA (quality clear/degraded x frequency high/low) on per-participant ex-Gaussian mu; key term = quality x frequency interaction F(1,70); partial eta^2 from interaction SS and its error SS",
+ "variables":["Highfrequencyclear","Lowfrequencyclear","Highfrequencydegraded","Lowfrequencydegraded (YapMu.xlsx, Sheet3)"],
+ "exclusions":"none at participant level; trial-level trimming (errors, <200 or >3000 ms, >2.5 SD) happened before the mu estimates and is not scripted; mu values taken as given",
+ "n_rows_raw":71,"n_after_exclusions":71,"N_R_table":71,
+ "table":{"stat":"F(1,70) = 11.783","p":"0.001 (recalc .001008)","es":"partial eta^2 = .144"},
+ "r_script":{"ran":false,"stat":null,"p":null,"es":"script hard-codes SS 115052.2 / (115052.2 + 683497.9) = .1441","stdout_file":null,
+   "why":"package missing: gdata, tidyr, ez and xlsx are not installed in R 4.6.2 (checked with requireNamespace); not installed per instructions"},
+ "python":{"ran":true,"stat":"F(1,70) = 11.7830","p":"0.001008","es":"partial eta^2 = 0.1441 (SS 115052.2 / error SS 683497.9)","file":"reproduce.py"},
+ "agreement":"table and Python agree exactly (F 11.783, p .001008, partial eta^2 .144); Python's SS equal the SS hard-coded in the audit script to the decimal; R script not run (packages missing). Two independent Python routes (statsmodels AnovaRM and interaction-contrast t^2) agree.",
+ "verdict":"reproduced",
+ "notes":"Anchored on the replication report (key term = interaction on mu) and the table; the script's term (row 3 of ezANOVA, positional factor labels) matches the column order in the sheet. The DV is the ex-Gaussian mu, not mean RT (the survey receipt calls the columns mean RTs; the report and the file name YapMu say mu). Second plausible test: the same ANOVA on mean RTs, reported non-significant for the interaction (exploratory); its data are only trial-level here and it was not recomputed. Main effects from the same model: quality F(1,70)=10.95, p=.0015 (the report writes p<.001, a minor reporting slip), frequency F(1,70)=28.24. Direction: frequency effect 116.6 ms clear vs 197.1 ms degraded, as predicted. The trial-to-mu step (QMPE) is not reproducible from the scripts.",
+ "minutes":12}

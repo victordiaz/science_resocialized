@@ -1,0 +1,77 @@
+{
+  "local_id": "Row.110",
+  "node": "7dyp5",
+  "title_o": "Perceptual mechanisms that characterize gender differences in decoding women's sexual intent.",
+  "verdict": "usable",
+  "verdict_reason": "The .sav the script reads (OSF evcbi) has 144 participants with ID, Gender and the sensitivity scores Sens_Friend/Sens_SI; a 2 (within) x Gender mixed ANOVA reproduces the interaction F(1,142)=1.19, p=.276, partial eta^2=.008.",
+  "data_files": [
+    {
+      "path": "Data/2015.01.08 Farris ASA.sav",
+      "opened": true,
+      "format": "sav",
+      "rows": 144,
+      "cols": 25,
+      "notes": "ID, Age, Gender (79 F / 65 M), Pres_time, hit/FA/miss/correct-rejection counts and Sens_* scores; no missing on the key columns"
+    },
+    {
+      "path": "Data/GLM syntax.sps",
+      "opened": true,
+      "format": "txt",
+      "rows": null,
+      "cols": null,
+      "notes": "SPSS GLM: full factorial, then 'primary analysis of interest' Sens_Friend Sens_SI BY Gender"
+    },
+    {
+      "path": "Data/GLM model syntax.txt",
+      "opened": false,
+      "format": "txt",
+      "rows": null,
+      "cols": null,
+      "notes": "downloaded, not opened (near-duplicate of the .sps by size)"
+    },
+    {
+      "path": "Data/Farris confirm analysis.pdf",
+      "opened": false,
+      "format": "other",
+      "rows": null,
+      "cols": null,
+      "notes": "SPSS output, not opened"
+    }
+  ],
+  "key_test": {
+    "from_script": "RPP_7dyp5.R",
+    "test": "mixed ANOVA, affect (friendly vs sexual-interest sensitivity, within) x Gender (between); interaction",
+    "variables": [
+      "ID",
+      "Gender",
+      "Sens_Friend",
+      "Sens_SI"
+    ],
+    "all_variables_present": true,
+    "statistic_reported": {
+      "p": "0.28",
+      "es": "partial eta^2 = 0.008"
+    }
+  },
+  "recompute": {
+    "attempted": true,
+    "method": "python recomputation (pingouin mixed_anova)",
+    "result": "F(1,142)=1.194, p=0.2764, partial eta^2=0.0083",
+    "matches_table": "yes"
+  },
+  "n_check": {
+    "N_R_table": 144,
+    "rows_after_exclusions": 144,
+    "match": "yes"
+  },
+  "obstacles": [
+    "script selects columns by position (22:23); the sensitivity scores are precomputed in the .sav from the hit/FA counts",
+    "Pres_time factor ignored in the key test"
+  ],
+  "minutes": 5,
+  "sources_opened": [
+    "https://api.osf.io/v2/nodes/tdp3s/files/osfstorage/",
+    "https://api.osf.io/v2/nodes/wmg6q/files/osfstorage/",
+    "https://api.osf.io/v2/files/evcbi/"
+  ]
+}

@@ -1,0 +1,12 @@
+[shim] dropped line(s): 31 
+> library("httr") 
+[shim] skipped library( httr )
+> library("RCurl") 
+[shim] skipped library( RCurl )
+> library("foreign") 
+> library("reshape2") 
+> library("ez") 
+Error in base::library(p, character.only = TRUE, ...) : 
+  there is no package called 'ez'
+Calls: withVisible -> eval -> eval -> library -> <Anonymous>
+Execution halted

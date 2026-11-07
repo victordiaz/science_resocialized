@@ -1,0 +1,47 @@
+{
+ "local_id": "Row.19",
+ "node": "gcj7x",
+ "replicate_r": "no",
+ "table": {
+  "p_r": "0.071",
+  "es_r": "__p^2 = .162",
+  "n_r": "21",
+  "direction_r": "same",
+  "test_r": "is",
+  "p_o": "<.001",
+  "es_o": "__p^2 = .31",
+  "n_o": "32"
+ },
+ "reproduction": {
+  "key_test": "2 (listtype, between: long-short vs short-long) x 3 (probe type, within: correct, intrusion, new) mixed ANOVA, type-III SS, DV proportion correct; key term = listtype main effect (row 2 of ezANOVA detailed table)",
+  "table": {
+   "stat": "F(1,19)=3.661",
+   "p": "0.071 (recalc 0.07089)",
+   "es": "partial eta^2 = .162"
+  },
+  "r_script": {
+   "ran": false,
+   "stat": null,
+   "p": null,
+   "es": null,
+   "stdout_file": null,
+   "why_not": "package missing: ez and reshape2 not installed; the script also sources http://sachaepskamp.com/files/OSF/getOSFfile.R, a host outside the allowed set, so it was not run"
+  },
+  "python": {
+   "ran": true,
+   "stat": "F(1,19)=3.6612",
+   "p": "0.07088",
+   "es": "partial eta^2 = 0.1616",
+   "file": "reproduce.py"
+  },
+  "agreement": "table and Python agree (F 3.661 vs 3.6612, p .071 vs .07088, pes .162 vs .1616); R script not run",
+  "verdict": "reproduced",
+  "n_after_exclusions": 21
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "How to say no: Single-and dual-process theories of short-term recognition tested on negative probes.",
+  "authors": "K Oberauer",
+  "journal": "JEPLMC"
+ }
+}

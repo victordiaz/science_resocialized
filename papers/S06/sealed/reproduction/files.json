@@ -1,0 +1,72 @@
+{
+ "Analysis_Audit/RPP_wkgpq.R": {
+  "neutral": "d01.r",
+  "give": false,
+  "bytes": 2793
+ },
+ "Dataset/Flanker.csv": {
+  "neutral": "d02.csv",
+  "give": true,
+  "bytes": 735722
+ },
+ "Dataset/Means SDs for Interaction Direction.docx": {
+  "neutral": "d03.docx",
+  "give": false,
+  "bytes": 43523
+ },
+ "Dataset/Replication study NO EMAIL ID.csv": {
+  "neutral": "d04.csv",
+  "give": true,
+  "bytes": 22664
+ },
+ "Dataset/Replication_Analyses_FINAL_.R": {
+  "neutral": "d05.r",
+  "give": false,
+  "bytes": 10913
+ },
+ "Dataset/Replication_Data_Prep_FINAL.R": {
+  "neutral": "d06.r",
+  "give": false,
+  "bytes": 13509
+ },
+ "Dataset/Weapons.csv": {
+  "neutral": "d07.csv",
+  "give": true,
+  "bytes": 991473
+ },
+ "Dataset/flankers.csv": {
+  "neutral": "d08.csv",
+  "give": true,
+  "bytes": 1989681
+ },
+ "Dataset/flankersErrorRateDF.csv": {
+  "neutral": "d09.csv",
+  "give": true,
+  "bytes": 8529
+ },
+ "Dataset/flankersIDNew": {
+  "neutral": "d10",
+  "give": false,
+  "bytes": 1162362
+ },
+ "Dataset/repdatalong.csv": {
+  "neutral": "d11.csv",
+  "give": true,
+  "bytes": 15479
+ },
+ "Dataset/repdatawideNAOMIT.csv": {
+  "neutral": "d12.csv",
+  "give": true,
+  "bytes": 6601
+ },
+ "Dataset/weaponsErrorRateDF.csv": {
+  "neutral": "d13.csv",
+  "give": true,
+  "bytes": 23920
+ },
+ "Dataset/weaponsIDNew": {
+  "neutral": "d14",
+  "give": false,
+  "bytes": 661921
+ }
+}

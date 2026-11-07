@@ -1,0 +1,47 @@
+{
+ "4qmsg__Attentional Blink data.zip": {
+  "neutral": "d01.zip",
+  "give": true,
+  "bytes": 7032873
+ },
+ "4qmsg__Colzato et al replication description of attentional blink analysis.txt": {
+  "neutral": "d02.txt",
+  "give": false,
+  "bytes": 1926
+ },
+ "4qmsg__Colzato et al replication syntax.sps": {
+  "neutral": "d03.sps",
+  "give": false,
+  "bytes": 2265
+ },
+ "4qmsg__Colzato_et_al_replication_final.sav": {
+  "neutral": "d04.sav",
+  "give": false,
+  "bytes": 119546
+ },
+ "4qmsg__Colzato_et_al_replication_final_sanitized.sav": {
+  "neutral": "d09.sav",
+  "give": true,
+  "bytes": 25137
+ },
+ "4qmsg__T1 analysis.anl": {
+  "neutral": "d05.anl",
+  "give": false,
+  "bytes": 233
+ },
+ "4qmsg__T2 analysis.anl": {
+  "neutral": "d06.anl",
+  "give": false,
+  "bytes": 278
+ },
+ "4qmsg__overall T1 error rate analysis.anl": {
+  "neutral": "d07.anl",
+  "give": false,
+  "bytes": 219
+ },
+ "zcad2__RPP_p9thw.R": {
+  "neutral": "d08.r",
+  "give": false,
+  "bytes": 2737
+ }
+}

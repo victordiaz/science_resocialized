@@ -1,0 +1,37 @@
+{
+ "Analysis_Audit/RPP_7dyp5.R": {
+  "neutral": "d01.r",
+  "give": false,
+  "bytes": 2386
+ },
+ "Data/2015.01.08 Farris ASA.sav": {
+  "neutral": "d02.sav",
+  "give": true,
+  "bytes": 16137
+ },
+ "Data/Farris confirm analysis.pdf": {
+  "neutral": "d03.pdf",
+  "give": false,
+  "bytes": 160236
+ },
+ "Data/Farris confirm sens calc..pdf": {
+  "neutral": "d04.pdf",
+  "give": false,
+  "bytes": 334338
+ },
+ "Data/GLM model syntax.txt": {
+  "neutral": "d05.txt",
+  "give": false,
+  "bytes": 1241
+ },
+ "Data/GLM syntax.sps": {
+  "neutral": "d06.sps",
+  "give": false,
+  "bytes": 1246
+ },
+ "top/Final_Attwood Farris Replication Report.pdf": {
+  "neutral": "d07.pdf",
+  "give": false,
+  "bytes": 188887
+ }
+}

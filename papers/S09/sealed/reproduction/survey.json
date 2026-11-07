@@ -1,0 +1,18 @@
+{
+  "local_id": "Row.22",
+  "node": "p9thw",
+  "title_o": "How does bilingualism improve executive control? A comparison of active and reactive inhibition mechanisms.",
+  "verdict": "usable",
+  "verdict_reason": "The script reads osf.io/4xs8w = Data/Colzato_et_al_replication_final.sav (32 participants, 18 + 14 by Group). The Group x Lag mixed ANOVA on T2|T1 accuracy recomputes to F(3,90) = 0.380, partial eta^2 = .0125, uncorrected p = .767, Greenhouse-Geisser p = .716. The table (p = .72, eta^2 = .01, N = 32) matches the GG-corrected p, not the uncorrected p the script's P-VALUE line prints.",
+  "data_files": [
+    {"path": "Data/Colzato_et_al_replication_final.sav", "opened": true, "format": "sav", "rows": 32, "cols": 63, "notes": "Code, T1 accuracy overall and per lag, Lag1/3/5/8_T2_correct (T2 given T1 correct), Raven, Vision, Group (1/2), demographics and language questionnaire. No missing values in the key columns."},
+    {"path": "Data/Colzato et al replication description of attentional blink analysis.txt", "opened": true, "format": "txt", "rows": null, "cols": null, "notes": "UTF-16. Says the lag accuracies were computed in E-DataAid from per-participant E-Prime files (in Attentional Blink data.zip) and pasted into the SPSS file."},
+    {"path": "Data/Attentional Blink data.zip", "opened": false, "format": "other", "rows": null, "cols": null, "notes": "Downloaded (7.0 MB), not unpacked: E-Prime .edat2 raw files, proprietary; the aggregation step is in E-DataAid .anl files, not code."}
+  ],
+  "key_test": {"from_script": "RPP_p9thw.R", "test": "mixed ANOVA (ezANOVA type 3): between Group (bilingual vs monolingual) x within Lag (1,3,5,8) on T2|T1 proportion correct; key effect = Group x Lag interaction; script also computes GG-corrected df", "variables": ["Code", "Group", "Lag1_T2_correct", "Lag3_T2_correct", "Lag5_T2_correct", "Lag8_T2_correct"], "all_variables_present": true, "statistic_reported": {"p": "0.72", "es": "eta^2 = .01"}},
+  "recompute": {"attempted": true, "method": "python recomputation (pingouin mixed_anova with sphericity correction)", "result": "Interaction F(3,90) = 0.380, p_unc = .767, p_GG = .716 (eps = .776), partial eta^2 = .0125; Lag main effect F = 56.0", "matches_table": "yes"},
+  "n_check": {"N_R_table": 32, "rows_after_exclusions": 32, "match": "yes"},
+  "obstacles": ["table p is the Greenhouse-Geisser value; the script's P-VALUE line prints the uncorrected p (.767), so a reproducer following the script literally gets .77", "raw trials are E-Prime .edat2 (proprietary), aggregated outside code; the key test runs on the pasted per-lag proportions", "R script needs ez/reshape/foreign; not run"],
+  "minutes": 10,
+  "sources_opened": ["https://api.osf.io/v2/nodes/4qmsg/files/osfstorage/", "https://api.osf.io/v2/nodes/zcad2/files/osfstorage/", "https://api.osf.io/v2/files/4xs8w/"]
+}

@@ -1,0 +1,13 @@
+table6data raw shape: (161, 9) ['id', 'KS', 'KC', 'RS', 'RC', 'polydrug', 'testeddrugs', 'age', 'gender']
+missing polydrug: 8
+
+Route A (table6data): N=153  r(polydrug, KS,KC,RS,RC)=[ 0.0255 -0.0458 -0.0114 -0.0993]  median r_x=0.3888
+  MRR contrast sunny-cloudy: Z = 1.2479, two-sided p = 0.2121
+
+fishingData rows: 20722 subjects: 161
+Route B, do-file as written (practice rounds included): ART scores identical to table6data: True
+  N=153  r=[ 0.0255 -0.0458 -0.0114 -0.0993]  Z = 1.2479, p = 0.2121
+Route B, practice rounds dropped: ART scores identical to table6data: False
+  N=153  r=[ 0.02   -0.031  -0.0024 -0.084 ]  Z = 1.0031, p = 0.3158
+
+polydrug in table6data equals polydrug.dta where both present: True

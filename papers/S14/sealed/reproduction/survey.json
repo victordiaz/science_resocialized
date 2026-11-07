@@ -1,0 +1,62 @@
+{
+  "local_id": "Row.12",
+  "node": "7rtcz",
+  "title_o": "When does between-sequence phonological similarity promote irrelevant sound disruption?",
+  "verdict": "usable",
+  "verdict_reason": "replication_marsh.sav has TASK and the three recall cells for 118 participants; the Sound x Task mixed-ANOVA interaction gives p=.1986 and partial eta^2 .0138 (table .014), matching.",
+  "data_files": [
+    {
+      "path": "Data/replication_marsh.sav",
+      "opened": true,
+      "format": "sav",
+      "rows": 118,
+      "cols": 16,
+      "notes": "59 free / 59 serial"
+    },
+    {
+      "path": "Data/Syntax.sps",
+      "opened": true,
+      "format": "other",
+      "rows": 0,
+      "cols": 0,
+      "notes": "SPSS GLM, same test"
+    }
+  ],
+  "key_test": {
+    "from_script": "RPP_7rtcz.R",
+    "test": "mixed ANOVA, within SOUND (quiet/dissimilar/similar) x between TASK (free/serial), interaction F",
+    "variables": [
+      "NUMBER",
+      "TASK",
+      "R_QUIET",
+      "R_DISSIMILAR",
+      "R_SIMILAR"
+    ],
+    "all_variables_present": true,
+    "statistic_reported": {
+      "p": "0.1986",
+      "es": "eta^2 = .014"
+    }
+  },
+  "recompute": {
+    "attempted": true,
+    "method": "python recomputation (pingouin mixed_anova, uncorrected)",
+    "result": "F(2,232)=1.628, p=0.1986, partial eta^2=0.0138",
+    "matches_table": "yes"
+  },
+  "n_check": {
+    "N_R_table": 118,
+    "rows_after_exclusions": 118,
+    "match": "yes"
+  },
+  "obstacles": [
+    "getOSFfile() is sourced from http://sachaepskamp.com/files/OSF/getOSFfile.R (external, not run); script not runnable offline as written",
+    "the script's own effect-size line computes a within-stratum eta^2 (~.011), not the partial eta^2 (.014) the table carries"
+  ],
+  "minutes": 6,
+  "sources_opened": [
+    "https://osf.io/7rtcz/",
+    "https://api.osf.io/v2/nodes/f7vxg/files/osfstorage/",
+    "https://api.osf.io/v2/nodes/96nfh/files/osfstorage/"
+  ]
+}

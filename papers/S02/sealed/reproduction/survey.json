@@ -1,0 +1,19 @@
+{
+  "local_id": "Row.6",
+  "node": "atgp5",
+  "title_o": "A single-system account of the relationship between priming, recognition, and fluency.",
+  "verdict": "usable",
+  "verdict_reason": "The audit script reads Agg_priming_ANOVA.dat (OSF guid btr65, in the Data child) and runs a paired t-test of meanRT_cr vs meanRT_miss; both columns are present for all 32 participants and the recomputation gives p=.0227, d=.424, matching the table.",
+  "data_files": [
+    {"path": "Data/Agg_priming_ANOVA.dat", "opened": true, "format": "txt", "rows": 32, "cols": 5, "notes": "tab-delimited, UTF-8 BOM, CRLF; per-participant mean RTs for hit/cr/fa/miss; meanRT_fa has 2 NA (not used by key test). The file the audit script loads."},
+    {"path": "Data/Agg_priming_ANOVA.sav", "opened": false, "format": "sav", "rows": null, "cols": null, "notes": "SPSS twin of the .dat, not opened"},
+    {"path": "Data/Analysedaten_1.sav", "opened": true, "format": "sav", "rows": 5440, "cols": 58, "notes": "trial-level raw data, 32 unique vpnum; aggregation to the .dat file is not scripted anywhere on the node"},
+    {"path": "Data/Agg_priming_1.dat, Agg_fluency.dat, Agg_recognition.dat", "opened": true, "format": "txt", "rows": 32, "cols": 5, "notes": "headers only checked; decimal commas in some of these files (not the key-test file)"}
+  ],
+  "key_test": {"from_script": "RPP_atgp5.R", "test": "two-sided paired t-test, RT to correct rejections vs RT to misses; d = t/sqrt(n) via compute.es::des", "variables": ["meanRT_cr", "meanRT_miss"], "all_variables_present": true, "statistic_reported": {"p": "0.023", "es": "d = .424"}},
+  "recompute": {"attempted": true, "method": "python recomputation (scipy) and base R t.test on the downloaded file", "result": "t(31)=2.398, p=0.02271, d=t/sqrt(32)=0.4239", "matches_table": "yes"},
+  "n_check": {"N_R_table": 32, "rows_after_exclusions": 32, "match": "yes"},
+  "obstacles": ["key-test file is participant-level aggregate; the trial-to-aggregate step is not scripted (raw trials are present in Analysedaten_1.sav)", "audit script needs httr/RCurl/compute.es and a remote helper from sachaepskamp.com; ran the test with base R instead"],
+  "minutes": 8,
+  "sources_opened": ["https://osf.io/atgp5/", "https://api.osf.io/v2/files/btr65/", "https://api.osf.io/v2/nodes/hkjtb/files/osfstorage/", "https://api.osf.io/v2/nodes/jfzg3/files/osfstorage/", "https://api.osf.io/v2/nodes/vmkqf/files/osfstorage/"]
+}

@@ -1,0 +1,25 @@
+{
+  "local_id": "Row.27",
+  "removed": [
+    {
+      "label": "lexical decision task",
+      "replaced_with": "decide whether a letter string is a real word; one key for word, one for nonword"
+    },
+    {
+      "label": "pseudohomophones",
+      "replaced_with": "nonwords that sound like real words when read aloud"
+    },
+    {
+      "label": "the word-frequency effect",
+      "replaced_with": "the slowing for low-frequency words relative to high-frequency words"
+    }
+  ],
+  "kept_terms": [
+    "word frequency",
+    "stimulus quality",
+    "ex-Gaussian mu",
+    "QMPE v2.18",
+    "response time"
+  ],
+  "notes": "ex-Gaussian mu kept as the name of the analysed quantity and defined (mean of the normal part of a normal-plus-exponential fit); QMPE kept as the fitting program's name."
+}

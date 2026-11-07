@@ -1,0 +1,21 @@
+{
+  "local_id": "Row.22",
+  "removed": [
+    {
+      "label": "deeper attentional blink",
+      "replaced_with": "miss the second of two targets shown close together in a rapid stream more often"
+    },
+    {
+      "label": "rapid serial visual presentation (RSVP) attentional-blink task",
+      "replaced_with": "a stream of items shown one at a time, in quick succession, at the same place; two are targets reported at the end"
+    }
+  ],
+  "kept_terms": [
+    "T1",
+    "T2",
+    "T2|T1",
+    "lag",
+    "Greenhouse-Geisser"
+  ],
+  "notes": "T1/T2 defined plainly on the card."
+}

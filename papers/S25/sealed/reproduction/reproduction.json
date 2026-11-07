@@ -1,0 +1,13 @@
+{"local_id":"Row.7","node":"6n3bm",
+ "key_test":"paired t-test, one-sided (greater): per-subject mean of nr_correct/8 (rounded to 3 dp) for English short-word lists (list=EN, length=1) vs English long-word lists (list=EN, length=2); d = t/sqrt(n)",
+ "variables":["list","length","nr_correct","subject (file 1.txt..15.txt)"],
+ "exclusions":"none",
+ "n_rows_raw":1200,"n_after_exclusions":15,"N_R_table":15,
+ "table":{"stat":"t(14) = 0.496","p":"0.314 (one-sided)","es":"d = .13"},
+ "r_script":{"ran":true,"stat":"t(14) = 0.4928","p":"0.3149","es":"d = 0.13","stdout_file":"audit.out",
+   "how":"RPP_6n3bm.R run unchanged in R 4.6.2 except its loading lines: library(httr), library(RCurl) and source(getOSFfile.R) dropped (httr/RCurl not installed; the source is an external URL), getOSFfile() defined to return the downloaded srnvg zip (run_audit.R)"},
+ "python":{"ran":true,"stat":"t(14) = 0.4956 (DV rounded to 3 dp as the script); 0.4944 unrounded","p":"0.3139 (one-sided); 0.3143 unrounded","es":"d_z = 0.128","file":"reproduce.py"},
+ "agreement":"Python and table agree (t 0.4956 vs 0.496, p .3139 vs .314, d .13). The R script today gives t 0.4928, p .3149: off by 0.003 in t. Cause: the per-subject means are multiples of 0.05, so mean/8 ends in an exact tie at the 4th decimal for most cells, and the script's round(., 3) resolves ties by the rounding algorithm, which R changed in 4.0.0. Exact half-even rounding gives 0.4956 (the table, and the value hard-coded in the replication team's own script, t = .4956); half-up gives 0.4984; no rounding gives 0.4944. All p in .313-.315.",
+ "verdict":"reproduced with a discrepancy",
+ "notes":"Anchored on the script's test (EN short vs EN long, one-sided) and the table's t/p; the script and the replication team's script agree on the test. The discrepancy is R-version-dependent rounding of an intermediate, not a different test. The Dutch lists are the other plausible test (exploratory in the replication): t(14)=0.987, one-sided p=.170. Data are the preprocessed files (srnvg); demographics are typed into the script by hand and not in the files (the script's list.files order 1,10,11.. mislabels them; irrelevant to the key test).",
+ "minutes":22}

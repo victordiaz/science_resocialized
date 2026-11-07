@@ -14,5 +14,5 @@
 
 <!-- files:start -->
 **Data files given.** The raw data you receive, under neutral names:
-- `d04.sav` (SPSS, 137 KB): 206 rows 84 columns Include1 0 = 'Include for analyses' (158 rows, 79 per condition). Condition 1 achievement priming, 2 control. Precomputed 'Learning' = FSMean - RB12Mean (exact negative of the script's mean.learn).
+- `d07.sav` (SPSS, 178 KB)
 <!-- files:end -->

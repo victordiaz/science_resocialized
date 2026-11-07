@@ -1,0 +1,54 @@
+{
+  "local_id": "Row.39",
+  "node": "38ges",
+  "title_o": "Decision making and learning while taking sequential risks.",
+  "verdict": "usable",
+  "verdict_reason": "table6data.dta (in data_cleaned.zip, OSF 7xzkb) opened; Meng-Rosenthal-Rubin contrast of polydrug correlations with KS,KC,RS,RC recomputes to Z=1.248, p=.212, N=153, matching the table.",
+  "data_files": [
+    {
+      "path": "Data/data_cleaned.zip -> table6data.dta",
+      "opened": true,
+      "format": "other",
+      "rows": 161,
+      "cols": 9,
+      "notes": "Stata file: id, KS, KC, RS, RC, polydrug, testeddrugs, age, gender; 153 with non-missing polydrug. The zip also holds fishingData.dta (75 MB unpacked), not extracted."
+    }
+  ],
+  "key_test": {
+    "from_script": "RPP_38ges.R",
+    "test": "Meng, Rosenthal & Rubin (1992) contrast Z on Fisher-z correlations of polydrug with KS, KC, RS, RC, lambda (1,-1,1,-1)",
+    "variables": [
+      "polydrug",
+      "KS",
+      "KC",
+      "RS",
+      "RC"
+    ],
+    "all_variables_present": true,
+    "statistic_reported": {
+      "p": "0.21",
+      "es": "X"
+    }
+  },
+  "recompute": {
+    "attempted": true,
+    "method": "python recomputation of the script's formula",
+    "result": "Z=1.248, two-sided p=0.212, N=153",
+    "matches_table": "yes"
+  },
+  "n_check": {
+    "N_R_table": 153,
+    "rows_after_exclusions": 153,
+    "match": "yes"
+  },
+  "obstacles": [
+    "haven not installed; read .dta with pandas"
+  ],
+  "minutes": 6,
+  "sources_opened": [
+    "https://osf.io/38ges/",
+    "https://osf.io/7xzkb/",
+    "https://api.osf.io/v2/nodes/emav8/files/osfstorage/",
+    "https://api.osf.io/v2/nodes/dzu9b/files/osfstorage/"
+  ]
+}

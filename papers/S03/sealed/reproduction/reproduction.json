@@ -1,0 +1,13 @@
+{"local_id":"Row.80","node":"79dey",
+ "key_test":"one-way between-subjects ANOVA, ambivalence = mean(StrongMixed, -NotTorn, Indecisive-4) on Condition (0 neutral, 1 one-sided, 2 two-sided); omnibus F(2,67); eta^2 = SS_cond/(SS_cond+SS_err)",
+ "variables":["Include? (0=No, 1=Yes)","Condition","StrongMixed","NotTorn","Indecisive","SexOffender (check)"],
+ "exclusions":"Include == 1 (identical to SexOffender == 'No'): 19 of 89 excluded; one included participant lacks Indecisive and gets the mean of the other two items",
+ "n_rows_raw":89,"n_after_exclusions":70,"N_R_table":70,
+ "table":{"stat":"F(2,67) = 1.70","p":"0.19 (recalc .1905)","es":"eta^2 = .048"},
+ "r_script":{"ran":true,"stat":"F(2,67) = 1.6988","p":"0.1907","es":"eta^2 = 0.0483","stdout_file":"audit.out",
+   "how":"RPP_79dey.R run unchanged in R 4.6.2 except library(httr), library(RCurl) and source(getOSFfile.R) dropped and getOSFfile() mapped to the downloaded 3xv8u file (run_audit.R)"},
+ "python":{"ran":true,"stat":"F(2,67) = 1.6988","p":"0.1907","es":"eta^2 = 0.0483","file":"reproduce.py"},
+ "agreement":"all three agree (F 1.70, p .19, eta^2 .048)",
+ "verdict":"reproduced",
+ "notes":"Anchored on the script and table; the SAS syntax of the replication team runs the same omnibus (proc glm ambiv=condition) on the same exclusion. The script's imputation line Data[49,33] <- (Data[49,22]+Data[49,22])/2 uses StrongMixed twice instead of StrongMixed and reversed NotTorn; it gives the right value (1) only because that participant has StrongMixed = 1, NotTorn = -1. Python uses SAS mean-of-available semantics instead, same number. Dropping that participant: F(2,66)=1.51, p=.229. The script's Data$Include works only through R's partial matching of $ on the column 'Include..0.No..1.Yes.'. Second plausible test (the effect description names one-sided vs two-sided only): t(44) = -1.24, p = .222. The full data file henderson.replication.data.dat has 97 rows vs 89 here; not reconciled, the analysis file is the one the script and table use.",
+ "minutes":12}

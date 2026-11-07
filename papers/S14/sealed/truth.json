@@ -1,0 +1,47 @@
+{
+ "local_id": "Row.12",
+ "node": "7rtcz",
+ "replicate_r": "no",
+ "table": {
+  "p_r": "0.1986",
+  "es_r": "_2 = .014",
+  "n_r": "118",
+  "direction_r": "same",
+  "test_r": "is",
+  "p_o": "<.05",
+  "es_o": "d = .52",
+  "n_o": "48"
+ },
+ "reproduction": {
+  "key_test": "2x3 mixed ANOVA, uncorrected: Sound (R_QUIET, R_DISSIMILAR, R_SIMILAR; within) x TASK (FREE/SERIAL; between), proportion correct; key term = SOUND:TASK interaction F(2,232); partial eta^2",
+  "table": {
+   "stat": "F(2, 232) = 1.63",
+   "p": "0.1986",
+   "es": "eta^2 = .014 (encoding garbled; partial eta^2 by value)"
+  },
+  "r_script": {
+   "ran": true,
+   "stat": "F(2,232) = 1.627978",
+   "p": "0.1985608",
+   "es": "0.01128769 (SS_int / (SS_sound+SS_int+SS_err) in the within stratum, not partial eta^2)",
+   "stdout_file": "audit.out",
+   "how": "audit_harness.R: getOSFfile mapped to the local .sav, external source() skipped, httr/RCurl/reshape2 missing -> skipped, base-R melt() shim; the analysis lines run unchanged"
+  },
+  "python": {
+   "ran": true,
+   "stat": "F(2,232) = 1.6280",
+   "p": "0.1986",
+   "es": "partial eta^2 = 0.0138 (within-stratum eta^2 0.0113)",
+   "file": "reproduce.py"
+  },
+  "agreement": "all three agree on F(2,232)=1.63, p=.1986. Effect size: table .014 = partial eta^2 (Python .0138); the R script's line computes a different quantity (.0113), which does not match the table",
+  "verdict": "reproduced",
+  "n_after_exclusions": 118
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "When does between-sequence phonological similarity promote irrelevant sound disruption?",
+  "authors": "JE Marsh, F Vachon, DM Jones",
+  "journal": "JEPLMC"
+ }
+}

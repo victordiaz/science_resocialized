@@ -1,0 +1,383 @@
+Replication of "Where do we look during potentially offensive behavior?” by JR Crosby, B Monin, D Richardson (2008, Psychological Science).
+
+Kai Jonas
+K.J.Jonas@uva.nl
+University of Amsterdam
+
+Jeanine Skorinko
+skorinko@wpi.edu
+Worchester Polytechnic Institute
+
+Introduction
+
+In their original paper "Where do we look during potentially offensive behavior?”, Crosby, Monin, and Richardson (2008) investigate why people tend to look toward members of a social group when an offensive remark has been made about that social group. Crosby et al. propose two explanations. The first is that bystanders look toward the target of the remark for cues on how the bystanders themselves should respond; this is social referencing. The second explanation is the association hypothesis—bystanders cannot help but look at the social group member because they associate them with the comment. What follows from the association hypothesis is that even when the social group member cannot provide response cues, bystanders will still look at them.
+In this replication of Crosby et al. (2008), we sought to exactly reproduce the methodology used in the original paper, conducting a direct replication as part of the Reproducibility Project: Psychology. The authors of the original study found that when a White man made a potentially offensive comment in the presence of a Black man, participants would look at the Black man for a longer period of time if he could hear the comment than if he could not, F(3, 69) = 5.15, p < .005. The current replication sought to reproduce this scenario to derive the same effect.
+Data was collected at two independent universities: the University of Amsterdam and Worcester Polytechnic Institute. The procedure differed slightly between the two, as explained below.
+
+Power Analysis
+We used G*Power to calculate the sample size needed to obtain 95% power in the statistical analysis mentioned above. “F tests” were chosen as Test Family, “ANOVA: repeated measures, within-between interaction” as statistical test, “a priori” as the type of power analysis, the reported effect size of np2=.18 was determined to be f(u)=0.4685213 and entered, .05 was the error of probability, .95 was the power, 2 was the number of groups, 4 was the number of measurements, 1 was the non-sphericity correction, and the effect size specification set to ‘as in SPSS’. This yielded a target sample size of 30 participants for 95% power.
+
+Planned Sample
+In order to have the greatest amount of power, and therefore be most likely to replicate the effect if it is present, we planned to include 30 participants in each sample. Like in the original study, we recruited only non-Black individuals to participate. Participants were recruited from a university subject pool as well as through email and flyer advertisements. 
+At Worcester Polytechnic Institute, participants could choose between course credit or $11.00. This reflected the $10.00 Crosby et al. paid their participants, but adjusted for inflation. 
+At the University of Amsterdam, as compensation, participants could choose between receiving course credit or €9 (equivalent to $11.47). 
+Both sites executed two variations of the original study, one using the original, unedited videos and one using an edited version that removed references to Stanford University. In both variations, 30 participants were recruited. The two sites combined meant that 120 participants total were planned to be included in the study. 
+
+Materials and Procedure
+	At the University of Amsterdam, a faceLAB v. 5.0.2 system was used to record participants’ gaze.
+	At Worcester Polytechnic Institute, a Mirametrix S2 system was used to record participants’ gaze.  
+During correspondence between the Reproducibility Project: Psychology coordinator and Crosby, the original author noted that the “key stimulus video was randomized within a larger set of eye tracking tasks—thus allowing multiple researchers to get data from each participant and somewhat disguising the nature of our interests. The most faithful reproduction would also embed the stimulus video among non-social tasks.” 
+Therefore, at Worcester Polytechnic Institute, the present replication was combined with two other distractor tasks.  These two other tasks were not eye-tracking tasks.  The presentation of the tasks was randomized to ensure that order would not have an effect on the data.  This engaged participants for roughly 30 minutes.  The procedure for the present replication itself lasted approximately five minutes.
+At the University of Amsterdam, however, limited available time for the use of eye tracking software prohibited the addition of other eye tracking tasks.
+Participants were randomly assigned to one of two conditions: headphones on or headphones off.
+In the headphones off condition, participants were shown a short video while their eye movements were tracked. In the video, four men—three White and one Black—were displayed in quadrants on the screen, ostensibly each was being filmed in their own room. 
+In this condition, two of the White men in the film were able to hear each other while they discussed a question posed by an off screen woman. The two other participants, i.e., the Black man and the third White man, had their headphones turned off. One of the White discussants who could hear made a comment that could have been offensive to the Black man (who could not hear). A transcript of this video is available in the Appendix. 
+In the headphones on condition, participants were also shown a short video while their eye movements were tracked. The same visual arrangement of the same four men was displayed on the screen. However, in this condition, the script differed in one respect (transcript available in the Appendix): all four participants could hear the discussion. The same two White men responded to the question, and the same White man made the same potentially offensive comment. This critical second half of the video, in each condition, was the same recording, spliced in with the different first halves in each condition (ie. the critical footage was reused).
+“In the video, the discussants were instructed to give their thoughts on the university’s admissions policies. The first White discussant responded that the university should consider having admission interviews. The second White discussant criticized affirmative action in a way that was potentially offensive. Whereas the association hypothesis predicted that the Black individual would be looked at more than the available White discussants in both conditions, the social-referencing hypothesis predicted this response only in the headphones-on condition, when he could hear the remark and have a potentially informative reaction.”
+	Participants were given the following instructions that are the same instructions given in the original study:
+“Please watch the following discussion. At the conclusion of the discussion you will be asked questions about the discussion content and/or the discussion participants.”
+	Since the original study directly referred to Stanford University, we conducted one version using the same videos used in the original study.  However, we also edited the videos to remove all references to Stanford and ran a version of the study with these edited videos. 
+Analysis Plan
+The replicators planned to conduct the same 2 (headphones on vs. off) x 4 (discussant) ANOVA as in the original study. The primary effect of interest was to be the interaction comparing the amount of time spent looking at the Black discussant in the headphones on vs. the headphones off condition. All data from both sites and both study versions was to be included in this analysis.
+The original authors also performed “an analysis of looking times during the comments of the first, non-offensive discussant” to see if there was a significant interaction prior to the offensive comment. They did not expect to find one. The present replicators planned to perform the same additional analysis on all data.
+Additionally, analyses were conducted to examine any differences between data collection sites. To assess the impact of these variables, a Tukey HSD test was used. 
+
+Differences from the Original Study and Possible Outcomes
+As the original work conducted data collection at Stanford University, the original videos that participants were shown enquired about admissions policies at Stanford. Discussion of this issue with one of the original authors resulted in the idea that there were two options: to edit the original videos and remove or replace references to Stanford so as not to produce a potential outgroup effect, or to use the unedited original videos. Two studies were planned, one using edited videos and one using the originals. In the presently reported analyses, data from both the US and Amsterdam studies using the original videos is reported.  Due to time constraints, only data from the US is presented using the edited videos (with the references to Stanford removed).   
+Collecting data at multiple sites increased the available participant pool and allowed the replicators to study how robust the effect might be.
+One other difference is the method employed for eye tracking. While the same analysis method was employed across the original and the three replications, differences in tools could account for variability in results. Such an effect was not anticipated, however.
+
+Differences Between Data Collection Sites
+
+University of Amsterdam
+Worcester Polytechnic Institute
+Stanford University (original site)
+participant payment
+€9.00 or course credit
+$11.00 or course credit 
+$10.00 or course credit
+eye tracking method
+faceLAB v. 5.0.2
+Mirametrix S2
+ASL 504 remote-eye tracking camera
+additional tasks 
+not included
+included
+included
+video
+2 versions: references Stanford (reported here) and Stanford reference removed
+2 versions: references Stanford (reported here) and Stanford reference removed (reported here)
+references Stanford 
+
+
+Post Data Collection Addendum
+
+Differences from the pre-data collection plan
+	Data collection from the Amsterdam sample for the version of the study where references to Stanford were edited out of the videos was not completed in time to be included in the Reproducibility Project: Psychology’s meta-analysis and those data are therefore not included in this report.  Additionally, the planned analysis examining looking times prior to the offensive comment being made were not executed due to time constraints.
+
+Amsterdam study
+Participants
+Forty-five undergraduate students of the University of Amsterdam and the Free University participated in this experiment for €10,- or one research credit. Three of the participants were excluded because they were dark-skinned. Five were excluded based on the exit interview; these participants did not understand the discussion well enough. Answers on this exit question were evaluated independently by two judges. Finally, seven participants were removed due to problems with the eye-tracker; these errors consisted of failures to calibrate correctly and errors in port-code transmission. This resulted in a total of 30 participants (7 males), mean age 22.17 (SD 2.8).
+
+Data
+We performed a 2 (headphones on vs headphones off) x 4 (discussant) repeated measures analysis of variance, same as was used in the original article. After Greenhouse-Geisser correction to control for the violation of the assumption of sphericity, X²(5) = 56.3, p<0.5, performing the ANOVA resulted in F(1.48, 41.458)  = 1.401, p=0.254, indicating that we have no evidence to conclude that our subjects looked longer at the black discussant in the headphones on vs headphones off condition. We did, however, calculate effect size for discussant 3, Cohen’s d = 2.39. Table 1 shows an overview of the data, including mean looking time and standard error per discussant in the table. This table only contains the looking time after the second discussant started his racist comment. The data is split out over conditions and discussant 3 depicts the mean time that participants looked at the black discussant.
+Condition
+N
+Discussant 1 
+Discussant 2
+Discussant 3
+Discussant 4
+
+Headphones
+off
+Headphones on
+
+15
+
+15
+
+986 (420) 
+
+688 (202)         
+
+20252 (550) 
+
+19280 (616)      
+
+366 (155)  
+ 
+1003 (343)     
+
+310 (138)  
+
+635 (189)
+
+
+
+
+
+
+Table 1: Mean look time in ms and SE per discussant for the data from the Amsterdam study.
+
+US study
+Participants 
+	Forty-seven undergraduates participated in this study.  We removed 10 participants due to non-American or non-White background, 9 participants due to failed calibration or missing data. After removing these subjects 28 participants remained, 15 in the headphones off (two-person condition) and 13 in the headphones on (four-person condition). 
+
+Data
+	We performed a 2 (headphones on vs headphones off) x 4 (discussant) repeated measures analysis of variance, same as was used with the data from Amsterdam. We first corrected the degrees of freedom to control for the violation of sphericity, X²(5) = 56.3, p<0.5, using Greenhouse-Geisser correction. The following ANOVA gave us F(1.48, 41.458) = 0.146, p=0.890, indicating that we have no evidence to conclude that our subjects looked longer at the black discussant in the headphones on vs headphones off condition. Effect size for discussant 3 was Cohen’s d = 0.4 in the opposite direction compared to the expected effect. Table 2 shows an overview of the data from the American participants.
+
+
+Condition
+N
+Discussant 1 
+Discussant 2
+Discussant 3
+Discussant 4
+
+Headphones
+off
+Headphones on
+
+15
+
+13
+
+3537 (1447) 
+
+3101 (1543)         
+
+10528 (1674) 
+
+11560 (1758)      
+
+2248 (1197)  
+ 
+1780 (884)     
+
+2049 (1239)  
+
+1160 (370)
+
+
+
+
+
+
+Table 2: Mean look time in ms and SE per discussant for the American data.
+
+
+Combined data
+	For the combined data we again performed a 2 (headphones on vs headphones off) x 4 (discussant) repeated measures analysis of variance. We first corrected the degrees of freedom to control for the violation of sphericity, X²(5) = 54.6, p<0.5, using Greenhouse-Geisser correction. The following ANOVA gave us F(1.86, 101.7) = 0.07, p=0.917, indicating that we have no evidence to conclude that our subjects looked longer at the black discussant in the headphones on vs headphones off condition. Effect size for looking time at discussant 3 was d = 0.1. Table 3 shows an overview of the combined data from Amsterdam and the US.
+
+Condition
+N
+Discussant 1 
+Discussant 2
+Discussant 3
+Discussant 4
+
+Headphones
+off
+Headphones on
+
+30
+
+28
+
+2261 (777) 
+
+1808 (745)         
+
+15390 (1251) 
+
+15696 (1137)      
+
+1307 (618)  
+ 
+1364 (446)     
+
+1180 (634)  
+
+879 (202)
+
+
+
+
+
+
+Table 3: Mean look time in ms and SE per discussant for the combined data.
+
+
+
+
+
+Comparison between countries 
+	To test whether the data between test sites differed we performed a 2 (country) x 4 (discussant) analysis of variance. The ANOVA gave us F(3,168) = 23.283, p < 0.01. This test result is mainly explained by differences in looking time at discussant 2, Tukey HSD = 11.39, p<0.05. Tukey’s HSD was calculated using the following formula: 
+
+M1-M1 / √ ½ * MSs(A) (1/S1 + 1/S2)
+
+	Where M1 and M2 depict the means of two conditions, MSs(A) the mean square of the error and S the number of observations per group. The resulting test value was compared against a student’s t distribution. Table 4 shows differences in means between the data from the US and Amsterdam. The other comparisons were not significant, (p>0.05). Note that Tukey’s HSD might underestimate differences between groups because it becomes more conservative when sample sizes are unequal. 
+
+Condition
+N
+Discussant 1 
+Discussant 2
+Discussant 3
+Discussant 4
+
+   Amst
+
+   US
+
+Tukey HSD
+
+30
+
+28
+
+837 (231) 
+
+3335 (1037)
+
+3.25         
+
+19766 (415) 
+
+11007 (1194)
+
+11.39     
+
+685 (194)  
+ 
+2031 (749) 
+
+1.75    
+
+473 (119)  
+
+1636 (680)
+
+1.5
+
+
+
+
+
+
+Table 4: Mean look time in ms and SE per discussant for the two datasets.
+
+
+
+US study with Edited Videos (Stanford Reference Removed)
+Participants 
+	Forty-six undergraduates participated in this study.  We removed 14 participants due to non-American or non-White background and 1 participant due to failed calibration or missing data. After removing these individuals, 31 participants remained, 19 in the headphones off (two-person condition) and 12 in the headphones on (four-person condition). 
+
+Data
+	We performed a 2 (headphones on vs headphones off) x 4 (discussant) repeated measures analysis of variance, same as was used with the previous analyses. We first corrected the degrees of freedom to control for the violation of sphericity, X²(5) = 81.8, p<0.5, using Greenhouse-Geisser correction. The following ANOVA gave us F(1.354, 39.252) = 3.01 p=0.078, indicating that we have no definitive evidence to conclude that our subjects looked longer at the black discussant in the headphones on vs headphones off condition.  In addition, we conducted a between-participants t-test to examine if there were differences in looking times at Discussant 3 based on the condition, t (29) = -2.238, p = .033. Participants looked more at Discussant 3 (the black man) when they believed he could hear the comments (M = 6271; SD = 6257) than when he could not hear the comments (M = 2076; SD = 4208).  Effect size for Discussant 3 was Cohen’s d = 0.8.  Table 3 shows an overview of the data from the American participants in the Edited Videos Version.
+
+
+Condition
+N
+Discussant 1 
+Discussant 2
+Discussant 3
+Discussant 4
+
+Headphones
+off
+Headphones on
+
+19
+
+12
+
+1288 (292) 
+
+745 (368)         
+
+10276 (1545) 
+
+7108 (1945)      
+
+2076 (1166)  
+ 
+6271 (1467)     
+
+1712 (323)  
+
+2948 (406)
+
+
+
+
+
+
+Table 3: Mean look time in ms and SE per discussant for the American data with the Edited Videos.
+
+
+Summary
+	In neither the Amsterdam nor in the US study was the original interaction replicated using the original unedited videos that referred to Stanford. In the Amsterdam study, however, there was a significant effect of headphone condition on participant’s looking time at the Black discussant.  In the US study that used the edited videos that did not refer to Stanford University, the original interaction was also not significant (p = .078). However, there was a significant effect such that the participants did look more at Discussant 3 when they believed they could hear the racist comment than when they could not hear the racist comment. 
+
+References
+
+Crosby, J.R., Monin, B., and Richardson, D. (2008). Where do we look during potentially offensive behavior? Psychological Science, 19: 226-228.
+
+Crosby, J.R. and Monin, B. (2013). How the opinions of racial minorities influence judgments of discrimination. Basic and Applied Social Psychology, 35: 334-345.
+
+Appendix
+Transcripts of Videos: Unedited
+
+Headphones Off (unedited)
+
+Woman’s voice: For this part of the discussion, only participants one and two will discuss a topic. Participants three and four, I’m turning off your microphones and headphones now. Okay, can you raise your hand if you can hear me?
+
+The two (White) participants on the top half of the screen raise their hands.
+
+Woman’s voice: Great. For this first part, each of you has been asked to think about several possible questions. I will choose one of the questions, each of you will give your initial response, then the two of you will have time to discuss it between you. Do either of you have any questions?
+
+Participant one (White): So it’s just two of us now?
+
+Woman’s voice: Yes, [participant one gives a small nod] the other participants will be brought into the conversation later. Can you two hear each other? 
+
+The two (White) participants on the top half of the screen: Yes. 
+
+*Woman’s voice: The first question is, “What changes or improvements would you make to Stanford’s admissions procedure?” Participant one, your response?
+
+Participant one: I think we should consider having admissions interviews. I know there are some downsides, but I think some students might benefit from being able to present themselves in person rather than just on paper. They would also have a chance to learn more about Stanford and get some of their initial questions answered.
+
+Woman’s voice: Okay, participant two.
+
+Participant two: I think one problem with admissions is that too many qualified White students are not getting the spots they’ve earned. These students work hard all through school and then lose their spots to members of certain groups who have lower test scores and come from less challenging environments. They get an unfair advantage.
+
+Clip ends.
+
+
+*Begins recording that is identical to the other condition.
+Headphones On (unedited)
+
+Woman’s voice: For this part of the discussion, all four of you will discuss a topic. Each one of you should be able to hear me and hear each other through your headphones now. Okay. Can you raise your hand if you can hear me?
+
+All four participants raise their hands.
+
+Woman’s voice: Great. For this first part, each of you has been asked to think about several possible questions. I will choose one of the questions, each of you will give your initial response, then the four of you will have time to discuss it among you. Do any of you have any questions?
+
+Participant one (White): So it’s all four of us now?
+
+Woman’s voice: Yes, all four of you will be participating in this part of the conversation. Can you all hear each other?
+
+All four participants: Yes.
+
+*Woman’s voice: The first question is “What changes or improvements would you make to Stanfords’s admissions procedure?” Participant one, your response.
+
+Participant one: I think we should consider having admission interviews. I know there are some downsides, but I think some students might benefit from being able to present themselves in person rather than just on paper. They would also have a chance to learn more about Stanford and get some of their initial questions answered.
+
+Woman’s voice: Okay, participant two.
+
+Participant two: I think one problem with admissions is that too many qualified White students are not getting the spots they’ve earned. These students work hard all through school and then lose their spots to members of certain groups who have lower test scores and come from less challenging environments. They get an unfair advantage.
+
+Clip Ends.
+
+
+*Begins recording that is identical to the other condition.
+
+

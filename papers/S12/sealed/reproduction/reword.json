@@ -1,0 +1,29 @@
+{
+ "local_id": "Row.135",
+ "removed": [
+  {
+   "label": "implicit attitudes / implicit preference",
+   "replaced_with": "a preference measured by response speed rather than by self-report"
+  },
+  {
+   "label": "explicit (questionnaire, preference, prediction)",
+   "replaced_with": "self-report"
+  },
+  {
+   "label": "IAT",
+   "replaced_with": "timed sorting task with two keys, individuals paired with positive vs negative words, pairing reversed between blocks"
+  },
+  {
+   "label": "IAT D score / improved D-score algorithm",
+   "replaced_with": "difference in mean response time between the two pairings divided by the SD across both, trials <400 ms deleted, >10 s excluded"
+  }
+ ],
+ "kept_terms": [
+  "response time",
+  "self-report",
+  "preference",
+  "Welch t-test",
+  "Cohen's d"
+ ],
+ "notes": "Sorting-task description is generic (survey.json gives no block details); column names imppref, exppref, d kept verbatim."
+}

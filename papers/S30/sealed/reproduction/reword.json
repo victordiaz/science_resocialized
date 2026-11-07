@@ -1,0 +1,19 @@
+{
+ "local_id": "Row.110",
+ "removed": [
+  {
+   "label": "perceptual sensitivity",
+   "replaced_with": "per-category discrimination score (formula kept)"
+  },
+  {
+   "label": "multi-alternative choice model",
+   "replaced_with": "dropped; the formula's steps stay"
+  }
+ ],
+ "kept_terms": [
+  "ln(α)",
+  "Sens_Friend",
+  "Sens_SI"
+ ],
+ "notes": "No named signal-detection paradigm in the card."
+}

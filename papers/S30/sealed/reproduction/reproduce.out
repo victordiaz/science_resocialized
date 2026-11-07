@@ -1,0 +1,28 @@
+shape: (144, 25)  columns 22:23 (1-based): ['Sens_Friend', 'Sens_SI']
+unique ID: 144  NA in key columns: 0
+gender counts: {'Female': 79, 'Male': 65}  presentation time: {'3000ms': 77, '500ms': 67}
+means by gender:
+        Sens_Friend         Sens_SI        
+              mean     std    mean     std
+G                                         
+Female      0.6139  0.1071  0.4416  0.1561
+Male        0.6185  0.1045  0.4123  0.1078
+
+[key] gender x category interaction: F(1,142) = 1.1937, p = 0.276437, partial eta^2 = 0.0083
+      mean (Friend - SI): Male 0.2062, Female 0.1723
+
+pingouin mixed_anova:
+         Source        SS  DF1  DF2        MS           F         p_unc       np2  eps
+0            G  0.010966    1  142  0.010966    0.863017  3.544724e-01  0.006041  NaN
+1          cat  2.533125    1  142  2.533125  147.785166  9.407363e-24  0.509982  1.0
+2  Interaction  0.020460    1  142  0.020460    1.193686  2.764374e-01  0.008336  1.0
+
+[other] gender main effect on mean positive-affect sensitivity: F(1,142) = 0.8630, p = 0.354472
+
+[full model] type III on the affect x intent contrast; the C(G) row is gender x affect x intent:
+                         sum_sq     df          F        PR(>F)
+Intercept             3.390712    1.0  63.202215  5.612263e-13
+C(G, Sum)             0.000027    1.0   0.000498  9.822342e-01
+C(PT, Sum)            0.011219    1.0   0.209126  6.481622e-01
+C(G, Sum):C(PT, Sum)  0.013507    1.0   0.251760  6.166269e-01
+Residual              7.510808  140.0        NaN           NaN

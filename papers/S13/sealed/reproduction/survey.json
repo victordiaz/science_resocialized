@@ -1,0 +1,75 @@
+{
+ "local_id": "Row.122",
+ "node": "dnaxe",
+ "verdict": "usable",
+ "verdict_reason": "Alvarez_Data.dta (2040 trials, 17 subjects) holds angle, ExGuess, one_vs_four and tar_vs_dis; the audit script's paired t-test of distractor-centroid error vs guessing-phase chance reproduces t(16)=-9.59, p=4.9e-8, dz=-2.33, matching the table and the report.",
+ "data_files": [
+  {
+   "path": "Data/Alvarez_Data.dta",
+   "opened": true,
+   "format": "other",
+   "rows": 2040,
+   "cols": 22,
+   "notes": "Stata file the audit script reads (osf.io/d5im2). 120 trials per subject (80 experimental, 40 guessing). 'angle' is the localization error in degrees, derived by the do-file from mouse and dot coordinates."
+  },
+  {
+   "path": "Data/Alvarez_1.txt ... Alvarez_17.txt",
+   "opened": true,
+   "format": "txt",
+   "rows": 120,
+   "cols": 19,
+   "notes": "Per-subject raw trial files with headers v1..v19 only; Alvarez_1.txt opened (120 lines incl. header). Interpreting them needs 'merge and analyze.do' (posted, not read in full)."
+  },
+  {
+   "path": "Data/merge and analyze.do",
+   "opened": false,
+   "format": "other",
+   "rows": null,
+   "cols": null,
+   "notes": "Stata do-file building the .dta from the txt files; downloaded, not read."
+  }
+ ],
+ "key_test": {
+  "from_script": "RPP_dnaxe.r",
+  "test": "paired t-test, per-subject mean localization error (angle) on distractor-centroid trials, experimental vs guessing phase; dz = t/sqrt(n)",
+  "variables": [
+   "subject",
+   "ExGuess",
+   "one_vs_four",
+   "tar_vs_dis",
+   "angle"
+  ],
+  "all_variables_present": true,
+  "statistic_reported": {
+   "p": "1e-04",
+   "es": "dz = -2.33"
+  }
+ },
+ "recompute": {
+  "attempted": true,
+  "method": "python recomputation (scipy ttest_rel)",
+  "result": "t(16)=-9.591, p=4.9e-08, dz=-2.326",
+  "matches_table": "yes"
+ },
+ "n_check": {
+  "N_R_table": 17,
+  "rows_after_exclusions": 17,
+  "match": "yes"
+ },
+ "obstacles": [
+  "Key DV 'angle' is precomputed in the .dta; rebuilding it from raw txt requires the Stata do-file (no Stata here)",
+  "Table p '1e-04' is a floor; exact p is 4.9e-8",
+  "R packages readstata13, doBy, lsr not installed; not run in R"
+ ],
+ "minutes": 10,
+ "sources_opened": [
+  "https://api.osf.io/v2/nodes/dnaxe/files/osfstorage/",
+  "https://api.osf.io/v2/nodes/q4zfj/files/osfstorage/",
+  "https://api.osf.io/v2/nodes/8zwqm/files/osfstorage/",
+  "Data/Alvarez_Data.dta",
+  "Data/Alvarez_1.txt",
+  "Analysis Audit/RPP_dnaxe.r",
+  "top/Replication of Alvarez&Oliva2008.docx"
+ ],
+ "title_o": "The representation of simple ensemble visual features outside the focus of attention"
+}

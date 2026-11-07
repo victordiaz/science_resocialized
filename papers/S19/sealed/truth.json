@@ -1,0 +1,47 @@
+{
+ "local_id": "Row.10",
+ "node": "vmipw",
+ "replicate_r": "yes",
+ "table": {
+  "p_r": "0.001",
+  "es_r": "MSE=3574.9",
+  "n_r": "32",
+  "direction_r": "same",
+  "test_r": "is",
+  "p_o": "<.001",
+  "es_o": "__p^2 = 0.488",
+  "n_o": "32"
+ },
+ "reproduction": {
+  "key_test": "3 (notation, within) x 2 (numerical difference small/large, within) x 2 (task order, between) mixed ANOVA, type III, on per-participant cell-mean RT of correct 'different' responses in the numerical same-different task; term = main effect of numerical difference (Distance)",
+  "table": {
+   "stat": "F(1, 29) = 45.27",
+   "p": "0.001 (floor; T.pval.recalc.R = 2.21e-07)",
+   "es": "MSE=3574.9"
+  },
+  "r_script": {
+   "ran": false,
+   "stat": "not run (package missing: ez; also needs car, doBy, reshape2, schoRsch)",
+   "p": "n/a",
+   "es": "n/a",
+   "stdout_file": "audit.out",
+   "saved_audit_output": "the audit's own ANOVA table.png (Analysis Audit output.zip): Distance F(1,29)=42.58, p<.001, MSE=3520.779, petasq .59"
+  },
+  "python": {
+   "ran": true,
+   "stat": "F(1, 29) = 45.274, MSE = 3574.895",
+   "p": "2.21e-07",
+   "es": "partial eta^2 = 0.610",
+   "file": "reproduce.py"
+  },
+  "agreement": "Table and Python agree exactly (F 45.27 vs 45.274; MSE 3574.9 vs 3574.895; p 2.21e-07 vs recalc 2.21e-07). The R script could not be run here; its saved output reports F=42.58, MSE=3520.779. Python reproduces both of its numbers: the script omits the correct-trials filter (all-trials MSE 3520.779 exact) and its F equals the type-2 (n-weighted) test on all trials (42.576); type 3 on all trials gives 42.334.",
+  "verdict": "reproduced",
+  "n_after_exclusions": 31
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "Across-notation automatic numerical processing.",
+  "authors": "D Ganor-Stern, J Tzelgov",
+  "journal": "JEPLMC"
+ }
+}

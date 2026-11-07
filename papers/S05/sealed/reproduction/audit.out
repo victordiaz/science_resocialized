@@ -1,0 +1,4 @@
+> library("car")
+Error in library("car") : package missing: car
+Calls: withVisible -> eval -> eval -> library
+Execution halted

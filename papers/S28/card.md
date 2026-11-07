@@ -14,5 +14,5 @@
 
 <!-- files:start -->
 **Data files given.** The raw data you receive, under neutral names:
-- `d04.csv` (CSV, 21 KB): 74 rows 37 columns one row per participant; discard==1 for rows 16, 23, 68 (suspicion); kept cells Control 12/10, Global 15/12, Local 14/11; PID 18 appears twice (two different people: different age and gender), so unique(PID)=70 though rows=71
+- `d09.csv` (CSV, 21 KB)
 <!-- files:end -->

@@ -1,0 +1,15 @@
+raw shape: (4267, 122)
+after exppref not NA: 3945
+after d not NA: 3660
+after fastpct10 == 0: 3659
+after alltrials == 200: 3597
+rateorig counts: {1.0: 1959, 0.0: 1638}  imppref NA: 0
+imppref == sign-aligned d (rebuilt) for all rows: True
+
+KEY (implicit):
+[imppref] new pair n=1638 M=0.0498 SD=0.4696; original pair n=1959 M=0.1502 SD=0.4814
+[imppref] Welch t(3511.1) = -6.3092 (new minus original), p = 3.154e-10; Cohen's d (pooled SD) = 0.2108; 2t/sqrt(df) = 0.2130
+
+other test in the script (explicit):
+[exppref] new pair n=1638 M=0.1909 SD=1.0457; original pair n=1959 M=1.0873 SD=1.3149
+[exppref] Welch t(3586.2) = -22.7677 (new minus original), p = 2.743e-107; Cohen's d (pooled SD) = 0.7471; 2t/sqrt(df) = 0.7604

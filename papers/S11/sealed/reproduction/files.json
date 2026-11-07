@@ -1,0 +1,37 @@
+{
+ "Analysis_Audit/RPP_b98zw.R": {
+  "neutral": "d01.r",
+  "give": false,
+  "bytes": 2462
+ },
+ "Data/Amsterdam_data.txt": {
+  "neutral": "d02.txt",
+  "give": true,
+  "bytes": 1123
+ },
+ "Data/Look_Replication_Data_Processing (1).m": {
+  "neutral": "d03.m",
+  "give": false,
+  "bytes": 2041
+ },
+ "Data/Raw_Txt_Files_Part_1_Replication.zip": {
+  "neutral": "d04.zip",
+  "give": true,
+  "bytes": 3239906
+ },
+ "top/nkaw4.json": {
+  "neutral": "d05.json",
+  "give": false,
+  "bytes": 2207
+ },
+ "top/report.docx": {
+  "neutral": "d06.docx",
+  "give": false,
+  "bytes": 44848
+ },
+ "top/report.txt": {
+  "neutral": "d07.txt",
+  "give": false,
+  "bytes": 22512
+ }
+}

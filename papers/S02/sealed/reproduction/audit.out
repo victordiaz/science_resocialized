@@ -1,0 +1,76 @@
+[shim] dropped line(s): 33 
+> library("httr") 
+[shim] skipped library( httr )
+> library("RCurl") 
+[shim] skipped library( RCurl )
+> library("compute.es") 
+> file <- getOSFfile("https://osf.io/btr65/") 
+> berry.data <- read.table(file, sep = "\t", header = TRUE) 
+> berryt.test <- with(berry.data, t.test(meanRT_cr, meanRT_miss, 
++     alternative = "two.sided", paired = TRUE)) 
+> print(berryt.test) 
+
+	Paired t-test
+
+data:  meanRT_cr and meanRT_miss
+t = 2.3977, df = 31, p-value = 0.02271
+alternative hypothesis: true mean difference is not equal to 0
+95 percent confidence interval:
+   8.647711 107.128454
+sample estimates:
+mean difference 
+       57.88808 
+
+> berryt.test$statistic 
+       t 
+2.397698 
+> berryt.test$p.value 
+[1] 0.02270886
+> nrow(berry.data) 
+[1] 32
+> t = berryt.test$statistic 
+> n = nrow(berry.data) 
+> efd = t/sqrt(n) 
+> effectSize <- des(efd, n.1 = n, n.2 = n, level = 95, dig = 2, 
++     id = NULL, data = NULL) 
+Mean Differences ES: 
+ 
+ d [ 95 %CI] = 0.42 [ -0.07 , 0.92 ] 
+  var(d) = 0.06 
+  p-value(d) = 0.1 
+  U3(d) = 66.42 % 
+  CLES(d) = 61.78 % 
+  Cliff's Delta = 0.24 
+ 
+ g [ 95 %CI] = 0.42 [ -0.07 , 0.91 ] 
+  var(g) = 0.06 
+  p-value(g) = 0.1 
+  U3(g) = 66.23 % 
+  CLES(g) = 61.64 % 
+ 
+ Correlation ES: 
+ 
+ r [ 95 %CI] = 0.21 [ -0.04 , 0.43 ] 
+  var(r) = 0.01 
+  p-value(r) = 0.11 
+ 
+ z [ 95 %CI] = 0.21 [ -0.04 , 0.46 ] 
+  var(z) = 0.02 
+  p-value(z) = 0.11 
+ 
+ Odds Ratio ES: 
+ 
+ OR [ 95 %CI] = 2.16 [ 0.88 , 5.3 ] 
+  p-value(OR) = 0.1 
+ 
+ Log OR [ 95 %CI] = 0.77 [ -0.13 , 1.67 ] 
+  var(lOR) = 0.21 
+  p-value(Log OR) = 0.1 
+ 
+ Other: 
+ 
+ NNT = 7.24 
+ Total N = 64> effectSize$d 
+[1] 0.42
+> TRUE 
+[1] TRUE

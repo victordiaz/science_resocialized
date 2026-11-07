@@ -1,0 +1,62 @@
+{
+ "Analysis Audit/RPP_apidb.R": {
+  "neutral": "d01.r",
+  "give": false,
+  "bytes": 2524
+ },
+ "Study 1 Dataset/Exp1_Data.sav": {
+  "neutral": "d02.sav",
+  "give": false,
+  "bytes": 193351
+ },
+ "Study 1 Dataset/Exp1_Data_sanitized.sav": {
+  "neutral": "d11.sav",
+  "give": true,
+  "bytes": 526779
+ },
+ "Study 1 Dataset/Exp1_Syntax.sps": {
+  "neutral": "d03.sps",
+  "give": false,
+  "bytes": 10103
+ },
+ "Study 1 Dataset/Exp_1_Codebook.docx": {
+  "neutral": "d04.docx",
+  "give": false,
+  "bytes": 142618
+ },
+ "Study 2 Dataset/Exp2_Data.sav": {
+  "neutral": "d05.sav",
+  "give": false,
+  "bytes": 106611
+ },
+ "Study 2 Dataset/Exp2_Data_sanitized.sav": {
+  "neutral": "d12.sav",
+  "give": true,
+  "bytes": 217807
+ },
+ "Study 2 Dataset/Exp2_Syntax.sps": {
+  "neutral": "d06.sps",
+  "give": false,
+  "bytes": 8438
+ },
+ "Study 2 Dataset/Exp_2_Codebook.docx": {
+  "neutral": "d07.docx",
+  "give": false,
+  "bytes": 137315
+ },
+ "top/Online_Write-up_1-9.docx": {
+  "neutral": "d08.docx",
+  "give": false,
+  "bytes": 93627
+ },
+ "top/Schnall_Replication_6.docx": {
+  "neutral": "d09.docx",
+  "give": false,
+  "bytes": 195894
+ },
+ "top/Simonsohn_Analyses.R": {
+  "neutral": "d10.r",
+  "give": false,
+  "bytes": 2862
+ }
+}

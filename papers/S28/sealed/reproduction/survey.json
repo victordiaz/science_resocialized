@@ -1,0 +1,18 @@
+{
+  "local_id": "Row.64",
+  "node": "mxryb",
+  "title_o": "The effect of global versus local processing styles on assimilation versus contrast in social judgment.",
+  "verdict": "usable",
+  "verdict_reason": "RPP data.csv (guid m65gx) has 74 rows with a discard flag; the 71 kept rows (the same rows the audit script keeps by position) carry aggressivenessScore, mapCondition and puzzleCondition, and the recomputed processing-style x prime interaction F(2,65)=0.865, p=.426, partial eta^2=.0259 matches the table.",
+  "data_files": [
+    {"path": "Data/RPP data.csv", "opened": true, "format": "csv", "rows": 74, "cols": 37, "notes": "one row per participant; discard==1 for rows 16, 23, 68 (suspicion); kept cells Control 12/10, Global 15/12, Local 14/11; PID 18 appears twice (two different people: different age and gender), so unique(PID)=70 though rows=71"},
+    {"path": "Data/RPP codebook.csv", "opened": true, "format": "csv", "rows": 34, "cols": 2, "notes": "variable descriptions; aggressivenessScore = mean of Q5 and Q8"},
+    {"path": "Data/RPP analysis.R", "opened": true, "format": "other", "rows": null, "cols": null, "notes": "replicators' own script: subset(discard == 0), car::Anova type III on the same model"}
+  ],
+  "key_test": {"from_script": "RPP_mxryb.R", "test": "aov aggressivenessScore ~ mapCondition * puzzleCondition, car::Anova type II, key statistic = interaction", "variables": ["aggressivenessScore", "mapCondition", "puzzleCondition", "discard"], "all_variables_present": true, "statistic_reported": {"p": "0.426", "es": "partial eta^2 = 0.0259"}},
+  "recompute": {"attempted": true, "method": "base R aov + drop1 on the downloaded csv (car not installed; interaction SS identical under type I/II/III here)", "result": "F(2,65)=0.8653, p=0.4257, partial eta^2=0.0259", "matches_table": "yes"},
+  "n_check": {"N_R_table": 71, "rows_after_exclusions": 71, "match": "yes"},
+  "obstacles": ["audit script excludes rows by hard-coded position rather than the discard column (same result)", "duplicate PID 18 makes the script's sample-size line print 70, not 71", "a reply from the original authors sits on the node (Replication Project Response 2015 pdf); not opened"],
+  "minutes": 7,
+  "sources_opened": ["https://osf.io/mxryb/", "https://api.osf.io/v2/files/m65gx/", "https://api.osf.io/v2/nodes/srckg/files/osfstorage/", "https://api.osf.io/v2/nodes/m3kia/files/osfstorage/"]
+}

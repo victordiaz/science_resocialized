@@ -1,0 +1,21 @@
+{
+ "local_id": "Row.117",
+ "removed": [
+  {
+   "label": "the attentional blink",
+   "replaced_with": "two cued letters in one rapid stream, the second following the first by a short interval"
+  },
+  {
+   "label": "temporal selection of the second target",
+   "replaced_with": "which item gets reported for the second cued letter"
+  }
+ ],
+ "kept_terms": [
+  "efficacy",
+  "latency",
+  "precision",
+  "SOA",
+  "rapid serial visual presentation"
+ ],
+ "notes": "'temporal selection' kept only as the spreadsheet's value-column heading (a column name, verbatim per rule 5). 'Rapid serial visual presentation' kept as it is immediately described in the Design line."
+}

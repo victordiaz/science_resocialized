@@ -1,0 +1,28 @@
+> library("httr") 
+[harness] package missing, skipped: httr 
+> library("RCurl") 
+[harness] package missing, skipped: RCurl 
+> library("foreign") 
+> library("lsr") 
+> File <- getOSFfile("https://osf.io/qghwy/") 
+> Data <- read.spss(File, to.data.frame = TRUE) 
+> Data$Exclude <- as.numeric(Data$Madeup_dummy) 
+> Data[Data$Exclude == 0, 60] <- as.numeric(Data[Data$Exclude ==  
+> Result <- aov(mean_vignettes ~ Condition, data = Data[Data$Exclude ==  
+> summary(Result) 
+             Df Sum Sq Mean Sq F value Pr(>F)
+Condition     1   0.00  0.0004   0.001  0.974
+Residuals   124  49.93  0.4027               
+> summary(Result)[[1]][["F value"]][1] 
+[1] 0.00102671
+> summary(Result)[[1]][["Pr(>F)"]][1] 
+[1] 0.9744898
+> nrow(Data[Data$Exclude == 0, ]) 
+[1] 126
+> cohensD(mean_vignettes ~ Condition, data = Data[Data$Exclude ==  
+[1] 0.005727178
+> TRUE 
+[1] TRUE
+Warning message:
+In read.spss(File, to.data.frame = TRUE) :
+  download/Study 2 Dataset/Exp2_Data.sav: Very long string record(s) found (record type 7, subtype 14), each will be imported in consecutive separate variables

@@ -1,0 +1,46 @@
+{
+ "local_id": "Row.146",
+ "node": "dncxa",
+ "replicate_r": "no",
+ "table": {
+  "p_r": "0.09",
+  "es_r": "dz = .548",
+  "n_r": "12",
+  "direction_r": "same",
+  "test_r": "is",
+  "p_o": "<.007",
+  "es_o": "d = 1.71",
+  "n_o": "15"
+ },
+ "reproduction": {
+  "key_test": "two-sided paired t-test, congruent vs incongruent per-participant mean naming RT, object-naming group only (NamingTask=='naming'), by subjects (F1); dz = t/sqrt(n)",
+  "table": {
+   "stat": "t(11) = 1.9",
+   "p": "0.09 (T.pval.recalc.R = 0.0840, from t rounded to 1.9)",
+   "es": "dz = .548"
+  },
+  "r_script": {
+   "ran": false,
+   "stat": "not run (package missing: dplyr; also needs tidyr)",
+   "p": "n/a",
+   "es": "n/a",
+   "stdout_file": "audit.out"
+  },
+  "python": {
+   "ran": true,
+   "stat": "t(11) = -1.882 (congruent minus incongruent; |t| = 1.882)",
+   "p": "0.0866",
+   "es": "dz = 0.543",
+   "file": "reproduce.py"
+  },
+  "agreement": "Table and Python agree on df and, within rounding, on t (1.9 vs 1.882) and p (.09 vs .0866). The table's dz .548 is 1.9/sqrt(12) from the rounded t; from the unrounded t it is .543 (difference .005). The table's recalculated p .0840 is likewise from the rounded t. R not run.",
+  "verdict": "reproduced",
+  "n_after_exclusions": 12
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "A word-order constraint on phonological activation",
+  "authors": "N Janssen, FX Alario, A Caramazza",
+  "journal": "PS"
+ }
+}

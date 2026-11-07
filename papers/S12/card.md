@@ -4,7 +4,7 @@
 
 **Measure.** Response-speed person preference `imppref`: the difference in mean response time between the two key pairings divided by the standard deviation of response times across both (with trials under 400 ms deleted and trials over 10 s excluded), signed so that positive values mean a preference for the positive individual, or for the new individual from the positive individual's group.
 
-**Sample.** Visitors aged 18 or over. 4,267 rows in `d04.csv`; 3,597 analysed.
+**Sample.** Visitors aged 18 or over. 4,267 rows in `d07.csv`; 3,597 analysed.
 
 **Exclusion rules, in order.** Missing self-reported preference (`exppref` NA, i.e. skipped questionnaire items); missing sorting-task score (`d` NA); more than 10% of sorting trials faster than 300 ms (`fastpct10 == 1`); not exactly 200 scored sorting trials (`alltrials != 200`).
 
@@ -12,5 +12,5 @@
 
 <!-- files:start -->
 **Data files given.** The raw data you receive, under neutral names:
-- `d04.csv` (CSV, 4.1 MB): 4267 rows 122 columns processed per-participant file: exppref, imppref, d, fastpct10, alltrials, rateorig
+- `d07.csv` (CSV, 3.1 MB)
 <!-- files:end -->

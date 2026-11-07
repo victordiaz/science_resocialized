@@ -1,0 +1,11 @@
+
+== replication: rows=720, subjects=12, levels: measure=[np.int64(1), np.int64(2), np.int64(3)], target=[np.int64(1), np.int64(2)], soa=[np.int64(1), np.int64(2), np.int64(3), np.int64(4), np.int64(5), np.int64(6), np.int64(7), np.int64(8), np.int64(9), np.int64(10)]
+   cells per subject: [60]
+   [type 2] measure x target x SOA: F(18,660) = 12.982, p = 3.3e-33, partial eta^2 = 0.261
+   [type 3] measure x target x SOA: F(18,660) = 12.982, p = 3.3e-33, partial eta^2 = 0.261
+   [sensitivity, subject as block] F(18,649) = 14.993, p = 1.99e-38
+
+== original (for reference only): rows=720, subjects=12, levels: measure=[np.int64(1), np.int64(2), np.int64(3)], target=[np.int64(1), np.int64(2)], soa=[np.int64(1), np.int64(2), np.int64(3), np.int64(4), np.int64(5), np.int64(6), np.int64(7), np.int64(8), np.int64(9), np.int64(10)]
+   cells per subject: [60]
+   [type 2] measure x target x SOA: F(18,660) = 16.311, p = 6.01e-42, partial eta^2 = 0.308
+   [type 3] measure x target x SOA: F(18,660) = 16.311, p = 6.01e-42, partial eta^2 = 0.308

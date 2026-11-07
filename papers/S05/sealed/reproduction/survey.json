@@ -1,0 +1,72 @@
+{
+  "local_id": "Row.117",
+  "node": "rzjvn",
+  "title_o": "Temporal selection is suppressed, delayed, and diffused during the attentional blink.",
+  "verdict": "usable",
+  "verdict_reason": "The xlsx the audit script loads (osf.io/5fdvw) holds the replication's 720 cell values (12 subjects x 60 cells) with all four variables; a full-factorial OLS ANOVA gives the 3-way interaction F(18,660)=12.98, partial eta2=.261, matching the table.",
+  "data_files": [
+    {
+      "path": "Dataset/Vul_etal_Original_Replication_ANOVA_datasets.xlsx",
+      "opened": true,
+      "format": "xlsx",
+      "rows": 720,
+      "cols": 5,
+      "notes": "Replication block in columns G-K (temporal selection, efficacy 3 levels, latency 2, precision 10, subject 12); original Vul et al block in A-E. Header on row 5."
+    },
+    {
+      "path": "Dataset/Vul_etal_Original_Replication_ANOVA_datasets.csv",
+      "opened": true,
+      "format": "csv",
+      "rows": null,
+      "cols": null,
+      "notes": "Old Mac CR line endings; same content as xlsx"
+    },
+    {
+      "path": "Dataset/atp6-compress.zip",
+      "opened": true,
+      "format": "mat",
+      "rows": null,
+      "cols": null,
+      "notes": "Listed only: 146 entries, per-subject .mat raw files plus Matlab analysis code; the xlsx is the aggregated input"
+    }
+  ],
+  "key_test": {
+    "from_script": "RPP_rzjvn.R",
+    "test": "between-subjects 3-way ANOVA lm(temporal.selection ~ efficacy*latency*precision), car::Anova type II, row 7 = 3-way interaction; mirrors Matlab anovan 'full'",
+    "variables": [
+      "temporal selection",
+      "efficacy",
+      "latency",
+      "precision",
+      "subject"
+    ],
+    "all_variables_present": true,
+    "statistic_reported": {
+      "p": "1e-12 (table placeholder for a very small p)",
+      "es": "eta2p = .261"
+    }
+  },
+  "recompute": {
+    "attempted": true,
+    "method": "python recomputation (statsmodels OLS + anova_lm type 2 and 3; same F for the 3-way term)",
+    "result": "efficacy:latency:precision F(18,660)=12.98, p=3.3e-33, partial eta2=.261",
+    "matches_table": "yes"
+  },
+  "n_check": {
+    "N_R_table": 12,
+    "rows_after_exclusions": 12,
+    "match": "yes"
+  },
+  "obstacles": [
+    "The analysed file is an aggregated spreadsheet, not trial-level data; the raw .mat files need Matlab to rebuild it",
+    "The ANOVA ignores the repeated-measures structure (subject not in the model), as the original did; a reproducer who 'corrects' this gets a different F",
+    "Script needs xlsx, car, heplots packages"
+  ],
+  "minutes": 9,
+  "sources_opened": [
+    "https://api.osf.io/v2/nodes/av54t/files/osfstorage/",
+    "https://api.osf.io/v2/nodes/gazc8/files/osfstorage/",
+    "https://api.osf.io/v2/nodes/mbh46/files/osfstorage/",
+    "https://api.osf.io/v2/files/5fdvw/"
+  ]
+}

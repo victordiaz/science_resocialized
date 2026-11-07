@@ -1,0 +1,8 @@
+> library("httr")
+[shim] skipped httr (download only)
+> library("RCurl")
+[shim] skipped RCurl (download only)
+> library("ez")
+Error in library("ez") : package missing: ez
+Calls: withVisible -> eval -> eval -> library
+Execution halted

@@ -1,0 +1,8 @@
+> library("httr")
+[shim] skipped httr (download only)
+> library("RCurl")
+[shim] skipped RCurl (download only)
+> library("R.matlab")
+Error in library("R.matlab") : package missing: R.matlab
+Calls: withVisible -> eval -> eval -> library
+Execution halted

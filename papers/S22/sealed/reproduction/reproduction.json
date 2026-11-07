@@ -1,0 +1,12 @@
+{"local_id":"Row.33","node":"swrhy",
+ "key_test":"timing task (Rhythm?==1): per subject x instruction, mean latency per output position; quadratic fit to positions 2,3,5,6; deviation of mean 4th latency from the fit's prediction; paired t grouped vs ungrouped, two-sided; d_av",
+ "variables":["Subject","Grouped?","Rhythm?","Out sec 1","Out sec 2","Out sec 3","Out sec 4","Out sec 5","Out sec 6"],
+ "exclusions":"none in the posted file (40 subjects x 80 trials); report: 45 tested, 4 software crashes and 1 aware of the hypothesis dropped before posting",
+ "n_rows_raw":3200,"n_after_exclusions":40,"N_R_table":40,
+ "table":{"stat":"t(39) = 2.08","p":"0.044","es":"d = .37"},
+ "r_script":{"ran":true,"stat":"F(5,195) = 2.54401 (grouping x position interaction, a different test)","p":"0.02950693","es":"partial eta^2 = 0.0612","stdout_file":"audit.out","how":"audit_harness.R: getOSFfile mapped to the local csv, external source() skipped, httr/RCurl missing -> skipped; analysis lines unchanged"},
+ "python":{"ran":true,"stat":"t(39) = 2.0839","p":"0.0438","es":"d_av = 0.3674 (d_z = 0.3295)","file":"reproduce.py"},
+ "agreement":"Python and table agree (t 2.084 vs 2.08, p .0438 vs .044, d .367 vs .37). The audit script computes the 2x6 ANOVA interaction, F(5,195)=2.544, p=.0295, pes=.061, which Python also reproduces (pingouin, uncorrected p .0295; GG-corrected .0653) but which is not the table's test",
+ "verdict":"reproduced",
+ "notes":"Anchored on the replication report (OSF-Farrell-report-updated.pdf: t(39)=2.08, p=.044, d=.37 for the timing task) and the table's t, not on RPP_swrhy.R, because the script's header says t/d but its code returns the ANOVA interaction. Second plausible test with a different answer: the 2x6 interaction, p=.0295 uncorrected but p=.065 Greenhouse-Geisser corrected (epsilon .55); the original paper used a GG-corrected F, so a reader taking the ANOVA as the claim could score it as not significant. The replicators' own script (OSF-Farrell-analysis-script.R) ships with rhythm=0 and item=3 set by hand and needs car/ez (package missing); not run.",
+ "minutes":12}

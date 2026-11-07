@@ -1,0 +1,46 @@
+{
+ "local_id": "Row.110",
+ "node": "7dyp5",
+ "replicate_r": "no",
+ "table": {
+  "p_r": "0.28",
+  "es_r": "__p^2 = 0.008",
+  "n_r": "144",
+  "direction_r": "same",
+  "test_r": "is",
+  "p_o": "<.001",
+  "es_o": "__p^2 = .326",
+  "n_o": "280"
+ },
+ "reproduction": {
+  "key_test": "2 (category: Sens_Friend vs Sens_SI, within) x 2 (Gender, between) mixed ANOVA; Gender x category interaction F",
+  "table": {
+   "stat": "F(1, 142) = 1.19",
+   "p": "0.28 (recalc 0.2772)",
+   "es": "partial eta^2 = 0.008"
+  },
+  "r_script": {
+   "ran": false,
+   "stat": null,
+   "p": null,
+   "es": null,
+   "stdout_file": "audit.out"
+  },
+  "python": {
+   "ran": true,
+   "stat": "F(1,142) = 1.1937",
+   "p": "0.276437",
+   "es": "partial eta^2 = 0.0083",
+   "file": "reproduce.py"
+  },
+  "agreement": "pending",
+  "verdict": "reproduced",
+  "n_after_exclusions": 144
+ },
+ "reproduced": true,
+ "citation_private": {
+  "title": "Perceptual mechanisms that characterize gender differences in decoding women's sexual intent",
+  "authors": "C Farris, TA Treat, RJ Viken, RM McFall",
+  "journal": "PS"
+ }
+}

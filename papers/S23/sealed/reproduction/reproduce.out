@@ -1,0 +1,10 @@
+session1 rows/cols (231, 32) session2 rows/cols (171, 29)
+duplicate ids s1/s2: 13 5
+merged rows 174
+defocus columns used: 16
+excluded: defocus>0 25 | missing answers 12 | peaking != Nee 9 | NaN in defocus among kept 0
+duplicate ids among kept rows: 0 (duplicate ids in the raw files only produce rows with missing answers, which the missing-answer rule drops)
+n after exclusions 140 | sex {'Vrouwelijk': 125, 'Mannelijk': 15} | age mean/sd 22.0 3.1
+mean MSE guess1, guess2, average: 517.43 588.89 467.46
+KEY guess1 vs average: t(139) = 4.0217, p(one-sided) = 4.72e-05, p(two-sided) = 9.44e-05, d_z = 0.3399
+(not the key test) guess2 vs average: t(139) = 8.4794, p(two-sided) = 2.98e-14

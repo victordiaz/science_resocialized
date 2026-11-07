@@ -1,0 +1,11 @@
+sheets ['Sheet3', 'Sheet1', 'Sheet2', 'Sheet4', 'Sheet5'] -> using Sheet3
+rows 71 cols 4 ['Highfrequencyclear', 'Lowfrequencyclear', 'Highfrequencydegraded', 'Lowfrequencydegraded'] NA cells 0
+cell means: {'Highfrequencyclear': 564.42, 'Lowfrequencyclear': 681.03, 'Highfrequencydegraded': 573.39, 'Lowfrequencydegraded': 770.51}
+                     F Value  Num DF  Den DF    Pr > F
+quality            10.945804     1.0    70.0  0.001484
+frequency          28.243477     1.0    70.0  0.000001
+quality:frequency  11.782999     1.0    70.0  0.001008
+quality: F(1,70) = 10.9458, p = 0.001484, SS_eff = 172072.7, SS_err = 1100429.9, partial eta^2 = 0.1352
+frequency: F(1,70) = 28.2435, p = 0.000001, SS_eff = 1747095.7, SS_err = 4330086.6, partial eta^2 = 0.2875
+quality x frequency: F(1,70) = 11.7830, p = 0.001008, SS_eff = 115052.2, SS_err = 683497.9, partial eta^2 = 0.1441
+frequency effect (low - high) clear: 116.61  degraded: 197.12

@@ -1,0 +1,17 @@
+{
+  "local_id": "Row.161",
+  "node": "sd7kg",
+  "title_o": "Detecting the snake in the grass: attention to fear-relevant stimuli by adults and young children.",
+  "verdict": "usable",
+  "verdict_reason": "The analysis-ready .sav (guid nd7we) has 48 rows with average, parentvschild and Stim_cond; the type-3 2x2 between ANOVA run in base R gives the Stim_cond main effect F(1,44)=1.437, p=.2371, eta^2=.032, exactly the table and the report. Caution: the audit script's extracted statistic ([[4]]) is the age x stimulus interaction (F=1.589, p=.214, .035), not the key effect the table carries.",
+  "data_files": [
+    {"path": "Data/LoBue & DeLoache Replication Final File Ready for Analysis.sav", "opened": true, "format": "sav", "rows": 48, "cols": 48, "notes": "one row per participant; cells children/snakes 12, children/caterpillars 13, parent/snakes 11, parent/caterpillars 12; average has no NA"},
+    {"path": "Data/LoBue & DeLoach Replication Raw data.xls", "opened": false, "format": "xls", "rows": null, "cols": null, "notes": "raw data before screening; not opened"}
+  ],
+  "key_test": {"from_script": "RPP_sd7kg.R", "test": "aov average ~ parentvschild * Stim_cond with sum contrasts, type-3 via drop1; key effect per table and report = Stim_cond main effect (script extracts the interaction row instead)", "variables": ["average", "parentvschild", "Stim_cond"], "all_variables_present": true, "statistic_reported": {"p": "0.237", "es": "eta^2 = .032"}},
+  "recompute": {"attempted": true, "method": "ran the audit script's model in base R (foreign, aov, drop1) on the downloaded file", "result": "Stim_cond: F(1,44)=1.4366, p=0.2371, SS/(SS+RSS)=0.0316; interaction: F(1,44)=1.589, p=0.2141, 0.0349", "matches_table": "yes"},
+  "n_check": {"N_R_table": 48, "rows_after_exclusions": 48, "match": "yes"},
+  "obstacles": ["audit script extracts the interaction term (row 4) while the table and the replication report carry the stimulus main effect; a reproducer must be told which term", "screening from the raw .xls to the analysis file is described in a PDF, not scripted"],
+  "minutes": 9,
+  "sources_opened": ["https://osf.io/sd7kg/", "https://api.osf.io/v2/files/nd7we/", "https://api.osf.io/v2/nodes/ci7qm/files/osfstorage/", "https://api.osf.io/v2/nodes/u65xc/files/osfstorage/", "LoBue & DeLoach replication FINAL REPORT 2015.docx (node top level)"]
+}

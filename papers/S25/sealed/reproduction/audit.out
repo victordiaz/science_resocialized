@@ -1,0 +1,87 @@
+dropped lines:
+library("httr")
+library("RCurl")
+source("http://sachaepskamp.com/files/OSF/getOSFfile.R") # the getOSFfile function
+> zip <- getOSFfile("https://osf.io/srnvg/")
+> dir <- "BeamerFiles"
+> unzip(zip, exdir = dir)
+> file_list <- list.files(dir, pattern = "\\.txt", full.names = TRUE)
+> data <- do.call("rbind", lapply(file_list, FUN = function(files) {
++     read.table(files, header = TRUE, sep = "\t")
++ }))
+> dem = data.frame(id = rep(c(1:15), each = 80), eng = rep(c(6, 
++     6, 7, 10, 6, 9, 7, 8, 5, 9, 8, 6, 8, 9, 8), each = 80), age = rep(c(20, 
++     20, 20, 19, 19, 20, 19, 18, 23, 19, 18, 21, 20, 19, 20), 
++     each = 80), gender = rep(c("f", "f", "f", "f", "f", "m", 
++     "f", "f", "m", "f", "f ..." ... [TRUNCATED] 
+> data = cbind(dem, data)
+> pr = round(as.data.frame(tapply(data$nr_correct, list(data$id, 
++     data$list, data$length), mean))/8, 3)
+> Result <- t.test(pr[, 1], pr[, 3], paired = T, alternative = "greater")
+> print(Result)
+
+	Paired t-test
+
+data:  pr[, 1] and pr[, 3]
+t = 0.49276, df = 14, p-value = 0.3149
+alternative hypothesis: true mean difference is greater than 0
+95 percent confidence interval:
+ -0.02454217         Inf
+sample estimates:
+mean difference 
+    0.009533333 
+
+> Result$statistic
+        t 
+0.4927633 
+> Result$p.value
+[1] 0.3149091
+> nrow(pr)
+[1] 15
+> t = Result$statistic
+> n = nrow(pr)
+> efd = t/sqrt(n)
+> library("compute.es")
+> effectSize <- des(efd, n.1 = n, n.2 = n, level = 95, 
++     dig = 2, id = NULL, data = NULL)
+Mean Differences ES: 
+ 
+ d [ 95 %CI] = 0.13 [ -0.59 , 0.84 ] 
+  var(d) = 0.13 
+  p-value(d) = 0.73 
+  U3(d) = 55.06 % 
+  CLES(d) = 53.58 % 
+  Cliff's Delta = 0.07 
+ 
+ g [ 95 %CI] = 0.12 [ -0.57 , 0.82 ] 
+  var(g) = 0.13 
+  p-value(g) = 0.73 
+  U3(g) = 54.93 % 
+  CLES(g) = 53.49 % 
+ 
+ Correlation ES: 
+ 
+ r [ 95 %CI] = 0.06 [ -0.3 , 0.41 ] 
+  var(r) = 0.03 
+  p-value(r) = 0.74 
+ 
+ z [ 95 %CI] = 0.06 [ -0.31 , 0.44 ] 
+  var(z) = 0.04 
+  p-value(z) = 0.74 
+ 
+ Odds Ratio ES: 
+ 
+ OR [ 95 %CI] = 1.26 [ 0.34 , 4.62 ] 
+  p-value(OR) = 0.73 
+ 
+ Log OR [ 95 %CI] = 0.23 [ -1.07 , 1.53 ] 
+  var(lOR) = 0.44 
+  p-value(Log OR) = 0.73 
+ 
+ Other: 
+ 
+ NNT = 26.67 
+ Total N = 30> effectSize$d
+[1] 0.13
+> TRUE
+[1] TRUE
