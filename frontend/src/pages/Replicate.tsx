@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Markdown from "../components/Markdown";
 import { api } from "../api";
-import type { Experiment, Paper, Persona, Replication, ReplicationEvent, Verification } from "../types";
+import type { Attachment, Experiment, Paper, Persona, Replication, ReplicationEvent, Verification } from "../types";
 import { Avatar, Icon, clock, modelLabel, shortDate } from "../ui";
 
 type Tone = "live" | "idle" | "bad" | "good" | "warn";
@@ -176,6 +176,7 @@ function ReplicationBlock({ rep, n, personas, tick, onChanged }: { rep: Replicat
     rep.started_at ? `started ${clock(rep.started_at)}` : `queued ${clock(rep.created_at)}`,
     duration(rep.started_at, rep.finished_at),
     rep.cost_usd != null ? `$${rep.cost_usd.toFixed(2)} of $${rep.budget_usd.toFixed(0)}` : `budget $${rep.budget_usd.toFixed(0)}`,
+    rep.attachments.length ? `${rep.attachments.length} input ${rep.attachments.length === 1 ? "file" : "files"}` : null,
   ].filter(Boolean).join(" · ");
 
   return (
@@ -243,6 +244,99 @@ function ReplicationBlock({ rep, n, personas, tick, onChanged }: { rep: Replicat
   );
 }
 
+function AttachmentRow({ a, onChanged }: { a: Attachment; onChanged: () => void }) {
+  const [note, setNote] = useState(a.note);
+  useEffect(() => setNote(a.note), [a.note]);
+  return (
+    <li className="att">
+      <span className="att-icon" aria-hidden>{(a.filename.split(".").pop() ?? "").slice(0, 4).toUpperCase() || "FILE"}</span>
+      <span className="att-main">
+        <span className="att-name">
+          <a href={api.attachmentUrl(a.id)} className="mono-link" download>{a.filename}</a>
+          <span className="muted xsmall">{bytes(a.size)}</span>
+        </span>
+        <input
+          className="att-note"
+          value={note}
+          placeholder="What is this? (shown to the replicator)"
+          aria-label={`Note for ${a.filename}`}
+          onChange={(e) => setNote(e.target.value)}
+          onBlur={() => note !== a.note && api.updateAttachment(a.id, note).then(onChanged)}
+          onKeyDown={(e) => e.key === "Enter" && (e.target as HTMLInputElement).blur()}
+        />
+      </span>
+      <button className="btn ghost" aria-label={`Remove ${a.filename}`} onClick={() => confirm(`Remove ${a.filename}?`) && api.deleteAttachment(a.id).then(onChanged)}>
+        Remove
+      </button>
+    </li>
+  );
+}
+
+/** Files a person provides for the replicator (datasets, archives, code). They land in ./inputs/. */
+function Attachments({ exp, onChanged }: { exp: Experiment; onChanged: () => void }) {
+  const [over, setOver] = useState(false);
+  const [progress, setProgress] = useState<{ names: string; fraction: number } | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const input = useRef<HTMLInputElement>(null);
+  const total = exp.attachments.reduce((n, a) => n + a.size, 0);
+
+  async function upload(list: FileList | File[]) {
+    const files = [...list];
+    if (!files.length) return;
+    setError(null);
+    setProgress({ names: files.length === 1 ? files[0].name : `${files.length} files`, fraction: 0 });
+    try {
+      await api.uploadAttachments(exp.id, files, (fraction) => setProgress((p) => p && { ...p, fraction }));
+      onChanged();
+    } catch (e) {
+      setError((e as Error).message);
+    } finally {
+      setProgress(null);
+      if (input.current) input.current.value = "";
+    }
+  }
+
+  return (
+    <section className="attachments" aria-label="Files for the replicator">
+      <div className="att-head">
+        <span className="strong">Files for the replicator</span>
+        <span className="muted small">
+          {exp.attachments.length ? `${exp.attachments.length} in inputs/, ${bytes(total)}` : "Datasets, archives, code: any type, any number"}
+        </span>
+      </div>
+      {exp.attachments.length > 0 && (
+        <ul className="att-list">
+          {exp.attachments.map((a) => <AttachmentRow key={a.id} a={a} onChanged={onChanged} />)}
+        </ul>
+      )}
+      <label
+        className={`att-drop${over ? " over" : ""}`}
+        onDragOver={(e) => (e.preventDefault(), setOver(true))}
+        onDragLeave={() => setOver(false)}
+        onDrop={(e) => {
+          e.preventDefault();
+          setOver(false);
+          upload(e.dataTransfer.files);
+        }}
+      >
+        {progress ? (
+          <span className="att-progress">
+            <span className="small">Uploading {progress.names}… {Math.round(progress.fraction * 100)}%</span>
+            <span className="bar"><span style={{ width: `${progress.fraction * 100}%` }} /></span>
+          </span>
+        ) : (
+          <span className="small">
+            <strong>Drop files here</strong> or <span className="link">choose files</span>. Zips stay zipped; the replicator unpacks them.
+            Don't include anything with the paper's results.
+          </span>
+        )}
+        <input ref={input} type="file" multiple className="sr-only" onChange={(e) => e.target.files && upload(e.target.files)} />
+      </label>
+      {error && <p className="error">{error}</p>}
+    </section>
+  );
+}
+
 /** Step 2: pick verifiers and a budget, then queue the blind replication. */
 function StartReplication({ exp, personas, anyway, onStarted }: { exp: Experiment; personas: Persona[]; anyway: boolean; onStarted: () => void }) {
   const runnable = personas.filter((p) => p.kind === "builtin" && p.enabled);
@@ -269,7 +363,9 @@ function StartReplication({ exp, personas, anyway, onStarted }: { exp: Experimen
       <div className="start-rep-head">
         <span className="step">2</span>
         <span className="strong">{exp.replications.length ? "Replicate again" : "Replicate it blind"}</span>
-        <span className="muted small">Claude Code gets only the spec above</span>
+        <span className="muted small">
+          Claude Code gets only the spec above{exp.attachments.length ? ` and the ${exp.attachments.length === 1 ? "file" : `${exp.attachments.length} files`} in inputs/` : ""}
+        </span>
       </div>
       <div className="start-rep-body">
         <fieldset>
@@ -367,6 +463,8 @@ function ExperimentCard({ exp, personas, ticks, onChanged }: { exp: Experiment; 
       {exp.leak_check_md && exp.status !== "needs_review" && <Doc title="Leak check" hint={exp.leak_found ? "leak found" : exp.leak_found === false ? "clean" : ""} md={exp.leak_check_md} />}
 
       {error && <p className="error">{error}</p>}
+      {!!exp.spec_md && !busy && !editing && <Attachments exp={exp} onChanged={onChanged} />}
+
       {canReplicate && !editing && (
         <StartReplication exp={exp} personas={personas} anyway={exp.status === "needs_review"} onStarted={onChanged} />
       )}

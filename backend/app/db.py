@@ -142,6 +142,7 @@ CREATE TABLE IF NOT EXISTS replications (
     status TEXT NOT NULL,            -- queued | running | done | failed | cancelled
     spec_md TEXT NOT NULL,           -- the exact spec this run was given
     verifier_ids_json TEXT NOT NULL DEFAULT '[]',
+    attachment_ids_json TEXT NOT NULL DEFAULT '[]',
     budget_usd REAL NOT NULL DEFAULT 10,
     timeout_min INTEGER NOT NULL DEFAULT 120,
     worker TEXT,
@@ -165,6 +166,17 @@ CREATE TABLE IF NOT EXISTS replication_events (
 );
 CREATE INDEX IF NOT EXISTS replication_events_rep ON replication_events(replication_id, seq);
 
+CREATE TABLE IF NOT EXISTS attachments (
+    id TEXT PRIMARY KEY,
+    experiment_id TEXT NOT NULL REFERENCES experiments(id) ON DELETE CASCADE,
+    filename TEXT NOT NULL,
+    size INTEGER NOT NULL,
+    sha256 TEXT NOT NULL,
+    content_type TEXT,
+    note TEXT NOT NULL DEFAULT '',
+    created_at TEXT NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS verifications (
     id TEXT PRIMARY KEY,
     replication_id TEXT NOT NULL REFERENCES replications(id) ON DELETE CASCADE,
@@ -184,6 +196,7 @@ MIGRATIONS = [
     ("threads", "anchor_kind", "ALTER TABLE threads ADD COLUMN anchor_kind TEXT"),
     ("run_tasks", "reply_count", "ALTER TABLE run_tasks ADD COLUMN reply_count INTEGER NOT NULL DEFAULT 0"),
     ("run_tasks", "activity", "ALTER TABLE run_tasks ADD COLUMN activity TEXT"),
+    ("replications", "attachment_ids_json", "ALTER TABLE replications ADD COLUMN attachment_ids_json TEXT NOT NULL DEFAULT '[]'"),
     ("papers", "authors_json", "ALTER TABLE papers ADD COLUMN authors_json TEXT NOT NULL DEFAULT '[]'"),
     ("papers", "year", "ALTER TABLE papers ADD COLUMN year INTEGER"),
     ("papers", "venue", "ALTER TABLE papers ADD COLUMN venue TEXT"),

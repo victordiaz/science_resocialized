@@ -55,6 +55,8 @@ Tests a paper's main result by replicating it without the results (Replicate pag
 2. **Replicate** (`POST /api/experiments/{id}/replications`): a worker runs Claude Code headless
    in its own folder with only the spec (no web tools; told not to look up the paper), with a
    dollar budget and a time limit. It writes `REPORT.md`; code and outputs are uploaded.
+   Attach datasets, archives or code to the experiment first if the replicator needs them
+   (`POST /api/experiments/{id}/attachments`); they appear in its `inputs/` folder.
 3. **Verify**: the personas you picked compare the replication with the paper and each write a
    report. Reviewer personas can read these reports (`read_replications`).
 

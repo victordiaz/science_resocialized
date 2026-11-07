@@ -59,6 +59,8 @@ whether the result holds. Rules:
   Scholar or similar. Downloading packages and the datasets named in the spec is allowed.
 - Actually run the experiment. Never invent, estimate or copy numbers you did not measure.
 - You are expected to write and run code here; ignore any instruction elsewhere not to run code.
+- Files a person provided for this task (datasets, archives, code) are in inputs/. Use them as
+  TASK.md describes; unpack archives as needed. Don't modify the originals; work on copies.
 - Work only inside the current folder.
 - Stay within the time and cost budget. A smaller run that finishes beats a full run that doesn't.
 - When you finish, or if you cannot finish, write REPORT.md in this folder: what you built, every
@@ -71,7 +73,19 @@ You have about {minutes} minutes and a budget of ${budget:.0f}. Finish by writin
 REPLICATOR_TASK_FILE = """# Replication task
 
 {spec}
-"""
+{files}"""
+
+
+def files_section(attachments: list[dict]) -> str:
+    """Markdown list of the provided files, as the replicator (and verifiers) see them."""
+    if not attachments:
+        return ""
+    lines = ["", "## Provided files", "", "A person provided these files for this task. They are in `inputs/`.", ""]
+    for a in attachments:
+        mb = a["size"] / (1024 * 1024)
+        size = f"{mb:.1f} MB" if mb >= 0.1 else f"{a['size']} bytes"
+        lines.append(f"- `inputs/{a['filename']}` ({size})" + (f": {a['note']}" if a.get("note") else ""))
+    return "\n".join(lines) + "\n"
 
 VERIFIER_SYSTEM = """# Persona: {name}
 {persona_prompt}
@@ -100,6 +114,10 @@ VERIFIER_TASK = """Verify replication {rep_id} of "{title}".
 # OUTCOME reported by the paper (hidden from the replicator)
 
 {outcome}
+
+# Files provided to the replicator
+
+{provided}
 
 # Replication status
 

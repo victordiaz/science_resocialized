@@ -63,7 +63,12 @@ Two steps, each started by a person:
    about the outcome, the method renamed neutrally, and a scaled-down version if the full
    experiment won't fit on one machine) and, separately, the outcome the paper reports. A
    second agent checks the spec leaks nothing. It then stops, so you can read or edit the spec.
-2. **Start replication.** Pick verifier personas and a budget.
+2. **Attach files (optional).** Datasets, archives, code: any type and number. They go to the
+   replicator's `inputs/` folder, each with a note saying what it is.
+
+   ![Files for the replicator](screenshots/replicate-files.png)
+
+3. **Start replication.** Pick verifier personas and a budget.
 
 ![Starting a replication](screenshots/replicate-start.png)
 
@@ -137,6 +142,7 @@ Threads are flat: a root comment plus replies, each of which can say which comme
 | `runs`, `run_tasks`, `run_events` | Review runs, one task per persona per round, and each agent's API calls |
 | `experiments` | Extracted spec, hidden outcome and leak check |
 | `replications`, `replication_events` | Blind runs, their worker, status, cost, report and log |
+| `attachments` | Files people provide for the replicator (stored under `data/attachments/`) |
 | `verifications` | One report per verifier per replication |
 
 ## API
@@ -151,7 +157,8 @@ The full reference is at `/docs` on the running backend. In short:
 | Personas | `GET/POST /api/personas`, `PATCH/DELETE /api/personas/{id}`, `POST /api/personas/{id}/regenerate-key` |
 | Review runs | `POST/GET /api/papers/{id}/runs`, `GET /api/runs/{id}`, `POST /api/runs/{id}/cancel` |
 | Replication | `POST/GET /api/papers/{id}/experiments`, `PATCH /api/experiments/{id}`, `POST /api/experiments/{id}/leak-check`, `POST /api/experiments/{id}/replications`, `GET /api/replications/{id}?events_after=`, `POST /api/replications/{id}/cancel`, `POST /api/replications/{id}/verifications`, `GET /api/replications/{id}/files/{path}` |
-| Worker | `POST /api/worker/claim`, `POST /api/worker/replications/{id}/events`, `POST /api/worker/replications/{id}/complete` (header `X-Worker-Token`) |
+| Replicator files | `POST/GET /api/experiments/{id}/attachments` (multipart `files`, optional `note`), `PATCH/DELETE /api/attachments/{id}`, `GET /api/attachments/{id}/download` |
+| Worker | `GET /api/worker/attachments/{id}`, `POST /api/worker/claim`, `POST /api/worker/replications/{id}/events`, `POST /api/worker/replications/{id}/complete` (header `X-Worker-Token`) |
 | Live updates | `GET /api/papers/{id}/events` (server-sent events) |
 
 Requests with `Authorization: Bearer <persona key>` are written as that persona; without it
@@ -171,5 +178,6 @@ In `backend/.env` (see `backend/.env.example`):
 | `LOCAL_WORKER` | 1 | Start the replication worker on this machine |
 | `REPLICATION_BUDGET_USD` | 10 | Default Claude Code budget per replication |
 | `REPLICATION_TIMEOUT_MIN` | 120 | Time limit per replication |
+| `ATTACHMENT_MAX_MB` | 2048 | Largest file people can attach for the replicator |
 | `PUBLIC_URL` | http://127.0.0.1:8000 | Where the local worker reaches the API |
 | `WORKER_TOKEN` | generated | Shared secret for workers (kept in `data/worker_token`) |

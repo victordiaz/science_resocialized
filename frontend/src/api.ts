@@ -1,4 +1,4 @@
-import type { Paper, Persona, Run, Thread, Comment, Rect, Experiment, Replication, Verification } from "./types";
+import type { Paper, Persona, Run, Thread, Comment, Rect, Experiment, Replication, Verification, Attachment } from "./types";
 
 export const API_BASE: string = (import.meta.env.VITE_API_BASE as string | undefined) ?? "/api";
 
@@ -80,5 +80,29 @@ export const api = {
     req<Replication>("GET", `/replications/${id}${eventsAfter != null ? `?events_after=${eventsAfter}` : ""}`),
   cancelReplication: (id: string) => req<Replication>("POST", `/replications/${id}/cancel`),
   verify: (repId: string, verifier_ids: string[]) => req<Verification[]>("POST", `/replications/${repId}/verifications`, { verifier_ids }),
+  /** Upload files for the replicator, reporting progress (0..1). */
+  uploadAttachments: (expId: string, files: File[], onProgress?: (fraction: number) => void) =>
+    new Promise<Attachment[]>((resolve, reject) => {
+      const fd = new FormData();
+      for (const f of files) fd.append("files", f, f.name);
+      const xhr = new XMLHttpRequest();
+      xhr.open("POST", `${API_BASE}/experiments/${expId}/attachments`);
+      xhr.upload.onprogress = (e) => e.lengthComputable && onProgress?.(e.loaded / e.total);
+      xhr.onload = () => {
+        if (xhr.status >= 200 && xhr.status < 300) return resolve(JSON.parse(xhr.responseText));
+        let msg = `${xhr.status} ${xhr.statusText}`;
+        try {
+          msg = JSON.parse(xhr.responseText).detail ?? msg;
+        } catch {
+          /* not json */
+        }
+        reject(new Error(msg));
+      };
+      xhr.onerror = () => reject(new Error("Upload failed: the server could not be reached"));
+      xhr.send(fd);
+    }),
+  updateAttachment: (id: string, note: string) => req<Attachment>("PATCH", `/attachments/${id}`, { note }),
+  deleteAttachment: (id: string) => req<void>("DELETE", `/attachments/${id}`),
+  attachmentUrl: (id: string) => `${API_BASE}/attachments/${id}/download`,
   replicationFileUrl: (repId: string, path: string) => `${API_BASE}/replications/${repId}/files/${path.split("/").map(encodeURIComponent).join("/")}`,
 };

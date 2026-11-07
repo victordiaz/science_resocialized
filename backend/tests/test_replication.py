@@ -181,3 +181,103 @@ def test_worker_collects_report_outputs_and_code(tmp_path):
     (tmp_path / "model.bin").write_bytes(b"\x00" * 10)
     paths = [f["path"] for f in w.collect_files(tmp_path)]
     assert paths == ["REPORT.md", "outputs/plot.png", "train.py"]
+
+
+# ---------------------------------------------------------------- attachments
+
+def _ready_experiment(paper, fake_client):
+    fake_client(extractor_and_checker(leak=False))
+    return service.start_extraction(paper["id"])
+
+
+def test_attachments_flow(client, paper, personas, fake_client):
+    exp = _ready_experiment(paper, fake_client)
+    r = client.post(
+        f"/api/experiments/{exp['id']}/attachments",
+        files=[("files", ("train.csv", b"x,y\n1,2\n", "text/csv")), ("files", ("../../evil name.zip", b"PK\x03\x04", "application/zip"))],
+        data={"note": "training data"},
+    )
+    assert r.status_code == 201, r.text
+    a, b = r.json()
+    assert (a["filename"], a["size"], a["note"]) == ("train.csv", 8, "training data")
+    assert b["filename"] == "evil name.zip"  # path parts stripped
+    dup = client.post(f"/api/experiments/{exp['id']}/attachments", files=[("files", ("train.csv", b"other", "text/csv"))]).json()[0]
+    assert dup["filename"] == "train (2).csv"
+    client.patch(f"/api/attachments/{b['id']}", json={"note": "archive of extras"})
+    assert client.get(f"/api/attachments/{a['id']}/download").content == b"x,y\n1,2\n"
+
+    rep = client.post(f"/api/experiments/{exp['id']}/replications", json={"verifier_ids": [personas[0]["id"]]}).json()
+    assert len(rep["attachment_ids"]) == 3
+    h = {"X-Worker-Token": TOKEN}
+    job = client.post("/api/worker/claim", json={}, headers=h).json()["job"]
+    assert "## Provided files" in job["task_md"] and "`inputs/train.csv` (8 bytes): training data" in job["task_md"]
+    assert "archive of extras" in job["task_md"]
+    url = job["attachments"][0]["url"]
+    assert client.get(url).status_code == 401
+    assert client.get(url, headers=h).content == b"x,y\n1,2\n"
+
+    # deleting a file later doesn't break the record of a run that used it
+    client.delete(f"/api/attachments/{dup['id']}")
+    assert len(client.get(f"/api/replications/{rep['id']}").json()["attachments"]) == 2
+    assert len(client.get(f"/api/experiments/{exp['id']}/attachments").json()) == 2
+
+
+def test_attachment_size_limit(client, paper, fake_client, monkeypatch):
+    exp = _ready_experiment(paper, fake_client)
+    monkeypatch.setattr(settings, "attachment_max_mb", 1)
+    r = client.post(f"/api/experiments/{exp['id']}/attachments", files=[("files", ("big.bin", b"0" * (1024 * 1024 + 1), "application/octet-stream"))])
+    assert r.status_code == 400 and "larger than 1 MB" in r.json()["detail"]
+    assert client.get(f"/api/experiments/{exp['id']}/attachments").json() == []
+
+
+def test_verifier_can_read_provided_files(paper, personas, fake_client):
+    import io
+
+    exp = _ready_experiment(paper, fake_client)
+    service.save_attachment(exp["id"], "notes.txt", io.BytesIO(b"use column y"), "text/plain")
+    seen = {}
+
+    def script(name, messages, idx):
+        if idx == 0:
+            return resp(tool_use("read_replication_file", {"path": "inputs/notes.txt"}, id_="a"))
+        if idx == 1:
+            seen["text"] = messages[-1]["content"][0]["content"][0]["text"]
+            seen["task"] = messages[0]["content"]
+            return resp(tool_use("submit_report", {"report_markdown": "ok"}, id_="b"))
+        return resp(text("done"))
+
+    rep = service.queue_replication(exp["id"])
+    service.claim_job("w")
+    fake_client(script)
+    service.complete_job(rep["id"], "done", "# r", None, None, [])
+    service.start_verifications(rep["id"], [personas[0]["id"]])
+    assert seen["text"] == "use column y"
+    assert "`inputs/notes.txt`" in seen["task"]
+
+
+def test_worker_fetches_and_reuses_inputs(tmp_path):
+    import hashlib
+
+    w = _load_worker()
+    data = b"a,b\n1,2\n"
+    calls = []
+
+    class FakeApi:
+        def download(self, path, dest):
+            calls.append(path)
+            dest.write_bytes(data)
+
+    job = {"attachments": [{"id": "att_1", "filename": "d.csv", "size": len(data), "sha256": hashlib.sha256(data).hexdigest(), "url": "/api/worker/attachments/att_1"}]}
+    notes = []
+    w.fetch_attachments(FakeApi(), job, tmp_path, notes.append)
+    assert (tmp_path / "inputs" / "d.csv").read_bytes() == data and calls == ["/api/worker/attachments/att_1"]
+    w.fetch_attachments(FakeApi(), job, tmp_path, notes.append)  # re-run: reused, not downloaded
+    assert calls == ["/api/worker/attachments/att_1"] and "already here" in notes[-1]
+    job["attachments"][0]["sha256"] = "0" * 64
+    (tmp_path / "inputs" / "d.csv").unlink()
+    with pytest.raises(RuntimeError, match="checksum"):
+        w.fetch_attachments(FakeApi(), job, tmp_path, notes.append)
+    # provided files are never uploaded back
+    (tmp_path / "REPORT.md").write_text("r")
+    (tmp_path / "inputs" / "x.csv").write_text("1")
+    assert [f["path"] for f in w.collect_files(tmp_path)] == ["REPORT.md"]

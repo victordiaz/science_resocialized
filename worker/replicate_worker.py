@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import base64
+import hashlib
 import json
 import os
 import shutil
@@ -35,7 +36,7 @@ import urllib.request
 from pathlib import Path
 
 ALLOWED_TOOLS = "Bash,Read,Edit,Write,Glob,Grep"  # no WebSearch / WebFetch
-UPLOAD_SKIP_DIRS = {".git", ".venv", "venv", "env", "node_modules", "__pycache__", ".cache", "data", "datasets", "wandb", ".ipynb_checkpoints"}
+UPLOAD_SKIP_DIRS = {"inputs", ".git", ".venv", "venv", "env", "node_modules", "__pycache__", ".cache", "data", "datasets", "wandb", ".ipynb_checkpoints"}
 UPLOAD_EXTS = {
     ".md", ".txt", ".py", ".ipynb", ".json", ".jsonl", ".csv", ".tsv", ".yaml", ".yml", ".toml", ".cfg", ".ini",
     ".sh", ".log", ".r", ".jl", ".c", ".cpp", ".h", ".rs", ".go", ".js", ".ts",
@@ -53,6 +54,15 @@ class Api:
     def __init__(self, url: str, token: str):
         self.url = url.rstrip("/")
         self.token = token
+
+    def download(self, path: str, dest: Path, timeout: float = 120) -> None:
+        """Stream a file from the server to dest (via a temporary file)."""
+        req = urllib.request.Request(self.url + path, headers={"X-Worker-Token": self.token})
+        tmp = dest.with_name(dest.name + ".part")
+        with urllib.request.urlopen(req, timeout=timeout) as resp, open(tmp, "wb") as out:
+            while chunk := resp.read(1024 * 1024):
+                out.write(chunk)
+        tmp.replace(dest)
 
     def post(self, path: str, body: dict, timeout: float = 60) -> dict:
         data = json.dumps(body).encode()
@@ -100,6 +110,33 @@ def summarize(obj: dict) -> list[dict]:
 
 # ---------------------------------------------------------------- one job
 
+def sha256_of(path: Path) -> str:
+    h = hashlib.sha256()
+    with open(path, "rb") as fh:
+        while chunk := fh.read(1024 * 1024):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def fetch_attachments(api: Api, job: dict, folder: Path, note) -> None:
+    """Download the files a person provided into ./inputs/, verifying checksums. Reuses matching files."""
+    attachments = job.get("attachments") or []
+    if not attachments:
+        return
+    inputs = folder / "inputs"
+    inputs.mkdir(exist_ok=True)
+    for a in attachments:
+        dest = inputs / Path(a["filename"]).name
+        if dest.exists() and dest.stat().st_size == a["size"] and sha256_of(dest) == a["sha256"]:
+            note(f"Using inputs/{dest.name} (already here)")
+            continue
+        note(f"Downloading inputs/{dest.name} ({a['size'] / 1048576:.1f} MB)")
+        api.download(a["url"], dest)
+        if sha256_of(dest) != a["sha256"]:
+            dest.unlink(missing_ok=True)
+            raise RuntimeError(f"checksum mismatch for {a['filename']}")
+
+
 def collect_files(folder: Path) -> list[dict]:
     files, total = [], 0
     candidates = []
@@ -132,6 +169,15 @@ def run_job(api: Api, job: dict, args) -> None:
     (folder / "TASK.md").write_text(job["task_md"])
     (folder / "outputs").mkdir(exist_ok=True)
     log(f"job {rep_id}: running in {folder}")
+
+    def note(text: str) -> None:
+        log(f"job {rep_id}: {text}")
+        try:
+            api.post(f"/api/worker/replications/{rep_id}/events", {"events": [{"kind": "info", "text": text}], "workdir": str(folder)})
+        except Exception:
+            pass
+
+    fetch_attachments(api, job, folder, note)
 
     cmd = [
         args.claude, "-p", job["prompt"],

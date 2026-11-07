@@ -4,7 +4,7 @@ from __future__ import annotations
 import asyncio
 import hmac
 
-from fastapi import APIRouter, Header, HTTPException, Query
+from fastapi import APIRouter, File, Form, Header, HTTPException, Query, UploadFile
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
@@ -95,6 +95,51 @@ def replication_file(rep_id: str, path: str):
     return FileResponse(full)
 
 
+# ---------------------------------------------------------------- attachments
+
+class AttachmentPatch(BaseModel):
+    note: str
+
+
+@api.post("/experiments/{exp_id}/attachments", status_code=201)
+def upload_attachments(exp_id: str, files: list[UploadFile] = File(...), note: str = Form("")):
+    """Attach files (any type: datasets, archives, code) for the replicator. They appear in ./inputs/."""
+    _wrap(service.get_experiment, exp_id)
+    out = []
+    for f in files:
+        out.append(_wrap(service.save_attachment, exp_id, f.filename or "file", f.file, f.content_type, note))
+    return out
+
+
+@api.get("/experiments/{exp_id}/attachments")
+def list_attachments(exp_id: str):
+    _wrap(service.get_experiment, exp_id)
+    return service.list_attachments(exp_id)
+
+
+@api.patch("/attachments/{att_id}")
+def patch_attachment(att_id: str, body: AttachmentPatch):
+    return _wrap(service.update_attachment, att_id, body.note)
+
+
+@api.delete("/attachments/{att_id}", status_code=204)
+def delete_attachment(att_id: str):
+    _wrap(service.delete_attachment, att_id)
+
+
+def _attachment_file(att_id: str) -> FileResponse:
+    att = _wrap(service.get_attachment, att_id)
+    path = service.attachment_path(att)
+    if not path.is_file():
+        raise HTTPException(404, "the file is missing on the server")
+    return FileResponse(path, filename=att["filename"], media_type=att["content_type"] or "application/octet-stream")
+
+
+@api.get("/attachments/{att_id}/download")
+def download_attachment(att_id: str):
+    return _attachment_file(att_id)
+
+
 # ---------------------------------------------------------------- worker side
 
 def _require_worker(token: str | None) -> None:
@@ -123,6 +168,12 @@ class CompleteBody(BaseModel):
 def worker_claim(body: ClaimBody, x_worker_token: str | None = Header(None)):
     _require_worker(x_worker_token)
     return {"job": service.claim_job(body.worker[:80])}
+
+
+@api.get("/worker/attachments/{att_id}")
+def worker_attachment(att_id: str, x_worker_token: str | None = Header(None)):
+    _require_worker(x_worker_token)
+    return _attachment_file(att_id)
 
 
 @api.post("/worker/replications/{rep_id}/events")

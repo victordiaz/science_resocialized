@@ -8,7 +8,9 @@ Two steps, each started by a person:
 from __future__ import annotations
 
 import base64
+import hashlib
 import json
+import re
 import logging
 import mimetypes
 import threading
@@ -64,6 +66,7 @@ def _exp_row(r) -> dict:
 def _rep_row(r) -> dict:
     d = dict(r)
     d["verifier_ids"] = json.loads(d.pop("verifier_ids_json"))
+    d["attachment_ids"] = json.loads(d.pop("attachment_ids_json", None) or "[]")
     d["cancel_requested"] = bool(d["cancel_requested"])
     return d
 
@@ -105,6 +108,7 @@ def get_replication(rep_id: str, *, events_after: int | None = None) -> dict:
             ).fetchall()
             rep["events"] = [dict(e) for e in evs]
     rep["files"] = list_files(rep_id)
+    rep["attachments"] = [a for a in (_attachment_or_none(i) for i in rep["attachment_ids"]) if a]
     return rep
 
 
@@ -130,6 +134,7 @@ def list_for_paper(paper_id: str) -> list[dict]:
         ).fetchall()] for e in exps}
     for e in exps:
         e["replications"] = [get_replication(rid) for rid in rep_ids[e["id"]]]
+        e["attachments"] = list_attachments(e["id"])
     return exps
 
 
@@ -301,9 +306,11 @@ def queue_replication(exp_id: str, verifier_ids: list[str] | None = None, budget
     rep_id = services.new_id("rep")
     with db.tx() as conn:
         conn.execute(
-            """INSERT INTO replications (id, experiment_id, paper_id, status, spec_md, verifier_ids_json, budget_usd, timeout_min, created_at)
-               VALUES (?,?,?,?,?,?,?,?,?)""",
+            """INSERT INTO replications (id, experiment_id, paper_id, status, spec_md, verifier_ids_json, attachment_ids_json,
+                                         budget_usd, timeout_min, created_at)
+               VALUES (?,?,?,?,?,?,?,?,?,?)""",
             (rep_id, exp_id, exp["paper_id"], "queued", exp["spec_md"], json.dumps(ids),
+             json.dumps([a["id"] for a in list_attachments(exp_id)]),
              budget_usd or exp["budget_usd"], timeout_min or settings.replication_timeout_min, services.now()),
         )
     if exp["status"] == "needs_review":
@@ -331,7 +338,12 @@ def claim_job(worker: str) -> dict | None:
     add_events(rep["id"], [{"kind": "info", "text": f"Claimed by worker {worker}"}])
     return {
         "replication_id": rep["id"],
-        "task_md": prompts.REPLICATOR_TASK_FILE.format(spec=rep["spec_md"]),
+        "task_md": prompts.REPLICATOR_TASK_FILE.format(spec=rep["spec_md"], files=prompts.files_section(rep["attachments"])),
+        "attachments": [
+            {"id": a["id"], "filename": a["filename"], "size": a["size"], "sha256": a["sha256"],
+             "url": f"/api/worker/attachments/{a['id']}"}
+            for a in rep["attachments"]
+        ],
         "prompt": prompts.REPLICATOR_TASK.format(minutes=rep["timeout_min"], budget=rep["budget_usd"]),
         "system_append": prompts.REPLICATOR_APPEND,
         "budget_usd": rep["budget_usd"],
@@ -491,16 +503,24 @@ def _run_verification(vid: str) -> None:
                 submitted["report"] = inp["report_markdown"].strip()
                 return [{"type": "text", "text": "Report saved."}]
             if name == "list_replication_files":
-                files = list_files(rep["id"])
-                return [{"type": "text", "text": "\n".join(f"{f['path']} ({f['size']} bytes)" for f in files) or "(no files)"}]
+                files = [f"{f['path']} ({f['size']} bytes)" for f in list_files(rep["id"])]
+                files += [f"inputs/{a['filename']} ({a['size']} bytes, provided by a person{': ' + a['note'] if a['note'] else ''})" for a in rep["attachments"]]
+                return [{"type": "text", "text": "\n".join(files) or "(no files)"}]
             if name == "read_replication_file":
-                return _read_file_for_agent(rep["id"], str(inp.get("path", "")))
+                path = str(inp.get("path", ""))
+                if path.startswith("inputs/"):
+                    att = next((a for a in rep["attachments"] if a["filename"] == path[len("inputs/"):]), None)
+                    if not att:
+                        raise ToolError(f"no provided file {path}")
+                    return _read_path_for_agent(attachment_path(att), path)
+                return _read_file_for_agent(rep["id"], path)
             return tools.execute(ctx, name, inp)
 
         files = list_files(rep["id"])
         msg = prompts.VERIFIER_TASK.format(
             rep_id=rep["id"], title=paper["title"], spec=rep["spec_md"], outcome=exp["outcome_md"],
             status=rep["status"] + (f" ({rep['error']})" if rep["error"] else ""),
+            provided=prompts.files_section(rep["attachments"]) or "No files were provided.",
             cost=f", replication cost ${rep['cost_usd']:.2f}" if rep["cost_usd"] else "",
             files=f"{len(files)} files (use list_replication_files)" if files else "none uploaded",
         )
@@ -523,6 +543,10 @@ def _read_file_for_agent(rep_id: str, path: str) -> list[dict]:
         full = file_path(rep_id, path)
     except (NotFound, ValueError) as e:
         raise ToolError(str(e)) from e
+    return _read_path_for_agent(full, path)
+
+
+def _read_path_for_agent(full: Path, path: str) -> list[dict]:
     mime = mimetypes.guess_type(full.name)[0] or ""
     if mime in ("image/png", "image/jpeg", "image/gif", "image/webp"):
         if full.stat().st_size > 4 * 1024 * 1024:
@@ -531,10 +555,14 @@ def _read_file_for_agent(rep_id: str, path: str) -> list[dict]:
             {"type": "text", "text": f"{path}:"},
             {"type": "image", "source": {"type": "base64", "media_type": mime, "data": base64.standard_b64encode(full.read_bytes()).decode()}},
         ]
-    raw = full.read_bytes()
-    if b"\x00" in raw[:4096]:
-        raise ToolError(f"{path} is a binary file ({len(raw)} bytes)")
+    with open(full, "rb") as fh:
+        raw = fh.read(READ_LIMIT * 4)
+    size = full.stat().st_size
+    if b"\x00" in raw[:4096] or full.suffix.lower() in (".zip", ".gz", ".tar", ".7z", ".npz", ".pt", ".pkl", ".parquet"):
+        raise ToolError(f"{path} is a binary file ({size} bytes); it can't be read as text here")
     text = raw.decode(errors="replace")
+    if size > len(raw):
+        text += f"\n\n[file is {size} bytes; only the start is shown]"
     if len(text) > READ_LIMIT:
         text = text[:READ_LIMIT] + f"\n\n[truncated: showing {READ_LIMIT} of {len(text)} characters]"
     return [{"type": "text", "text": text}]
@@ -604,3 +632,99 @@ def mark_interrupted() -> None:
             "UPDATE verifications SET status='failed', error='The server restarted.', finished_at=? WHERE status IN ('pending','running')",
             (now,),
         )
+
+
+# ================================================================ attachments (files for the replicator)
+
+_UNSAFE = re.compile(r"[^\w.\- ()+]")
+
+
+def _clean_name(name: str) -> str:
+    base = Path(name.replace("\\", "/")).name.strip() or "file"
+    base = _UNSAFE.sub("_", base)[:180].lstrip(".") or "file"
+    return base
+
+
+def _att_row(r) -> dict:
+    return dict(r)
+
+
+def _attachment_or_none(att_id: str) -> dict | None:
+    with db.tx() as conn:
+        r = conn.execute("SELECT * FROM attachments WHERE id=?", (att_id,)).fetchone()
+    return _att_row(r) if r else None
+
+
+def get_attachment(att_id: str) -> dict:
+    a = _attachment_or_none(att_id)
+    if not a:
+        raise NotFound(f"attachment {att_id} not found")
+    return a
+
+
+def list_attachments(exp_id: str) -> list[dict]:
+    with db.tx() as conn:
+        rows = conn.execute("SELECT * FROM attachments WHERE experiment_id=? ORDER BY created_at", (exp_id,)).fetchall()
+    return [_att_row(r) for r in rows]
+
+
+def attachment_path(att: dict) -> Path:
+    return settings.attachment_dir / att["experiment_id"] / att["id"] / att["filename"]
+
+
+def save_attachment(exp_id: str, filename: str, stream, content_type: str | None = None, note: str = "") -> dict:
+    """Stream an uploaded file to disk (chunked, with a size limit and checksum)."""
+    exp = get_experiment(exp_id)
+    taken = {a["filename"] for a in list_attachments(exp_id)}
+    name = _clean_name(filename)
+    stem, dot, ext = name.partition(".")
+    n = 2
+    while name in taken:
+        name = f"{stem} ({n}){dot}{ext}"
+        n += 1
+    att_id = services.new_id("att")
+    dest = settings.attachment_dir / exp_id / att_id / name
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    limit = settings.attachment_max_mb * 1024 * 1024
+    h, size = hashlib.sha256(), 0
+    try:
+        with open(dest, "wb") as out:
+            while chunk := stream.read(1024 * 1024):
+                size += len(chunk)
+                if size > limit:
+                    raise ValueError(f"{name} is larger than {settings.attachment_max_mb} MB")
+                h.update(chunk)
+                out.write(chunk)
+    except BaseException:
+        dest.unlink(missing_ok=True)
+        dest.parent.rmdir()
+        raise
+    with db.tx() as conn:
+        conn.execute(
+            "INSERT INTO attachments (id, experiment_id, filename, size, sha256, content_type, note, created_at) VALUES (?,?,?,?,?,?,?,?)",
+            (att_id, exp_id, name, size, h.hexdigest(), content_type, note.strip(), services.now()),
+        )
+    _publish(exp["paper_id"], experiment_id=exp_id)
+    return get_attachment(att_id)
+
+
+def update_attachment(att_id: str, note: str) -> dict:
+    att = get_attachment(att_id)
+    with db.tx() as conn:
+        conn.execute("UPDATE attachments SET note=? WHERE id=?", (note.strip(), att_id))
+    _publish(get_experiment(att["experiment_id"])["paper_id"], experiment_id=att["experiment_id"])
+    return get_attachment(att_id)
+
+
+def delete_attachment(att_id: str) -> None:
+    """Removes the file. Replications that already ran keep their record of it, without the file."""
+    att = get_attachment(att_id)
+    path = attachment_path(att)
+    path.unlink(missing_ok=True)
+    try:
+        path.parent.rmdir()
+    except OSError:
+        pass
+    with db.tx() as conn:
+        conn.execute("DELETE FROM attachments WHERE id=?", (att_id,))
+    _publish(get_experiment(att["experiment_id"])["paper_id"], experiment_id=att["experiment_id"])

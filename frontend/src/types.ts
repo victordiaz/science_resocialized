@@ -136,6 +136,17 @@ export type Verification = {
 
 export type ReplicationEvent = { seq: number; kind: "text" | "tool" | "result" | "stderr" | "info"; text: string; at: string };
 
+export type Attachment = {
+  id: string;
+  experiment_id: string;
+  filename: string;
+  size: number;
+  sha256: string;
+  content_type: string | null;
+  note: string;
+  created_at: string;
+};
+
 export type Replication = {
   id: string;
   experiment_id: string;
@@ -156,6 +167,7 @@ export type Replication = {
   finished_at: string | null;
   verifications: Verification[];
   files: { path: string; size: number }[];
+  attachments: Attachment[]; // files this run was given
   events?: ReplicationEvent[];
 };
 
@@ -174,4 +186,5 @@ export type Experiment = {
   created_at: string;
   updated_at: string;
   replications: Replication[];
+  attachments: Attachment[];
 };

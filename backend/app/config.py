@@ -26,6 +26,7 @@ class Settings:
     replication_budget_usd: float = field(default_factory=lambda: float(os.environ.get("REPLICATION_BUDGET_USD", "10")))
     replication_timeout_min: int = field(default_factory=lambda: int(os.environ.get("REPLICATION_TIMEOUT_MIN", "120")))
     pipeline_model: str = field(default_factory=lambda: os.environ.get("PIPELINE_MODEL", "claude-sonnet-5-5"))
+    attachment_max_mb: int = field(default_factory=lambda: int(os.environ.get("ATTACHMENT_MAX_MB", "2048")))
     public_url: str = field(default_factory=lambda: os.environ.get("PUBLIC_URL", "http://127.0.0.1:8000"))
 
     @property
@@ -40,6 +41,11 @@ class Settings:
     def replication_dir(self) -> Path:
         """Uploaded replication outputs (report, code, results), per replication id."""
         return self.data_dir / "replications"
+
+    @property
+    def attachment_dir(self) -> Path:
+        """Files people attach to experiments for the replicator."""
+        return self.data_dir / "attachments"
 
     def get_worker_token(self) -> str:
         """WORKER_TOKEN from the environment, else one generated and kept in the data dir."""
@@ -59,6 +65,7 @@ class Settings:
         self.data_dir.mkdir(parents=True, exist_ok=True)
         self.pdf_dir.mkdir(parents=True, exist_ok=True)
         self.replication_dir.mkdir(parents=True, exist_ok=True)
+        self.attachment_dir.mkdir(parents=True, exist_ok=True)
 
 
 settings = Settings()
