@@ -1,0 +1,42 @@
+<section id="shift" data-transition="fade" style="background:#F3F2EE;color:#1B1C1F;font-family:'Inter', Arial, sans-serif;padding:128px">
+<x-embed style="position:absolute;left:1090px;top:128px;width:702px;height:824px"><!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;height:100%;background:transparent;overflow:hidden}canvas{display:block}</style></head><body><canvas id="c"></canvas><script>
+const c=document.getElementById('c'),x=c.getContext('2d');let W=0,H=0;const D=window.devicePixelRatio||1;
+function size(){W=innerWidth;H=innerHeight;c.width=W*D;c.height=H*D;c.style.width=W+'px';c.style.height=H+'px';x.setTransform(D,0,0,D,0,0)}
+size();addEventListener('resize',size);
+const C=['#1F5FD6','#0B7285','#B4410B','#6741D9'];
+const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const P=[];for(let i=0;i<44;i++)P.push({x:Math.random()*W,y:Math.random()*H,vx:0,vy:0,c:C[i%4],r:4+Math.random()*5});
+function step(){
+x.clearRect(0,0,W,H);
+const cx=W/2,cy=H/2;
+for(const p of P){
+if(!still){p.vx+=(Math.random()-.5)*.28;p.vy+=(Math.random()-.5)*.28;p.vx*=.965;p.vy*=.965;p.x+=p.vx;p.y+=p.vy;
+if(p.x<12){p.x=12;p.vx=Math.abs(p.vx)}if(p.x>W-12){p.x=W-12;p.vx=-Math.abs(p.vx)}
+if(p.y<12){p.y=12;p.vy=Math.abs(p.vy)}if(p.y>H-12){p.y=H-12;p.vy=-Math.abs(p.vy)}}}
+x.lineWidth=1.5;
+for(let i=0;i<P.length;i++){for(let j=i+1;j<P.length;j++){const a=P[i],b=P[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+if(d<120){x.strokeStyle='rgba(120,118,110,'+((1-d/120)*.35)+')';x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}}
+const a=P[i],d=Math.hypot(a.x-cx,a.y-cy);
+if(d<210){x.strokeStyle='rgba(120,118,110,'+((1-d/210)*.6)+')';x.lineWidth=2;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(cx,cy);x.stroke();x.lineWidth=1.5}}
+x.fillStyle='#1B1C1F';x.beginPath();x.roundRect(cx-30,cy-40,60,80,6);x.fill();
+for(const p of P){x.fillStyle=p.c;x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fill()}
+if(!still)requestAnimationFrame(step)}
+step();
+</script></body></html></x-embed>
+<p data-build-in="fade 1" style="position:absolute;left:128px;top:128px;width:900px;font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#B4410B">The shift</p>
+<h2 data-build-in="rise 2" style="position:absolute;left:128px;top:186px;width:920px;font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;letter-spacing:-1px;color:#1B1C1F">From deterministic to probabilistic science</h2>
+<p data-build-in="rise 3" style="position:absolute;left:128px;top:430px;width:880px;font-size:32px;line-height:1.4;color:#4A4C52">Work between people and AI is stochastic. We look for stochastic answers to the new bottlenecks of science.</p>
+<div data-build-in="rise 4" style="position:absolute;left:128px;top:640px;width:300px;display:flex;flex-direction:column;gap:8px;background:#FFFFFF;border:1px solid #D5D3CB;border-radius:16px;padding:28px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:32px;font-weight:600;color:#1B1C1F">Experiments</h3>
+<p style="font-size:24px;line-height:1.35;color:#4A4C52">Running the study</p>
+</div>
+<div data-build-in="rise 5" style="position:absolute;left:452px;top:640px;width:300px;display:flex;flex-direction:column;gap:8px;background:#FFFFFF;border:1px solid #D5D3CB;border-radius:16px;padding:28px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:32px;font-weight:600;color:#1B1C1F">Replication</h3>
+<p style="font-size:24px;line-height:1.35;color:#4A4C52">Does it hold again?</p>
+</div>
+<div data-build-in="rise 6" style="position:absolute;left:776px;top:640px;width:300px;display:flex;flex-direction:column;gap:8px;background:#FBEFE8;border:2px solid #B4410B;border-radius:16px;padding:28px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:32px;font-weight:600;color:#1B1C1F">Review</h3>
+<p style="font-size:24px;line-height:1.35;color:#A23A0A">Most of all</p>
+</div>
+<aside>We are moving from a deterministic age to a probabilistic one. Collaboration between people and AI is stochastic by nature, so we embrace that and look for stochastic solutions to the new bottlenecks: experimentation, replication and, most importantly, review. Science has many bottlenecks, and AI can help with each of them in some way.</aside>
+</section>
