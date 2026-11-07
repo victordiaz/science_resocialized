@@ -206,3 +206,10 @@ a{color:var(--sig-soft,#5cc4d8)}a:hover{color:var(--sig-hi,#6fd6e6)}
 /* Reduced motion, transparency, contrast. */
 @media (prefers-reduced-motion:reduce){.tag i,.node.now .o,.chip.new,.tick.t-running,.lane.sending{animation:none}.bar::after{animation:none;left:0;width:100%;opacity:.4}.pane.lift .frost,.pane.lift .behind{transition:none}.flutes,.capture,.prov,.ring{transition:none}}
 @media (prefers-reduced-transparency:reduce),(prefers-contrast:more){.viv,.viv[data-ground]{background:var(--paper,#0c1114)}.viv>.grain{display:none}.glass{-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--panel,#182026)}.glass--panel{background:var(--panel,#182026)}}
+
+/* In a verdict pane the glyph behind the glass steps aside to the corner, so the numbers read clean. */
+.pane.lift .behind{justify-content:flex-end;align-items:flex-start;padding:10px 12px}
+.pane.lift.open .behind{opacity:.22}
+
+/* At phone width the five stations share the row instead of keeping 76px each. */
+@media (max-width:560px){.trellis .node{width:auto;flex:1 1 0;min-width:0}.trellis .edge{flex:0 1 10px;min-width:4px}.node .l{font-size:9px;letter-spacing:.06em}}

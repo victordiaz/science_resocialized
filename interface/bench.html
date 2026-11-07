@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The lab bench</title>
+<link rel="stylesheet" href="ds/vivarium/tokens.css">
+<link rel="stylesheet" href="bench.css">
+<script src="findings.js"></script>
+<style>
+/* The standalone bench: the designed canvas (Main.dc.html) ported to one plain page. Open it from a clone (file://) or any static server.
+   Presentation mode: Produce the science replays a study's finished run with its real numbers; Send is a pretend; Reveal shows the two verdicts.
+   Admin (?admin=1): a faint line under the verdicts opens a manual review, kept in this browser only. */
+body{margin:0;background:#0c1114}
+.rise{animation:rise .42s cubic-bezier(.23,1,.32,1)}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:40;padding:10px 14px;border-radius:var(--radius-hair,4px);border:1px solid var(--sig-dim,#2c5c6b);background:var(--sig-wash,#0f2a33);color:var(--sig-hi,#6fd6e6);font:400 12px/1.4 var(--font-mono);opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.show{opacity:1}
+.hidden-review{appearance:none;background:none;border:0;padding:10px 0;cursor:pointer;text-align:left;color:var(--ink-4,#5c6a73);font:400 11px/1 var(--font-mono);letter-spacing:.2em;text-transform:uppercase}
+.hidden-review:hover{color:var(--ink-3,#71808a)}
+@media (max-width:560px){.wallrow{grid-template-columns:minmax(0,1fr)!important;gap:10px!important}.wallrow .wallline{display:none}.wallhead span:last-child{text-align:left!important}.wallrow .lane{min-width:24px}.wallrow .chip{white-space:normal}}
+@media (prefers-reduced-motion:reduce){.rise{animation:none}}
+</style>
+</head>
+<body>
+<div class="viv" id="viv" data-ground="canopy" style="width:100%;min-height:100vh;display:flex;flex-direction:column">
+<svg class="grain" aria-hidden="true"><defs><filter id="noise" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><pattern id="grainTile" width="240" height="240" patternUnits="userSpaceOnUse"><rect width="240" height="240" filter="url(#noise)"/></pattern></defs><rect width="100%" height="100%" fill="url(#grainTile)"/></svg>
+<div class="page" id="app" style="width:100%;max-width:1600px;margin:0 auto;padding:28px 28px 84px;display:flex;flex-direction:column;gap:42px"></div>
+</div>
+<div id="drawer"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  'use strict';
+  var Q = new URLSearchParams(location.search);
+  var ADMIN = Q.get('admin') === '1';
+  var B = (window.BENCH && window.BENCH.findings) || [];
+  var FINISHED = 'S23';               // the run finished, packed and sent before the demo; its receipt is in
+  var S = { open: null, filter: 'all', desksN: 2, sim: null, now: Date.now(), paper: false, repl: false, openedAt: '',
+            folders: {}, rev1: false, reviewOpen: false, call: 'agree', note: '', reviews: {} };
+  try { S.reviews = JSON.parse(localStorage.getItem('bench.reviews') || '{}') || {}; } catch (e) { S.reviews = {}; }
+
+  var $ = function (s) { return document.querySelector(s); };
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function pad(n) { return String(n).padStart(2, '0'); }
+  function hhmm(d) { d = d || new Date(); return pad(d.getHours()) + ':' + pad(d.getMinutes()); }
+  function hhmmss(d) { return hhmm(d) + ':' + pad(d.getSeconds()); }
+  function clock(s) { s = Math.max(0, Math.floor(s)); return Math.floor(s / 60) + ':' + pad(s % 60); }
+  function k(n) { return n == null ? '–' : n >= 1e6 ? (n / 1e6).toFixed(2) + 'M' : n >= 1e3 ? (n / 1e3).toFixed(1) + 'k' : String(n); }
+  function toast(m) { var t = $('#toast'); t.textContent = m; t.classList.add('show'); clearTimeout(t._x); t._x = setTimeout(function () { t.classList.remove('show'); }, 2400); }
+  var STATE_CLS = { 'assigned': 's-assigned', 'researcher running': 's-running', 'report written': 's-report', 'pdf rendered': 's-pdf', 'handed off': 's-handed', 'failed': 's-failed', 'no card': 's-nocard' };
+  var TICK_CLS = { 'assigned': 't-assigned', 'researcher running': 't-running', 'report written': 't-report', 'pdf rendered': 't-pdf', 'handed off': 't-handed', 'failed': 't-failed', 'no card': 't-nocard' };
+  function group(st) { return st === 'data ready' ? 'ready' : (st === 'handed off' || st === 'pdf rendered') ? 'out' : (st === 'failed' || st === 'no card') ? 'stopped' : 'process'; }
+  var LOCK = '<svg width="10" height="11" viewBox="0 0 11 12" aria-hidden="true"><rect x="1" y="5" width="9" height="6.5" rx="1.5" fill="currentColor"></rect><path d="M3 5V3.5a2.5 2.5 0 0 1 5 0V5" stroke="currentColor" stroke-width="1.6" fill="none"></path></svg>';
+  var SHEET = '<div class="sheet" style="width:34px;min-height:42px;padding:6px 5px;gap:3px;box-shadow:none"><i class="h"></i><i></i><i></i><i style="width:70%"></i></div>';
+  var BARS = '<svg width="44" height="30" viewBox="0 0 44 30"><path d="M2 22h5v8H2zM9 12h5v18H9zM16 4h5v26h-5zM23 15h5v15h-5zM30 9h5v21h-5zM37 18h5v12h-5z" fill="#5cc4d8"></path></svg>';
+  var GRIP = '<svg width="10" height="12" viewBox="0 0 10 12" aria-hidden="true" style="margin-left:auto"><circle cx="2.5" cy="2" r="1.3" fill="currentColor"/><circle cx="7.5" cy="2" r="1.3" fill="currentColor"/><circle cx="2.5" cy="6" r="1.3" fill="currentColor"/><circle cx="7.5" cy="6" r="1.3" fill="currentColor"/><circle cx="2.5" cy="10" r="1.3" fill="currentColor"/><circle cx="7.5" cy="10" r="1.3" fill="currentColor"/></svg>';
+  var FOLDER = '<svg width="16" height="14" viewBox="0 0 16 14" aria-hidden="true"><path d="M1 3.5A1.5 1.5 0 0 1 2.5 2h3.3l1.6 1.6h6.1A1.5 1.5 0 0 1 15 5.1v6.4a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 11.5z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>';
+  var CHEV = '<svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>';
+  function byId(id) { for (var i = 0; i < B.length; i++) if (B[i].id === id) return B[i]; return null; }
+
+  // ---- the replay: a study's own finished run, its real lines printed fast; no agent runs
+  function sim() {
+    var s = S.sim; if (!s) return null;
+    var f = byId(s.id) || {};
+    var now = S.now, secs = (now - s.t0) / 1000, stopped = !!s.stoppedAt;
+    var cut = stopped ? (s.stoppedAt - s.t0) / 1000 : Infinity;
+    var L = f.lines || [], STEP = 0.32, T_END = 1.2 + L.length * STEP;
+    var nLines = Math.max(0, Math.min(L.length, Math.floor((Math.min(secs, cut) - 1.2) / STEP) + 1));
+    var run = Math.min(secs, T_END);
+    var phase = secs < 1.2 ? 'assigned' : secs < T_END ? 'running' : 'pdf';
+    if (s.handedAt) phase = 'handed';
+    if (s.sentAt) phase = (now - s.sentAt) > 2500 ? 'receipt' : 'sending';
+    if (stopped) phase = 'stopped';
+    var fileAt = [['analysis.py', 4], ['analysis.out', 6], ['fig1.png', 8], ['conclusion.json', 10], ['report.md', 11], ['report.pdf', 12]];
+    var files = fileAt.filter(function (x) { return nLines >= x[1]; }).map(function (x) { return { name: x[0], cls: x[0] === 'report.pdf' ? 'out' : (nLines - x[1]) < 2 ? 'new' : '' }; });
+    var hasReport = files.some(function (x) { return x.name === 'report.md'; });
+    var hasPdf = phase !== 'assigned' && phase !== 'running' && phase !== 'stopped';
+    var state = stopped ? 'failed' : phase === 'assigned' ? 'assigned' : phase === 'running' ? (hasReport ? 'report written' : 'researcher running') : phase === 'pdf' ? 'pdf rendered' : 'handed off';
+    var frac = L.length ? nLines / L.length : 0;
+    var stageNow = stopped ? 0 : phase === 'assigned' ? 1 : phase === 'running' ? (frac < .3 ? 1 : frac < .75 ? 2 : frac < 1 ? 3 : 4) : phase === 'pdf' ? 4.5 : phase === 'receipt' ? 6 : 5;
+    var lastTool = stopped ? 'stopped by hand' : phase === 'assigned' ? 'claude -p --model opus, in the sealed sandbox' : phase === 'running' ? (L[Math.max(0, nLines - 1)] || '') : 'exit 0';
+    var log = 'runner: sandbox built · card.md + ' + (f.given || 0) + ' data files under neutral names\n' + L.slice(0, nLines).join('\n') + (stopped ? '\n\nrunner: stopped by hand at ' + hhmmss(new Date(s.stoppedAt)) : '');
+    return { f: f, secs: secs, run: run, phase: phase, stopped: stopped, files: files, state: state, stageNow: stageNow, lastTool: lastTool, log: log, hasPdf: hasPdf,
+             tools: Math.min(10, Math.floor(nLines * 0.9)), tokIn: Math.round(run * 9000) };
+  }
+
+  // ---- the two verdicts: the paper claimed its effect; the replication on record held or not; the panel is a mock that endorses the report it read
+  function verdicts(f) {
+    var c = f.concl || {}, r = f.record || {};
+    var rh = c.holds === 'yes';
+    var v1 = rh ? 'matches' : 'differs';
+    var v2 = (rh === (r.held_up === 'yes')) ? 'matches' : 'differs';
+    return { v1: v1, v2: v2,
+      paperLine: 'the paper claimed it: ' + (r.stat_o || '[statistic]') + ' · p ' + (r.p_o || '?') + ' · ' + (r.es_o || '') + ' · N ' + (r.n_o || '?'),
+      researcherLine: 'the blind researcher: ' + (c.holds || '?') + ' · ' + (c.statistic || '') + ' · p ' + (c.p || '') + ' · ' + (c.effect_size || ''),
+      replLine: 'the replication on record: held up ' + (r.held_up || '?') + ' · ' + (r.stat_r || '[statistic]') + ' · p ' + (r.p_r || '?') + ' · ' + (r.es_r || '') + ' · N ' + (r.n_r || '?'),
+      reproLine: 'our reproduction: ' + (r.reproduced || '?'),
+      panelLine: 'the panel (mock): ' + (rh ? 'holds' : 'does not hold') + ' · 0.80' };
+  }
+
+  function stages(nowIdx, out) {
+    var names = ['data', 'analysis', 'report', 'pdf', 'wall'], h = '';
+    names.forEach(function (name, i) {
+      var n = i + 1;
+      var cls = n < nowIdx ? 'done' : n === nowIdx ? 'now' : '';
+      if (n === 5 && out) cls = 'out';
+      if (nowIdx === 4.5 && n === 4) cls = 'done';
+      var edgeCls = n <= nowIdx ? (n === 5 && out ? 'out' : 'done') : (n === 5 ? 'dash' : '');
+      if (i > 0) h += '<span class="edge ' + edgeCls + '"></span>';
+      h += '<span class="node ' + cls + '"><span class="o">0' + n + '</span><span class="l">' + name + '</span></span>';
+    });
+    return '<div class="trellis" style="position:relative" aria-label="stages">' + h + '</div>';
+  }
+
+  function stateOf(f, sm) { return (sm && f.id === S.sim.id) ? sm.state : (f.id === FINISHED ? 'handed off' : f.state === 'handed off' ? 'data ready' : f.state); }
+  function received(id, sm) { return id === FINISHED || (sm && S.sim && id === S.sim.id && sm.phase === 'receipt'); }
+
+  // ---- sections
+  function header(sm) {
+    var counts = {}, order = ['researcher running', 'assigned', 'report written', 'pdf rendered', 'handed off', 'failed', 'data ready', 'no card'];
+    var ticks = B.map(function (f) { var st = stateOf(f, sm); counts[st] = (counts[st] || 0) + 1; return '<span class="tick ' + (TICK_CLS[st] || '') + '" title="' + esc(f.code + ' · ' + f.handle + ' · ' + st) + '"></span>'; }).join('');
+    var countsText = order.filter(function (x) { return counts[x]; }).map(function (x) { return counts[x] + ' ' + x; }).join(' · ');
+    var pdfs = (counts['pdf rendered'] || 0) + (counts['handed off'] || 0);
+    var t = (window.BENCH && window.BENCH.time) || '';
+    return '<header style="display:flex;flex-direction:column;gap:14px">' +
+      '<div style="display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center"><span class="key sig">Science Resocialized · the lab bench · production</span>' +
+      '<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span class="chip" style="padding:8px 10px">run 01 · rules_pushed</span><span class="key">' + esc(t ? t.slice(0, 10) + ' · Claude Impact Lab, Berlin' : '') + '</span></div></div>' +
+      '<h1 class="title">The lab bench</h1>' +
+      '<p class="lead" style="max-width:36rem"><b>Thirty findings, each a claim with its raw data and no result.</b> Hand one to a researcher; its report crosses the wall with the data.</p>' +
+      '<div style="display:flex;gap:7px 28px;flex-wrap:wrap;align-items:baseline;margin-top:7px">' +
+      '<span class="mono" style="color:var(--ink)"><span class="key">findings</span>&nbsp; ' + B.length + '</span>' +
+      '<span class="mono" style="color:var(--ink)"><span class="key">reports</span>&nbsp; 30</span>' +
+      '<span class="mono" style="color:var(--ink)"><span class="key">over the wall</span>&nbsp; ' + (counts['handed off'] || 0) + '</span>' +
+      '<span class="mono" style="color:var(--ink)"><span class="key">on stage</span>&nbsp; replays of finished runs</span></div>' +
+      '<div style="display:flex;gap:14px 28px;flex-wrap:wrap;align-items:center"><div class="ticks" role="img" aria-label="' + esc(countsText) + '">' + ticks + '</div><span class="caption">' + esc(countsText) + '</span></div></header>';
+  }
+
+  function verdictPanes(v, revealedNow) {
+    return '<div class="' + (revealedNow ? 'rise ' : '') + '" style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px">' +
+      '<div class="pane lift open" style="min-height:150px;gap:8px"><div class="behind" aria-hidden="true">' + SHEET + '</div><div class="frost"></div>' +
+        '<span class="k">verdict one · researcher vs the paper</span><span class="verdict ' + (v.v1 === 'matches' ? 'yes' : 'no') + '" style="font-size:30px">' + v.v1 + '</span>' +
+        '<span class="v" style="color:var(--ink)">' + esc(v.paperLine) + '</span><span class="v" style="color:var(--ink)">' + esc(v.researcherLine) + '</span></div>' +
+      '<div class="pane lift open" style="min-height:150px;gap:8px"><div class="behind" aria-hidden="true">' + BARS + '</div><div class="frost"></div>' +
+        '<span class="k">verdict two · panel vs the replication</span><span class="verdict ' + (v.v2 === 'matches' ? 'yes' : 'no') + '" style="font-size:30px">' + v.v2 + '</span>' +
+        '<span class="v" style="color:var(--ink)">' + esc(v.replLine) + '</span><span class="v" style="color:var(--ink)">' + esc(v.reproLine + ' · ' + v.panelLine) + '</span></div></div>';
+  }
+
+  function deskFull(d) {
+    var h = '<article class="glass glass--panel" style="display:flex;flex-direction:column;gap:14px;padding:20px 22px 22px" aria-label="' + esc(d.aria) + '"><div class="floor" style="opacity:.8"></div>';
+    h += '<div style="position:relative;display:flex;align-items:center;gap:14px;flex-wrap:wrap"><span class="key">desk ' + d.slot + '</span><span class="tag ' + (STATE_CLS[d.state] || '') + '"><i></i>' + esc(d.state) + '</span><span class="chip ghost" style="padding:6px 8px">' + esc(d.model) + '</span>' +
+      (d.isDemo ? '<span class="chip ghost" style="padding:6px 8px;color:var(--flag);border-color:var(--flag)">replay · the run’s real numbers, no agent</span>' : '') +
+      '<span class="clock" style="margin-left:auto" aria-label="elapsed">' + d.clock + '</span></div>';
+    h += '<div class="handle" style="position:relative">' + esc(d.handle) + '</div>';
+    h += stages(d.stageNow, d.out);
+    if (d.working) h += '<div class="bar" style="position:relative" role="progressbar" aria-label="researcher working"></div>';
+    h += '<div style="position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px"><div class="well"><span class="key">tokens</span><span class="v">' + esc(d.tokens) + '</span></div><div class="well"><span class="key">tool calls</span><span class="v">' + esc(d.tools) + '</span></div><div class="well"><span class="key">cost</span><span class="v">' + esc(d.cost) + '</span></div></div>';
+    h += '<div class="mono" style="position:relative;color:var(--sig-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><span class="mark" style="margin-right:8px"></span>' + esc(d.lastTool) + '</div>';
+    h += '<button class="folder" style="position:relative" data-act="folder" data-id="' + esc(d.id) + '" aria-expanded="' + d.folderOpen + '">' + FOLDER + '<span>report/ · ' + d.files.length + ' files</span><span class="hint">' + esc(d.folderHint) + '</span>' + CHEV + '</button>';
+    if (d.folderOpen) {
+      h += '<div style="position:relative;display:flex;flex-direction:column;gap:10px"><div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">' +
+        (d.files.length ? d.files.map(function (x) { return '<span class="chip ' + x.cls + '">' + esc(x.name) + '</span>'; }).join('') : '<span class="caption" style="color:var(--ink-3)">nothing written yet</span>') +
+        '</div><pre class="log" data-log="' + esc(d.id) + '" style="height:168px">' + esc(d.log) + '</pre>' +
+        (d.hasHandoff ? '<div class="mono" style="color:var(--ink-3);word-break:break-all">zip packed ' + esc(d.handoffAt) + ' · report.pdf + the data files</div>' : '') + '</div>';
+    }
+    if (d.hasConcl) h += '<div style="position:relative;display:flex;gap:8px 20px;flex-wrap:wrap;align-items:center"><span class="metric" style="color:var(--ink-2)"><span class="mark" style="margin-right:8px"></span>concludes <span style="color:var(--sig-hi)">' + esc(d.concl) + '</span></span></div>';
+    if (d.canReveal) h += '<div style="position:relative;display:flex;gap:14px;align-items:center;flex-wrap:wrap"><span class="metric" style="color:var(--gro-bright)"><span class="mark" style="background:var(--gro-bright);margin-right:8px"></span>the panel’s verdict is in</span><button class="btn btn--flag" data-act="reveal" data-id="' + esc(d.id) + '">Reveal the record</button></div>';
+    if (d.revealed) h += verdictPanes(d.v, d.justRevealed);
+    if (d.hasPdf) h += '<div style="position:relative;display:flex;gap:20px;align-items:center;flex-wrap:wrap"><div class="sheet" style="width:96px;min-height:120px;flex:none" aria-hidden="true"><i class="h"></i><i></i><i></i><i style="width:80%"></i><i></i><i style="width:55%"></i><i style="height:22px;background:#e6eaec;margin-top:6px"></i><i></i></div>' +
+      '<div style="flex:1 1 200px;min-width:0;display:flex;flex-direction:column;gap:8px"><span class="cell-title">report.pdf</span><span class="mono">' + esc(d.pdfLine) + '</span>' +
+      '<a class="btn btn--sm" href="' + esc(d.pdfHref) + '" target="_blank" rel="noopener" style="align-self:flex-start">Open</a></div></div>';
+    h += '<div style="position:relative;display:flex;gap:14px;align-items:center;flex-wrap:wrap"><span class="lamp" aria-hidden="true"></span><span class="lamp-label">' + esc(d.lamp) + '</span></div>';
+    h += '<div style="position:relative;display:flex;gap:8px;flex-wrap:wrap;align-items:center">' +
+      (d.canStop ? '<button class="btn" data-act="stop">Stop</button>' : '') +
+      (d.canHandoff ? '<button class="btn btn--gro" data-act="pack">Pack the zip: report + data</button>' : '') +
+      (d.canSend ? '<button class="btn btn--gro" data-act="send" data-id="' + esc(d.id) + '"' + (d.sending ? ' disabled' : '') + '>' + esc(d.sendText) + '</button>' : '') +
+      (d.canClear ? '<button class="btn" data-act="clear" data-id="' + esc(d.id) + '">Clear desk</button>' : '') +
+      (d.canRerun ? '<button class="btn" data-act="rerun">Run again</button>' : '') + '</div>';
+    return h + '</article>';
+  }
+  function deskEmpty(slot) {
+    return '<div class="glass" style="min-height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:28px"><div class="floor" style="opacity:.45"></div><span class="key" style="position:absolute;top:18px;left:20px">desk ' + slot + '</span><span class="mono" style="position:relative;color:var(--ink-3)">press Produce the science on a study below</span></div>';
+  }
+
+  function desks(sm) {
+    var f1 = byId(FINISHED) || {}, v1 = verdicts(f1), c1 = f1.concl || {};
+    var desk1 = { id: FINISHED, slot: '01', aria: 'Desk 01, ' + FINISHED + ', handed off', handle: f1.handle, state: 'handed off', model: 'opus · attached', isDemo: false, clock: '2:36',
+      stageNow: 6, out: true, working: false, tokens: '99.0k', tools: '10', cost: 'not reported', lastTool: 'exit 0 · the run finished before the demo',
+      files: ['analysis.out', 'analysis.py', 'conclusion.json', 'fig1.png', 'log.md', 'report.html', 'report.md', 'report.pdf'].map(function (n) { return { name: n, cls: n === 'report.pdf' ? 'out' : '' }; }),
+      folderOpen: !!S.folders[FINISHED], folderHint: FINISHED + '.zip · report + data', log: (f1.lines || []).join('\n'), hasHandoff: true, handoffAt: '15:37:27',
+      hasConcl: true, concl: (c1.holds || '?') + ' · ' + (c1.statistic || '') + ' · p ' + (c1.p || '') + ' · ' + (c1.effect_size || ''),
+      canReveal: !S.rev1, revealed: S.rev1, justRevealed: S.rev1 === 'now', v: v1,
+      hasPdf: true, pdfLine: 'the synthetic paper · ' + FINISHED, pdfHref: '../papers/' + FINISHED + '/report/report.pdf',
+      lamp: 'set by hand · desk 01 · sent over the wall', canStop: false, canHandoff: false, canSend: true, sendText: 'Send again (pretend)', canClear: false, canRerun: false };
+    var out = [deskFull(desk1)];
+    if (!sm) out.push(deskEmpty('02'));
+    else {
+      var f = sm.f, c = f.concl || {}, s = S.sim;
+      out.push(deskFull({ id: f.id, slot: '02', aria: 'Desk 02, ' + f.code + ', ' + sm.state, handle: f.handle, state: sm.state, model: 'opus', isDemo: true,
+        clock: clock(sm.stopped ? (s.stoppedAt - s.t0) / 1000 : sm.run), stageNow: sm.stageNow, out: sm.phase === 'receipt', working: sm.phase === 'running' || sm.phase === 'assigned',
+        tokens: k(sm.tokIn), tools: String(sm.tools), cost: '[replay]', lastTool: sm.lastTool,
+        files: sm.files, folderOpen: S.folders[f.id] !== false, folderHint: sm.files.length ? sm.files[sm.files.length - 1].name : 'empty', log: sm.log,
+        hasHandoff: !!s.handedAt, handoffAt: s.handedAt ? hhmmss(new Date(s.handedAt)) : '',
+        hasConcl: sm.hasPdf, concl: (c.holds || '?') + ' · ' + (c.statistic || '') + ' · p ' + (c.p || '') + ' · ' + (c.effect_size || ''),
+        canReveal: sm.phase === 'receipt' && !s.revealed, revealed: !!s.revealed, justRevealed: s.revealed === 'now', v: verdicts(f),
+        hasPdf: sm.hasPdf, pdfLine: 'the synthetic paper · ' + f.code, pdfHref: '../papers/' + f.code + '/report/report.pdf',
+        lamp: 'set by hand · desk 02 at ' + hhmm(new Date(s.t0)),
+        canStop: sm.phase === 'running' || sm.phase === 'assigned', canHandoff: sm.phase === 'pdf',
+        canSend: sm.phase === 'handed' || sm.phase === 'receipt' || sm.phase === 'sending', sending: sm.phase === 'sending',
+        sendText: sm.phase === 'sending' ? 'sending…' : sm.phase === 'receipt' ? 'Send again (pretend)' : 'Send over the wall (pretend)',
+        canClear: sm.phase !== 'running' && sm.phase !== 'assigned', canRerun: sm.stopped || sm.phase === 'pdf' }));
+    }
+    for (var i = 3; i <= S.desksN; i++) out.push(deskEmpty('0' + i));
+    if (S.desksN < 2) out.length = 1;
+    return '<section class="sec" aria-labelledby="h-desks"><div class="sechead"><span class="key sig">01</span><h2 class="title" id="h-desks">Researchers</h2><div class="right">' +
+      '<span class="tag s-pdf"><i></i>30 of 30 runs finished</span>' +
+      '<button class="btn btn--sm btn--icon" style="width:36px" data-act="fewer" aria-label="One desk fewer">−</button><button class="btn btn--sm btn--icon" style="width:36px" data-act="more" aria-label="One desk more">+</button></div></div>' +
+      '<div class="desks">' + out.join('') + '</div></section>';
+  }
+
+  function wall(sm) {
+    var rows = [{ id: FINISHED, cargo: FINISHED + '.zip · report + ' + ((byId(FINISHED) || {}).given || 0) + ' data files', at: '15:37:27', lane: 'sent', pct: 100, sending: false, back: 'back', rc: 'out', receipt: 'receipt · sha256 matches · verdict attached' }];
+    if (sm && (sm.phase === 'sending' || sm.phase === 'receipt')) {
+      var pct = sm.phase === 'sending' ? Math.min(99, Math.round((S.now - S.sim.sentAt) / 25)) : 100;
+      rows.push({ id: sm.f.code, cargo: sm.f.code + '.zip · report + ' + (sm.f.given || 0) + ' data files', at: hhmmss(new Date(S.sim.sentAt)), lane: sm.phase === 'sending' ? 'det' : 'sent', pct: pct, sending: sm.phase === 'sending',
+        back: sm.phase === 'receipt' ? 'back' : '', rc: sm.phase === 'receipt' ? 'out' : 'ghost', receipt: sm.phase === 'receipt' ? 'receipt · sha256 matches · verdict attached' : 'waiting for the receipt' });
+    }
+    var grid = 'position:relative;display:grid;grid-template-columns:minmax(0,1fr) 2px minmax(0,1fr);gap:0 20px;align-items:center';
+    return '<section class="sec" aria-labelledby="h-wall"><div class="sechead"><span class="key sig">02</span><h2 class="title" id="h-wall">The wall</h2><div class="right"><span class="mono"><span class="key">channel</span>&nbsp; api · Victor’s server · pretend on stage</span></div></div>' +
+      '<div class="glass" style="padding:20px 22px;display:flex;flex-direction:column;gap:14px"><div class="floor" style="opacity:.5"></div>' +
+      '<div class="wallrow wallhead" style="' + grid + '"><span class="key">this machine · research</span><span></span><span class="key" style="text-align:right">the other machine · review</span></div>' +
+      rows.map(function (w) {
+        return '<div class="wallrow" style="' + grid + '"><div style="display:flex;align-items:center;gap:12px;min-width:0;flex-wrap:wrap"><span class="chip out">' + esc(w.cargo) + '</span><span class="mono" style="white-space:nowrap">' + esc(w.at) + '</span>' +
+          '<span class="lane ' + w.lane + '"><span class="fill" style="width:' + w.pct + '%"></span></span>' + (w.sending ? '<span class="mono" style="white-space:nowrap;color:var(--sig-hi)">' + w.pct + '%</span>' : '') + '</div>' +
+          '<span class="wallline"></span><div style="display:flex;align-items:center;gap:12px;min-width:0"><span class="lane ' + w.back + '"></span><span class="chip ' + w.rc + '">' + esc(w.receipt) + '</span></div></div>';
+      }).join('') + '</div></section>';
+  }
+
+  function cells(sm) {
+    var simBusy = sm && (sm.phase === 'assigned' || sm.phase === 'running');
+    var list = B.map(function (f) { return { f: f, st: stateOf(f, sm) }; }).filter(function (x) { return S.filter === 'all' || group(x.st) === S.filter; });
+    var btn = function (key, label) { return '<button class="btn btn--sm" aria-pressed="' + (S.filter === key) + '" data-act="filter" data-key="' + key + '">' + label + '</button>'; };
+    return '<section class="sec" aria-labelledby="h-cells"><div class="sechead"><span class="key sig">03</span><h2 class="title" id="h-cells">Findings</h2>' +
+      '<div class="right" role="group" aria-label="Show">' + btn('all', 'all') + btn('ready', 'data ready') + btn('process', 'with a researcher') + btn('out', 'report out') + '</div></div>' +
+      '<div class="cells">' + list.map(function (x) {
+        var f = x.f, st = x.st, rec = received(f.id, sm), onDesk = f.id === FINISHED ? '01' : (S.sim && f.id === S.sim.id) ? '02' : '';
+        var running = st === 'assigned' || st === 'researcher running';
+        var canRun = !onDesk && !running && st !== 'no card';
+        var paneCls = rec ? 'open' : '', paneText = rec ? 'verdict in' : 'sealed';
+        return '<article class="cellp" style="min-height:250px;display:flex;flex-direction:column;gap:12px;padding:18px" aria-label="' + esc(f.handle) + '">' +
+          '<div style="display:flex;justify-content:space-between;gap:10px;align-items:center"><span class="key">' + esc(f.code) + '</span><span class="tag ' + (STATE_CLS[st] || '') + '"><i></i>' + esc(st) + '</span></div>' +
+          '<div class="handle">' + esc(f.handle) + '</div>' +
+          '<div class="metric">n ' + esc(f.n) + ' · ' + esc(f.mb) + ' MB · ' + esc(f.given) + ' of ' + esc(f.files) + ' files</div>' +
+          '<div style="display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:6px;margin-top:auto">' +
+            '<div class="plate plate--data" title="The data: what a researcher gets."><span class="k">data ' + GRIP + '</span><span>' + esc(f.given + ' files · ' + f.formats) + '</span></div>' +
+            '<div class="pane ' + paneCls + '" title="' + (rec ? 'The receipt is back: open the study for the verdicts.' : 'Sealed until the receipt from the other machine is back.') + '"><div class="behind" aria-hidden="true">' + SHEET + '</div><div class="frost"></div><span class="k">' + LOCK + ' paper</span><span class="v">' + paneText + '</span></div>' +
+            '<div class="pane ' + paneCls + '" title="' + (rec ? 'The receipt is back: open the study for the verdicts.' : 'Sealed until the receipt from the other machine is back.') + '"><div class="behind" aria-hidden="true">' + BARS + '</div><div class="frost"></div><span class="k">' + LOCK + ' reproduction</span><span class="v">' + paneText + '</span></div></div>' +
+          '<div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">' +
+            (canRun ? '<button class="btn btn--sig btn--sm" data-act="produce" data-id="' + esc(f.id) + '"' + (simBusy ? ' disabled title="desk 02 is busy"' : '') + '>Produce the science</button>' : '') +
+            (onDesk ? '<span class="mono" style="color:var(--sig-soft)">on desk ' + onDesk + '</span>' : '') +
+            '<button class="btn btn--sm" data-act="open" data-id="' + esc(f.id) + '" style="margin-left:auto">Details</button></div></article>';
+      }).join('') + '</div></section>';
+  }
+
+  function drawer(sm) {
+    if (!S.open) return '';
+    var f = byId(S.open); if (!f) return '';
+    var st = stateOf(f, sm), rec = received(f.id, sm), v = verdicts(f), r = f.record || {};
+    var h = '<div data-act="close" style="position:fixed;inset:0;z-index:29;background:rgba(8,12,14,.55)"></div>' +
+      '<aside class="glass glass--panel" role="dialog" aria-modal="true" aria-label="Study detail" tabindex="-1" id="dlg" style="position:fixed;top:0;right:0;height:100%;width:min(640px,100%);z-index:30;overflow:auto;padding:28px;display:flex;flex-direction:column;gap:14px;border-radius:18px 0 0 18px">' +
+      '<div style="position:relative;display:flex;justify-content:space-between;align-items:center;gap:14px"><span class="tag ' + (STATE_CLS[st] || '') + '"><i></i>' + esc(st) + '</span><button class="btn btn--sm" data-act="close">Close</button></div>' +
+      '<h2 class="title" style="position:relative">' + esc(f.handle) + '</h2>' +
+      '<div class="mono" style="position:relative;color:var(--ink-3)">' + esc(f.code + ' · ' + f.formats + ' · ' + f.files + ' files · ' + f.mb + ' MB · n ' + f.n) + '</div>';
+    h += '<div style="position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">' +
+      '<div class="pane lift ' + (rec ? 'open' : '') + '" style="min-height:112px"><div class="behind" aria-hidden="true">' + SHEET + '</div><div class="frost"></div><span class="k">verdict one · researcher vs paper</span><span class="verdict ' + (rec && v.v1 === 'matches' ? 'yes' : 'no') + '" style="font-size:28px">' + (rec ? v.v1 : 'sealed') + '</span></div>' +
+      '<div class="pane lift ' + (rec ? 'open' : '') + '" style="min-height:112px"><div class="behind" aria-hidden="true">' + BARS + '</div><div class="frost"></div><span class="k">verdict two · panel vs replication</span><span class="verdict ' + (rec && v.v2 === 'matches' ? 'yes' : 'no') + '" style="font-size:28px">' + (rec ? v.v2 : 'sealed') + '</span></div></div>' +
+      '<p class="caption" style="position:relative;color:var(--ink-3)">' + (rec ? 'Verdict one asks whether the blind researcher reached the paper’s conclusion. Verdict two asks whether the panel (a mock on stage) called it the way the independent replication did.' : 'Both verdicts stay frosted until this study’s report and data have crossed the wall and the receipt is back.') + '</p>';
+    if (ADMIN && rec) {
+      var rv = S.reviews[f.id];
+      if (rv) h += '<div style="position:relative;display:flex;align-items:center;gap:14px"><span class="lamp" aria-hidden="true"></span><span class="lamp-label">reviewed by hand · ' + esc(rv) + '</span></div>';
+      else if (!S.reviewOpen) h += '<button class="hidden-review" data-act="review-open">· review this verdict by hand</button>';
+      else h += '<div class="vault" style="position:relative;display:flex;flex-direction:column;gap:10px"><span class="key" style="color:var(--flag)">manual review · admin · this browser only · never crosses the wall</span>' +
+        '<div style="display:flex;gap:6px;flex-wrap:wrap">' + ['agree', 'disagree', 'hold'].map(function (c) { return '<button class="btn btn--sm" data-act="call" data-key="' + c + '" aria-pressed="' + (S.call === c) + '">' + { agree: 'I agree with the verdict', disagree: 'I disagree', hold: 'Hold for a second look' }[c] + '</button>'; }).join('') + '</div>' +
+        '<label class="key" for="why" style="color:var(--ink-3)">why, in a line</label><textarea id="why" class="primer" style="color:var(--ink);border-style:solid">' + esc(S.note) + '</textarea>' +
+        '<div style="display:flex;gap:8px"><button class="btn btn--flag" data-act="review-record">Record the review</button><button class="btn" data-act="review-cancel">Cancel</button></div></div>';
+    }
+    if (rec) {
+      h += '<div style="position:relative;display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn--flag" data-act="paper" aria-pressed="' + S.paper + '">Read the paper</button><button class="btn btn--flag" data-act="repl" aria-pressed="' + S.repl + '">Read the replication and the analysis</button></div>';
+      if (S.paper) h += '<div class="vault rise" style="position:relative;display:flex;flex-direction:column;gap:10px"><div style="display:flex;align-items:center;gap:14px"><span class="lamp" aria-hidden="true"></span><span class="lamp-label">the paper · opened by hand · ' + esc(S.openedAt) + ' · this side only</span></div>' +
+        '<span class="mono" style="color:var(--ink)">' + esc(v.paperLine) + '</span><a class="btn btn--sm" href="../papers/' + esc(f.code) + '/sealed/original/citation.md" target="_blank" rel="noopener" style="align-self:flex-start">Open the citation and the materials</a></div>';
+      if (S.repl) h += '<div class="vault rise" style="position:relative;display:flex;flex-direction:column;gap:8px"><div style="display:flex;align-items:center;gap:14px"><span class="lamp" aria-hidden="true"></span><span class="lamp-label">the replication and the analysis · opened by hand · ' + esc(S.openedAt) + '</span></div>' +
+        '<span class="mono" style="color:var(--ink)">' + esc(v.replLine) + '</span><span class="mono" style="color:var(--ink)">' + esc(v.reproLine) + '</span><span class="mono" style="color:var(--ink)">' + esc(v.researcherLine) + '</span><span class="mono" style="color:var(--ink)">' + esc(v.panelLine) + '</span>' +
+        '<a class="btn btn--sm" href="../papers/' + esc(f.code) + '/report/report.pdf" target="_blank" rel="noopener" style="align-self:flex-start">Open the synthetic paper</a></div>';
+    }
+    h += '<h3 class="key" style="position:relative;margin:14px 0 0">Hypothesis</h3><p class="small" style="position:relative">' + esc(f.hyp) + '</p>' +
+      '<h3 class="key" style="position:relative;margin:14px 0 0">Design</h3><p class="small" style="position:relative">' + esc(f.design || '[not on the card]') + '</p>' +
+      '<h3 class="key" style="position:relative;margin:14px 0 0">Sample</h3><p class="small" style="position:relative">' + esc(f.sample || '[not on the card]') + '</p>' +
+      '<h3 class="key" style="position:relative;margin:14px 0 0">Test</h3><p class="small" style="position:relative">' + esc(f.test || '[not on the card]') + '</p>' +
+      '<h3 class="key" style="position:relative;margin:14px 0 0">Data given</h3><p class="small" style="position:relative">' + esc(f.given + ' files under neutral names, ' + f.formats + ', ' + f.mb + ' MB. ' + (f.files - f.given) + ' other files withheld.') + '</p></aside>';
+    return h;
+  }
+
+  // ---- render
+  var lastDrawer = '';
+  function render() {
+    var sm = sim();
+    var logEl = document.querySelector('pre[data-log]'); var stick = !logEl || logEl.scrollHeight - logEl.scrollTop - logEl.clientHeight < 30;
+    $('#app').innerHTML = header(sm) + desks(sm) + wall(sm) + cells(sm) +
+      '<footer style="display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:baseline"><span class="key">open source, donated to Foresight · Claude Impact Lab, Berlin</span><span class="key">presentation mode · the numbers are the real runs’, replayed</span></footer>';
+    if (stick) document.querySelectorAll('pre[data-log]').forEach(function (p) { p.scrollTop = p.scrollHeight; });
+    var dh = drawer(sm);
+    if (dh !== lastDrawer) { var hadFocus = document.activeElement && document.activeElement.id === 'why'; $('#drawer').innerHTML = dh; lastDrawer = dh; if (hadFocus && $('#why')) $('#why').focus(); }
+    if (S.rev1 === 'now') S.rev1 = true;
+    if (S.sim && S.sim.revealed === 'now') S.sim.revealed = true;
+  }
+  function set(p) { for (var key in p) S[key] = p[key]; render(); }
+
+  setInterval(function () { if (S.sim) { S.now = Date.now(); render(); } }, 250);
+
+  document.addEventListener('input', function (e) { if (e.target.id === 'why') S.note = e.target.value; });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && S.open) set({ open: null, paper: false, repl: false, reviewOpen: false }); });
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-act]'); if (!b || b.disabled) return;
+    var a = b.dataset.act, id = b.dataset.id, s = S.sim;
+    if (a === 'produce') { if (s && (sim().phase === 'running' || sim().phase === 'assigned')) return; set({ sim: { id: id, t0: Date.now() }, now: Date.now() }); toast(byId(id).code + ' handed to desk 02 · replaying its run'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    else if (a === 'stop') set({ sim: Object.assign({}, s, { stoppedAt: Date.now() }) });
+    else if (a === 'pack') { set({ sim: Object.assign({}, s, { handedAt: Date.now() }) }); toast(byId(s.id).code + '.zip packed · report + data'); }
+    else if (a === 'send') { if (id === FINISHED) { toast(FINISHED + ' was already sent; the receipt is in'); return; } set({ sim: Object.assign({}, s, { sentAt: Date.now() }), now: Date.now() }); }
+    else if (a === 'clear') set({ sim: null });
+    else if (a === 'rerun') set({ sim: { id: s.id, t0: Date.now() }, now: Date.now() });
+    else if (a === 'reveal') { if (id === FINISHED) set({ rev1: 'now' }); else set({ sim: Object.assign({}, s, { revealed: 'now' }) }); }
+    else if (a === 'folder') { var fo = Object.assign({}, S.folders); var cur = id === FINISHED ? !!fo[id] : fo[id] !== false; fo[id] = !cur; set({ folders: fo }); }
+    else if (a === 'filter') set({ filter: b.dataset.key });
+    else if (a === 'fewer') set({ desksN: Math.max(1, S.desksN - 1) });
+    else if (a === 'more') set({ desksN: Math.min(4, S.desksN + 1) });
+    else if (a === 'open') { set({ open: id, paper: false, repl: false, reviewOpen: false, note: '' }); var d = $('#dlg'); if (d) d.focus(); }
+    else if (a === 'close') set({ open: null, paper: false, repl: false, reviewOpen: false });
+    else if (a === 'paper') set({ paper: !S.paper, openedAt: hhmm() });
+    else if (a === 'repl') set({ repl: !S.repl, openedAt: hhmm() });
+    else if (a === 'review-open') set({ reviewOpen: true });
+    else if (a === 'review-cancel') set({ reviewOpen: false });
+    else if (a === 'call') set({ call: b.dataset.key });
+    else if (a === 'review-record') {
+      var r = Object.assign({}, S.reviews);
+      r[S.open] = hhmm() + ' · ' + { agree: 'agrees with the verdict', disagree: 'disagrees', hold: 'held for a second look' }[S.call] + (S.note ? ' · ' + S.note : '');
+      try { localStorage.setItem('bench.reviews', JSON.stringify(r)); } catch (e2) {}
+      set({ reviews: r, reviewOpen: false, note: '' });
+    }
+  });
+  render();
+})();
+</script>
+</body>
+</html>

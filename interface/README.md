@@ -39,3 +39,7 @@ sha256_matches, verdict {odds_holds, holds}}`, `findings[].verdicts {researcher_
 3. **Reveal the record.** Appears once the receipt is in. Two verdicts, each `matches` or `differs`: the blind researcher against the original paper, and the panel (a mock that endorses the report it read) against the replication on record. The paper and the replication open only on a further click in the drawer.
 
 The numbers come from `papers/S##/report/conclusion.json` and `papers/S##/sealed/truth.json`, baked into `findings.js`. Nothing on the page names an RPP row; the citation is shown only behind the reveal, as `sealed/original/citation.md` already is.
+
+## The standalone page: `bench.html`
+
+The same bench as plain HTML, no canvas runtime: open `interface/bench.html` from a clone (double-click works), or serve the repo root (`python3 -m http.server` from the repo, then `/interface/bench.html`) so its links to `papers/S##/report/report.pdf` and the sealed citation open. Fonts and tokens are local (`ds/vivarium/`, SIL OFL 1.1). Add `?admin=1` to the URL for the manual review line under the verdicts; a review is kept in that browser only.
