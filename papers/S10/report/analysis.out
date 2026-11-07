@@ -1,0 +1,60 @@
+/Users/vladnicolescu/Developer/science-resocialized-target/env/runs/S10/papers/S10/report/analysis.py:66: Pandas4Warning: The 'lsuffix' and 'rsuffix' keywords in DataFrame.join are deprecated and will be removed in a future version. Use the 'suffixes' keyword instead.
+  cmp = m.join(g, rsuffix='_given')
+Trials: 1920 | subjects: 24
+NamingTask
+colour    [01, 05, 07, 09, 11, 13, 15, 17, 19, 21, 23, 53]
+naming    [02, 04, 06, 08, 10, 12, 14, 16, 18, 20, 22, 24]
+Name: Subject, dtype: object
+
+Object naming: 960 trials, 47 error trials dropped (4.9%), 14 trials beyond +/-3 SD dropped (1.5%), 899 kept
+Condition  Congruent  Incongruent
+Subject                          
+02             704.9        719.7
+04             722.3        746.5
+06             713.3        730.7
+08             685.3        708.5
+10             780.5        763.6
+12             746.0        714.5
+14             655.4        669.6
+16             792.2        791.7
+18             652.9        710.2
+20             716.2        725.8
+22             614.0        643.8
+24             716.7        722.2
+
+== PRIMARY: object naming, paired t-test, F1 ==  n = 12
+  mean congruent 708.3 (SD 51.6); incongruent 720.6 (SD 38.7)
+  diff C-I = -12.3 ms, 95% CI [-26.6, 2.1]; 9/12 participants faster when congruent
+  t(11) = -1.882, p = 0.0866 (two-sided); dz = -0.543, 95% CI [-1.141, 0.076]
+  Wilcoxon W = 18.0, p = 0.1099
+
+---- Checks (not primary) ----
+Max |re-derived - given| mean: 0.0
+
+== given d02 means, object naming ==  n = 12
+  mean congruent 708.3 (SD 51.6); incongruent 720.6 (SD 38.7)
+  diff C-I = -12.3 ms, 95% CI [-26.6, 2.1]; 9/12 participants faster when congruent
+  t(11) = -1.882, p = 0.0866 (two-sided); dz = -0.543, 95% CI [-1.141, 0.076]
+  Wilcoxon W = 18.0, p = 0.1099
+
+== object naming, errors dropped, no SD trim ==  n = 12
+  mean congruent 720.9 (SD 43.6); incongruent 734.4 (SD 43.8)
+  diff C-I = -13.6 ms, 95% CI [-27.1, 0.0]; 8/12 participants faster when congruent
+  t(11) = -2.199, p = 0.0502 (two-sided); dz = -0.635, 95% CI [-1.247, 0.001]
+  Wilcoxon W = 15.0, p = 0.0640
+
+== object naming, 2.5 SD trim ==  n = 12
+  mean congruent 702.5 (SD 49.9); incongruent 715.4 (SD 39.9)
+  diff C-I = -12.9 ms, 95% CI [-26.2, 0.4]; 9/12 participants faster when congruent
+  t(11) = -2.127, p = 0.0568 (two-sided); dz = -0.614, 95% CI [-1.223, 0.017]
+  Wilcoxon W = 13.0, p = 0.0425
+
+== colour naming (claim predicts no effect) ==  n = 12
+  mean congruent 635.4 (SD 105.5); incongruent 653.7 (SD 127.8)
+  diff C-I = -18.3 ms, 95% CI [-44.4, 7.7]; 8/12 participants faster when congruent
+  t(11) = -1.552, p = 0.1490 (two-sided); dz = -0.448, 95% CI [-1.034, 0.156]
+  Wilcoxon W = 19.0, p = 0.1294
+
+Task x congruency (independent t on C-I differences): t(22) = 0.449, p = 0.6577
+
+figure written: papers/S10/report/fig1.png

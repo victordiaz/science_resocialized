@@ -1,6 +1,102 @@
 {
  "bundles": [
   {
+   "study": "S01",
+   "created_at": "2026-11-07T16:56:51+0100",
+   "report_pdf_sha256": "1e5d376eaaf893241415112f17ec7160ae1c0367459879af96df024113131b0b",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 2.0
+  },
+  {
+   "study": "S02",
+   "created_at": "2026-11-07T16:57:23+0100",
+   "report_pdf_sha256": "30c63593794d191c2f0d9e8731f15f624f8ab8cc9ac4dc073ccabb3672972b98",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 2.4
+  },
+  {
+   "study": "S03",
+   "created_at": "2026-11-07T16:56:41+0100",
+   "report_pdf_sha256": "7e003d2c14897530805fe2f95cff48f481f937f303aa501d443a2e1946d37bea",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 1.9
+  },
+  {
+   "study": "S04",
+   "created_at": "2026-11-07T16:56:51+0100",
+   "report_pdf_sha256": "a1d3a92b9b7a55f183d406845847d1c382eaf3220337905a879c6bd565573fc2",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 1.8
+  },
+  {
+   "study": "S05",
+   "created_at": "2026-11-07T16:58:38+0100",
+   "report_pdf_sha256": "9d88ae9533f7f207c3479d9621329551cee9722dee632d25f4ecd96d502df5af",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 1.9
+  },
+  {
+   "study": "S06",
+   "created_at": "2026-11-07T16:58:55+0100",
+   "report_pdf_sha256": "7eb754e445575d03eec6fcb0b9e84e8de697e7b40f65acee9e3e9a788eb037f6",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 1.9
+  },
+  {
+   "study": "S07",
+   "created_at": "2026-11-07T16:59:22+0100",
+   "report_pdf_sha256": "de43e7472de9116c73e1c839f349cae2c61ec076489ccaf172920d02eeafc70c",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 2.2
+  },
+  {
+   "study": "S08",
+   "created_at": "2026-11-07T16:58:55+0100",
+   "report_pdf_sha256": "f087da42898f6b611629bf5ec2dc92bd2e4c673248448a7b1e07b62921164c77",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 1.4
+  },
+  {
+   "study": "S09",
+   "created_at": "2026-11-07T17:00:38+0100",
+   "report_pdf_sha256": "104d20ea40a7cd6b65c73b9c19288015f57fa3967c536bf84477bfbb7a6d57e6",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 2.0
+  },
+  {
+   "study": "S10",
+   "created_at": "2026-11-07T17:00:54+0100",
+   "report_pdf_sha256": "a1204a81c8b4e686c41b700f399e5e5d5ba51053e0d06dbcbea7df551539391f",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 2.0
+  },
+  {
+   "study": "S11",
+   "created_at": "2026-11-07T17:01:13+0100",
+   "report_pdf_sha256": "6fd0ae5bed83852105731fd45223740e9f62a2eb289c6df7015d299036d2d7f5",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 2.1
+  },
+  {
+   "study": "S12",
+   "created_at": "2026-11-07T17:01:34+0100",
+   "report_pdf_sha256": "2c059c2d5e50dad448528bc09cafef9f0110cb38992cd2e9fc5f1ba26aef4f13",
+   "model": "opus",
+   "cost_usd": null,
+   "minutes": 2.0
+  },
+  {
    "study": "S23",
    "created_at": "2026-11-07T16:11:07+0100",
    "report_pdf_sha256": "b70aa0948b686550d24bafd31320b1780b771879f5c6eeb81c54ccbf23bccc46",
@@ -9,6 +105,6 @@
    "minutes": 2.0
   }
  ],
- "updated_at": "2026-11-07T16:11:07+0100",
+ "updated_at": "2026-11-07T17:01:34+0100",
  "bundle_version": 1
 }

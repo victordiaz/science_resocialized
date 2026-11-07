@@ -1,0 +1,55 @@
+rows: 120 columns: ['Looktime', 'Discussant', 'Condi']
+missing values: 0
+subjects with inconsistent Condi across blocks: 0
+n per condition: {'on (can hear)': 15, 'off (cannot hear)': 15}
+
+Cell means (SD) of look time, ms:
+                                 mean     std  count
+Discussant cond                                     
+1          off (cannot hear)    985.6  1626.8     15
+           on (can hear)        688.8   782.5     15
+2          off (cannot hear)  20252.2  2132.0     15
+           on (can hear)      19280.0  2385.5     15
+3          off (cannot hear)    366.6   602.7     15
+           on (can hear)       1003.3  1328.7     15
+4          off (cannot hear)    310.0   536.4     15
+           on (can hear)        635.5   730.5     15
+
+Mauchly W = 0.1216, chi2(5) = 56.31, p = 7.02e-11; GG epsilon = 0.4935
+
+Mixed ANOVA (uncorrected):
+Condition              SS=      176410.0 df=(1.000, 28.000) F=   2.248 p=0.145
+Discussant             SS=  8211199733.2 df=(3.000, 84.000) F=1008.230 p=9.854e-66
+Condition x Discussant SS=    11408572.8 df=(3.000, 84.000) F=   1.401 p=0.2483
+Within-subject effects, Greenhouse-Geisser corrected:
+Discussant (GG)        SS=  8211199733.2 df=(1.481, 41.458) F=1008.230 p=1.14e-33
+Cond x Disc (GG)       SS=    11408572.8 df=(1.481, 41.458) F=   1.401 p=0.2542
+
+PRIMARY: Condition x Discussant F(1.48, 41.46) = 1.401, p(GG) = 0.2542, partial eta^2 = 0.0476
+90% CI partial eta^2 (uncorrected df): [0.0000, 0.1114]; (GG df): [0.0000, 0.1680]
+
+pingouin mixed_anova cross-check:
+        Source            SS  DF1  DF2            MS          F   p_unc  p_GG_corr     np2     eps sphericity  W_spher  p_spher
+0         cond  1.764100e+05    1   28  1.764100e+05     2.2476  0.1450        NaN  0.0743     NaN        NaN      NaN      NaN
+1   Discussant  8.211200e+09    3   84  2.737067e+09  1008.2302  0.0000     0.0000  0.9730  0.4935      False   0.1216      0.0
+2  Interaction  1.140857e+07    3   84  3.802858e+06     1.4008  0.2483     0.2542  0.0476  0.4935      False   0.1216      0.0
+
+Secondary: condition difference (on - off) by discussant, Welch t-test:
+  D1: on M=   688.8  off M=   985.6  diff=  -296.8  t=-0.637 p=0.5315  MWU p=0.6916
+  D2: on M= 19280.0  off M= 20252.2  diff=  -972.2  t=-1.177 p=0.2493  MWU p=0.3189
+  D3: on M=  1003.3  off M=   366.6  diff=   636.7  t= 1.690 p=0.1069  MWU p=0.1413
+  D4: on M=   635.5  off M=   310.0  diff=   325.5  t= 1.391 p=0.1761  MWU p=0.0511
+
+Robustness: ANOVA excluding discussant 2 (the speaker):
+        Source            SS  DF1  DF2            MS       F   p_unc  p_GG_corr     np2     eps sphericity  W_spher  p_spher
+0         cond  1.107115e+06    1   28  1.107115e+06  0.7718  0.3872        NaN  0.0268     NaN        NaN      NaN      NaN
+1   Discussant  2.010155e+06    2   56  1.005077e+06  1.2037  0.3077     0.2985  0.0412  0.7329      False   0.6356   0.0022
+2  Interaction  3.389072e+06    2   56  1.694536e+06  2.0294  0.1410     0.1551  0.0676  0.7329      False   0.6356   0.0022
+
+Robustness: ANOVA on log(1 + look time):
+        Source        SS  DF1  DF2        MS        F   p_unc  p_GG_corr     np2     eps sphericity  W_spher  p_spher
+0         cond   18.3122    1   28   18.3122   1.3880  0.2487        NaN  0.0472     NaN        NaN      NaN      NaN
+1   Discussant  781.3230    3   84  260.4410  48.0740  0.0000     0.0000  0.6319  0.8524       True   0.7831   0.2579
+2  Interaction   51.9626    3   84   17.3209   3.1972  0.0275     0.0353  0.1025  0.8524       True   0.7831   0.2579
+
+figure written: papers/S11/report/fig1.png

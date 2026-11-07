@@ -1,0 +1,39 @@
+{
+ "study": "S06",
+ "state": "pdf rendered",
+ "backend": "attached",
+ "model": "opus",
+ "pid": null,
+ "started_at": "2026-11-07T16:56:51+0100",
+ "t0": 1794067011.2665951,
+ "sandbox": "/Users/vladnicolescu/Developer/science-resocialized-target/env/runs/S06",
+ "turns": 0,
+ "tool_calls": 0,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "cache_read": 0,
+  "cache_create": 0
+ },
+ "cost_usd": null,
+ "last_tool": null,
+ "budget_usd": 20.0,
+ "elapsed_s": 114,
+ "note": "attached run: an Opus subagent of the bench session worked in the sealed sandbox; 96,668 tokens over 7 tool calls; the cost is not reported by that backend",
+ "finished_at": "2026-11-07T16:58:45+0100",
+ "exit_code": 0,
+ "minutes": 1.9,
+ "conclusion": {
+  "study": "S06",
+  "holds": "no",
+  "primary_test": "Group x Task interaction, aov(PD ~ Group * Task + Error(ID/Task)), ID:Task stratum, both Weapons rows kept",
+  "statistic": "F(1, 73) = 0.43",
+  "p": "0.513",
+  "effect_size": "partial eta^2 = 0.006, 90% CI [0.000, 0.065], 95% CI [0.000, 0.083]",
+  "n_after_exclusions": 75,
+  "minutes": 3
+ },
+ "tokens_total_from_agent": 96668,
+ "agent_tool_uses": 7,
+ "agent_duration_s": 91
+}

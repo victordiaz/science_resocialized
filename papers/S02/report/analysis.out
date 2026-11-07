@@ -1,0 +1,52 @@
+d07 shape (32, 5)
+       vpnum  meanRT_hit  meanRT_cr  meanRT_fa  meanRT_miss
+count   32.0        32.0       32.0       30.0         32.0
+mean    16.5      1435.5     1566.0     1486.5       1508.1
+std      9.4       296.9      314.0      314.1        325.9
+min      1.0       966.2     1088.7     1009.0       1005.6
+25%      8.8      1222.0     1354.0     1254.7       1226.0
+50%     16.5      1380.0     1460.2     1426.7       1498.2
+75%     24.2      1574.1     1735.0     1647.0       1631.9
+max     32.0      2340.7     2456.5     2387.2       2244.7
+missing in key cols: {'meanRT_cr': 0, 'meanRT_miss': 0}
+--- PRIMARY: d07.dat, paired t, meanRT_cr vs meanRT_miss
+n = 32; mean CR = 1566.0 (SD 314.0); mean miss = 1508.1 (SD 325.9)
+mean diff CR - miss = 57.89 ms, SD diff = 136.57, 95% CI [8.65, 107.13]
+t(31) = 2.398, p (two-sided) = 0.0227; dz = 0.424, 95% CI [0.059, 0.783]
+participants with CR > miss: 22/32; Wilcoxon W = 142.0, p = 0.0216
+
+test trials per participant: [100]
+SDT_category      0.0   1.0   2.0  3.0  4.0
+word_type rating                           
+0.0       0.0       0  1299     0    0    0
+          1.0       0     0     0    0  301
+          NaN       0     0     0    0    0
+1.0       0.0       0     0     0  278    0
+          1.0       0     0  1319    0    0
+          NaN       3     0     0    0    0
+meanRT_hit matches SDT code: [1.0]
+meanRT_cr matches SDT code: [2.0]
+meanRT_fa matches SDT code: [3.0]
+meanRT_miss matches SDT code: [4.0]
+
+study-phase misidentifications: 42 | test-phase misidentifications: 42 | studied test words misidentified at study: 29 | test trials with tresp >= 3750 (no response): 4
+studied (non-filler) words per participant found among test old items: [50]
+trials per participant after filter: miss min/median 1.0 8.0 | CR min/median 26.0 42.0
+--- ROBUSTNESS A: trial-level, identification filter (protocol)
+n = 31; mean CR = 1574.2 (SD 318.2); mean miss = 1515.4 (SD 328.9)
+mean diff CR - miss = 58.84 ms, SD diff = 135.01, 95% CI [9.32, 108.36]
+t(30) = 2.427, p (two-sided) = 0.0215; dz = 0.436, 95% CI [0.064, 0.801]
+participants with CR > miss: 20/31; Wilcoxon W = 131.0, p = 0.0209
+--- ROBUSTNESS B: as A, plus no-response trials (tresp >= 3750) dropped
+n = 31; mean CR = 1573.2 (SD 315.3); mean miss = 1515.4 (SD 328.9)
+mean diff CR - miss = 57.84 ms, SD diff = 133.64, 95% CI [8.82, 106.85]
+t(30) = 2.410, p (two-sided) = 0.0223; dz = 0.433, 95% CI [0.061, 0.798]
+participants with CR > miss: 20/31; Wilcoxon W = 131.0, p = 0.0209
+--- ROBUSTNESS C: per-participant median RT, no filter
+n = 32; mean CR = 1518.1 (SD 307.2); mean miss = 1461.4 (SD 321.7)
+mean diff CR - miss = 56.72 ms, SD diff = 121.15, 95% CI [13.04, 100.40]
+t(31) = 2.648, p (two-sided) = 0.0126; dz = 0.468, 95% CI [0.099, 0.830]
+participants with CR > miss: 22/32; Wilcoxon W = 133.0, p = 0.0143
+
+miss trials per participant (unfiltered): min 2 median 8.0
+figure written

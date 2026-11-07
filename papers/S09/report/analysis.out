@@ -1,0 +1,76 @@
+Rows: 32
+Q1 (n languages fluent) by Group:
+ Q1     1.0  2.0
+Group          
+1.0     18    0
+2.0      0   14
+Complete cases: 32 {'monolingual': 18, 'bilingual': 14}
+
+Cell means (SD) of T2|T1:
+grp                   bilingual  monolingual
+Lag1_T2_correct mean      0.788        0.763
+                std       0.242        0.162
+Lag3_T2_correct mean      0.491        0.513
+                std       0.200        0.166
+Lag5_T2_correct mean      0.480        0.471
+                std       0.187        0.200
+Lag8_T2_correct mean      0.584        0.558
+                std       0.224        0.189
+
+=== PRIMARY (all participants, no exclusions): n = 32 ({'monolingual': np.int64(18), 'bilingual': np.int64(14)}) ===
+Manual: SS_int=0.01190 SS_err=0.93886 F(3,90)=0.380 p_unc=0.7674
+GG epsilon=0.7760; GG df=(2.33, 69.84); p_GG=0.7165
+partial eta^2 = 0.0125; 90% CI (noncentral F, GG df) = [0.0000, 0.0550]
+pingouin mixed_anova (cross-check):
+        Source      SS  DF1  DF2      MS        F   p_unc  p_GG_corr     np2    eps sphericity  W_spher  p_spher
+0          grp  0.0029    1   30  0.0029   0.0238  0.8783        NaN  0.0008    NaN        NaN      NaN      NaN
+1          lag  1.7527    3   90  0.5842  56.0068  0.0000     0.0000  0.6512  0.776      False   0.5065   0.0015
+2  Interaction  0.0119    3   90  0.0040   0.3803  0.7674     0.7165  0.0125  0.776      False   0.5065   0.0015
+Mauchly (pingouin, ignoring group): SpherResults(spher=False, W=np.float64(0.5180306458392292), chi2=np.float64(19.548926055119814), dof=5, pval=np.float64(0.001528517284918998))
+
+Check: lag 3 mono 0.513 vs bi 0.491, Welch t=0.333, p=0.7421
+  lag 1: mono - bi = -0.025
+  lag 3: mono - bi = +0.022
+  lag 5: mono - bi = -0.009
+  lag 8: mono - bi = -0.027
+
+=== SENSITIVITY (without 24145): n = 31 ({'monolingual': np.int64(18), 'bilingual': np.int64(13)}) ===
+Manual: SS_int=0.01848 SS_err=0.85359 F(3,87)=0.628 p_unc=0.5989
+GG epsilon=0.7899; GG df=(2.37, 68.72); p_GG=0.5629
+partial eta^2 = 0.0212; 90% CI (noncentral F, GG df) = [0.0000, 0.0770]
+pingouin mixed_anova (cross-check):
+        Source      SS  DF1  DF2      MS        F   p_unc  p_GG_corr     np2     eps sphericity  W_spher  p_spher
+0          grp  0.0699    1   29  0.0699   0.7875  0.3822        NaN  0.0264     NaN        NaN      NaN      NaN
+1          lag  1.8185    3   87  0.6062  61.7834  0.0000     0.0000  0.6806  0.7899      False   0.5463    0.005
+2  Interaction  0.0185    3   87  0.0062   0.6279  0.5989     0.5629  0.0212  0.7899      False   0.5463    0.005
+Mauchly (pingouin, ignoring group): SpherResults(spher=False, W=np.float64(0.5539767222962253), chi2=np.float64(16.964281094305274), dof=5, pval=np.float64(0.004593548535119976))
+
+Bilingual ages (Q15 English, Q16/Q17 other):
+       Code                           Q15                           Q16 Q17   late
+0   10111.0                            21                             2       True
+4   18220.0                             6                                 1  False
+6   20275.0                             2                                 4  False
+9   24145.0                             7                                 2  False
+12  24691.0                             6                                 3  False
+15  26767.0                            10                                 3  False
+18  28042.0                            ２８                                 １   True
+21  30904.0                            10                                 1  False
+22  30982.0                             3                                 0  False
+25  31141.0                            12                                 1  False
+26  31300.0                            12                                 2  False
+27  31798.0                            22                                 1   True
+29  31996.0                            15                                 0   True
+31  32209.0  Since I started speaking. 2+  Since I started speaking. 2+      False
+
+=== EXPLORATORY (without 4 late-L2 bilinguals): n = 28 ({'monolingual': np.int64(18), 'bilingual': np.int64(10)}) ===
+Manual: SS_int=0.00501 SS_err=0.82354 F(3,78)=0.158 p_unc=0.9240
+GG epsilon=0.7493; GG df=(2.25, 58.45); p_GG=0.8765
+partial eta^2 = 0.0061; 90% CI (noncentral F, GG df) = [0.0000, 0.0310]
+pingouin mixed_anova (cross-check):
+        Source      SS  DF1  DF2      MS        F   p_unc  p_GG_corr     np2     eps sphericity  W_spher  p_spher
+0          grp  0.0002    1   26  0.0002   0.0016  0.9685        NaN  0.0001     NaN        NaN      NaN      NaN
+1          lag  1.3956    3   78  0.4652  44.0609  0.0000     0.0000  0.6289  0.7493      False   0.4691   0.0022
+2  Interaction  0.0050    3   78  0.0017   0.1583  0.9240     0.8765  0.0061  0.7493      False   0.4691   0.0022
+Mauchly (pingouin, ignoring group): SpherResults(spher=False, W=np.float64(0.47441373548367666), chi2=np.float64(19.180430359454682), dof=5, pval=np.float64(0.0017945040277616761))
+
+Figure saved: papers/S09/report/fig_lag.png

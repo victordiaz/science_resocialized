@@ -1,0 +1,39 @@
+{
+ "study": "S10",
+ "state": "pdf rendered",
+ "backend": "attached",
+ "model": "opus",
+ "pid": null,
+ "started_at": "2026-11-07T16:58:55+0100",
+ "t0": 1794067135.857976,
+ "sandbox": "/Users/vladnicolescu/Developer/science-resocialized-target/env/runs/S10",
+ "turns": 0,
+ "tool_calls": 0,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "cache_read": 0,
+  "cache_create": 0
+ },
+ "cost_usd": null,
+ "last_tool": null,
+ "budget_usd": 20.0,
+ "elapsed_s": 117,
+ "note": "attached run: an Opus subagent of the bench session worked in the sealed sandbox; 96,066 tokens over 9 tool calls; the cost is not reported by that backend",
+ "finished_at": "2026-11-07T17:00:53+0100",
+ "exit_code": 0,
+ "minutes": 2.0,
+ "conclusion": {
+  "study": "S10",
+  "holds": "no",
+  "primary_test": "Two-sided paired t-test of per-participant mean naming RT, congruent vs incongruent, object-naming group (F1), after dropping error trials and trials beyond +/-3 SD of each participant's mean",
+  "statistic": "t(11) = -1.88",
+  "p": "0.087",
+  "effect_size": "dz = -0.54, 95% CI [-1.14, 0.08]; mean difference -12.3 ms, 95% CI [-26.6, 2.1]",
+  "n_after_exclusions": 12,
+  "minutes": 2
+ },
+ "tokens_total_from_agent": 96066,
+ "agent_tool_uses": 9,
+ "agent_duration_s": 100
+}

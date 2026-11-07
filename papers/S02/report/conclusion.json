@@ -1,0 +1,1 @@
+{"study": "S02", "holds": "yes", "primary_test": "Two-sided paired t-test of per-participant mean identification RT, correct rejections vs misses (d07.dat meanRT_cr vs meanRT_miss)", "statistic": "t(31) = 2.40", "p": "0.023", "effect_size": "dz = 0.42, 95% CI [0.06, 0.78]; mean CR - miss = 57.9 ms, 95% CI [8.7, 107.1]", "n_after_exclusions": 32, "minutes": 5}

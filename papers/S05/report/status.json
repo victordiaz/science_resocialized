@@ -1,0 +1,39 @@
+{
+ "study": "S05",
+ "state": "pdf rendered",
+ "backend": "attached",
+ "model": "opus",
+ "pid": null,
+ "started_at": "2026-11-07T16:56:41+0100",
+ "t0": 1794067001.642097,
+ "sandbox": "/Users/vladnicolescu/Developer/science-resocialized-target/env/runs/S05",
+ "turns": 0,
+ "tool_calls": 0,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "cache_read": 0,
+  "cache_create": 0
+ },
+ "cost_usd": null,
+ "last_tool": null,
+ "budget_usd": 20.0,
+ "elapsed_s": 114,
+ "note": "attached run: an Opus subagent of the bench session worked in the sealed sandbox; 92,206 tokens over 7 tool calls; the cost is not reported by that backend",
+ "finished_at": "2026-11-07T16:58:36+0100",
+ "exit_code": 0,
+ "minutes": 1.9,
+ "conclusion": {
+  "study": "S05",
+  "holds": "yes",
+  "primary_test": "Full-factorial fixed-effects ANOVA (measure x target x SOA, participant not in model, Type III), three-way interaction",
+  "statistic": "F(18, 660) = 12.98",
+  "p": "3.3e-33",
+  "effect_size": "partial eta squared = 0.26, 95% CI [0.19, 0.30]",
+  "n_after_exclusions": 720,
+  "minutes": 2
+ },
+ "tokens_total_from_agent": 92206,
+ "agent_tool_uses": 7,
+ "agent_duration_s": 88
+}

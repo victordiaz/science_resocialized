@@ -1,0 +1,39 @@
+{
+ "study": "S12",
+ "state": "pdf rendered",
+ "backend": "attached",
+ "model": "opus",
+ "pid": null,
+ "started_at": "2026-11-07T16:59:22+0100",
+ "t0": 1794067162.723409,
+ "sandbox": "/Users/vladnicolescu/Developer/science-resocialized-target/env/runs/S12",
+ "turns": 0,
+ "tool_calls": 0,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "cache_read": 0,
+  "cache_create": 0
+ },
+ "cost_usd": null,
+ "last_tool": null,
+ "budget_usd": 20.0,
+ "elapsed_s": 117,
+ "note": "attached run: an Opus subagent of the bench session worked in the sealed sandbox; 94,076 tokens over 9 tool calls; the cost is not reported by that backend",
+ "finished_at": "2026-11-07T17:01:20+0100",
+ "exit_code": 0,
+ "minutes": 2.0,
+ "conclusion": {
+  "study": "S12",
+  "holds": "no",
+  "primary_test": "Welch two-sample t-test of imppref, new-pair (rateorig 0) vs original-pair (rateorig 1) raters, two-sided",
+  "statistic": "t(3511.1) = -6.31",
+  "p": "3.2e-10",
+  "effect_size": "Cohen's d = -0.21, 95% CI [-0.28, -0.15]",
+  "n_after_exclusions": 3597,
+  "minutes": 4
+ },
+ "tokens_total_from_agent": 94076,
+ "agent_tool_uses": 9,
+ "agent_duration_s": 99
+}

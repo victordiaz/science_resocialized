@@ -1,0 +1,39 @@
+{
+ "study": "S07",
+ "state": "pdf rendered",
+ "backend": "attached",
+ "model": "opus",
+ "pid": null,
+ "started_at": "2026-11-07T16:56:53+0100",
+ "t0": 1794067013.372781,
+ "sandbox": "/Users/vladnicolescu/Developer/science-resocialized-target/env/runs/S07",
+ "turns": 0,
+ "tool_calls": 0,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "cache_read": 0,
+  "cache_create": 0
+ },
+ "cost_usd": null,
+ "last_tool": null,
+ "budget_usd": 20.0,
+ "elapsed_s": 129,
+ "note": "attached run: an Opus subagent of the bench session worked in the sealed sandbox; 97,304 tokens over 7 tool calls; the cost is not reported by that backend",
+ "finished_at": "2026-11-07T16:59:02+0100",
+ "exit_code": 0,
+ "minutes": 2.2,
+ "conclusion": {
+  "study": "S07",
+  "holds": "no",
+  "primary_test": "Meng, Rosenthal & Rubin (1992) contrast of correlated correlations (polydrug with KS, KC, RS, RC; Fisher z; weights +1,-1,+1,-1 = sunny minus cloudy; r_x = median inter-correlation 0.389)",
+  "statistic": "Z = 1.248",
+  "p": "0.212",
+  "effect_size": "mean sunny-minus-cloudy Fisher z difference = 0.080, bootstrap 95% CI [-0.076, 0.229]; r_contrast = 0.10",
+  "n_after_exclusions": 153,
+  "minutes": 12
+ },
+ "tokens_total_from_agent": 97304,
+ "agent_tool_uses": 7,
+ "agent_duration_s": 101
+}

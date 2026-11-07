@@ -1,0 +1,22 @@
+sha256 2d7d95aad8249c6042edc2f21161b0eb48584c41d8d7d6fcb400f42fa1488a2c
+rows 61 Cond counts {1: 32, 2: 29}
+missing Cond/Attempted/Correct: {'Cond': 0, 'Attempted': 0, 'Correct': 0}
+Attempted==0: 0  Correct>Attempted: 0
+duplicate Subject ids: 7
+max |prop - percent|: 4.285714561014231e-10
+N after exclusions 61
+     Attempted                  Correct                  prop                
+         count     mean     std   count    mean     std count    mean     std
+Cond                                                                         
+1           32  11.1250  6.2823      32  4.9062  2.6683    32  0.4662  0.1688
+2           29  10.3448  5.1010      29  6.0690  3.4737    29  0.5835  0.2236
+
+PRIMARY Student t (control - practice): t(59) = 2.325, one-tailed p = 0.0118, two-tailed p = 0.0235
+mean diff = 0.1173, 95% CI [0.0164, 0.2182]
+Cohen's d = 0.596, 95% CI [0.080, 1.108]
+
+Check Welch: t = 2.294, one-tailed p = 0.0129
+Check Mann-Whitney U = 605.5, one-tailed p = 0.0207
+Levene p = 0.0905  Shapiro p (ctrl, prac) = 0.637 0.2383
+Exploratory Attempted: control 10.34 vs practice 11.12, t(59) = -0.529, two-tailed p = 0.5988
+Exploratory Correct: control 6.07 vs practice 4.91, t(59) = 1.474, two-tailed p = 0.1458

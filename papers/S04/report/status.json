@@ -1,0 +1,39 @@
+{
+ "study": "S04",
+ "state": "pdf rendered",
+ "backend": "attached",
+ "model": "opus",
+ "pid": null,
+ "started_at": "2026-11-07T16:54:47+0100",
+ "t0": 1794066887.010638,
+ "sandbox": "/Users/vladnicolescu/Developer/science-resocialized-target/env/runs/S04",
+ "turns": 0,
+ "tool_calls": 0,
+ "tokens": {
+  "input": 0,
+  "output": 0,
+  "cache_read": 0,
+  "cache_create": 0
+ },
+ "cost_usd": null,
+ "last_tool": null,
+ "budget_usd": 20.0,
+ "elapsed_s": 105,
+ "note": "attached run: an Opus subagent of the bench session worked in the sealed sandbox; 93,933 tokens over 6 tool calls; the cost is not reported by that backend",
+ "finished_at": "2026-11-07T16:56:32+0100",
+ "exit_code": 0,
+ "minutes": 1.8,
+ "conclusion": {
+  "study": "S04",
+  "holds": "yes",
+  "primary_test": "Two-sided one-sample t-test of 15 per-participant proportions of real colour triplets chosen (16 real trials each) against 0.5",
+  "statistic": "t(14) = 3.708",
+  "p": "0.0023",
+  "effect_size": "d = 0.96, 95% CI [0.33, 1.56]; mean proportion 0.700, 95% CI [0.584, 0.816]",
+  "n_after_exclusions": 15,
+  "minutes": 9
+ },
+ "tokens_total_from_agent": 93933,
+ "agent_tool_uses": 6,
+ "agent_duration_s": 75
+}

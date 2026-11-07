@@ -1,0 +1,11 @@
+[16:56:41] building sandbox /Users/vladnicolescu/Developer/science-resocialized-target/env/runs/S05
+[16:56:41] sandbox ok: 1 data files under neutral names; seal checked
+[16:56:41] attached mode: waiting for the report to appear in the sandbox
+[16:57:23] report/ now has: log.md
+[16:57:44] report/ now has: analysis.py, analysis.out
+[16:57:47] report/ now has: analysis.out
+[16:57:59] report/ now has: analysis.py, analysis.out, log.md
+[16:58:18] report/ now has: report.md, report.html
+[16:58:24] report/ now has: report.pdf
+[16:58:30] report/ now has: log.md, conclusion.json
+[16:58:36] done: pdf rendered, 1.9 min, cost None

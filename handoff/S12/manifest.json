@@ -1,0 +1,52 @@
+{
+ "bundle_version": 1,
+ "study": "S12",
+ "created_at": "2026-11-07T17:01:34+0100",
+ "files": {
+  "report.pdf": {
+   "sha256": "2c059c2d5e50dad448528bc09cafef9f0110cb38992cd2e9fc5f1ba26aef4f13",
+   "bytes": 146002
+  },
+  "report.md": {
+   "sha256": "f360311756d6d535cc2c1ef1c42afaa825abbc1181cac229a7225d93f25017f8",
+   "bytes": 2717
+  },
+  "log.md": {
+   "sha256": "c46bacd3cc4b498559492b79c71dfba22aeb42351dcc7d5c051e77737f9c453b",
+   "bytes": 3409
+  },
+  "card.md": {
+   "sha256": "275267bda7fa9b25649ff262f66d09bc9516745b5a51ef928b5a4dfb63fe00ea",
+   "bytes": 2594
+  }
+ },
+ "data_files": {
+  "d07.csv": {
+   "sha256": "d45b14f2dedaab393969443ca970a4562761b1c3c4aaa311345c8886df42e6a7",
+   "bytes": 3138067
+  },
+  "MANIFEST.json": {
+   "sha256": "8d22bfa7e66358cec261c8aeed7a63ff60626adbbe965a7f4d4f132adf35179d",
+   "bytes": 155
+  }
+ },
+ "data_included": true,
+ "researcher": {
+  "model": "opus",
+  "backend": "attached",
+  "cost_usd": null,
+  "tokens": {
+   "input": 0,
+   "output": 0,
+   "cache_read": 0,
+   "cache_create": 0
+  },
+  "turns": 0,
+  "tool_calls": 0,
+  "minutes": 2.0,
+  "started_at": "2026-11-07T16:59:22+0100",
+  "finished_at": "2026-11-07T17:01:20+0100"
+ },
+ "conclusion_stated": "no",
+ "reviewers_write_back": "verdicts/S12/<structure>/<reviewer>/round1.json and round2.json (see handoff/README.md)"
+}
