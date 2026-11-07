@@ -43,5 +43,11 @@
   "title": "How does bilingualism improve executive control? A comparison of active and reactive inhibition mechanisms.",
   "authors": "LS Colzato, MT Bajo, W van den Wildenberg, D Paolieri, S Nieuwenhuis, W La Heij, B Hommel",
   "journal": "JEPLMC"
+ },
+ "researcher_exposed": {
+  "study": "S09",
+  "run": "first and only run, 2026-11-07 evening",
+  "what": "ran before commit 72cb5b9; its data/ still held the E-Prime raw zip whose member names carry the paradigm label; the .sav the key test needs was given beside it",
+  "action": "kept; label exposure by file name only, no result in the zip"
  }
 }

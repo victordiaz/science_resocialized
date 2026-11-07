@@ -1,0 +1,87 @@
+Rows: 225  IDs: 75  missing PD: 0 
+                
+                 Flankers Weapons
+  HighIMSHighEMS       29      58
+  HighIMSLowEMS        46      92
+Participants per group:
+
+HighIMSHighEMS  HighIMSLowEMS 
+            29             46 
+d12 rows: 75 
+max |d12 weaponsBlack - d11|: 0 
+
+== Descriptives: mean (SD) PD by Group x Task (Weapons rows pooled) ==
+           Group     Task    PD.mean      PD.sd       PD.n
+1  HighIMSLowEMS  Weapons  0.7296664  0.1841336 92.0000000
+2 HighIMSHighEMS  Weapons  0.6729115  0.2232885 58.0000000
+3  HighIMSLowEMS Flankers  0.7029785  0.1824309 46.0000000
+4 HighIMSHighEMS Flankers  0.6754616  0.1477064 29.0000000
+
+By Group x TrialType:
+           Group          Cell PD.mean  PD.sd
+1  HighIMSLowEMS      Flankers  0.7030 0.1824
+2 HighIMSHighEMS      Flankers  0.6755 0.1477
+3  HighIMSLowEMS Weapons-Black  0.7426 0.1797
+4 HighIMSHighEMS Weapons-Black  0.7023 0.2141
+5  HighIMSLowEMS Weapons-White  0.7167 0.1895
+6 HighIMSHighEMS Weapons-White  0.6435 0.2320
+
+== PRIMARY: aov(PD ~ Group * Task + Error(ID/Task)) ==
+
+Error: ID
+          Df Sum Sq Mean Sq F value Pr(>F)
+Group      1  0.118 0.11792   1.454  0.232
+Residuals 73  5.920 0.08109               
+
+Error: ID:Task
+           Df Sum Sq Mean Sq F value Pr(>F)
+Task        1 0.0118 0.01183   0.505  0.480
+Group:Task  1 0.0101 0.01014   0.432  0.513
+Residuals  73 1.7115 0.02345               
+
+Error: Within
+          Df Sum Sq  Mean Sq F value Pr(>F)
+Residuals 75 0.4044 0.005392               
+
+Group x Task: F(1, 73) = 0.432, p = 0.5129, partial eta^2 = 0.0059, 90% CI [0.000, 0.065], 95% CI [0.000, 0.083]
+           Group         W         F         diff
+1  HighIMSLowEMS 0.7296664 0.7029785  0.026687908
+2 HighIMSHighEMS 0.6729115 0.6754616 -0.002550086
+Group difference (HI/LE - HI/HE): Weapons 0.0568, Flankers 0.0275; interaction contrast 0.0292
+
+== CHECK 1: 2x2 mixed ANOVA on Weapons mean vs Flankers ==
+
+Error: ID
+          Df Sum Sq Mean Sq F value Pr(>F)
+Group      1  0.063 0.06316   1.286  0.261
+Residuals 73  3.586 0.04913               
+
+Error: ID:Task
+           Df Sum Sq  Mean Sq F value Pr(>F)
+Task        1 0.0089 0.008873   0.505  0.480
+Group:Task  1 0.0076 0.007603   0.432  0.513
+Residuals  73 1.2837 0.017584               
+Equivalent t on (Weapons mean - Flankers): t(73) = 0.658, p = 0.5129, mean diff (HI/LE - HI/HE) = 0.0292, 95% CI [-0.0594, 0.1179]
+
+== CHECK 2: simple group effects per task (Welch) ==
+W: t(51.3) = 1.178, p = 0.2443, diff = 0.0568
+F: t(68.4) = 0.716, p = 0.4763, diff = 0.0275
+Weapons-Black: t(52.0) = 0.844, p = 0.4025, diff = 0.0403
+Weapons-White: t(50.9) = 1.425, p = 0.1603, diff = 0.0732
+
+== CHECK 3: nonparametric, Wilcoxon on difference score ==
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  diff by Group
+W = 733, p-value = 0.4761
+alternative hypothesis: true location shift is not equal to 0
+
+null device 
+          1 
+
+== PYTHON CROSS-CHECK: pingouin mixed_anova (Weapons mean vs Flankers) ==
+        Source      SS  DF1  DF2      MS       F   p_unc     np2  eps
+0      HiLoCat  0.0632    1   73  0.0632  1.2856  0.2606  0.0173  NaN
+1         Task  0.0089    1   73  0.0089  0.5046  0.4797  0.0069  1.0
+2  Interaction  0.0076    1   73  0.0076  0.4323  0.5129  0.0059  1.0

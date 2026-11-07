@@ -1,0 +1,42 @@
+N = 21
+listtype
+long-short    11
+short-long    10
+max |wide - recomputed from trials| = 0.0
+
+Cell means (SD):
+                        mean     std  count
+listtype   type                            
+long-short correct    0.8977  0.0860     11
+           intrusion  0.8523  0.1077     11
+           new        0.9503  0.0418     11
+short-long correct    0.8047  0.1145     10
+           intrusion  0.7359  0.2215     10
+           new        0.8797  0.1641     10
+
+Per-participant mean over the three types, by group:
+              mean     std  count
+listtype                         
+long-short  0.9001  0.0708     11
+short-long  0.8068  0.1440     10
+
+Manual (sequential) list-type effect: SS=0.13686, SS_err=0.71025, F(1,19)=3.6612, p=0.0709, pes=0.1616
+Type III list-type effect: SS=0.13686, SS_err=0.71025, F(1,19)=3.6612, p=0.0709, partial eta^2=0.1616
+90% CI partial eta^2: [0.0000, 0.3831]
+95% CI partial eta^2: [0.0000, 0.4252]
+Mean difference (long-short minus short-long) = 0.0933, 95% CI [-0.0088, 0.1954]; t(19)=1.9134 (t^2=3.6612)
+Hedges g = 0.8026
+
+Full mixed ANOVA (pingouin):
+        Source      SS  DF1  DF2      MS       F   p_unc  p_GG_corr     np2     eps sphericity  W_spher  p_spher
+0     listtype  0.1369    1   19  0.1369  3.6612  0.0709        NaN  0.1616     NaN        NaN      NaN      NaN
+1         type  0.1508    2   38  0.0754  9.5870  0.0004     0.0006  0.3354  0.9283       True   0.9228   0.4852
+2  Interaction  0.0055    2   38  0.0027  0.3483  0.7081     0.6925  0.0180  0.9283       True   0.9228   0.4852
+
+Secondary, new only: long-short M=0.9503, short-long M=0.8797; Student t(19)=1.3820, p=0.1830; Welch t=1.3223, p=0.2153
+Mann-Whitney U=80.5, p=0.0740
+
+Robustness (drop 106, lowest accuracy): F(1,18)=2.4883, p=0.1321
+Robustness, Mann-Whitney on subject means: U=78.5, p=0.1052
+
+figure written: papers/S24/report/fig1.png

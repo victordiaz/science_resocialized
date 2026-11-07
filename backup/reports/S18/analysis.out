@@ -1,0 +1,31 @@
+rows in file: 206
+Condition  1.0  2.0  All
+Include1                
+0.0         79   79  158
+1.0         25   23   48
+All        104  102  206
+
+After exclusions: n_ach=79, n_ctl=79, total=158
+Excluded (Include1==1) reasons:
+Condition  Excludetechknowledge  Exclude1  Include1Reason                        
+2.0        0.0                   0.0       (none given)                              17
+1.0        0.0                   0.0       (none given)                              16
+           1.0                   1.0       (none given)                               6
+2.0        1.0                   1.0       (none given)                               5
+1.0        1.0                   0.0       (none given)                               2
+2.0        0.0                   0.0       Greater than 4 S.D. from learning mean     1
+1.0        0.0                   0.0       Greater than 4 S.D. from learning mean     1
+achievement: mean=22.27 sd=51.31 median=23.91 n=79
+control: mean=33.11 sd=52.07 median=28.95 n=79
+
+PRIMARY Student t(156) = -1.318, p = 0.1894
+mean difference (ach - ctl) = -10.84 ms, 95% CI [-27.09, 5.40]
+Cohen's d (pooled SD = 51.69) = -0.210, 95% CI [-0.522, 0.103]
+
+Welch t = -1.318, p = 0.1894
+Mann-Whitney U = 2773.0, p = 0.2276
+Levene p = 0.3640
+Manipulation check, learning > 0 overall: mean=27.69, t(157)=6.72, p=3.2e-10
+Median-RT learning score: t = -1.843, p = 0.0672
+All with RT data (n=197): t = -1.708, p = 0.0892
+figure written: papers/S18/report/fig1.png

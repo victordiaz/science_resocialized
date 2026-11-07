@@ -1,0 +1,68 @@
+d06.txt: 80 trials, EN=40, NL=40
+d07.txt: 80 trials, EN=40, NL=40
+d08.txt: 80 trials, EN=40, NL=40
+d09.txt: 80 trials, EN=40, NL=40
+d10.txt: 80 trials, EN=40, NL=40
+d11.txt: 80 trials, EN=40, NL=40
+d12.txt: 80 trials, EN=40, NL=40
+d13.txt: 80 trials, EN=40, NL=40
+d14.txt: 80 trials, EN=40, NL=40
+d15.txt: 80 trials, EN=40, NL=40
+d16.txt: 80 trials, EN=40, NL=40
+d17.txt: 80 trials, EN=40, NL=40
+d18.txt: 80 trials, EN=40, NL=40
+d19.txt: 80 trials, EN=40, NL=40
+d20.txt: 80 trials, EN=40, NL=40
+d21.txt: 80 trials, EN=40, NL=40  -> identical trial data to d06.txt; dropped as duplicate
+d22.txt: 80 trials, EN=40, NL=40  -> identical trial data to d17.txt; dropped as duplicate
+
+Distinct participants: 15
+
+Per-participant DV (rounded to 3 decimals):
+ lang        EN            NL       
+length    long  short   long  short
+pid                                
+d06.txt  0.519  0.544  0.588  0.500
+d07.txt  0.700  0.594  0.600  0.581
+d08.txt  0.675  0.731  0.606  0.719
+d09.txt  0.488  0.469  0.481  0.738
+d10.txt  0.519  0.625  0.581  0.750
+d11.txt  0.550  0.525  0.669  0.394
+d12.txt  0.325  0.319  0.388  0.419
+d13.txt  0.600  0.656  0.688  0.719
+d14.txt  0.700  0.650  0.469  0.581
+d15.txt  0.725  0.738  0.806  0.656
+d16.txt  0.531  0.638  0.775  0.881
+d17.txt  0.400  0.512  0.525  0.625
+d18.txt  0.544  0.569  0.400  0.612
+d19.txt  0.606  0.456  0.762  0.725
+d20.txt  0.656  0.656  0.481  0.456
+
+Cell means (SD):
+  ('EN', 'long'): 0.569 (0.114)
+  ('EN', 'short'): 0.579 (0.112)
+  ('NL', 'long'): 0.588 (0.133)
+  ('NL', 'short'): 0.624 (0.138)
+
+=== PRIMARY: English short vs long, paired t, one-sided (short > long) ===
+
+[EN primary] n=15, mean diff=0.0096 (SD 0.0750), 95% CI [-0.0319, 0.0511]
+  t(14) = 0.496, one-sided p = 0.3139 (two-sided 0.6279), d_z = 0.128, 95% CI d_z [-0.383, 0.634]
+  participants with short > long: 8/15, equal: 1
+
+=== Robustness (not the basis of the conclusion) ===
+
+[EN unrounded DV] n=15, mean diff=0.0096 (SD 0.0751), 95% CI [-0.0320, 0.0512]
+  t(14) = 0.494, one-sided p = 0.3143 (two-sided 0.6287), d_z = 0.128, 95% CI d_z [-0.383, 0.634]
+  participants with short > long: 8/15, equal: 1
+  Wilcoxon signed-rank EN (one-sided): WilcoxonResult(statistic=np.float64(64.0), pvalue=np.float64(0.23505950229145722))
+
+[NL (exploratory)] n=15, mean diff=0.0358 (SD 0.1407), 95% CI [-0.0421, 0.1137]
+  t(14) = 0.986, one-sided p = 0.1705 (two-sided 0.341), d_z = 0.255, 95% CI d_z [-0.264, 0.765]
+  participants with short > long: 9/15, equal: 0
+
+[Language x length interaction] mean=-0.0262, t(14)=-0.746, two-sided p=0.4682
+
+Trial-level EN mean nr_correct/8 by length: {1: 0.5788, 2: 0.5692}
+
+figure written: fig1.png

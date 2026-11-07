@@ -35,12 +35,14 @@ A page reload loses nothing: the desks are in `env/state.json`, each run in `pap
 
 | File | What |
 |---|---|
-| `server.py` | the local web server: the page, `/api/state`, `/api/run`, `/api/stop`, `/api/handoff`, `/api/tail`, `/report/<study>/<file>`. Every finding path goes through `common.safe_finding_file`, which refuses sealed file names. |
-| `bench.html` | the page; no build step; fonts from Google Fonts as in `diagram/flow.html`, nothing else external |
+| `server.py` | the local web server: the page, `/api/state`, `/api/run`, `/api/stop`, `/api/handoff`, `/api/tail`, `/report/<study>/<file>`, `/api/reveal?id` (the two verdicts against `papers/<study>/sealed/`, allowed only once the panel's receipt under `handoff/<run>/receipts/<study>.json` carries a verdict; every read is logged to `env/reveal.log`), `POST /api/review` (the admin's manual review, written to `handoff/<run>/reviews/<study>.json` and `LOG.md`; it never changes a verdict). Every finding path goes through `common.safe_finding_file`, which refuses sealed file names. |
+| `bench.html` | the page (the Vivarium redesign ported from `design/`): the masthead with the thirty ticks, the desks, the wall, the findings cells and the finding drawer with the two-verdict reveal and the admin's manual review (`?admin=1`); no build step; fonts from Google Fonts as in `diagram/flow.html`, nothing else external |
 | `run_researcher.py` | runs one researcher agent for one study in a sealed sandbox at `env/runs/<study>/` (see below); writes `report/status.json`, `report/runner.log`, `report/runner.jsonl`, `report/work.json`, `report/PROMPT.md`; syncs the agent's `report/` into `papers/<study>/report/`; renders `report.pdf` with `score/md2pdf.py`; records tokens and cost from the CLI's stream |
 | `handoff.py` | packs `handoff/<study>/` and updates `handoff/MANIFEST.json`; `--verify` recomputes the hashes; `--zip`; `--send <target>` (rsync to a path or host, or `tailscale file cp`), writing `sent.json` |
 | `common.py` | paths, the card parser, the state of a finding from disk, `safe_finding_file` |
-| `state.json` | the bench's state: desks, runs and the transport target (git-ignored) |
+| `state.json` | the bench's state: desks, runs, the transport target and the run alias `run {alias, strategy, started_at}` (git-ignored) |
+| `handles.json` | a four-to-seven-word handle per study for the page, with no label from the literature |
+| `batch.py` | drives many runs from the bench: `queue`, `start`, `finish`, `status` |
 | `runs/` | the sandboxes (git-ignored) |
 
 ## The seal, as the runner enforces it

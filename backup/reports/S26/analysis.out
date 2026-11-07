@@ -1,0 +1,63 @@
+d04.sav sha256 ok
+d05.sav sha256 ok
+individual rows: 120
+missing GivePool_B: 0 | missing conditions: 0
+GivePool_B range: 0.0 10.0
+groups: 40 | sizes: {3: 40} | condition-consistent: True
+
+Cell counts:
+ comm      comm  none
+game                
+one-pool    10    10
+two-pool    10    10
+
+Cell means (SD) of group-mean GivePool_B (tokens of 10):
+                mean    std  count
+game     comm                     
+one-pool comm  5.167  3.746     10
+         none  5.133  1.390     10
+two-pool comm  1.233  1.707     10
+         none  1.833  0.820     10
+
+Game marginal means: {'mean': {'one-pool': 5.15, 'two-pool': 1.533}, 'std': {'one-pool': 2.75, 'two-pool': 1.339}, 'count': {'one-pool': 20, 'two-pool': 20}}
+
+max |group mean*10 - d04 Pool_B_Percent|: 0.003
+
+PRIMARY ANOVA (Type III):
+                              sum_sq    df        F  PR(>F)
+Intercept                  446.6694   1.0  91.3931  0.0000
+C(game, Sum)               130.8028   1.0  26.7636  0.0000
+C(comm, Sum)                 0.8028   1.0   0.1643  0.6877
+C(game, Sum):C(comm, Sum)    1.0028   1.0   0.2052  0.6533
+Residual                   175.9444  36.0      NaN     NaN
+
+KEY: game main effect F(1, 36) = 26.764, p = 8.837e-06, partial eta^2 = 0.426 [95% CI 0.169, 0.581]
+Two-pool minus one-pool difference in group-mean tokens to B = -3.617 [95% CI -5.034, -2.199] (ANOVA MSE); in % of endowment: -36.2 points
+Direction two-pool < one-pool: True
+
+Type I ANOVA (check):
+                    df    sum_sq   mean_sq        F  PR(>F)
+C(game)           1.0  130.8028  130.8028  26.7636  0.0000
+C(comm)           1.0    0.8028    0.8028   0.1643  0.6877
+C(game):C(comm)   1.0    1.0028    1.0028   0.2052  0.6533
+Residual         36.0  175.9444    4.8873      NaN     NaN
+
+Welch t (game, ignoring comm): TtestResult(statistic=np.float64(-5.288049077032113), pvalue=np.float64(1.3260899848197215e-05), df=np.float64(27.536264640764376))
+Mann-Whitney (game): MannwhitneyuResult(statistic=np.float64(40.0), pvalue=np.float64(1.462552972394583e-05))
+
+ANOVA on d04 Pool_B_Percent:
+                                sum_sq    df        F  PR(>F)
+Intercept                  44668.5039   1.0  91.3963  0.0000
+C(game, Sum)               13080.1572   1.0  26.7633  0.0000
+C(comm, Sum)                  80.2872   1.0   0.1643  0.6876
+C(game, Sum):C(comm, Sum)    100.2672   1.0   0.2052  0.6533
+Residual                   17594.4291  36.0      NaN     NaN
+
+Levene (4 cells): LeveneResult(statistic=np.float64(5.093052109181143), pvalue=np.float64(0.004846132578493809))
+Shapiro on residuals: ShapiroResult(statistic=np.float64(0.9479383793493388), pvalue=np.float64(0.06441650660108784))
+
+Individual-level OLS, group-clustered SE (game term): {'C(game, Sum)[S.one-pool]': 1.808, 'C(game, Sum)[S.one-pool]:C(comm, Sum)[S.1.0]': -0.158} {'C(game, Sum)[S.one-pool]': 0.0, 'C(game, Sum)[S.one-pool]:C(comm, Sum)[S.1.0]': 0.6416}
+
+(Secondary) Pool W by communication, two-pool only: {'comm': 4.867, 'none': 3.5} TtestResult(statistic=np.float64(1.1776402493848905), pvalue=np.float64(0.25427662310496646), df=np.float64(18.0))
+
+figure written

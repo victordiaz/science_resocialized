@@ -1,0 +1,30 @@
+rows 22481 subjects 71
+ACC values [1] RT range 203 2998
+max |z| (per subject x word/nonword) in file: 4.715 | trials beyond 2.5 SD if re-trimmed: 598
+TRIM applied: True | word trials before 11816 after 11457 | nonword trials removed 
+correct word trials by ldtfreq: {1: 6210, 2: 5247}
+mean RT by ldtfreq (check: HF should be faster): {1: 814.8, 2: 907.2}
+cells 284 trials per cell: min 18 median 41.0 | QMLE converged 284 | ML converged 284
+
+=== PRIMARY: mu by quantile ML (decile bins): n = 71
+cell means: {'HF clear': np.float64(560.8), 'LF clear': np.float64(578.5), 'HF degraded': np.float64(679.2), 'LF degraded': np.float64(783.8)}
+quality (deg - clear): contrast = 161.84 ms [95% CI 93.14, 230.55], F(1,70) = 22.073, p = 1.272e-05, partial eta^2 = 0.2397 [95% CI 0.0843, 0.3905]
+frequency (LF - HF): contrast = 61.17 ms [95% CI 35.10, 87.25], F(1,70) = 21.896, p = 1.364e-05, partial eta^2 = 0.2383 [95% CI 0.0833, 0.3891]
+interaction (LF-HF)deg - (LF-HF)clear: contrast = 86.87 ms [95% CI 35.58, 138.17], F(1,70) = 11.410, p = 0.001196, partial eta^2 = 0.1402 [95% CI 0.0239, 0.2886]
+frequency effect clear = 17.74, degraded = 104.61
+
+=== Robustness: mu by continuous ML: n = 71
+cell means: {'HF clear': np.float64(552.4), 'LF clear': np.float64(585.1), 'HF degraded': np.float64(689.1), 'LF degraded': np.float64(820.3)}
+quality (deg - clear): contrast = 185.98 ms [95% CI 113.65, 258.31], F(1,70) = 26.297, p = 2.494e-06, partial eta^2 = 0.2731 [95% CI 0.1096, 0.4218]
+frequency (LF - HF): contrast = 81.96 ms [95% CI 55.77, 108.16], F(1,70) = 38.937, p = 2.94e-08, partial eta^2 = 0.3574 [95% CI 0.1824, 0.4972]
+interaction (LF-HF)deg - (LF-HF)clear: contrast = 98.40 ms [95% CI 44.32, 152.47], F(1,70) = 13.169, p = 0.0005373, partial eta^2 = 0.1583 [95% CI 0.0330, 0.3084]
+frequency effect clear = 32.76, degraded = 131.16
+
+=== Secondary: mean RT: n = 71
+cell means: {'HF clear': np.float64(723.0), 'LF clear': np.float64(823.1), 'HF degraded': np.float64(934.5), 'LF degraded': np.float64(1021.2)}
+quality (deg - clear): contrast = 204.82 ms [95% CI 153.36, 256.27], F(1,70) = 63.018, p = 2.372e-11, partial eta^2 = 0.4738 [95% CI 0.3004, 0.5946]
+frequency (LF - HF): contrast = 93.42 ms [95% CI 78.68, 108.16], F(1,70) = 159.819, p = 9.638e-20, partial eta^2 = 0.6954 [95% CI 0.5693, 0.7691]
+interaction (LF-HF)deg - (LF-HF)clear: contrast = -13.34 ms [95% CI -37.01, 10.33], F(1,70) = 1.264, p = 0.2647, partial eta^2 = 0.0177 [95% CI 0.0000, 0.1170]
+frequency effect clear = 100.09, degraded = 86.75
+
+PRIMARY RESULT: F(1, 70) = 11.41, p = 0.001196, partial eta^2 = 0.140, contrast = 86.9 ms

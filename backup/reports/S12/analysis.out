@@ -1,0 +1,28 @@
+rows 4267
+exppref NA: 322
+d NA: 434
+fastpct10 NA: 77
+alltrials NA: 77
+rateorig NA: 113
+imppref NA: 448
+exclude exppref NA: 322 -> 3945 left
+exclude d NA: 285 -> 3660 left
+exclude fastpct10 == 1: 1 -> 3659 left
+exclude alltrials != 200: 62 -> 3597 left
+exclude rateorig NA: 0 -> 3597 left
+exclude imppref NA: 0 -> 3597 left
+N analysed 3597
+rateorig counts {1.0: 1959, 0.0: 1638}
+new pair (rateorig 0): n=1638 mean=0.0498 sd=0.4696 vs0 t=4.29 p=1.85e-05
+original pair (rateorig 1): n=1959 mean=0.1502 sd=0.4814 vs0 t=13.81 p=1.87e-41
+PRIMARY Welch t(3511.1) = -6.309, p = 3.15e-10; mean diff (new-orig) = -0.1003 [-0.1315, -0.0692]
+Cohen d (pooled) = -0.211, 95% CI [-0.277, -0.145]
+TOST +/-0.2 d: p = 0.626
+Student t(3595) = -6.295, p = 3.44e-10
+Mann-Whitney U = 1399857, p = 4.25e-11
+ratio of means new/orig 0.3318542223206591
+self-report exppref: new mean=0.191 orig mean=1.087; Welch t=-22.77 p=2.74e-107
+raw rateorig counts {1.0: 2208, 0.0: 1946, nan: 113}
+binomial test of analysed group sizes vs 50/50: p = 9.35e-08
+exclusion rate by group (among rows with rateorig): {0.0: 0.158, 1.0: 0.113}
+figure written fig1.png

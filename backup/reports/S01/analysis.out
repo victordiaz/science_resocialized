@@ -1,0 +1,48 @@
+Rows in file: 132
+Condition counts (all): {0.0: 69, 1.0: 63}
+Max |stored mean_vignettes - recomputed|: 0.0
+Madeup_dummy==1: 4  Exp_Error==1: 3  both: 1  either: 6
+N after exclusions: 126
+Excluded by condition: {0.0: 1, 1.0: 5}
+
+######## PRIMARY TEST ########
+
+== Primary: pre-registered exclusions, ANOVA of mean_vignettes by Condition ==
+No wash (0): n=68 M=5.654 SD=0.593
+Wash    (1): n=58 M=5.658 SD=0.680
+Mean diff (wash - no wash) = 0.004
+ANOVA F(1, 124) = 0.001, p = 0.9745;  t(124) = 0.032, p = 0.9745
+Cohen's d (pooled, wash - no wash) = 0.006, 95% CI noncentral-t [-0.345, 0.356], normal-approx [-0.345, 0.356]
+Levene F = 0.439, p = 0.5091
+Shapiro p (no wash, wash): 0.3013 0.0602
+
+######## ROBUSTNESS (not the conclusion) ########
+Welch t = 0.032, p = 0.9748
+Mann-Whitney U = 2031.0, p = 0.7738
+One-sided Student t p (wash < no wash) = 0.5128
+
+== No exclusions (N=132) ==
+No wash (0): n=69 M=5.640 SD=0.601
+Wash    (1): n=63 M=5.611 SD=0.701
+Mean diff (wash - no wash) = -0.029
+ANOVA F(1, 130) = 0.065, p = 0.7985;  t(130) = -0.256, p = 0.7985
+Cohen's d (pooled, wash - no wash) = -0.045, 95% CI noncentral-t [-0.386, 0.297], normal-approx [-0.386, 0.297]
+
+== Pre-registered exclusions + Final_Rating == 0 (no suspicion) ==
+No wash (0): n=46 M=5.652 SD=0.623
+Wash    (1): n=38 M=5.601 SD=0.700
+Mean diff (wash - no wash) = -0.051
+ANOVA F(1, 82) = 0.126, p = 0.7235;  t(82) = -0.355, p = 0.7235
+Cohen's d (pooled, wash - no wash) = -0.078, 95% CI noncentral-t [-0.507, 0.352], normal-approx [-0.508, 0.352]
+
+Per-item (pre-registered exclusions), wash - no wash:
+  Dog      M0=5.84 M1=5.97 diff=+0.13 t(124)=+0.49 p=0.622
+  Trolley  M0=3.46 M1=3.57 diff=+0.11 t(124)=+0.45 p=0.651
+  Wallet   M0=6.12 M1=5.97 diff=-0.15 t(124)=-0.63 p=0.529
+  Plane    M0=6.29 M1=6.05 diff=-0.24 t(124)=-1.10 p=0.274
+  Resume   M0=5.74 M1=5.97 diff=+0.23 t(124)=+1.03 p=0.304
+  Kitten   M0=6.49 M1=6.43 diff=-0.05 t(124)=-0.30 p=0.761
+
+Disgusted rating by condition (manipulation context): {'mean': {0.0: 18.69, 1.0: 18.45}, 'std': {0.0: 3.06, 1.0: 4.2}, 'count': {0.0: 68, 1.0: 58}}
+
+Figure written: fig1.png

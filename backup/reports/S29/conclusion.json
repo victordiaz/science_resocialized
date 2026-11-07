@@ -1,0 +1,1 @@
+{"study": "S29", "holds": "no", "primary_test": "Pearson correlation ERN vs EPS across participants, one-tailed (negative)", "statistic": "r(40) = -0.253, t(40) = -1.66", "p": "0.053 (one-tailed)", "effect_size": "r = -0.253, 95% CI [-0.517, 0.055]", "n_after_exclusions": 42, "minutes": 3}

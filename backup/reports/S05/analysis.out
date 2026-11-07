@@ -1,0 +1,55 @@
+rows 720 missing 0
+levels: {'measure': [1, 2, 3], 'target': [1, 2], 'SOA': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 'subject': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]}
+cell counts unique: [12]
+
+Means by measure x target (over SOA, subjects):
+target        1       2
+measure                
+1        0.1254  0.0936
+2        0.0939  0.2543
+3        1.1661  2.0071
+
+Cell means measure x target x SOA:
+SOA                1      2      3      4      5      6      7      8      9      10
+measure target                                                                      
+1       1       0.124  0.126  0.128  0.124  0.124  0.125  0.125  0.127  0.127  0.124
+        2       0.098  0.097  0.084  0.078  0.076  0.084  0.096  0.099  0.110  0.113
+2       1       0.238  0.206  0.098  0.082  0.102 -0.021  0.076  0.061  0.078  0.019
+        2      -0.216 -0.623 -0.819 -0.143  0.441  1.128  0.922  0.657  0.682  0.515
+3       1       1.419  0.912  1.298  1.265  1.181  1.107  1.235  1.067  1.121  1.057
+        2       1.752  1.982  3.246  4.247  2.171  1.266  1.396  1.454  1.179  1.378
+
+PRIMARY: Type III ANOVA (fixed effects, participant not in model)
+                                               sum_sq     df          F   PR(>F)
+Intercept                                   279.81612    1.0  983.74496  0.00000
+C(measure, Sum)                             334.48537    2.0  587.97238  0.00000
+C(target, Sum)                               18.80186    1.0   66.10138  0.00000
+C(SOA, Sum)                                  11.25987    9.0    4.39846  0.00001
+C(measure, Sum):C(target, Sum)               25.24295    2.0   44.37311  0.00000
+C(measure, Sum):C(SOA, Sum)                  69.80069   18.0   13.63318  0.00000
+C(target, Sum):C(SOA, Sum)                   10.33982    9.0    4.03906  0.00005
+C(measure, Sum):C(target, Sum):C(SOA, Sum)   66.46837   18.0   12.98232  0.00000
+Residual                                    187.73020  660.0        NaN      NaN
+
+Three-way measure x target x SOA: F(18, 660) = 12.982, p = 3.3e-33, partial eta^2 = 0.2615, 95% CI [0.1879, 0.2957]
+
+CHECK z-scored within measure: three-way F(18, 660) = 10.184, p = 1.59e-25
+
+CHECK per measure, target x SOA (fixed-effects, Type III):
+  measure 1: F(9, 220) = 1.977, p = 0.0431
+  measure 2: F(9, 220) = 12.573, p = 4.69e-16
+  measure 3: F(9, 220) = 8.963, p = 1.68e-11
+
+CHECK repeated-measures ANOVA (R aov with Error strata), three-way stratum:
+                    Df Sum Sq Mean Sq F value Pr(>F)    
+measure:target:SOA  18  66.47   3.693   16.87 <2e-16 ***
+Residuals          198  43.33   0.219                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+z-scored:
+                    Df Sum Sq Mean Sq F value Pr(>F)    
+measure:target:SOA  18 103.72   5.762   14.75 <2e-16 ***
+Residuals          198  77.35   0.391                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+

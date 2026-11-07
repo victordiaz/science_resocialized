@@ -1,0 +1,43 @@
+trial rows: 20722 | rows with missing id (dropped): 150
+exact duplicate rows (all columns): 0
+participants with casting scores: 161 | missing any condition: 0
+drug questionnaire: participants 153 | classes 11
+check KS: max |raw - cleaned| = 0.0000
+check KC: max |raw - cleaned| = 0.0000
+check RS: max |raw - cleaned| = 0.0000
+check RC: max |raw - cleaned| = 0.0000
+check polydrug: n = 153 | max |raw - cleaned| = 0.0
+
+Sample: 161 with game data; 8 without a drug score dropped; N = 153 with all five values
+          count   mean    std    min    25%    50%    75%    max
+KS        153.0  50.30  16.90   4.45  39.11  50.00  62.00   92.0
+KC        153.0  39.77  15.08   7.94  28.83  39.14  47.93   91.0
+RS        153.0  38.45  15.18   9.31  27.22  35.75  48.65   86.1
+RC        153.0  37.90  16.80  10.36  26.14  35.71  47.00  108.0
+polydrug  153.0   6.93   4.39   0.00   4.00   6.00  10.00   25.0
+
+=== PRIMARY: Meng-Rosenthal-Rubin contrast, weights (+1,-1,+1,-1) on (KS,KC,RS,RC) ===
+  r(polydrug, KS) = 0.026  (z = 0.026, p = 0.7544)
+  r(polydrug, KC) = -0.046  (z = -0.046, p = 0.5743)
+  r(polydrug, RS) = -0.011  (z = -0.011, p = 0.8883)
+  r(polydrug, RC) = -0.099  (z = -0.100, p = 0.2220)
+  inter-correlations of casting scores:
+ [[1.    0.334 0.552 0.244]
+ [0.334 1.    0.377 0.401]
+ [0.552 0.377 1.    0.469]
+ [0.244 0.401 0.469 1.   ]]
+  r_x (median inter-corr) = 0.389; mean r^2 = 0.0032; f = 0.307; h = 1.0022
+  N = 153; Z = 1.248; two-sided p = 0.2121
+  contrast (mean z sunny - mean z cloudy) = 0.080, 95% bootstrap CI [-0.076, 0.229] (5000 resamples)
+  r_contrast = Z/sqrt(N) = 0.101
+  mean r sunny = 0.007; mean r cloudy = -0.073
+
+=== Robustness (not primary) ===
+  Spearman (ranks) MRR Z = 0.756, p = 0.4498
+  log(1+polydrug) MRR Z = 0.814, p = 0.4155
+  practice rounds removed (N=153) MRR Z = 1.003, p = 0.3158; r = [ 0.02  -0.031 -0.002 -0.084]
+  cleaned file d10 as given (N=153) MRR Z = 1.248, p = 0.2121; r = [ 0.026 -0.046 -0.011 -0.099]
+  Keep only (KS-KC): z diff = 0.071
+  Release only (RS-RC): z diff = 0.088
+
+figure written: papers/S07/report/fig1.png

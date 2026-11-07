@@ -1,0 +1,1 @@
+{"study": "S03", "holds": "no", "primary_test": "One-way between-subjects ANOVA of the mixed-feelings index (mean of StrongMixed, -NotTorn, Indecisive-4) on Condition (0 neutral, 1 favour-only, 2 for-and-against), Include==1", "statistic": "F(2, 67) = 1.70", "p": "0.191", "effect_size": "eta^2 = 0.048, 95% CI [0.000, 0.158]", "n_after_exclusions": 70, "minutes": 3}

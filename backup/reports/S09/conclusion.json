@@ -1,0 +1,1 @@
+{"study": "S09", "holds": "no", "primary_test": "Mixed-design ANOVA (Type III), Group (mono vs bi, between) x Lag (1,3,5,8, within) on T2|T1 proportion correct; Group x Lag interaction, Greenhouse-Geisser corrected", "statistic": "F(2.33, 69.84) = 0.38", "p": "0.717", "effect_size": "partial eta^2 = 0.012, 90% CI [0.000, 0.055]", "n_after_exclusions": 32, "minutes": 5}

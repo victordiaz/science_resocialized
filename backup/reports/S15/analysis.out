@@ -1,0 +1,82 @@
+/Users/vladnicolescu/Developer/science-resocialized-target/env/runs/S15/.venv/lib/python3.12/site-packages/statsmodels/genmod/generalized_linear_model.py:1269: PerfectSeparationWarning: Perfect separation or prediction detected, parameter may not be identified
+  return self._fit_irls(
+rows in file: 496
+unique _session_id: 496 | fully duplicated rows: 0
+
+focus x options (all rows):
+ options    ten  two  All
+focus                   
+control     74   85  159
+direction   66   84  150
+quality     92   95  187
+All        232  264  496
+
+decision values (incl. blank):
+ decision
+confirming       301
+disconfirming    168
+NaN               27
+Name: count, dtype: int64
+
+decision vs recode (infochoice==judgment1):
+ recode         confirming  disconfirming
+decision                                
+confirming            301              0
+disconfirming           0            168
+
+excluded: blank decision = 27
+after exclusion: 469
+control-focus n: 150
+
+================ PRIMARY TEST (control focus) ================
+decision  confirming  disconfirming
+options                            
+two               46             32
+ten               57             15
+expected counts:
+ [[53.56 24.44]
+ [49.44 22.56]]
+proportion confirming: {'two': 0.5897, 'ten': 0.7917}
+Pearson chi2(1, N=150) = 7.0950, p = 0.0077 (no Yates)
+signed phi (+ = more confirming with ten) = 0.2175
+phi 95% CI (Fisher z approx) = [0.0593, 0.3650]
+phi 95% CI (bootstrap percentile, 10000) = [0.0602, 0.3669]
+Cohen's d = 0.4456  95% CI [0.1188, 0.7842] (from Fisher-z CI)
+difference in proportion confirming (ten - two) = 0.2019, 95% Wald CI [0.0580, 0.3459]
+odds ratio (confirming, ten vs two) = 2.6435
+Fisher exact (two-sided): SignificanceResult(statistic=np.float64(0.3782894736842105), pvalue=np.float64(0.008614101017882361))
+Yates-corrected chi2 (robustness): (np.float64(6.187582428932356), np.float64(0.012864982023661655))
+
+================ SECONDARY ================
+control, two: confirming 46/78 = 0.590; GOF chi2(1) = 2.513, p = 0.1129; binomial p = 0.1405
+control, ten: confirming 57/72 = 0.792; GOF chi2(1) = 24.500, p = 0.0000; binomial p = 0.0000
+
+quality focus:
+decision  confirming  disconfirming
+options                            
+two               60             33
+ten               57             29
+prop confirming {'two': 0.645, 'ten': 0.663}; chi2(1, N=179) = 0.061, p = 0.8044, signed phi = 0.019
+
+direction focus:
+decision  confirming  disconfirming
+options                            
+two               41             38
+ten               40             21
+prop confirming {'two': 0.519, 'ten': 0.656}; chi2(1, N=140) = 2.640, p = 0.1042, signed phi = 0.137
+
+all focus pooled:
+decision  confirming  disconfirming
+options                            
+two              147            103
+ten              154             65
+prop confirming {'two': 0.588, 'ten': 0.703}; chi2(1, N=469) = 6.738, p = 0.0094, signed phi = 0.120
+
+log-linear 3-way interaction LR chi2(2) = 3.496, p = 0.1741
+                                                     Coef.  Std.Err.       z   P>|z|  [0.025  0.975]
+Intercept                                           0.3629    0.2302  1.5765  0.1149 -0.0883  0.8141
+C(options, Treatment('two'))[T.ten]                 0.9721    0.3704  2.6244  0.0087  0.2461  1.6981
+C(focus, Treatment('control'))[T.direction]        -0.2869    0.3220 -0.8910  0.3729 -0.9181  0.3442
+C(focus, Treatment('control'))[T.quality]           0.2349    0.3162  0.7431  0.4574 -0.3847  0.8546
+C(options, Treatment('two'))[T.ten]:C(focus, Tr... -0.4037    0.5104 -0.7910  0.4290 -1.4041  0.5967
+C(options, Treatment('two'))[T.ten]:C(focus, Tr... -0.8942    0.4860 -1.8399  0.0658 -1.8467  0.0584

@@ -1,0 +1,75 @@
+rows read: 89 cols: 32
+Include counts:
+ Include
+1    70
+0    19
+Name: count, dtype: int64
+Include x SexOffender:
+ SexOffender  No  Yes
+Include             
+0             0   19
+1            70    0
+
+Excluded (Include==0): 19
+Included rows by condition:
+ Condition
+0    24
+1    23
+2    23
+Name: count, dtype: int64
+Items answered among included:
+ n_items
+3    69
+2     1
+Name: count, dtype: int64
+n analysed: 70
+
+Descriptives (index):
+           count   mean    std     se
+Condition                            
+0             24 -0.375  1.439  0.294
+1             23 -0.145  1.660  0.346
+2             23  0.391  1.246  0.260
+
+Item means by condition (recoded):
+           StrongMixed  NotTorn_R  Ind_RC
+Condition                                
+0                0.292     -0.625  -0.792
+1                0.391     -0.522  -0.304
+2                0.565      0.652  -0.091
+Cronbach alpha: (np.float64(0.7572379692481186), array([0.638, 0.842]))
+
+PRIMARY one-way ANOVA:
+       Source          SS  DF        MS         F     p_unc       np2
+0  Condition    7.221101   2  3.610550  1.698809  0.190684  0.048263
+1     Within  142.397947  67  2.125342       NaN       NaN       NaN
+F(2, 67) = 1.699, p = 0.1907, eta^2 = 0.048, 95% CI [0.000, 0.158]
+Levene (median): LeveneResult(statistic=np.float64(0.7751626245727855), pvalue=np.float64(0.46471530940150674))
+Shapiro on residuals: ShapiroResult(statistic=np.float64(0.9796975902270919), pvalue=np.float64(0.3139620491739837))
+
+Welch ANOVA:
+       Source  ddof1      ddof2         F     p_unc       np2
+0  Condition      2  44.065122  2.005964  0.146631  0.048263
+Kruskal-Wallis: KruskalResult(statistic=np.float64(3.3764585789964605), pvalue=np.float64(0.18484654409542473))
+
+Cond 1 vs 2 (Student and Welch):
+               T  dof alternative     p_val           CI95   cohen_d     power   BF10
+T_test -1.239041   44   two-sided  0.221899  [-1.41, 0.34]  0.365373  0.228026  0.543
+               T        dof alternative     p_val           CI95   cohen_d     power   BF10
+T_test -1.239041  40.813102   two-sided  0.222409  [-1.41, 0.34]  0.365373  0.228026  0.543
+
+Tukey HSD:
+    A  B    mean_A    mean_B      diff        se         T   p_tukey    hedges
+0  0  1 -0.375000 -0.144928 -0.230072  0.425396 -0.540842  0.851478 -0.145851
+1  0  2 -0.375000  0.391304 -0.766304  0.425396 -1.801389  0.176929 -0.558947
+2  1  2 -0.144928  0.391304 -0.536232  0.429898 -1.247346  0.429861 -0.359110
+
+[d06] rows: 97 SexOffender: {'No': 68, 'Yes': 17, nan: 12}
+[d06] max |Ambiv - recomputed|: 3.33333360913457e-10
+[d06] SexOffender==No by condition: {0: 24, 1: 23, 2: 21}
+[d06] ANOVA:
+       Source          SS  DF        MS         F    p_unc       np2
+0  Condition    8.203252   2  4.101626  1.914614  0.15562  0.055634
+1     Within  139.247728  65  2.142273       NaN      NaN       NaN
+[d06] means: {0: -0.375, 1: -0.145, 2: 0.46}
+figure written

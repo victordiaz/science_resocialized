@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The lab bench at phone width</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/vivarium/tokens.css">
+<link rel="stylesheet" href="bench.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0;background:#0c1114}
+</style>
+</helmet>
+<div class="viv" style="width: 100%; min-height: 100vh; display: flex; flex-direction: column">
+<svg class="grain" aria-hidden="true"><defs><filter id="noiseP" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><pattern id="grainTileP" width="240" height="240" patternUnits="userSpaceOnUse"><rect width="240" height="240" filter="url(#noiseP)"></rect></pattern></defs><rect width="100%" height="100%" fill="url(#grainTileP)"></rect></svg>
+
+<div class="page" style="width: 100%; padding: 16px 16px 56px; display: flex; flex-direction: column; gap: 28px">
+
+  <header style="display: flex; flex-direction: column; gap: 12px">
+    <span class="key sig">Science Resocialized · lab bench</span>
+    <h1 class="title">The lab bench</h1>
+    <div style="display: flex; gap: 7px 20px; flex-wrap: wrap; align-items: baseline">
+      <span class="mono" style="color: var(--ink, #e0e8eb)"><span class="key">findings</span>&nbsp; 30</span>
+      <span class="mono" style="color: var(--ink, #e0e8eb)"><span class="key">reports</span>&nbsp; 1</span>
+      <span class="mono" style="color: var(--ink, #e0e8eb)"><span class="key">over the wall</span>&nbsp; 1</span>
+    </div>
+    <div class="ticks" role="img" aria-label="29 data ready, 1 handed off">
+      <span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick t-handed"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span>
+    </div>
+  </header>
+
+  <section class="sec" aria-labelledby="hp-desks">
+    <div class="sechead">
+      <span class="key sig">01</span>
+      <h2 class="title" id="hp-desks">Researchers</h2>
+      <div class="right"><span class="tag s-failed"><i></i>cli logged out</span></div>
+    </div>
+
+    <article class="glass glass--panel" style="display: flex; flex-direction: column; gap: 12px; padding: 16px" aria-label="Desk 01, S23, handed off">
+      <div class="floor" style="opacity: .8"></div>
+      <div style="position: relative; display: flex; align-items: center; gap: 10px; flex-wrap: wrap">
+        <span class="key">desk 01</span>
+        <span class="tag s-handed"><i></i>handed off</span>
+        <span class="clock" style="margin-left: auto; font-size: 22px">2:36</span>
+      </div>
+      <div class="handle" style="position: relative">Two guesses beat one guess</div>
+      <div class="trellis" style="position: relative">
+        <span class="node done" style="width: 58px"><span class="o">01</span><span class="l">data</span></span><span class="edge done"></span>
+        <span class="node done" style="width: 58px"><span class="o">02</span><span class="l">analysis</span></span><span class="edge done"></span>
+        <span class="node done" style="width: 58px"><span class="o">03</span><span class="l">report</span></span><span class="edge done"></span>
+        <span class="node done" style="width: 58px"><span class="o">04</span><span class="l">pdf</span></span><span class="edge out"></span>
+        <span class="node out" style="width: 58px"><span class="o">05</span><span class="l">wall</span></span>
+      </div>
+      <div style="position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+        <div class="well"><span class="key">tokens</span><span class="v">99.0k</span></div>
+        <div class="well"><span class="key">tool calls</span><span class="v">10</span></div>
+      </div>
+      <button class="folder" style="position: relative" aria-expanded="false">
+        <svg width="16" height="14" viewBox="0 0 16 14" aria-hidden="true"><path d="M1 3.5A1.5 1.5 0 0 1 2.5 2h3.3l1.6 1.6h6.1A1.5 1.5 0 0 1 15 5.1v6.4a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 11.5z" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg>
+        <span>report/ · 8 files</span>
+        <svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true" style="margin-left: auto"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg>
+      </button>
+      <div class="metric" style="position: relative; color: var(--ink-2, #9aa8b0)"><span class="mark" style="margin-right: 8px"></span>concludes <span style="color: var(--sig-hi, #6fd6e6)">yes · t(139) = 4.02</span></div>
+      <div style="position: relative; display: flex; gap: 14px; align-items: center">
+        <div class="sheet" style="width: 64px; min-height: 80px; flex: none; padding: 8px 7px" aria-hidden="true"><i class="h"></i><i></i><i></i><i style="width: 70%"></i><i style="height: 16px; background: #e6eaec; margin-top: 4px"></i><i></i></div>
+        <div style="display: flex; flex-direction: column; gap: 6px; min-width: 0"><span class="cell-title">report.pdf</span><span class="mono">2 pages</span><a class="btn btn--sm" href="/_blob/682790aa113d8de175aab9965f6613f1" target="_blank" rel="noopener" style="align-self: flex-start">Open</a></div>
+      </div>
+      <div style="position: relative; display: flex; gap: 12px; align-items: center"><span class="lamp" aria-hidden="true"></span><span class="lamp-label">set by hand · desk 01 · 15:17</span></div>
+      <div style="position: relative; display: flex; gap: 8px; flex-wrap: wrap">
+        <button class="btn btn--gro" style="flex: 1 1 auto">Send again</button>
+        <button class="btn">Clear desk</button>
+      </div>
+    </article>
+
+    <div class="glass" style="min-height: 110px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 20px">
+      <div class="floor" style="opacity: .45"></div>
+      <span class="key" style="position: absolute; top: 14px; left: 16px">desk 02</span>
+      <span class="mono" style="position: relative; color: var(--ink-3, #71808a)">drop a finding's data here</span>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="hp-wall">
+    <div class="sechead"><span class="key sig">02</span><h2 class="title" id="hp-wall">The wall</h2></div>
+    <div class="glass" style="padding: 16px; display: flex; flex-direction: column; gap: 12px">
+      <div class="floor" style="opacity: .5"></div>
+      <div style="position: relative; display: flex; align-items: center; gap: 10px"><span class="chip out">S23 · report + data</span><span class="lane sent"></span><span class="wallline" style="height: 28px"></span><span class="lane back"></span><span class="chip out">receipt</span></div>
+      <span class="mono" style="position: relative"><span class="key">channel</span>&nbsp; ssh · reviewers</span>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="hp-cells">
+    <div class="sechead"><span class="key sig">03</span><h2 class="title" id="hp-cells">Findings</h2></div>
+    <div style="display: flex; gap: 6px; flex-wrap: wrap">
+      <button class="btn btn--sm" aria-pressed="true">all</button><button class="btn btn--sm">data ready</button><button class="btn btn--sm">with a researcher</button><button class="btn btn--sm">report out</button>
+    </div>
+
+    <div class="cells">
+      <article class="cellp" style="min-height: 230px; display: flex; flex-direction: column; gap: 12px; padding: 16px" aria-label="Unrecognised words still prime">
+        <div style="display: flex; justify-content: space-between; gap: 10px; align-items: center"><span class="key">S02</span><span class="tag"><i></i>data ready</span></div>
+        <div class="handle">Unrecognised words still prime</div>
+        <div class="metric">n 32 · 2.4 MB · 10 of 13 files</div>
+        <div style="display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 6px; margin-top: auto">
+          <div class="plate plate--data"><span class="k">data</span><span>10 files · sav txt</span></div>
+          <div class="pane"><div class="behind" aria-hidden="true"><div class="sheet" style="width: 30px; min-height: 38px; padding: 5px 4px; gap: 3px; box-shadow: none"><i class="h"></i><i></i><i></i></div></div><div class="frost"></div><span class="k">paper</span><span class="v">sealed</span></div>
+          <div class="pane"><div class="behind" aria-hidden="true"><svg width="40" height="28" viewBox="0 0 44 30"><path d="M2 22h5v8H2zM9 12h5v18H9zM16 4h5v26h-5zM23 15h5v15h-5zM30 9h5v21h-5zM37 18h5v12h-5z" fill="#5cc4d8"></path></svg></div><div class="frost"></div><span class="k">reprod.</span><span class="v">sealed</span></div>
+        </div>
+        <div style="display: flex; gap: 8px"><button class="btn btn--sig" style="flex: 1 1 auto">Hand to a researcher</button><button class="btn">Details</button></div>
+      </article>
+
+      <article class="cellp" style="min-height: 230px; display: flex; flex-direction: column; gap: 12px; padding: 16px" aria-label="Two guesses beat one guess">
+        <div style="display: flex; justify-content: space-between; gap: 10px; align-items: center"><span class="key">S23</span><span class="tag s-handed"><i></i>handed off</span></div>
+        <div class="handle">Two guesses beat one guess</div>
+        <div class="metric">n 140 · 0.2 MB · 3 of 10 files</div>
+        <div style="display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 6px; margin-top: auto">
+          <div class="plate plate--data"><span class="k">data</span><span>3 files · txt</span></div>
+          <div class="pane open"><div class="behind" aria-hidden="true"><div class="sheet" style="width: 30px; min-height: 38px; padding: 5px 4px; gap: 3px; box-shadow: none"><i class="h"></i><i></i><i></i></div></div><div class="frost"></div><span class="k">paper</span><span class="v">unlocked</span></div>
+          <div class="pane open"><div class="behind" aria-hidden="true"><svg width="40" height="28" viewBox="0 0 44 30"><path d="M2 22h5v8H2zM9 12h5v18H9zM16 4h5v26h-5zM23 15h5v15h-5zM30 9h5v21h-5zM37 18h5v12h-5z" fill="#5cc4d8"></path></svg></div><div class="frost"></div><span class="k">reprod.</span><span class="v">unlocked</span></div>
+        </div>
+        <div style="display: flex; gap: 8px; align-items: center"><span class="mono" style="color: var(--gro-bright, #84c595)">over the wall · 15:37</span><button class="btn" style="margin-left: auto">Details</button></div>
+      </article>
+    </div>
+    <p class="caption" style="color: var(--ink-3, #71808a)">28 more below; the list scrolls as a page.</p>
+  </section>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":2000}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

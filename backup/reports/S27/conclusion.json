@@ -1,0 +1,1 @@
+{"study": "S27", "holds": "no", "primary_test": "Between-subjects 2x2 ANOVA (Type III) on AvgWillingReconcileTime2: role x message interaction", "statistic": "F(1, 137) = 1.42", "p": "0.235", "effect_size": "partial eta squared = 0.010, 95% CI [0.000, 0.067]; cell pattern opposite to predicted crossover", "n_after_exclusions": 141, "minutes": 3}

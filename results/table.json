@@ -1,0 +1,303 @@
+{
+ "researchers": {
+  "studies": 30,
+  "reports": 30,
+  "researcher_yes": 12,
+  "researcher_no": 18,
+  "cannot_tell": 0,
+  "agree_with_record": 30,
+  "of": 30,
+  "accuracy": 1.0,
+  "ci95": [
+   0.886482908609522,
+   1.0
+  ],
+  "record_held_up": 12,
+  "base_rate_always_no": 0.6
+ },
+ "structures": [
+  {
+   "structure": "Base rate (always \"holds\", odds at the base rate)",
+   "n": 30,
+   "accuracy": 1.0,
+   "ci95": [
+    0.886482908609522,
+    1.0
+   ],
+   "brier": 0.0
+  }
+ ],
+ "rows": [],
+ "studies": {
+  "S01": {
+   "published_yes": false,
+   "researcher": "no",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S02": {
+   "published_yes": true,
+   "researcher": "yes",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S03": {
+   "published_yes": false,
+   "researcher": "no",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S04": {
+   "published_yes": true,
+   "researcher": "yes",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S05": {
+   "published_yes": true,
+   "researcher": "yes",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S06": {
+   "published_yes": false,
+   "researcher": "no",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S07": {
+   "published_yes": false,
+   "researcher": "no",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S08": {
+   "published_yes": true,
+   "researcher": "yes",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S09": {
+   "published_yes": false,
+   "researcher": "no",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S10": {
+   "published_yes": false,
+   "researcher": "no",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S11": {
+   "published_yes": false,
+   "researcher": "no",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S12": {
+   "published_yes": false,
+   "researcher": "no",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S13": {
+   "published_yes": true,
+   "researcher": "yes",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S14": {
+   "published_yes": false,
+   "researcher": "no",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S15": {
+   "published_yes": true,
+   "researcher": "yes",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S16": {
+   "published_yes": false,
+   "researcher": "no",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S17": {
+   "published_yes": false,
+   "researcher": "no",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S18": {
+   "published_yes": false,
+   "researcher": "no",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S19": {
+   "published_yes": true,
+   "researcher": "yes",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S20": {
+   "published_yes": true,
+   "researcher": "yes",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S21": {
+   "published_yes": true,
+   "researcher": "yes",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S22": {
+   "published_yes": true,
+   "researcher": "yes",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S23": {
+   "published_yes": true,
+   "researcher": "yes",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S24": {
+   "published_yes": false,
+   "researcher": "no",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S25": {
+   "published_yes": false,
+   "researcher": "no",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S26": {
+   "published_yes": true,
+   "researcher": "yes",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S27": {
+   "published_yes": false,
+   "researcher": "no",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S28": {
+   "published_yes": false,
+   "researcher": "no",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S29": {
+   "published_yes": false,
+   "researcher": "no",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  },
+  "S30": {
+   "published_yes": false,
+   "researcher": "no",
+   "agrees_with_record": true,
+   "reproduced": true,
+   "holds": true,
+   "recognised": null,
+   "planted": null
+  }
+ }
+}

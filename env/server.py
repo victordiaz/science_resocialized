@@ -5,18 +5,40 @@
 
 Serves env/bench.html and a small JSON API. State is on disk: env/state.json (desks and runs) and each study's
 papers/<study>/report/status.json (written by run_researcher.py). Every study path goes through
-common.safe_finding_file, which refuses sealed file names (none exists on this side; the guard stays)."""
+common.safe_finding_file, which refuses sealed file names. The one exception is common.read_sealed, reached only through
+common.reveal once the panel's receipt for that study is under handoff/<run>/; only two verdict words leave it."""
 import argparse, json, os, re, subprocess, sys, threading, time, urllib.parse, signal
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import (ROOT, STATE, HANDOFF, selection, card_summary, survey_summary, finding_state, finding_dir, report_dir,
-                    safe_finding_file, atomic_write_json, read_json, now_iso, pid_alive, REPORT_FILES, RUNNER_FILES, ID_RE)
+                    safe_finding_file, atomic_write_json, read_json, now_iso, pid_alive, REPORT_FILES, RUNNER_FILES, ID_RE,
+                    HANDLES, run_info, run_dir, receipt_for, receipt_path, receipt_verdict, review_for, reveal, NO_VERDICTS)
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PY = os.path.join(ROOT, ".venv", "bin", "python")
 LOCK = threading.Lock()
 TAIL_OK = set(REPORT_FILES) | {"runner.log", "status.json", "work.json", "report.html", "PROMPT.md"}
 _cli = {"checked_at": 0, "logged_in": None, "detail": ""}
+REVIEW_CALLS = ("agree", "disagree", "hold")
+_reveal_cache = {}   # (run, study) -> (key, result): the sealed record is read once per receipt and conclusion, not per poll
+
+def handles():
+    h = read_json(HANDLES, {}) or {}
+    return h if isinstance(h, dict) else {}
+
+def mtime(p):
+    try: return os.path.getmtime(p)
+    except OSError: return None
+
+def reveal_cached(lid, alias):
+    """reveal() with a cache keyed on the receipt files and the researcher's conclusion.json, so the page's poll does
+    not reopen the sealed record every 2.5 s; a new receipt or a new conclusion reads it again."""
+    key = (mtime(receipt_path(lid, alias)), mtime(safe_finding_file(lid, "report", "conclusion.json")))
+    hit = _reveal_cache.get((alias, lid))
+    if hit and hit[0] == key: return hit[1]
+    res = reveal(lid, alias) if key[0] else {"allowed": False, "verdicts": dict(NO_VERDICTS), "panel": None}
+    _reveal_cache[(alias, lid)] = (key, res)
+    return res
 
 def state_load():
     s = read_json(STATE, None) or {}
@@ -37,7 +59,7 @@ def cli_status(force=False):
         _cli["checked_at"] = time.time()
     return {k: _cli[k] for k in ("logged_in", "detail")}
 
-def one_finding(lid, cache):
+def one_finding(lid, cache, run=None, hn=None):
     cp = safe_finding_file(lid, "card.md"); mt = os.path.getmtime(cp) if os.path.exists(cp) else 0
     if lid not in cache or cache[lid].get("mtime") != mt:
         cache[lid] = {"card": card_summary(lid), "survey": survey_summary(lid), "mtime": mt, "reword": None}
@@ -47,16 +69,32 @@ def one_finding(lid, cache):
     st = dict(f["status"])
     if st.get("t0") and not st.get("finished_at"):
         st["elapsed_s"] = int(time.time() - st["t0"])
-    return {"id": lid, "card": cache[lid]["card"], "survey": cache[lid]["survey"], "reword": cache[lid].get("reword"), "state": f["state"], "status": st, "recognised": f.get("recognised"),
+    run = run or run_info(); alias = run["alias"]; hn = hn if hn is not None else handles()
+    card = cache[lid]["card"] or {}
+    receipt = receipt_for(lid, alias)
+    rv = reveal_cached(lid, alias)
+    pkg_zip = os.path.join(run_dir(alias), lid + ".zip")
+    package = None
+    if os.path.exists(pkg_zip):
+        package = {"path": os.path.relpath(pkg_zip, ROOT), "run": alias, "study": lid, "at": time.strftime("%Y-%m-%dT%H:%M:%S%z", time.localtime(os.path.getmtime(pkg_zip))),
+                   "sha256": (hand or {}).get("files", {}).get("report.pdf", {}).get("sha256") if hand else None}
+    return {"id": lid, "code": lid, "handle": hn.get(lid) or card.get("label") or lid,
+            "review": review_for(lid, alias), "verdicts": rv["verdicts"] if rv.get("allowed") else dict(NO_VERDICTS),
+            "package": package, "card": cache[lid]["card"], "survey": cache[lid]["survey"], "reword": cache[lid].get("reword"), "state": f["state"], "status": st, "recognised": f.get("recognised"),
             "files": f["files"],
             "handoff": {"at": hand.get("created_at"), "sha256": (hand.get("files", {}).get("report.pdf") or {}).get("sha256"),
-                        "sent": sent} if hand else None}
+                        "sent": sent,
+                        "receipt": {"at": receipt.get("at"), "received_at": receipt.get("received_at"), "by": receipt.get("by"),
+                                    "sha256_matches": receipt.get("sha256_matches"),
+                                    "verdict": ({k: receipt_verdict(receipt).get(k) for k in ("odds_holds", "holds", "reviewers", "rounds")}
+                                                if receipt_verdict(receipt) else None)} if receipt else None}
+                        if hand else None}
 
 CARD_CACHE = {}
 
 def full_state():
-    s = state_load()
-    findings = [one_finding(lid, CARD_CACHE) for lid in selection()]
+    s = state_load(); run = run_info(s); hn = handles()
+    findings = [one_finding(lid, CARD_CACHE, run, hn) for lid in selection()]
     counts = {}
     for f in findings: counts[f["state"]] = counts.get(f["state"], 0) + 1
     totals = {"mb": round(sum(f["survey"]["mb"] for f in findings), 1),
@@ -65,7 +103,7 @@ def full_state():
               "pdfs": sum(1 for f in findings if f["state"] in ("pdf rendered", "handed off")),
               "handed": sum(1 for f in findings if f["state"] == "handed off")}
     # a desk whose run has ended keeps its finding until cleared or replaced
-    return {"time": now_iso(), "slots": s["slots"], "assignments": s["assignments"], "cli": cli_status(), "transport": s.get("transport"),
+    return {"time": now_iso(), "run": run, "admin": s.get("admin") is True, "slots": s["slots"], "assignments": s["assignments"], "cli": cli_status(), "transport": s.get("transport"),
             "findings": findings, "counts": counts, "totals": totals}
 
 def start_run(lid, model, slot, backend="claude-cli"):
@@ -120,6 +158,25 @@ def run_send(lid):
     r = subprocess.run([PY, "-I", os.path.join(HERE, "handoff.py"), lid, "--send", target], capture_output=True, text=True, timeout=600, cwd=ROOT)
     return {"ok": r.returncode == 0, "stdout": r.stdout[-2000:], "stderr": r.stderr[-2000:]}, (200 if r.returncode == 0 else 500)
 
+def record_review(body):
+    """The admin's manual review of one study's verdicts, this side only: handoff/<run>/reviews/<study>.json and one line
+    in handoff/<run>/reviews/LOG.md. It records what the admin saw; it never changes a verdict."""
+    study = str(body.get("study") or ""); call = str(body.get("call") or "")
+    if not ID_RE.match(study) or study not in selection(): return {"error": "study must be S## with a card"}, 400
+    if call not in REVIEW_CALLS: return {"error": "call must be agree, disagree or hold"}, 400
+    note = " ".join(str(body.get("note") or "").split())[:500]
+    alias = run_info()["alias"]; receipt = receipt_for(study, alias)
+    v = receipt_verdict(receipt)
+    rec = {"at": now_iso(), "by": "vlad", "run": alias, "study": study,
+           "verdict_seen": {"odds_holds": v.get("odds_holds"), "holds": v.get("holds"), "receipt_at": receipt.get("at")} if v else None,
+           "call": call, "note": note}
+    rdir = os.path.join(run_dir(alias), "reviews")
+    with LOCK:
+        atomic_write_json(os.path.join(rdir, study + ".json"), rec)
+        with open(os.path.join(rdir, "LOG.md"), "a", encoding="utf-8") as lg:
+            lg.write(f"- {rec['at']} {study} {call}: {note}\n")
+    return rec, 200
+
 def run_handoff(lid):
     r = subprocess.run([PY, "-I", os.path.join(HERE, "handoff.py"), lid], capture_output=True, text=True, timeout=300, cwd=ROOT)
     man = read_json(os.path.join(HANDOFF, lid, "manifest.json"), None)
@@ -141,6 +198,9 @@ class H(BaseHTTPRequestHandler):
             if path == "/api/state": return self.send_json(full_state())
             if path == "/api/cli": return self.send_json(cli_status(force=True))
             lid = (q.get("id") or [""])[0]
+            if path == "/api/reveal":
+                if not ID_RE.match(lid) or lid not in selection(): return self.send_json({"error": "bad id"}, 400)
+                return self.send_json(reveal_cached(lid, run_info()["alias"]))
             if path == "/api/tail":
                 name = (q.get("name") or ["log.md"])[0]; n = int((q.get("n") or ["6000"])[0])
                 if not ID_RE.match(lid) or name not in TAIL_OK: return self.send_json({"error": "refused"}, 403)
@@ -186,6 +246,7 @@ class H(BaseHTTPRequestHandler):
                     s = state_load(); s["transport"] = t or None; state_save(s)
                 return self.send_json({"ok": True, "transport": s["transport"]})
             if self.path == "/api/clear": return self.send_json(clear_slot(body.get("slot")))
+            if self.path == "/api/review": obj, code = record_review(body); return self.send_json(obj, code)
             if self.path == "/api/slots":
                 with LOCK:
                     s = state_load(); s["slots"] = max(1, min(8, int(body.get("slots", 3)))); state_save(s)
