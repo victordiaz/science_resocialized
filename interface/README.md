@@ -29,3 +29,13 @@ Fields the page reads that `/api/state` must carry: `run {alias, strategy}`, `fi
 sha256_matches, verdict {odds_holds, holds}}`, `findings[].verdicts {researcher_vs_paper, panel_vs_replication}`
 (computed on this side against the sealed record, `matches | differs | null`), `findings[].review {at, by, call, note}`
 (the admin's manual review, this side only).
+
+## Presentation mode (7 November, 17:45)
+
+`Main.dc.html` carries a `presentation` switch (on by default) for the stage:
+
+1. **Produce the science.** On any study's cell. Desk 02 replays that study's finished run: its real lines (the files read, the test, the statistic, p, the effect size, `holds`) print fast, the files appear in `report/`, the PDF renders. No agent runs; the desk says "replay".
+2. **Send over the wall (pretend).** Packs and sends nothing; the lane fills, the receipt comes back after a beat.
+3. **Reveal the record.** Appears once the receipt is in. Two verdicts, each `matches` or `differs`: the blind researcher against the original paper, and the panel (a mock that endorses the report it read) against the replication on record. The paper and the replication open only on a further click in the drawer.
+
+The numbers come from `papers/S##/report/conclusion.json` and `papers/S##/sealed/truth.json`, baked into `findings.js`. Nothing on the page names an RPP row; the citation is shown only behind the reveal, as `sealed/original/citation.md` already is.

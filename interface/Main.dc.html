@@ -72,7 +72,7 @@ body{margin:0;background:#0c1114}
               <span class="key">desk {{d.slot}}</span>
               <span class="tag {{d.stateCls}}"><i></i>{{d.stateText}}</span>
               <span class="chip ghost" style="padding: 6px 8px">{{d.model}}</span>
-              <sc-if value="{{d.isDemo}}" hint-placeholder-val="{{false}}"><span class="chip ghost" style="padding: 6px 8px; color: var(--flag, #bc8a34); border-color: var(--flag, #bc8a34)">demo run · no agent</span></sc-if>
+              <sc-if value="{{d.isDemo}}" hint-placeholder-val="{{false}}"><span class="chip ghost" style="padding: 6px 8px; color: var(--flag, #bc8a34); border-color: var(--flag, #bc8a34)">replay · the run's real numbers, no agent</span></sc-if>
               <span class="clock" style="margin-left: auto" aria-label="elapsed">{{d.clock}}</span>
             </div>
 
@@ -125,6 +125,33 @@ body{margin:0;background:#0c1114}
               <div style="position: relative; display: flex; gap: 8px 20px; flex-wrap: wrap; align-items: center">
                 <span class="metric" style="color: var(--ink-2, #9aa8b0)"><span class="mark" style="margin-right: 8px"></span>concludes <span style="color: var(--sig-hi, #6fd6e6)">{{d.concl}}</span></span>
                 <sc-if value="{{d.recognised}}" hint-placeholder-val="{{false}}"><span class="metric" style="color: var(--ink-2, #9aa8b0)"><span class="mark" style="margin-right: 8px"></span>recognised the paradigm</span></sc-if>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{d.canReveal}}" hint-placeholder-val="{{false}}">
+              <div style="position: relative; display: flex; gap: 14px; align-items: center; flex-wrap: wrap">
+                <span class="metric" style="color: var(--gro-bright, #84c595)"><span class="mark" style="background: var(--gro-bright, #84c595); margin-right: 8px"></span>the panel's verdict is in</span>
+                <button class="btn btn--flag" onClick="{{d.reveal}}">Reveal the record</button>
+              </div>
+            </sc-if>
+            <sc-if value="{{d.revealed}}" hint-placeholder-val="{{false}}">
+              <div style="position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+                <div class="pane lift open" style="min-height: 150px; gap: 8px">
+                  <div class="behind" aria-hidden="true"><div class="sheet" style="width: 40px; min-height: 50px; padding: 6px 5px; gap: 3px; box-shadow: none"><i class="h"></i><i></i><i></i><i style="width: 70%"></i></div></div>
+                  <div class="frost"></div>
+                  <span class="k">verdict one · researcher vs the paper</span>
+                  <span class="verdict {{d.v1Cls}}" style="font-size: 30px">{{d.v1}}</span>
+                  <span class="v" style="color: var(--ink, #e0e8eb)">{{d.paperLine}}</span>
+                  <span class="v" style="color: var(--ink, #e0e8eb)">{{d.researcherLine}}</span>
+                </div>
+                <div class="pane lift open" style="min-height: 150px; gap: 8px">
+                  <div class="behind" aria-hidden="true"><svg width="60" height="40" viewBox="0 0 44 30"><path d="M2 22h5v8H2zM9 12h5v18H9zM16 4h5v26h-5zM23 15h5v15h-5zM30 9h5v21h-5zM37 18h5v12h-5z" fill="#5cc4d8"></path></svg></div>
+                  <div class="frost"></div>
+                  <span class="k">verdict two · panel vs the replication</span>
+                  <span class="verdict {{d.v2Cls}}" style="font-size: 30px">{{d.v2}}</span>
+                  <span class="v" style="color: var(--ink, #e0e8eb)">{{d.replLine}}</span>
+                  <span class="v" style="color: var(--ink, #e0e8eb)">{{d.reproLine}} · {{d.panelLine}}</span>
+                </div>
               </div>
             </sc-if>
 
@@ -337,7 +364,7 @@ body{margin:0;background:#0c1114}
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"desks":{"editor":"int","default":2,"min":1,"max":4,"section":"Bench"},"ground":{"editor":"enum","default":"canopy","options":["canopy","deep-radial","void"],"section":"Bench"},"admin":{"editor":"boolean","default":true,"section":"Bench"},"$preview":{"width":1440,"height":2400}}'>
+<script type="text/x-dc" data-dc-script data-props='{"desks":{"editor":"int","default":2,"min":1,"max":4,"section":"Bench"},"ground":{"editor":"enum","default":"canopy","options":["canopy","deep-radial","void"],"section":"Bench"},"admin":{"editor":"boolean","default":true,"section":"Bench"},"presentation":{"editor":"boolean","default":true,"section":"Bench"},"$preview":{"width":1440,"height":2400}}'>
 class Component extends DCLogic {
   state = { open: null, filter: 'all', desksN: null, sim: null, now: Date.now(), paper: false, repl: false, openedAt: '', folders: {}, reviewOpen: false, call: 'agree', reviews: {} };
 
@@ -355,35 +382,49 @@ class Component extends DCLogic {
   tickCls(st) { return ({ 'assigned': 't-assigned', 'researcher running': 't-running', 'report written': 't-report', 'pdf rendered': 't-pdf', 'handed off': 't-handed', 'failed': 't-failed', 'no card': 't-nocard' })[st] || ''; }
   group(st) { return st === 'data ready' ? 'ready' : (st === 'handed off' || st === 'pdf rendered') ? 'out' : (st === 'failed' || st === 'no card') ? 'stopped' : 'process'; }
 
-  // The scripted demo run on the second desk: states only, no agent and no numbers that look real.
+  // The replay on the second desk: the study's own finished run, its real lines printed fast; no agent runs.
   sim() {
     const s = this.state.sim; if (!s) return null;
+    const B = (window.BENCH && window.BENCH.findings) || [];
+    const f = B.find(x => x.id === s.id) || {};
     const now = this.state.now;
     const secs = (now - s.t0) / 1000;
     const stopped = !!s.stoppedAt;
-    const run = Math.min(secs, 30);
-    let phase = secs < 2 ? 'assigned' : secs < 30 ? 'running' : 'pdf';
+    const cut = stopped ? (s.stoppedAt - s.t0) / 1000 : Infinity;
+    const L = f.lines || [];
+    const STEP = 0.32, T_END = 1.2 + L.length * STEP;
+    const nLines = Math.max(0, Math.min(L.length, Math.floor((Math.min(secs, cut) - 1.2) / STEP) + 1));
+    const run = Math.min(secs, T_END);
+    let phase = secs < 1.2 ? 'assigned' : secs < T_END ? 'running' : 'pdf';
     if (s.handedAt) phase = 'handed';
     if (s.sentAt) phase = (now - s.sentAt) > 2500 ? 'receipt' : 'sending';
     if (stopped) phase = 'stopped';
-    const cut = stopped ? (s.stoppedAt - s.t0) / 1000 : Infinity;
-    const files = [['analysis.py', 11], ['analysis.out', 14], ['fig1.png', 15], ['report.md', 20], ['report.html', 21], ['conclusion.json', 22], ['report.pdf', 30]]
-      .filter(([n, t]) => secs >= t && cut >= t)
-      .map(([n, t]) => ({ name: n, cls: (secs - t) < 2 ? 'new' : (n === 'report.pdf' ? 'out' : ''), title: n }));
-    const hasReport = files.some(f => f.name === 'report.md');
-    const hasPdf = files.some(f => f.name === 'report.pdf');
+    const fileAt = [['analysis.py', 4], ['analysis.out', 6], ['fig1.png', 8], ['conclusion.json', 10], ['report.md', 11], ['report.pdf', 12]];
+    const files = fileAt.filter(([n, k]) => nLines >= k).map(([n, k]) => ({ name: n, cls: n === 'report.pdf' ? 'out' : (nLines - k) < 2 ? 'new' : '', title: n }));
+    const hasReport = files.some(x => x.name === 'report.md');
+    const hasPdf = phase !== 'assigned' && phase !== 'running' && phase !== 'stopped';
     const state = stopped ? 'failed' : phase === 'assigned' ? 'assigned' : phase === 'running' ? (hasReport ? 'report written' : 'researcher running') : phase === 'pdf' ? 'pdf rendered' : 'handed off';
-    const stageNow = stopped ? 0 : phase === 'assigned' ? 1 : secs < 9 ? 1 : secs < 18 ? 2 : secs < 26 ? 3 : secs < 30 ? 4 : (phase === 'pdf' ? 4.5 : phase === 'receipt' ? 6 : 5);
-    const lastTool = stopped ? 'stopped by hand' : secs < 2 ? 'claude -p --model opus, in the sealed sandbox' : secs < 9 ? 'Read d04.sav' : secs < 18 ? 'Bash python3 analysis.py' : secs < 26 ? 'Write report.md' : secs < 30 ? 'Bash md2pdf report.md' : 'exit 0';
-    const lines = [[0, 'runner: sandbox built from files.json\nrunner: card.md and the data files under neutral names\nrunner: claude -p --model opus …'],
-      [2, '\n\n# Log\nRecognition: I do not recognise this study. I carry on.\nStart: ' + this.hhmm(new Date(s.t0)) + ' CET.\n\n## Plan (written before any analysis)\n1. Load the files; check rows against the card’s n.\n2. The key test exactly as the card states it, before anything else.'],
-      [9, '\n\n## Data\nLoaded; row count matches the card.'],
-      [14, '\n\n## Test\nThe card’s test, run once; the statistic goes to analysis.out and conclusion.json.'],
-      [20, '\n\n## Report\nreport.md written.'],
-      [30, '\n\nreport.pdf rendered · 2 pages']];
-    const log = lines.filter(([t]) => secs >= t && cut >= t).map(([, l]) => l).join('') + (stopped ? '\n\nrunner: stopped by hand at ' + this.hhmmss(new Date(s.stoppedAt)) : '');
-    return { secs, run, phase, stopped, files, state, stageNow, lastTool, log, hasPdf,
-      tools: Math.floor(run / 2.2), tokIn: Math.round(run * 3100) };
+    const frac = L.length ? nLines / L.length : 0;
+    const stageNow = stopped ? 0 : phase === 'assigned' ? 1 : phase === 'running' ? (frac < .3 ? 1 : frac < .75 ? 2 : frac < 1 ? 3 : 4) : phase === 'pdf' ? 4.5 : phase === 'receipt' ? 6 : 5;
+    const lastTool = stopped ? 'stopped by hand' : phase === 'assigned' ? 'claude -p --model opus, in the sealed sandbox' : phase === 'running' ? (L[Math.max(0, nLines - 1)] || '') : 'exit 0';
+    const log = 'runner: sandbox built · card.md + ' + (f.given || 0) + ' data files under neutral names\n' + L.slice(0, nLines).join('\n') + (stopped ? '\n\nrunner: stopped by hand at ' + this.hhmmss(new Date(s.stoppedAt)) : '');
+    return { secs, run, phase, stopped, files, state, stageNow, lastTool, log, hasPdf, f,
+      tools: Math.min(10, Math.floor(nLines * 0.9)), tokIn: Math.round(run * 9000) };
+  }
+
+  // The two verdicts, from the study's record: the paper claimed the effect; the replication on record held or not; the panel is a mock that endorses the report it read.
+  verdicts(f) {
+    const c = f.concl || {}, r = f.record || {};
+    const rh = c.holds === 'yes';
+    const v1 = rh ? 'matches' : 'differs';
+    const panelHolds = rh;
+    const v2 = (panelHolds === (r.held_up === 'yes')) ? 'matches' : 'differs';
+    return { v1, v1Cls: v1 === 'matches' ? 'yes' : 'no', v2, v2Cls: v2 === 'matches' ? 'yes' : 'no',
+      paperLine: 'the paper claimed it: ' + (r.stat_o || '[statistic]') + ' · p ' + (r.p_o || '?') + ' · ' + (r.es_o || '') + ' · N ' + (r.n_o || '?'),
+      researcherLine: 'the blind researcher: ' + (c.holds || '?') + ' · ' + (c.statistic || '') + ' · p ' + (c.p || '') + ' · ' + (c.effect_size || ''),
+      replLine: 'the replication on record: held up ' + (r.held_up || '?') + ' · ' + (r.stat_r || '[statistic]') + ' · p ' + (r.p_r || '?') + ' · ' + (r.es_r || '') + ' · N ' + (r.n_r || '?'),
+      reproLine: 'our reproduction: ' + (r.reproduced || '?'),
+      panelLine: 'the panel (mock): ' + (panelHolds ? 'holds' : 'does not hold') + ' · 0.80' };
   }
 
   stages(nowIdx, out) {
@@ -416,8 +457,9 @@ class Component extends DCLogic {
     const tot = { findings: findings.length, pdfs, handed, minutes: '2.6', cost: '$0.00' };
 
     const filter = this.state.filter;
-    const deskOf = id => id === 'Row.116' ? '01' : id === simId ? '02' : null;
-    const receivedOf = id => id === 'Row.116' || (id === simId && sim && sim.phase === 'receipt');
+    const presentation = !!(this.props.presentation ?? true);
+    const deskOf = id => id === 'S23' ? '01' : id === simId ? '02' : null;
+    const receivedOf = id => id === 'S23' || (id === simId && sim && sim.phase === 'receipt');
 
     const cells = findings.filter(f => filter === 'all' || self.group(f.st) === filter).map(f => {
       const ghost = (f.st === 'failed' || f.st === 'no card') ? 'ghost' : '';
@@ -428,16 +470,17 @@ class Component extends DCLogic {
         metric: 'n ' + f.n + ' · ' + f.mb + ' MB · ' + f.given + ' of ' + f.files + ' files',
         dataLine: f.given + ' files · ' + f.formats,
         paneCls: received ? 'open' : '',
-        paneText: received ? (f.id === 'Row.116' ? 'matches' : 'verdict in') : 'sealed',
+        paneText: received ? (f.id === 'S23' ? 'matches' : 'verdict in') : 'sealed',
         paneTitle: received ? 'The receipt is back: the verdicts are in Details, for the humans on this side.' : 'Sealed while a researcher can still touch this finding. The receipt from the other side unlocks it.',
-        canRun: !running && f.st !== 'handed off' && f.st !== 'no card', runText: f.st === 'data ready' ? 'Hand to a researcher' : 'Run again',
+        canRun: !running && f.st !== 'handed off' && f.st !== 'no card', runText: f.st === 'data ready' ? (presentation ? 'Produce the science' : 'Hand to a researcher') : 'Run again',
         onDesk: !!deskOf(f.id), deskNo: deskOf(f.id) || '',
         run: () => self.start(f.id),
         open: () => self.setState({ open: f.id, paper: false, repl: false, reviewOpen: false })
       };
     });
 
-    const r116 = findings.find(f => f.id === 'Row.116') || {};
+    const r116 = findings.find(f => f.id === 'S23') || {};
+    const v116 = self.verdicts(r116);
     const folders = this.state.folders;
     const toggle = id => () => { const n = Object.assign({}, self.state.folders); n[id] = !n[id]; self.setState({ folders: n }); };
     const files116 = ['analysis.out', 'analysis.py', 'conclusion.json', 'fig1.png', 'log.md', 'report.html', 'report.md', 'report.pdf'].map(n => ({ name: n, cls: n === 'report.pdf' ? 'out' : '', title: n }));
@@ -448,12 +491,14 @@ class Component extends DCLogic {
       stages: self.stages(6, true),
       tokens: '99.0k', tools: '10', cost: 'not reported',
       hasTool: true, lastTool: 'exit 0 · finished 15:19:56', working: false,
-      folderOpen: !!folders['Row.116'], toggle: toggle('Row.116'), nFiles: files116.length, folderHint: 'S23.zip · report + data · 141 KB', files: files116, noFiles: false,
+      folderOpen: !!folders['S23'], toggle: toggle('S23'), nFiles: files116.length, folderHint: 'S23.zip · report + data · 141 KB', files: files116, noFiles: false,
       hasNote: true, note: 'attached run: an Opus subagent of the bench session worked in the sealed sandbox; 99,019 tokens over 10 tool calls, from the Agent tool result; the cost is not reported by that backend.',
       log: '# Log – S23\n\nRecognition: the design looks like a replication of the “crowd within” paradigm; I carry on as if I did not know any result.\n\nStart: 2026-11-07 15:17 CET.\n\n## Plan (written before any analysis)\n1. Merge session 1 and session 2 on the participant id; keep the delayed condition only.\n2. Per participant: MSE of guess 1, MSE of the average of guess 1 and guess 2.\n3. Paired t-test, df = n − 1.',
       hasConcl: true, concl: 'yes · t(139) = 4.02 · p 9.4e-05 · d_z 0.34', recognised: true,
       hasPdf: true, pdfLine: '2 pages · rendered 15:19', pdfHref: '/_blob/682790aa113d8de175aab9965f6613f1',
       hasHandoff: true, handoffAt: '15:37:27', sha: '61ce7336 509c7f05 … b040b5e2 3ab2',
+      canReveal: !this.state.rev1, revealed: !!this.state.rev1, reveal: () => self.setState({ rev1: true }),
+      v1: v116.v1, v1Cls: v116.v1Cls, v2: v116.v2, v2Cls: v116.v2Cls, paperLine: v116.paperLine, researcherLine: v116.researcherLine, replLine: v116.replLine, reproLine: v116.reproLine, panelLine: v116.panelLine,
       lamp: 'set by hand · desk 01 at 15:17 · sent 15:37',
       canStop: false, canHandoff: false, canSend: true, sendText: 'Send again', canClear: true, canRerun: false,
       send: () => {}, clear: () => {}, stop: () => {}, handoff: () => {}, rerun: () => {}
@@ -465,23 +510,27 @@ class Component extends DCLogic {
       const f = findings.find(x => x.id === simId) || {};
       const out = sim.phase === 'receipt';
       const S = self.state.sim;
+      const vv = self.verdicts(f);
+      const c = f.concl || {};
       desk2 = {
         slot: '02', empty: false, full: true, aria: 'Desk 02, ' + (f.code || simId) + ', ' + sim.state,
         handle: f.handle || '',
         stateCls: self.stateCls(sim.state), stateText: sim.state, model: 'opus', isDemo: true, clock: self.clock(sim.stopped ? (S.stoppedAt - S.t0) / 1000 : sim.run),
         stages: self.stages(sim.stageNow, out),
-        tokens: self.k(sim.tokIn), tools: String(sim.tools), cost: '[demo]',
+        tokens: self.k(sim.tokIn), tools: String(sim.tools), cost: '[replay]',
         hasTool: true, lastTool: sim.lastTool, working: sim.phase === 'running' || sim.phase === 'assigned',
         folderOpen: !!folders[simId], toggle: toggle(simId), nFiles: sim.files.length, folderHint: sim.files.length ? sim.files[sim.files.length - 1].name : 'empty', files: sim.files, noFiles: sim.files.length === 0,
         hasNote: false, note: '', log: sim.log,
-        hasConcl: sim.hasPdf && !sim.stopped, concl: '[holds] · [statistic]', recognised: false,
-        hasPdf: sim.hasPdf && !sim.stopped, pdfLine: '[pages] · rendered ' + self.hhmm(new Date(S.t0 + 30000)), pdfHref: '#',
+        hasConcl: sim.hasPdf && !sim.stopped, concl: (c.holds || '?') + ' · ' + (c.statistic || '') + ' · p ' + (c.p || '') + ' · ' + (c.effect_size || ''), recognised: false,
+        hasPdf: sim.hasPdf && !sim.stopped, pdfLine: 'rendered ' + self.hhmm(new Date(S.t0 + 5000)) + ' · the run’s own numbers, replayed', pdfHref: '#',
         hasHandoff: !!S.handedAt, handoffAt: S.handedAt ? self.hhmmss(new Date(S.handedAt)) : '', sha: '[computed on hand-off]',
+        canReveal: sim.phase === 'receipt' && !S.revealed, revealed: !!S.revealed, reveal: () => self.setState({ sim: Object.assign({}, S, { revealed: true }) }),
+        v1: vv.v1, v1Cls: vv.v1Cls, v2: vv.v2, v2Cls: vv.v2Cls, paperLine: vv.paperLine, researcherLine: vv.researcherLine, replLine: vv.replLine, reproLine: vv.reproLine, panelLine: vv.panelLine,
         lamp: 'set by hand · desk 02 at ' + self.hhmm(new Date(S.t0)),
         canStop: sim.phase === 'running' || sim.phase === 'assigned',
         canHandoff: sim.phase === 'pdf',
         canSend: sim.phase === 'handed' || sim.phase === 'receipt' || sim.phase === 'sending',
-        sendText: sim.phase === 'sending' ? 'sending…' : sim.phase === 'receipt' ? 'Send again' : 'Send over the wall',
+        sendText: sim.phase === 'sending' ? 'sending…' : sim.phase === 'receipt' ? 'Send again (pretend)' : 'Send over the wall (pretend)',
         canClear: sim.phase !== 'running' && sim.phase !== 'assigned',
         canRerun: sim.stopped || sim.phase === 'pdf',
         stop: () => self.setState({ sim: Object.assign({}, S, { stoppedAt: Date.now() }), now: Date.now() }),
@@ -508,11 +557,11 @@ class Component extends DCLogic {
       handle: selF.handle, num: selF.code || selF.id, state: selF.st, stateCls: self.stateCls(selF.st),
       received: selReceived, locked: !selReceived,
       paneCls: selReceived ? 'open' : '',
-      v1: selReceived ? (selF.id === 'Row.116' ? 'matches' : '[verdict]') : 'sealed', v1Cls: selReceived && selF.id === 'Row.116' ? 'yes' : 'no',
-      v2: selReceived ? (selF.id === 'Row.116' ? 'matches' : '[verdict]') : 'sealed', v2Cls: selReceived && selF.id === 'Row.116' ? 'yes' : 'no',
-      verdictNote: selReceived ? (selF.id === 'Row.116' ? 'The blind researcher reached the paper’s conclusion, and the panel (0.81, mock) called it the way the independent replication did.' : 'Demo receipt: the verdicts are computed on this side from the receipt and the sealed record once a real panel answers.') : 'Both verdicts stay frosted until this finding’s report and data have crossed the wall and the receipt is back.',
-      paper: selF.id === 'Row.116' ? 'E Vul, H Pashler. Measuring the crowd within: probabilistic representations within individuals. Psychological Science 19(7).\non record: t(172) = 3.94 · p < .01 · d 0.47 · N 173' : '[the paper, from the sealed record]',
-      repl: selF.id === 'Row.116' ? 'replication on record: t(139) = 4.02 · p .001 · d 0.34 · N 140 · same direction · held up: yes\nour recomputation: reproduced\nthe blind researcher: t(139) = 4.02 · d_z 0.34 · the same number\nthe panel: 0.81 · 5 reviewers · 2 rounds · 1 recomputed from the data (mock)' : '[the replication and the analysis, from the sealed record and the receipt]',
+      v1: selReceived ? (selF.id === 'S23' ? 'matches' : '[verdict]') : 'sealed', v1Cls: selReceived && selF.id === 'S23' ? 'yes' : 'no',
+      v2: selReceived ? (selF.id === 'S23' ? 'matches' : '[verdict]') : 'sealed', v2Cls: selReceived && selF.id === 'S23' ? 'yes' : 'no',
+      verdictNote: selReceived ? (selF.id === 'S23' ? 'The blind researcher reached the paper’s conclusion, and the panel (0.81, mock) called it the way the independent replication did.' : 'Demo receipt: the verdicts are computed on this side from the receipt and the sealed record once a real panel answers.') : 'Both verdicts stay frosted until this finding’s report and data have crossed the wall and the receipt is back.',
+      paper: selF.id === 'S23' ? 'E Vul, H Pashler. Measuring the crowd within: probabilistic representations within individuals. Psychological Science 19(7).\non record: t(172) = 3.94 · p < .01 · d 0.47 · N 173' : '[the paper, from the sealed record]',
+      repl: selF.id === 'S23' ? 'replication on record: t(139) = 4.02 · p .001 · d 0.34 · N 140 · same direction · held up: yes\nour recomputation: reproduced\nthe blind researcher: t(139) = 4.02 · d_z 0.34 · the same number\nthe panel: 0.81 · 5 reviewers · 2 rounds · 1 recomputed from the data (mock)' : '[the replication and the analysis, from the sealed record and the receipt]',
       metric: selF.formats + ' · ' + selF.files + ' files · ' + selF.mb + ' MB · n ' + selF.n,
       hyp: selF.hyp, design: selF.design || '[not on the card]', sample: selF.sample || '[not on the card]', test: selF.test || '[not on the card]',
       given: selF.given, formats: selF.formats, mb: selF.mb, withheld: selF.files - selF.given,
@@ -552,8 +601,8 @@ class Component extends DCLogic {
 
   start(id) {
     const s = this.state.sim;
-    if (id === 'Row.116') return;
-    if (s && s.id !== id && !s.stoppedAt && !(s.sentAt && Date.now() - s.sentAt > 2500) && !s.handedAt && (Date.now() - s.t0) / 1000 < 30) return;
+    if (id === 'S23') return;
+    if (s && s.id !== id && !s.stoppedAt && !(s.sentAt && Date.now() - s.sentAt > 2500) && !s.handedAt && (Date.now() - s.t0) / 1000 < 6) return;
     this.setState({ sim: { id, t0: Date.now() }, now: Date.now(), open: null });
   }
 }
